@@ -62,11 +62,7 @@ export const SideNav = ({
 
                     <Box mb='10'>
                         <NavGroupHeading>Components</NavGroupHeading>
-                        {items.map((link) => (
-                            <ComponentLink key={link.toString()} href={stringToUrl(link)}>
-                                {link}
-                            </ComponentLink>
-                        ))}
+                        {items}
                     </Box>
 
                     <Box mb='10'>

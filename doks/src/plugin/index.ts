@@ -49,9 +49,16 @@ async function getMdxFilesIndex() {
         const content = await (await fs.promises.readFile(pathName)).toString()
         const frontMatter = getFrontMatter(content)
         const { title = '' } = frontMatter.attributes || ({} as any)
+        const relativePath = path
+            .relative(pagesPath, pathName)
+            .replace('.mdx', '')
+            .replace('.md', '')
+            .replace('.jsx', '')
+            .replace('.tsx', '')
+            .replace('.js', '')
         return {
             title,
-            path: path.relative(pagesPath, pathName),
+            path: `/${relativePath}`,
         }
     })
     const index = await Promise.all(promises)

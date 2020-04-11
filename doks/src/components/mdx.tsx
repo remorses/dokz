@@ -21,6 +21,7 @@ import SideNav from './SideNav'
 import NavBar from './NavBar'
 import { DoksTableOfContents } from '../types'
 import { TableOfContents } from './TableOfContents'
+import { ComponentLink } from './NavLink'
 
 const Pre = (props) => <Box my='2em' rounded='sm' {...props} />
 
@@ -111,7 +112,9 @@ export function Wrapper(props) {
                 <NavBar />
                 <Stack direction='row' isInline>
                     <SideNav
-                        items={index.map((x) => x.title)}
+                        items={index.map((x) => (
+                            <ComponentLink href={x.path} children={x.title} />
+                        ))}
                         display={['none', null, 'block']}
                     />
                     <Stack px='40px' flex='1'>
