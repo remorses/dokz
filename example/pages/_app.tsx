@@ -10,7 +10,7 @@ import {
 } from '@chakra-ui/core'
 import { ThemeProvider } from '@chakra-ui/core'
 import { MDXProvider } from '@mdx-js/react'
-import MDXComponents from '../components/mdx'
+import MDXComponents from '@doks/core/dist/components/mdx'
 import { merge } from 'lodash'
 
 const customTheme = merge(theme, {

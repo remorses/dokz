@@ -58,6 +58,7 @@
         "globby": "^11.0.0",
         "gray-matter": "^4.0.2",
         "mdast-util-toc": "^5.0.2",
+        "re-resizable": "^6.3.2",
         "react-intersection-observer": "^8.26.1",
         "react-is": "^16.13.1",
         "remark": "^12.0.0",

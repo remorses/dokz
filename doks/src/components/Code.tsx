@@ -10,6 +10,7 @@ import * as ReactIcons from 'react-icons/md'
 import FocusLock from 'react-focus-lock'
 import { Flex, Stack, Divider } from '@chakra-ui/core'
 import Highlight, { defaultProps } from 'prism-react-renderer'
+import { Resizable } from 're-resizable'
 
 const { Box, Button, useClipboard, useColorMode } = Chakra
 
@@ -113,7 +114,7 @@ export const Playground = ({
     live = true,
     children,
     mountStylesheet = false,
-    previewEnabled=true,
+    previewEnabled = true,
     ...props
 }) => {
     const [editorCode, setEditorCode] = useState(children.trim())
@@ -123,6 +124,8 @@ export const Playground = ({
     const { colorMode } = useColorMode()
     const themes = { light: lightTheme, dark: darkTheme }
     const theme = themes['dark']
+    const [width, setWidth] = React.useState('100%')
+    const resizableProps = getResizableProps(width, setWidth)
     const liveProviderProps = {
         theme,
         language,
@@ -175,33 +178,63 @@ export const Playground = ({
     )
 
     return (
-        <LiveProvider {...liveProviderProps}>
-            <Stack
-                w='100%'
-                border='1px solid'
-                borderColor='gray.300'
-                borderRadius='8px'
-                overflow='hidden'
-                shadow='lg'
-            >
-                {previewEnabled && editorBar}
-                {!showCode && (
-                    <Box
-                        as={LivePreview}
-                        fontFamily='body'
-                        w='100%'
-                        overflow='hidden'
-                        {...props}
-                    />
-                )}
-                {showCode && (
-                    <LiveEditor
-                        onChange={handleCodeChange}
-                        style={liveEditorStyle}
-                    />
-                )}
-                <LiveError style={liveErrorStyle} />
-            </Stack>
-        </LiveProvider>
+        <Resizable {...resizableProps} data-testid='playground'>
+            <LiveProvider {...liveProviderProps}>
+                <Stack
+                    w='100%'
+                    border='1px solid'
+                    borderColor='gray.300'
+                    borderRadius='8px'
+                    overflow='hidden'
+                    shadow='lg'
+                >
+                    {previewEnabled && editorBar}
+                    {!showCode && (
+                        <Box
+                            as={LivePreview}
+                            fontFamily='body'
+                            p='0px'
+                            w='100%'
+                            overflow='hidden'
+                            // {...props}
+                            
+                        />
+                    )}
+                    {showCode && (
+                        <LiveEditor
+                            onChange={handleCodeChange}
+                            style={liveEditorStyle}
+                        />
+                    )}
+                    <LiveError style={liveErrorStyle} />
+                </Stack>
+            </LiveProvider>
+        </Resizable>
     )
 }
+
+const getResizableProps = (width, setWidth) => ({
+    minWidth: 260,
+    maxWidth: '100%',
+    size: {
+        width: width,
+        height: 'auto',
+    },
+    style: {
+        margin: 0,
+        marginRight: 'auto',
+    },
+    enable: {
+        top: false,
+        right: true,
+        bottom: false,
+        left: false,
+        topRight: false,
+        bottomRight: false,
+        bottomLeft: false,
+        topLeft: false,
+    },
+    onResizeStop: (e, direction, ref) => {
+        setWidth(ref.style.width)
+    },
+})
