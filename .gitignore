@@ -6,8 +6,11 @@ yarn-debug.log*
 yarn-error.log*
 .DS_Store
 play*
+!playground*
 dist/*
 esm
+dist
+baby-i-am-faded/public
 
 # Runtime data
 pids

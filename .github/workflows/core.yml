@@ -1,0 +1,32 @@
+name: baby-i-am-faded Npm Package
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - baby-i-am-faded/**
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
+      - run: cd baby-i-am-faded && yarn
+      # - run: yarn test
+      - run: cd baby-i-am-faded && yarn compile
+      - name: Bump version
+        uses: remorses/bump-version@js
+        with:
+          version_file: baby-i-am-faded/VERSION
+          prefix: baby-i-am-faded
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: cd baby-i-am-faded && yarn publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.npm_token }}

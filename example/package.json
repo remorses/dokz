@@ -1,0 +1,60 @@
+{
+    "name": "example",
+    "private": true,
+    "version": "0.1.0",
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "test": "NODE_ENV=test mocha --colors --exit",
+        "svgs": "svgr -d src/svgs --no-dimensions --typescript svgs",
+        "screens": "ts-node -P scripts/tsconfig.json scripts/screenshotter.ts",
+        "docgen": "ts-node -P scripts/tsconfig.json scripts/generatePropsDocs.ts"
+    },
+    "mocha": {
+        "require": "tests/init.js",
+        "spec": "tests/**",
+        "timeout": 9999999999
+    },
+    "dependencies": {
+        "@chakra-ui/core": "^0.7.0",
+        "@mdx-js/loader": "^1.5.8",
+        "@mdx-js/react": "^1.5.8",
+        "@monaco-editor/react": "^3.1.2",
+        "@next/mdx": "^9.3.4",
+        "@types/lodash": "^4.14.149",
+        "@types/node": "^13.9.3",
+        "@types/react": "^16.9.25",
+        "async-sema": "^3.1.0",
+        "chakra-ui-forms": "0.0.1",
+        "color-js": "^1.0.5",
+        "lodash": "^4.17.15",
+        "monaco-editor": "^0.20.0",
+        "next": "^9.3.1",
+        "react": "16.13.1",
+        "react-dom": "16.13.1",
+        "react-element-to-jsx-string": "^14.3.1",
+        "react-extra-hooks": "^2.3.1",
+        "react-final-form": "^6.3.5",
+        "react-icons": "^3.9.0",
+        "react-landing": "latest",
+        "react-live": "^2.2.2",
+        "react-multi-steps": "^1.0.3",
+        "tiny-glob": "^0.2.6",
+        "tsconfig-paths": "^3.9.0",
+        "typescript": "^3.8.3"
+    },
+    "devDependencies": {
+        "@svgr/cli": "^5.3.0",
+        "@testing-library/react": "^10.0.1",
+        "@types/chai": "^4.2.11",
+        "@types/mocha": "^7.0.2",
+        "capture-website": "^0.8.1",
+        "chai": "^4.2.0",
+        "mocha": "^7.1.1",
+        "next-transpile-modules": "^3.1.0",
+        "react-docgen-typescript": "^1.16.3",
+        "sucrase": "^3.12.1",
+        "ts-node": "^8.8.1"
+    }
+}
