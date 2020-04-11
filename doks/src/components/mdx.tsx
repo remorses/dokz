@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { Code } from './Code'
+import importFrom from 'import-from'
 import {
     Box,
     Callout,
@@ -18,6 +19,8 @@ import { forwardRef } from 'react'
 import { Button, LandingProvider, PageContainer, Footer } from 'react-landing'
 import SideNav from './SideNav'
 import NavBar from './NavBar'
+import { DoksTableOfContents } from '../types'
+import { TableOfContents } from './TableOfContents'
 
 const Pre = (props) => <Box my='2em' rounded='sm' {...props} />
 
@@ -93,20 +96,28 @@ const DocsHeading = (props) => (
 )
 
 export function Wrapper(props) {
+    const { tableOfContents } = props.meta
+    console.log({ tableOfContents })
     console.log({ wrapperPorps: props })
     // TODO show breadcrumbs based on exported breadcrumbs array
     // TODO add footer, sidebar, toc, ...
     const breadcrumbs = props.breadcrumbs || []
-
+    // const index = require('root_/index.json')
+    console.log('root_', require.resolve('root_'))
+    const index = require('root_/index.json')
     return (
         <LandingProvider primary='#FF593D'>
             <PageContainer pageWidth='1400px'>
                 <NavBar />
                 <Stack direction='row' isInline>
-                    <SideNav display={['none', null, 'block']} />
+                    <SideNav
+                        items={index.map((x) => x.title)}
+                        display={['none', null, 'block']}
+                    />
                     <Stack px='40px' flex='1'>
                         {props.children}
                     </Stack>
+                    <TableOfContents table={tableOfContents} />
                 </Stack>
             </PageContainer>
         </LandingProvider>

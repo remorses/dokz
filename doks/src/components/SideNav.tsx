@@ -25,53 +25,6 @@ const NavGroupHeading = (props) => (
     />
 )
 
-export const SideNavContent = ({
-    contentHeight = 'calc(100vh - 4rem)',
-    items = [],
-    ...props
-}) => (
-    <Box
-        position='relative'
-        overflowY='auto'
-        borderRightWidth='1px'
-        {...props}
-    >
-        <Box
-            as='nav'
-            height={contentHeight}
-            aria-label='Main navigation'
-            fontSize='sm'
-            p='6'
-        >
-            <Box mb='8'>
-                {topNavLinks.map((link) => (
-                    <TopNavLink key={link} href={stringToUrl(link)}>
-                        {link}
-                    </TopNavLink>
-                ))}
-            </Box>
-
-            <Box mb='10'>
-                <NavGroupHeading>Components</NavGroupHeading>
-                {items.map((link) => (
-                    <ComponentLink key={link} href={stringToUrl(link)}>
-                        {link}
-                    </ComponentLink>
-                ))}
-            </Box>
-
-            <Box mb='10'>
-                <NavGroupHeading>Utilities</NavGroupHeading>
-                {utilsNavLinks.map((link) => (
-                    <ComponentLink key={link} href={stringToUrl(link)}>
-                        {link}
-                    </ComponentLink>
-                ))}
-            </Box>
-        </Box>
-    </Box>
-)
-
 const SideNavContainer = (props) => (
     <Box
         // position='fixed'
@@ -82,10 +35,44 @@ const SideNavContainer = (props) => (
     />
 )
 
-const SideNav = (props) => {
+const SideNav = ({ items, contentHeight = 'calc(100vh - 4rem)', ...rest }) => {
     return (
-        <SideNavContainer {...props}>
-            <SideNavContent />
+        <SideNavContainer {...rest}>
+            <Box position='relative' overflowY='auto' borderRightWidth='1px'>
+                <Box
+                    as='nav'
+                    height={contentHeight}
+                    aria-label='Main navigation'
+                    fontSize='sm'
+                    p='6'
+                >
+                    <Box mb='8'>
+                        {topNavLinks.map((link) => (
+                            <TopNavLink key={link} href={stringToUrl(link)}>
+                                {link}
+                            </TopNavLink>
+                        ))}
+                    </Box>
+
+                    <Box mb='10'>
+                        <NavGroupHeading>Components</NavGroupHeading>
+                        {items.map((link) => (
+                            <ComponentLink key={link} href={stringToUrl(link)}>
+                                {link}
+                            </ComponentLink>
+                        ))}
+                    </Box>
+
+                    <Box mb='10'>
+                        <NavGroupHeading>Utilities</NavGroupHeading>
+                        {utilsNavLinks.map((link) => (
+                            <ComponentLink key={link} href={stringToUrl(link)}>
+                                {link}
+                            </ComponentLink>
+                        ))}
+                    </Box>
+                </Box>
+            </Box>
         </SideNavContainer>
     )
 }
