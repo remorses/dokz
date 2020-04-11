@@ -16,6 +16,7 @@
         "noImplicitAny": false,
         "skipLibCheck": true,
         "jsx": "react",
+        "allowJs": true
     },
     "exclude": [
         "node_modules",
