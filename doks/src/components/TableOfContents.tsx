@@ -53,7 +53,7 @@ function TableItems({
         <Stack ml={baseW * (depth - 1) + 'px'}>
             {items.map((x) => {
                 return (
-                    <Box minH='30px'>
+                    <Box isTruncated minH='30px'>
                         <Link href={slug}>{x.value}</Link>
                     </Box>
                 )

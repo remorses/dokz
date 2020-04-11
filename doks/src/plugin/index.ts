@@ -1,4 +1,6 @@
 import fs from 'fs'
+import path from 'path'
+import to from 'await-to-js'
 import { Parent, Heading, Link, Paragraph, List, ListItem } from 'mdast'
 import addMeta from 'remark-mdx-metadata'
 import getFrontMatter from 'front-matter'
@@ -8,11 +10,14 @@ import { generateTableOfContents } from './generateTableOfContents'
 import { withMdx } from './withMdx'
 
 export function withDoks(...args) {
-    getMdxFilesIndex().then((index) => {
-        return fs.promises
-            .writeFile('index.json', JSON.stringify(index, null, 4))
-            .catch(console.error)
-    })
+    getMdxFilesIndex()
+        .then((index) => {
+            return fs.promises.writeFile(
+                'index.json',
+                JSON.stringify(index, null, 4),
+            )
+        })
+        .catch(console.error)
     return withMdx({
         extension: /\.mdx?$/,
         options: {
@@ -36,7 +41,9 @@ export function withDoks(...args) {
 }
 
 async function getMdxFilesIndex() {
-    const files = await globby('pages/**.mdx') // TODO mdx files can also be in src
+    const pagesPath = await getPagesPath()
+    console.log({ pagesPath })
+    const files = await globby(pagesPath + '/**.mdx', { onlyFiles: true })
     const promises = files.map(async (pathName) => {
         // const file = await read(pathName)
         const content = await (await fs.promises.readFile(pathName)).toString()
@@ -44,9 +51,21 @@ async function getMdxFilesIndex() {
         const { title = '' } = frontMatter.attributes || ({} as any)
         return {
             title,
-            path: pathName,
+            path: path.relative(pagesPath, pathName),
         }
     })
     const index = await Promise.all(promises)
     return index
+}
+
+async function getPagesPath() {
+    var [err, stats] = await to(fs.promises.stat('src/pages'))
+    if (!err && stats.isDirectory()) {
+        return 'src/pages'
+    }
+    var [err, stats] = await to(fs.promises.stat('pages'))
+    if (!err && stats.isDirectory()) {
+        return 'pages'
+    }
+    throw new Error('cannot find pages directory')
 }
