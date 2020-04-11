@@ -5,6 +5,15 @@ const withTM = require('next-transpile-modules')([
 ]) // pass the modules you would like to see transpiled
 const withMDX = require('@next/mdx')({
     extension: /\.mdx?$/,
+    options: {
+        remarkPlugins: [
+            () => (ast, vfile) => {
+                const { cwd, contents, history } = vfile
+                // TODO get the file contents, extract the toc, inject it to the contents as an exported meta const
+                console.log()
+            },
+        ],
+    },
 })
 
 module.exports = withMDX(

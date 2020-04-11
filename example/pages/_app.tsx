@@ -2,8 +2,8 @@ import App from 'next/app'
 import React, { Fragment } from 'react'
 import Color from 'color-js'
 import {
-    theme,
     CSSReset,
+    theme,
     Box,
     ColorModeProvider,
     CSSResetProps,
@@ -11,17 +11,15 @@ import {
 import { ThemeProvider } from '@chakra-ui/core'
 import { MDXProvider } from '@mdx-js/react'
 import MDXComponents from '../components/mdx'
+import { merge } from 'lodash'
 
-
-const customTheme = {
-    ...theme,
+const customTheme = merge(theme, {
     colors: {
-        ...theme.colors,
         globalBackground: '#E3E7EE',
         black: '#000E34',
         // blue: '#0070F3',
     },
-}
+})
 
 const getConfig: CSSResetProps['config'] = (_, def) => {
     const { black, white, globalBackground } = customTheme.colors

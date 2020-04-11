@@ -1,8 +1,8 @@
 /** @jsx jsx */
+import {Code} from './Code'
 import {
     Box,
     Callout,
-    Code,
     Heading,
     Kbd,
     PseudoBox,
@@ -133,7 +133,7 @@ const MDXComponents = {
     inlineCode: (props) => (
         <Code variantColor='yellow' fontSize='0.84em' {...props} />
     ),
-    code: Pre, // TODO add docz code block
+    code: Code, // TODO add docz code block
     pre: Pre,
     kbd: Kbd,
     br: (props) => <Box height='24px' {...props} />,
