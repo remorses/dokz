@@ -28,7 +28,7 @@ export type DoksTableOfContents = {
 }
 
 // Search a node for a location.
-export function search(root, expression = null, settings = defaultSettings) {
+export function generateTableOfContents(root, expression = null, settings = defaultSettings) {
     var length = root.children.length
     var depth = null
     var lookingForToc = expression !== null

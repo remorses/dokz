@@ -3,13 +3,7 @@ import { Parent, Heading, Link, Paragraph, List, ListItem } from 'mdast'
 import addMeta from 'remark-mdx-metadata'
 import getFrontMatter from 'front-matter'
 import globby from 'globby'
-import frontMatterPlugin from 'remark-frontmatter'
-
-import { read, write } from 'to-vfile'
-import remark from 'remark'
-import mdx from 'remark-mdx'
-
-import { search } from './search'
+import { generateTableOfContents } from './generateTableOfContents'
 import { withMdx } from './withMdx'
 
 export function withDoks(...args) {
@@ -23,10 +17,9 @@ export function withDoks(...args) {
         options: {
             remarkPlugins: [
                 () => (tree, vfile) => {
-                    const tableOfContents = search(tree)
+                    const tableOfContents = generateTableOfContents(tree)
                     const { cwd, contents, history } = vfile
-                    const [path] = history
-                    console.log(JSON.stringify(tableOfContents, null, 4))
+                    // console.log(JSON.stringify(tableOfContents, null, 4))
                     addMeta({
                         // TODO add more meta like breadcrumbs, title, ...
                         meta: {
@@ -54,19 +47,4 @@ async function getMdxFilesIndex() {
     })
     const index = await Promise.all(promises)
     return index
-}
-
-const main = async () => {
-    const path = './example.mdx'
-    const file = await read(path)
-    const contents = await remark()
-        .use(mdx)
-        .use(() => (tree) => {
-            console.log(tree)
-        })
-        .process(file)
-    await write({
-        path,
-        contents,
-    })
 }
