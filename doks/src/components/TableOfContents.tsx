@@ -14,23 +14,24 @@ export function TableOfContents({
     }
     const map = table.map
     return (
-        <Stack width='200px' fontWeight='medium' fontSize='14px'>
-            <Stack
-                borderLeft='1px solid #ddd'
-                pl='20px'
-                opacity={0.9}
-                {...rest}
-            >
-                {map.map((table) => {
-                    return (
-                        <TableItems
-                            slug={`/#${table.id}`}
-                            depth={table.depth}
-                            items={table.children}
-                        />
-                    )
-                })}
-            </Stack>
+        <Stack
+            width='200px'
+            fontWeight='medium'
+            fontSize='14px'
+            borderLeft='1px solid #ddd'
+            pl='20px'
+            opacity={0.9}
+            {...rest}
+        >
+            {map.map((table) => {
+                return (
+                    <TableItems
+                        slug={`/#${table.id}`}
+                        depth={table.depth}
+                        items={table.children}
+                    />
+                )
+            })}
         </Stack>
     )
 }
