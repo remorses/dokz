@@ -15,12 +15,7 @@ import {
 import { jsx } from '@emotion/core'
 import NextLink from 'next/link'
 import { forwardRef } from 'react'
-import {
-    Button,
-    LandingProvider,
-    PageContainer,
-    Footer,
-} from 'react-landing'
+import { Button, LandingProvider, PageContainer, Footer } from 'react-landing'
 import SideNav from './SideNav'
 import NavBar from './NavBar'
 
@@ -105,11 +100,13 @@ export function Wrapper(props) {
 
     return (
         <LandingProvider primary='#FF593D'>
-            <PageContainer>
+            <PageContainer pageWidth='1400px'>
                 <NavBar />
                 <Stack direction='row' isInline>
-                    <SideNav />
-                    <Stack flex='1'>{props.children}</Stack>
+                    <SideNav display={['none', null, 'block']} />
+                    <Stack px='40px' flex='1'>
+                        {props.children}
+                    </Stack>
                 </Stack>
             </PageContainer>
         </LandingProvider>
