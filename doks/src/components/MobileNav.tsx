@@ -8,7 +8,7 @@ import {
 } from '@chakra-ui/core'
 import React, { useEffect } from 'react'
 import { MdDehaze } from 'react-icons/md'
-import { SideNavContent } from './SideNav'
+import { SideNav } from './SideNav'
 import { useRouter } from 'next/router'
 
 const useRouteChanged = (callback) => {
@@ -51,7 +51,7 @@ const MobileNav = () => {
                 <DrawerOverlay />
                 <DrawerContent>
                     <DrawerBody p={0}>
-                        <SideNavContent contentHeight='100vh' top='0' />
+                        <SideNav contentHeight='100vh' top='0' />
                     </DrawerBody>
                 </DrawerContent>
             </Drawer>

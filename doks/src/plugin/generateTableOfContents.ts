@@ -13,6 +13,7 @@ const defaultSettings = {
     parents: undefined,
 }
 
+// TODO add id for the corresponding heading
 
 // Search a node for a location.
 export function generateTableOfContents(root, expression = null, settings = defaultSettings): DoksTableOfContents {

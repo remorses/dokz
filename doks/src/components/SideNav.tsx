@@ -1,6 +1,7 @@
 import { Box, Heading } from '@chakra-ui/core'
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { ComponentLink, stringToUrl, TopNavLink } from './NavLink'
+import { BoxProps } from '@chakra-ui/core'
 
 const topNavLinks = [
     'Getting Started',
@@ -25,19 +26,24 @@ const NavGroupHeading = (props) => (
     />
 )
 
-const SideNavContainer = (props) => (
-    <Box
-        // position='fixed'
-        // left='0'
-        // width='100%'
-        height='100%'
-        {...props}
-    />
-)
+export type SideNavProps = {
+    items?: ReactNode[]
+    contentHeight?: string
+} & BoxProps
 
-const SideNav = ({ items, contentHeight = 'calc(100vh - 4rem)', ...rest }) => {
+export const SideNav = ({
+    items,
+    contentHeight = 'calc(100vh - 4rem)',
+    ...rest
+}: SideNavProps) => {
     return (
-        <SideNavContainer {...rest}>
+        <Box
+            // position='fixed'
+            // left='0'
+            // width='100%'
+            height='100%'
+            {...rest}
+        >
             <Box position='relative' overflowY='auto' borderRightWidth='1px'>
                 <Box
                     as='nav'
@@ -57,7 +63,7 @@ const SideNav = ({ items, contentHeight = 'calc(100vh - 4rem)', ...rest }) => {
                     <Box mb='10'>
                         <NavGroupHeading>Components</NavGroupHeading>
                         {items.map((link) => (
-                            <ComponentLink key={link} href={stringToUrl(link)}>
+                            <ComponentLink key={link.toString()} href={stringToUrl(link)}>
                                 {link}
                             </ComponentLink>
                         ))}
@@ -73,7 +79,7 @@ const SideNav = ({ items, contentHeight = 'calc(100vh - 4rem)', ...rest }) => {
                     </Box>
                 </Box>
             </Box>
-        </SideNavContainer>
+        </Box>
     )
 }
 

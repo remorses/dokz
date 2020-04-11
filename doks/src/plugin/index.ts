@@ -3,6 +3,7 @@ import { Parent, Heading, Link, Paragraph, List, ListItem } from 'mdast'
 import addMeta from 'remark-mdx-metadata'
 import getFrontMatter from 'front-matter'
 import globby from 'globby'
+import slug from 'remark-slug'
 import { generateTableOfContents } from './generateTableOfContents'
 import { withMdx } from './withMdx'
 
@@ -16,6 +17,7 @@ export function withDoks(...args) {
         extension: /\.mdx?$/,
         options: {
             remarkPlugins: [
+                slug,
                 () => (tree, vfile) => {
                     const tableOfContents = generateTableOfContents(tree)
                     const { cwd, contents, history } = vfile

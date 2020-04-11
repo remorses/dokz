@@ -65,6 +65,7 @@
         "remark": "^12.0.0",
         "remark-frontmatter": "^2.0.0",
         "remark-mdx-metadata": "^1.0.1",
+        "remark-slug": "^6.0.0",
         "to-vfile": "^6.1.0"
     }
 }

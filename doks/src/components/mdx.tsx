@@ -117,7 +117,7 @@ export function Wrapper(props) {
                     <Stack px='40px' flex='1'>
                         {props.children}
                     </Stack>
-                    <TableOfContents table={tableOfContents} />
+                    <TableOfContents pt='40px' table={tableOfContents} />
                 </Stack>
             </PageContainer>
         </LandingProvider>

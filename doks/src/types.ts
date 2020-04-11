@@ -3,10 +3,10 @@ export type DoksTableOfContents = {
     endIndex: number
     map: {
         depth: number
+        id: string
         children: {
             type: 'text'
             value: string
-            id: string
             depth: number
             position: any
         }[]
