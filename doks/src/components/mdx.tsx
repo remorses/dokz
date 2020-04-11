@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import {Code} from './Code'
+import { Code } from './Code'
 import {
     Box,
     Callout,
@@ -10,18 +10,19 @@ import {
     useColorMode,
     Link as ChakraLink,
     Link,
+    Stack,
 } from '@chakra-ui/core'
 import { jsx } from '@emotion/core'
 import NextLink from 'next/link'
 import { forwardRef } from 'react'
 import {
-    NavBar,
     Button,
     LandingProvider,
     PageContainer,
     Footer,
 } from 'react-landing'
-
+import SideNav from './SideNav'
+import NavBar from './NavBar'
 
 const Pre = (props) => <Box my='2em' rounded='sm' {...props} />
 
@@ -97,7 +98,7 @@ const DocsHeading = (props) => (
 )
 
 export function Wrapper(props) {
-    console.log({wrapperPorps: props})
+    console.log({ wrapperPorps: props })
     // TODO show breadcrumbs based on exported breadcrumbs array
     // TODO add footer, sidebar, toc, ...
     const breadcrumbs = props.breadcrumbs || []
@@ -105,7 +106,11 @@ export function Wrapper(props) {
     return (
         <LandingProvider primary='#FF593D'>
             <PageContainer>
-                {props.children}
+                <NavBar />
+                <Stack direction='row' isInline>
+                    <SideNav />
+                    <Stack flex='1'>{props.children}</Stack>
+                </Stack>
             </PageContainer>
         </LandingProvider>
     )
