@@ -97,7 +97,7 @@ const DocsHeading = (props) => (
 )
 
 export function Wrapper(props) {
-    // console.log({wrapperPorps: props})
+    console.log({wrapperPorps: props})
     // TODO show breadcrumbs based on exported breadcrumbs array
     // TODO add footer, sidebar, toc, ...
     const breadcrumbs = props.breadcrumbs || []

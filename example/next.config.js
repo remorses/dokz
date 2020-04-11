@@ -1,22 +1,15 @@
 const path = require('path')
+const getTableOfContents = require('mdast-util-toc')
 const withTM = require('next-transpile-modules')([
     'react-landing',
+    'react-landing/esm/decorations',
     'chakra-ui-forms',
+    '@doks/core',
 ]) // pass the modules you would like to see transpiled
-const withMDX = require('@next/mdx')({
-    extension: /\.mdx?$/,
-    options: {
-        remarkPlugins: [
-            () => (ast, vfile) => {
-                const { cwd, contents, history } = vfile
-                // TODO get the file contents, extract the toc, inject it to the contents as an exported meta const
-                console.log()
-            },
-        ],
-    },
-})
 
-module.exports = withMDX(
+const {withDoks} = require('@doks/core/dist/plugin')
+
+module.exports = withDoks(
     withTM({
         pageExtensions: ['js', 'jsx', 'md', 'mdx', 'tsx'],
         webpack: (config) => {

@@ -65,7 +65,7 @@ const StarIcon = (props) => {
 }
 
 export const Code = ({ children, className, live, ...rest }) => {
-    console.log({rest, live})
+    // console.log({rest, live})
     const language = className && className.replace(/language-/, '')
     if (live) {
         return (
