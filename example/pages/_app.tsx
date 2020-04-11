@@ -1,8 +1,6 @@
 import App from 'next/app'
 import React, { Fragment } from 'react'
 import Color from 'color-js'
-
-// import { ThemeProvider } from 'styled-components'
 import {
     theme,
     CSSReset,
@@ -53,12 +51,7 @@ const getConfig: CSSResetProps['config'] = (_, def) => {
 }
 
 export default class MyApp extends App {
-    componentDidMount() {
-        // const token = getToken()
-        // if (token) {
-        //     graphqlClient.setHeader('Authorization', token)
-        // }
-    }
+
     render() {
         const { Component, pageProps } = this.props
         const { Layout = Fragment } = Component as any

@@ -14,17 +14,14 @@ import {
 import { jsx } from '@emotion/core'
 import NextLink from 'next/link'
 import { forwardRef } from 'react'
-import CodeBlock from './CodeBlock'
 import {
     NavBar,
     Button,
     LandingProvider,
     PageContainer,
     Footer,
-} from 'react-landing/src'
-import { MyNavBar } from './MyNavBar'
-import { MyFooter } from './MyFooter'
-import { MyBreadcrumbs } from './MyBreadcrumbs'
+} from 'react-landing'
+
 
 const Pre = (props) => <Box my='2em' rounded='sm' {...props} />
 
@@ -102,16 +99,14 @@ const DocsHeading = (props) => (
 export function Wrapper(props) {
     // console.log({wrapperPorps: props})
     // TODO show breadcrumbs based on exported breadcrumbs array
+    // TODO add footer, sidebar, toc, ...
     const breadcrumbs = props.breadcrumbs || []
 
     return (
         <LandingProvider primary='#FF593D'>
-            <MyNavBar />
             <PageContainer>
-                <MyBreadcrumbs items={breadcrumbs} />
                 {props.children}
             </PageContainer>
-            <MyFooter />
         </LandingProvider>
     )
 }
@@ -138,7 +133,7 @@ const MDXComponents = {
     inlineCode: (props) => (
         <Code variantColor='yellow' fontSize='0.84em' {...props} />
     ),
-    code: CodeBlock,
+    code: Pre, // TODO add docz code block
     pre: Pre,
     kbd: Kbd,
     br: (props) => <Box height='24px' {...props} />,

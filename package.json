@@ -1,7 +1,8 @@
 {
     "private": true,
     "workspaces": [
-        "@doks/core"
+        "@doks/core",
+        "example"
     ],
     "scripts": {
         "example": "cd example && yarn dev"
