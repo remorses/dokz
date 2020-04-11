@@ -43,6 +43,7 @@
         "dotenv": "^8.2.0",
         "emotion-theming": "^10.0.27",
         "mocha": "^6.1.4",
+        "next": "^9.3.4",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "sucrase": "^3.12.1",
