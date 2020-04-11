@@ -9,11 +9,15 @@ import { read, write } from 'to-vfile'
 import remark from 'remark'
 import mdx from 'remark-mdx'
 
-import getTableOfContents, { TOCResult } from 'mdast-util-toc'
 import { search } from './search'
 import { withMdx } from './withMdx'
 
 export function withDoks(...args) {
+    getMdxFilesIndex().then((index) => {
+        return fs.promises
+            .writeFile('index.json', JSON.stringify(index, null, 4))
+            .catch(console.error)
+    })
     return withMdx({
         extension: /\.mdx?$/,
         options: {
@@ -34,6 +38,22 @@ export function withDoks(...args) {
             ],
         },
     })(...args)
+}
+
+async function getMdxFilesIndex() {
+    const files = await globby('pages/**.mdx') // TODO mdx files can also be in src
+    const promises = files.map(async (pathName) => {
+        // const file = await read(pathName)
+        const content = await (await fs.promises.readFile(pathName)).toString()
+        const frontMatter = getFrontMatter(content)
+        const { title = '' } = frontMatter.attributes || ({} as any)
+        return {
+            title,
+            path: pathName,
+        }
+    })
+    const index = await Promise.all(promises)
+    return index
 }
 
 const main = async () => {
