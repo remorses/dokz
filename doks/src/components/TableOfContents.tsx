@@ -45,7 +45,6 @@ function TableItems({
     slug
 }) {
     const baseW = 20
-    console.log({ items })
     if (!items) {
         return null
     }

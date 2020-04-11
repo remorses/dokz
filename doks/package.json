@@ -55,6 +55,7 @@
         "@emotion/styled": "^10.0.27",
         "@next/mdx": "^9.3.4",
         "await-to-js": "^2.1.1",
+        "directory-tree": "^2.2.4",
         "front-matter": "^3.1.0",
         "globby": "^11.0.0",
         "gray-matter": "^4.0.2",
@@ -67,6 +68,7 @@
         "remark-frontmatter": "^2.0.0",
         "remark-mdx-metadata": "^1.0.1",
         "remark-slug": "^6.0.0",
-        "to-vfile": "^6.1.0"
+        "to-vfile": "^6.1.0",
+        "tree-search": "^1.0.0"
     }
 }

@@ -1,4 +1,5 @@
-import { Box, Heading } from '@chakra-ui/core'
+import { Box, Heading, Link, Stack } from '@chakra-ui/core'
+import treeSearch from 'tree-search'
 import React, { ReactNode } from 'react'
 import { ComponentLink, stringToUrl, TopNavLink } from './NavLink'
 import { BoxProps } from '@chakra-ui/core'
@@ -26,57 +27,69 @@ const NavGroupHeading = (props) => (
     />
 )
 
+type NavItem = { title: string; path: string; depth?: number }
+
 export type SideNavProps = {
-    items?: ReactNode[]
+    tree?: any
     contentHeight?: string
 } & BoxProps
 
-export const SideNav = ({
-    items,
-    contentHeight = 'calc(100vh - 4rem)',
-    ...rest
-}: SideNavProps) => {
+export const SideNav = ({ tree, ...rest }: SideNavProps) => {
+    console.log({ tree })
     return (
         <Box
             // position='fixed'
             // left='0'
-            // width='100%'
+            minWidth='260px'
             height='100%'
             {...rest}
         >
             <Box position='relative' overflowY='auto' borderRightWidth='1px'>
                 <Box
                     as='nav'
-                    height={contentHeight}
                     aria-label='Main navigation'
-                    fontSize='sm'
+                    fontSize='14px'
+                    fontWeight='medium'
                     p='6'
                 >
-                    <Box mb='8'>
-                        {topNavLinks.map((link) => (
-                            <TopNavLink key={link} href={stringToUrl(link)}>
-                                {link}
-                            </TopNavLink>
-                        ))}
-                    </Box>
-
-                    <Box mb='10'>
-                        <NavGroupHeading>Components</NavGroupHeading>
-                        {items}
-                    </Box>
-
-                    <Box mb='10'>
-                        <NavGroupHeading>Utilities</NavGroupHeading>
-                        {utilsNavLinks.map((link) => (
-                            <ComponentLink key={link} href={stringToUrl(link)}>
-                                {link}
-                            </ComponentLink>
-                        ))}
-                    </Box>
+                    <NavTreeComponent {...tree} name='' />
                 </Box>
             </Box>
         </Box>
     )
 }
 
-export default SideNav
+const NavTreeComponent = ({
+    name = '',
+    children,
+    depth = 0,
+    url = '',
+    title = '',
+    ...rest
+}) => {
+    const w = 10
+    const isNavHeading = depth === 1 && children
+    return (
+        <Stack
+            spacing='0px'
+            ml={depth * w + 'px'}
+            mt={depth === 1 ? '20px' : '0px'}
+        >
+            {name && (
+                <Link
+                    h='28px'
+                    // display='block'
+                    href={url}
+                    // {...(isNavHeading ? headingStyles : {})}
+                >
+                    {title || name}
+                </Link>
+            )}
+            {children &&
+                children.map((x) => {
+                    return <NavTreeComponent {...x} depth={depth + 1} />
+                })}
+            {/* {!children && <Link href={rest.path}>{rest.title}</Link>} */}
+        </Stack>
+    )
+}

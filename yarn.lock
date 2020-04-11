@@ -4804,6 +4804,11 @@ dir-glob@^3.0.1:
   dependencies:
     path-type "^4.0.0"
 
+directory-tree@^2.2.4:
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/directory-tree/-/directory-tree-2.2.4.tgz#6d5bd7d82e48378e256a1e87b678a43c50076e2e"
+  integrity sha512-2N43msQptKbi3WMfIs+U09yi6bfyKL+MWyj5VMj8t1F/Tx04bt1cn/EEIU3o1JBltlJk7NQnzOEuTNa/KQvbWA==
+
 doctrine@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/doctrine/-/doctrine-3.0.0.tgz#addebead72a6574db783639dc87a121773973961"
@@ -10725,6 +10730,11 @@ traverse@0.6.6:
   version "0.6.6"
   resolved "https://registry.yarnpkg.com/traverse/-/traverse-0.6.6.tgz#cbdf560fd7b9af632502fed40f918c157ea97137"
   integrity sha1-y99WD9e5r2MlAv7UD5GMFX6pcTc=
+
+tree-search@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/tree-search/-/tree-search-1.0.0.tgz#8fbe97b4932eae719c971a6510fc9664aab155d5"
+  integrity sha1-j76XtJMurnGclxplEPyWZKqxVdU=
 
 trim-lines@^1.0.0:
   version "1.1.3"

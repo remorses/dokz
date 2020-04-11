@@ -17,7 +17,7 @@ import { jsx } from '@emotion/core'
 import NextLink from 'next/link'
 import { forwardRef } from 'react'
 import { Button, LandingProvider, PageContainer, Footer } from 'react-landing'
-import SideNav from './SideNav'
+import { SideNav } from './SideNav'
 import NavBar from './NavBar'
 import { DoksTableOfContents } from '../types'
 import { TableOfContents } from './TableOfContents'
@@ -111,12 +111,7 @@ export function Wrapper(props) {
             <PageContainer pageWidth='1400px'>
                 <NavBar />
                 <Stack direction='row' isInline>
-                    <SideNav
-                        items={index.map((x) => (
-                            <ComponentLink href={x.path} children={x.title} />
-                        ))}
-                        display={['none', null, 'block']}
-                    />
+                    <SideNav tree={index} display={['none', null, 'block']} />
                     <Stack px='40px' flex='1'>
                         {props.children}
                     </Stack>

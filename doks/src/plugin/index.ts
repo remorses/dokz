@@ -8,6 +8,7 @@ import globby from 'globby'
 import slug from 'remark-slug'
 import { generateTableOfContents } from './generateTableOfContents'
 import { withMdx } from './withMdx'
+import dirTree from 'directory-tree'
 
 export function withDoks(...args) {
     getMdxFilesIndex()
@@ -42,12 +43,15 @@ export function withDoks(...args) {
 
 async function getMdxFilesIndex() {
     const pagesPath = await getPagesPath()
-    console.log({ pagesPath })
-    const files = await globby(pagesPath + '/**.mdx', { onlyFiles: true })
-    const promises = files.map(async (pathName) => {
+    // console.log({ searchPath })
+    const tree = dirTree(pagesPath, { extensions: /\.mdx/ }, (node: any) => {
+        const pathName = node.path
+        console.log({ pathName })
+
         // const file = await read(pathName)
-        const content = await (await fs.promises.readFile(pathName)).toString()
+        const content = fs.readFileSync(pathName).toString()
         const frontMatter = getFrontMatter(content)
+        console.log({frontMatter: frontMatter.attributes})
         const { title = '' } = frontMatter.attributes || ({} as any)
         const relativePath = path
             .relative(pagesPath, pathName)
@@ -56,13 +60,16 @@ async function getMdxFilesIndex() {
             .replace('.jsx', '')
             .replace('.tsx', '')
             .replace('.js', '')
-        return {
-            title,
-            path: `/${relativePath}`,
-        }
+        node.title = title // TODO title is ''
+        node.url = `/${relativePath}`
+        // return {
+        //     title,
+        //     path: `/${relativePath}`,
+        // }
     })
-    const index = await Promise.all(promises)
-    return index
+
+    console.log({ tree })
+    return tree
 }
 
 async function getPagesPath() {
