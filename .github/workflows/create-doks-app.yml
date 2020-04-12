@@ -1,0 +1,31 @@
+name: create-doks-app Npm Package
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - create-doks-app/**
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
+      - run: cd create-doks-app && yarn
+      # - run: yarn test
+      - run: cd create-doks-app && yarn release
+      - name: Bump version
+        uses: remorses/bump-version@js
+        with:
+          version_file: create-doks-app/VERSION
+          prefix: create-doks-app
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: cd create-doks-app && yarn publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
