@@ -10,7 +10,7 @@ import { getOnline } from './helpers/is-online'
 import { shouldUseYarn } from './helpers/should-use-yarn'
 
 const TEMPLATE_FOLDER = `example`
-const TEMPLATE_REPO = `remorses/doks`
+const TEMPLATE_REPO = `remorses/dokz`
 
 function install({ useYarn }) {
     return new Promise((resolve, reject) => {
@@ -52,7 +52,7 @@ export async function createApp({
     const originalDirectory = process.cwd()
 
     const displayedCommand = useYarn ? 'yarn' : 'npm'
-    console.log(`Creating a new Doks app in ${chalk.green(root)}.`)
+    console.log(`Creating a new Docz app in ${chalk.green(root)}.`)
     console.log()
 
     await makeDir(root)

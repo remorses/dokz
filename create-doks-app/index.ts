@@ -25,7 +25,7 @@ const program = new Commander.Command(packageJson.name)
 //         `
 
 //   An example to bootstrap the app with. You can use an example name
-//   from the official Doks repo or a GitHub URL. The URL can use
+//   from the official Docz repo or a GitHub URL. The URL can use
 //   any branch and/or subdirectory
 // `,
 //     )
@@ -80,7 +80,7 @@ async function run() {
         console.log()
         console.log('For example:')
         console.log(
-            `  ${chalk.cyan(program.name())} ${chalk.green('my-doks-app')}`,
+            `  ${chalk.cyan(program.name())} ${chalk.green('my-dokz-app')}`,
         )
         console.log()
         console.log(
@@ -194,15 +194,15 @@ async function notifyUpdate() {
             console.log()
             console.log(
                 chalk.yellow.bold(
-                    'A new version of `create-doks-app` is available!',
+                    'A new version of `create-dokz-app` is available!',
                 ),
             )
             console.log(
                 'You can update by running: ' +
                     chalk.cyan(
                         isYarn
-                            ? 'yarn global add create-doks-app'
-                            : 'npm i -g create-doks-app',
+                            ? 'yarn global add create-dokz-app'
+                            : 'npm i -g create-dokz-app',
                     ),
             )
             console.log()

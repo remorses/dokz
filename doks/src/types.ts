@@ -1,4 +1,4 @@
-export type DoksTableOfContents = {
+export type DoczTableOfContents = {
     index: number
     endIndex: number
     map: {

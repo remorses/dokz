@@ -1,5 +1,5 @@
 {
-    "name": "@doks/core",
+    "name": "dokz",
     "_": "[bump if core]",
     "version": "0.0.11",
     "description": "",

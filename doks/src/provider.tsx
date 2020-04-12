@@ -4,7 +4,7 @@ import MDXComponents from './components/mdx'
 import { ColorModeProvider } from '@chakra-ui/core'
 import { ThemeProvider } from '@chakra-ui/core'
 
-export function DoksProvider({ children }) {
+export function DoczProvider({ children }) {
 
     return (
         <ThemeProvider>

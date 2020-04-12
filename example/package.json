@@ -7,7 +7,7 @@
         "start": "next start"
     },
     "dependencies": {
-        "@doks/core": "*",
+        "dokz": "*",
         "compose-function": "^3.0.3",
         "next": "^9.3.4",
         "react": "16.13.1",

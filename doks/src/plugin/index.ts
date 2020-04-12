@@ -8,7 +8,7 @@ import { generateTableOfContents } from './generateTableOfContents'
 import { withMdx } from './withMdx'
 import dirTree from 'directory-tree'
 
-export function withDoks(nextConfig={}) {
+export function withDocz(nextConfig={}) {
     getMdxFilesIndex()
         .then((index) => {
             return fs.promises.writeFile(

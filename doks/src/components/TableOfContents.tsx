@@ -1,4 +1,4 @@
-import { DoksTableOfContents } from '../types'
+import { DoczTableOfContents } from '../types'
 import { Stack, Box, Link } from '@chakra-ui/core'
 import React from 'react'
 import { StackProps } from '@chakra-ui/core'
@@ -7,7 +7,7 @@ export function TableOfContents({
     table,
     ...rest
 }: {
-    table: DoksTableOfContents
+    table: DoczTableOfContents
 } & StackProps) {
     if (!table) {
         return null
@@ -42,7 +42,7 @@ function TableItems({
     depth,
     slug,
 }: {
-    items: DoksTableOfContents['map'][0]['children'][0][]
+    items: DoczTableOfContents['map'][0]['children'][0][]
     depth: number
     slug
 }) {

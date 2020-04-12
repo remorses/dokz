@@ -1,6 +1,6 @@
 {
-  "name": "create-doks-app",
-  "_": "[bump if create-doks-app]",
+  "name": "create-dokz-app",
+  "_": "[bump if create-dokz-app]",
   "version": "1.1.1",
   "keywords": [
     "react",
@@ -11,12 +11,12 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/remorses/doks",
-    "directory": "packages/create-doks-app"
+    "directory": "packages/create-dokz-app"
   },
   "author": "Tommaso De Rossi, morse <beats.by.morse@gmail.com>",
   "license": "MIT",
   "bin": {
-    "create-doks-app": "./dist/index.js"
+    "create-dokz-app": "./dist/index.js"
   },
   "files": [
     "dist"

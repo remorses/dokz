@@ -1,8 +1,8 @@
-const withTM = require('next-transpile-modules')(['@doks/core'])
+const withTM = require('next-transpile-modules')(['dokz'])
 const compose = require('compose-function')
-const { withDoks } = require('@doks/core/dist/plugin')
+const { withDocz } = require('dokz/dist/plugin')
 
-const composed = compose(withDoks, withTM)
+const composed = compose(withDocz, withTM)
 
 module.exports = composed({
     pageExtensions: ['js', 'jsx', 'mdx', 'tsx'],

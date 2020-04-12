@@ -2,7 +2,7 @@ import myToString from 'mdast-util-to-string'
 import visit from 'unist-util-visit'
 import convert from 'unist-util-is/convert'
 import slugs_ from 'github-slugger'
-import { DoksTableOfContents } from '../types'
+import { DoczTableOfContents } from '../types'
 const slugs = slugs_()
 // import toExpression from './to-expression'
 
@@ -16,7 +16,7 @@ const defaultSettings = {
 // TODO add id for the corresponding heading
 
 // Search a node for a location.
-export function generateTableOfContents(root, expression = null, settings = defaultSettings): DoksTableOfContents {
+export function generateTableOfContents(root, expression = null, settings = defaultSettings): DoczTableOfContents {
     var length = root.children.length
     var depth = null
     var lookingForToc = expression !== null
