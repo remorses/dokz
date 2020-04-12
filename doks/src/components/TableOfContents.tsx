@@ -27,7 +27,7 @@ export function TableOfContents({
                 return (
                     <TableItems
                         key={table.id}
-                        slug={`/#${table.id}`}
+                        slug={`#${table.id}`}
                         depth={table.depth}
                         items={table.children}
                     />

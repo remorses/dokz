@@ -1,13 +1,9 @@
 /** @jsx jsx */
-import { Box, Callout, Code as InlineCode, Heading, Kbd, Link as ChakraLink, Link, Stack, Text, useColorMode } from '@chakra-ui/core'
+import { Box, Callout, Code as InlineCode, Heading, Kbd, Link as ChakraLink, Link, Text, useColorMode } from '@chakra-ui/core'
 import { jsx } from '@emotion/core'
 import NextLink from 'next/link'
-import { FiAirplay } from 'react-icons/fi'
-import { Footer, LandingProvider, PageContainer } from 'react-landing'
 import { Code } from './Code'
-import NavBar from './NavBar'
-import { SideNav } from './SideNav'
-import { TableOfContents } from './TableOfContents'
+import { Wrapper } from './Wrapper'
 
 const Pre = (props) => <Box my='2em' rounded='sm' {...props} />
 
@@ -83,79 +79,6 @@ const DocsHeading = (props) => (
     </Heading>
 )
 
-function getMdxIndex() {
-    try {
-        return require('root_/index.json')
-    } catch {
-        return {
-            children: [],
-        }
-    }
-}
-
-export function Wrapper(props) {
-    const { tableOfContents } = props.meta
-    // console.log({ tableOfContents })
-    // console.log({ wrapperPorps: props })
-    // TODO show breadcrumbs based on exported breadcrumbs array
-    // TODO takes custom elements from context
-    const breadcrumbs = props.breadcrumbs || []
-    // const index = require('root_/index.json')
-    // console.log('root_', require.resolve('root_'))
-    const index = getMdxIndex()
-    return (
-        <LandingProvider black='#264459' primary='#FF593D'>
-            <PageContainer pageWidth='1600px' minH='100vh'>
-                <NavBar
-                    logo={<Box as={FiAirplay} color='black' size='30px' />}
-                    tree={index}
-                />
-                <Stack direction='row' isInline height='100%'>
-                    <SideNav
-                        alignSelf='flex-start'
-                        position='sticky'
-                        top={0}
-                        tree={index}
-                        display={['none', null, 'block']}
-                    />
-                    <Stack fontSize='16px' px='40px' flex='1'>
-                        {props.children}
-                    </Stack>
-                    <TableOfContents
-                        position='sticky'
-                        alignSelf='flex-start'
-                        top={0}
-                        height='auto'
-                        display={['none', null, 'block']}
-                        pt='40px'
-                        table={tableOfContents}
-                    />
-                </Stack>
-            </PageContainer>
-            <Footer
-                bg='gray.100'
-                // dark
-                columns={{
-                    Company: [
-                        <Link>ciao</Link>,
-                        <Link>ciao</Link>,
-                        <Link>ciao</Link>,
-                    ],
-                    About: [
-                        <Link>ciao</Link>,
-                        <Link>ciao</Link>,
-                        <Link>ciao</Link>,
-                    ],
-                    Product: [
-                        <Link>ciao</Link>,
-                        <Link>ciao</Link>,
-                        <Link>ciao</Link>,
-                    ],
-                }}
-            />
-        </LandingProvider>
-    )
-}
 
 const MDXComponents = {
     wrapper: Wrapper,
