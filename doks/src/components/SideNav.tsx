@@ -37,7 +37,7 @@ export type SideNavProps = {
 export const SideNav = ({ tree, ...rest }: SideNavProps) => {
     console.log({ tree })
     return (
-        <Box borderRightWidth='1px' minWidth='260px' height='auto' {...rest}>
+        <Box borderRightWidth='1px' minWidth='260px' height='auto' overflowY='scroll' {...rest}>
             <Box
                 as='nav'
                 aria-label='Main navigation'

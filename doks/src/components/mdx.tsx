@@ -12,6 +12,7 @@ import {
     Link as ChakraLink,
     Link,
     Stack,
+    Code as InlineCode,
 } from '@chakra-ui/core'
 import { jsx } from '@emotion/core'
 import NextLink from 'next/link'
@@ -58,8 +59,9 @@ const TData = (props) => (
 
 const DocsHeading = (props) => (
     <Heading
-        mb='1em'
-        mt='2em'
+        color='#264459'
+        fontWeight='semibold'
+        my='40px'
         css={{
             '&[id]': {
                 pointerEvents: 'none',
@@ -98,13 +100,13 @@ const DocsHeading = (props) => (
 
 export function Wrapper(props) {
     const { tableOfContents } = props.meta
-    console.log({ tableOfContents })
-    console.log({ wrapperPorps: props })
+    // console.log({ tableOfContents })
+    // console.log({ wrapperPorps: props })
     // TODO show breadcrumbs based on exported breadcrumbs array
     // TODO add footer, sidebar, toc, ...
     const breadcrumbs = props.breadcrumbs || []
     // const index = require('root_/index.json')
-    console.log('root_', require.resolve('root_'))
+    // console.log('root_', require.resolve('root_'))
     const index = require('root_/index.json')
     return (
         <LandingProvider primary='#FF593D'>
@@ -118,8 +120,7 @@ export function Wrapper(props) {
                         tree={index}
                         display={['none', null, 'block']}
                     />
-                    <Stack px='40px' flex='1'>
-                        ciao
+                    <Stack fontSize='16px' color='#60859f' px='40px' flex='1'>
                         {props.children}
                     </Stack>
                     <TableOfContents
@@ -139,27 +140,23 @@ export function Wrapper(props) {
 
 const MDXComponents = {
     wrapper: Wrapper,
-    h1: (props) => <Heading as='h1' size='xl' my='1em' {...props}></Heading>,
-    h2: (props) => (
-        <DocsHeading
-            as='h2'
-            fontWeight='semibold'
-            size='lg'
-            {...props}
-        ></DocsHeading>
-    ),
-    h3: (props) => (
-        <DocsHeading
-            as='h3'
-            size='md'
-            fontWeight='medium'
-            {...props}
-        ></DocsHeading>
-    ),
+    h1: (props) => <DocsHeading as='h1' fontSize='32px' {...props} />,
+    h2: (props) => <DocsHeading as='h2' fontSize='26px' {...props} />,
+    h3: (props) => <DocsHeading as='h3' size='md' fontSize='24px' {...props} />,
     inlineCode: (props) => (
-        <Code variantColor='yellow' fontSize='0.84em' {...props} />
+        <InlineCode
+            mx='4px'
+            color='#264459'
+            variantColor='gray'
+            lineHeight='normal'
+            {...props}
+        />
     ),
-    code: Code, // TODO add docz code block
+    code: (props) => (
+        <Box>
+            <Code {...props} />
+        </Box>
+    ),
     pre: Pre,
     kbd: Kbd,
     br: (props) => <Box height='24px' {...props} />,
@@ -172,7 +169,7 @@ const MDXComponents = {
             <Link {...props} />
         </NextLink>
     ),
-    p: (props) => <Text as='p' mt={4} lineHeight='tall' {...props} />,
+    p: (props) => <Text as='p' mb='20px' lineHeight='30px' {...props} />,
     ul: (props) => <Box as='ul' pt='8px' pl='16px' {...props} />,
     ol: (props) => <Box as='ol' pt='8px' pl='16px' {...props} />,
     li: (props) => <Box as='li' pb='4px' {...props} />,

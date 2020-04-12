@@ -1,4 +1,5 @@
 import React, { useState, CSSProperties } from 'react'
+import { FiCopy } from 'react-icons/fi'
 import lightTheme from 'prism-react-renderer/themes/nightOwlLight'
 import darkTheme from 'prism-react-renderer/themes/nightOwl'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
@@ -40,16 +41,6 @@ export const liveErrorStyle: CSSProperties = {
     backgroundColor: 'red',
 }
 
-const CopyButton = (props) => (
-    <Button
-        size='sm'
-        // textTransform='uppercase'
-        variantColor='teal'
-        // fontSize='xs'
-        {...props}
-    />
-)
-
 const StarIcon = (props) => {
     return (
         <Box
@@ -67,7 +58,10 @@ const StarIcon = (props) => {
 
 export const Code = ({ children, className, live, ...rest }) => {
     // console.log({rest, live})
+    const code = children.trim()
     const language = className && className.replace(/language-/, '')
+    const { onCopy, hasCopied } = useClipboard(code)
+
     if (live) {
         return (
             <Playground
@@ -82,17 +76,24 @@ export const Code = ({ children, className, live, ...rest }) => {
         <Highlight
             {...defaultProps}
             theme={darkTheme}
-            code={children.trim()}
+            code={code}
             language={language}
         >
             {({ className, style, tokens, getLineProps, getTokenProps }) => (
                 <Box
                     p='20px'
-                    borderRadius='4px'
+                    borderRadius='8px'
                     as='pre'
                     className={className}
                     style={{ ...style }}
+                    position='relative'
                 >
+                    <CopyButton
+                        onClick={onCopy}
+                        position='absolute'
+                        top='10px'
+                        right='10px'
+                    />
                     {tokens.map((line, i) => (
                         <div key={i} {...getLineProps({ line, key: i })}>
                             {line.map((token, key) => (
@@ -106,6 +107,21 @@ export const Code = ({ children, className, live, ...rest }) => {
                 </Box>
             )}
         </Highlight>
+    )
+}
+
+const CopyButton = (props) => {
+    return (
+        <Box
+            cursor='pointer'
+            m='0'
+            style={{
+                strokeWidth: '1px',
+            }}
+            size='18px'
+            as={FiCopy}
+            {...props}
+        />
     )
 }
 
@@ -154,6 +170,7 @@ export const Playground = ({
                 w='100%'
                 isInline
                 flexDir='row'
+                align='center'
                 p='10px'
             >
                 <Box h='1' flex='1' />
@@ -171,14 +188,17 @@ export const Playground = ({
                 >
                     Code
                 </Button>
-                <CopyButton onClick={onCopy}>copy</CopyButton>
+                <CopyButton style={{ strokeWidth: '2px' }} onClick={onCopy} />
             </Stack>
             <Divider m='0' />
         </>
     )
 
     return (
-        <Resizable {...resizableProps} data-testid='playground'>
+        <Resizable
+            {...resizableProps}
+            handleComponent={{ right: <HandleComponent height='100%' /> }}
+        >
             <LiveProvider {...liveProviderProps}>
                 <Stack
                     w='100%'
@@ -187,29 +207,56 @@ export const Playground = ({
                     borderRadius='8px'
                     overflow='hidden'
                     shadow='lg'
+                    spacing='0px'
+                    isInline
                 >
-                    {previewEnabled && editorBar}
-                    {!showCode && (
-                        <Box
-                            as={LivePreview}
-                            fontFamily='body'
-                            p='0px'
-                            w='100%'
-                            overflow='hidden'
-                            // {...props}
-                            
-                        />
-                    )}
-                    {showCode && (
-                        <LiveEditor
-                            onChange={handleCodeChange}
-                            style={liveEditorStyle}
-                        />
-                    )}
-                    <LiveError style={liveErrorStyle} />
+                    <Stack spacing='0px' flex='1'>
+                        {previewEnabled && editorBar}
+                        {!showCode && (
+                            <Box
+                                as={LivePreview}
+                                fontFamily='body'
+                                p='0px'
+                                w='100%'
+                                overflow='hidden'
+                                // {...props}
+                            />
+                        )}
+                        {showCode && (
+                            <LiveEditor
+                                onChange={handleCodeChange}
+                                style={liveEditorStyle}
+                            />
+                        )}
+                        <LiveError style={liveErrorStyle} />
+                    </Stack>
                 </Stack>
             </LiveProvider>
         </Resizable>
+    )
+}
+
+const HandleComponent = (props) => {
+    return (
+        <Stack
+            width='20px'
+            py='10px'
+            align='center'
+            justify='center'
+            border='1px solid'
+            borderColor='gray.300'
+            bg='gray.100'
+            borderRadius='0 4px 4px 0'
+            {...props}
+        >
+            <Box
+                width='6px'
+                height='40px'
+                borderLeft='2px solid'
+                borderRight='2px solid'
+                borderColor='gray.300'
+            />
+        </Stack>
     )
 }
 

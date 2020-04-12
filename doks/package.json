@@ -61,6 +61,7 @@
         "gray-matter": "^4.0.2",
         "mdast-util-toc": "^5.0.2",
         "re-resizable": "^6.3.2",
+        "react-icons": "^3.9.0",
         "react-intersection-observer": "^8.26.1",
         "react-is": "^16.13.1",
         "react-landing": "1.0.7",
