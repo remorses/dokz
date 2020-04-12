@@ -73,8 +73,8 @@ export const TopNavLink = forwardRef(({ href, ...props }: any, ref) => {
 export const ComponentLink = forwardRef(({ href, ...props }: any, ref) => {
     const { colorMode } = useColorMode()
     const hoverColor = { light: 'gray.900', dark: 'whiteAlpha.900' }
-    const activeColor = { light: 'teal.800', dark: 'teal.200' }
-    const activeBg = { light: 'teal.50', dark: '#308c7a4d' }
+    const activeColor = { light: 'blue.800', dark: 'blue.200' }
+    const activeBg = { light: 'blue.50', dark: 'blue.800' }
 
     return (
         <NavLink href={href}>
@@ -84,7 +84,7 @@ export const ComponentLink = forwardRef(({ href, ...props }: any, ref) => {
                     aria-current={isActive ? 'page' : undefined}
                     _hover={{
                         color: hoverColor[colorMode],
-                        transform: 'translateX(2px)',
+                        transform: 'translateX(4px)',
                     }}
                     {...(isActive && {
                         bg: activeBg[colorMode],

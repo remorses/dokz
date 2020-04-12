@@ -1,5 +1,6 @@
 import { Box, BoxProps, Heading, Link, Stack } from '@chakra-ui/core'
 import React from 'react'
+import { ComponentLink } from './NavLink'
 
 const topNavLinks = [
     'Getting Started',
@@ -71,7 +72,8 @@ const NavTreeComponent = ({
             mt={depth === 1 ? '20px' : '0px'}
         >
             {name && (
-                <Link
+                
+                <ComponentLink
                     h='28px'
                     // display='block'
                     href={url}
@@ -79,7 +81,7 @@ const NavTreeComponent = ({
                     // {...(isNavHeading ? headingStyles : {})}
                 >
                     {title || name?.replace('_', ' ')?.replace(/\.mdx?/, '')}
-                </Link>
+                </ComponentLink>
             )}
             {children &&
                 children.map((x) => {
