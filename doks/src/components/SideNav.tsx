@@ -1,5 +1,4 @@
 import { Box, Heading, Link, Stack } from '@chakra-ui/core'
-import treeSearch from 'tree-search'
 import React, { ReactNode } from 'react'
 import { ComponentLink, stringToUrl, TopNavLink } from './NavLink'
 import { BoxProps } from '@chakra-ui/core'

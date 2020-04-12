@@ -1,16 +1,14 @@
 import fs from 'fs'
 import path from 'path'
 import to from 'await-to-js'
-import { Parent, Heading, Link, Paragraph, List, ListItem } from 'mdast'
 import addMeta from 'remark-mdx-metadata'
 import getFrontMatter from 'front-matter'
-import globby from 'globby'
 import slug from 'remark-slug'
 import { generateTableOfContents } from './generateTableOfContents'
 import { withMdx } from './withMdx'
 import dirTree from 'directory-tree'
 
-export function withDoks(...args) {
+export function withDoks(nextConfig={}) {
     getMdxFilesIndex()
         .then((index) => {
             return fs.promises.writeFile(
@@ -19,6 +17,14 @@ export function withDoks(...args) {
             )
         })
         .catch(console.error)
+    // nextConfig.pageExtensions = [
+    //     // ...(nextConfig.pageExtensions || []),
+    //     'js',
+    //     'jsx',
+    //     'md',
+    //     'mdx',
+    //     'tsx',
+    // ]
     return withMdx({
         extension: /\.mdx?$/,
         options: {
@@ -38,7 +44,7 @@ export function withDoks(...args) {
                 },
             ],
         },
-    })(...args)
+    })(nextConfig)
 }
 
 async function getMdxFilesIndex() {
@@ -46,12 +52,12 @@ async function getMdxFilesIndex() {
     // console.log({ searchPath })
     const tree = dirTree(pagesPath, { extensions: /\.mdx/ }, (node: any) => {
         const pathName = node.path
-        console.log({ pathName })
+        // console.log({ pathName })
 
         // const file = await read(pathName)
         const content = fs.readFileSync(pathName).toString()
         const frontMatter = getFrontMatter(content)
-        console.log({frontMatter: frontMatter.attributes})
+        // console.log({ frontMatter: frontMatter.attributes })
         const { title = '' } = frontMatter.attributes || ({} as any)
         const relativePath = path
             .relative(pagesPath, pathName)
@@ -68,7 +74,7 @@ async function getMdxFilesIndex() {
         // }
     })
 
-    console.log({ tree })
+    // console.log({ tree })
     return tree
 }
 

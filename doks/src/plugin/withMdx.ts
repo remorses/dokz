@@ -9,7 +9,7 @@ export const withMdx = (pluginOptions: Options = {}) => (
     nextConfig = {} as any,
 ) => {
     const { extension = /\.mdx$/, options = {} } = pluginOptions
-
+    
     const MDXLoader = {
         loader: '@mdx-js/loader',
         options,
@@ -25,7 +25,7 @@ export const withMdx = (pluginOptions: Options = {}) => (
                     'This plugin is not compatible with Next.js versions below 5.0.0 https://err.sh/next-plugins/upgrade',
                 )
             }
-            config.resolve.alias['root_'] = path.join(process.cwd(), )
+            config.resolve.alias['root_'] = path.join(process.cwd())
             config.module.rules.push({
                 test: extension,
                 use: [
@@ -43,4 +43,3 @@ export const withMdx = (pluginOptions: Options = {}) => (
         },
     })
 }
-

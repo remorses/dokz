@@ -1,7 +1,7 @@
+import { DoksProvider } from '@doks/core'
 import App from 'next/app'
-import React, { Fragment } from 'react'
+import React from 'react'
 
-import { DoksProvider } from '@doks/core/src'
 
 export default class MyApp extends App {
     render() {

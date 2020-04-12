@@ -4,55 +4,15 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build",
-        "start": "next start",
-        "test": "NODE_ENV=test mocha --colors --exit"
-    },
-    "mocha": {
-        "require": "tests/init.js",
-        "spec": "tests/**",
-        "timeout": 9999999999
+        "start": "next start"
     },
     "dependencies": {
         "@doks/core": "*",
-        "@chakra-ui/core": "^0.7.0",
-        "@mdx-js/loader": "^1.5.8",
-        "@mdx-js/react": "^1.5.8",
-        "@next/mdx": "^9.3.4",
-        "@theme-ui/typography": "^0.3.0",
-        "@types/lodash": "^4.14.149",
-        "@types/node": "^13.9.3",
-        "@types/react": "^16.9.25",
-        "@types/theme-ui": "^0.3.1",
-        "async-sema": "^3.1.0",
-        "color-js": "^1.0.5",
-        "copy-text-to-clipboard": "^2.2.0",
-        "lodash": "^4.17.15",
-        "mdast-util-toc": "^5.0.2",
         "next": "^9.3.1",
-        "prism-react-renderer": "^1.0.2",
-        "re-resizable": "^6.3.2",
         "react": "16.13.1",
-        "react-dom": "16.13.1",
-        "react-extra-hooks": "^2.3.1",
-        "react-feather": "^2.0.4",
-        "react-final-form": "^6.3.5",
-        "react-frame-component": "^4.1.1",
-        "react-icons": "^3.9.0",
-        "react-live": "^2.2.2",
-        "react-resize-detector": "^4.2.1",
-        "theme-ui": "^0.3.1",
-        "tiny-glob": "^0.2.6",
-        "typescript": "^3.8.3",
-        "typography-theme-moraga": "^0.16.19"
+        "react-dom": "16.13.1"
     },
     "devDependencies": {
-        "@types/chai": "^4.2.11",
-        "@types/mocha": "^7.0.2",
-        "capture-website": "^0.8.1",
-        "chai": "^4.2.0",
-        "mocha": "^7.1.1",
-        "next-transpile-modules": "^3.1.0",
-        "sucrase": "^3.12.1",
-        "ts-node": "^8.8.1"
+        "next-transpile-modules": "^3.1.0"
     }
 }
