@@ -99,6 +99,16 @@ const DocsHeading = (props) => (
     </Heading>
 )
 
+function getMdxIndex() {
+    try {
+        return require('root_/index.json')
+    } catch {
+        return {
+            children: [],
+        }
+    }
+}
+
 export function Wrapper(props) {
     const { tableOfContents } = props.meta
     // console.log({ tableOfContents })
@@ -108,7 +118,7 @@ export function Wrapper(props) {
     const breadcrumbs = props.breadcrumbs || []
     // const index = require('root_/index.json')
     // console.log('root_', require.resolve('root_'))
-    const index = require('root_/index.json')
+    const index = getMdxIndex()
     return (
         <LandingProvider black='#264459' primary='#FF593D'>
             <PageContainer pageWidth='1400px'>
