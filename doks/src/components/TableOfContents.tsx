@@ -26,6 +26,7 @@ export function TableOfContents({
             {map.map((table) => {
                 return (
                     <TableItems
+                        key={table.id}
                         slug={`/#${table.id}`}
                         depth={table.depth}
                         items={table.children}
@@ -51,9 +52,9 @@ function TableItems({
     }
     return (
         <Stack ml={baseW * (depth - 1) + 'px'}>
-            {items.map((x) => {
+            {items.map((x, i) => {
                 return (
-                    <Box isTruncated minH='30px'>
+                    <Box key={i} isTruncated minH='30px'>
                         <Link href={slug}>{x.value}</Link>
                     </Box>
                 )

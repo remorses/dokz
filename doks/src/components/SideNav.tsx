@@ -37,7 +37,13 @@ export type SideNavProps = {
 export const SideNav = ({ tree, ...rest }: SideNavProps) => {
     console.log({ tree })
     return (
-        <Box borderRightWidth='1px' minWidth='260px' height='auto' overflowY='scroll' {...rest}>
+        <Box
+            borderRightWidth='1px'
+            minWidth='260px'
+            height='auto'
+            overflowY='scroll'
+            {...rest}
+        >
             <Box
                 as='nav'
                 aria-label='Main navigation'
@@ -74,12 +80,18 @@ const NavTreeComponent = ({
                     href={url}
                     // {...(isNavHeading ? headingStyles : {})}
                 >
-                    {title || name}
+                    {title || name?.replace('_', ' ')}
                 </Link>
             )}
             {children &&
                 children.map((x) => {
-                    return <NavTreeComponent {...x} depth={depth + 1} />
+                    return (
+                        <NavTreeComponent
+                            key={x.path || x.title}
+                            {...x}
+                            depth={depth + 1}
+                        />
+                    )
                 })}
             {/* {!children && <Link href={rest.path}>{rest.title}</Link>} */}
         </Stack>

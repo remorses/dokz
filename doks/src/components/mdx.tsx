@@ -121,7 +121,7 @@ export function Wrapper(props) {
     const index = getMdxIndex()
     return (
         <LandingProvider black='#264459' primary='#FF593D'>
-            <PageContainer pageWidth='1400px'>
+            <PageContainer pageWidth='1600px' minH='100vh'>
                 <NavBar
                     logo={<Box as={FiAirplay} color='black' size='30px' />}
                     tree={index}

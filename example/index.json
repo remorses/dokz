@@ -3,30 +3,30 @@
     "name": "pages",
     "children": [
         {
-            "path": "pages/folder",
-            "name": "folder",
+            "path": "pages/Section_Title",
+            "name": "Section_Title",
             "children": [
                 {
-                    "path": "pages/folder/a.mdx",
+                    "path": "pages/Section_Title/a.mdx",
                     "name": "a.mdx",
                     "size": 35,
                     "extension": ".mdx",
                     "type": "file",
                     "title": "folder.a",
-                    "url": "/folder/a"
+                    "url": "/Section_Title/a"
                 },
                 {
-                    "path": "pages/folder/b",
+                    "path": "pages/Section_Title/b",
                     "name": "b",
                     "children": [
                         {
-                            "path": "pages/folder/b/c.mdx",
+                            "path": "pages/Section_Title/b/c.mdx",
                             "name": "c.mdx",
                             "size": 27,
                             "extension": ".mdx",
                             "type": "file",
                             "title": "folder.b.c",
-                            "url": "/folder/b/c"
+                            "url": "/Section_Title/b/c"
                         }
                     ],
                     "size": 27,
@@ -39,7 +39,7 @@
         {
             "path": "pages/index.mdx",
             "name": "index.mdx",
-            "size": 424,
+            "size": 425,
             "extension": ".mdx",
             "type": "file",
             "title": "xxx",
@@ -55,6 +55,6 @@
             "url": "/zzz"
         }
     ],
-    "size": 910,
+    "size": 911,
     "type": "directory"
 }
