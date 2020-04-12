@@ -75,9 +75,10 @@ const NavTreeComponent = ({
                     h='28px'
                     // display='block'
                     href={url}
+                    isTruncated
                     // {...(isNavHeading ? headingStyles : {})}
                 >
-                    {title || name?.replace('_', ' ')}
+                    {title || name?.replace('_', ' ')?.replace(/\.mdx?/, '')}
                 </Link>
             )}
             {children &&

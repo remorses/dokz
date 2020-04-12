@@ -63,6 +63,8 @@ export function Wrapper(props) {
                         height='100%'
                         width={SIDENAV_W}
                         display={['none', null, 'block']}
+                        overflowY='scroll'
+                        overflowX='hidden'
                     />
                     <Stack
                         isInline
