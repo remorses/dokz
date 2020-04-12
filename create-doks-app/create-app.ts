@@ -9,8 +9,6 @@ import { isFolderEmpty } from './helpers/is-folder-empty'
 import { getOnline } from './helpers/is-online'
 import { shouldUseYarn } from './helpers/should-use-yarn'
 
-
-
 const TEMPLATE_FOLDER = `example`
 const TEMPLATE_REPO = `remorses/doks`
 
@@ -61,7 +59,9 @@ export async function createApp({
     process.chdir(root)
 
     await downloadRepo(TEMPLATE_REPO, '.', TEMPLATE_FOLDER)
-    await install({ useYarn })
+    if (isOnline) {
+        await install({ useYarn })
+    }
     // {
     //     const packageJson = {
     //         name: appName,
