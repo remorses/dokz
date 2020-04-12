@@ -83,7 +83,7 @@ export function Wrapper(props) {
                             <Footer columns={{}} />
                         </Stack>
                         <TableOfContents
-                            // position='sticky'
+                            position='sticky'
                             alignSelf='flex-start'
                             top={NAVBAR_H}
                             width={TABLE_OF_C_W + 'px'}

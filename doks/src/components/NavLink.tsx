@@ -40,7 +40,7 @@ export const SideNavLink = forwardRef(
                 fontWeight='medium'
                 outline='none'
                 _focus={{ shadow: 'outline' }}
-                color={color[colorMode]}
+                // color={color[colorMode]}
                 _notFirst={{ mt: 1 }}
                 {...props}
             >
@@ -73,8 +73,8 @@ export const TopNavLink = forwardRef(({ href, ...props }: any, ref) => {
 export const ComponentLink = forwardRef(({ href, ...props }: any, ref) => {
     const { colorMode } = useColorMode()
     const hoverColor = { light: 'gray.900', dark: 'whiteAlpha.900' }
-    const activeColor = { light: 'blue.800', dark: 'blue.200' }
-    const activeBg = { light: 'blue.50', dark: 'blue.800' }
+    const activeColor = { light: 'gray.800', dark: 'gray.200' }
+    const activeBg = { light: 'gray.100', dark: 'gray.700' }
 
     return (
         <NavLink href={href}>
