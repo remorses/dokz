@@ -9,7 +9,7 @@ import { isFolderEmpty } from './helpers/is-folder-empty'
 import { getOnline } from './helpers/is-online'
 import { shouldUseYarn } from './helpers/should-use-yarn'
 
-const TEMPLATE_FOLDER = `example`
+const TEMPLATE_FOLDER = `template`
 const TEMPLATE_REPO = `remorses/dokz`
 
 function install({ useYarn }) {
