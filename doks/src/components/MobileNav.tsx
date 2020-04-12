@@ -27,7 +27,7 @@ const useRouteChanged = (callback) => {
     }, [router.events, callback])
 }
 
-const MobileNav = () => {
+const MobileNav = (props) => {
     const { isOpen, onToggle, onClose } = useDisclosure()
     useRouteChanged(onClose)
 
@@ -51,7 +51,7 @@ const MobileNav = () => {
                 <DrawerOverlay />
                 <DrawerContent>
                     <DrawerBody p={0}>
-                        <SideNav contentHeight='100vh' top='0' />
+                        <SideNav {...props}  />
                     </DrawerBody>
                 </DrawerContent>
             </Drawer>

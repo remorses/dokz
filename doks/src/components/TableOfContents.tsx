@@ -14,7 +14,7 @@ export function TableOfContents({
     }
     const map = table.map
     return (
-        <Stack
+        <Box
             width='200px'
             fontWeight='medium'
             fontSize='14px'
@@ -32,7 +32,7 @@ export function TableOfContents({
                     />
                 )
             })}
-        </Stack>
+        </Box>
     )
 }
 

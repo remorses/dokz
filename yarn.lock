@@ -9007,29 +9007,10 @@ react-is@^16.12.0, react-is@^16.13.1, react-is@^16.7.0, react-is@^16.8.1, react-
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-landing@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/react-landing/-/react-landing-1.0.6.tgz#93fe06d5af9bcdf5e96af10d3f6c765ac8ccbe17"
-  integrity sha512-IX8lYDowYREnnf2oQUa4qEOJe0oypVbZE47pmAmP3dPTzNTvubK8tO8wDGgj2U/K4B2wQr+6pOgmkdMIj6WU5A==
-  dependencies:
-    "@chakra-ui/core" "^0.6.1"
-    "@emotion/core" "^10.0.28"
-    "@emotion/styled" "^10.0.27"
-    baby-i-am-faded "0.0.7"
-    color-js "^1.0.5"
-    emotion-theming "^10.0.27"
-    intersection-observer "^0.7.0"
-    lodash.get "^4.4.2"
-    lodash.merge "^4.6.2"
-    react-icons "^3.9.0"
-    react-mailchimp-subscribe "^2.1.0"
-    react-script-hook "^1.0.17"
-    react-twitter-embed "^3.0.3"
-
-react-landing@latest:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/react-landing/-/react-landing-1.0.5.tgz#b506da3e67b28589dcf40aab13ef7f0412a77fb7"
-  integrity sha512-WeATr1NYf4tmH58IZOJXdKp+eSljPuaHwyqTA1fpiANXxkHwNXN43gPczJCl7MiaAzWpsYrPWNKR3pZhW2/Fpg==
+react-landing@1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/react-landing/-/react-landing-1.0.7.tgz#c7016107610b5d51ce51554b69527e6306f2716a"
+  integrity sha512-ZF+SEl47Kkqmp7z18WxAoq9L9w+9E0rB05xEozbEqX3e/OFmXk5FOc3OsaCeWbNbYzPwkNahPZNjkqb4v1Y/xg==
   dependencies:
     "@chakra-ui/core" "^0.6.1"
     "@emotion/core" "^10.0.28"

@@ -79,7 +79,7 @@ const ThemeSwitch = (props) => (
     />
 )
 
-const NavBar = (props) => {
+const NavBar = (props, tree) => {
     const { colorMode, toggleColorMode } = useColorMode()
     const bg = { light: 'white', dark: 'gray.800' }
     return (
@@ -104,7 +104,7 @@ const NavBar = (props) => {
                         icon={colorMode === 'light' ? 'moon' : 'sun'}
                     />
 
-                    <MobileNav />
+                    <MobileNav tree={tree} />
                 </Flex>
             </Flex>
         </Header>

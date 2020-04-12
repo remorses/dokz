@@ -29,12 +29,8 @@ const getConfig: CSSResetProps['config'] = (_, def) => {
             color: black,
             // bg: chroma(globalBackground).brighten(.5).css(),
             bg: undefined,
-            borderColor: Color(black)
-                .setAlpha(0.2)
-                .toCSS(),
-            placeholderColor: Color(black)
-                .setAlpha(0.5)
-                .toCSS(),
+            borderColor: Color(black).setAlpha(0.2).toCSS(),
+            placeholderColor: Color(black).setAlpha(0.5).toCSS(),
         },
         dark: {
             // color: white,
@@ -49,7 +45,6 @@ const getConfig: CSSResetProps['config'] = (_, def) => {
 }
 
 export default class MyApp extends App {
-
     render() {
         const { Component, pageProps } = this.props
         const { Layout = Fragment } = Component as any
@@ -58,16 +53,10 @@ export default class MyApp extends App {
                 <ColorModeProvider value='light'>
                     <CSSReset config={getConfig} />
                     <Layout>
-                        <Box
-                            lineHeight='normal'
-                            letterSpacing='normal'
-                            fontSize='16px'
-                            fontWeight={400}
-                        >
-                            <MDXProvider components={MDXComponents}>
-                                <Component {...pageProps} />
-                            </MDXProvider>
-                        </Box>
+                        <MDXProvider components={MDXComponents}>
+                            <Component {...pageProps} />
+                        </MDXProvider>
+
                         {/* <Box mt='300px' /> */}
                     </Layout>
                 </ColorModeProvider>

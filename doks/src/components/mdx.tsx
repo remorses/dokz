@@ -109,13 +109,24 @@ export function Wrapper(props) {
     return (
         <LandingProvider primary='#FF593D'>
             <PageContainer pageWidth='1400px'>
-                <NavBar />
-                <Stack direction='row' isInline>
-                    <SideNav tree={index} display={['none', null, 'block']} />
+                <NavBar tree={index} />
+                <Stack direction='row' isInline height='100%'>
+                    <SideNav
+                        alignSelf='flex-start'
+                        position='sticky'
+                        top={0}
+                        tree={index}
+                        display={['none', null, 'block']}
+                    />
                     <Stack px='40px' flex='1'>
+                        ciao
                         {props.children}
                     </Stack>
                     <TableOfContents
+                        position='sticky'
+                        alignSelf='flex-start'
+                        top={0}
+                        height='auto'
                         display={['none', null, 'block']}
                         pt='40px'
                         table={tableOfContents}

@@ -37,23 +37,15 @@ export type SideNavProps = {
 export const SideNav = ({ tree, ...rest }: SideNavProps) => {
     console.log({ tree })
     return (
-        <Box
-            // position='fixed'
-            // left='0'
-            minWidth='260px'
-            height='100%'
-            {...rest}
-        >
-            <Box position='relative' overflowY='auto' borderRightWidth='1px'>
-                <Box
-                    as='nav'
-                    aria-label='Main navigation'
-                    fontSize='14px'
-                    fontWeight='medium'
-                    p='6'
-                >
-                    <NavTreeComponent {...tree} name='' />
-                </Box>
+        <Box borderRightWidth='1px' minWidth='260px' height='auto' {...rest}>
+            <Box
+                as='nav'
+                aria-label='Main navigation'
+                fontSize='14px'
+                fontWeight='medium'
+                p='6'
+            >
+                <NavTreeComponent {...tree} name='' />
             </Box>
         </Box>
     )
