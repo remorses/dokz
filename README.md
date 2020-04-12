@@ -1,5 +1,15 @@
 # doks
 
+
+
+
+// TODO add logo, nav links, footer customization via the DoksProvider
+// TODO add colors customization for links via primary theme color
+// TODO add github template
+// TODO make cli to download the github template
+
+
+
 @docx/core
 here there is the nextjs App component, the withDoks
 
