@@ -5,9 +5,10 @@ import { ColorModeProvider } from '@chakra-ui/core'
 import { ThemeProvider } from '@chakra-ui/core'
 
 export function DoksProvider({ children }) {
+
     return (
         <ThemeProvider>
-            <ColorModeProvider value='light'>
+            <ColorModeProvider value='light' >
                 <MDXProvider components={MDXComponents}>{children}</MDXProvider>
             </ColorModeProvider>
         </ThemeProvider>

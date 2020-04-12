@@ -89,6 +89,18 @@ const DocsHeading = (props) => (
     </Heading>
 )
 
+const MdxText = (props) => {
+    const { colorMode } = useColorMode()
+    return (
+        <Text
+            as='p'
+            mb='20px'
+            lineHeight='30px'
+            color={{ light: '#537389', dark: 'white' }[colorMode]}
+            {...props}
+        />
+    )
+}
 const MDXComponents = {
     wrapper: Wrapper,
     h1: (props) => <DocsHeading as='h1' fontSize='32px' {...props} />,
@@ -124,20 +136,11 @@ const MDXComponents = {
         </NextLink>
     ),
     p: (props) => {
-        const { colorMode } = useColorMode()
-        return (
-            <Text
-                as='p'
-                mb='20px'
-                lineHeight='30px'
-                color={{ light: '#60859f', dark: 'white' }[colorMode]}
-                {...props}
-            />
-        )
+        return <MdxText as='p' {...props} />
     },
-    ul: (props) => <Box as='ul' pt='8px' pl='16px' {...props} />,
-    ol: (props) => <Box as='ol' pt='8px' pl='16px' {...props} />,
-    li: (props) => <Box as='li' pb='4px' {...props} />,
+    ul: (props) => <MdxText as='ul' pt='8px' pl='16px' {...props} />,
+    ol: (props) => <MdxText as='ol' pt='8px' pl='16px' {...props} />,
+    li: (props) => <MdxText as='li' pb='4px' {...props} />,
     blockquote: (props) => (
         <Callout
             mt={4}
