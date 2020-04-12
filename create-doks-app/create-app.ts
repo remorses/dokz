@@ -62,55 +62,7 @@ export async function createApp({
     if (isOnline) {
         await install({ useYarn })
     }
-    // {
-    //     const packageJson = {
-    //         name: appName,
-    //         version: '0.1.0',
-    //         private: true,
-    //         scripts: {
-    //             dev: 'next dev',
-    //             build: 'next build',
-    //             start: 'next start',
-    //         },
-    //     }
-    //     fs.writeFileSync(
-    //         path.join(root, 'package.json'),
-    //         JSON.stringify(packageJson, null, 2) + os.EOL,
-    //     )
-
-    //     console.log(
-    //         `Installing ${chalk.cyan('react')}, ${chalk.cyan(
-    //             'react-dom',
-    //         )}, and ${chalk.cyan('next')} using ${displayedCommand}...`,
-    //     )
-    //     console.log()
-
-    //     await install(root, ['react', 'react-dom', 'next'], {
-    //         useYarn,
-    //         isOnline,
-    //     })
-    //     console.log()
-
-    //     await cpy('**', root, {
-    //         parents: true,
-    //         cwd: path.join(__dirname, 'templates', 'default'),
-    //         rename: (name) => {
-    //             switch (name) {
-    //                 case 'gitignore': {
-    //                     return '.'.concat(name)
-    //                 }
-    //                 // README.md is ignored by webpack-asset-relocator-loader used by ncc:
-    //                 // https://github.com/zeit/webpack-asset-relocator-loader/blob/e9308683d47ff507253e37c9bcbb99474603192b/src/asset-relocator.js#L227
-    //                 case 'README-template.md': {
-    //                     return 'README.md'
-    //                 }
-    //                 default: {
-    //                     return name
-    //                 }
-    //             }
-    //         },
-    //     })
-    // }
+    
 
     if (tryGitInit(root)) {
         console.log('Initialized a git repository.')
