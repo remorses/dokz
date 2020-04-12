@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import { FiAirplay } from 'react-icons/fi'
 import { Code } from './Code'
 import importFrom from 'import-from'
 import {
@@ -59,8 +60,8 @@ const TData = (props) => (
 
 const DocsHeading = (props) => (
     <Heading
-        color='#264459'
         fontWeight='semibold'
+        // color='black'
         my='40px'
         css={{
             '&[id]': {
@@ -109,9 +110,12 @@ export function Wrapper(props) {
     // console.log('root_', require.resolve('root_'))
     const index = require('root_/index.json')
     return (
-        <LandingProvider primary='#FF593D'>
+        <LandingProvider black='#264459' primary='#FF593D'>
             <PageContainer pageWidth='1400px'>
-                <NavBar tree={index} />
+                <NavBar
+                    logo={<Box as={FiAirplay} color='black' size='30px' />}
+                    tree={index}
+                />
                 <Stack direction='row' isInline height='100%'>
                     <SideNav
                         alignSelf='flex-start'
@@ -120,7 +124,7 @@ export function Wrapper(props) {
                         tree={index}
                         display={['none', null, 'block']}
                     />
-                    <Stack fontSize='16px' color='#60859f' px='40px' flex='1'>
+                    <Stack fontSize='16px' px='40px' flex='1'>
                         {props.children}
                     </Stack>
                     <TableOfContents
@@ -169,7 +173,9 @@ const MDXComponents = {
             <Link {...props} />
         </NextLink>
     ),
-    p: (props) => <Text as='p' mb='20px' lineHeight='30px' {...props} />,
+    p: (props) => (
+        <Text as='p' mb='20px' lineHeight='30px' color='#60859f' {...props} />
+    ),
     ul: (props) => <Box as='ul' pt='8px' pl='16px' {...props} />,
     ol: (props) => <Box as='ol' pt='8px' pl='16px' {...props} />,
     li: (props) => <Box as='li' pb='4px' {...props} />,

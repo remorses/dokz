@@ -79,14 +79,15 @@ const ThemeSwitch = (props) => (
     />
 )
 
-const NavBar = (props, tree) => {
+const NavBar = ({ logo, tree, ...props }) => {
     const { colorMode, toggleColorMode } = useColorMode()
+
     const bg = { light: 'white', dark: 'gray.800' }
     return (
         <Header bg={bg[colorMode]} {...props}>
             <Flex size='100%' px='6' align='center' justify='space-between'>
                 <Flex align='center' mr={5}>
-                    {/* <Logo /> */}
+                    {logo}
                 </Flex>
                 <Flex
                     flex={{ sm: '1', md: 'none' }}

@@ -64,7 +64,7 @@
         "react-icons": "^3.9.0",
         "react-intersection-observer": "^8.26.1",
         "react-is": "^16.13.1",
-        "react-landing": "1.0.7",
+        "react-landing": "^1.0.8",
         "remark": "^12.0.0",
         "remark-frontmatter": "^2.0.0",
         "remark-mdx-metadata": "^1.0.1",
