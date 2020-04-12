@@ -1,4 +1,4 @@
-import { DoczProvider } from 'dokz/src'
+import { DoczProvider } from 'dokz'
 import React from 'react'
 
 export default (props) => {
