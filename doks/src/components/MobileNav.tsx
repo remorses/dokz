@@ -5,6 +5,7 @@ import {
     useDisclosure,
     DrawerOverlay,
     DrawerContent,
+    Stack,
 } from '@chakra-ui/core'
 import React, { useEffect } from 'react'
 import { MdDehaze } from 'react-icons/md'
@@ -49,9 +50,11 @@ const MobileNav = (props) => {
                 onClose={onClose}
             >
                 <DrawerOverlay />
-                <DrawerContent>
+                <DrawerContent height='100vh' overflowY='scroll' >
                     <DrawerBody p={0}>
-                        <SideNav {...props}  />
+                        <Stack  >
+                            <SideNav {...props} />
+                        </Stack>
                     </DrawerBody>
                 </DrawerContent>
             </Drawer>

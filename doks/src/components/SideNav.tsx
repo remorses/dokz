@@ -38,7 +38,7 @@ export const SideNav = ({ tree, ...rest }: SideNavProps) => {
             borderRightWidth='1px'
             minWidth='260px'
             height='auto'
-            overflowY='scroll'
+            // overflowY='scroll'
             {...rest}
         >
             <Box
