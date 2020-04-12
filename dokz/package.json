@@ -1,7 +1,7 @@
 {
     "name": "dokz",
     "_": "[bump if dokz]",
-    "version": "0.0.2",
+    "version": "0.1.2",
     "description": "",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
