@@ -104,7 +104,7 @@ export function Wrapper(props) {
     // console.log({ tableOfContents })
     // console.log({ wrapperPorps: props })
     // TODO show breadcrumbs based on exported breadcrumbs array
-    // TODO add footer, sidebar, toc, ...
+    // TODO takes custom elements from context
     const breadcrumbs = props.breadcrumbs || []
     // const index = require('root_/index.json')
     // console.log('root_', require.resolve('root_'))
@@ -138,6 +138,27 @@ export function Wrapper(props) {
                     />
                 </Stack>
             </PageContainer>
+            <Footer
+                bg='gray.100'
+                // dark
+                columns={{
+                    Company: [
+                        <Link>ciao</Link>,
+                        <Link>ciao</Link>,
+                        <Link>ciao</Link>,
+                    ],
+                    About: [
+                        <Link>ciao</Link>,
+                        <Link>ciao</Link>,
+                        <Link>ciao</Link>,
+                    ],
+                    Product: [
+                        <Link>ciao</Link>,
+                        <Link>ciao</Link>,
+                        <Link>ciao</Link>,
+                    ],
+                }}
+            />
         </LandingProvider>
     )
 }
