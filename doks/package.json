@@ -1,6 +1,6 @@
 {
     "name": "dokz",
-    "_": "[bump if core]",
+    "_": "[bump if dokz]",
     "version": "0.0.11",
     "description": "",
     "main": "dist/index.js",

@@ -1,11 +1,11 @@
-name: baby-i-am-faded Npm Package
+name: dokz Npm Package
 
 on:
   push:
     branches:
       - master
     paths:
-      - baby-i-am-faded/**
+      - dokz/**
 
 jobs:
   build:
@@ -17,16 +17,16 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
-      - run: cd baby-i-am-faded && yarn
+      - run: cd dokz && yarn
       # - run: yarn test
-      - run: cd baby-i-am-faded && yarn compile
+      - run: cd dokz && yarn compile
       - name: Bump version
         uses: remorses/bump-version@js
         with:
-          version_file: baby-i-am-faded/VERSION
-          prefix: baby-i-am-faded
+          version_file: dokz/VERSION
+          prefix: dokz
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: cd baby-i-am-faded && yarn publish
+      - run: cd dokz && yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
