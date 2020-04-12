@@ -18,7 +18,7 @@ export function TableOfContents({
             width='200px'
             fontWeight='medium'
             fontSize='14px'
-            borderLeft='1px solid #ddd'
+            borderLeftWidth='1px'
             pl='20px'
             opacity={0.9}
             {...rest}

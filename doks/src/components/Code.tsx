@@ -202,8 +202,8 @@ export const Playground = ({
             <LiveProvider {...liveProviderProps}>
                 <Stack
                     w='100%'
-                    border='1px solid'
-                    borderColor='gray.300'
+                    borderWidth='1px'
+                    // borderColor='inherit'
                     borderRadius='8px'
                     overflow='hidden'
                     shadow='lg'
@@ -237,20 +237,21 @@ export const Playground = ({
 }
 
 const HandleComponent = (props) => {
+    const { colorMode } = useColorMode()
     return (
         <Stack
             width='20px'
             py='10px'
             align='center'
             justify='center'
-            border='1px solid'
-            borderColor='gray.300'
-            bg='gray.100'
+            borderWidth='1px'
+            // borderColor='gray.300'
+            bg={{ light: 'gray.100', dark: 'gray.800' }[colorMode]}
             borderRadius='0 4px 4px 0'
             {...props}
         >
             <Box
-                width='6px'
+                width='8px'
                 height='40px'
                 borderLeft='2px solid'
                 borderRight='2px solid'

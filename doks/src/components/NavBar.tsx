@@ -9,10 +9,12 @@ import {
     IconButton,
     useColorMode,
     PseudoBox,
+    Stack,
 } from '@chakra-ui/core'
 import { jsx, css } from '@emotion/core'
 import { DiGithubBadge } from 'react-icons/di'
 import MobileNav from './MobileNav'
+import { PageContainer } from 'react-landing'
 
 const styles = css`
     .algolia-autocomplete {
@@ -37,17 +39,6 @@ const SearchBox = (props) => (
             rounded='lg'
         />
     </InputGroup>
-)
-
-export const Header = (props) => (
-    <Box
-        as='header'
-        zIndex='4'
-        borderBottomWidth='1px'
-        width='full'
-        height='4rem'
-        {...props}
-    />
 )
 
 export const GithubLink = (props) => (
@@ -84,31 +75,38 @@ const NavBar = ({ logo, tree, ...props }) => {
 
     const bg = { light: 'white', dark: 'gray.800' }
     return (
-        <Header bg={bg[colorMode]} {...props}>
-            <Flex size='100%' px='6' align='center' justify='space-between'>
-                <Flex align='center' mr={5}>
-                    {logo}
+        <PageContainer
+            bg={bg[colorMode]}
+            zIndex={4}
+            borderBottomWidth='1px'
+            justify='center'
+            {...props}
+        >
+            <Stack as='header' width='full' height='40px' justify='center'>
+                <Flex size='100%' px='6' align='center' justify='space-between'>
+                    <Flex align='center' mr={5}>
+                        {logo}
+                    </Flex>
+                    <Flex
+                        flex={{ sm: '1', md: 'none' }}
+                        ml={5}
+                        align='center'
+                        color='gray.500'
+                        justify='flex-end'
+                    >
+                        <GithubLink />
+                        <ThemeSwitch
+                            aria-label={`Switch to ${
+                                colorMode === 'light' ? 'dark' : 'light'
+                            } mode`}
+                            onClick={toggleColorMode}
+                            icon={colorMode === 'light' ? 'moon' : 'sun'}
+                        />
+                        <MobileNav tree={tree} />
+                    </Flex>
                 </Flex>
-                <Flex
-                    flex={{ sm: '1', md: 'none' }}
-                    ml={5}
-                    align='center'
-                    color='gray.500'
-                    justify='flex-end'
-                >
-                    <GithubLink />
-                    <ThemeSwitch
-                        aria-label={`Switch to ${
-                            colorMode === 'light' ? 'dark' : 'light'
-                        } mode`}
-                        onClick={toggleColorMode}
-                        icon={colorMode === 'light' ? 'moon' : 'sun'}
-                    />
-
-                    <MobileNav tree={tree} />
-                </Flex>
-            </Flex>
-        </Header>
+            </Stack>
+        </PageContainer>
     )
 }
 

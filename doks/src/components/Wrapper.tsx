@@ -1,5 +1,11 @@
 /** @jsx jsx */
-import { Box, Link, Stack } from '@chakra-ui/core'
+import {
+    Box,
+    Link,
+    Stack,
+    useColorMode,
+    ColorModeProvider,
+} from '@chakra-ui/core'
 import { jsx } from '@emotion/core'
 import { FiAirplay } from 'react-icons/fi'
 import { Footer, LandingProvider, PageContainer } from 'react-landing'
@@ -22,22 +28,31 @@ export function Wrapper(props) {
     const breadcrumbs = props.breadcrumbs || []
     // const index = require('root_/index.json')
     // console.log('root_', require.resolve('root_'))
+    const { colorMode } = useColorMode()
+    console.log({ colorMode })
     const index = getMdxIndex()
     return (
-        <LandingProvider black='#264459' primary='#FF593D'>
+        <LandingProvider
+            // dark={colorMode === 'dark'}
+            pageWidth='1600px'
+            black='#264459'
+            color={colorMode == 'dark' ? 'white' : 'black'}
+            borderColor={colorMode == 'dark' ? 'gray.700' : 'gray.300'}
+            primary='#FF593D'
+        >
             <Stack align='center'>
-                <Box position='relative' w='100%' maxWidth={PAGE_MAX_W}>
+                <Box position='relative' w='100%' maxWidth='pageContainer'>
                     <NavBar
-                        logo={<Box as={FiAirplay} color='black' size='30px' />}
+                        logo={<Box as={FiAirplay} size='30px' />}
                         tree={index}
                         height={NAVBAR_H + 'px'}
-                        maxW={PAGE_MAX_W}
+                        // maxW={PAGE_MAX_W}
                         position='fixed'
                         width='100%'
                         // mr='auto'
                         // top={0}
-                        // left={0}
-                        // right={0}
+                        left={0}
+                        right={0}
                     />
                     <SideNav
                         alignSelf='flex-start'

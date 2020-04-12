@@ -1,5 +1,15 @@
 /** @jsx jsx */
-import { Box, Callout, Code as InlineCode, Heading, Kbd, Link as ChakraLink, Link, Text, useColorMode } from '@chakra-ui/core'
+import {
+    Box,
+    Callout,
+    Code as InlineCode,
+    Heading,
+    Kbd,
+    Link as ChakraLink,
+    Link,
+    Text,
+    useColorMode,
+} from '@chakra-ui/core'
 import { jsx } from '@emotion/core'
 import NextLink from 'next/link'
 import { Code } from './Code'
@@ -79,21 +89,23 @@ const DocsHeading = (props) => (
     </Heading>
 )
 
-
 const MDXComponents = {
     wrapper: Wrapper,
     h1: (props) => <DocsHeading as='h1' fontSize='32px' {...props} />,
     h2: (props) => <DocsHeading as='h2' fontSize='26px' {...props} />,
     h3: (props) => <DocsHeading as='h3' size='md' fontSize='24px' {...props} />,
-    inlineCode: (props) => (
-        <InlineCode
-            mx='4px'
-            color='#264459'
-            variantColor='gray'
-            lineHeight='normal'
-            {...props}
-        />
-    ),
+    inlineCode: (props) => {
+        const { colorMode } = useColorMode()
+        return (
+            <InlineCode
+                mx='4px'
+                color={{ light: '#264459', dark: 'white' }[colorMode]}
+                variantColor='gray'
+                lineHeight='normal'
+                {...props}
+            />
+        )
+    },
     code: (props) => (
         <Box>
             <Code {...props} />
@@ -111,9 +123,18 @@ const MDXComponents = {
             <Link {...props} />
         </NextLink>
     ),
-    p: (props) => (
-        <Text as='p' mb='20px' lineHeight='30px' color='#60859f' {...props} />
-    ),
+    p: (props) => {
+        const { colorMode } = useColorMode()
+        return (
+            <Text
+                as='p'
+                mb='20px'
+                lineHeight='30px'
+                color={{ light: '#60859f', dark: 'white' }[colorMode]}
+                {...props}
+            />
+        )
+    },
     ul: (props) => <Box as='ul' pt='8px' pl='16px' {...props} />,
     ol: (props) => <Box as='ol' pt='8px' pl='16px' {...props} />,
     li: (props) => <Box as='li' pb='4px' {...props} />,
