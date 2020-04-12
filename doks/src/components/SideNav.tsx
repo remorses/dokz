@@ -1,7 +1,5 @@
-import { Box, Heading, Link, Stack } from '@chakra-ui/core'
-import React, { ReactNode } from 'react'
-import { ComponentLink, stringToUrl, TopNavLink } from './NavLink'
-import { BoxProps } from '@chakra-ui/core'
+import { Box, BoxProps, Heading, Link, Stack } from '@chakra-ui/core'
+import React from 'react'
 
 const topNavLinks = [
     'Getting Started',

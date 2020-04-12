@@ -1,29 +1,13 @@
 /** @jsx jsx */
-import { FiAirplay } from 'react-icons/fi'
-import { Code } from './Code'
-import importFrom from 'import-from'
-import {
-    Box,
-    Callout,
-    Heading,
-    Kbd,
-    PseudoBox,
-    Text,
-    useColorMode,
-    Link as ChakraLink,
-    Link,
-    Stack,
-    Code as InlineCode,
-} from '@chakra-ui/core'
+import { Box, Callout, Code as InlineCode, Heading, Kbd, Link as ChakraLink, Link, Stack, Text, useColorMode } from '@chakra-ui/core'
 import { jsx } from '@emotion/core'
 import NextLink from 'next/link'
-import { forwardRef } from 'react'
-import { Button, LandingProvider, PageContainer, Footer } from 'react-landing'
-import { SideNav } from './SideNav'
+import { FiAirplay } from 'react-icons/fi'
+import { Footer, LandingProvider, PageContainer } from 'react-landing'
+import { Code } from './Code'
 import NavBar from './NavBar'
-import { DoksTableOfContents } from '../types'
+import { SideNav } from './SideNav'
 import { TableOfContents } from './TableOfContents'
-import { ComponentLink } from './NavLink'
 
 const Pre = (props) => <Box my='2em' rounded='sm' {...props} />
 
