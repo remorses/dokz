@@ -91,7 +91,7 @@ export function Wrapper(props) {
                         <Stack
                             overflow='auto'
                             fontSize='16px'
-                            px='40px'
+                            px={['10px', null, '20px', '40px']}
                             flex='1'
                             minW='0'
                         >
