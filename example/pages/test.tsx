@@ -1,6 +1,7 @@
 import { Wrapper } from 'dokz/src/components/Wrapper'
 import App from 'next/app'
 import React from 'react'
+import {Box} from '@chakra-ui/core'
 
 export default (props) => {
     return (
