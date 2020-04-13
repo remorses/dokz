@@ -1,16 +1,7 @@
 # dokz
 
+// TODO how to order the sidebar menu? pass a sidebar prop, an object that
 
-
-
-
-
-// TODO make emotion a peer dependency
-// TODO remove react icons dependency, vendor svg components used
-// TODO paragraph color is customizable
-// TODO heading color is customizable
-// TODO LINKS color is customizable
-// TODO add a header in the sidebar, with `index` title
 
 
 @docx/core
@@ -25,18 +16,20 @@ where there re all the basic mdx components, heading, wrapper, sidebar, ...
 
 cli that downloads the code template from github
 
-
-
-
 ```js
-
 import { DoczProvider } from '@docx/core'
 import { defaultTheme } from '@docx/themes'
 
-<DoczProvider navar={} sidebar={} footer={} tableOfContents={} h1={} h2={} {...defaultTheme} />
-
+;<DoczProvider
+    navar={}
+    sidebar={}
+    footer={}
+    tableOfContents={}
+    h1={}
+    h2={}
+    {...defaultTheme}
+/>
 ```
-
 
 ```js
 const { withDocz } = require('@docx/core')
@@ -44,12 +37,12 @@ withDocz()
 // scans mdx files, get their title, creates a json file with sidebar info
 // uses mdx loader plugin
 // add marker plugin to create a table of contents for every mdx file, inject this toc in an exported meta of the mdx file
-// 
+//
 ```
 
 many built in components like
 
-- graphql playground
-- react playground
-- code highlighting
-- ...
+-   graphql playground
+-   react playground
+-   code highlighting
+-   ...

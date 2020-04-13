@@ -9,11 +9,11 @@
     "dependencies": {
         "dokz": "*",
         "next": "^9.3.4",
-        "react": "16.13.1",
+        "react": "^16.13.1",
         "react-dom": "16.13.1"
     },
     "devDependencies": {
-        "next-transpile-modules": "^3.2.0",
-        "compose-function": "^3.0.3"
+        "compose-function": "^3.0.3",
+        "next-transpile-modules": "^3.2.0"
     }
 }

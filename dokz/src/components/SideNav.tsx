@@ -1,39 +1,18 @@
 import { Box, BoxProps, Heading, Link, Stack } from '@chakra-ui/core'
+import orderBy from 'lodash/orderBy'
 import React from 'react'
 import { ComponentLink } from './NavLink'
-
-const topNavLinks = [
-    'Getting Started',
-    'Principles',
-    'Style Props',
-    'Color Mode',
-    'Responsive Styles',
-    'Theme',
-    'Recipes',
-]
-
-const utilsNavLinks = ['useClipboard', 'useDisclosure', 'useTheme']
-
-const NavGroupHeading = (props) => (
-    <Heading
-        fontSize='xs'
-        color='gray.400'
-        letterSpacing='wide'
-        mb={2}
-        textTransform='uppercase'
-        {...props}
-    />
-)
-
-type NavItem = { title: string; path: string; depth?: number }
+import { SidebarOrdering, useDokzConfig } from '../provider'
 
 export type SideNavProps = {
-    tree?: any
+    tree?: DirectoryTree
     contentHeight?: string
 } & BoxProps
 
 export const SideNav = ({ tree, ...rest }: SideNavProps) => {
     // console.log({ tree })
+    const { sidebarOrdering } = useDokzConfig()
+    tree = applySidebarOrdering({ tree, order: sidebarOrdering })
     return (
         <Box
             borderRightWidth='1px'
@@ -65,6 +44,39 @@ export const SideNav = ({ tree, ...rest }: SideNavProps) => {
     )
 }
 
+export interface DirectoryTree {
+    path: string
+    name: string
+    size: number
+    type: 'directory' | 'file'
+    children?: DirectoryTree[]
+    extension?: string
+    url?: string
+    title?: string
+}
+
+export function applySidebarOrdering({
+    order,
+    tree,
+}: {
+    tree: DirectoryTree
+    order: SidebarOrdering
+}): DirectoryTree {
+    if (!tree.children) {
+        return tree
+    }
+    if (!order) {
+        return tree
+    }
+    tree.children = orderBy(tree.children, (x) =>
+        Object.keys(order).findIndex((k) => k === x.name),
+    )
+    tree.children.forEach((node) => {
+        applySidebarOrdering({ tree: node, order: order[node.name] })
+    })
+    return tree
+}
+
 const NavTreeComponent = ({
     name = '',
     children,
@@ -72,7 +84,7 @@ const NavTreeComponent = ({
     url = '',
     title = '',
     ...rest
-}) => {
+}: DirectoryTree & { depth?: number }) => {
     const w = 10
     const isNavHeading = depth === 1 && children
     return (

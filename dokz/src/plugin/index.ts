@@ -7,8 +7,10 @@ import slug from 'remark-slug'
 import { generateTableOfContents } from './generateTableOfContents'
 import { withMdx } from './withMdx'
 import dirTree from 'directory-tree'
+import { getMdxFilesIndex } from './getMdxFilesIndex'
 
 export function withDocz(nextConfig={}) {
+    // TODO reload every time a file changes
     getMdxFilesIndex()
         .then((index) => {
             return fs.promises.writeFile(
@@ -45,47 +47,4 @@ export function withDocz(nextConfig={}) {
             ],
         },
     })(nextConfig)
-}
-
-async function getMdxFilesIndex() {
-    const pagesPath = await getPagesPath()
-    // console.log({ searchPath })
-    const tree = dirTree(pagesPath, { extensions: /\.mdx/ }, (node: any) => {
-        const pathName = node.path
-        // console.log({ pathName })
-
-        // const file = await read(pathName)
-        const content = fs.readFileSync(pathName).toString()
-        const frontMatter = getFrontMatter(content)
-        // console.log({ frontMatter: frontMatter.attributes })
-        const { title = '' } = frontMatter.attributes || ({} as any)
-        const relativePath = path
-            .relative(pagesPath, pathName)
-            .replace('.mdx', '')
-            .replace('.md', '')
-            .replace('.jsx', '')
-            .replace('.tsx', '')
-            .replace('.js', '')
-        node.title = title // TODO title is ''
-        node.url = `/${relativePath}`
-        // return {
-        //     title,
-        //     path: `/${relativePath}`,
-        // }
-    })
-
-    // console.log({ tree })
-    return tree
-}
-
-async function getPagesPath() {
-    var [err, stats] = await to(fs.promises.stat('src/pages'))
-    if (!err && stats.isDirectory()) {
-        return 'src/pages'
-    }
-    var [err, stats] = await to(fs.promises.stat('pages'))
-    if (!err && stats.isDirectory()) {
-        return 'pages'
-    }
-    throw new Error('cannot find pages directory')
 }

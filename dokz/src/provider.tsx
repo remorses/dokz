@@ -28,7 +28,10 @@ export type DoczProviderProps = {
     initialColorMode?: 'dark' | 'light'
     bodyColor?: { dark: string; light: string }
     headingColor?: { dark: string; light: string }
+    sidebarOrdering?: SidebarOrdering
 }
+
+export type SidebarOrdering = { [k: string]: SidebarOrdering | null }
 
 const defaultDokzContext: DoczProviderProps = {
     initialColorMode: 'light',

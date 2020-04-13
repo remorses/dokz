@@ -16,6 +16,10 @@ export default (props) => {
                     width='100px'
                 />
             }
+            order={{
+                general: { getting_started: null, writing_mdx: null },
+                customizing: ['customizing_components'],
+            }}
         >
             <Component {...pageProps} />
         </DoczProvider>
