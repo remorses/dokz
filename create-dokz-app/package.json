@@ -1,7 +1,7 @@
 {
   "name": "create-dokz-app",
   "_": "[bump if create-dokz-app]",
-  "version": "1.1.1",
+  "version": "0.0.2",
   "keywords": [
     "react",
     "next",
