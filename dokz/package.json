@@ -16,7 +16,7 @@
         "/esm/*"
     ],
     "scripts": {
-        "compile": "tsc && tsc --module ESNext --outDir esm",
+        "compile": "tsc --incremental && tsc --module ESNext --outDir esm --incremental",
         "build": "build-storybook -c .storybook -o public",
         "test": "NODE_ENV=test mocha --colors --exit",
         "dev": "yarn compile && node dist",

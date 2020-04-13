@@ -27,15 +27,12 @@ const globalStyles = css`
     html {
         overflow: hidden;
         height: 100%;
+        scroll-behavior: smooth;
     }
-
     body {
         height: 100%;
         overflow: auto;
     }
-    /* body {
-        overscroll-behavior-y: none;
-    } */
 `
 
 export function Wrapper(props) {
