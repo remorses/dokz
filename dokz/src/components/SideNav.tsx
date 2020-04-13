@@ -33,7 +33,7 @@ export type SideNavProps = {
 } & BoxProps
 
 export const SideNav = ({ tree, ...rest }: SideNavProps) => {
-    console.log({ tree })
+    // console.log({ tree })
     return (
         <Box
             borderRightWidth='1px'

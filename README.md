@@ -5,8 +5,11 @@
 
 // TODO add logo, nav links, footer customization via the DoczProvider
 // TODO add colors customization for links via primary theme color
-// TODO add github template
-// TODO make cli to download the github template
+// TODO remove react landing dependency, reimplement landingprovider, pageContainer
+// TODO make emotion a peer dependency
+// TODO remove react icons dependency, vendor svg components used
+// TODO move the emotion theme, color mode provider under the wrapper, to not pollute other non mdx files
+// TODO test if using a wrapper in jsx pages works
 
 
 

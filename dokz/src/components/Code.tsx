@@ -1,10 +1,7 @@
 import React, { useState, CSSProperties } from 'react'
 import { FiCopy } from 'react-icons/fi'
-import lightTheme from 'prism-react-renderer/themes/nightOwlLight'
-import darkTheme from 'prism-react-renderer/themes/nightOwl'
+
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
-import * as ReactLanding from 'react-landing'
-import * as ReactLandingDecorations from 'react-landing/dist/decorations'
 import { mdx } from '@mdx-js/react'
 import * as Chakra from '@chakra-ui/core'
 import * as ReactIcons from 'react-icons/md'
@@ -12,6 +9,7 @@ import FocusLock from 'react-focus-lock'
 import { Flex, Stack, Divider } from '@chakra-ui/core'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import { Resizable } from 're-resizable'
+import { useDokzConfig } from '../provider'
 
 const { Box, Button, useClipboard, useColorMode } = Chakra
 
@@ -41,23 +39,13 @@ export const liveErrorStyle: CSSProperties = {
     backgroundColor: 'red',
 }
 
-const StarIcon = (props) => {
-    return (
-        <Box
-            m='2px'
-            as='svg'
-            fill='current'
-            size='3'
-            viewBox='0 0 24 24'
-            {...props}
-        >
-            <path d='M23.555 8.729a1.505 1.505 0 0 0-1.406-.98h-6.087a.5.5 0 0 1-.472-.334l-2.185-6.193a1.5 1.5 0 0 0-2.81 0l-.005.016-2.18 6.177a.5.5 0 0 1-.471.334H1.85A1.5 1.5 0 0 0 .887 10.4l5.184 4.3a.5.5 0 0 1 .155.543l-2.178 6.531a1.5 1.5 0 0 0 2.31 1.684l5.346-3.92a.5.5 0 0 1 .591 0l5.344 3.919a1.5 1.5 0 0 0 2.312-1.683l-2.178-6.535a.5.5 0 0 1 .155-.543l5.194-4.306a1.5 1.5 0 0 0 .433-1.661z'></path>
-        </Box>
-    )
-}
-
 export const Code = ({ children, className, live, ...rest }) => {
     // console.log({rest, live})
+    const { colorMode } = useColorMode()
+    let { prismTheme, playgroundScope } = useDokzConfig()
+    if (typeof prismTheme === 'function') {
+        prismTheme = prismTheme(colorMode)
+    }
     const code = children.trim()
     const language = className && className.replace(/language-/, '')
     const { onCopy, hasCopied } = useClipboard(code)
@@ -65,8 +53,13 @@ export const Code = ({ children, className, live, ...rest }) => {
     if (live) {
         return (
             <Playground
+                scope={{
+                    ...Chakra,
+                    ...playgroundScope,
+                    mdx,
+                }}
                 className={className}
-                live
+                theme={prismTheme}
                 children={children}
                 {...rest}
             />
@@ -75,7 +68,7 @@ export const Code = ({ children, className, live, ...rest }) => {
     return (
         <Highlight
             {...defaultProps}
-            theme={darkTheme}
+            theme={prismTheme}
             code={code}
             language={language}
         >
@@ -127,8 +120,9 @@ const CopyButton = (props) => {
 
 export const Playground = ({
     className,
-    live = true,
+    theme,
     children,
+    scope,
     mountStylesheet = false,
     previewEnabled = true,
     ...props
@@ -137,9 +131,6 @@ export const Playground = ({
     const language = className && className.replace(/language-/, '')
     const [showCode, setShowCode] = useState(!previewEnabled)
     const { onCopy, hasCopied } = useClipboard(editorCode)
-    const { colorMode } = useColorMode()
-    const themes = { light: lightTheme, dark: darkTheme }
-    const theme = themes['dark']
     const [width, setWidth] = React.useState('100%')
     const resizableProps = getResizableProps(width, setWidth)
     const liveProviderProps = {
@@ -147,15 +138,7 @@ export const Playground = ({
         language,
         code: editorCode,
         transformCode: (code) => '/** @jsx mdx */' + code,
-        scope: {
-            ...Chakra,
-            ...ReactIcons,
-            mdx,
-            StarIcon,
-            FocusLock,
-            ...ReactLanding,
-            ...ReactLandingDecorations,
-        },
+        scope,
         // noInline: true,
         ...props,
     }

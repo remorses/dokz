@@ -8,28 +8,25 @@ import {
 } from '@chakra-ui/core'
 import { jsx } from '@emotion/core'
 import { FiAirplay } from 'react-icons/fi'
-import { Footer, LandingProvider, PageContainer } from 'react-landing'
+import { LandingProvider } from 'react-landing'
 import NavBar from './NavBar'
 import { SideNav } from './SideNav'
 import { TableOfContents } from './TableOfContents'
+import { useDokzConfig } from '../provider'
 
 const SIDENAV_W = 200
 const TABLE_OF_C_W = 200
-const PAGE_MAX_W = 1600
 
 const NAVBAR_H = 60
 
 export function Wrapper(props) {
     const { tableOfContents } = props.meta
-    // console.log({ tableOfContents })
-    // console.log({ wrapperPorps: props })
-    // TODO show breadcrumbs based on exported breadcrumbs array
-    // TODO takes custom elements from context
+    const { footer, headerLogo, headerItems } = useDokzConfig()
     const breadcrumbs = props.breadcrumbs || []
     // const index = require('root_/index.json')
     // console.log('root_', require.resolve('root_'))
     const { colorMode } = useColorMode()
-    console.log({ colorMode })
+    // console.log({ colorMode })
     const index = getMdxIndex()
     return (
         <LandingProvider
@@ -43,7 +40,8 @@ export function Wrapper(props) {
             <Stack align='center'>
                 <Box position='relative' w='100%' maxWidth='pageContainer'>
                     <NavBar
-                        logo={<Box as={FiAirplay} size='30px' />}
+                        logo={headerLogo}
+                        items={headerItems}
                         tree={index}
                         height={NAVBAR_H + 'px'}
                         // maxW={PAGE_MAX_W}
@@ -80,7 +78,7 @@ export function Wrapper(props) {
                             minW='0'
                         >
                             {props.children}
-                            <Footer columns={{}} />
+                            {footer}
                         </Stack>
                         <TableOfContents
                             position='sticky'

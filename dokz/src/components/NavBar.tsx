@@ -16,35 +16,12 @@ import { DiGithubBadge } from 'react-icons/di'
 import MobileNav from './MobileNav'
 import { PageContainer } from 'react-landing'
 
-const styles = css`
-    .algolia-autocomplete {
-        display: block !important;
-    }
-    .algolia-docsearch-suggestion--wrapper {
-        /* display: none !important; */
-    }
-`
 
-const SearchBox = (props) => (
-    <InputGroup css={styles} {...props}>
-        <InputLeftElement>
-            <Icon name='search' color='gray.500' />
-        </InputLeftElement>
-        <Input
-            id='algolia-search'
-            variant='filled'
-            placeholder='Search the docs '
-            // _focusBorderColor="teal"
-            _placeholder={{ color: 'gray.500', opacity: 1 }}
-            rounded='lg'
-        />
-    </InputGroup>
-)
 
-export const GithubLink = (props) => (
+export const GithubLink = ({ url = '', ...rest }: any) => (
     <PseudoBox
         as='a'
-        href='https://github.com/chakra-ui/chakra-ui/tree/master/packages/chakra-ui'
+        href={url}
         rel='noopener noreferrer'
         target='_blank'
         aria-label="Go to Chakra UI's Github Repo"
@@ -54,25 +31,33 @@ export const GithubLink = (props) => (
         _focus={{
             boxShadow: 'outline',
         }}
-        {...props}
+        {...rest}
     >
         <Box as={DiGithubBadge} size='8' color='current' />
     </PseudoBox>
 )
 
-const ThemeSwitch = (props) => (
-    <IconButton
-        variant='ghost'
-        color='current'
-        ml='2'
-        fontSize='20px'
-        {...props}
-    />
-)
-
-const NavBar = ({ logo, tree, ...props }) => {
+export const ColorModeSwitch = ({ ...rest }) => {
     const { colorMode, toggleColorMode } = useColorMode()
+    return (
+        <IconButton
+            variant='ghost'
+            color='current'
+            ml='2'
+            fontSize='20px'
+            aria-label={`Switch to ${
+                colorMode === 'light' ? 'dark' : 'light'
+            } mode`}
+            onClick={toggleColorMode}
+            icon={colorMode === 'light' ? 'moon' : 'sun'}
+            {...rest}
+        />
+    )
+}
 
+
+const NavBar = ({ logo, tree, items, ...props }) => {
+    const { colorMode, toggleColorMode } = useColorMode()
     const bg = { light: 'white', dark: 'gray.800' }
     return (
         <PageContainer
@@ -94,14 +79,7 @@ const NavBar = ({ logo, tree, ...props }) => {
                         color='gray.500'
                         justify='flex-end'
                     >
-                        <GithubLink />
-                        <ThemeSwitch
-                            aria-label={`Switch to ${
-                                colorMode === 'light' ? 'dark' : 'light'
-                            } mode`}
-                            onClick={toggleColorMode}
-                            icon={colorMode === 'light' ? 'moon' : 'sun'}
-                        />
+                        {items}
                         <MobileNav tree={tree} />
                     </Flex>
                 </Flex>
