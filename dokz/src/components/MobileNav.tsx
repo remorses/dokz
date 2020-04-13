@@ -50,7 +50,7 @@ const MobileNav = (props) => {
                 onClose={onClose}
             >
                 <DrawerOverlay />
-                <DrawerContent height='100vh' overflowY='scroll' >
+                <DrawerContent height='100vh' overflowY='auto' >
                     <DrawerBody p={0}>
                         <Stack  >
                             <SideNav {...props} />

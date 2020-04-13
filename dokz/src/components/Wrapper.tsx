@@ -24,6 +24,18 @@ const globalStyles = css`
     * {
         box-sizing: border-box;
     }
+    html {
+        overflow: hidden;
+        height: 100%;
+    }
+
+    body {
+        height: 100%;
+        overflow: auto;
+    }
+    /* body {
+        overscroll-behavior-y: none;
+    } */
 `
 
 export function Wrapper(props) {
@@ -70,7 +82,7 @@ export function Wrapper(props) {
                         height='100%'
                         width={SIDENAV_W}
                         display={['none', null, 'block']}
-                        overflowY='scroll'
+                        overflowY='auto'
                         overflowX='hidden'
                     />
                     <Stack
