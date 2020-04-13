@@ -7,11 +7,11 @@ import React, {
 } from 'react'
 import MDXComponents from './components/mdx'
 import { ColorModeProvider, Box } from '@chakra-ui/core'
-import { ThemeProvider } from '@chakra-ui/core'
+
 import { PrismTheme } from 'prism-react-renderer'
 // import lightTheme from 'prism-react-renderer/themes/nightOwlLight'
 import darkPrismTheme from 'prism-react-renderer/themes/nightOwl'
-import { GithubLink, ColorModeSwitch } from './components'
+import { GithubLink, ColorModeSwitch } from './components/NavBar'
 
 export type DoczProviderProps = {
     children?: any
@@ -39,7 +39,7 @@ const defaultDokzContext: DoczProviderProps = {
     headerItems: [<ColorModeSwitch />],
     prismTheme: darkPrismTheme,
     black: '#264459',
-    maxPageWidth: '1600px'
+    maxPageWidth: '1600px',
 }
 
 const DokzContext = createContext(defaultDokzContext)
@@ -53,15 +53,11 @@ export function DoczProvider({ children, ...rest }: DoczProviderProps) {
     const { mdxComponents: userMDXComponents = {} } = rest
     return (
         <DokzContext.Provider value={{ ...defaultDokzContext, ...rest }}>
-            <ThemeProvider>
-                <ColorModeProvider value='light'>
-                    <MDXProvider
-                        components={{ ...MDXComponents, ...userMDXComponents }}
-                    >
-                        {children}
-                    </MDXProvider>
-                </ColorModeProvider>
-            </ThemeProvider>
+            <MDXProvider
+                components={{ ...MDXComponents, ...userMDXComponents }}
+            >
+                {children}
+            </MDXProvider>
         </DokzContext.Provider>
     )
 }

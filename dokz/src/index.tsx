@@ -1,4 +1,4 @@
-export * from './components/mdx'
+export * from './components'
 export * from './provider'
 
 
