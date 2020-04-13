@@ -4,6 +4,8 @@ import React from 'react'
 import { ComponentLink } from './NavLink'
 import { SidebarOrdering, useDokzConfig } from '../provider'
 
+const MDX_EXTENSION_REGEX = /\.mdx?/
+
 export type SideNavProps = {
     tree?: DirectoryTree
     contentHeight?: string
@@ -55,6 +57,13 @@ export interface DirectoryTree {
     title?: string
 }
 
+function equalWithoutExtension(a, b) {
+    return (
+        a.replace(MDX_EXTENSION_REGEX, '') ===
+        b.replace(MDX_EXTENSION_REGEX, '')
+    )
+}
+
 export function applySidebarOrdering({
     order,
     tree,
@@ -69,14 +78,21 @@ export function applySidebarOrdering({
         return tree
     }
     tree.children = orderBy(tree.children, (x) => {
-        const index = Object.keys(order).findIndex((k) => k === x.name)
+        const index = Object.keys(order).findIndex((k) =>
+            equalWithoutExtension(k, x.name),
+        )
         if (index === -1) {
             return Infinity
         }
         return index
     })
     tree.children.forEach((node) => {
-        applySidebarOrdering({ tree: node, order: order[node.name] })
+        applySidebarOrdering({
+            tree: node,
+            order:
+                order[node.name] ||
+                order[node.name.replace(MDX_EXTENSION_REGEX, '')],
+        })
     })
     return tree
 }

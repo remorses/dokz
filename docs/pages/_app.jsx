@@ -17,7 +17,7 @@ export default (props) => {
                 />
             }
             sidebarOrdering={{
-                // 'index.mdx': 1,
+                'index.mdx': 1,
                 general: {
                     'getting_started.mdx': null,
                     'writing_mdx.mdx': null,
