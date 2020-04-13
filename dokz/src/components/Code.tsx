@@ -57,7 +57,7 @@ export const Code = ({ children, className, live, ...rest }) => {
                     mdx,
                 }}
                 className={className}
-                theme={prismTheme}
+                theme={prismTheme[colorMode]}
                 children={children}
                 {...rest}
             />
@@ -120,7 +120,7 @@ const CopyButton = (props) => {
             style={{
                 strokeWidth: '2px',
             }}
-            opacity={.7}
+            opacity={0.7}
             size='18px'
             as={hasCopied ? FiCheck : FiCopy}
             {...props}
@@ -181,7 +181,11 @@ export const Playground = ({
                 >
                     Code
                 </Button>
-                <CopyButton style={{ strokeWidth: '2px' }} onClick={onCopy} />
+                <CopyButton
+                    hasCopied={hasCopied}
+                    style={{ strokeWidth: '2px' }}
+                    onClick={onCopy}
+                />
             </Stack>
             <Divider m='0' />
         </>
