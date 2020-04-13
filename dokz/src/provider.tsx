@@ -41,7 +41,7 @@ const defaultDokzContext: DoczProviderProps = {
             Your Logo
         </Box>
     ),
-    headerItems: [<ColorModeSwitch />],
+    headerItems: [<ColorModeSwitch key={0} />],
     prismTheme: { dark: darkPrismTheme, light: darkPrismTheme },
     maxPageWidth: '1600px',
     bodyColor: { light: '#445d6e', dark: 'rgba(255,255,255,.9)' },

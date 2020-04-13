@@ -517,10 +517,10 @@
         {
             "path": "pages/index.mdx",
             "name": "index.mdx",
-            "size": 425,
+            "size": 457,
             "extension": ".mdx",
             "type": "file",
-            "title": "xxx",
+            "title": "",
             "url": "/index"
         },
         {
@@ -595,6 +595,6 @@
             "type": "directory"
         }
     ],
-    "size": 291979,
+    "size": 292011,
     "type": "directory"
 }
