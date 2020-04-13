@@ -4,12 +4,12 @@
 
 
 
-// TODO add colors customization for links via primary theme color
+
 // TODO make emotion a peer dependency
 // TODO remove react icons dependency, vendor svg components used
-// TODO test if using a wrapper in jsx pages works
 // TODO paragraph color is customizable
 // TODO heading color is customizable
+// TODO LINKS color is customizable
 // TODO add a header in the sidebar, with `index` title
 
 
