@@ -11,34 +11,43 @@ import dirTree from 'directory-tree'
 export async function getMdxFilesIndex() {
     const pagesPath = await getPagesPath()
     // console.log({ searchPath })
-    const tree = dirTree(pagesPath, { normalizePath: true, extensions: /\.mdx/ }, (node: any) => {
-        const pathName = node.path
-        // console.log({ pathName })
+    const tree = dirTree(
+        pagesPath,
+        { normalizePath: true, extensions: /\.mdx/ },
+        (node) => {
+            const pathName = node.path
+            // console.log({ pathName })
 
-        // const file = await read(pathName)
-        const content = fs.readFileSync(pathName).toString()
-        const frontMatter = getFrontMatter(content)
-        // console.log({ frontMatter: frontMatter.attributes })
-        const { name = '' } = frontMatter.attributes || ({} as any)
-        const relativePath = path
-            .relative(pagesPath, pathName)
-            .replace('.mdx', '')
-            .replace('.md', '')
-            .replace('.jsx', '')
-            .replace('.tsx', '')
-            .replace('.js', '')
-        node.title = name
-        node.url = `/${relativePath}`
-        // return {
-        //     title,
-        //     path: `/${relativePath}`,
-        // }
-    })
+            // const file = await read(pathName)
+            const content = fs.readFileSync(pathName).toString()
+            const frontMatter = getFrontMatter(content)
+            // console.log({ frontMatter: frontMatter.attributes })
+            const { name = '' } = frontMatter.attributes || ({} as any)
+            const relativePath = path
+                .relative(pagesPath, pathName)
+                .replace('.mdx', '')
+                .replace('.md', '')
+                .replace('.jsx', '')
+                .replace('.tsx', '')
+                .replace('.js', '')
+            delete node.extension
+            delete node.size
+            delete node.type
+            // @ts-ignore
+            node.title = name
+            // @ts-ignore
+            node.url = `/${relativePath}`
+            // return {
+            //     title,
+            //     path: `/${relativePath}`,
+            // }
+        },
+    )
 
     // the sidebar handle only the case pages is root
     if (tree.name === 'src') {
         const pagesNode = tree.children.find((x) => x.name === 'pages')
-        return pagesNode 
+        return pagesNode
     }
     // console.log({ tree })
     return tree

@@ -47,12 +47,9 @@ export const SideNav = ({ tree, ...rest }: SideNavProps) => {
 }
 
 export interface DirectoryTree {
-    path: string
+    path?: string
     name: string
-    size: number
-    type: 'directory' | 'file'
     children?: DirectoryTree[]
-    extension?: string
     url?: string
     title?: string
 }

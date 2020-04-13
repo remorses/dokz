@@ -9,517 +9,346 @@
                 {
                     "path": "pages/components/Box.mdx",
                     "name": "Box.mdx",
-                    "size": 2721,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/Box"
                 },
                 {
                     "path": "pages/components/accordion.mdx",
                     "name": "accordion.mdx",
-                    "size": 9829,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/accordion"
                 },
                 {
                     "path": "pages/components/alert.mdx",
                     "name": "alert.mdx",
-                    "size": 3649,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/alert"
                 },
                 {
                     "path": "pages/components/alertdialog.mdx",
                     "name": "alertdialog.mdx",
-                    "size": 5108,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/alertdialog"
                 },
                 {
                     "path": "pages/components/aspectratiobox.mdx",
                     "name": "aspectratiobox.mdx",
-                    "size": 1978,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/aspectratiobox"
                 },
                 {
                     "path": "pages/components/avatar.mdx",
                     "name": "avatar.mdx",
-                    "size": 4874,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/avatar"
                 },
                 {
                     "path": "pages/components/badge.mdx",
                     "name": "badge.mdx",
-                    "size": 2217,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/badge"
                 },
                 {
                     "path": "pages/components/breadcrumb.mdx",
                     "name": "breadcrumb.mdx",
-                    "size": 6182,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/breadcrumb"
                 },
                 {
                     "path": "pages/components/button.mdx",
                     "name": "button.mdx",
-                    "size": 5962,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/button"
                 },
                 {
                     "path": "pages/components/checkbox.mdx",
                     "name": "checkbox.mdx",
-                    "size": 9208,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/checkbox"
                 },
                 {
                     "path": "pages/components/circularprogress.mdx",
                     "name": "circularprogress.mdx",
-                    "size": 4241,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/circularprogress"
                 },
                 {
                     "path": "pages/components/closebutton.mdx",
                     "name": "closebutton.mdx",
-                    "size": 1427,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/closebutton"
                 },
                 {
                     "path": "pages/components/code.mdx",
                     "name": "code.mdx",
-                    "size": 1140,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/code"
                 },
                 {
                     "path": "pages/components/collapse.mdx",
                     "name": "collapse.mdx",
-                    "size": 3081,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/collapse"
                 },
                 {
                     "path": "pages/components/color-mode.mdx",
                     "name": "color-mode.mdx",
-                    "size": 2542,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/color-mode"
                 },
                 {
                     "path": "pages/components/contributing.mdx",
                     "name": "contributing.mdx",
-                    "size": 3791,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/contributing"
                 },
                 {
                     "path": "pages/components/controlbox.mdx",
                     "name": "controlbox.mdx",
-                    "size": 3880,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/controlbox"
                 },
                 {
                     "path": "pages/components/cssreset.mdx",
                     "name": "cssreset.mdx",
-                    "size": 2029,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/cssreset"
                 },
                 {
                     "path": "pages/components/divider.mdx",
                     "name": "divider.mdx",
-                    "size": 1188,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/divider"
                 },
                 {
                     "path": "pages/components/drawer.mdx",
                     "name": "drawer.mdx",
-                    "size": 7585,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/drawer"
                 },
                 {
                     "path": "pages/components/editable.mdx",
                     "name": "editable.mdx",
-                    "size": 5666,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/editable"
                 },
                 {
                     "path": "pages/components/flex.mdx",
                     "name": "flex.mdx",
-                    "size": 959,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/flex"
                 },
                 {
                     "path": "pages/components/formcontrol.mdx",
                     "name": "formcontrol.mdx",
-                    "size": 3759,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/formcontrol"
                 },
                 {
                     "path": "pages/components/getting-started.mdx",
                     "name": "getting-started.mdx",
-                    "size": 3499,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/getting-started"
                 },
                 {
                     "path": "pages/components/grid.mdx",
                     "name": "grid.mdx",
-                    "size": 1545,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/grid"
                 },
                 {
                     "path": "pages/components/heading.mdx",
                     "name": "heading.mdx",
-                    "size": 2194,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/heading"
                 },
                 {
                     "path": "pages/components/icon.mdx",
                     "name": "icon.mdx",
-                    "size": 4546,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/icon"
                 },
                 {
                     "path": "pages/components/iconbutton.mdx",
                     "name": "iconbutton.mdx",
-                    "size": 3315,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/iconbutton"
                 },
                 {
                     "path": "pages/components/image.mdx",
                     "name": "image.mdx",
-                    "size": 2967,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/image"
                 },
                 {
                     "path": "pages/components/input.mdx",
                     "name": "input.mdx",
-                    "size": 7398,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/input"
                 },
                 {
                     "path": "pages/components/keyboardkey.mdx",
                     "name": "keyboardkey.mdx",
-                    "size": 1140,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/keyboardkey"
                 },
                 {
                     "path": "pages/components/link.mdx",
                     "name": "link.mdx",
-                    "size": 1652,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/link"
                 },
                 {
                     "path": "pages/components/list.mdx",
                     "name": "list.mdx",
-                    "size": 2286,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/list"
                 },
                 {
                     "path": "pages/components/menu.mdx",
                     "name": "menu.mdx",
-                    "size": 11348,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/menu"
                 },
                 {
                     "path": "pages/components/modal.mdx",
                     "name": "modal.mdx",
-                    "size": 17443,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/modal"
                 },
                 {
                     "path": "pages/components/numberinput.mdx",
                     "name": "numberinput.mdx",
-                    "size": 11184,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/numberinput"
                 },
                 {
                     "path": "pages/components/popover.mdx",
                     "name": "popover.mdx",
-                    "size": 18476,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/popover"
                 },
                 {
                     "path": "pages/components/principles.mdx",
                     "name": "principles.mdx",
-                    "size": 1596,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/principles"
                 },
                 {
                     "path": "pages/components/progress.mdx",
                     "name": "progress.mdx",
-                    "size": 1574,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/progress"
                 },
                 {
                     "path": "pages/components/pseudobox.mdx",
                     "name": "pseudobox.mdx",
-                    "size": 7646,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/pseudobox"
                 },
                 {
                     "path": "pages/components/radio.mdx",
                     "name": "radio.mdx",
-                    "size": 6689,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/radio"
                 },
                 {
                     "path": "pages/components/recipes.mdx",
                     "name": "recipes.mdx",
-                    "size": 3976,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/recipes"
                 },
                 {
                     "path": "pages/components/responsive-styles.mdx",
                     "name": "responsive-styles.mdx",
-                    "size": 3059,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/responsive-styles"
                 },
                 {
                     "path": "pages/components/select.mdx",
                     "name": "select.mdx",
-                    "size": 5666,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/select"
                 },
                 {
                     "path": "pages/components/simplegrid.mdx",
                     "name": "simplegrid.mdx",
-                    "size": 3955,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/simplegrid"
                 },
                 {
                     "path": "pages/components/skeleton.mdx",
                     "name": "skeleton.mdx",
-                    "size": 1329,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/skeleton"
                 },
                 {
                     "path": "pages/components/slider.mdx",
                     "name": "slider.mdx",
-                    "size": 5272,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/slider"
                 },
                 {
                     "path": "pages/components/spinner.mdx",
                     "name": "spinner.mdx",
-                    "size": 1588,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/spinner"
                 },
                 {
                     "path": "pages/components/stack.mdx",
                     "name": "stack.mdx",
-                    "size": 4679,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/stack"
                 },
                 {
                     "path": "pages/components/stat.mdx",
                     "name": "stat.mdx",
-                    "size": 995,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/stat"
                 },
                 {
                     "path": "pages/components/style-props.mdx",
                     "name": "style-props.mdx",
-                    "size": 15861,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/style-props"
                 },
                 {
                     "path": "pages/components/switch.mdx",
                     "name": "switch.mdx",
-                    "size": 2344,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/switch"
                 },
                 {
                     "path": "pages/components/tabs.mdx",
                     "name": "tabs.mdx",
-                    "size": 14490,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/tabs"
                 },
                 {
                     "path": "pages/components/tag.mdx",
                     "name": "tag.mdx",
-                    "size": 2315,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/tag"
                 },
                 {
                     "path": "pages/components/text.mdx",
                     "name": "text.mdx",
-                    "size": 2312,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/text"
                 },
                 {
                     "path": "pages/components/textarea.mdx",
                     "name": "textarea.mdx",
-                    "size": 1991,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/components/textarea"
                 }
             ],
-            "size": 269346,
+            "size": null,
             "type": "directory"
         },
         {
             "path": "pages/index.mdx",
             "name": "index.mdx",
-            "size": 457,
-            "extension": ".mdx",
-            "type": "file",
             "title": "",
             "url": "/index"
         },
@@ -530,71 +359,50 @@
                 {
                     "path": "pages/utilities/theme.mdx",
                     "name": "theme.mdx",
-                    "size": 8988,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/utilities/theme"
                 },
                 {
                     "path": "pages/utilities/toast.mdx",
                     "name": "toast.mdx",
-                    "size": 4717,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/utilities/toast"
                 },
                 {
                     "path": "pages/utilities/tooltip.mdx",
                     "name": "tooltip.mdx",
-                    "size": 4146,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/utilities/tooltip"
                 },
                 {
                     "path": "pages/utilities/useClipboard.mdx",
                     "name": "useClipboard.mdx",
-                    "size": 1378,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/utilities/useClipboard"
                 },
                 {
                     "path": "pages/utilities/useDisclosure.mdx",
                     "name": "useDisclosure.mdx",
-                    "size": 1581,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/utilities/useDisclosure"
                 },
                 {
                     "path": "pages/utilities/useTheme.mdx",
                     "name": "useTheme.mdx",
-                    "size": 375,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/utilities/useTheme"
                 },
                 {
                     "path": "pages/utilities/visuallyhidden.mdx",
                     "name": "visuallyhidden.mdx",
-                    "size": 1023,
-                    "extension": ".mdx",
-                    "type": "file",
                     "title": "",
                     "url": "/utilities/visuallyhidden"
                 }
             ],
-            "size": 22208,
+            "size": null,
             "type": "directory"
         }
     ],
-    "size": 292011,
+    "size": null,
     "type": "directory"
 }
