@@ -1,20 +1,10 @@
 /** @jsx jsx */
-import { ThemeProvider } from '@chakra-ui/core'
-import {
-    Box,
-    Link,
-    Stack,
-    useColorMode,
-    ColorModeProvider,
-    CSSReset,
-} from '@chakra-ui/core'
+import { Box, ColorModeProvider, CSSReset, Stack, ThemeProvider } from '@chakra-ui/core'
 import { jsx } from '@emotion/core'
-import { FiAirplay } from 'react-icons/fi'
-import { LandingProvider } from 'react-landing'
+import { useDokzConfig } from '../provider'
 import NavBar from './NavBar'
 import { SideNav } from './SideNav'
 import { TableOfContents } from './TableOfContents'
-import { useDokzConfig } from '../provider'
 
 const SIDENAV_W = 200
 const TABLE_OF_C_W = 200
