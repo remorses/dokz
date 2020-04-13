@@ -9,8 +9,8 @@
     },
     "dependencies": {
         "dokz": "*",
-        "next": "latest",
-        "react": "16.13.1",
+        "next": "^9.3.4",
+        "react": "^16.13.1",
         "react-dom": "16.13.1"
     },
     "devDependencies": {

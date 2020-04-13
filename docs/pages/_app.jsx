@@ -16,9 +16,13 @@ export default (props) => {
                     width='100px'
                 />
             }
-            order={{
-                general: { getting_started: null, writing_mdx: null },
-                customizing: ['customizing_components'],
+            sidebarOrdering={{
+                // 'index.mdx': 1,
+                general: {
+                    'getting_started.mdx': null,
+                    'writing_mdx.mdx': null,
+                },
+                customizing: { 'customizing_components.mdx': null },
             }}
         >
             <Component {...pageProps} />

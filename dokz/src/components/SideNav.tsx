@@ -68,9 +68,13 @@ export function applySidebarOrdering({
     if (!order) {
         return tree
     }
-    tree.children = orderBy(tree.children, (x) =>
-        Object.keys(order).findIndex((k) => k === x.name),
-    )
+    tree.children = orderBy(tree.children, (x) => {
+        const index = Object.keys(order).findIndex((k) => k === x.name)
+        if (index === -1) {
+            return Infinity
+        }
+        return index
+    })
     tree.children.forEach((node) => {
         applySidebarOrdering({ tree: node, order: order[node.name] })
     })
