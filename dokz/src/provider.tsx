@@ -41,7 +41,7 @@ const defaultDokzContext: DoczProviderProps = {
     headerItems: [<ColorModeSwitch />],
     prismTheme: { dark: darkPrismTheme, light: darkPrismTheme },
     maxPageWidth: '1600px',
-    bodyColor: { light: '#537389', dark: 'rgba(255,255,255,.9)' },
+    bodyColor: { light: '#445d6e', dark: 'rgba(255,255,255,.9)' },
     headingColor: { light: '#264459', dark: 'rgba(255,255,255,1)' },
     // TODO add colors customization
 }

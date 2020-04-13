@@ -19,7 +19,9 @@ import { useDokzConfig } from '../provider'
 const Pre = (props) => <Box my='2em' rounded='sm' {...props} />
 
 const Table = (props) => (
-    <Box as='table' textAlign='left' mt='32px' width='full' {...props} />
+    <Box overflowX='auto'>
+        <Box as='table' textAlign='left' mt='32px' width='full' {...props} />
+    </Box>
 )
 
 const THead = (props) => {
