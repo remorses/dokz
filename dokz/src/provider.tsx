@@ -54,15 +54,18 @@ export function useDokzConfig(): DoczProviderProps {
 }
 
 export function DoczProvider({ children, ...rest }: DoczProviderProps) {
-    const { mdxComponents: userMDXComponents = {} } = rest
+    const ctx = { ...defaultDokzContext, ...rest }
+    const { mdxComponents: userMDXComponents = {}, initialColorMode } = ctx
     return (
         // TODO merge configs
-        <DokzContext.Provider value={{ ...defaultDokzContext, ...rest }}>
-            <MDXProvider
-                components={{ ...MDXComponents, ...userMDXComponents }}
-            >
-                {children}
-            </MDXProvider>
+        <DokzContext.Provider value={ctx}>
+            <ColorModeProvider value={initialColorMode}>
+                <MDXProvider
+                    components={{ ...MDXComponents, ...userMDXComponents }}
+                >
+                    {children}
+                </MDXProvider>
+            </ColorModeProvider>
         </DokzContext.Provider>
     )
 }

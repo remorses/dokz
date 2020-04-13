@@ -104,7 +104,6 @@ const MdxText = (props) => {
             as='p'
             mb='20px'
             lineHeight='30px'
-            // color={{ light: '#537389', dark: 'white' }[colorMode]}
             {...props}
         />
     )
@@ -119,7 +118,7 @@ const MDXComponents = {
         return (
             <InlineCode
                 mx='4px'
-                color={{ light: '#264459', dark: 'white' }[colorMode]}
+                // color={{ light: '#264459', dark: 'white' }[colorMode]}
                 variantColor='gray'
                 lineHeight='normal'
                 {...props}

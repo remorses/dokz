@@ -81,6 +81,7 @@ export const ComponentLink = forwardRef(({ href, ...props }: any, ref) => {
             {(isActive) => (
                 <SideNavLink
                     ref={ref}
+                    href={href}
                     aria-current={isActive ? 'page' : undefined}
                     _hover={{
                         color: hoverColor[colorMode],
