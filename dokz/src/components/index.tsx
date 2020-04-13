@@ -14,7 +14,6 @@ import {
 import { jsx, css } from '@emotion/core'
 import { DiGithubBadge } from 'react-icons/di'
 import MobileNav from './MobileNav'
-import { PageContainer } from 'react-landing'
 
 const styles = css`
     .algolia-autocomplete {

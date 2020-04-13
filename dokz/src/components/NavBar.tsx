@@ -14,9 +14,7 @@ import {
 import { jsx, css } from '@emotion/core'
 import { DiGithubBadge } from 'react-icons/di'
 import MobileNav from './MobileNav'
-import { PageContainer } from 'react-landing'
-
-
+import { useDokzConfig } from '../provider'
 
 export const GithubLink = ({ url = '', ...rest }: any) => (
     <PseudoBox
@@ -55,19 +53,26 @@ export const ColorModeSwitch = ({ ...rest }) => {
     )
 }
 
-
 const NavBar = ({ logo, tree, items, ...props }) => {
     const { colorMode, toggleColorMode } = useColorMode()
     const bg = { light: 'white', dark: 'gray.800' }
+    const { maxPageWidth } = useDokzConfig()
     return (
-        <PageContainer
+        <Stack
             bg={bg[colorMode]}
             zIndex={4}
             borderBottomWidth='1px'
-            justify='center'
+            justifyContent='center'
+            alignItems='center'
             {...props}
         >
-            <Stack as='header' width='full' height='40px' justify='center'>
+            <Stack
+                maxWidth={maxPageWidth}
+                as='header'
+                width='full'
+                height='40px'
+                justify='center'
+            >
                 <Flex size='100%' px='6' align='center' justify='space-between'>
                     <Flex align='center' mr={5}>
                         {logo}
@@ -84,7 +89,7 @@ const NavBar = ({ logo, tree, items, ...props }) => {
                     </Flex>
                 </Flex>
             </Stack>
-        </PageContainer>
+        </Stack>
     )
 }
 

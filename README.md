@@ -10,7 +10,9 @@
 // TODO remove react icons dependency, vendor svg components used
 // TODO move the emotion theme, color mode provider under the wrapper, to not pollute other non mdx files
 // TODO test if using a wrapper in jsx pages works
-
+// TODO paragraph color is customizable
+// TODO heading color is customizable
+// TODO add a header in the sidebar, with `index` title
 
 
 @docx/core
