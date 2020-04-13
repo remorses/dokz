@@ -32,7 +32,7 @@ export type DoczProviderProps = {
 
 const defaultDokzContext: DoczProviderProps = {
     initialColorMode: 'light',
-    footer: null,
+    footer: <Box height='100px' />,
     headerLogo: (
         <Box fontWeight='medium' fontSize='32px'>
             Your Logo

@@ -33,7 +33,6 @@ export function Wrapper(props) {
         headerLogo,
         headerItems,
         maxPageWidth,
-        initialColorMode,
         bodyColor,
     } = useDokzConfig()
     const index = getMdxIndex()
