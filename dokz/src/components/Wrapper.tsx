@@ -18,13 +18,8 @@ export function Wrapper(props) {
         headerLogo,
         headerItems,
         maxPageWidth,
-        black,
         initialColorMode
     } = useDokzConfig()
-    // const index = require('root_/index.json')
-    // console.log('root_', require.resolve('root_'))
-    // const { colorMode } = useColorMode()
-    // console.log({ colorMode })
     const index = getMdxIndex()
     return (
         <ThemeProvider>

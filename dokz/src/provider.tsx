@@ -22,7 +22,7 @@ export type DoczProviderProps = {
     playgroundScope?: { [k: string]: any }
     prismTheme?: PrismTheme | ((mode: 'dark' | 'light') => PrismTheme)
     maxPageWidth?: string
-    black?: string
+    // black?: string
     // showDarkModeSwitch?: boolean
     // primaryColor?: string // maybe used for accenting ceratin element
     initialColorMode?: 'dark' | 'light'
@@ -38,8 +38,9 @@ const defaultDokzContext: DoczProviderProps = {
     ),
     headerItems: [<ColorModeSwitch />],
     prismTheme: darkPrismTheme,
-    black: '#264459',
+    // black: '#264459',
     maxPageWidth: '1600px',
+    // TODO add colors customization
 }
 
 const DokzContext = createContext(defaultDokzContext)
@@ -52,6 +53,7 @@ export function useDokzConfig(): DoczProviderProps {
 export function DoczProvider({ children, ...rest }: DoczProviderProps) {
     const { mdxComponents: userMDXComponents = {} } = rest
     return (
+        // TODO merge configs
         <DokzContext.Provider value={{ ...defaultDokzContext, ...rest }}>
             <MDXProvider
                 components={{ ...MDXComponents, ...userMDXComponents }}
