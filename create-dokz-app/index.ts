@@ -33,7 +33,7 @@ async function run() {
             type: 'text',
             name: 'path',
             message: 'What is your project named?',
-            initial: 'docs-app',
+            initial: 'dokz-app',
             validate: (name) => {
                 const validation = validateNpmName(
                     path.basename(path.resolve(name)),

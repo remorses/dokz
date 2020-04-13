@@ -60,7 +60,7 @@ export const TopNavLink = forwardRef(({ href, ...props }: any, ref) => {
                     aria-current={isActive ? 'page' : undefined}
                     // _hover={{ color: !isActive ? 'inherit' : 'transparent' }}
                     {...(isActive && {
-                        color: 'teal.500',
+                        color: 'gray.500',
                         fontWeight: 'semibold',
                     })}
                     {...props}

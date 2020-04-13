@@ -20,12 +20,14 @@ export type DoczProviderProps = {
     footer?: ReactNode
     mdxComponents?: { [k: string]: ComponentType<any> }
     playgroundScope?: { [k: string]: any }
-    prismTheme?: PrismTheme | ((mode: 'dark' | 'light') => PrismTheme)
+    prismTheme?: { dark: PrismTheme; light: PrismTheme }
     maxPageWidth?: string
     // black?: string
     // showDarkModeSwitch?: boolean
     // primaryColor?: string // maybe used for accenting ceratin element
     initialColorMode?: 'dark' | 'light'
+    bodyColor?: { dark: string; light: string }
+    headingColor?: { dark: string; light: string }
 }
 
 const defaultDokzContext: DoczProviderProps = {
@@ -37,9 +39,10 @@ const defaultDokzContext: DoczProviderProps = {
         </Box>
     ),
     headerItems: [<ColorModeSwitch />],
-    prismTheme: darkPrismTheme,
-    // black: '#264459',
+    prismTheme: { dark: darkPrismTheme, light: darkPrismTheme },
     maxPageWidth: '1600px',
+    bodyColor: { light: '#537389', dark: 'rgba(255,255,255,.9)' },
+    headingColor: { light: '#264459', dark: 'rgba(255,255,255,1)' },
     // TODO add colors customization
 }
 

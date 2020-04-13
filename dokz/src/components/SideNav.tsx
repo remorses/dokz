@@ -49,6 +49,16 @@ export const SideNav = ({ tree, ...rest }: SideNavProps) => {
                 fontWeight='medium'
                 p='6'
             >
+                <Box
+                    // TODO meybe remove index in sidebar
+                    my='10px'
+                    fontWeight='medium'
+                    letterSpacing='2px'
+                    opacity={0.7}
+                    mx='2'
+                >
+                    INDEX
+                </Box>
                 <NavTreeComponent {...tree} name='' />
             </Box>
         </Box>
@@ -68,11 +78,10 @@ const NavTreeComponent = ({
     return (
         <Stack
             spacing='0px'
-            ml={depth * w + 'px'}
-            mt={depth === 1 ? '20px' : '0px'}
+            pl={depth * w + 'px'}
+            pb={depth === 1 ? '20px' : '0px'}
         >
             {name && (
-                
                 <ComponentLink
                     h='28px'
                     // display='block'

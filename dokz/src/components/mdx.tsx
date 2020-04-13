@@ -14,6 +14,7 @@ import { jsx } from '@emotion/core'
 import NextLink from 'next/link'
 import { Code } from './Code'
 import { Wrapper } from './Wrapper'
+import { useDokzConfig } from '../provider'
 
 const Pre = (props) => <Box my='2em' rounded='sm' {...props} />
 
@@ -48,46 +49,51 @@ const TData = (props) => (
     />
 )
 
-const DocsHeading = (props) => (
-    <Heading
-        fontWeight='semibold'
-        // color='black'
-        my='40px'
-        css={{
-            '&[id]': {
-                pointerEvents: 'none',
-            },
-            '&[id]:before': {
-                display: 'block',
-                height: ' 6rem',
-                marginTop: '-6rem',
-                visibility: 'hidden',
-                content: `""`,
-            },
-            '&[id]:hover a': { opacity: 1 },
-        }}
-        {...props}
-    >
-        <Box pointerEvents='auto'>
-            {props.children}
-            {props.id && (
-                <ChakraLink
-                    aria-label='anchor'
-                    as='a'
-                    color='teal.500'
-                    fontWeight='normal'
-                    outline='none'
-                    _focus={{ opacity: 1, boxShadow: 'outline' }}
-                    opacity={0}
-                    ml='0.375rem'
-                    href={`#${props.id}`}
-                >
-                    #
-                </ChakraLink>
-            )}
-        </Box>
-    </Heading>
-)
+const DocsHeading = (props) => {
+    const { headingColor } = useDokzConfig()
+    const { colorMode } = useColorMode()
+    return (
+        <Heading
+            fontWeight='semibold'
+            // color='black'
+            color={headingColor[colorMode]}
+            my='40px'
+            css={{
+                '&[id]': {
+                    pointerEvents: 'none',
+                },
+                '&[id]:before': {
+                    display: 'block',
+                    height: ' 6rem',
+                    marginTop: '-6rem',
+                    visibility: 'hidden',
+                    content: `""`,
+                },
+                '&[id]:hover a': { opacity: 1 },
+            }}
+            {...props}
+        >
+            <Box pointerEvents='auto'>
+                {props.children}
+                {props.id && (
+                    <ChakraLink
+                        aria-label='anchor'
+                        as='a'
+                        color='gray.500'
+                        fontWeight='normal'
+                        outline='none'
+                        _focus={{ opacity: 1, boxShadow: 'outline' }}
+                        opacity={0}
+                        ml='0.375rem'
+                        href={`#${props.id}`}
+                    >
+                        #
+                    </ChakraLink>
+                )}
+            </Box>
+        </Heading>
+    )
+}
 
 const MdxText = (props) => {
     const { colorMode } = useColorMode()
@@ -96,7 +102,7 @@ const MdxText = (props) => {
             as='p'
             mb='20px'
             lineHeight='30px'
-            color={{ light: '#537389', dark: 'white' }[colorMode]}
+            // color={{ light: '#537389', dark: 'white' }[colorMode]}
             {...props}
         />
     )
@@ -132,7 +138,7 @@ const MDXComponents = {
     td: TData,
     a: ({ href = '', ...props }) => (
         <NextLink href={href} passHref>
-            <Link {...props} />
+            <Link fontWeight='medium' textDecoration='underline' {...props} />
         </NextLink>
     ),
     p: (props) => {

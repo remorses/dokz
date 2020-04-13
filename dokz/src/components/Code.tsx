@@ -1,5 +1,5 @@
 import React, { useState, CSSProperties } from 'react'
-import { FiCopy } from 'react-icons/fi'
+import { FiCopy, FiCheck } from 'react-icons/fi'
 
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 import { mdx } from '@mdx-js/react'
@@ -43,9 +43,7 @@ export const Code = ({ children, className, live, ...rest }) => {
     // console.log({rest, live})
     const { colorMode } = useColorMode()
     let { prismTheme, playgroundScope } = useDokzConfig()
-    if (typeof prismTheme === 'function') {
-        prismTheme = prismTheme(colorMode)
-    }
+
     const code = children.trim()
     const language = className && className.replace(/language-/, '')
     const { onCopy, hasCopied } = useClipboard(code)
@@ -66,53 +64,65 @@ export const Code = ({ children, className, live, ...rest }) => {
         )
     }
     return (
-        <Highlight
-            {...defaultProps}
-            theme={prismTheme}
-            code={code}
-            language={language}
-        >
-            {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                <Box
-                    p='20px'
-                    borderRadius='8px'
-                    as='pre'
-                    className={className}
-                    style={{ ...style }}
-                    position='relative'
-                >
-                    <CopyButton
-                        onClick={onCopy}
-                        position='absolute'
-                        top='10px'
-                        right='10px'
-                    />
-                    {tokens.map((line, i) => (
-                        <div key={i} {...getLineProps({ line, key: i })}>
-                            {line.map((token, key) => (
-                                <span
-                                    key={key}
-                                    {...getTokenProps({ token, key })}
-                                />
-                            ))}
-                        </div>
-                    ))}
-                </Box>
-            )}
-        </Highlight>
+        <Box position='relative'>
+            <Highlight
+                {...defaultProps}
+                theme={prismTheme[colorMode]}
+                code={code}
+                language={language}
+            >
+                {({
+                    className,
+                    style,
+                    tokens,
+                    getLineProps,
+                    getTokenProps,
+                }) => (
+                    <Box
+                        p='20px'
+                        pt='30px'
+                        borderRadius='8px'
+                        as='pre'
+                        className={className}
+                        style={{ ...style }}
+                        overflowX='auto'
+                    >
+                        <CopyButton
+                            onClick={onCopy}
+                            hasCopied={hasCopied}
+                            position='absolute'
+                            top='10px'
+                            right='10px'
+                        />
+                        {tokens.map((line, i) => (
+                            <div key={i} {...getLineProps({ line, key: i })}>
+                                {line.map((token, key) => (
+                                    <span
+                                        key={key}
+                                        {...getTokenProps({ token, key })}
+                                    />
+                                ))}
+                            </div>
+                        ))}
+                    </Box>
+                )}
+            </Highlight>
+        </Box>
     )
 }
 
 const CopyButton = (props) => {
+    const { hasCopied } = props
     return (
         <Box
             cursor='pointer'
             m='0'
             style={{
-                strokeWidth: '1px',
+                strokeWidth: '2px',
             }}
+            opacity={.7}
             size='18px'
-            as={FiCopy}
+            as={hasCopied ? FiCheck : FiCopy}
             {...props}
         />
     )
