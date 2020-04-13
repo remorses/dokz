@@ -1,6 +1,7 @@
 {
-    "name": "example",
+    "name": "docs",
     "version": "0.1.0",
+    "private": true,
     "scripts": {
         "dev": "next dev",
         "build": "next build",
@@ -8,12 +9,11 @@
     },
     "dependencies": {
         "dokz": "*",
-        "next": "^9.3.4",
+        "next": "latest",
         "react": "16.13.1",
         "react-dom": "16.13.1"
     },
     "devDependencies": {
-        "next-transpile-modules": "^3.2.0",
         "compose-function": "^3.0.3"
     }
 }

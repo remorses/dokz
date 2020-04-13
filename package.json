@@ -2,6 +2,7 @@
     "private": true,
     "workspaces": [
         "dokz",
+        "docs",
         "example"
     ],
     "scripts": {
