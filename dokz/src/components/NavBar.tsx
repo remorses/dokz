@@ -70,7 +70,7 @@ const NavBar = ({ logo, tree, items, ...props }) => {
                 maxWidth={maxPageWidth}
                 as='header'
                 width='full'
-                height='40px'
+                // height='60px'
                 justify='center'
             >
                 <Flex size='100%' px='6' align='center' justify='space-between'>

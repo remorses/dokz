@@ -18,7 +18,7 @@ import { Fragment } from 'react'
 const SIDENAV_W = 200
 const TABLE_OF_C_W = 200
 
-const NAVBAR_H = 60
+const NAVBAR_H = 62
 
 const globalStyles = css`
     * {
