@@ -5,6 +5,7 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build",
+        "svg": "svgr --no-dimensions --typescript -d svgs public ",
         "start": "next start"
     },
     "dependencies": {
@@ -14,6 +15,7 @@
         "react-dom": "16.13.1"
     },
     "devDependencies": {
+        "@svgr/cli": "^5.3.1",
         "compose-function": "^3.0.3"
     }
 }

@@ -1,9 +1,15 @@
-# dokz
+<div align='center'>
+    <h1>dokz</h1>
+    <br/>
+    <br/>
+    <img src='http://dokz-docs.now.sh/dokz_logo.svg' width='500px'>
+    <br/>
+</div>
 
 Dokz is a documentation site generator that compiles your markdown or mdx files down to a static react site
 It uses Next.js under the hood
 
-Features
+Features 🔥
 
 -   SideBar automatically generated from mdx paths
 -   Table of contents generated from headings
