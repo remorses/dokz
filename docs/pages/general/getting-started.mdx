@@ -2,8 +2,6 @@
 name: Getting Started
 ---
 
----
-
 # Getting Started
 
 Welcome to the Dokz documentation!
@@ -41,20 +39,13 @@ Add the dokz provider to the main nextjs entrypoint
 
 ```jsx
 // _app.jsx
-import { DoczProvider, } from 'dokz'
+import { DoczProvider } from 'dokz'
 import React from 'react'
 
 export default (props) => {
     const { Component, pageProps } = props
     return (
-        <DoczProvider
-            headerLogo={
-                <img
-                    src='/logo.svg'
-                    width='100px'
-                />
-            }
-        >
+        <DoczProvider headerLogo={<img src='/logo.svg' width='100px' />}>
             <Component {...pageProps} />
         </DoczProvider>
     )

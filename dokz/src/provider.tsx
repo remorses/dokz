@@ -76,7 +76,6 @@ const defaultDokzContext: DoczProviderProps = {
     maxPageWidth: '1600px',
     bodyColor: { light: '#445d6e', dark: 'rgba(255,255,255,.9)' },
     headingColor: { light: '#264459', dark: 'rgba(255,255,255,1)' },
-    // TODO add colors customization
 }
 
 const DokzContext = createContext(defaultDokzContext)

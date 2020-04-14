@@ -1,14 +1,23 @@
 ---
-name: Preview React Components (Playground)
+name: Preview React Components
 ---
+
+# Preview React Components
 
 Dokz can render your jsx code in a playground, to enable this feature simply add the `live=true` above a code block:
 
 ````md
-```jsx live=true
-<div>hello world</div>
+```js live=true
+<div style={{ wisth: 100, height: 100, background: 'lightblue' }}></div>
 ```
 ````
+
+The above code block will be render as follows
+
+```js live=true
+<div style={{ wisth: 100, height: 100, background: 'lightblue' }}></div>
+```
+
 
 ## Use custom components and scope
 

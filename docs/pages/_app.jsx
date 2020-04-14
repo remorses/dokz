@@ -17,14 +17,18 @@ export default (props) => {
                     width='100px'
                 />
             }
-            
             sidebarOrdering={{
-                'index.mdx': 1,
                 general: {
-                    'getting_started.mdx': null,
-                    'writing_mdx.mdx': null,
+                    introduction: null,
+                    'getting-started': null,
+                    'writing-mdx': null,
+                    'document-settings': null,
+                    'preview-react-components': null,
                 },
-                customizing: { 'customizing_components.mdx': null },
+                customizing: {
+                    'customizing-elements': null,
+                    'change-sidebar-order': null,
+                },
             }}
         >
             <Component {...pageProps} />
