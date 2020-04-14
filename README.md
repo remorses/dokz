@@ -1,48 +1,77 @@
 # dokz
 
-// TODO how to order the sidebar menu? pass a sidebar prop, an object that
+Dokz is a documentation site generator that compiles your markdown or mdx files down to a static react site
+It uses Next.js under the hood
 
+Features
 
+-   SideBar automatically generated from mdx paths
+-   Table of contents generated from headings
+-   Preview React Components inside jsx code blocks
+-   Dark Mode
+-   Can be integrated with existing Nextjs app
 
-@docx/core
-here there is the nextjs App component, the withDocz
+## Quick Start
 
-@docx/themes
-where there re all the basic mdx components, heading, wrapper, sidebar, ...
+We recommend creating a new Dokz app using `create-dokz-app`, which sets up everything automatically for you. To create a project, run:
 
-@docx/graphql-playground
-
-@docx/react-playground
-
-cli that downloads the code template from github
-
-```js
-import { DoczProvider } from '@docx/core'
-import { defaultTheme } from '@docx/themes'
-
-;<DoczProvider
-    navar={}
-    sidebar={}
-    footer={}
-    tableOfContents={}
-    h1={}
-    h2={}
-    {...defaultTheme}
-/>
+```bash
+npm init dokz-app
+# or
+yarn create dokz-app
 ```
 
-```js
-const { withDocz } = require('@docx/core')
-withDocz()
-// scans mdx files, get their title, creates a json file with sidebar info
-// uses mdx loader plugin
-// add marker plugin to create a table of contents for every mdx file, inject this toc in an exported meta of the mdx file
-//
+After the installation is complete run `npm run dev` to start the development server. Try editing `pages/index.mdx` and see the result on your browser.
+
+## Manual Setup
+
+> warning: you should use `npm init dokz-app` if you don't have an existing next application
+
+You can also install `dokz` in an existing nextjs application:
+
+```bash
+npm install dokz
 ```
 
-many built in components like
+Add the dokz provider to the main nextjs entrypoint
 
--   graphql playground
--   react playground
--   code highlighting
--   ...
+```jsx
+// _app.jsx
+import { DoczProvider } from 'dokz'
+import React from 'react'
+
+export default (props) => {
+    const { Component, pageProps } = props
+    return (
+        <DoczProvider headerLogo={<img src='/logo.svg' width='100px' />}>
+            <Component {...pageProps} />
+        </DoczProvider>
+    )
+}
+```
+
+Add `withDokz` in the `next.config.js` file
+
+```js
+const { withDocz } = require('dokz/dist/plugin')
+
+module.exports = withDocz()
+```
+
+Create a new mdx document inside tha `pages` folder
+
+```md
+# Heading
+
+Ullamco ipsum id irure do occaecat minim. Cupidatat exercitation magna sit sunt aliqua voluptate excepteur amet dolor ea do. Consectetur veniam deserunt ullamco irure ullamco. Voluptate magna tempor elit voluptate velit enim dolor nulla sit fugiat exercitation. Anim deserunt Lorem aliquip cillum duis deserunt consequat sit culpa commodo.
+
+> Node this is important
+
+## Subjeading
+
+Quis anim minim ullamco aliquip excepteur do pariatur eiusmod duis eu non. Duis deserunt Lorem nulla non duis voluptate dolore et. Do veniam mollit in do ad id enim anim dolore sint labore quis consequat.
+```
+
+To start developing your application run `npm run dev`. This starts the development server on `http://localhost:3000`.
+
+Visit `http://localhost:3000` to view your application.
