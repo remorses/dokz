@@ -18,8 +18,8 @@ export default (props) => {
                 />
             }
             sidebarOrdering={{
+                index: null,
                 general: {
-                    introduction: null,
                     'getting-started': null,
                     'writing-mdx': null,
                     'document-settings': null,
