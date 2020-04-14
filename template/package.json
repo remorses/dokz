@@ -8,6 +8,7 @@
         "start": "next start"
     },
     "dependencies": {
+        "@emotion/core": "^10.0.28",
         "dokz": "latest",
         "next": "latest",
         "react": "16.13.1",

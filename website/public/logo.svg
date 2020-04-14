@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="63px" height="73px" viewBox="0 0 63 73" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63 (92445) - https://sketch.com -->
+    <title>logo</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="logos" transform="translate(-487.000000, -198.000000)">
+            <g id="logo" transform="translate(487.000000, 198.000000)">
+                <g id="book-heart-copy" fill-rule="nonzero">
+                    <path d="M13.4563179,64 C10.7825271,64 9,62 9,59 C9,56 11.2281589,54 13.4563179,54 L57.9261922,54 C57.6574206,56.5375 57.6810948,61.559375 58,64 L13.4563179,64 Z" id="Path" fill="#858585" opacity="0.4"></path>
+                    <path d="M13.5,54.75 L59.625,54.75 C61.488961,54.75 63,53.2179744 63,51.328125 L63,4.5625 C63,2.04270083 60.9852814,0 58.5,0 L13.5,0 C6.04415588,0 0,6.12810249 0,13.6875 L0,59.3125 C0,66.8718975 6.04415588,73 13.5,73 L59.625,73 C61.488961,73 63,71.4679744 63,69.578125 L63,67.296875 C63,65.4070256 61.488961,63.875 59.625,63.875 L13.5,63.875 C10.8,63.875 9,62.05 9,59.3125 C9,56.575 11.25,54.75 13.5,54.75 Z" id="Shape" fill="#2D3748"></path>
+                </g>
+                <polyline id="Path" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" points="27 11.5 20.5 11.5 14 11.5"></polyline>
+                <line x1="47.4285714" y1="23.0862069" x2="14" y2="23.0862069" id="Path" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></line>
+            </g>
+        </g>
+    </g>
+</svg>

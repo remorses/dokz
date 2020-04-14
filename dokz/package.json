@@ -28,6 +28,7 @@
     "license": "ISC",
     "devDependencies": {
         "@babel/core": "^7.9.0",
+        "@emotion/core": "^10.0.28",
         "@storybook/addon-actions": "^5.3.17",
         "@storybook/addon-links": "^5.3.17",
         "@storybook/addons": "^5.3.17",
@@ -48,9 +49,11 @@
         "ts-loader": "^6.2.2",
         "typescript": "^3.8.3"
     },
+    "peerDependencies": {
+        "@emotion/core": "*"
+    },
     "dependencies": {
         "@chakra-ui/core": "^0.7.0",
-        "@emotion/core": "^10.0.28",
         "@emotion/styled": "^10.0.27",
         "@mdx-js/loader": "^1.5.8",
         "@mdx-js/react": "^1.5.8",
