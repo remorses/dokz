@@ -16,6 +16,8 @@
     },
     "devDependencies": {
         "@svgr/cli": "^5.3.1",
-        "compose-function": "^3.0.3"
+        "@types/node": "^13.11.1",
+        "compose-function": "^3.0.3",
+        "typescript": "^3.8.3"
     }
 }
