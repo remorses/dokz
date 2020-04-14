@@ -4,8 +4,7 @@
     <img src='http://dokz-docs.now.sh/dokz_logo.svg' width='300px'>
     <br/>
     <br/>
-    <p>Dokz is a documentation site generator that compiles your markdown or mdx files down to a static react site
-It uses Next.js under the hood
+    <p>Compiles your markdown or mdx files down to a static Next.js site
     </p>
     <br/>
     <br/>
