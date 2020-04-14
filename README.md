@@ -4,13 +4,13 @@
     <img src='http://dokz-docs.now.sh/logo_full.svg' width='300px'>
     <br/>
     <br/>
-    <p>Compiles your markdown or mdx files down to a static Next.js site
-    </p>
+    <h3>Compiles your markdown or mdx files down to a static Next.js site
+    </h3>
     <br/>
     <br/>
 </div>
 
-Features 🔥
+🔥 Features
 
 -   SideBar automatically generated from mdx paths
 -   Table of contents generated from headings
