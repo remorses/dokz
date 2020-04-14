@@ -2,7 +2,9 @@
     <h1>dokz</h1>
     <br/>
     <br/>
-    <img src='http://dokz-docs.now.sh/dokz_logo.svg' width='500px'>
+    <img src='http://dokz-docs.now.sh/dokz_logo.svg' width='300px'>
+    <br/>
+    <br/>
     <br/>
 </div>
 
