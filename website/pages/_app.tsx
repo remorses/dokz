@@ -1,7 +1,7 @@
 import { DoczProvider, GithubLink, ColorModeSwitch } from 'dokz/dist'
 import { useColorMode } from '@chakra-ui/core'
 import React from 'react'
-import { DokzLogo, DokzLogoWhite } from '../svgs/'
+import { DokzLogo, DokzLogoWhite } from '../svgs'
 
 export default (props) => {
     const { Component, pageProps } = props
