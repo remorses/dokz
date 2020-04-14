@@ -1,10 +1,30 @@
-import { DoczProvider } from 'dokz'
+import { DoczProvider, GithubLink, ColorModeSwitch } from 'dokz/dist'
 import React from 'react'
 
 export default (props) => {
     const { Component, pageProps } = props
     return (
-        <DoczProvider>
+        <DoczProvider
+            headerItems={[
+                <GithubLink url='https://github.com/remorses/dokz' />,
+                <ColorModeSwitch />,
+            ]}
+            headerLogo={
+                <img
+                    src='/dokz_logo.svg'
+                    style={{ opacity: 0.8 }}
+                    width='100px'
+                />
+            }
+            sidebarOrdering={{
+                'index.mdx': 1,
+                general: {
+                    'getting_started.mdx': null,
+                    'writing_mdx.mdx': null,
+                },
+                customizing: { 'customizing_components.mdx': null },
+            }}
+        >
             <Component {...pageProps} />
         </DoczProvider>
     )

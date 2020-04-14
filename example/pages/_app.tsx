@@ -1,14 +1,13 @@
 import { DoczProvider } from 'dokz/src'
-import App from 'next/app'
 import React from 'react'
+
+const order = { index: null }
 
 export default (props) => {
     const { Component, pageProps } = props
     return (
-        <DoczProvider sidebarOrdering={{ index: null }}>
+        <DoczProvider sidebarOrdering={order}>
             <Component {...pageProps} />
         </DoczProvider>
     )
 }
-
-

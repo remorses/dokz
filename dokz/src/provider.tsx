@@ -15,19 +15,49 @@ import { GithubLink, ColorModeSwitch } from './components/NavBar'
 
 export type DoczProviderProps = {
     children?: any
+    /*
+    The logo displayed on the header nav bar
+    */
     headerLogo?: ReactNode
-    headerItems?: ReactNode[] | ReactNode // customize the items, default is the color switch
+    /*
+    Links in the right nav bar
+    */
+    headerItems?: ReactNode[] | ReactNode
+    /*
+    Footer at the end of every mdx page
+    */
     footer?: ReactNode
+    /*
+    Mdx object mapping from mdx element to component
+    */
     mdxComponents?: { [k: string]: ComponentType<any> }
+    /*
+    The variables available in the live playground
+    */
     playgroundScope?: { [k: string]: any }
+    /*
+    The theme for the code blocks
+    */
     prismTheme?: { dark: PrismTheme; light: PrismTheme }
+    /*
+    The max-width of the page container, defaults to '1600px'
+    */
     maxPageWidth?: string
-    // black?: string
-    // showDarkModeSwitch?: boolean
-    // primaryColor?: string // maybe used for accenting ceratin element
+    /*
+    The initial color mode
+    */
     initialColorMode?: 'dark' | 'light'
+    /*
+    The color of the page text
+    */
     bodyColor?: { dark: string; light: string }
+    /*
+    The color of the heading elements
+    */
     headingColor?: { dark: string; light: string }
+    /*
+    The order of the sidebar links
+    */
     sidebarOrdering?: SidebarOrdering
 }
 

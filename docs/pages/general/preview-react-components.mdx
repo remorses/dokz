@@ -1,0 +1,42 @@
+---
+name: Preview React Components (Playground)
+---
+
+Dokz can render your jsx code in a playground, to enable this feature simply add the `live=true` above a code block:
+
+````md
+```jsx live=true
+<div>hello world</div>
+```
+````
+
+## Use custom components and scope
+
+To add other components and variables inside the playground you can use the `playgroundScope` in the `DokzProvider`.
+
+Add the following code inside `_app.jsx`
+
+```jsx
+import { DoczProvider } from 'dokz/src'
+import App from 'next/app'
+import React from 'react'
+
+const CustomComponent = (props) => <p className='paragraph'>{props.children}</p>
+
+export default (props) => {
+    const { Component, pageProps } = props
+    return (
+        <DoczProvider playgroundScope={{ variable: 'Hello', CustomComponent }}>
+            <Component {...pageProps} />
+        </DoczProvider>
+    )
+}
+```
+
+Now inside you live code you can use the passed scope
+
+````md
+```jsx live=true
+<CustomComponent>hello {variable}</CustomComponent>
+```
+````

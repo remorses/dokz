@@ -1,0 +1,42 @@
+---
+name: Change Sidebar Ordering
+---
+
+# Change Sidebar Ordering
+
+Dokz doesn't sort your sidebar links on any particular oder, this is because Dokz generates the sidebar links based on the `pages` directory tree
+
+To give a specific order to your sidebar you can use the `sidebarOrdering` prop in the `DokzProvider`:
+
+```jsx
+import { DoczProvider } from 'dokz/src'
+import React from 'react'
+
+const order = {
+    'index.mdx': null,
+    pageName: null, // you can omit the mdx extension
+    folder: {
+        page1: null,
+        page2: null,
+        page3: null,
+        subfolder: {
+            page3: null,
+            page4: null,
+        },
+    },
+    // paths not present will be put at the end of their parent tree
+}
+
+export default (props) => {
+    const { Component, pageProps } = props
+    return (
+        <DoczProvider sidebarOrdering={order}>
+            <Component {...pageProps} />
+        </DoczProvider>
+    )
+}
+```
+
+The order is specified with an object, every key is a file or an object path
+Every value can be `null`, which means the current key is a file path, or can be another object, meaning the current key is directory
+Paths that are not in this ordering are put at the end.

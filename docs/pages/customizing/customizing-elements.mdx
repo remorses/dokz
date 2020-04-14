@@ -1,3 +1,8 @@
+# Customizing Elements
+
+You can customize your Dokz site logo, nav items and footer, simply pass the elements to the `DokzProvider` props:
+
+```jsx
 import { DoczProvider, GithubLink, ColorModeSwitch } from 'dokz/dist'
 import React from 'react'
 
@@ -9,7 +14,6 @@ export default (props) => {
                 <GithubLink url='https://github.com/remorses/dokz' />,
                 <ColorModeSwitch />,
             ]}
-            maxPageWidth
             headerLogo={
                 <img
                     src='/dokz_logo.svg'
@@ -17,7 +21,7 @@ export default (props) => {
                     width='100px'
                 />
             }
-            
+            initialColorMode='dark'
             sidebarOrdering={{
                 'index.mdx': 1,
                 general: {
@@ -31,3 +35,7 @@ export default (props) => {
         </DoczProvider>
     )
 }
+```
+
+
+Other customizations are possible via the `DoczProvider` props
