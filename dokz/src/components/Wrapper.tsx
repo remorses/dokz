@@ -15,7 +15,7 @@ import { Global, css } from '@emotion/core'
 import { TableOfContents } from './TableOfContents'
 import { Fragment } from 'react'
 
-const SIDENAV_W = 200
+const SIDENAV_W = 300
 const TABLE_OF_C_W = 200
 
 const NAVBAR_H = 62

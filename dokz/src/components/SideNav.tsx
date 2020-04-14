@@ -16,12 +16,7 @@ export const SideNav = ({ tree, ...rest }: SideNavProps) => {
     const { sidebarOrdering } = useDokzConfig()
     tree = applySidebarOrdering({ tree, order: sidebarOrdering })
     return (
-        <Box
-            borderRightWidth='1px'
-            minWidth='260px'
-            height='auto'
-            {...rest}
-        >
+        <Box borderRightWidth='1px' minWidth='260px' height='auto' {...rest}>
             <Box
                 as='nav'
                 aria-label='Main navigation'
@@ -103,23 +98,34 @@ const NavTreeComponent = ({
 }: DirectoryTree & { depth?: number }) => {
     const w = 10
     const isNavHeading = depth === 1 && children
+    const formattedTitle =
+        title ||
+        name
+            ?.replace('_', ' ')
+            ?.replace('-', ' ')
+            ?.replace(/\.mdx?/, '')
     return (
         <Stack
             spacing='0px'
             pl={depth * w + 'px'}
             pb={depth === 1 ? '20px' : '0px'}
         >
-            {name && (
-                <ComponentLink
-                    h='28px'
-                    // display='block'
-                    href={url}
-                    isTruncated
-                    // {...(isNavHeading ? headingStyles : {})}
-                >
-                    {title || name?.replace('_', ' ')?.replace(/\.mdx?/, '')}
-                </ComponentLink>
-            )}
+            {name &&
+                (url ? (
+                    <ComponentLink
+                        h='28px'
+                        // display='block'
+                        href={url}
+                        isTruncated
+                        // {...(isNavHeading ? headingStyles : {})}
+                    >
+                        {formattedTitle}
+                    </ComponentLink>
+                ) : (
+                    <Box>
+                        {formattedTitle}
+                    </Box>
+                ))}
             {children &&
                 children.map((x) => {
                     return (
