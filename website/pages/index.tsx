@@ -4,10 +4,10 @@ import NextLink from 'next/link'
 import isometric_text_icon from '../public/isometric_text_icon.png'
 import isometric_check_icon from '../public/isometric_check_icon.png'
 import isometric_code_icon from '../public/isometric_code_icon.png'
-
-
+import hero_image from '../public/landing_illustration.svg'
+import { LogoFull, LandingIllustration } from '../svgs/'
 import {
-    Hero,
+    // Hero,
     Heading,
     LandingProvider,
     Subheading,
@@ -23,11 +23,41 @@ import {
     TestimonialsTweets,
     EmailForm,
     Button,
+    PageContainer,
+    SectionTitle,
 } from 'react-landing'
 import { GradientCurtains } from 'react-landing/dist/decorations'
-import { Link, Box, ThemeProvider } from '@chakra-ui/core'
-import { FiCheck } from 'react-icons/fi'
+import { Link, Box, ThemeProvider, Image, Stack } from '@chakra-ui/core'
+import { FiCheck, FiCode, FiFileText } from 'react-icons/fi'
 import { Logo } from '../components/Logo'
+
+const Hero = (props) => {
+    return (
+        <PageContainer
+            floatingElement={
+                <GradientCurtains position='absolute' top='-100px' />
+            }
+            align='center'
+            {...props}
+        >
+            <Stack align='center' spacing='40px'>
+                <Box maxW='400px' minW='300px' as={LogoFull} />
+                <Heading fontSize='42px'>From markdown to websites</Heading>
+                <NextLink href='/docs'>
+                    <Button>Quickstart</Button>
+                </NextLink>
+                <br />
+                <br />
+                <Box
+                    opacity={0.7}
+                    maxW='900px'
+                    minW='300px'
+                    as={LandingIllustration}
+                />
+            </Stack>
+        </PageContainer>
+    )
+}
 
 const Page = () => (
     <ThemeProvider>
@@ -45,8 +75,9 @@ const Page = () => (
             <Hero
                 heading='Documentation sites from mdx'
                 subheading='Compiles your markdown or mdx files down to a static Next.js site'
-                image={<img width='500px' src='/airtable/hero.png' />}
+                image={<Image minW='400px' width='700px' src={hero_image} />}
                 // cta={<EmailForm />}
+                direction='column'
                 cta={
                     <NextLink href='/docs'>
                         <Button>Quickstart</Button>
@@ -54,13 +85,46 @@ const Page = () => (
                 }
                 // fingerprint='Already using Airtable? Sign in'
             />
-            <Feature
-                heading='Generate Documentation sites from mdx'
-                subheading='Compiles your markdown or mdx files down to a static Next.js site'
-                image={<img src='/airtable/feature1.jpg' width='500px' />}
-                flip
-            />
+            {/* <FeaturesList
+                centerText
+                dark
+                bg='gray.900'
+                features={[
+                    {
+                        heading: 'Mdx support',
+                        subheading: 'You can use your iwn react components',
+                        icon: <Box color='primary' size='60px' as={FiCode} />,
+                    },
+                    {
+                        heading: 'Mdx support',
+                        subheading: 'follows the dircetory file system',
+                        icon: (
+                            <Box
+                                style={{ strokeWidth: '1px' }}
+                                color='primary'
+                                size='60px'
+                                as={FiFileText}
+                            />
+                        ),
+                    },
+                    {
+                        heading: 'Mdx support',
+                        subheading: 'follows the dircetory file system',
+                        icon: (
+                            <Box
+                                style={{ strokeWidth: '1px' }}
+                                color='primary'
+                                size='60px'
+                                as={FiFileText}
+                            />
+                        ),
+                    },
+                ]}
+            /> */}
+
             <HowItWorks
+                heading='The best way to write documentation'
+                subheading='The power of react and the simplicity of markdown'
                 steps={[
                     {
                         heading: 'Write markdown',
@@ -82,7 +146,7 @@ const Page = () => (
                     },
                 ]}
             />
-            <TestimonialsTweets
+            {/* <TestimonialsTweets
                 heading="Don't you trust me?"
                 subheading='Trust them'
                 tweets={[
@@ -92,7 +156,7 @@ const Page = () => (
                     // '933354946111705097',
                     // '933354946111705097',
                 ]}
-            />
+            /> */}
             <Footer
                 businessName='Dokz'
                 columns={{
