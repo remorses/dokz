@@ -9,6 +9,8 @@ import {
     Link,
     Text,
     useColorMode,
+    Image,
+    Stack,
 } from '@chakra-ui/core'
 import { jsx } from '@emotion/core'
 import NextLink from 'next/link'
@@ -99,20 +101,26 @@ const DocsHeading = (props) => {
 
 const MdxText = (props) => {
     const { colorMode } = useColorMode()
-    return (
-        <Text
-            as='p'
-            mb='20px'
-            lineHeight='30px'
-            {...props}
-        />
-    )
+    return <Text as='p' my='10px' lineHeight='30px' {...props} />
 }
 const MDXComponents = {
     wrapper: Wrapper,
     h1: (props) => <DocsHeading as='h1' fontSize='32px' {...props} />,
     h2: (props) => <DocsHeading as='h2' fontSize='26px' {...props} />,
     h3: (props) => <DocsHeading as='h3' size='md' fontSize='24px' {...props} />,
+    img: (props) => {
+        return (
+            <Stack my='20px' direction='column'>
+                <Image
+                    borderWidth='1px'
+                    maxWidth='700px'
+                    // shadow='md'
+                    borderRadius='8px'
+                    {...props}
+                />
+            </Stack>
+        )
+    },
     inlineCode: (props) => {
         const { colorMode } = useColorMode()
         return (
@@ -126,7 +134,7 @@ const MDXComponents = {
         )
     },
     code: (props) => (
-        <Box>
+        <Box my='20px'>
             <Code {...props} />
         </Box>
     ),
