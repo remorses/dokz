@@ -145,10 +145,13 @@ const MDXComponents = {
     table: Table,
     th: THead,
     td: TData,
-    a: ({ href = '', ...props }) => (
-        <NextLink href={href} passHref>
-            <Link fontWeight='medium' textDecoration='underline' {...props} />
-        </NextLink>
+    a: ({ ...props }) => (
+        <Link
+            fontWeight='medium'
+            textDecoration='underline'
+            {...props}
+            target='_blank'
+        />
     ),
     p: (props) => {
         return <MdxText as='p' {...props} />
