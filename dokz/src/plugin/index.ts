@@ -57,7 +57,7 @@ const writeMdxIndex = debounce(
         return getMdxFilesIndex()
             .then((index) => {
                 return fs.promises.writeFile(
-                    'index.json',
+                    'sidebar.json',
                     JSON.stringify(index, null, 4),
                 )
             })

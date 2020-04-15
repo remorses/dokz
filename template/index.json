@@ -1,0 +1,17 @@
+{
+    "path": "pages",
+    "name": "pages",
+    "children": [
+        {
+            "path": "pages/index.mdx",
+            "name": "index.mdx",
+            "size": 937,
+            "extension": ".mdx",
+            "type": "file",
+            "title": "xxx",
+            "url": "/index"
+        }
+    ],
+    "size": 937,
+    "type": "directory"
+}

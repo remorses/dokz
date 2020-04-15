@@ -1,0 +1,80 @@
+{
+    "path": "pages",
+    "name": "pages",
+    "children": [
+        {
+            "path": "pages/docs",
+            "name": "docs",
+            "children": [
+                {
+                    "path": "pages/docs/customizing",
+                    "name": "customizing",
+                    "children": [
+                        {
+                            "path": "pages/docs/customizing/change-sidebar-order.mdx",
+                            "name": "change-sidebar-order.mdx",
+                            "title": "Change Sidebar Ordering",
+                            "url": "/docs/customizing/change-sidebar-order"
+                        },
+                        {
+                            "path": "pages/docs/customizing/customizing-elements.mdx",
+                            "name": "customizing-elements.mdx",
+                            "title": "Customizing Elements",
+                            "url": "/docs/customizing/customizing-elements"
+                        }
+                    ],
+                    "size": null,
+                    "type": "directory"
+                },
+                {
+                    "path": "pages/docs/general",
+                    "name": "general",
+                    "children": [
+                        {
+                            "path": "pages/docs/general/deploying-your-docs.mdx",
+                            "name": "deploying-your-docs.mdx",
+                            "title": "Deploying your docs",
+                            "url": "/docs/general/deploying-your-docs"
+                        },
+                        {
+                            "path": "pages/docs/general/document-settings.mdx",
+                            "name": "document-settings.mdx",
+                            "title": "Document settings",
+                            "url": "/docs/general/document-settings"
+                        },
+                        {
+                            "path": "pages/docs/general/preview-react-components.mdx",
+                            "name": "preview-react-components.mdx",
+                            "title": "Preview React Components",
+                            "url": "/docs/general/preview-react-components"
+                        },
+                        {
+                            "path": "pages/docs/general/writing-mdx.mdx",
+                            "name": "writing-mdx.mdx",
+                            "title": "Writing MDX",
+                            "url": "/docs/general/writing-mdx"
+                        }
+                    ],
+                    "size": null,
+                    "type": "directory"
+                },
+                {
+                    "path": "pages/docs/getting-started.mdx",
+                    "name": "getting-started.mdx",
+                    "title": "Getting Started",
+                    "url": "/docs/getting-started"
+                },
+                {
+                    "path": "pages/docs/index.mdx",
+                    "name": "index.mdx",
+                    "title": "Introduction",
+                    "url": "/docs/index"
+                }
+            ],
+            "size": null,
+            "type": "directory"
+        }
+    ],
+    "size": null,
+    "type": "directory"
+}
