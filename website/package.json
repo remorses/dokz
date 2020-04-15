@@ -9,12 +9,13 @@
         "start": "next start"
     },
     "dependencies": {
+        "@chakra-ui/core": "^0.7.0",
         "@emotion/core": "^10.0.28",
         "dokz": "*",
         "next": "^9.3.4",
         "react": "^16.13.1",
         "react-dom": "16.13.1",
-        "react-landing": "^1.0.11"
+        "react-landing": "^1.0.13"
     },
     "devDependencies": {
         "@svgr/cli": "^5.3.1",

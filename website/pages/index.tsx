@@ -50,10 +50,10 @@ const Hero = (props) => {
                 <Box maxW='400px' minW='300px' as={LogoFull} />
                 <Stack align='center' spacing='10px' textAlign='center'>
                     <Heading fontSize='42px'>From markdown to websites</Heading>
-                    <Heading opacity={0.7}>
+                    <Subheading opacity={0.7}>
                         Compiles your markdown or mdx files down to a static
                         Next.js site
-                    </Heading>
+                    </Subheading>
                 </Stack>
                 <CtaButton />
                 <br />
