@@ -141,15 +141,15 @@ const Page = () => (
                     image: <img src={isometric_text_icon} />,
                 },
                 {
-                    heading: 'See website in real time',
+                    heading: 'See changes in real time',
                     subheading:
-                        'You can also include your own react components thanks to mdx',
+                        'The website is based on Nextjs so you get all its niceties: live reloading, easy configuration and easy deploy',
                     image: <img src={isometric_check_icon} />,
                 },
                 {
-                    heading: 'Deploy',
+                    heading: 'Build the website',
                     subheading:
-                        'You can also include your own react components thanks to mdx',
+                        'Dokz export a completely static website you can deploy everywhere',
                     image: <img src={isometric_code_icon} />,
                 },
             ]}
