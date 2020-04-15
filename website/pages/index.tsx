@@ -31,6 +31,12 @@ import { Link, Box, ThemeProvider, Image, Stack } from '@chakra-ui/core'
 import { FiCheck, FiCode, FiFileText } from 'react-icons/fi'
 import { Logo } from '../components/Logo'
 
+const CtaButton = (props) => (
+    <NextLink href='/docs'>
+        <Button {...props}>Quickstart</Button>
+    </NextLink>
+)
+
 const Hero = (props) => {
     return (
         <PageContainer
@@ -42,10 +48,14 @@ const Hero = (props) => {
         >
             <Stack align='center' spacing='40px'>
                 <Box maxW='400px' minW='300px' as={LogoFull} />
-                <Heading fontSize='42px'>From markdown to websites</Heading>
-                <NextLink href='/docs'>
-                    <Button>Quickstart</Button>
-                </NextLink>
+                <Stack align='center' spacing='10px' textAlign='center'>
+                    <Heading fontSize='42px'>From markdown to websites</Heading>
+                    <Heading opacity={0.7}>
+                        Compiles your markdown or mdx files down to a static
+                        Next.js site
+                    </Heading>
+                </Stack>
+                <CtaButton />
                 <br />
                 <br />
                 <Box
@@ -61,7 +71,11 @@ const Hero = (props) => {
 
 const Page = () => (
     <ThemeProvider>
-        <LandingProvider fontFamily='Roboto, Arial' black='#222' primary='#2D7FF9'>
+        <LandingProvider
+            fontFamily='Roboto, Arial'
+            black='#222'
+            primary='#2D7FF9'
+        >
             <NavBar
                 logo={<Box as={Logo} width='30px' />}
                 navs={[
@@ -70,6 +84,7 @@ const Page = () => (
                     <a>Pricing</a>,
                     <a>About Us</a>,
                     <a>Login</a>,
+                    <CtaButton px='10px' />,
                 ]}
             />
             <Hero
@@ -157,10 +172,7 @@ const Page = () => (
                     // '933354946111705097',
                 ]}
             /> */}
-            <Footer
-                businessName='Dokz'
-                columns={{}}
-            />
+            <Footer businessName='Dokz' columns={{}} />
         </LandingProvider>
     </ThemeProvider>
 )
