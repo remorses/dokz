@@ -1,0 +1,4 @@
+workspaces:
+  - website
+  - example
+  - dokz

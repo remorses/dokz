@@ -39,10 +39,12 @@
         "@types/mocha": "^5.2.7",
         "@types/node": "^12.0.7",
         "@types/react": "^16.9.25",
+        "@types/webpack": "^4.41.11",
         "babel-loader": "^8.1.0",
         "chai": "^4.2.0",
         "dotenv": "^8.2.0",
         "mocha": "^6.1.4",
+        "next": "^9.3.5",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "sucrase": "^3.12.1",
@@ -50,16 +52,19 @@
         "typescript": "^3.8.3"
     },
     "peerDependencies": {
-        "@emotion/core": "*"
+        "@emotion/core": "*",
+        "react": "*",
+        "react-dom": "*",
+        "@chakra-ui/core": "o.x"
     },
     "dependencies": {
-        "@chakra-ui/core": "^0.7.0",
         "@emotion/styled": "^10.0.27",
         "@mdx-js/loader": "^1.5.8",
         "@mdx-js/react": "^1.5.8",
         "@next/mdx": "^9.3.4",
         "@types/mdast": "^3.0.3",
         "await-to-js": "^2.1.1",
+        "chokidar": "^3.3.1",
         "debounce": "^1.2.0",
         "directory-tree": "^2.2.4",
         "emotion-theming": "^10.0.27",
@@ -75,6 +80,7 @@
         "remark": "^12.0.0",
         "remark-mdx-metadata": "^1.0.1",
         "remark-slug": "^6.0.0",
-        "unist-util-is": "^4.0.2"
+        "unist-util-is": "^4.0.2",
+        "unist-util-visit": "^2.0.2"
     }
 }
