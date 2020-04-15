@@ -1,5 +1,5 @@
 import path from 'path'
-
+import { Configuration } from 'webpack'
 type Options = {
     extension?: RegExp
     options?: any
@@ -16,13 +16,13 @@ export const withMdx = (pluginOptions: Options = {}) => (
     }
 
     return Object.assign({}, nextConfig, {
-        webpack(config, options) {
+        webpack(config: Configuration, options) {
             if (!options.defaultLoaders) {
                 throw new Error(
                     'This plugin is not compatible with Next.js versions below 5.0.0 https://err.sh/next-plugins/upgrade',
                 )
             }
-            config.resolve.alias['root_'] = path.join(process.cwd())
+            config.resolve.alias['nextjs_root_folder_'] = path.join(process.cwd())
             config.module.rules.push({
                 test: extension,
                 use: [

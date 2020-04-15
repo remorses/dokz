@@ -131,7 +131,7 @@ export function Wrapper(props) {
 
 function getMdxIndex() {
     try {
-        return require('root_/index.json')
+        return require('nextjs_root_folder_/index.json')
     } catch {
         return {
             children: [],
