@@ -74,11 +74,9 @@ const Page = () => (
         <NavBar
             logo={<Box as={Logo} width='30px' />}
             navs={[
-                <a>Features</a>,
-                <a>Use Cases</a>,
-                <a>Pricing</a>,
-                <a>About Us</a>,
-                <a>Login</a>,
+                <a href='https://github.com/remorses/dokz'>Github</a>,
+                <a href='/docs'>Demo</a>,
+                <a href='/docs'>Docs</a>,
                 <CtaButton px='10px' />,
             ]}
         />
@@ -167,7 +165,23 @@ const Page = () => (
                     // '933354946111705097',
                 ]}
             /> */}
-        <Footer businessName='Dokz' columns={{}} />
+        <Footer
+            businessName='Made by @morse__'
+            columns={{
+                'Where you can find me': [
+                    <a href='https://twitter.com/__morse' target='_blank'>
+                        Twitter
+                    </a>,
+                    <a href='https://github.com/remorses/' target='_blank'>
+                        Github
+                    </a>,
+                ],
+                Dokz: [
+                    <a href='https://github.com/remorses/dokz'>Github</a>,
+                    <a href='/docs'>Docs</a>,
+                ],
+            }}
+        />
     </Stack>
 )
 
