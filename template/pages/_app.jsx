@@ -6,23 +6,20 @@ export default (props) => {
     return (
         <DokzProvider
             headerItems={[
-                <GithubLink url='https://github.com/remorses/dokz' />,
-                <ColorModeSwitch />,
+                <GithubLink key='0' url='https://github.com/remorses/dokz' />,
+                <ColorModeSwitch key='1' />,
             ]}
             headerLogo={
                 <img
                     src='/dokz_logo.svg'
-                    style={{ opacity: 0.8 }}
                     width='100px'
                 />
             }
-            sidebarOrdering={{
-                'index.mdx': 1,
-                general: {
-                    'getting_started.mdx': null,
-                    'writing_mdx.mdx': null,
+            sidebarOrdering={{ // sidebar ordering
+                'index.mdx': null,
+                Documents_Group: {
+                    'another.mdx': null,
                 },
-                customizing: { 'customizing_components.mdx': null },
             }}
         >
             <Component {...pageProps} />

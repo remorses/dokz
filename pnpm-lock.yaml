@@ -157,8 +157,9 @@ importers:
       react-dom: 16.13.1
   template:
     dependencies:
-      '@chakra-ui/core': 0.7.0_cad89d6dc1f8faac4b2782acb7453bb9
+      '@chakra-ui/core': 0.7.0_65c4b44b961208f7c12a6321e6893cf1
       '@emotion/core': 10.0.28_react@16.13.1
+      '@emotion/styled': 10.0.27_c989b1aa057905c7a8b69bf973f55a19
       dokz: 'link:../dokz'
       next: 9.3.5_react-dom@16.13.1+react@16.13.1
       react: 16.13.1
@@ -168,6 +169,7 @@ importers:
     specifiers:
       '@chakra-ui/core': 0.x
       '@emotion/core': ^10.0.28
+      '@emotion/styled': ^10.0.27
       compose-function: ^3.0.3
       dokz: latest
       next: latest
@@ -2050,33 +2052,6 @@ packages:
       react: 16.13.1
       react-animate-height: 2.0.20_react-dom@16.13.1+react@16.13.1
       react-dom: 16.13.1_react@16.13.1
-      react-focus-lock: 2.2.1_react@16.13.1
-      react-spring: 8.0.27_react-dom@16.13.1+react@16.13.1
-      styled-system: 5.1.5
-      toasted-notes: 3.2.0_react-dom@16.13.1+react@16.13.1
-      use-dark-mode: 2.3.1_react@16.13.1
-    dev: false
-    peerDependencies:
-      '@emotion/core': 10.x
-      '@emotion/styled': 10.x
-      emotion-theming: 10.x
-      react: '>= 16.8'
-      react-dom: '>= 16.8'
-    resolution:
-      integrity: sha512-Ph6y9ds7ejuAom7imEwEEhYqTz3EM23mYuRu5qtZxF6b2tvAVbTZ2CjecaUbwZbCVxxiAVCkC2O+cWokeqBEDA==
-  /@chakra-ui/core/0.7.0_cad89d6dc1f8faac4b2782acb7453bb9:
-    dependencies:
-      '@reach/auto-id': 0.9.0_react-dom@16.13.1+react@16.13.1
-      '@styled-system/css': 5.1.5
-      '@styled-system/should-forward-prop': 5.1.5
-      '@types/styled-system': 5.1.9
-      aria-hidden: 1.1.1
-      body-scroll-lock: 2.7.1
-      color: 3.1.2
-      copy-to-clipboard: 3.3.1
-      exenv: 1.2.2
-      popper.js: 1.16.1
-      react-animate-height: 2.0.20_react-dom@16.13.1+react@16.13.1
       react-focus-lock: 2.2.1_react@16.13.1
       react-spring: 8.0.27_react-dom@16.13.1+react@16.13.1
       styled-system: 5.1.5
@@ -8757,7 +8732,6 @@ packages:
     peerDependencies:
       react: ^16.6.0
       react-dom: ^16.6.0
-      typescript: '*'
     resolution:
       integrity: sha512-vJKGUK2nMsveYZTZH5Oz9L+cDYcCsuWLUXfWJejvhdQ3jLgVhZVa+7TQ45Kt0PA1ea7jqlDUN22DtzmPFi981w==
   /nice-try/1.0.5:
@@ -9383,8 +9357,6 @@ packages:
     dev: false
     engines:
       node: '>=6'
-    peerDependencies:
-      typescript: '*'
     resolution:
       integrity: sha512-jd9olUr9D7do+RN8Wspzhpxhgp1n6Vd0NtQ4SFkmIACZoEL1nkyAdW9Ygrinjec0vgDcWjscFQQ1gDW8rsfKTg==
   /pnp-webpack-plugin/1.5.0_typescript@3.8.3:
