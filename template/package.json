@@ -9,6 +9,7 @@
     },
     "dependencies": {
         "@emotion/core": "^10.0.28",
+        "@chakra-ui/core": "0.x",
         "dokz": "latest",
         "next": "latest",
         "react": "16.13.1",
