@@ -4,7 +4,7 @@ name: Introduction
 
 import { Image, Box, useColorMode } from '@chakra-ui/core'
 import { Button } from '../../components/Button.tsx'
-import Frame from 'react-frame-component'
+import { VictoryChart, VictoryBar, VictoryAxis, VictoryTheme } from 'victory'
 
 export const Logo = (props) => {
     const { colorMode } = useColorMode()
@@ -29,6 +29,28 @@ This entire site is built with `Dokz` starting from some markdown files 🔥
 ### React components in markdown (MDX)
 
 Mdx let you import react components in your documentation markdown to enrich the user experience.
+
+You can use any react component, for example the following is a chart component from `victory` charts
+
+<Box fontSize='14px' maxW='500px'>
+    <VictoryChart theme={VictoryTheme.material} domainPadding={20}>
+        <VictoryAxis
+            tickValues={[1, 2, 3, 4]}
+            tickFormat={['Quarter 1', 'Quarter 2', 'Quarter 3', 'Quarter 4']}
+        />
+        <VictoryAxis dependentAxis tickFormat={(x) => `$${(x / 1000)}k`} />
+        <VictoryBar
+            data={[
+                { quarter: 1, earnings: 13000 },
+                { quarter: 2, earnings: 16500 },
+                { quarter: 3, earnings: 14250 },
+                { quarter: 4, earnings: 19000 },
+            ]}
+            x='quarter'
+            y='earnings'
+        />
+    </VictoryChart>
+</Box>
 
 ### Preview react code
 

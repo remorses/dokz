@@ -16,7 +16,8 @@
         "react": "^16.13.1",
         "react-dom": "16.13.1",
         "react-frame-component": "^4.1.1",
-        "react-landing": "^1.0.13"
+        "react-landing": "^1.0.13",
+        "victory": "^34.1.3"
     },
     "devDependencies": {
         "@svgr/cli": "^5.3.1",

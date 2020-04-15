@@ -8,8 +8,8 @@ import { Logo as Logo_, LogoWhite } from '../svgs'
 export const Button = ({ href, ...props }: any) => {
     const { colorMode } = useColorMode()
     const theme = useTheme()
-    console.log({theme})
-    console.log({colorMode})
+    // console.log({theme})
+    // console.log({colorMode})
     return (
         <NextLink href={href}>
             <Button__ bg='primary' {...props} />
