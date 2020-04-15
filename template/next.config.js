@@ -1,7 +1,7 @@
 const compose = require('compose-function')
-const { withDocz } = require('dokz/dist/plugin')
+const { withDokz } = require('dokz/dist/plugin')
 
-const composed = compose(withDocz)
+const composed = compose(withDokz)
 
 module.exports = composed({
     pageExtensions: ['js', 'jsx', 'mdx', 'tsx'],

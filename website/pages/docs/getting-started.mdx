@@ -5,13 +5,9 @@ name: Getting Started
 # Getting Started
 
 Welcome to the Dokz documentation!
-Dokz is a documentation site generator that compiles your markdown or mdx files down to a static react site,
-It uses Next.js under the hood
-
-#### System Requirements
-
--   [Node.js 10.13](https://nodejs.org/) or later
--   MacOS, Windows (including WSL), and Linux are supported
+Dokz is a documentation site generator that compiles your markdown down to a static react site
+The markdown extension used is `mdx`, it has all the markdonw features plus you can import, export and render react components 🔥
+Dokz uses Next.js under the hood, check out [Next.js](https://nextjs.org/) if you never heard about it
 
 ## Setup
 
@@ -27,7 +23,7 @@ After the installation is complete run `npm run dev` to start the development se
 
 ## Manual Setup
 
-> warning: you should use `npm init dokz-app` if you don't have an existing next application
+> warning: you should use `npm init dokz-app` if you start from scratch
 
 You can also install `dokz` in an existing nextjs application:
 
@@ -55,12 +51,12 @@ export default (props) => {
 Add `withDokz` in the `next.config.js` file
 
 ```js
-const { withDocz } = require('dokz/dist/plugin')
+const { withDokz } = require('dokz/dist/plugin')
 
-module.exports = withDocz()
+module.exports = withDokz()
 ```
 
-Create a new mdx document inside tha `pages` folder
+Create a new mdx document inside tha `pages` folder, for example `index.mdx`
 
 ```md
 # Heading
@@ -74,6 +70,6 @@ Ullamco ipsum id irure do occaecat minim. Cupidatat exercitation magna sit sunt 
 Quis anim minim ullamco aliquip excepteur do pariatur eiusmod duis eu non. Duis deserunt Lorem nulla non duis voluptate dolore et. Do veniam mollit in do ad id enim anim dolore sint labore quis consequat.
 ```
 
-To start developing your application run `npm run dev`. This starts the development server on `http://localhost:3000`.
+To start developing your application execute `npm run dev`. This starts the development server on `http://localhost:3000`.
 
 Visit `http://localhost:3000` to view your application.

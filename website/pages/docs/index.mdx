@@ -3,27 +3,40 @@ name: Introduction
 ---
 
 import { Image } from '@chakra-ui/core'
-
+import Frame from 'react-frame-component'
 
 <Image my='40px' mx='auto' src='/logo_full.svg' width='300px' />
 
 # Introduction
 
-Documenting code is one of the most important and time-heavy processes when developing software.
+Dokz enables you to quickly create live-reloading, seo-friendly, production-ready documentation sites with MDX.
+It is based on `Next.js` so you get all the awesome fueatures of nextjs.
 
-A lot of time is spent on building and maintaining custom documentation sites.
+This entire site is built with `Dokz` starting from some markdown files 🔥
 
-**Dokz** was created to solve this problem.
+# Features
 
-Dokz enables you to quickly create live-reloading, seo-friendly, production-ready documentation sites with MDX and customize the look, feel and behavior when required by leveraging GatsbyJS and Gatsby theme shadowing.
+### React components in markdown (MDX)
 
-## Principles
+Mdx let you import react components in your documentation markdown to enrich the user experience.
 
-We started by looking over the options available when you want to create your design system or document your project. We borrowed the best ideas from each and came up with the following guiding principles :
+### Preview react code
 
--   **Zero config and easy to learn.** Avoid unnecessary build steps with confusing setups.
--   **Blazing fast.** Built with performance in mind from the start.
--   **Easy to customize.** Create something that will be easy to use and customize.
--   **MDX based.** Use the best standard for writing documentation.
+Dokz let you preview react code indie code blocks with the `live=true` attribute
+
+```js live=true
+<div style={{ wisth: 100, height: 100, background: 'lightblue' }}></div>
+```
+
+### Automatic sidebar and table of contents
+
+The sidebar is generated based on your markdown files inside the `pages` directory
+The table of contents on the right is generated based on the heading elements inside the markdown document
+
+### Dark mode
+
+Dark mode is a must, the majority of developers work at night 🌙
+
+---
 
 Now that you know the core principles of Dokz. Let's [get started](/docs/getting-started)!

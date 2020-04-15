@@ -15,6 +15,7 @@
         "next": "^9.3.4",
         "react": "^16.13.1",
         "react-dom": "16.13.1",
+        "react-frame-component": "^4.1.1",
         "react-landing": "^1.0.13"
     },
     "devDependencies": {

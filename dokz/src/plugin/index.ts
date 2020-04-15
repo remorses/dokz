@@ -12,7 +12,7 @@ import { debounce } from 'debounce'
 
 const EXTESNIONS_TO_WATCH = ['.mdx', '.md']
 
-export function withDocz(nextConfig = {} as any) {
+export function withDokz(nextConfig = {} as any) {
     const watcher = chokidar.watch('./**', {
         persistent: true,
     })

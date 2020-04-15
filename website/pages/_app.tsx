@@ -15,8 +15,8 @@ export default (props) => {
             sidebarOrdering={{
                 docs: {
                     index: null,
+                    'getting-started': null,
                     general: {
-                        'getting-started': null,
                         'writing-mdx': null,
                         'document-settings': null,
                         'preview-react-components': null,

@@ -60,9 +60,9 @@ export default (props) => {
 Add `withDokz` in the `next.config.js` file
 
 ```js
-const { withDocz } = require('dokz/dist/plugin')
+const { withDokz } = require('dokz/dist/plugin')
 
-module.exports = withDocz()
+module.exports = withDokz()
 ```
 
 Create a new mdx document inside tha `pages` folder
