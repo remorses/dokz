@@ -9,13 +9,10 @@ export const withMdx = (pluginOptions: Options = {}) => (
     nextConfig = {} as any,
 ) => {
     const { extension = /\.mdx$/, options = {} } = pluginOptions
-    
+
     const MDXLoader = {
         loader: '@mdx-js/loader',
         options,
-    }
-    const frontmatterLoader = {
-        loader: require.resolve('./mdxLoader'),
     }
 
     return Object.assign({}, nextConfig, {
@@ -30,8 +27,11 @@ export const withMdx = (pluginOptions: Options = {}) => (
                 test: extension,
                 use: [
                     options.defaultLoaders.babel,
+                    ...makeDebugLoader(),
                     MDXLoader,
-                    frontmatterLoader,
+                    {
+                        loader: require.resolve('./mdxLoader'),
+                    },
                 ],
             })
 
@@ -42,4 +42,15 @@ export const withMdx = (pluginOptions: Options = {}) => (
             return config
         },
     })
+}
+
+function makeDebugLoader() {
+    if (!process.env.DEBUG) {
+        return []
+    }
+    return [
+        {
+            loader: require.resolve('./debugLoader'),
+        },
+    ]
 }

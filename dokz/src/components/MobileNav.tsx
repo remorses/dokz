@@ -17,15 +17,15 @@ const useRouteChanged = (callback) => {
     useEffect(() => {
         const handleRouteChange = (url) => {
             callback()
-            // console.log('App is changing to: ', url)
+            console.log('App is changing to: ', url)
         }
 
-        router.events.on('routeChangeComplete', handleRouteChange)
+        router && router.events.on('routeChangeComplete', handleRouteChange)
 
         return () => {
-            router.events.off('routeChangeComplete', handleRouteChange)
+            router && router.events.off('routeChangeComplete', handleRouteChange)
         }
-    }, [router.events, callback])
+    }, [router && router.events, callback])
 }
 
 const MobileNav = (props) => {
