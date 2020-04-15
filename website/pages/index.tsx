@@ -70,37 +70,32 @@ const Hero = (props) => {
 }
 
 const Page = () => (
-    <ThemeProvider>
-        <LandingProvider
-            fontFamily='Roboto, Arial'
-            black='#222'
-            primary='#2D7FF9'
-        >
-            <NavBar
-                logo={<Box as={Logo} width='30px' />}
-                navs={[
-                    <a>Features</a>,
-                    <a>Use Cases</a>,
-                    <a>Pricing</a>,
-                    <a>About Us</a>,
-                    <a>Login</a>,
-                    <CtaButton px='10px' />,
-                ]}
-            />
-            <Hero
-                heading='Documentation sites from mdx'
-                subheading='Compiles your markdown or mdx files down to a static Next.js site'
-                image={<Image minW='400px' width='700px' src={hero_image} />}
-                // cta={<EmailForm />}
-                direction='column'
-                cta={
-                    <NextLink href='/docs'>
-                        <Button>Quickstart</Button>
-                    </NextLink>
-                }
-                // fingerprint='Already using Airtable? Sign in'
-            />
-            {/* <FeaturesList
+    <Stack spacing='40px'>
+        <NavBar
+            logo={<Box as={Logo} width='30px' />}
+            navs={[
+                <a>Features</a>,
+                <a>Use Cases</a>,
+                <a>Pricing</a>,
+                <a>About Us</a>,
+                <a>Login</a>,
+                <CtaButton px='10px' />,
+            ]}
+        />
+        <Hero
+            heading='Documentation sites from mdx'
+            subheading='Compiles your markdown or mdx files down to a static Next.js site'
+            image={<Image minW='400px' width='700px' src={hero_image} />}
+            // cta={<EmailForm />}
+            direction='column'
+            cta={
+                <NextLink href='/docs'>
+                    <Button>Quickstart</Button>
+                </NextLink>
+            }
+            // fingerprint='Already using Airtable? Sign in'
+        />
+        {/* <FeaturesList
                 centerText
                 dark
                 bg='gray.900'
@@ -137,31 +132,31 @@ const Page = () => (
                 ]}
             /> */}
 
-            <HowItWorks
-                heading='The best way to write documentation'
-                subheading='The power of react and the simplicity of markdown'
-                steps={[
-                    {
-                        heading: 'Write markdown',
-                        subheading:
-                            'You can also include your own react components thanks to mdx',
-                        image: <img src={isometric_text_icon} />,
-                    },
-                    {
-                        heading: 'See website in real time',
-                        subheading:
-                            'You can also include your own react components thanks to mdx',
-                        image: <img src={isometric_check_icon} />,
-                    },
-                    {
-                        heading: 'Deploy',
-                        subheading:
-                            'You can also include your own react components thanks to mdx',
-                        image: <img src={isometric_code_icon} />,
-                    },
-                ]}
-            />
-            {/* <TestimonialsTweets
+        <HowItWorks
+            heading='The best way to write documentation'
+            subheading='The power of react and the simplicity of markdown'
+            steps={[
+                {
+                    heading: 'Write markdown',
+                    subheading:
+                        'You can also include your own react components thanks to mdx',
+                    image: <img src={isometric_text_icon} />,
+                },
+                {
+                    heading: 'See website in real time',
+                    subheading:
+                        'You can also include your own react components thanks to mdx',
+                    image: <img src={isometric_check_icon} />,
+                },
+                {
+                    heading: 'Deploy',
+                    subheading:
+                        'You can also include your own react components thanks to mdx',
+                    image: <img src={isometric_code_icon} />,
+                },
+            ]}
+        />
+        {/* <TestimonialsTweets
                 heading="Don't you trust me?"
                 subheading='Trust them'
                 tweets={[
@@ -172,9 +167,8 @@ const Page = () => (
                     // '933354946111705097',
                 ]}
             /> */}
-            <Footer businessName='Dokz' columns={{}} />
-        </LandingProvider>
-    </ThemeProvider>
+        <Footer businessName='Dokz' columns={{}} />
+    </Stack>
 )
 
 export default Page

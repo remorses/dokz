@@ -1,4 +1,4 @@
-import { DoczProvider, Wrapper } from 'dokz/src'
+import { DokzProvider, Wrapper } from 'dokz/src'
 import App from 'next/app'
 import React from 'react'
 

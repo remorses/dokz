@@ -2,15 +2,25 @@
 name: Introduction
 ---
 
-import { Image } from '@chakra-ui/core'
+import { Image, Box, useColorMode } from '@chakra-ui/core'
+import { Button } from '../../components/Button.tsx'
 import Frame from 'react-frame-component'
 
-<Image my='40px' mx='auto' src='/logo_full.svg' width='300px' />
+export const Logo = (props) => {
+    const { colorMode } = useColorMode()
+    return colorMode === 'dark' ? (
+        <Image my='40px' mx='auto' src='/logo_white_full.svg' width='300px' />
+    ) : (
+        <Image my='40px' mx='auto' src='/logo_full.svg' width='300px' />
+    )
+}
+
+<Logo />
 
 # Introduction
 
 Dokz enables you to quickly create live-reloading, seo-friendly, production-ready documentation sites with MDX.
-It is based on `Next.js` so you get all the awesome fueatures of nextjs.
+It is based on `Next.js` so you get all the awesome features of Nextjs.
 
 This entire site is built with `Dokz` starting from some markdown files 🔥
 
@@ -25,7 +35,7 @@ Mdx let you import react components in your documentation markdown to enrich the
 Dokz let you preview react code indie code blocks with the `live=true` attribute
 
 ```js live=true
-<div style={{ wisth: 100, height: 100, background: 'lightblue' }}></div>
+<div style={{ height: 100, background: 'lightblue' }}></div>
 ```
 
 ### Automatic sidebar and table of contents
@@ -40,3 +50,7 @@ Dark mode is a must, the majority of developers work at night 🌙
 ---
 
 Now that you know the core principles of Dokz. Let's [get started](/docs/getting-started)!
+
+<Box my='40px' alignSelf='center'>
+    <Button href='/docs/getting-started'>Get Started</Button>
+</Box>

@@ -26,7 +26,7 @@ To add other components and variables inside the playground you can use the `pla
 Add the following code inside `_app.jsx`
 
 ```jsx
-import { DoczProvider } from 'dokz/src'
+import { DokzProvider } from 'dokz/src'
 import App from 'next/app'
 import React from 'react'
 
@@ -35,9 +35,9 @@ const CustomComponent = (props) => <p className='paragraph'>{props.children}</p>
 export default (props) => {
     const { Component, pageProps } = props
     return (
-        <DoczProvider playgroundScope={{ variable: 'Hello', CustomComponent }}>
+        <DokzProvider playgroundScope={{ variable: 'Hello', CustomComponent }}>
             <Component {...pageProps} />
-        </DoczProvider>
+        </DokzProvider>
     )
 }
 ```

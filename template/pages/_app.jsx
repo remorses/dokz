@@ -1,10 +1,10 @@
-import { DoczProvider, GithubLink, ColorModeSwitch } from 'dokz/dist'
+import { DokzProvider, GithubLink, ColorModeSwitch } from 'dokz/dist'
 import React from 'react'
 
 export default (props) => {
     const { Component, pageProps } = props
     return (
-        <DoczProvider
+        <DokzProvider
             headerItems={[
                 <GithubLink url='https://github.com/remorses/dokz' />,
                 <ColorModeSwitch />,
@@ -26,6 +26,6 @@ export default (props) => {
             }}
         >
             <Component {...pageProps} />
-        </DoczProvider>
+        </DokzProvider>
     )
 }

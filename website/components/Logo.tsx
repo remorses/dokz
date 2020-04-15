@@ -1,4 +1,4 @@
-import { DoczProvider, GithubLink, ColorModeSwitch } from 'dokz/dist'
+import { DokzProvider, GithubLink, ColorModeSwitch } from 'dokz/dist'
 import { useColorMode } from '@chakra-ui/core'
 import React from 'react'
 import NextLink from 'next/link'

@@ -13,7 +13,7 @@ import { PrismTheme } from 'prism-react-renderer'
 import darkPrismTheme from 'prism-react-renderer/themes/nightOwl'
 import { GithubLink, ColorModeSwitch } from './components/NavBar'
 
-export type DoczProviderProps = {
+export type DokzProviderProps = {
     children?: any
     /*
     The logo displayed on the header nav bar
@@ -63,7 +63,7 @@ export type DoczProviderProps = {
 
 export type SidebarOrdering = { [k: string]: SidebarOrdering | null }
 
-const defaultDokzContext: DoczProviderProps = {
+const defaultDokzContext: DokzProviderProps = {
     initialColorMode: 'light',
     footer: <Box height='100px' />,
     headerLogo: (
@@ -80,12 +80,12 @@ const defaultDokzContext: DoczProviderProps = {
 
 const DokzContext = createContext(defaultDokzContext)
 
-export function useDokzConfig(): DoczProviderProps {
+export function useDokzConfig(): DokzProviderProps {
     const ctx = useContext(DokzContext)
     return ctx
 }
 
-export function DoczProvider({ children, ...rest }: DoczProviderProps) {
+export function DokzProvider({ children, ...rest }: DokzProviderProps) {
     const ctx = { ...defaultDokzContext, ...rest }
     const { mdxComponents: userMDXComponents = {}, initialColorMode } = ctx
     return (

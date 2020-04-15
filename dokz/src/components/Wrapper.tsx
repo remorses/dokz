@@ -6,14 +6,17 @@ import {
     Stack,
     ThemeProvider,
     useColorMode,
+    useTheme,
+    theme,
 } from '@chakra-ui/core'
+import merge from 'lodash/fp/merge'
 import { jsx } from '@emotion/core'
 import { useDokzConfig } from '../provider'
 import NavBar from './NavBar'
 import { SideNav } from './SideNav'
 import { Global, css } from '@emotion/core'
 import { TableOfContents } from './TableOfContents'
-import { Fragment } from 'react'
+import { Fragment, useMemo } from 'react'
 
 const SIDENAV_W = 300
 const TABLE_OF_C_W = 200
@@ -35,6 +38,15 @@ const globalStyles = css`
     }
 `
 
+export function PropagatedThemeProvider({ theme, children }) {
+    const existingTheme = useTheme()
+    // console.log({ existingTheme: existingTheme.sizes })
+    const merged = useMemo(() => {
+        return merge(existingTheme, theme)
+    }, [theme, existingTheme])
+    return <ThemeProvider theme={merged}>{children}</ThemeProvider>
+}
+
 export function Wrapper(props) {
     const { tableOfContents } = props.meta || {}
     const {
@@ -47,7 +59,7 @@ export function Wrapper(props) {
     const index = getMdxIndex()
     const { colorMode } = useColorMode()
     return (
-        <ThemeProvider>
+        <PropagatedThemeProvider theme={theme}>
             <CSSReset />
             <Global styles={globalStyles} />
             <Stack
@@ -113,7 +125,7 @@ export function Wrapper(props) {
                     </Stack>
                 </Box>
             </Stack>
-        </ThemeProvider>
+        </PropagatedThemeProvider>
     )
 }
 
