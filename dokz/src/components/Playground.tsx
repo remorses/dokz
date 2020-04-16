@@ -10,7 +10,6 @@ import Highlight, { defaultProps } from 'prism-react-renderer'
 import { Resizable } from 're-resizable'
 import { useDokzConfig } from '../provider'
 import Frame from 'react-frame-component'
-import IframeResizer from 'iframe-resizer-react'
 
 import { CopyButton } from './Code'
 const CLEAR_PADDING = `<style> body { padding: 0; margin: 0; width: 100% }  </style>`
@@ -216,7 +215,7 @@ interface IFrame {
 }
 
 export const IframeWrapper = ({ children, style, ...rest }) => {
-    const [height, setHeight] = useState(500)
+    const [height, setHeight] = useState(0)
     const iframeRef: React.RefObject<IFrame> = React.createRef()
     const handleResize = (iframe: React.RefObject<IFrame>) => {
         if (
@@ -227,7 +226,38 @@ export const IframeWrapper = ({ children, style, ...rest }) => {
             setHeight(iframe.current.node.contentDocument.body.scrollHeight)
         }
     }
-    useEffect(() => handleResize(iframeRef), [children])
+    /**
+     * Because <iframe> serves content in an isolated browsing context (document environment),
+     * Styles in parent browsing context will not be available to <iframe> content,
+     * we need to manually copy styles from parent browsing context to <iframe> browsing context
+     */
+    const copyStyles = (ref: React.RefObject<any>) => {
+        const iFrameNode = ref.current?.node
+        if (
+            !iFrameNode?.contentDocument?.body
+        ) {
+            return
+        }
+        // Copy <link> elements
+        const links = Array.from(document.getElementsByTagName('link'))
+        links.forEach((link) => {
+            if (link.rel === 'stylesheet') {
+                iFrameNode.contentDocument.head.appendChild(
+                    link.cloneNode(true),
+                )
+            }
+        })
+
+        // Copy <style> elements
+        const styles = Array.from(document.head.getElementsByTagName('style'))
+        styles.forEach((style) => {
+            iFrameNode.contentDocument.head.appendChild(style.cloneNode(true))
+        })
+    }
+    useEffect(() => {
+        // copyStyles(iframeRef)
+        handleResize(iframeRef)
+    }, [children])
     return (
         <Frame
             style={{
@@ -236,7 +266,10 @@ export const IframeWrapper = ({ children, style, ...rest }) => {
             }}
             ref={iframeRef}
             initialContent={INITIAL_IFRAME_CONTENT}
-            onLoad={() => handleResize(iframeRef)}
+            onLoad={() => {
+                copyStyles(iframeRef)
+                handleResize(iframeRef)
+            }}
         >
             {children}
         </Frame>
