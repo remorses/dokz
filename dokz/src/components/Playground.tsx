@@ -16,12 +16,14 @@ import { CopyButton } from './Code'
 const CLEAR_PADDING = `<style> body { padding: 0; margin: 0; width: 100% }  </style>`
 const INITIAL_IFRAME_CONTENT = `<!DOCTYPE html><html><head> ${CLEAR_PADDING} </head><body><div></div></body></html>`
 
+const IS_DEFAULT_IFRAME_ACTIVATED = true
+
 export const Playground = ({
     className,
     theme,
     children,
     scope,
-    iframe = true,
+    iframe = true as any,
     mountStylesheet = false,
     previewEnabled = true,
     ...props
@@ -41,7 +43,12 @@ export const Playground = ({
         // noInline: true,
         ...props,
     }
-
+    iframe =
+        iframe === 'false'
+            ? false
+            : iframe === 'true'
+            ? true
+            : IS_DEFAULT_IFRAME_ACTIVATED
     const handleCodeChange = (newCode) => setEditorCode(newCode.trim())
 
     const editorBar = (
