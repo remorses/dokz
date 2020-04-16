@@ -3,9 +3,7 @@
     "workspaces": [
         "dokz",
         "website",
-        "example"
+        "devsite"
     ],
-    "scripts": {
-        "example": "cd example && yarn dev"
-    }
+    "scripts": {}
 }

@@ -1,20 +1,22 @@
 {
     "name": "example",
     "version": "0.1.0",
+    "private": true,
     "scripts": {
         "dev": "next dev",
         "build": "next build",
         "start": "next start"
     },
     "dependencies": {
+        "@chakra-ui/core": "0.x",
         "@emotion/core": "^10.0.28",
-        "dokz": "*",
-        "next": "^9.3.4",
-        "react": "^16.13.1",
+        "@emotion/styled": "^10.0.27",
+        "dokz": "latest",
+        "next": "latest",
+        "react": "16.13.1",
         "react-dom": "16.13.1"
     },
     "devDependencies": {
-        "compose-function": "^3.0.3",
-        "next-transpile-modules": "^3.2.0"
+        "compose-function": "^3.0.3"
     }
 }
