@@ -96,14 +96,14 @@ export function Wrapper(props) {
                     />
                     <Stack
                         isInline
-                        ml={['none', null, SIDENAV_W + 60]}
+                        ml={['none', null, SIDENAV_W]}
                         // mr={['none', null, TABLE_OF_C_W + 30 + 'px']}
                         mt={[NAVBAR_H + 'px']}
                     >
                         <Stack
                             overflow='auto'
                             fontSize='16px'
-                            px={['10px', null, '20px', '40px']}
+                            px={['10px', null, '20px', '30px']}
                             flex='1'
                             minW='0'
                         >
