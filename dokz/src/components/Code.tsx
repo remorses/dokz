@@ -198,6 +198,7 @@ export const Playground = ({
             <LiveProvider {...liveProviderProps}>
                 <Stack
                     w='100%'
+                    maxWidth='100%'
                     borderWidth='1px'
                     // borderColor='inherit'
                     borderRadius='8px'
@@ -206,7 +207,7 @@ export const Playground = ({
                     spacing='0px'
                     isInline
                 >
-                    <Stack spacing='0px' flex='1'>
+                    <Stack maxWidth='100%' spacing='0px' flex='1'>
                         {previewEnabled && editorBar}
                         {!showCode && (
                             <Box
@@ -214,6 +215,7 @@ export const Playground = ({
                                 fontFamily='body'
                                 p='0px'
                                 w='100%'
+                                maxWidth='100%'
                                 overflow='hidden'
                                 // {...props}
                             />
