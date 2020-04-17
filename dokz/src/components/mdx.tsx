@@ -108,19 +108,19 @@ const MDXComponents = {
     h1: (props) => <DocsHeading as='h1' fontSize='32px' {...props} />,
     h2: (props) => <DocsHeading as='h2' fontSize='26px' {...props} />,
     h3: (props) => <DocsHeading as='h3' size='md' fontSize='24px' {...props} />,
-    img: (props) => {
-        return (
-            <Stack my='20px' direction='column'>
-                <Image
-                    borderWidth='1px'
-                    maxWidth='700px'
-                    // shadow='md'
-                    borderRadius='8px'
-                    {...props}
-                />
-            </Stack>
-        )
-    },
+    // img: (props) => {
+    //     return (
+    //         <Stack my='20px' direction='column'>
+    //             <Image
+    //                 borderWidth='1px'
+    //                 maxWidth='700px'
+    //                 // shadow='md'
+    //                 borderRadius='8px'
+    //                 {...props}
+    //             />
+    //         </Stack>
+    //     )
+    // },
     inlineCode: (props) => {
         const { colorMode } = useColorMode()
         return (
