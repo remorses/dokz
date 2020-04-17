@@ -13,18 +13,19 @@ import { DokzProvider } from 'dokz/src'
 import React from 'react'
 
 const order = {
-    'index.mdx': null,
-    pageName: null, // you can omit the mdx extension
+    'index.mdx': true,
+    anotherDirectory: false, // use false to exclude directories and files
+    pageName: true, // you can omit the mdx extension
     folder: {
-        page1: null,
-        page2: null,
-        page3: null,
+        page1: true,
+        page2: true,
+        page3: true,
         subfolder: {
-            page3: null,
-            page4: null,
+            page3: true,
+            page4: true,
         },
     },
-    // paths not present will be put at the end of their parent tree
+    // paths not present will be put at the end
 }
 
 export default (props) => {
@@ -41,6 +42,8 @@ export default (props) => {
 
 The order is specified with an object, every key is a file or an object path
 
-Every value can be `null`, which means the current key is a file path, or can be another object, meaning the current key is directory
+Every value can be `true`, which means the current key is a file path, or can be another object, meaning the current key is directory
+
+If the value is `false` the corresponding file or directory will be excluded from the sidebar
 
 Paths that are not in this ordering are put at the end.
