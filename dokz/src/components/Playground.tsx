@@ -12,7 +12,7 @@ import { useDokzConfig } from '../provider'
 import Frame from 'react-frame-component'
 
 import { CopyButton } from './Code'
-const CLEAR_PADDING = `<style> body { padding: 0; margin: 0; width: 100% }  </style>`
+const CLEAR_PADDING = `<style> body { padding: 0; margin: 0; width: 100%; height: auto !important; }  </style>`
 const INITIAL_IFRAME_CONTENT = `<!DOCTYPE html><html><head> ${CLEAR_PADDING} </head><body><div></div></body></html>`
 
 const IS_DEFAULT_IFRAME_ACTIVATED = true
