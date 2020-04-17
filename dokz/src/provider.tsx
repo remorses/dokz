@@ -61,7 +61,7 @@ export type DokzProviderProps = {
     sidebarOrdering?: SidebarOrdering
 }
 
-export type SidebarOrdering = { [k: string]: SidebarOrdering | null }
+export type SidebarOrdering = { [k: string]: SidebarOrdering } | boolean
 
 const defaultDokzContext: DokzProviderProps = {
     initialColorMode: 'light',

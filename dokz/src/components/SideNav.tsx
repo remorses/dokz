@@ -65,7 +65,7 @@ export function applySidebarOrdering({
     if (!tree.children) {
         return tree
     }
-    if (!order) {
+    if (!order || typeof order === 'boolean') {
         return tree
     }
     tree.children = orderBy(tree.children, (x) => {
@@ -76,6 +76,15 @@ export function applySidebarOrdering({
             return Infinity
         }
         return index
+    })
+    tree.children = tree.children.filter((x) => {
+        const found = Object.keys(order).find((k) =>
+            equalWithoutExtension(k, x.name),
+        )
+        if (found && order[found] === false ) {
+            return false
+        }
+        return true
     })
     tree.children.forEach((node) => {
         applySidebarOrdering({
@@ -122,9 +131,7 @@ const NavTreeComponent = ({
                         {formattedTitle}
                     </ComponentLink>
                 ) : (
-                    <Box>
-                        {formattedTitle}
-                    </Box>
+                    <Box>{formattedTitle}</Box>
                 ))}
             {children &&
                 children.map((x) => {
