@@ -233,9 +233,7 @@ export const IframeWrapper = ({ children, style, ...rest }) => {
      */
     const copyStyles = (ref: React.RefObject<any>) => {
         const iFrameNode = ref.current?.node
-        if (
-            !iFrameNode?.contentDocument?.body
-        ) {
+        if (!iFrameNode?.contentDocument?.body) {
             return
         }
         // Copy <link> elements
