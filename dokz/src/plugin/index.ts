@@ -13,10 +13,14 @@ import { debounce } from 'debounce'
 const EXTESNIONS_TO_WATCH = ['.mdx', '.md']
 
 export function withDokz(nextConfig = {} as any) {
-    const watcher = chokidar.watch('./**', {
-        persistent: true,
-    })
-    watcher.on('add', onFileChange).on('unlink', onFileChange)
+    if (process.env.NODE_ENV !== 'production') {
+        const watcher = chokidar.watch('./**', {
+            persistent: true,
+        })
+        watcher.on('add', onFileChange).on('unlink', onFileChange)
+    } else {
+        writeMdxIndex()
+    }
     // .on('change', writeMdxIndex)
     nextConfig.pageExtensions = unique([
         ...(nextConfig.pageExtensions || []),
