@@ -12,6 +12,7 @@ import { useDokzConfig } from '../provider'
 import Frame from 'react-frame-component'
 
 import { CopyButton } from './Code'
+import { flatten } from 'lodash/fp'
 const CLEAR_PADDING = `<style> body { padding: 0; margin: 0; width: 100%; height: auto !important; }  </style>`
 const INITIAL_IFRAME_CONTENT = `<!DOCTYPE html><html><head> ${CLEAR_PADDING} </head><body><div></div></body></html>`
 
@@ -214,6 +215,19 @@ interface IFrame {
     node: HTMLIFrameElement
 }
 
+function getEmotionStyle() {
+    const css = flatten(
+        [
+            ...(document.querySelectorAll('[data-emotion]') as any),
+        ].map(({ sheet }) => [...sheet.cssRules].map((rules) => rules.cssText)),
+    ).join('\n')
+    const style = document.createElement('style')
+    style.type = 'text/css'
+    style.appendChild(document.createTextNode(css))
+    style.setAttribute('EmotionExtractedCss', 'true')
+    return style
+}
+
 export const IframeWrapper = ({ children, style, ...rest }) => {
     const [height, setHeight] = useState(0)
     const iframeRef: React.RefObject<IFrame> = React.createRef()
@@ -231,12 +245,14 @@ export const IframeWrapper = ({ children, style, ...rest }) => {
      * Styles in parent browsing context will not be available to <iframe> content,
      * we need to manually copy styles from parent browsing context to <iframe> browsing context
      */
+
     const copyStyles = (ref: React.RefObject<any>) => {
         const iFrameNode = ref.current?.node
         if (!iFrameNode?.contentDocument?.body) {
             return
         }
         // Copy <link> elements
+
         const links = Array.from(document.getElementsByTagName('link'))
         links.forEach((link) => {
             if (link.rel === 'stylesheet') {
@@ -248,6 +264,7 @@ export const IframeWrapper = ({ children, style, ...rest }) => {
 
         // Copy <style> elements
         const styles = Array.from(document.head.getElementsByTagName('style'))
+        styles.push(getEmotionStyle())
         styles.forEach((style) => {
             iFrameNode.contentDocument.head.appendChild(style.cloneNode(true))
         })
