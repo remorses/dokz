@@ -9,16 +9,10 @@ export default (props) => {
                 <GithubLink key='0' url='https://github.com/remorses/dokz' />,
                 <ColorModeSwitch key='1' />,
             ]}
-            headerLogo={
-                <img
-                    src='/dokz_logo.svg'
-                    width='100px'
-                />
-            }
-            sidebarOrdering={{ // sidebar ordering
-                'index.mdx': null,
+            sidebarOrdering={{
+                'index.mdx': true,
                 Documents_Group: {
-                    'another.mdx': null,
+                    'another.mdx': true,
                 },
             }}
         >
