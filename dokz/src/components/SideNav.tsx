@@ -51,7 +51,7 @@ export const SideNav = ({ tree, ...rest }: SideNavProps) => {
                     x, // i map on children to exclude the `pages` or `docsRootPage` first node
                 ) => (
                     <NavTreeComponent
-                        hideDevider
+                        hideDivider
                         key={x.path || x.title}
                         {...x}
                     />
@@ -122,11 +122,11 @@ const NavTreeComponent = ({
     name = '',
     children,
     depth = 0,
-    hideDevider = false,
+    hideDivider = false,
     url = '',
     title = '',
     ...rest
-}: DirectoryTree & { depth?: number; hideDevider?: boolean }) => {
+}: DirectoryTree & { depth?: number; hideDivider?: boolean }) => {
     const w = 10
     const isNavHeading = depth === 1 && children
     const formattedTitle =
@@ -155,7 +155,7 @@ const NavTreeComponent = ({
                     </ComponentLink>
                 ) : (
                     <Box my='20px'>
-                        {!hideDevider && <Divider />}
+                        {!hideDivider && <Divider />}
                         <Box fontWeight='semibold'>
                             {formattedTitle.toUpperCase()}
                         </Box>
