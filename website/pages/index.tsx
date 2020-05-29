@@ -59,7 +59,7 @@ const Hero = (props) => {
                 <br />
                 <br />
                 <Image
-                    // maxW='900px'
+                    maxW='900px'
                     w='100%'
                     minW='300px'
                     src='/screen.png'

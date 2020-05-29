@@ -81,3 +81,5 @@ typings/
 
 # FuseBox cache
 .fusebox/
+
+.vercel
