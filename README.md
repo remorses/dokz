@@ -1,7 +1,7 @@
 <div align='center'>
     <br/>
     <br/>
-    <img src='http://dokz-docs.now.sh/logo_full.svg' width='300px'>
+    <img src='https://dokz.site/logo_full.svg' width='300px'>
     <br/>
     <br/>
     <h3>Compiles your markdown or mdx files down to a static Next.js site
