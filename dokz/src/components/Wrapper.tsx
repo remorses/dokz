@@ -30,14 +30,15 @@ const globalStyles = css`
     html {
         overflow: hidden;
         height: 100%;
-        scroll-behavior: smooth;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-rendering: optimizeLegibility;
+        
     }
     body {
         height: 100%;
         overflow: auto;
+        scroll-behavior: smooth;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
     }
 `
 
