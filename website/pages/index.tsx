@@ -47,22 +47,22 @@ const Hero = (props) => {
             {...props}
         >
             <Stack align='center' spacing='40px'>
-                <Box maxW='400px' minW='300px' as={LogoFull} />
+                {/* <Box maxW='400px' minW='300px' as={LogoFull} /> */}
                 <Stack align='center' spacing='10px' textAlign='center'>
-                    <Heading fontSize='42px'>From markdown to websites</Heading>
-                    <Subheading opacity={0.7}>
-                        Compiles your markdown or mdx files down to a static
-                        Next.js site
+                    <Heading fontSize='42px'>Effortless documentation</Heading>
+                    <Subheading lineHeight='2em' opacity={0.7}>
+                        Dokz builds an awesome website around your Markdown documents <br/>
+                        Using Nextjs and MDX
                     </Subheading>
                 </Stack>
                 <CtaButton />
                 <br />
                 <br />
-                <Box
-                    opacity={0.7}
-                    maxW='900px'
+                <Image
+                    // maxW='900px'
+                    w='100%'
                     minW='300px'
-                    as={LandingIllustration}
+                    src='/screen.png'
                 />
             </Stack>
         </PageContainer>
@@ -81,16 +81,8 @@ const Page = () => (
             ]}
         />
         <Hero
-            heading='Documentation sites from mdx'
-            subheading='Compiles your markdown or mdx files down to a static Next.js site'
-            image={<Image minW='400px' width='700px' src={hero_image} />}
             // cta={<EmailForm />}
             direction='column'
-            cta={
-                <NextLink href='/docs'>
-                    <Button>Quickstart</Button>
-                </NextLink>
-            }
             // fingerprint='Already using Airtable? Sign in'
         />
         {/* <FeaturesList
@@ -131,13 +123,13 @@ const Page = () => (
             /> */}
 
         <HowItWorks
-            heading='The best way to write documentation'
-            subheading='The power of react and the simplicity of markdown'
+            heading='The simplest way to write documentation'
+            subheading='You can focus on writing markdown, dokz handles styling, sidebar, table of contents and much more'
             steps={[
                 {
                     heading: 'Write markdown',
                     subheading:
-                        'You can also include your own react components thanks to mdx',
+                        'You can also include your own react components thanks to MDX',
                     image: <img src={isometric_text_icon} />,
                 },
                 {
@@ -147,7 +139,7 @@ const Page = () => (
                     image: <img src={isometric_check_icon} />,
                 },
                 {
-                    heading: 'Build the website',
+                    heading: 'Deploy the website',
                     subheading:
                         'Dokz export a completely static website you can deploy everywhere',
                     image: <img src={isometric_code_icon} />,
