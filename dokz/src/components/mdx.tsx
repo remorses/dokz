@@ -6,7 +6,6 @@ import {
     Heading,
     Kbd,
     Link as ChakraLink,
-    Link,
     Text,
     useColorMode,
     Image,
@@ -16,6 +15,7 @@ import { jsx } from '@emotion/core'
 import NextLink from 'next/link'
 import { Code } from './Code'
 import { Wrapper } from './Wrapper'
+import { Link } from './Link'
 import { useDokzConfig } from '../provider'
 
 const Pre = (props) => <Box my='2em' rounded='sm' {...props} />
@@ -145,14 +145,7 @@ const MDXComponents = {
     table: Table,
     th: THead,
     td: TData,
-    a: ({ ...props }) => (
-        <Link
-            fontWeight='medium'
-            textDecoration='underline'
-            {...props}
-            target='_blank'
-        />
-    ),
+    a: Link,
     p: (props) => {
         return <MdxText as='p' {...props} />
     },
