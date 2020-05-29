@@ -4,7 +4,7 @@
     <img src='https://dokz.site/logo_full.svg' width='300px'>
     <br/>
     <br/>
-    <h3>Compiles your markdown or mdx files down to a static Next.js site
+    <h3>Effortless documentation with Next.js and MDX
     </h3>
     <br/>
     <br/>
