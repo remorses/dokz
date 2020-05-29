@@ -5,16 +5,26 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "node",
+            "type": "chrome",
             "request": "launch",
-            "name": "Launch Program",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "program": "${workspaceFolder}/dist/index.js",
-            "outFiles": [
-                "${workspaceFolder}/**/*.js"
-            ]
-        }
+            "name": "Launch Chrome",
+            "url": "http://localhost:3000/docs",
+            "sourceMapPathOverrides": {
+                "webpack:///./*": "${workspaceRoot}/website/*"
+            },
+            "webRoot": "${workspaceFolder}/website"
+        },
+        {
+            "type": "chrome",
+            "request": "attach",
+            "name": "Attach to Chrome",
+            "sourceMapPathOverrides": {
+                "webpack:///./*": "${workspaceRoot}/website/*"
+            },
+            "port": 3000,
+            "webRoot": "${workspaceFolder}/website"
+        },
+
+
     ]
 }

@@ -14,6 +14,7 @@ export default (props) => {
                 primary='#2D7FF9'
             >
                 <DokzProvider
+                    docsRootPath='pages/docs'
                     headerItems={[
                         <GithubLink
                             key={0}

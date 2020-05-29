@@ -20,6 +20,10 @@ export type DokzProviderProps = {
     */
     headerLogo?: ReactNode
     /*
+    The root folder of your docs documents, hides the outer folders from the sidenav
+    */
+    docsRootPath?: string
+    /*
     Links in the right nav bar
     */
     headerItems?: ReactNode[] | ReactNode
@@ -87,7 +91,7 @@ export function useDokzConfig(): DokzProviderProps {
 
 export function DokzProvider({ children, ...rest }: DokzProviderProps) {
     const ctx = { ...defaultDokzContext, ...rest }
-    const { mdxComponents: userMDXComponents = {}, initialColorMode } = ctx
+    const { mdxComponents: userMDXComponents = {}, initialColorMode,  } = ctx
     return (
         // TODO merge configs
         <DokzContext.Provider value={ctx}>

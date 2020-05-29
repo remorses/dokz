@@ -11,10 +11,33 @@ export type SideNavProps = {
     contentHeight?: string
 } & BoxProps
 
+function findTreeInPath(tree: DirectoryTree, path): DirectoryTree | null {
+    if (!tree?.children?.length) {
+        return null
+    }
+    if (tree.path === path) {
+        return tree
+    }
+    for (let child of tree.children) {
+        let found = findTreeInPath(child, path)
+        if (found) {
+            return found
+        }
+    }
+}
+
 export const SideNav = ({ tree, ...rest }: SideNavProps) => {
     // console.log({ tree })
-    const { sidebarOrdering } = useDokzConfig()
+    const { sidebarOrdering, docsRootPath = 'pages' } = useDokzConfig()
     tree = applySidebarOrdering({ tree, order: sidebarOrdering })
+    // console.log(tree)
+    tree = findTreeInPath(tree, docsRootPath.replace(/^\/|\/$/g, '')) || tree
+    // console.log(tree)
+    if (!tree) {
+        console.error(new Error(`sidenav tree is null`))
+        tree = { name: '', children: [] }
+    }
+
     return (
         <Box
             fontSize='17px'
@@ -24,15 +47,23 @@ export const SideNav = ({ tree, ...rest }: SideNavProps) => {
             {...rest}
         >
             <Box as='nav' aria-label='Main navigation' p='6'>
-                {tree.children.map((
-                    x, // i map on children to exclude the `pages` first node
-                ) => (
+                {tree.path == 'pages' ? (
+                    tree.children.map((
+                        x, // i map on children to exclude the `pages` first node
+                    ) => (
+                        <NavTreeComponent
+                            hideDevider
+                            key={x.path || x.title}
+                            {...x}
+                        />
+                    ))
+                ) : (
                     <NavTreeComponent
                         hideDevider
-                        key={x.path || x.title}
-                        {...x}
+                        key={tree.path || tree.title}
+                        {...tree}
                     />
-                ))}
+                )}
             </Box>
         </Box>
     )
