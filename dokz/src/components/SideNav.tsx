@@ -1,4 +1,4 @@
-import { Box, BoxProps, Heading, Link, Stack } from '@chakra-ui/core'
+import { Box, BoxProps, Heading, Link, Stack, Divider } from '@chakra-ui/core'
 import orderBy from 'lodash/orderBy'
 import React from 'react'
 import { ComponentLink } from './NavLink'
@@ -16,25 +16,15 @@ export const SideNav = ({ tree, ...rest }: SideNavProps) => {
     const { sidebarOrdering } = useDokzConfig()
     tree = applySidebarOrdering({ tree, order: sidebarOrdering })
     return (
-        <Box borderRightWidth='1px' minWidth='260px' height='auto' {...rest}>
-            <Box
-                as='nav'
-                aria-label='Main navigation'
-                fontSize='14px'
-                fontWeight='medium'
-                p='6'
-            >
-                <Box
-                    // TODO meybe remove index in sidebar
-                    my='10px'
-                    fontWeight='medium'
-                    letterSpacing='2px'
-                    opacity={0.7}
-                    mx='2'
-                >
-                    INDEX
-                </Box>
-                <NavTreeComponent {...tree} name='' />
+        <Box
+            fontSize='17px'
+            borderRightWidth='1px'
+            minWidth='260px'
+            height='auto'
+            {...rest}
+        >
+            <Box as='nav' aria-label='Main navigation' p='6'>
+                <NavTreeComponent {...tree} hideDevider name='' />
             </Box>
         </Box>
     )
@@ -81,7 +71,7 @@ export function applySidebarOrdering({
         const found = Object.keys(order).find((k) =>
             equalWithoutExtension(k, x.name),
         )
-        if (found && order[found] === false ) {
+        if (found && order[found] === false) {
             return false
         }
         return true
@@ -101,10 +91,11 @@ const NavTreeComponent = ({
     name = '',
     children,
     depth = 0,
+    hideDevider = false,
     url = '',
     title = '',
     ...rest
-}: DirectoryTree & { depth?: number }) => {
+}: DirectoryTree & { depth?: number; hideDevider?: boolean }) => {
     const w = 10
     const isNavHeading = depth === 1 && children
     const formattedTitle =
@@ -116,13 +107,14 @@ const NavTreeComponent = ({
     return (
         <Stack
             spacing='0px'
-            pl={depth * w + 'px'}
+            lineHeight='2.8em'
+            // pl={depth * w + 'px'}
             pb={depth === 1 ? '20px' : '0px'}
         >
             {name &&
                 (url ? (
                     <ComponentLink
-                        h='28px'
+                        h='2em'
                         // display='block'
                         href={url}
                         isTruncated
@@ -131,7 +123,12 @@ const NavTreeComponent = ({
                         {formattedTitle}
                     </ComponentLink>
                 ) : (
-                    <Box>{formattedTitle}</Box>
+                    <Box my='20px'>
+                        {!hideDevider && <Divider />}
+                        <Box fontWeight='semibold'>
+                            {formattedTitle.toUpperCase()}
+                        </Box>
+                    </Box>
                 ))}
             {children &&
                 children.map((x) => {

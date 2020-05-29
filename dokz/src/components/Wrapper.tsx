@@ -65,6 +65,8 @@ export function Wrapper(props) {
             <Stack
                 align='center'
                 color={bodyColor[colorMode]}
+                fontSize='18px'
+                fontWeight='normal'
                 // fontFamily='Roboto, Arial'
                 // color={colorMode == 'dark' ? 'white' : black}
             >
@@ -102,7 +104,6 @@ export function Wrapper(props) {
                     >
                         <Stack
                             overflow='auto'
-                            fontSize='16px'
                             px={['10px', null, '20px', '30px']}
                             flex='1'
                             minW='0'

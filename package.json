@@ -5,5 +5,7 @@
         "website",
         "devsite"
     ],
-    "scripts": {}
+    "scripts": {
+        "dev": "cd website && yarn dev"
+    }
 }
