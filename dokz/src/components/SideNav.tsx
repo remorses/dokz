@@ -47,23 +47,15 @@ export const SideNav = ({ tree, ...rest }: SideNavProps) => {
             {...rest}
         >
             <Box as='nav' aria-label='Main navigation' p='6'>
-                {tree.path == 'pages' ? (
-                    tree.children.map((
-                        x, // i map on children to exclude the `pages` first node
-                    ) => (
-                        <NavTreeComponent
-                            hideDevider
-                            key={x.path || x.title}
-                            {...x}
-                        />
-                    ))
-                ) : (
+                {tree.children.map((
+                    x, // i map on children to exclude the `pages` or `docsRootPage` first node
+                ) => (
                     <NavTreeComponent
                         hideDevider
-                        key={tree.path || tree.title}
-                        {...tree}
+                        key={x.path || x.title}
+                        {...x}
                     />
-                )}
+                ))}
             </Box>
         </Box>
     )
