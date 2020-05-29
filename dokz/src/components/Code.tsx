@@ -12,7 +12,6 @@ import { useDokzConfig } from '../provider'
 import { Playground } from './Playground'
 export { Playground } from './Playground'
 
-
 // const highlightStyle = {
 //   padding: 20,
 //   fontSize: 14,
@@ -20,7 +19,6 @@ export { Playground } from './Playground'
 //   lineHeight: "1.5",
 //   fontFamily: "Menlo,monospace",
 // };
-
 
 export const Code = ({ children, className, live, ...rest }) => {
     // console.log({rest, live})
@@ -69,6 +67,9 @@ export const Code = ({ children, className, live, ...rest }) => {
                         style={{ ...style }}
                         overflowX='auto'
                     >
+                        <Box opacity={.6} fontSize='14px' position='absolute' right='40px' top='10px'>
+                            {language}
+                        </Box>
                         <CopyButton
                             onClick={onCopy}
                             hasCopied={hasCopied}
