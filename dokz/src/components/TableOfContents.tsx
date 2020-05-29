@@ -21,9 +21,12 @@ export function TableOfContents({
             fontSize='15px'
             borderLeftWidth='1px'
             pl='20px'
-            opacity={0.9}
+            opacity={0.8}
             {...rest}
         >
+            <Box fontWeight='semibold'>
+                ON THIS PAGE
+            </Box>
             {map.map((table) => {
                 return (
                     <TableItems
