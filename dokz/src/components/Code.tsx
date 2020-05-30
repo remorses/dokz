@@ -63,6 +63,7 @@ export const Code = ({ children, className, live, ...rest }) => {
                         pt='30px'
                         borderRadius='8px'
                         as='pre'
+                        fontSize='0.9em'
                         className={className}
                         style={{ ...style }}
                         overflowX='auto'

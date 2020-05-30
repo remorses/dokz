@@ -152,7 +152,7 @@ const liveErrorStyle: CSSProperties = {
 }
 
 const liveEditorStyle: CSSProperties = {
-    fontSize: 14,
+    fontSize: '0.9em',
     overflowX: 'auto',
     margin: 0,
     fontFamily: 'Menlo,monospace',
