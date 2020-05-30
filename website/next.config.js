@@ -6,5 +6,5 @@ const withImages = require('next-images')
 const composed = compose(withTM, withDokz, withImages)
 
 module.exports = composed({
-    pageExtensions: ['js', 'jsx', 'mdx', 'tsx'],
+    pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
 })
