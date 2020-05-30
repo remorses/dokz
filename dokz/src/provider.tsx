@@ -67,6 +67,14 @@ export type DokzProviderProps = {
 
 export type SidebarOrdering = { [k: string]: SidebarOrdering } | boolean
 
+const defaultDarkPrismTheme = {
+    ...darkPrismTheme,
+    plain: {
+        ...darkPrismTheme.plain,
+        backgroundColor: '#2D3748',
+    },
+}
+
 const defaultDokzContext: DokzProviderProps = {
     initialColorMode: 'light',
     footer: <Box height='100px' />,
@@ -76,7 +84,7 @@ const defaultDokzContext: DokzProviderProps = {
         </Box>
     ),
     headerItems: [<ColorModeSwitch key={0} />],
-    prismTheme: { dark: darkPrismTheme, light: darkPrismTheme },
+    prismTheme: { dark: defaultDarkPrismTheme, light: darkPrismTheme },
     maxPageWidth: '1600px',
     bodyColor: { light: '#222', dark: 'rgba(255,255,255,.9)' },
     headingColor: { light: '#111', dark: 'rgba(255,255,255,1)' },
@@ -91,7 +99,7 @@ export function useDokzConfig(): DokzProviderProps {
 
 export function DokzProvider({ children, ...rest }: DokzProviderProps) {
     const ctx = { ...defaultDokzContext, ...rest }
-    const { mdxComponents: userMDXComponents = {}, initialColorMode,  } = ctx
+    const { mdxComponents: userMDXComponents = {}, initialColorMode } = ctx
     return (
         // TODO merge configs
         <DokzContext.Provider value={ctx}>

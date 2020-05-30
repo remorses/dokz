@@ -68,7 +68,13 @@ export const Code = ({ children, className, live, ...rest }) => {
                         style={{ ...style }}
                         overflowX='auto'
                     >
-                        <Box opacity={.6} fontSize='14px' position='absolute' right='40px' top='10px'>
+                        <Box
+                            opacity={0.6}
+                            fontSize='14px'
+                            position='absolute'
+                            right='40px'
+                            top='10px'
+                        >
                             {language}
                         </Box>
                         <CopyButton
