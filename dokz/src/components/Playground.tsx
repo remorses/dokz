@@ -157,7 +157,7 @@ const liveEditorStyle: CSSProperties = {
     margin: 0,
     fontFamily: 'Menlo,monospace',
     overflow: 'hidden',
-    padding: '20px',
+    // padding: '20px',
 }
 
 const HandleComponent = (props) => {
