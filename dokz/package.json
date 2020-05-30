@@ -11,6 +11,12 @@
         "spec": "tests/**.ts",
         "timeout": 9999999999
     },
+    "repository": {
+        "type": "git",
+        "url": "remorses/dokz",
+        "directory": "dokz"
+    },
+    "homepage": "https://dokz.site",
     "files": [
         "/dist/*",
         "/esm/*"
