@@ -1,22 +1,22 @@
-import React, { useState, CSSProperties, useEffect, Fragment } from 'react'
-import { FiCopy, FiCheck } from 'react-icons/fi'
-
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
-import { mdx } from '@mdx-js/react'
-import { Box, Button, useClipboard, useColorMode } from '@chakra-ui/core'
-import * as ReactIcons from 'react-icons/md'
-import { Flex, Stack, Divider } from '@chakra-ui/core'
-import Highlight, { defaultProps } from 'prism-react-renderer'
-import { Resizable } from 're-resizable'
-import { useDokzConfig } from '../provider'
-import Frame from 'react-frame-component'
-
-import { CopyButton } from './Code'
+import {
+    Box,
+    Button,
+    Divider,
+    Stack,
+    useClipboard,
+    useColorMode,
+} from '@chakra-ui/core'
 import { flatten } from 'lodash/fp'
+import { Resizable } from 're-resizable'
+import React, { CSSProperties, useEffect, useState } from 'react'
+import Frame from 'react-frame-component'
+import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live'
+import { CopyButton } from './Code'
+
 const CLEAR_PADDING = `<style> body { padding: 0; margin: 0; width: 100%; height: auto !important; }  </style>`
 const INITIAL_IFRAME_CONTENT = `<!DOCTYPE html><html><head> ${CLEAR_PADDING} </head><body><div></div></body></html>`
 
-const IS_DEFAULT_IFRAME_ACTIVATED = true
+const IS_DEFAULT_IFRAME_ACTIVATED = false
 
 export const Playground = ({
     className,
@@ -33,7 +33,9 @@ export const Playground = ({
     const [showCode, setShowCode] = useState(!previewEnabled)
     const { onCopy, hasCopied } = useClipboard(editorCode)
     const [width, setWidth] = React.useState('100%')
+    const [_, forceRender] = useState('')
     const resizableProps = getResizableProps(width, setWidth)
+
     const liveProviderProps = {
         theme,
         language,
@@ -86,7 +88,18 @@ export const Playground = ({
             <Divider m='0' />
         </>
     )
-
+    const livePreview = (
+        <Box
+            as={LivePreview}
+            fontFamily='body'
+            p='0px'
+            height='auto'
+            w='100%'
+            maxWidth='100%'
+            overflow='hidden'
+            // {...props}
+        />
+    )
     return (
         <Resizable
             {...resizableProps}
@@ -105,29 +118,16 @@ export const Playground = ({
                     spacing='0px'
                     isInline
                 >
-                    <Stack maxWidth='100%' spacing='0px' flex='1'>
+                    <Stack maxWidth='100%' height='100%' spacing='0px' flex='1'>
                         {previewEnabled && editorBar}
-                        {!showCode && (
-                            <Box
-                                // height='auto'
-                                display='block'
-                                // minHeight='100%'
-                                width='100%'
-                                maxWidth='100%'
-                                as={iframe ? IframeWrapper : Box}
-                            >
-                                <Box
-                                    as={LivePreview}
-                                    fontFamily='body'
-                                    p='0px'
-                                    height='auto'
-                                    w='100%'
-                                    maxWidth='100%'
-                                    overflow='hidden'
-                                    // {...props}
-                                />
-                            </Box>
-                        )}
+                        {!showCode &&
+                            (iframe ? (
+                                <IframeWrapper onMount={forceRender}>
+                                    {livePreview}
+                                </IframeWrapper>
+                            ) : (
+                                livePreview
+                            ))}
                         {showCode && (
                             <LiveEditor
                                 onChange={handleCodeChange}
@@ -195,6 +195,7 @@ const getResizableProps = (width, setWidth) => ({
     style: {
         margin: 0,
         marginRight: 'auto',
+        height: 'auto',
     },
     enable: {
         top: false,
@@ -228,7 +229,7 @@ function getEmotionStyle() {
     return style
 }
 
-export const IframeWrapper = ({ children, style, ...rest }) => {
+export const IframeWrapper = ({ children, onMount, style = {}, ...rest }) => {
     const [height, setHeight] = useState(0)
     const iframeRef: React.RefObject<IFrame> = React.createRef()
     const handleResize = (iframe: React.RefObject<IFrame>) => {
@@ -273,6 +274,9 @@ export const IframeWrapper = ({ children, style, ...rest }) => {
         // copyStyles(iframeRef)
         handleResize(iframeRef)
     }, [children])
+    useEffect(() => {
+        onMount()
+    }, [])
     return (
         <Frame
             style={{
