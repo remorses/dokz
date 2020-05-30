@@ -1,7 +1,7 @@
 import { DokzProvider, GithubLink, ColorModeSwitch } from 'dokz/dist'
 import React from 'react'
 
-export default (props) => {
+export default function App(props) {
     const { Component, pageProps } = props
     return (
         <DokzProvider

@@ -1,0 +1,25 @@
+---
+name: Change docs root path
+---
+
+# Change docs root path
+
+Dokz side nav shows all your pages paths by default, to only show files in a specific directory you can use the `DokzProvider` `docsRootPath` prop
+
+Here is an example of a site that exposes only the mdx documents on the /docs/ directory
+
+> Note that `docsRootPath` has no impact on the exposed pages, it only changes the side nav elements
+
+```jsx
+import { DokzProvider } from 'dokz/src'
+import React from 'react'
+
+export default function App(props) {
+    const { Component, pageProps } = props
+    return (
+        <DokzProvider docsRootPath='pages/docs'>
+            <Component {...pageProps} />
+        </DokzProvider>
+    )
+}
+```

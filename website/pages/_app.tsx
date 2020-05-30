@@ -27,6 +27,7 @@ export default (props) => {
                         docs: {
                             index: null,
                             'getting-started': null,
+                            // 'adding-dokz-to-existing-website': true,
                             general: {
                                 'writing-mdx': null,
                                 'document-settings': null,

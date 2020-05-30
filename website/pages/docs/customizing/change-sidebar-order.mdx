@@ -28,7 +28,7 @@ const order = {
     // paths not present will be put at the end
 }
 
-export default (props) => {
+export default function App(props) {
     const { Component, pageProps } = props
     return (
         <DokzProvider sidebarOrdering={order}>

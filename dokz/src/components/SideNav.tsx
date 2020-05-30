@@ -86,9 +86,7 @@ export function applySidebarOrdering({
     if (!tree.children) {
         return tree
     }
-    if (!order || typeof order === 'boolean') {
-        return tree
-    }
+    // put the non listed entries last
     tree.children = orderBy(tree.children, (x) => {
         const index = Object.keys(order).findIndex((k) =>
             equalWithoutExtension(k, x.name),
@@ -98,6 +96,14 @@ export function applySidebarOrdering({
         }
         return index
     })
+    // put the folders last
+    tree.children = orderBy(tree.children, (x, i) => {
+        if (x?.children?.length) {
+            return Infinity
+        }
+        return 0
+    })
+    // remove entries with `false` value
     tree.children = tree.children.filter((x) => {
         const found = Object.keys(order).find((k) =>
             equalWithoutExtension(k, x.name),
@@ -107,6 +113,7 @@ export function applySidebarOrdering({
         }
         return true
     })
+    // recurse
     tree.children.forEach((node) => {
         applySidebarOrdering({
             tree: node,

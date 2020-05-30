@@ -1,0 +1,48 @@
+---
+name: Adding dokz to an existing website
+---
+
+# Adding dokz to an existing website
+
+First you have to install the dependencies
+
+```bash
+npm install dokz @emotion/core @chakra-ui/core emotion-theming @emotion/styled
+# or
+yarn add dokz @emotion/core @chakra-ui/core
+```
+
+Add the dokz provider to the main nextjs `_app.jsx` component
+
+In this example i am also using `docsRootPath='pages/docs'` to hide other pages outside of the `docs` directories in the side nav
+
+> Remember that the only children of `DokzProvider` must be the nextjs `App` `props.Component`!
+
+```jsx
+// _app.jsx
+import { DokzProvider } from 'dokz'
+import { useRouter } from 'next/router'
+
+export default function App(props) {
+    const { Component, pageProps } = props
+    const { pathname } = useRouter()
+    if (pathname.startsWith('/docs')) {
+        return (
+            <DokzProvider docsRootPath='pages/docs'>
+                <Component {...pageProps} />
+            </DokzProvider>
+        )
+    }
+    return <div>My App</div>
+}
+```
+
+Now you can add MDX documents in the `pages/docs` directory and live preview them at `http://localhost:3000/docs`
+
+Add `withDokz` in the `next.config.js` file
+
+```js
+const { withDokz } = require('dokz/dist/plugin')
+
+module.exports = withDokz()
+```
