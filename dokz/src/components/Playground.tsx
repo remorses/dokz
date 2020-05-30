@@ -29,6 +29,7 @@ export const Playground = ({
     ...props
 }) => {
     const [editorCode, setEditorCode] = useState(children.trim())
+    const { colorMode } = useColorMode()
     const language = className && className.replace(/language-/, '')
     const [showCode, setShowCode] = useState(!previewEnabled)
     const { onCopy, hasCopied } = useClipboard(editorCode)
@@ -62,6 +63,7 @@ export const Playground = ({
                 isInline
                 flexDir='row'
                 align='center'
+                bg={{ light: 'white', dark: 'gray.700' }[colorMode]}
                 p='10px'
             >
                 <Box h='1' flex='1' />
@@ -170,7 +172,7 @@ const HandleComponent = (props) => {
             justify='center'
             borderWidth='1px'
             // borderColor='gray.300'
-            bg={{ light: 'gray.100', dark: 'gray.800' }[colorMode]}
+            bg={{ light: 'gray.100', dark: 'gray.700' }[colorMode]}
             borderRadius='0 4px 4px 0'
             {...props}
         >
