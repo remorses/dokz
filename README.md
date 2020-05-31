@@ -47,7 +47,7 @@ Add the dokz provider to the main nextjs entrypoint
 import { DokzProvider } from 'dokz'
 import React from 'react'
 
-export default (props) => {
+export default function App(props) {
     const { Component, pageProps } = props
     return (
         <DokzProvider headerLogo={<img src='/logo.svg' width='100px' />}>
