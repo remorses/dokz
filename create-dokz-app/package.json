@@ -24,6 +24,7 @@
   "scripts": {
     "build": "ncc build ./index.ts -w -o dist/",
     "play": "node dist",
+    "test": "yarn ts-mocha tests/**",
     "prerelease": "rimraf ./dist/",
     "release": "ncc build ./index.ts -o ./dist/ --minify --no-cache --no-source-map-register"
   },
