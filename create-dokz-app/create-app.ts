@@ -51,7 +51,6 @@ export async function createApp({
     const isOnline = !useYarn || (await getOnline())
     const originalDirectory = process.cwd()
 
-    const displayedCommand = useYarn ? 'yarn' : 'npm'
     console.log(`Creating a new Docz app in ${chalk.green(root)}.`)
     console.log()
 
@@ -59,10 +58,9 @@ export async function createApp({
     process.chdir(root)
 
     await downloadRepo(TEMPLATE_REPO, '.', TEMPLATE_FOLDER)
-    if (isOnline) {
-        await install({ useYarn })
-    }
-    
+    // if (isOnline) {
+    //     await install({ useYarn })
+    // }
 
     if (tryGitInit(root)) {
         console.log('Initialized a git repository.')
@@ -75,26 +73,29 @@ export async function createApp({
     } else {
         cdpath = appPath
     }
+    printHelp({
+        appName,
+        cdpath,
+        appPath,
+        useYarn,
+    })
+}
 
+export function printHelp({ appName, useYarn, cdpath, appPath }) {
     console.log(`${chalk.green('Success!')} Created ${appName} at ${appPath}`)
-    console.log('Inside that directory, you can run several commands:')
-    console.log()
-    console.log(chalk.cyan(`  ${displayedCommand} ${useYarn ? '' : 'run '}dev`))
-    console.log('    Starts the development server.')
     console.log()
     console.log(
-        chalk.cyan(`  ${displayedCommand} ${useYarn ? '' : 'run '}build`),
+        `run ${chalk.cyanBright(`npm install`)} or ${chalk.cyanBright(
+            `yarn`,
+        )} to install the dependencies`,
     )
-    console.log('    Builds the app for production.')
-    console.log()
-    console.log(chalk.cyan(`  ${displayedCommand} start`))
-    console.log('    Runs the built app in production mode.')
-    console.log()
-    console.log('We suggest that you begin by typing:')
     console.log()
     console.log(chalk.cyan('  cd'), cdpath)
+    console.log(`  ${chalk.cyan(`${useYarn ? 'yarn' : 'npm'} install`)}`)
     console.log(
-        `  ${chalk.cyan(`${displayedCommand} ${useYarn ? '' : 'run '}dev`)}`,
+        `  ${chalk.cyan(
+            `${useYarn ? 'yarn' : 'npm'} ${useYarn ? '' : 'run '}dev`,
+        )}`,
     )
     console.log()
 }
