@@ -29,7 +29,8 @@
     "release": "ncc build ./index.ts -o ./dist/ --minify --no-cache --no-source-map-register"
   },
   "devDependencies": {
-    "@types/node": "^12.6.8",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^14.0.6",
     "@types/prompts": "2.0.1",
     "@types/tar": "4.0.3",
     "@zeit/ncc": "^0.20.4",
