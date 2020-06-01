@@ -2,7 +2,7 @@ import { DokzProvider, GithubLink, ColorModeSwitch } from 'dokz/src'
 import { useColorMode, ThemeProvider } from '@chakra-ui/core'
 import React from 'react'
 import { Logo } from '../components/Logo'
-import { LandingProvider } from 'react-landing'
+import { LandingProvider } from 'landing-blocks'
 
 export default (props) => {
     const { Component, pageProps } = props

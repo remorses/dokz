@@ -3223,16 +3223,6 @@ babel-preset-typescript-vue@^1.0.3:
     "@babel/preset-typescript" "^7.3.3"
     fast-xml-parser "^3.12.17"
 
-baby-i-am-faded@0.0.7:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/baby-i-am-faded/-/baby-i-am-faded-0.0.7.tgz#bdc3db9bd21f664c7f8ae63f339382004a347d56"
-  integrity sha512-SbUjjWR0Hvn15vAh8JZCHlIs/ZOwizHQ1c/qKDo9zDRs2ey3NLRd4epTsbbUwZ9fEsfgT3hOsSUHqT6RiwmY8w==
-  dependencies:
-    "@emotion/core" "^10.0.28"
-    "@emotion/styled" "^10.0.27"
-    react-intersection-observer "^8.26.1"
-    react-is "^16.13.1"
-
 baby-i-am-faded@^0.0.12:
   version "0.0.12"
   resolved "https://registry.yarnpkg.com/baby-i-am-faded/-/baby-i-am-faded-0.0.12.tgz#439898d8cb7d6bdfc683133bc6e149a0145b4746"
@@ -6879,10 +6869,10 @@ klaw@^1.0.0:
   optionalDependencies:
     graceful-fs "^4.1.9"
 
-landing-blocks@^1.0.29:
-  version "1.0.29"
-  resolved "https://registry.yarnpkg.com/landing-blocks/-/landing-blocks-1.0.29.tgz#c8b687211b899f2a357e1900fdc91b03cb991d2c"
-  integrity sha512-av+RNZ/OXmONrlENA7CCxenoh5k37ve+PDrapiFWkjZ5f68ATAozTTYNeYx33KobNVortO8R7nj55Nuk6tazcQ==
+landing-blocks@^1.0.30:
+  version "1.0.30"
+  resolved "https://registry.yarnpkg.com/landing-blocks/-/landing-blocks-1.0.30.tgz#46022916f743125e6b26a835bc268018d0296e53"
+  integrity sha512-R6zdAkb23aBcrK4F/zoVno+C0jJpT69F08KS68Jz8NLZFIrWgWcdN2ZCsER8pwsAc0/m9c/QyN9Wi+3JaQHB3A==
   dependencies:
     "@emotion/styled" "^10.0.27"
     baby-i-am-faded "^0.0.12"
@@ -9064,23 +9054,6 @@ react-is@^16.12.0, react-is@^16.13.1, react-is@^16.7.0, react-is@^16.8.1, react-
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
-
-react-landing@^1.0.13:
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/react-landing/-/react-landing-1.0.13.tgz#e1a0a8326e5888a9eca102a0391f588a1d0c18d8"
-  integrity sha512-xmZeefwdqlNHE06zw60La7w7qQuK8Lf8YDXnY6pE+Iw+TUBgMSohcgRb7ooNTUC7ldR1iwkL53DbcdX3YrcTCg==
-  dependencies:
-    "@emotion/styled" "^10.0.27"
-    baby-i-am-faded "0.0.7"
-    color-js "^1.0.5"
-    emotion-theming "^10.0.27"
-    intersection-observer "^0.7.0"
-    lodash.get "^4.4.2"
-    lodash.merge "^4.6.2"
-    react-icons "^3.9.0"
-    react-mailchimp-subscribe "^2.1.0"
-    react-script-hook "^1.0.17"
-    react-twitter-embed "^3.0.3"
 
 react-lifecycles-compat@^3.0.4:
   version "3.0.4"

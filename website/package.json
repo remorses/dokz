@@ -13,14 +13,13 @@
         "@emotion/core": "^10.0.28",
         "@emotion/styled": "^10.0.27",
         "dokz": "*",
-        "landing-blocks": "^1.0.29",
+        "landing-blocks": "^1.0.30",
         "next": "^9.3.5",
         "next-transpile-modules": "^3.3.0",
         "react": "^16.13.1",
         "react-dom": "16.13.1",
         "react-frame-component": "^4.1.1",
         "react-icons": "^3.9.0",
-        "react-landing": "^1.0.13",
         "recharts": "^1.8.5"
     },
     "devDependencies": {
