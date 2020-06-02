@@ -14,7 +14,6 @@ export const Link = ({ children, ...props }: LinkProps) => {
             textDecoration='none'
             color={color}
             fontWeight='medium'
-            fontSize='text'
             borderBottom='2px solid'
             borderColor='transparent'
             py='0.2em'

@@ -40,9 +40,9 @@ export const SideNav = ({ tree, ...rest }: SideNavProps) => {
 
     return (
         <Box
-            fontSize='17px'
+            fontSize='0.9em'
             borderRightWidth='1px'
-            minWidth='260px'
+            minWidth='240px'
             height='auto'
             {...rest}
         >

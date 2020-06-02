@@ -16,9 +16,9 @@ export function TableOfContents({
     return (
         <Box
             width='200px'
-            lineHeight='2.4em'
+            lineHeight='2.2em'
             // fontWeight='medium'
-            fontSize='15px'
+            fontSize='0.8em'
             borderLeftWidth='1px'
             pl='20px'
             opacity={0.8}

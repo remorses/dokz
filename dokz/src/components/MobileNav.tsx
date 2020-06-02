@@ -37,7 +37,7 @@ const MobileNav = (props) => {
             <IconButton
                 display={{ sm: 'inline-flex', md: 'none' }}
                 aria-label='Navigation Menu'
-                fontSize='20px'
+                fontSize='30px'
                 variant='ghost'
                 icon={MdDehaze}
                 onClick={onToggle}

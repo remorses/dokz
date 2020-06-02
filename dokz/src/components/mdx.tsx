@@ -105,9 +105,9 @@ const MdxText = (props) => {
 }
 const MDXComponents = {
     wrapper: Wrapper,
-    h1: (props) => <DocsHeading as='h1' fontSize='32px' {...props} />,
-    h2: (props) => <DocsHeading as='h2' fontSize='26px' {...props} />,
-    h3: (props) => <DocsHeading as='h3' size='md' fontSize='24px' {...props} />,
+    h1: (props) => <DocsHeading as='h1' fontSize='2em' {...props} />,
+    h2: (props) => <DocsHeading as='h2' fontSize='1.4em' {...props} />,
+    h3: (props) => <DocsHeading as='h3' fontSize='1.2em' {...props} />,
     // img: (props) => {
     //     return (
     //         <Stack my='20px' direction='column'>

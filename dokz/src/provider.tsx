@@ -20,6 +20,10 @@ export type DokzProviderProps = {
     */
     headerLogo?: ReactNode
     /*
+    The logo displayed on the header nav bar
+    */
+    fontSize?: string
+    /*
     The root folder of your docs documents, hides the outer folders from the sidenav
     */
     docsRootPath?: string
@@ -83,6 +87,7 @@ const defaultDokzContext: DokzProviderProps = {
             Your Logo
         </Box>
     ),
+    fontSize: '18px',
     headerItems: [<ColorModeSwitch key={0} />],
     prismTheme: { dark: defaultDarkPrismTheme, light: darkPrismTheme },
     maxPageWidth: '1600px',

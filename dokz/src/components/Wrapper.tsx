@@ -18,7 +18,7 @@ import { Global, css } from '@emotion/core'
 import { TableOfContents } from './TableOfContents'
 import { Fragment, useMemo } from 'react'
 
-const SIDENAV_W = 300
+const SIDENAV_W = 280
 const TABLE_OF_C_W = 200
 
 const NAVBAR_H = 62
@@ -30,7 +30,6 @@ const globalStyles = css`
     html {
         overflow: hidden;
         height: 100%;
-        
     }
     body {
         height: 100%;
@@ -59,6 +58,7 @@ export function Wrapper(props) {
         headerItems,
         maxPageWidth,
         bodyColor,
+        fontSize,
     } = useDokzConfig()
     const index = getMdxIndex()
     const { colorMode } = useColorMode()
@@ -69,7 +69,7 @@ export function Wrapper(props) {
             <Stack
                 align='center'
                 color={bodyColor[colorMode]}
-                fontSize='18px'
+                fontSize={fontSize}
                 fontWeight='normal'
                 // fontFamily='Roboto, Arial'
                 // color={colorMode == 'dark' ? 'white' : black}

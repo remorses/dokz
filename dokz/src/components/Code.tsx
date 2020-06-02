@@ -12,13 +12,6 @@ import { useDokzConfig } from '../provider'
 import { Playground } from './Playground'
 export { Playground } from './Playground'
 
-// const highlightStyle = {
-//   padding: 20,
-//   fontSize: 14,
-//   overflow: "auto",
-//   lineHeight: "1.5",
-//   fontFamily: "Menlo,monospace",
-// };
 
 export const Code = ({ children, className, live, ...rest }) => {
     // console.log({rest, live})
