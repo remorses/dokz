@@ -40,9 +40,9 @@ export type DokzProviderProps = {
     */
     mdxComponents?: { [k: string]: ComponentType<any> }
     /*
-    The variables available in the live playground
+    The variables available in the live playground, can be a promise to be loaded at runtime
     */
-    playgroundScope?: { [k: string]: any }
+    playgroundScope?: Record<string, any> | (() => Promise<Record<string, any>>)
     /*
     The theme for the code blocks
     */

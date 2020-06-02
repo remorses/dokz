@@ -1,4 +1,4 @@
-import React, { useState, CSSProperties } from 'react'
+import React, { useState, CSSProperties, useMemo } from 'react'
 import { FiCopy, FiCheck } from 'react-icons/fi'
 
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
@@ -11,12 +11,12 @@ import { Resizable } from 're-resizable'
 import { useDokzConfig } from '../provider'
 import { Playground } from './Playground'
 export { Playground } from './Playground'
-
+import { usePromise } from 'react-extra-hooks'
 
 export const Code = ({ children, className, live, ...rest }) => {
     // console.log({rest, live})
     const { colorMode } = useColorMode()
-    let { prismTheme, playgroundScope } = useDokzConfig()
+    let { prismTheme } = useDokzConfig()
 
     const code = children.trim()
     const language = className && className.replace(/language-/, '')
@@ -25,10 +25,6 @@ export const Code = ({ children, className, live, ...rest }) => {
     if (live) {
         return (
             <Playground
-                scope={{
-                    ...playgroundScope,
-                    mdx,
-                }}
                 className={className}
                 theme={prismTheme[colorMode]}
                 children={children}

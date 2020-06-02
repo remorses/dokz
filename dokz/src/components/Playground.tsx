@@ -5,13 +5,29 @@ import {
     Stack,
     useClipboard,
     useColorMode,
+    Spinner,
 } from '@chakra-ui/core'
 import { flatten } from 'lodash/fp'
 import { Resizable } from 're-resizable'
-import React, { CSSProperties, useEffect, useState } from 'react'
+import React, {
+    CSSProperties,
+    useEffect,
+    useState,
+    useMemo,
+    useCallback,
+} from 'react'
 import Frame from 'react-frame-component'
-import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live'
+import {
+    LiveEditor,
+    LiveError,
+    LivePreview,
+    LiveProvider,
+    LiveProviderProps,
+} from 'react-live'
 import { CopyButton } from './Code'
+import { mdx } from '@mdx-js/react'
+import usePromise from 'swr'
+import { useDokzConfig } from '../provider'
 
 const CLEAR_PADDING = `<style> body { padding: 0; margin: 0; width: 100%; height: auto !important; }  </style>`
 const INITIAL_IFRAME_CONTENT = `<!DOCTYPE html><html><head> ${CLEAR_PADDING} </head><body><div></div></body></html>`
@@ -22,12 +38,34 @@ export const Playground = ({
     className,
     theme,
     children,
-    scope,
     iframe = true as any,
     mountStylesheet = false,
     previewEnabled = true,
     ...props
 }) => {
+    let { prismTheme, playgroundScope } = useDokzConfig()
+    const { data: scope, error, isValidating } = usePromise(
+        [playgroundScope],
+        (playgroundScope) => {
+            console.log({ playgroundScope })
+            if (typeof playgroundScope === 'function') {
+                return sleep(0)
+                    .then(playgroundScope)
+                    .then((scope: any) => {
+                        return {
+                            ...scope,
+                            mdx,
+                        }
+                    })
+            }
+            return Promise.resolve({
+                ...playgroundScope,
+                mdx,
+            })
+        },
+        { refreshWhenHidden: false, revalidateOnFocus: false },
+    )
+    const loading = !scope || isValidating
     const [editorCode, setEditorCode] = useState(children.trim())
     const { colorMode } = useColorMode()
     const language = className && className.replace(/language-/, '')
@@ -37,22 +75,23 @@ export const Playground = ({
     const [_, forceRender] = useState('')
     const resizableProps = getResizableProps(width, setWidth)
 
-    const liveProviderProps = {
+    const liveProviderProps: LiveProviderProps = {
         theme,
         language,
         code: editorCode,
+        disabled: loading || !!error,
         transformCode: (code) => '/** @jsx mdx */' + code,
         scope,
         // noInline: true,
         ...props,
     }
-    iframe =
-        iframe === 'false'
-            ? false
-            : iframe === 'true'
-            ? true
-            : IS_DEFAULT_IFRAME_ACTIVATED
-    const handleCodeChange = (newCode) => setEditorCode(newCode.trim())
+
+    iframe = isIframeEnabled(iframe)
+
+    const handleCodeChange = useCallback(
+        (newCode) => setEditorCode(newCode.trim()),
+        [setEditorCode],
+    )
 
     const editorBar = (
         <>
@@ -90,7 +129,11 @@ export const Playground = ({
             <Divider m='0' />
         </>
     )
-    const livePreview = (
+    const livePreview = loading ? (
+        <Stack p='40px' align='center' justify='center'>
+            <Spinner />
+        </Stack>
+    ) : (
         <Box
             as={LivePreview}
             fontFamily='body'
@@ -107,7 +150,7 @@ export const Playground = ({
             {...resizableProps}
             handleComponent={{ right: <HandleComponent height='100%' /> }}
         >
-            <LiveProvider {...liveProviderProps}>
+            <LiveProvider {...(liveProviderProps as any)}>
                 <Stack
                     w='100%'
                     maxWidth='100%'
@@ -136,7 +179,10 @@ export const Playground = ({
                                 style={liveEditorStyle}
                             />
                         )}
-                        <LiveError style={liveErrorStyle} />
+                        {!loading && <LiveError style={liveErrorStyle} />}
+                        {error && (
+                            <Box style={liveErrorStyle}>{error.message}</Box>
+                        )}
                     </Stack>
                 </Stack>
             </LiveProvider>
@@ -160,6 +206,14 @@ const liveEditorStyle: CSSProperties = {
     fontFamily: 'Menlo,monospace',
     overflow: 'hidden',
     // padding: '20px',
+}
+
+function isIframeEnabled(iframe) {
+    return iframe === 'false'
+        ? false
+        : iframe === 'true'
+        ? true
+        : IS_DEFAULT_IFRAME_ACTIVATED
 }
 
 const HandleComponent = (props) => {
@@ -296,3 +350,5 @@ export const IframeWrapper = ({ children, onMount, style = {}, ...rest }) => {
         </Frame>
     )
 }
+
+const sleep = (t) => new Promise((r) => setTimeout(r, t))

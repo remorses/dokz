@@ -31,15 +31,17 @@ import React from 'react'
 
 const CustomComponent = (props) => <p className='paragraph'>{props.children}</p>
 
-export default (props) => {
+export default function Page(props) {
     const { Component, pageProps } = props
     return (
-        <DokzProvider playgroundScope={{ variable: 'Hello', CustomComponent }}>
+        <DokzProvider playgroundScope={() => import('@chakra-ui/core')}>
             <Component {...pageProps} />
         </DokzProvider>
     )
 }
 ```
+
+Here i am using a dynamic import to not slow down the first page load, the playground scope will be downloaded in background and cached via swr
 
 Now inside you live code you can use the passed scope
 

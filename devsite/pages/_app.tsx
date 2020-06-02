@@ -4,10 +4,18 @@ import React from 'react'
 
 const order = { index: false, components: { Box: true } }
 
-export default (props) => {
+export default function App(props) {
     const { Component, pageProps } = props
     return (
-        <DokzProvider playgroundScope={{ ...chackra }} sidebarOrdering={order}>
+        <DokzProvider
+            playgroundScope={() =>
+                import('@chakra-ui/core').then((x) => {
+                    return { ...x }
+                })
+            }
+            // playgroundScope={{...chackra}}
+            sidebarOrdering={order}
+        >
             <Component {...pageProps} />
         </DokzProvider>
     )
