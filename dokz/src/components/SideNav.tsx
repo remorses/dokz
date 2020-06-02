@@ -83,6 +83,7 @@ export function applySidebarOrdering({
     tree: DirectoryTree
     order: SidebarOrdering
 }): DirectoryTree {
+    order = order || {}
     if (!tree.children) {
         return tree
     }

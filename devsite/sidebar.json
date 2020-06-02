@@ -17,6 +17,34 @@
                     "name": "alert.mdx",
                     "title": "",
                     "url": "/components/alert"
+                },
+                {
+                    "path": "pages/components/group",
+                    "name": "group",
+                    "children": [
+                        {
+                            "path": "pages/components/group/accordion.mdx",
+                            "name": "accordion.mdx",
+                            "title": "",
+                            "url": "/components/group/accordion"
+                        },
+                        {
+                            "path": "pages/components/group/asubgroup",
+                            "name": "asubgroup",
+                            "children": [
+                                {
+                                    "path": "pages/components/group/asubgroup/alert.mdx",
+                                    "name": "alert.mdx",
+                                    "title": "",
+                                    "url": "/components/group/asubgroup/alert"
+                                }
+                            ],
+                            "size": null,
+                            "type": "directory"
+                        }
+                    ],
+                    "size": null,
+                    "type": "directory"
                 }
             ],
             "size": null,
@@ -25,7 +53,7 @@
         {
             "path": "pages/index.mdx",
             "name": "index.mdx",
-            "title": "",
+            "title": "xxx",
             "url": "/index"
         },
         {

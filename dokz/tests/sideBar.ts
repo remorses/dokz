@@ -7,11 +7,10 @@ describe('sidebar', () => {
             name: 'pages',
             children: [{ name: 'a', children: [{ name: 'c' }, { name: 'b' }] }],
         }
-
         const order = {
             a: {
-                b: null,
-                c: null,
+                b: true,
+                c: true,
             },
         }
         const n = applySidebarOrdering({ tree, order })
@@ -40,11 +39,11 @@ describe('sidebar', () => {
         }
 
         const order = {
+            x: true,
             a: {
-                b: null,
-                c: { e: null, f: null },
+                b: true,
+                c: { e: true, f: true },
             },
-            x: null,
         }
         const n = applySidebarOrdering({ tree, order })
         console.log(JSON.stringify(n, null, 2))
@@ -52,15 +51,15 @@ describe('sidebar', () => {
             name: 'pages',
             children: [
                 {
+                    name: 'x',
+                    children: [],
+                },
+                {
                     name: 'a',
                     children: [
                         { name: 'b' },
                         { name: 'c', children: [{ name: 'e' }, { name: 'f' }] },
                     ],
-                },
-                {
-                    name: 'x',
-                    children: [],
                 },
             ],
         })
@@ -85,10 +84,10 @@ describe('sidebar', () => {
 
         const order = {
             a: {
-                b: null,
-                c: { d: null, e: null, f: null },
+                b: true,
+                c: { d: true, e: true, f: true },
             },
-            x: null,
+            x: true,
         }
         const n = applySidebarOrdering({ tree, order })
         console.log(JSON.stringify(n, null, 2))
