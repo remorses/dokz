@@ -85,7 +85,7 @@ const NavBar = ({ logo, tree, items, ...props }) => {
                         justify='flex-end'
                     >
                         {items}
-                        <MobileNav tree={tree} />
+                        <MobileNav  tree={tree} />
                     </Flex>
                 </Flex>
             </Stack>

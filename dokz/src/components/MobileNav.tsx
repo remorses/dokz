@@ -53,7 +53,7 @@ const MobileNav = (props) => {
                 <DrawerContent height='100vh' overflowY='auto' >
                     <DrawerBody p={0}>
                         <Stack  >
-                            <SideNav {...props} />
+                            <SideNav fontSize='1em' {...props} />
                         </Stack>
                     </DrawerBody>
                 </DrawerContent>

@@ -22,7 +22,7 @@ export type DokzProviderProps = {
     /*
     The logo displayed on the header nav bar
     */
-    fontSize?: string
+    fontSize?: string | string[]
     /*
     The root folder of your docs documents, hides the outer folders from the sidenav
     */
@@ -87,7 +87,7 @@ const defaultDokzContext: DokzProviderProps = {
             Your Logo
         </Box>
     ),
-    fontSize: '18px',
+    fontSize: ['16px', null, null, '18px'],
     headerItems: [<ColorModeSwitch key={0} />],
     prismTheme: { dark: defaultDarkPrismTheme, light: darkPrismTheme },
     maxPageWidth: '1600px',
