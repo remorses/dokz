@@ -5,5 +5,5 @@ const { withDokz } = require('dokz/dist/plugin')
 const composed = compose(withDokz, withTM)
 
 module.exports = composed({
-    pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
+    pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
 })

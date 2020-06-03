@@ -77,6 +77,7 @@ export const Playground = ({
     const liveProviderProps: LiveProviderProps = {
         theme,
         language,
+        
         code: editorCode,
         disabled: loading || !!error,
         transformCode: (code) => '/** @jsx mdx */' + code,
