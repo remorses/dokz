@@ -4,6 +4,9 @@ import React from 'react'
 import { Logo } from '../components/Logo'
 import { LandingProvider } from 'landing-blocks'
 
+import 'mini-graphiql/dist/style.css'
+
+
 export default (props) => {
     const { Component, pageProps } = props
     return (

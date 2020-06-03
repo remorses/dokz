@@ -2,6 +2,9 @@
 name: Writing MDX
 ---
 
+import { MiniGraphiQL } from 'mini-graphiql'
+import { Box } from '@chakra-ui/core'
+
 # Writing MDX
 
 MDX is a format that lets you seamlessly use JSX in your Markdown documents. You can import components, like interactive charts
@@ -9,10 +12,46 @@ and embed them within your content. This makes writing long-form content with co
 
 More details about MDX in the [Official website.](https://mdxjs.com/)
 
-## Working with components
+## An example react component inside markdown
 
-For now, you only need to know that with MDX you can use your components inside markdown.
-But how? Let's take a look at how we can improve our `.mdx` file created previously by importing and using a component inside it. 
+BElow there is an example of a `graphiql` component directly imported inside the markdown
+
+export const query1 = `
+{
+    continents {
+      code
+      name
+    }
+}
+`
+
+<Box borderColor='red.500' borderWidth='2px' my='40px' borderRadius='lg' overflow='hidden' shadow='xl'>
+    <MiniGraphiQL url='https://countries.trevorblades.com' query={query1} />
+</Box>
+
+To show that component i just needed to write the following `mdx`
+
+```md
+import { MiniGraphiQL } from 'mini-graphiql'
+import { Box } from '@chakra-ui/core'
+
+export const query1 = \`
+{
+    continents {
+      code
+      name
+    }
+}
+\`
+
+<Box my='40px' borderRadius='lg' overflow='hidden' shadow='xl'>
+    <MiniGraphiQL url='https://countries.trevorblades.com' query={query1} />
+</Box>
+```
+> Remember that to declare variables inside MDX you have to export them, this way mdx understands that it is jsx code instead of markdown
+
+
+## Importing relative components
 
 The example below assumes we have an exported component named `Button` in a file named `Button.jsx`/`Button.tsx` located in the same folder as the `.mdx` file we are editing.
 
@@ -27,7 +66,13 @@ import { Button } from './Button'
 
 Hello, I'm still a mdx file, but now I have a button component !
 
-<Button onClick={() => { alert("You clicked me"); }}>Click me</Button>
+<Button
+    onClick={() => {
+        alert('You clicked me')
+    }}
+>
+    Click me
+</Button>
 ```
 
-With MDX you can mix _React Components_ or _html-elements_ with regular markdown allowing you to either document your own components _or_ create helper components that make documentation easier. 
+With MDX you can mix _React Components_ or _html-elements_ with regular markdown allowing you to either document your own components _or_ create helper components that make documentation easier.

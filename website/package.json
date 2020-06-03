@@ -14,6 +14,7 @@
         "@emotion/styled": "^10.0.27",
         "dokz": "*",
         "landing-blocks": "^1.0.30",
+        "mini-graphiql": "^1.0.4",
         "next": "^9.3.5",
         "next-transpile-modules": "^3.3.0",
         "react": "^16.13.1",
