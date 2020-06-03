@@ -23,13 +23,17 @@ export async function getMdxFilesIndex() {
             const frontMatter = getFrontMatter(content)
             // console.log({ frontMatter: frontMatter.attributes })
             const { name = '' } = frontMatter.attributes || ({} as any)
-            const relativePath = path
+            let relativePath = path
                 .relative(pagesPath, pathName)
                 .replace('.mdx', '')
                 .replace('.md', '')
                 .replace('.jsx', '')
                 .replace('.tsx', '')
                 .replace('.js', '')
+                .replace(/\/index$/, '')
+
+            relativePath = relativePath || '/'
+
             delete node.extension
             delete node.size
             delete node.type
