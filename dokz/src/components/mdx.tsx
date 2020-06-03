@@ -18,7 +18,7 @@ import { Wrapper } from './Wrapper'
 import { Link } from './Link'
 import { useDokzConfig } from '../provider'
 
-const Pre = (props) => <Box my='2em' rounded='sm' {...props} />
+const Pre = (props) => <Box as='pre' rounded='sm' {...props} />
 
 const Table = (props) => (
     <Box overflowX='auto'>
@@ -101,7 +101,7 @@ const DocsHeading = (props) => {
 
 const MdxText = (props) => {
     const { colorMode } = useColorMode()
-    return <Text as='p' my='10px' lineHeight='30px' {...props} />
+    return <Text as='p' my='10px' lineHeight='1.8em' {...props} />
 }
 const MDXComponents = {
     wrapper: Wrapper,
