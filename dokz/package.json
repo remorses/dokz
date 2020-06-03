@@ -68,6 +68,7 @@
         "@mdx-js/loader": "^1.5.8",
         "@mdx-js/react": "^1.5.8",
         "@next/mdx": "^9.3.4",
+        "@philpl/buble": "^0.19.7",
         "@types/mdast": "^3.0.3",
         "await-to-js": "^2.1.1",
         "chokidar": "^3.3.1",

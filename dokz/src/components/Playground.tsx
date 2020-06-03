@@ -7,7 +7,7 @@ import {
     useColorMode,
     Spinner,
 } from '@chakra-ui/core'
-import { flatten } from 'lodash/fp'
+import flatten from 'lodash/fp/flatten'
 import { Resizable } from 're-resizable'
 import React, {
     CSSProperties,
@@ -77,7 +77,7 @@ export const Playground = ({
     const liveProviderProps: LiveProviderProps = {
         theme,
         language,
-        
+
         code: editorCode,
         disabled: loading || !!error,
         transformCode: (code) => '/** @jsx mdx */' + code,
@@ -165,7 +165,12 @@ export const Playground = ({
                 >
                     <Stack maxWidth='100%' height='100%' spacing='0px' flex='1'>
                         {previewEnabled && editorBar}
-                        <Stack flex='1' maxW='100%' minW='100%' display={!showCode ? 'block' : 'none'}>
+                        <Stack
+                            flex='1'
+                            maxW='100%'
+                            minW='100%'
+                            display={!showCode ? 'block' : 'none'}
+                        >
                             {iframe && !loading ? (
                                 <IframeWrapper onMount={forceRender}>
                                     {livePreview}

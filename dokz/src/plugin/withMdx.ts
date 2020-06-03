@@ -22,7 +22,8 @@ export const withMdx = (pluginOptions: Options = {}) => (
                     'This plugin is not compatible with Next.js versions below 5.0.0 https://err.sh/next-plugins/upgrade',
                 )
             }
-            config.resolve.alias['nextjs_root_folder_'] = path.join(process.cwd())
+            config.resolve.alias['nextjs_root_folder_'] = path.join(process.cwd()) // needed to find the sidebar.json
+            config.resolve.alias['buble'] = '@philpl/buble' // smaller buble version
             config.module.rules.push({
                 test: extension,
                 use: [

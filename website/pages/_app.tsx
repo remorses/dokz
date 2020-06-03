@@ -1,10 +1,10 @@
-import { DokzProvider, GithubLink, ColorModeSwitch } from 'dokz/src'
-import { useColorMode, ThemeProvider } from '@chakra-ui/core'
+import { ThemeProvider } from '@chakra-ui/core'
+import { ColorModeSwitch, DokzProvider, GithubLink } from 'dokz/src'
+import { LandingProvider } from 'landing-blocks'
+import 'mini-graphiql/dist/style.css'
 import React from 'react'
 import { Logo } from '../components/Logo'
-import { LandingProvider } from 'landing-blocks'
 
-import 'mini-graphiql/dist/style.css'
 
 
 export default (props) => {

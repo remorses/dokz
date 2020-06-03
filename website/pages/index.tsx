@@ -1,36 +1,15 @@
-import React from 'react'
-import Head from 'next/head'
-import NextLink from 'next/link'
-import isometric_text_icon from '../public/isometric_text_icon.png'
-import isometric_check_icon from '../public/isometric_check_icon.png'
-import isometric_code_icon from '../public/isometric_code_icon.png'
-import hero_image from '../public/landing_illustration.svg'
-import { LogoFull, LandingIllustration } from '../svgs/'
+import { Box, Image, Stack } from '@chakra-ui/core'
 import {
+Button, Footer,
     // Hero,
-    Heading,
-    LandingProvider,
-    Subheading,
-    Divider,
-    Col,
-    Feature,
-    HowItWorks,
-    FeaturesList,
-    NavBar,
-    Footer,
-    Banner,
-    Pricing,
-    TestimonialsTweets,
-    EmailForm,
-    Button,
-    PageContainer,
-    Section,
-    SectionTitle,
+    Heading, HowItWorks, LandingProvider, NavBar, PageContainer, Section, Subheading, TestimonialsTweets
 } from 'landing-blocks'
 import { GradientCurtains } from 'landing-blocks/dist/decorations'
-import { Link, Box, ThemeProvider, Image, Stack } from '@chakra-ui/core'
-import { FiCheck, FiCode, FiFileText } from 'react-icons/fi'
+import React from 'react'
 import { Logo } from '../components/Logo'
+import isometric_check_icon from '../public/isometric_check_icon.png'
+import isometric_code_icon from '../public/isometric_code_icon.png'
+import isometric_text_icon from '../public/isometric_text_icon.png'
 
 const Page = () => (
     <LandingProvider bg='gray.800' primary='#3884FF' dark>
