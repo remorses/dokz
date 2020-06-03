@@ -26,6 +26,7 @@ export function withDokz(nextConfig = {} as any) {
         ...(nextConfig.pageExtensions || []),
         'mdx',
     ])
+    
     return withMdx({
         extension: /\.mdx?$/,
         options: {

@@ -4,6 +4,7 @@
     "version": "1.0.13",
     "description": "",
     "main": "dist/index.js",
+    "module": "esm/index.js",
     "types": "dist/index.d.ts",
     "sideEffects": false,
     "mocha": {
