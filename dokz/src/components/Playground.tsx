@@ -74,7 +74,6 @@ export const Playground = ({
     const [width, setWidth] = React.useState('100%')
     const [_, forceRender] = useState('')
     const resizableProps = getResizableProps(width, setWidth)
-
     const liveProviderProps: LiveProviderProps = {
         theme,
         language,
@@ -165,14 +164,15 @@ export const Playground = ({
                 >
                     <Stack maxWidth='100%' height='100%' spacing='0px' flex='1'>
                         {previewEnabled && editorBar}
-                        {!showCode &&
-                            (iframe ? (
+                        <Stack flex='1' maxW='100%' minW='100%' display={!showCode ? 'block' : 'none'}>
+                            {iframe && !loading ? (
                                 <IframeWrapper onMount={forceRender}>
                                     {livePreview}
                                 </IframeWrapper>
                             ) : (
                                 livePreview
-                            ))}
+                            )}
+                        </Stack>
                         {showCode && (
                             <LiveEditor
                                 onChange={handleCodeChange}
@@ -337,6 +337,7 @@ export const IframeWrapper = ({ children, onMount, style = {}, ...rest }) => {
         <Frame
             style={{
                 ...style,
+                width: '100%',
                 height,
             }}
             ref={iframeRef}
