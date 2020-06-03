@@ -124,10 +124,20 @@ const MDXComponents = {
     inlineCode: (props) => {
         const { colorMode } = useColorMode()
         return (
-            <InlineCode
-                mx='4px'
+            <Box
+                as='code'
+                display='inline-block'
+                fontFamily='mono'
+                fontSize='sm'
+                px='0.2em'
+                rounded='sm'
+                bg={
+                    {
+                        light: 'rgba(228, 235, 242, 0.6)',
+                        dark: 'rgba(106, 111, 117, 0.6)',
+                    }[colorMode]
+                }
                 // color={{ light: '#264459', dark: 'white' }[colorMode]}
-                variantColor='gray'
                 lineHeight='normal'
                 {...props}
             />
