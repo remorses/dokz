@@ -2,6 +2,8 @@
 name: Another Document
 ---
 
+import { Playground } from 'dokz'
+
 # Main Heading
 
 Officia do eu reprehenderit laborum exercitation eu nisi deserunt aliqua consequat eiusmod.
@@ -27,8 +29,6 @@ console.log('hello ' + x + ' world')
 
 You can use live react code to display react component with a preview
 
-```jsx live=true
-<div style={{ wisth: 100, height: 100, background: 'lightblue' }}>
-    hello everyone
-</div>
-```
+<Playground>
+    <div style={{ height: 100, background: 'lightblue' }}></div>
+</Playground>

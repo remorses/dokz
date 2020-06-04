@@ -1,14 +1,13 @@
-import fs from 'fs'
-import path from 'path'
-import to from 'await-to-js'
-import addMeta from 'remark-mdx-metadata'
-import getFrontMatter from 'front-matter'
-import slug from 'remark-slug'
-import { generateTableOfContents } from './generateTableOfContents'
-import { withMdx } from './withMdx'
-import { getMdxFilesIndex } from './getMdxFilesIndex'
 import chokidar from 'chokidar'
 import { debounce } from 'debounce'
+import fs from 'fs'
+import path from 'path'
+import addMeta from 'remark-mdx-metadata'
+import slug from 'remark-slug'
+import { generateTableOfContents } from './generateTableOfContents'
+import { getMdxFilesIndex } from './getMdxFilesIndex'
+import { injectCodeToPlayground } from './rehype/playground'
+import { withMdx } from './withMdx'
 
 const EXTESNIONS_TO_WATCH = ['.mdx', '.md']
 
@@ -26,7 +25,7 @@ export function withDokz(nextConfig = {} as any) {
         ...(nextConfig.pageExtensions || []),
         'mdx',
     ])
-    
+
     return withMdx({
         extension: /\.mdx?$/,
         options: {
@@ -45,6 +44,7 @@ export function withDokz(nextConfig = {} as any) {
                     })(tree)
                 },
             ],
+            rehypePlugins: [injectCodeToPlayground],
         },
     })(nextConfig)
 }
@@ -58,7 +58,7 @@ function onFileChange(name) {
 }
 const writeMdxIndex = debounce(
     () => {
-        console.log('[ info ]  generating mdx index file')
+        console.log('[ info ]  generating mdx sidebar file')
         return getMdxFilesIndex()
             .then((index) => {
                 return fs.promises.writeFile(
@@ -66,7 +66,10 @@ const writeMdxIndex = debounce(
                     JSON.stringify(index, null, 4),
                 )
             })
-            .catch(console.error)
+            .catch((e) => {
+                console.error('could not write mdx sidebar file')
+                console.error(e)
+            })
     },
     1000,
     true,

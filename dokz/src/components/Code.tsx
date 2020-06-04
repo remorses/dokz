@@ -1,37 +1,20 @@
-import React, { useState, CSSProperties, useMemo } from 'react'
-import { FiCopy, FiCheck } from 'react-icons/fi'
-
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
-import { mdx } from '@mdx-js/react'
-import { Box, Button, useClipboard, useColorMode } from '@chakra-ui/core'
-import * as ReactIcons from 'react-icons/md'
-import { Flex, Stack, Divider } from '@chakra-ui/core'
+import { Box, useClipboard, useColorMode } from '@chakra-ui/core'
 import Highlight, { defaultProps } from 'prism-react-renderer'
-import { Resizable } from 're-resizable'
+import React, { useEffect } from 'react'
+import { FiCheck, FiCopy } from 'react-icons/fi'
 import { useDokzConfig } from '../provider'
-import { Playground } from './Playground'
-export { Playground } from './Playground'
-import { usePromise } from 'react-extra-hooks'
 
-export const Code = ({ children, className, live, ...rest }) => {
+export const Code = ({ children, className, ...rest }) => {
     // console.log({rest, live})
     const { colorMode } = useColorMode()
     let { prismTheme } = useDokzConfig()
 
-    const code = children.trim()
+    const code = children ? children.trim() : ''
     const language = className && className.replace(/language-/, '')
     const { onCopy, hasCopied } = useClipboard(code)
 
-    if (live) {
-        return (
-            <Playground
-                className={className}
-                theme={prismTheme[colorMode]}
-                children={children}
-                {...rest}
-            />
-        )
-    }
+    useOldPlaygroundWarning(rest)
+
     return (
         <Box position='relative'>
             <Highlight
@@ -105,4 +88,14 @@ export const CopyButton = (props) => {
             {...props}
         />
     )
+}
+
+function useOldPlaygroundWarning(rest) {
+    useEffect(() => {
+        if (!!rest.live) {
+            console.warn(
+                'To use the playground now you must import the explicitly playground component!\nread more at http://localhost:3000/docs/general/preview-react-components',
+            )
+        }
+    }, [])
 }

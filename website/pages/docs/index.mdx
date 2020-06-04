@@ -4,6 +4,7 @@ name: Introduction
 
 import { Image, Box, useColorMode } from '@chakra-ui/core'
 import { Button } from '../../components/Button'
+import { Playground } from 'dokz/src'
 
 export const Logo = (props) => {
     const { colorMode } = useColorMode()
@@ -31,11 +32,13 @@ Mdx let you import react components in your documentation markdown to enrich the
 
 ### Preview react code
 
-Dokz let you preview react code indie code blocks with the `live=true` attribute
+Dokz lets you preview react code with the `Playground` component
 
-```js live=true iframe=true
-<div style={{ height: 100, background: 'lightblue' }}></div>
-```
+<Playground>
+    <div style={{ padding: 40, height: 100, background: 'lightblue' }}>
+        Hello World!
+    </div>
+</Playground>
 
 ### Automatic sidebar and table of contents
 

@@ -15,6 +15,7 @@ import React, {
     useState,
     useMemo,
     useCallback,
+    ReactNode,
 } from 'react'
 import Frame from 'react-frame-component'
 import {
@@ -29,17 +30,11 @@ import { mdx } from '@mdx-js/react'
 import usePromise from 'swr'
 import { useDokzConfig } from '../provider'
 
-const CLEAR_PADDING = `<style> body { padding: 0; margin: 0; width: 100%; height: auto !important; }  </style>`
-const INITIAL_IFRAME_CONTENT = `<!DOCTYPE html><html><head> ${CLEAR_PADDING} </head><body><div></div></body></html>`
-
-const IS_DEFAULT_IFRAME_ACTIVATED = false
-
 export const Playground = ({
     className,
-    theme,
-    children,
-    iframe = true as any,
-    mountStylesheet = false,
+    children = null as ReactNode,
+    code,
+    iframe = false,
     previewEnabled = true,
     ...props
 }) => {
@@ -47,7 +42,7 @@ export const Playground = ({
     const { data: scope, error, isValidating } = usePromise(
         [playgroundScope],
         (playgroundScope) => {
-            console.log({ playgroundScope })
+            // console.log({ playgroundScope })
             if (typeof playgroundScope === 'function') {
                 return sleep(0)
                     .then(playgroundScope)
@@ -66,7 +61,7 @@ export const Playground = ({
         { refreshWhenHidden: false, revalidateOnFocus: false },
     )
     const loading = !scope || isValidating
-    const [editorCode, setEditorCode] = useState(children.trim())
+    const [editorCode, setEditorCode] = useState(code)
     const { colorMode } = useColorMode()
     const language = className && className.replace(/language-/, '')
     const [showCode, setShowCode] = useState(!previewEnabled)
@@ -74,19 +69,18 @@ export const Playground = ({
     const [width, setWidth] = React.useState('100%')
     const [_, forceRender] = useState('')
     const resizableProps = getResizableProps(width, setWidth)
+
     const liveProviderProps: LiveProviderProps = {
-        theme,
+        theme: prismTheme[colorMode],
         language,
 
         code: editorCode,
         disabled: loading || !!error,
-        transformCode: (code) => '/** @jsx mdx */' + code,
+        // transformCode: (code) => '/** @jsx mdx */' + code,
         scope,
         // noInline: true,
         ...props,
     }
-
-    iframe = isIframeEnabled(iframe)
 
     const handleCodeChange = useCallback(
         (newCode) => setEditorCode(newCode.trim()),
@@ -214,14 +208,6 @@ const liveEditorStyle: CSSProperties = {
     // padding: '20px',
 }
 
-function isIframeEnabled(iframe) {
-    return iframe === 'false'
-        ? false
-        : iframe === 'true'
-        ? true
-        : IS_DEFAULT_IFRAME_ACTIVATED
-}
-
 const HandleComponent = (props) => {
     const { colorMode } = useColorMode()
     return (
@@ -274,10 +260,6 @@ const getResizableProps = (width, setWidth) => ({
     },
 })
 
-interface IFrame {
-    node: HTMLIFrameElement
-}
-
 function getEmotionStyle() {
     const css = flatten(
         [
@@ -289,6 +271,13 @@ function getEmotionStyle() {
     style.appendChild(document.createTextNode(css))
     style.setAttribute('EmotionExtractedCss', 'true')
     return style
+}
+
+const CLEAR_PADDING = `<style> body { padding: 0; margin: 0; width: 100%; height: auto !important; }  </style>`
+const INITIAL_IFRAME_CONTENT = `<!DOCTYPE html><html><head> ${CLEAR_PADDING} </head><body><div></div></body></html>`
+
+interface IFrame {
+    node: HTMLIFrameElement
 }
 
 export const IframeWrapper = ({ children, onMount, style = {}, ...rest }) => {

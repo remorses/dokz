@@ -2,51 +2,24 @@
 name: Preview React Components
 ---
 
+import { Playground } from 'dokz/src'
+
 # Preview React Components
 
-Dokz can render your jsx code in a playground, to enable this feature simply add the `live=true` above a code block:
+Dokz can render your jsx code inside a playground, to enable this feature simply import the Playground component and add jsx inside it
 
-````md
-```js live=true
-<div style={{ height: 100, background: 'lightblue' }}></div>
+To add variables inside the playground scope simply import them or export them
+
+```md
+import { Playground } from 'dokz'
+
+<Playground>
+    <div style={{ height: 100, background: 'lightblue' }}></div>
+</Playground>
 ```
-````
 
 The above code block will be render as follows
 
-```js live=true
-<div style={{ height: 100, background: 'lightblue' }}></div>
-```
-
-## Use custom components and scope
-
-To add other components and variables inside the playground you can use the `playgroundScope` in the `DokzProvider`.
-
-Add the following code inside `_app.jsx`
-
-```jsx
-import { DokzProvider } from 'dokz/src'
-import App from 'next/app'
-import React from 'react'
-
-const CustomComponent = (props) => <p className='paragraph'>{props.children}</p>
-
-export default function Page(props) {
-    const { Component, pageProps } = props
-    return (
-        <DokzProvider playgroundScope={() => import('@chakra-ui/core')}>
-            <Component {...pageProps} />
-        </DokzProvider>
-    )
-}
-```
-
-Here i am using a dynamic import to not slow down the first page load, the playground scope will be downloaded in background and cached via swr
-
-Now inside you live code you can use the passed scope
-
-````md
-```jsx live=true
-<CustomComponent>hello {variable}</CustomComponent>
-```
-````
+<Playground>
+    <div style={{ height: 100, background: 'lightblue' }}></div>
+</Playground>
