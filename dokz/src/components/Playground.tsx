@@ -1,34 +1,12 @@
-import {
-    Box,
-    Button,
-    Divider,
-    Stack,
-    useClipboard,
-    useColorMode,
-    Spinner,
-} from '@chakra-ui/core'
+import { Box, Button, Divider, Stack, useClipboard, useColorMode } from '@chakra-ui/core'
 import flatten from 'lodash/fp/flatten'
 import { Resizable } from 're-resizable'
-import React, {
-    CSSProperties,
-    useEffect,
-    useState,
-    useMemo,
-    useCallback,
-    ReactNode,
-} from 'react'
+import React, { CSSProperties, ReactNode, useCallback, useEffect, useState } from 'react'
 import Frame from 'react-frame-component'
-import {
-    LiveEditor,
-    LiveError,
-    LivePreview,
-    LiveProvider,
-    LiveProviderProps,
-} from 'react-live'
-import { CopyButton } from './Code'
-import { mdx } from '@mdx-js/react'
-import usePromise from 'swr'
+import { LiveEditor, LiveError, LivePreview, LiveProvider, LiveProviderProps } from 'react-live'
 import { useDokzConfig } from '../provider'
+import { CopyButton } from './Code'
+
 
 export const Playground = ({
     className,
