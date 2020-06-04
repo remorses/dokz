@@ -4,6 +4,8 @@ name: Preview React Components
 
 import { Playground } from 'dokz/src'
 
+export const message = 'hello'
+
 # Preview React Components
 
 Dokz can render your jsx code inside a playground, to enable this feature simply import the Playground component and add jsx inside it
@@ -13,13 +15,19 @@ To add variables inside the playground scope simply import them or export them
 ```md
 import { Playground } from 'dokz'
 
+export const message = 'hello'
+
 <Playground>
-    <div style={{ height: 100, background: 'lightblue' }}></div>
+    <div style={{ height: 100, background: 'lightblue' }}>
+        {message}
+    </div>
 </Playground>
 ```
 
 The above code block will be render as follows
 
 <Playground>
-    <div style={{ height: 100, background: 'lightblue' }}></div>
+    <div style={{ height: 100, background: 'lightblue' }}>
+        {message}
+    </div>
 </Playground>

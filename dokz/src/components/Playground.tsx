@@ -34,33 +34,12 @@ export const Playground = ({
     className,
     children = null as ReactNode,
     code,
+    scope,
     iframe = false,
     previewEnabled = true,
     ...props
 }) => {
-    let { prismTheme, playgroundScope } = useDokzConfig()
-    const { data: scope, error, isValidating } = usePromise(
-        [playgroundScope],
-        (playgroundScope) => {
-            // console.log({ playgroundScope })
-            if (typeof playgroundScope === 'function') {
-                return sleep(0)
-                    .then(playgroundScope)
-                    .then((scope: any) => {
-                        return {
-                            ...scope,
-                            mdx,
-                        }
-                    })
-            }
-            return Promise.resolve({
-                ...playgroundScope,
-                mdx,
-            })
-        },
-        { refreshWhenHidden: false, revalidateOnFocus: false },
-    )
-    const loading = !scope || isValidating
+    let { prismTheme } = useDokzConfig()
     const [editorCode, setEditorCode] = useState(code)
     const { colorMode } = useColorMode()
     const language = className && className.replace(/language-/, '')
@@ -75,7 +54,6 @@ export const Playground = ({
         language,
 
         code: editorCode,
-        disabled: loading || !!error,
         // transformCode: (code) => '/** @jsx mdx */' + code,
         scope,
         // noInline: true,
@@ -123,11 +101,7 @@ export const Playground = ({
             <Divider m='0' />
         </>
     )
-    const livePreview = loading ? (
-        <Stack p='40px' align='center' justify='center'>
-            <Spinner />
-        </Stack>
-    ) : (
+    const livePreview = (
         <Box
             as={LivePreview}
             fontFamily='body'
@@ -165,7 +139,7 @@ export const Playground = ({
                             minW='100%'
                             display={!showCode ? 'block' : 'none'}
                         >
-                            {iframe && !loading ? (
+                            {iframe ? (
                                 <IframeWrapper onMount={forceRender}>
                                     {livePreview}
                                 </IframeWrapper>
@@ -179,10 +153,7 @@ export const Playground = ({
                                 style={liveEditorStyle}
                             />
                         )}
-                        {!loading && <LiveError style={liveErrorStyle} />}
-                        {error && (
-                            <Box style={liveErrorStyle}>{error.message}</Box>
-                        )}
+                        {<LiveError style={liveErrorStyle} />}
                     </Stack>
                 </Stack>
             </LiveProvider>
