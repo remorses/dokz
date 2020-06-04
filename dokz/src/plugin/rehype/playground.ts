@@ -17,7 +17,7 @@ const addComponentsProps = (scopes: string[]) => (node: any, idx: number) => {
     const scope = `{props,${scopes.join(',')}}`
     const child = sanitizeCode(removeTags(code))
     const newTag = `<${name} __position={${idx}} code={'${child}'} scope={${scope}}`
-    console.log(newTag)
+    // console.log(newTag)
     node.value = node.value.replace(tagOpen, newTag)
 }
 
@@ -25,17 +25,23 @@ export interface PluginOpts {
     root: string
 }
 
-export const injectCodeToPlayground = () => (tree: any) => {
-    // console.log(tree)
+const playgroundRegex = /<Playground\s*>/
+
+export const injectCodeToPlayground = () => (
+    tree: any,
+    file: { contents: string },
+) => {
+    if (file.contents.search(playgroundRegex) == -1) {
+        return tree
+    }
+
     const playgroundComponents: Node[] = tree.children
         .filter((node: any) => node.type === 'jsx')
         .filter((node) => {
             const name = componentName(node.value)
             return isPlayground(name)
         })
-    if (!playgroundComponents.length) {
-        return tree
-    }
+
     const importNodes = tree.children.filter((n: any) => n.type === 'import')
     const exportNodes = tree.children.filter((n: any) => n.type === 'export')
     const importedScopes = flatten<string>(importNodes.map(getImportsVariables))

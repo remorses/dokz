@@ -27,7 +27,9 @@ export const sanitizeCode = (code: string) => {
   return escapeJS(strip(newCode))
 }
 
+const regex = /^\<\\?(\w+)/
+
 export const componentName = (value: any) => {
-  const match = value.match(/^\<\\?(\w+)/)
+  const match = value.match(regex)
   return match && match[1]
 }
