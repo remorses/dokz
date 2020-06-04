@@ -1,12 +1,8 @@
+import to from 'await-to-js'
+import dirTree from 'directory-tree'
+import getFrontMatter from 'front-matter'
 import fs from 'fs'
 import path from 'path'
-import to from 'await-to-js'
-import addMeta from 'remark-mdx-metadata'
-import getFrontMatter from 'front-matter'
-import slug from 'remark-slug'
-import { generateTableOfContents } from './generateTableOfContents'
-import { withMdx } from './withMdx'
-import dirTree from 'directory-tree'
 
 export async function getMdxFilesIndex() {
     const pagesPath = await getPagesPath()
