@@ -14,7 +14,7 @@ const addComponentsProps = (scopes: string[]) => (node: any, idx: number) => {
     const tagOpen = new RegExp(`^\\<${name}`)
     const formatted = formatter(nodeToString(node))
     const code = formatted.slice(1, Infinity)
-    const scope = `{props,${scopes.join(',')}}`
+    const scope = `{props, ${scopes.join(',')}}`
     const child = sanitizeCode(removeTags(code))
     const newTag = `<${name} __position={${idx}} code={'${child}'} scope={${scope}}`
     // console.log(newTag)
