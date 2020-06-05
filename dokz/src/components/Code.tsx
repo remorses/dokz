@@ -16,7 +16,7 @@ export const Code = ({ children, className, ...rest }) => {
     useOldPlaygroundWarning(rest)
 
     return (
-        <Box position='relative'>
+        <Box position='relative' >
             <Highlight
                 {...defaultProps}
                 theme={prismTheme[colorMode]}
@@ -35,6 +35,7 @@ export const Code = ({ children, className, ...rest }) => {
                         pt='30px'
                         borderRadius='8px'
                         as='pre'
+                        fontFamily='Consolas,SFMono-Regular,Menlo,Monaco,"Liberation Mono","Courier New",monospace'
                         fontSize='0.9em'
                         className={className}
                         style={{ ...style }}

@@ -10,7 +10,7 @@ import { ColorModeProvider, Box } from '@chakra-ui/core'
 
 import { PrismTheme } from 'prism-react-renderer'
 // import lightTheme from 'prism-react-renderer/themes/nightOwlLight'
-import darkPrismTheme from 'prism-react-renderer/themes/nightOwl'
+import darkPrismTheme from 'prism-react-renderer/themes/oceanicNext'
 import { GithubLink, ColorModeSwitch } from './components/NavBar'
 
 export type DokzProviderProps = {
