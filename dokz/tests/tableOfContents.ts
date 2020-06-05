@@ -1,7 +1,6 @@
 import remark from 'remark'
 import { generateTableOfContents } from '../src/plugin/generateTableOfContents'
 
-
 function makeTableOfContents(contents: string) {
     return new Promise((resolve, rej) => {
         remark()
@@ -39,6 +38,25 @@ describe('tableOfContents', () => {
 ### 2
 
 ### 3
+
+        `
+        const toc = await makeTableOfContents(data)
+        pretty(toc)
+        // assert.deepEqual(toc)
+    })
+    it('nested ', async () => {
+        const data = `
+# Root
+
+
+**insert_one syntax**
+----------------
+
+ciao
+
+** second heading**
+----------------
+
 
         `
         const toc = await makeTableOfContents(data)
