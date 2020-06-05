@@ -57,6 +57,12 @@
             "url": "/index"
         },
         {
+            "path": "pages/issue.md",
+            "name": "issue.md",
+            "title": "",
+            "url": "/issue"
+        },
+        {
             "path": "pages/utilities",
             "name": "utilities",
             "children": [

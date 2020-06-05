@@ -9,10 +9,10 @@ export function TableOfContents({
 }: {
     table: DoczTableOfContents
 } & StackProps) {
+    console.log(table)
     if (!table) {
         return null
     }
-    const map = table.map
     return (
         <Box
             width='200px'
@@ -24,45 +24,28 @@ export function TableOfContents({
             opacity={0.8}
             {...rest}
         >
-            <Box fontWeight='semibold'>
-                ON THIS PAGE
-            </Box>
-            {map.map((table) => {
-                return (
-                    <TableItems
-                        key={table.id}
-                        slug={`#${table.id}`}
-                        depth={table.depth}
-                        items={table.children}
-                    />
-                )
-            })}
+            <Box fontWeight='semibold'>ON THIS PAGE</Box>
+            {table.children &&
+                table.children.map((table) => {
+                    return <TableItem key={table.slug} {...table} />
+                })}
         </Box>
     )
 }
 
-function TableItems({
-    items,
-    depth,
-    slug,
-}: {
-    items: DoczTableOfContents['map'][0]['children'][0][]
-    depth: number
-    slug
-}) {
+function TableItem({ children, depth, title, slug }: DoczTableOfContents) {
     const baseW = 20
-    if (!items) {
-        return null
-    }
     return (
-        <Stack ml={baseW * (depth - 1) + 'px'}>
-            {items.map((x, i) => {
-                return (
-                    <Box key={i} isTruncated minH='30px'>
-                        <Link href={slug}>{x.value}</Link>
-                    </Box>
-                )
-            })}
+        <Stack>
+            <Box isTruncated minH='30px'>
+                <Link href={slug}>{title}</Link>
+            </Box>
+            <Stack ml={baseW * depth + 'px'}>
+                {children &&
+                    children.map((table) => {
+                        return <TableItem key={table.slug} {...table} />
+                    })}
+            </Stack>
         </Stack>
     )
 }

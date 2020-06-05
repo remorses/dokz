@@ -26,11 +26,11 @@ export const withMdx = (pluginOptions: Options = {}) => (
                 test: extension,
                 use: [
                     options.defaultLoaders.babel,
+                    ...makeDebugLoader(),
                     {
                         loader: '@mdx-js/loader',
                         options: mdxOptions,
                     },
-                    ...makeDebugLoader(),
                     {
                         loader: require.resolve('./mdxLoader'),
                     },
