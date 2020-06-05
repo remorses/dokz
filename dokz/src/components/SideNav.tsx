@@ -137,12 +137,7 @@ const NavTreeComponent = ({
 }: DirectoryTree & { depth?: number; hideDivider?: boolean }) => {
     const w = 10
     const isNavHeading = depth === 1 && children
-    const formattedTitle =
-        title ||
-        name
-            ?.replace('_', ' ')
-            ?.replace('-', ' ')
-            ?.replace(/\.mdx?/, '')
+    const formattedTitle = title || formatTitle(name || '')
     return (
         <Stack
             spacing='0px'
@@ -182,4 +177,17 @@ const NavTreeComponent = ({
             {/* {!children && <Link href={rest.path}>{rest.title}</Link>} */}
         </Stack>
     )
+}
+
+function formatTitle(name: string) {
+    return capitalizeFirstLetter(
+        name
+            .replace(/_/g, ' ')
+            .replace(/-/g, ' ')
+            .replace(/\.mdx?/, ''),
+    )
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1)
 }

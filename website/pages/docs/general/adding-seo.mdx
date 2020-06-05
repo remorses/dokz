@@ -1,0 +1,24 @@
+# Adding SEO
+
+Dokz in the end is just a nextjs plugin, this means that it work with the nextjs existing plugin ecosystem.
+
+To add Seo capabilities you can use the `next-seo` package
+
+```sh
+npm i next-seo
+```
+
+Here is an example of an mdx page with the title meta tag
+
+```md
+import { NextSeo } from 'next-seo'
+
+<NextSeo
+    title='Simple Usage Example'
+    description='A short description goes here.'
+/>
+
+# Heading
+
+Proident ea esse elit proident et ea aute dolor.
+```

@@ -2,6 +2,13 @@
 name: Introduction
 ---
 
+import { NextSeo } from 'next-seo'
+
+<NextSeo
+    title='Introduction to Dokz'
+    description='Generate documentation sites from markdown content with Nextjs and MDX'
+/>
+
 import { Image, Box, useColorMode } from '@chakra-ui/core'
 import { Button } from '../../components/Button'
 import { Playground } from 'dokz/src'
@@ -26,11 +33,11 @@ If you want to see how it looks just look read the documentation, this entire si
 
 # Features
 
-### React components in markdown (MDX)
+## React components in markdown (MDX)
 
 Mdx let you import react components in your documentation markdown to enrich the user experience.
 
-### Preview react code
+## Preview react code
 
 Dokz lets you preview react code with the `Playground` component
 
@@ -40,12 +47,12 @@ Dokz lets you preview react code with the `Playground` component
     </div>
 </Playground>
 
-### Automatic sidebar and table of contents
+## Automatic sidebar and table of contents
 
 The sidebar is generated based on your markdown files inside the `pages` directory
 The table of contents on the right is generated based on the heading elements inside the markdown document
 
-### Dark mode
+## Dark mode
 
 Dark mode is a must, the majority of developers work at night 🌙
 

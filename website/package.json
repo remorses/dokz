@@ -16,6 +16,7 @@
         "landing-blocks": "^1.0.30",
         "mini-graphiql": "^1.0.4",
         "next": "^9.3.5",
+        "next-seo": "^4.5.0",
         "next-transpile-modules": "^3.3.0",
         "react": "^16.13.1",
         "react-dom": "16.13.1",

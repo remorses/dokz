@@ -14,7 +14,7 @@ describe('sidebar', () => {
             },
         }
         const n = applySidebarOrdering({ tree, order })
-        console.log(JSON.stringify(n, null, 2))
+        pretty(n)
         expect(n).to.deep.eq({
             name: 'pages',
             children: [{ name: 'a', children: [{ name: 'b' }, { name: 'c' }] }],
@@ -46,7 +46,7 @@ describe('sidebar', () => {
             },
         }
         const n = applySidebarOrdering({ tree, order })
-        console.log(JSON.stringify(n, null, 2))
+        pretty(n)
         expect(n).to.deep.eq({
             name: 'pages',
             children: [
@@ -90,6 +90,8 @@ describe('sidebar', () => {
             x: true,
         }
         const n = applySidebarOrdering({ tree, order })
-        console.log(JSON.stringify(n, null, 2))
+        pretty(n)
     })
 })
+
+const pretty = (x) => console.log(JSON.stringify(x, null, 2))

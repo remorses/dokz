@@ -9,7 +9,6 @@ export function TableOfContents({
 }: {
     table: DoczTableOfContents
 } & StackProps) {
-    console.log(table)
     if (!table) {
         return null
     }
