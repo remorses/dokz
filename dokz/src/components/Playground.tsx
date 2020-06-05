@@ -171,7 +171,8 @@ const liveEditorStyle: CSSProperties = {
     fontSize: '0.9em',
     overflowX: 'auto',
     margin: 0,
-    fontFamily: 'Menlo,monospace',
+    fontFamily:
+        'Consolas,SFMono-Regular,Menlo,Monaco,"Liberation Mono","Courier New",monospace',
     overflow: 'hidden',
     // padding: '20px',
 }
