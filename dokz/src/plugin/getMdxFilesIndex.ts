@@ -9,7 +9,7 @@ export async function getMdxFilesIndex() {
     // console.log({ searchPath })
     const tree = dirTree(
         pagesPath,
-        { normalizePath: true, extensions: /\.mdx/ },
+        { normalizePath: true, extensions: /\.mdx?/ },
         (node) => {
             const pathName = node.path
             // console.log({ pathName })
