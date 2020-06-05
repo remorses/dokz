@@ -38,7 +38,7 @@ export function withDokz(nextConfig = {} as any) {
                     addMeta({
                         // TODO add more meta like breadcrumbs, title, ...
                         meta: {
-                            lastEdited: `${new Date().toISOString()}`,
+                            // lastEdited: `${new Date().toISOString()}`,
                             tableOfContents,
                         },
                     })(tree)

@@ -5,9 +5,7 @@ import 'mini-graphiql/dist/style.css'
 import React from 'react'
 import { Logo } from '../components/Logo'
 
-
-
-export default (props) => {
+export default function App(props) {
     const { Component, pageProps } = props
     return (
         <ThemeProvider>
