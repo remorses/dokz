@@ -18,7 +18,7 @@ export const Link = ({ children, ...props }: LinkProps) => {
             borderColor='transparent'
             py='0.2em'
             isTruncated
-            transition='all 0.3s ease-in-out 0s'
+            transition='border-color 0.2s ease-in-out 0s'
             _hover={{
                 borderColor: 'currentColor',
             }}
