@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import {
     Box,
+    Divider,
     Callout,
     Code as InlineCode,
     Heading,
@@ -151,7 +152,7 @@ const MDXComponents = {
     pre: Pre,
     kbd: Kbd,
     br: (props) => <Box height='24px' {...props} />,
-    hr: (props) => <Box as='hr' borderTopWidth='1px' my={8} {...props} />,
+    hr: (props) => <Divider my='60px' {...props} />,
     table: Table,
     th: THead,
     td: TData,
