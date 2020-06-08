@@ -141,13 +141,14 @@ const NavTreeComponent = ({
     return (
         <Stack
             spacing='0px'
-            lineHeight='2.8em'
+            // lineHeight='2.8em'
             // pl={depth * w + 'px'}
             // pb={depth === 1 ? '20px' : '0px'}
         >
             {name &&
                 (url ? (
                     <ComponentLink
+                        minH='2.8em'
                         h='2em'
                         // display='block'
                         href={url}
@@ -159,7 +160,7 @@ const NavTreeComponent = ({
                 ) : (
                     <Box my='20px'>
                         {!hideDivider && <Divider />}
-                        <Box fontWeight='semibold'>
+                        <Box py='1.4em' fontWeight='semibold'>
                             {formattedTitle.toUpperCase()}
                         </Box>
                     </Box>
