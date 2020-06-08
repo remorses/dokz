@@ -166,7 +166,7 @@ const MDXComponents = {
     li: (props) => {
         const { listItemIcon } = useDokzConfig()
         return (
-            <Box>
+            <Box my='1em'>
                 {/* TODO use primary color to add some more style */}
                 <Box
                     mr='1em'
@@ -174,7 +174,7 @@ const MDXComponents = {
                     size='1.1em'
                     as={listItemIcon}
                 />
-                <MdxText display='inline' as='li' {...props} />
+                <Box as='p' display='inline' as='li'  {...props} />
             </Box>
         )
     },
