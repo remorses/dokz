@@ -174,7 +174,7 @@ const MDXComponents = {
                     size='1.1em'
                     as={listItemIcon}
                 />
-                <Box as='p' display='inline' as='li'  {...props} />
+                <Box display='inline' as='li' {...props} />
             </Box>
         )
     },
