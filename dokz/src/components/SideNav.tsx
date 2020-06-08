@@ -148,8 +148,8 @@ const NavTreeComponent = ({
             {name &&
                 (url ? (
                     <ComponentLink
-                        minH='2.8em'
-                        h='2em'
+                        my='0.2em'
+                        // h='2em'
                         // display='block'
                         href={url}
                         isTruncated
@@ -158,7 +158,7 @@ const NavTreeComponent = ({
                         {formattedTitle}
                     </ComponentLink>
                 ) : (
-                    <Box my='20px'>
+                    <Box my='0.2em'>
                         {!hideDivider && <Divider />}
                         <Box py='1.4em' fontWeight='semibold'>
                             {formattedTitle.toUpperCase()}
