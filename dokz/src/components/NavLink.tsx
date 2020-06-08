@@ -7,7 +7,7 @@ const NavLink = ({ children, ...props }: any) => {
     const router = useRouter()
     let isActive = false
 
-    if (router.pathname === props.href) {
+    if (router.pathname?.replace(/\/index$/, '') === props.href) {
         isActive = true
     }
 
