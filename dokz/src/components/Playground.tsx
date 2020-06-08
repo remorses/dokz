@@ -24,7 +24,7 @@ import {
     LiveProviderProps,
 } from 'react-live'
 import { useDokzConfig } from '../provider'
-import { CopyButton } from './Code'
+import { CopyButton, CODE_FONT } from './Code'
 import { mdx } from '@mdx-js/react'
 
 export const Playground = ({
@@ -171,8 +171,7 @@ const liveEditorStyle: CSSProperties = {
     fontSize: '0.9em',
     overflowX: 'auto',
     margin: 0,
-    fontFamily:
-        'Consolas,SFMono-Regular,Menlo,Monaco,"Liberation Mono","Courier New",monospace',
+    fontFamily: CODE_FONT,
     overflow: 'hidden',
     // padding: '20px',
 }

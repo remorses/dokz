@@ -1,22 +1,35 @@
 import { DokzProvider, GithubLink, ColorModeSwitch } from 'dokz/dist'
-import React from 'react'
+import React, { Fragment } from 'react'
+import Head from 'next/head'
 
 export default function App(props) {
     const { Component, pageProps } = props
     return (
-        <DokzProvider
-            headerItems={[
-                <GithubLink key='0' url='https://github.com/remorses/dokz' />,
-                <ColorModeSwitch key='1' />,
-            ]}
-            sidebarOrdering={{
-                'index.mdx': true,
-                Documents_Group: {
-                    'another.mdx': true,
-                },
-            }}
-        >
-            <Component {...pageProps} />
-        </DokzProvider>
+        <Fragment>
+            <Head>
+                <link
+                    href='https://fonts.googleapis.com/css?family=Fira+Code'
+                    rel='stylesheet'
+                    key='google-font-Fira'
+                />
+            </Head>
+            <DokzProvider
+                headerItems={[
+                    <GithubLink
+                        key='0'
+                        url='https://github.com/remorses/dokz'
+                    />,
+                    <ColorModeSwitch key='1' />,
+                ]}
+                sidebarOrdering={{
+                    'index.mdx': true,
+                    Documents_Group: {
+                        'another.mdx': true,
+                    },
+                }}
+            >
+                <Component {...pageProps} />
+            </DokzProvider>
+        </Fragment>
     )
 }

@@ -4,6 +4,8 @@ import React, { useEffect } from 'react'
 import { FiCheck, FiCopy } from 'react-icons/fi'
 import { useDokzConfig } from '../provider'
 
+export const CODE_FONT = `'Fira Code',SFMono-Regular,Menlo,Monaco,"Liberation Mono","Courier New",monospace`
+
 export const Code = ({ children, className, ...rest }) => {
     // console.log({rest, live})
     const { colorMode } = useColorMode()
@@ -16,7 +18,7 @@ export const Code = ({ children, className, ...rest }) => {
     useOldPlaygroundWarning(rest)
 
     return (
-        <Box position='relative' >
+        <Box position='relative'>
             <Highlight
                 {...defaultProps}
                 theme={prismTheme[colorMode]}
@@ -35,7 +37,7 @@ export const Code = ({ children, className, ...rest }) => {
                         pt='30px'
                         borderRadius='8px'
                         as='pre'
-                        fontFamily='Consolas,SFMono-Regular,Menlo,Monaco,"Liberation Mono","Courier New",monospace'
+                        fontFamily={CODE_FONT}
                         fontSize='0.9em'
                         className={className}
                         style={{ ...style }}
