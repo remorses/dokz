@@ -9,9 +9,10 @@ import {
     Collapse,
 } from '@chakra-ui/core'
 import orderBy from 'lodash/orderBy'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { ComponentLink } from './NavLink'
 import { SidebarOrdering, useDokzConfig } from '../provider'
+import { useStorageState } from 'react-storage-hooks'
 
 const MDX_EXTENSION_REGEX = /\.mdx?/
 
@@ -142,6 +143,7 @@ const NavTreeComponent = ({
     hideDivider = false,
     url = '',
     title = '',
+    path,
     ...rest
 }: DirectoryTree & { depth?: number; hideDivider?: boolean }) => {
     const w = 10
@@ -161,6 +163,7 @@ const NavTreeComponent = ({
     if (isFolder && depth > 0) {
         return (
             <CollapsableTreeNode
+                path={path}
                 depth={depth}
                 title={formattedTitle}
                 subTree={subTree}
@@ -190,8 +193,17 @@ const NavTreeComponent = ({
     )
 }
 
-function CollapsableTreeNode({ title, depth, subTree }) {
-    const { onToggle, isOpen } = useDisclosure()
+function CollapsableTreeNode({ title, path, depth, subTree }) {
+    const key = 'sidenav-state-' + path
+    const [active, setActive] = useStorageState(
+        typeof window === 'undefined' ? null : localStorage,
+        key,
+        '',
+    )
+    const { onToggle, isOpen } = useDisclosure(!!active)
+    useEffect(() => {
+        setActive(isOpen ? 'true' : null)
+    }, [isOpen])
     return (
         <Stack spacing='0px'>
             <Box
