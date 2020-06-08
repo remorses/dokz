@@ -18,6 +18,7 @@ import { Code } from './Code'
 import { Wrapper } from './Wrapper'
 import { Link } from './Link'
 import { useDokzConfig } from '../provider'
+import { Fragment } from 'react'
 
 const Pre = (props) => <Box as='pre' rounded='sm' {...props} />
 
@@ -160,9 +161,23 @@ const MDXComponents = {
     p: (props) => {
         return <MdxText as='p' {...props} />
     },
-    ul: (props) => <MdxText as='ul' pt='8px' pl='16px' {...props} />,
-    ol: (props) => <MdxText as='ol' pt='8px' pl='16px' {...props} />,
-    li: (props) => <MdxText as='li' pb='4px' {...props} />,
+    ul: (props) => <Box as='ul' {...props} />,
+    ol: (props) => <Box as='ol' pl='1em' {...props} />,
+    li: (props) => {
+        const { listItemIcon } = useDokzConfig()
+        return (
+            <Box>
+                {/* TODO use primary color to add some more style */}
+                <Box
+                    mr='1em'
+                    display='inline-block'
+                    size='1.1em'
+                    as={listItemIcon}
+                />
+                <MdxText display='inline' as='li' {...props} />
+            </Box>
+        )
+    },
     blockquote: (props) => (
         <Callout
             mt={4}

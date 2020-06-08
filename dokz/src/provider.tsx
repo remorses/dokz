@@ -12,6 +12,7 @@ import { PrismTheme } from 'prism-react-renderer'
 // import lightTheme from 'prism-react-renderer/themes/nightOwlLight'
 import darkPrismTheme from 'prism-react-renderer/themes/oceanicNext'
 import { GithubLink, ColorModeSwitch } from './components/NavBar'
+import { Arrow } from './components/Arrow'
 
 export type DokzProviderProps = {
     children?: any
@@ -27,6 +28,10 @@ export type DokzProviderProps = {
     The root folder of your docs documents, hides the outer folders from the sidenav
     */
     docsRootPath?: string
+    /*
+    The icon used to prefix a list item inside <ul> or <ol>
+    */
+    listItemIcon?: React.ComponentType
     /*
     Links in the right nav bar
     */
@@ -83,6 +88,7 @@ const defaultDokzContext: DokzProviderProps = {
             Your Logo
         </Box>
     ),
+    listItemIcon: Arrow,
     fontSize: ['16px', null, null, '18px'],
     headerItems: [<ColorModeSwitch key={0} />],
     prismTheme: { dark: defaultDarkPrismTheme, light: darkPrismTheme },
