@@ -3,50 +3,223 @@
     "name": "pages",
     "children": [
         {
-            "path": "pages/content",
-            "name": "content",
+            "path": "pages/01-getting-started",
+            "name": "01-getting-started",
             "children": [
                 {
-                    "path": "pages/content/01-getting-started",
-                    "name": "01-getting-started",
+                    "path": "pages/01-getting-started/01-quickstart.mdx",
+                    "name": "01-quickstart.mdx",
+                    "title": "",
+                    "url": "/01-getting-started/01-quickstart"
+                },
+                {
+                    "path": "pages/01-getting-started/02-setup-prisma",
+                    "name": "02-setup-prisma",
                     "children": [
                         {
-                            "path": "pages/content/01-getting-started/01-quickstart.mdx",
-                            "name": "01-quickstart.mdx",
+                            "path": "pages/01-getting-started/02-setup-prisma/01-add-to-existing-project.mdx",
+                            "name": "01-add-to-existing-project.mdx",
                             "title": "",
-                            "url": "/content/01-getting-started/01-quickstart"
+                            "url": "/01-getting-started/02-setup-prisma/01-add-to-existing-project"
                         },
                         {
-                            "path": "pages/content/01-getting-started/02-setup-prisma",
-                            "name": "02-setup-prisma",
+                            "path": "pages/01-getting-started/02-setup-prisma/02-start-from-scratch-sql.mdx",
+                            "name": "02-start-from-scratch-sql.mdx",
+                            "title": "",
+                            "url": "/01-getting-started/02-setup-prisma/02-start-from-scratch-sql"
+                        },
+                        {
+                            "path": "pages/01-getting-started/02-setup-prisma/03-start-from-scratch-prisma-migrate.mdx",
+                            "name": "03-start-from-scratch-prisma-migrate.mdx",
+                            "title": "",
+                            "url": "/01-getting-started/02-setup-prisma/03-start-from-scratch-prisma-migrate"
+                        },
+                        {
+                            "path": "pages/01-getting-started/02-setup-prisma/index.mdx",
+                            "name": "index.mdx",
+                            "title": "",
+                            "url": "/01-getting-started/02-setup-prisma"
+                        },
+                        {
+                            "path": "pages/01-getting-started/02-setup-prisma/setup-prisma",
+                            "name": "setup-prisma",
+                            "children": [],
+                            "size": 0,
+                            "type": "directory"
+                        }
+                    ],
+                    "size": null,
+                    "type": "directory"
+                },
+                {
+                    "path": "pages/01-getting-started/index.mdx",
+                    "name": "index.mdx",
+                    "title": "",
+                    "url": "/01-getting-started"
+                }
+            ],
+            "size": null,
+            "type": "directory"
+        },
+        {
+            "path": "pages/01-mongodb.mdx",
+            "name": "01-mongodb.mdx",
+            "title": "",
+            "url": "/01-mongodb"
+        },
+        {
+            "path": "pages/02-understand-prisma",
+            "name": "02-understand-prisma",
+            "children": [
+                {
+                    "path": "pages/02-understand-prisma/01-introduction.mdx",
+                    "name": "01-introduction.mdx",
+                    "title": "",
+                    "url": "/02-understand-prisma/01-introduction"
+                },
+                {
+                    "path": "pages/02-understand-prisma/02-why-prisma.mdx",
+                    "name": "02-why-prisma.mdx",
+                    "title": "",
+                    "url": "/02-understand-prisma/02-why-prisma"
+                },
+                {
+                    "path": "pages/02-understand-prisma/03-prisma-in-your-stack",
+                    "name": "03-prisma-in-your-stack",
+                    "children": [
+                        {
+                            "path": "pages/02-understand-prisma/03-prisma-in-your-stack/01-rest.md",
+                            "name": "01-rest.md",
+                            "title": "",
+                            "url": "/02-understand-prisma/03-prisma-in-your-stack/01-rest"
+                        },
+                        {
+                            "path": "pages/02-understand-prisma/03-prisma-in-your-stack/02-graphql.md",
+                            "name": "02-graphql.md",
+                            "title": "",
+                            "url": "/02-understand-prisma/03-prisma-in-your-stack/02-graphql"
+                        },
+                        {
+                            "path": "pages/02-understand-prisma/03-prisma-in-your-stack/03-is-prisma-an-orm.mdx",
+                            "name": "03-is-prisma-an-orm.mdx",
+                            "title": "",
+                            "url": "/02-understand-prisma/03-prisma-in-your-stack/03-is-prisma-an-orm"
+                        },
+                        {
+                            "path": "pages/02-understand-prisma/03-prisma-in-your-stack/index.mdx",
+                            "name": "index.mdx",
+                            "title": "",
+                            "url": "/02-understand-prisma/03-prisma-in-your-stack"
+                        }
+                    ],
+                    "size": null,
+                    "type": "directory"
+                },
+                {
+                    "path": "pages/02-understand-prisma/04-data-modeling.mdx",
+                    "name": "04-data-modeling.mdx",
+                    "title": "",
+                    "url": "/02-understand-prisma/04-data-modeling"
+                },
+                {
+                    "path": "pages/02-understand-prisma/05-under-the-hood.mdx",
+                    "name": "05-under-the-hood.mdx",
+                    "title": "",
+                    "url": "/02-understand-prisma/05-under-the-hood"
+                },
+                {
+                    "path": "pages/02-understand-prisma/06-api-comparisons",
+                    "name": "06-api-comparisons",
+                    "children": [
+                        {
+                            "path": "pages/02-understand-prisma/06-api-comparisons/01-prisma-and-typeorm.mdx",
+                            "name": "01-prisma-and-typeorm.mdx",
+                            "title": "",
+                            "url": "/02-understand-prisma/06-api-comparisons/01-prisma-and-typeorm"
+                        },
+                        {
+                            "path": "pages/02-understand-prisma/06-api-comparisons/02-prisma-and-sequelize.mdx",
+                            "name": "02-prisma-and-sequelize.mdx",
+                            "title": "",
+                            "url": "/02-understand-prisma/06-api-comparisons/02-prisma-and-sequelize"
+                        },
+                        {
+                            "path": "pages/02-understand-prisma/06-api-comparisons/03-prisma-and-mongoose.mdx",
+                            "name": "03-prisma-and-mongoose.mdx",
+                            "title": "",
+                            "url": "/02-understand-prisma/06-api-comparisons/03-prisma-and-mongoose"
+                        },
+                        {
+                            "path": "pages/02-understand-prisma/06-api-comparisons/index.mdx",
+                            "name": "index.mdx",
+                            "title": "",
+                            "url": "/02-understand-prisma/06-api-comparisons"
+                        }
+                    ],
+                    "size": null,
+                    "type": "directory"
+                },
+                {
+                    "path": "pages/02-understand-prisma/index.mdx",
+                    "name": "index.mdx",
+                    "title": "",
+                    "url": "/02-understand-prisma"
+                }
+            ],
+            "size": null,
+            "type": "directory"
+        },
+        {
+            "path": "pages/03-reference",
+            "name": "03-reference",
+            "children": [
+                {
+                    "path": "pages/03-reference/01-tools-and-interfaces",
+                    "name": "01-tools-and-interfaces",
+                    "children": [
+                        {
+                            "path": "pages/03-reference/01-tools-and-interfaces/01-prisma-schema",
+                            "name": "01-prisma-schema",
                             "children": [
                                 {
-                                    "path": "pages/content/01-getting-started/02-setup-prisma/01-add-to-existing-project.mdx",
-                                    "name": "01-add-to-existing-project.mdx",
+                                    "path": "pages/03-reference/01-tools-and-interfaces/01-prisma-schema/02-data-sources.mdx",
+                                    "name": "02-data-sources.mdx",
                                     "title": "",
-                                    "url": "/content/01-getting-started/02-setup-prisma/01-add-to-existing-project"
+                                    "url": "/03-reference/01-tools-and-interfaces/01-prisma-schema/02-data-sources"
                                 },
                                 {
-                                    "path": "pages/content/01-getting-started/02-setup-prisma/02-start-from-scratch-sql.mdx",
-                                    "name": "02-start-from-scratch-sql.mdx",
+                                    "path": "pages/03-reference/01-tools-and-interfaces/01-prisma-schema/03-generators.mdx",
+                                    "name": "03-generators.mdx",
                                     "title": "",
-                                    "url": "/content/01-getting-started/02-setup-prisma/02-start-from-scratch-sql"
+                                    "url": "/03-reference/01-tools-and-interfaces/01-prisma-schema/03-generators"
                                 },
                                 {
-                                    "path": "pages/content/01-getting-started/02-setup-prisma/03-start-from-scratch-prisma-migrate.mdx",
-                                    "name": "03-start-from-scratch-prisma-migrate.mdx",
+                                    "path": "pages/03-reference/01-tools-and-interfaces/01-prisma-schema/04-data-model.mdx",
+                                    "name": "04-data-model.mdx",
                                     "title": "",
-                                    "url": "/content/01-getting-started/02-setup-prisma/03-start-from-scratch-prisma-migrate"
+                                    "url": "/03-reference/01-tools-and-interfaces/01-prisma-schema/04-data-model"
                                 },
                                 {
-                                    "path": "pages/content/01-getting-started/02-setup-prisma/index.mdx",
+                                    "path": "pages/03-reference/01-tools-and-interfaces/01-prisma-schema/05-models.mdx",
+                                    "name": "05-models.mdx",
+                                    "title": "",
+                                    "url": "/03-reference/01-tools-and-interfaces/01-prisma-schema/05-models"
+                                },
+                                {
+                                    "path": "pages/03-reference/01-tools-and-interfaces/01-prisma-schema/06-relations.mdx",
+                                    "name": "06-relations.mdx",
+                                    "title": "",
+                                    "url": "/03-reference/01-tools-and-interfaces/01-prisma-schema/06-relations"
+                                },
+                                {
+                                    "path": "pages/03-reference/01-tools-and-interfaces/01-prisma-schema/index.mdx",
                                     "name": "index.mdx",
                                     "title": "",
-                                    "url": "/content/01-getting-started/02-setup-prisma"
+                                    "url": "/03-reference/01-tools-and-interfaces/01-prisma-schema"
                                 },
                                 {
-                                    "path": "pages/content/01-getting-started/02-setup-prisma/setup-prisma",
-                                    "name": "setup-prisma",
+                                    "path": "pages/03-reference/01-tools-and-interfaces/01-prisma-schema/prisma-schema",
+                                    "name": "prisma-schema",
                                     "children": [],
                                     "size": 0,
                                     "type": "directory"
@@ -56,887 +229,700 @@
                             "type": "directory"
                         },
                         {
-                            "path": "pages/content/01-getting-started/index.mdx",
+                            "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client",
+                            "name": "02-prisma-client",
+                            "children": [
+                                {
+                                    "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/01-generating-prisma-client.mdx",
+                                    "name": "01-generating-prisma-client.mdx",
+                                    "title": "",
+                                    "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/01-generating-prisma-client"
+                                },
+                                {
+                                    "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/03-configuring-the-prisma-client-api.mdx",
+                                    "name": "03-configuring-the-prisma-client-api.mdx",
+                                    "title": "",
+                                    "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/03-configuring-the-prisma-client-api"
+                                },
+                                {
+                                    "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/04-crud.mdx",
+                                    "name": "04-crud.mdx",
+                                    "title": "",
+                                    "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/04-crud"
+                                },
+                                {
+                                    "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/05-filtering.mdx",
+                                    "name": "05-filtering.mdx",
+                                    "title": "",
+                                    "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/05-filtering"
+                                },
+                                {
+                                    "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/06-relation-queries.mdx",
+                                    "name": "06-relation-queries.mdx",
+                                    "title": "",
+                                    "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/06-relation-queries"
+                                },
+                                {
+                                    "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/07-field-selection.mdx",
+                                    "name": "07-field-selection.mdx",
+                                    "title": "",
+                                    "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/07-field-selection"
+                                },
+                                {
+                                    "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/08-raw-database-access.mdx",
+                                    "name": "08-raw-database-access.mdx",
+                                    "title": "",
+                                    "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/08-raw-database-access"
+                                },
+                                {
+                                    "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/09-connection-management.mdx",
+                                    "name": "09-connection-management.mdx",
+                                    "title": "",
+                                    "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/09-connection-management"
+                                },
+                                {
+                                    "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/10-advanced-usage-of-generated-types.mdx",
+                                    "name": "10-advanced-usage-of-generated-types.mdx",
+                                    "title": "",
+                                    "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/10-advanced-usage-of-generated-types"
+                                },
+                                {
+                                    "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/13-logging.mdx",
+                                    "name": "13-logging.mdx",
+                                    "title": "",
+                                    "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/13-logging"
+                                },
+                                {
+                                    "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/14-debugging.mdx",
+                                    "name": "14-debugging.mdx",
+                                    "title": "",
+                                    "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/14-debugging"
+                                },
+                                {
+                                    "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/15-error-formatting.mdx",
+                                    "name": "15-error-formatting.mdx",
+                                    "title": "",
+                                    "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/15-error-formatting"
+                                },
+                                {
+                                    "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/16-transactions.mdx",
+                                    "name": "16-transactions.mdx",
+                                    "title": "",
+                                    "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/16-transactions"
+                                },
+                                {
+                                    "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/17-deployment.mdx",
+                                    "name": "17-deployment.mdx",
+                                    "title": "",
+                                    "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/17-deployment"
+                                },
+                                {
+                                    "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/18-query-engine.mdx",
+                                    "name": "18-query-engine.mdx",
+                                    "title": "",
+                                    "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/18-query-engine"
+                                },
+                                {
+                                    "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/19-module-bundlers.mdx",
+                                    "name": "19-module-bundlers.mdx",
+                                    "title": "",
+                                    "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/19-module-bundlers"
+                                },
+                                {
+                                    "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/20-database-polyfills.mdx",
+                                    "name": "20-database-polyfills.mdx",
+                                    "title": "",
+                                    "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/20-database-polyfills"
+                                },
+                                {
+                                    "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/generating-prisma-client",
+                                    "name": "generating-prisma-client",
+                                    "children": [],
+                                    "size": 0,
+                                    "type": "directory"
+                                },
+                                {
+                                    "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/index.mdx",
+                                    "name": "index.mdx",
+                                    "title": "",
+                                    "url": "/03-reference/01-tools-and-interfaces/02-prisma-client"
+                                }
+                            ],
+                            "size": null,
+                            "type": "directory"
+                        },
+                        {
+                            "path": "pages/03-reference/01-tools-and-interfaces/03-prisma-migrate.mdx",
+                            "name": "03-prisma-migrate.mdx",
+                            "title": "",
+                            "url": "/03-reference/01-tools-and-interfaces/03-prisma-migrate"
+                        },
+                        {
+                            "path": "pages/03-reference/01-tools-and-interfaces/04-introspection.mdx",
+                            "name": "04-introspection.mdx",
+                            "title": "",
+                            "url": "/03-reference/01-tools-and-interfaces/04-introspection"
+                        },
+                        {
+                            "path": "pages/03-reference/01-tools-and-interfaces/05-prisma-cli",
+                            "name": "05-prisma-cli",
+                            "children": [
+                                {
+                                    "path": "pages/03-reference/01-tools-and-interfaces/05-prisma-cli/01-installation.mdx",
+                                    "name": "01-installation.mdx",
+                                    "title": "",
+                                    "url": "/03-reference/01-tools-and-interfaces/05-prisma-cli/01-installation"
+                                },
+                                {
+                                    "path": "pages/03-reference/01-tools-and-interfaces/05-prisma-cli/02-command-reference.mdx",
+                                    "name": "02-command-reference.mdx",
+                                    "title": "",
+                                    "url": "/03-reference/01-tools-and-interfaces/05-prisma-cli/02-command-reference"
+                                },
+                                {
+                                    "path": "pages/03-reference/01-tools-and-interfaces/05-prisma-cli/index.mdx",
+                                    "name": "index.mdx",
+                                    "title": "",
+                                    "url": "/03-reference/01-tools-and-interfaces/05-prisma-cli"
+                                }
+                            ],
+                            "size": null,
+                            "type": "directory"
+                        },
+                        {
+                            "path": "pages/03-reference/01-tools-and-interfaces/06-prisma-studio.mdx",
+                            "name": "06-prisma-studio.mdx",
+                            "title": "",
+                            "url": "/03-reference/01-tools-and-interfaces/06-prisma-studio"
+                        },
+                        {
+                            "path": "pages/03-reference/01-tools-and-interfaces/index.mdx",
                             "name": "index.mdx",
                             "title": "",
-                            "url": "/content/01-getting-started"
+                            "url": "/03-reference/01-tools-and-interfaces"
                         }
                     ],
                     "size": null,
                     "type": "directory"
                 },
                 {
-                    "path": "pages/content/01-mongodb.mdx",
-                    "name": "01-mongodb.mdx",
-                    "title": "",
-                    "url": "/content/01-mongodb"
-                },
-                {
-                    "path": "pages/content/02-understand-prisma",
-                    "name": "02-understand-prisma",
+                    "path": "pages/03-reference/02-database-connectors",
+                    "name": "02-database-connectors",
                     "children": [
                         {
-                            "path": "pages/content/02-understand-prisma/01-introduction.mdx",
-                            "name": "01-introduction.mdx",
+                            "path": "pages/03-reference/02-database-connectors/01-database-features.mdx",
+                            "name": "01-database-features.mdx",
                             "title": "",
-                            "url": "/content/02-understand-prisma/01-introduction"
+                            "url": "/03-reference/02-database-connectors/01-database-features"
                         },
                         {
-                            "path": "pages/content/02-understand-prisma/02-why-prisma.mdx",
-                            "name": "02-why-prisma.mdx",
+                            "path": "pages/03-reference/02-database-connectors/02-connection-urls.mdx",
+                            "name": "02-connection-urls.mdx",
                             "title": "",
-                            "url": "/content/02-understand-prisma/02-why-prisma"
+                            "url": "/03-reference/02-database-connectors/02-connection-urls"
                         },
                         {
-                            "path": "pages/content/02-understand-prisma/03-prisma-in-your-stack",
-                            "name": "03-prisma-in-your-stack",
-                            "children": [
-                                {
-                                    "path": "pages/content/02-understand-prisma/03-prisma-in-your-stack/01-rest.md",
-                                    "name": "01-rest.md",
-                                    "title": "",
-                                    "url": "/content/02-understand-prisma/03-prisma-in-your-stack/01-rest"
-                                },
-                                {
-                                    "path": "pages/content/02-understand-prisma/03-prisma-in-your-stack/02-graphql.md",
-                                    "name": "02-graphql.md",
-                                    "title": "",
-                                    "url": "/content/02-understand-prisma/03-prisma-in-your-stack/02-graphql"
-                                },
-                                {
-                                    "path": "pages/content/02-understand-prisma/03-prisma-in-your-stack/03-is-prisma-an-orm.mdx",
-                                    "name": "03-is-prisma-an-orm.mdx",
-                                    "title": "",
-                                    "url": "/content/02-understand-prisma/03-prisma-in-your-stack/03-is-prisma-an-orm"
-                                },
-                                {
-                                    "path": "pages/content/02-understand-prisma/03-prisma-in-your-stack/index.mdx",
-                                    "name": "index.mdx",
-                                    "title": "",
-                                    "url": "/content/02-understand-prisma/03-prisma-in-your-stack"
-                                }
-                            ],
-                            "size": null,
-                            "type": "directory"
-                        },
-                        {
-                            "path": "pages/content/02-understand-prisma/04-data-modeling.mdx",
-                            "name": "04-data-modeling.mdx",
+                            "path": "pages/03-reference/02-database-connectors/03-postgresql.mdx",
+                            "name": "03-postgresql.mdx",
                             "title": "",
-                            "url": "/content/02-understand-prisma/04-data-modeling"
+                            "url": "/03-reference/02-database-connectors/03-postgresql"
                         },
                         {
-                            "path": "pages/content/02-understand-prisma/05-under-the-hood.mdx",
-                            "name": "05-under-the-hood.mdx",
+                            "path": "pages/03-reference/02-database-connectors/04-mysql.mdx",
+                            "name": "04-mysql.mdx",
                             "title": "",
-                            "url": "/content/02-understand-prisma/05-under-the-hood"
+                            "url": "/03-reference/02-database-connectors/04-mysql"
                         },
                         {
-                            "path": "pages/content/02-understand-prisma/06-api-comparisons",
-                            "name": "06-api-comparisons",
-                            "children": [
-                                {
-                                    "path": "pages/content/02-understand-prisma/06-api-comparisons/01-prisma-and-typeorm.mdx",
-                                    "name": "01-prisma-and-typeorm.mdx",
-                                    "title": "",
-                                    "url": "/content/02-understand-prisma/06-api-comparisons/01-prisma-and-typeorm"
-                                },
-                                {
-                                    "path": "pages/content/02-understand-prisma/06-api-comparisons/02-prisma-and-sequelize.mdx",
-                                    "name": "02-prisma-and-sequelize.mdx",
-                                    "title": "",
-                                    "url": "/content/02-understand-prisma/06-api-comparisons/02-prisma-and-sequelize"
-                                },
-                                {
-                                    "path": "pages/content/02-understand-prisma/06-api-comparisons/03-prisma-and-mongoose.mdx",
-                                    "name": "03-prisma-and-mongoose.mdx",
-                                    "title": "",
-                                    "url": "/content/02-understand-prisma/06-api-comparisons/03-prisma-and-mongoose"
-                                },
-                                {
-                                    "path": "pages/content/02-understand-prisma/06-api-comparisons/index.mdx",
-                                    "name": "index.mdx",
-                                    "title": "",
-                                    "url": "/content/02-understand-prisma/06-api-comparisons"
-                                }
-                            ],
-                            "size": null,
-                            "type": "directory"
+                            "path": "pages/03-reference/02-database-connectors/05-sqlite.mdx",
+                            "name": "05-sqlite.mdx",
+                            "title": "",
+                            "url": "/03-reference/02-database-connectors/05-sqlite"
                         },
                         {
-                            "path": "pages/content/02-understand-prisma/index.mdx",
+                            "path": "pages/03-reference/02-database-connectors/index.mdx",
                             "name": "index.mdx",
                             "title": "",
-                            "url": "/content/02-understand-prisma"
+                            "url": "/03-reference/02-database-connectors"
                         }
                     ],
                     "size": null,
                     "type": "directory"
                 },
                 {
-                    "path": "pages/content/03-reference",
-                    "name": "03-reference",
+                    "path": "pages/03-reference/03-more",
+                    "name": "03-more",
                     "children": [
                         {
-                            "path": "pages/content/03-reference/01-tools-and-interfaces",
-                            "name": "01-tools-and-interfaces",
-                            "children": [
-                                {
-                                    "path": "pages/content/03-reference/01-tools-and-interfaces/01-prisma-schema",
-                                    "name": "01-prisma-schema",
-                                    "children": [
-                                        {
-                                            "path": "pages/content/03-reference/01-tools-and-interfaces/01-prisma-schema/02-data-sources.mdx",
-                                            "name": "02-data-sources.mdx",
-                                            "title": "",
-                                            "url": "/content/03-reference/01-tools-and-interfaces/01-prisma-schema/02-data-sources"
-                                        },
-                                        {
-                                            "path": "pages/content/03-reference/01-tools-and-interfaces/01-prisma-schema/03-generators.mdx",
-                                            "name": "03-generators.mdx",
-                                            "title": "",
-                                            "url": "/content/03-reference/01-tools-and-interfaces/01-prisma-schema/03-generators"
-                                        },
-                                        {
-                                            "path": "pages/content/03-reference/01-tools-and-interfaces/01-prisma-schema/04-data-model.mdx",
-                                            "name": "04-data-model.mdx",
-                                            "title": "",
-                                            "url": "/content/03-reference/01-tools-and-interfaces/01-prisma-schema/04-data-model"
-                                        },
-                                        {
-                                            "path": "pages/content/03-reference/01-tools-and-interfaces/01-prisma-schema/05-models.mdx",
-                                            "name": "05-models.mdx",
-                                            "title": "",
-                                            "url": "/content/03-reference/01-tools-and-interfaces/01-prisma-schema/05-models"
-                                        },
-                                        {
-                                            "path": "pages/content/03-reference/01-tools-and-interfaces/01-prisma-schema/06-relations.mdx",
-                                            "name": "06-relations.mdx",
-                                            "title": "",
-                                            "url": "/content/03-reference/01-tools-and-interfaces/01-prisma-schema/06-relations"
-                                        },
-                                        {
-                                            "path": "pages/content/03-reference/01-tools-and-interfaces/01-prisma-schema/index.mdx",
-                                            "name": "index.mdx",
-                                            "title": "",
-                                            "url": "/content/03-reference/01-tools-and-interfaces/01-prisma-schema"
-                                        },
-                                        {
-                                            "path": "pages/content/03-reference/01-tools-and-interfaces/01-prisma-schema/prisma-schema",
-                                            "name": "prisma-schema",
-                                            "children": [],
-                                            "size": 0,
-                                            "type": "directory"
-                                        }
-                                    ],
-                                    "size": null,
-                                    "type": "directory"
-                                },
-                                {
-                                    "path": "pages/content/03-reference/01-tools-and-interfaces/02-prisma-client",
-                                    "name": "02-prisma-client",
-                                    "children": [
-                                        {
-                                            "path": "pages/content/03-reference/01-tools-and-interfaces/02-prisma-client/01-generating-prisma-client.mdx",
-                                            "name": "01-generating-prisma-client.mdx",
-                                            "title": "",
-                                            "url": "/content/03-reference/01-tools-and-interfaces/02-prisma-client/01-generating-prisma-client"
-                                        },
-                                        {
-                                            "path": "pages/content/03-reference/01-tools-and-interfaces/02-prisma-client/03-configuring-the-prisma-client-api.mdx",
-                                            "name": "03-configuring-the-prisma-client-api.mdx",
-                                            "title": "",
-                                            "url": "/content/03-reference/01-tools-and-interfaces/02-prisma-client/03-configuring-the-prisma-client-api"
-                                        },
-                                        {
-                                            "path": "pages/content/03-reference/01-tools-and-interfaces/02-prisma-client/04-crud.mdx",
-                                            "name": "04-crud.mdx",
-                                            "title": "",
-                                            "url": "/content/03-reference/01-tools-and-interfaces/02-prisma-client/04-crud"
-                                        },
-                                        {
-                                            "path": "pages/content/03-reference/01-tools-and-interfaces/02-prisma-client/05-filtering.mdx",
-                                            "name": "05-filtering.mdx",
-                                            "title": "",
-                                            "url": "/content/03-reference/01-tools-and-interfaces/02-prisma-client/05-filtering"
-                                        },
-                                        {
-                                            "path": "pages/content/03-reference/01-tools-and-interfaces/02-prisma-client/06-relation-queries.mdx",
-                                            "name": "06-relation-queries.mdx",
-                                            "title": "",
-                                            "url": "/content/03-reference/01-tools-and-interfaces/02-prisma-client/06-relation-queries"
-                                        },
-                                        {
-                                            "path": "pages/content/03-reference/01-tools-and-interfaces/02-prisma-client/07-field-selection.mdx",
-                                            "name": "07-field-selection.mdx",
-                                            "title": "",
-                                            "url": "/content/03-reference/01-tools-and-interfaces/02-prisma-client/07-field-selection"
-                                        },
-                                        {
-                                            "path": "pages/content/03-reference/01-tools-and-interfaces/02-prisma-client/08-raw-database-access.mdx",
-                                            "name": "08-raw-database-access.mdx",
-                                            "title": "",
-                                            "url": "/content/03-reference/01-tools-and-interfaces/02-prisma-client/08-raw-database-access"
-                                        },
-                                        {
-                                            "path": "pages/content/03-reference/01-tools-and-interfaces/02-prisma-client/09-connection-management.mdx",
-                                            "name": "09-connection-management.mdx",
-                                            "title": "",
-                                            "url": "/content/03-reference/01-tools-and-interfaces/02-prisma-client/09-connection-management"
-                                        },
-                                        {
-                                            "path": "pages/content/03-reference/01-tools-and-interfaces/02-prisma-client/10-advanced-usage-of-generated-types.mdx",
-                                            "name": "10-advanced-usage-of-generated-types.mdx",
-                                            "title": "",
-                                            "url": "/content/03-reference/01-tools-and-interfaces/02-prisma-client/10-advanced-usage-of-generated-types"
-                                        },
-                                        {
-                                            "path": "pages/content/03-reference/01-tools-and-interfaces/02-prisma-client/13-logging.mdx",
-                                            "name": "13-logging.mdx",
-                                            "title": "",
-                                            "url": "/content/03-reference/01-tools-and-interfaces/02-prisma-client/13-logging"
-                                        },
-                                        {
-                                            "path": "pages/content/03-reference/01-tools-and-interfaces/02-prisma-client/14-debugging.mdx",
-                                            "name": "14-debugging.mdx",
-                                            "title": "",
-                                            "url": "/content/03-reference/01-tools-and-interfaces/02-prisma-client/14-debugging"
-                                        },
-                                        {
-                                            "path": "pages/content/03-reference/01-tools-and-interfaces/02-prisma-client/15-error-formatting.mdx",
-                                            "name": "15-error-formatting.mdx",
-                                            "title": "",
-                                            "url": "/content/03-reference/01-tools-and-interfaces/02-prisma-client/15-error-formatting"
-                                        },
-                                        {
-                                            "path": "pages/content/03-reference/01-tools-and-interfaces/02-prisma-client/16-transactions.mdx",
-                                            "name": "16-transactions.mdx",
-                                            "title": "",
-                                            "url": "/content/03-reference/01-tools-and-interfaces/02-prisma-client/16-transactions"
-                                        },
-                                        {
-                                            "path": "pages/content/03-reference/01-tools-and-interfaces/02-prisma-client/17-deployment.mdx",
-                                            "name": "17-deployment.mdx",
-                                            "title": "",
-                                            "url": "/content/03-reference/01-tools-and-interfaces/02-prisma-client/17-deployment"
-                                        },
-                                        {
-                                            "path": "pages/content/03-reference/01-tools-and-interfaces/02-prisma-client/18-query-engine.mdx",
-                                            "name": "18-query-engine.mdx",
-                                            "title": "",
-                                            "url": "/content/03-reference/01-tools-and-interfaces/02-prisma-client/18-query-engine"
-                                        },
-                                        {
-                                            "path": "pages/content/03-reference/01-tools-and-interfaces/02-prisma-client/19-module-bundlers.mdx",
-                                            "name": "19-module-bundlers.mdx",
-                                            "title": "",
-                                            "url": "/content/03-reference/01-tools-and-interfaces/02-prisma-client/19-module-bundlers"
-                                        },
-                                        {
-                                            "path": "pages/content/03-reference/01-tools-and-interfaces/02-prisma-client/20-database-polyfills.mdx",
-                                            "name": "20-database-polyfills.mdx",
-                                            "title": "",
-                                            "url": "/content/03-reference/01-tools-and-interfaces/02-prisma-client/20-database-polyfills"
-                                        },
-                                        {
-                                            "path": "pages/content/03-reference/01-tools-and-interfaces/02-prisma-client/generating-prisma-client",
-                                            "name": "generating-prisma-client",
-                                            "children": [],
-                                            "size": 0,
-                                            "type": "directory"
-                                        },
-                                        {
-                                            "path": "pages/content/03-reference/01-tools-and-interfaces/02-prisma-client/index.mdx",
-                                            "name": "index.mdx",
-                                            "title": "",
-                                            "url": "/content/03-reference/01-tools-and-interfaces/02-prisma-client"
-                                        }
-                                    ],
-                                    "size": null,
-                                    "type": "directory"
-                                },
-                                {
-                                    "path": "pages/content/03-reference/01-tools-and-interfaces/03-prisma-migrate.mdx",
-                                    "name": "03-prisma-migrate.mdx",
-                                    "title": "",
-                                    "url": "/content/03-reference/01-tools-and-interfaces/03-prisma-migrate"
-                                },
-                                {
-                                    "path": "pages/content/03-reference/01-tools-and-interfaces/04-introspection.mdx",
-                                    "name": "04-introspection.mdx",
-                                    "title": "",
-                                    "url": "/content/03-reference/01-tools-and-interfaces/04-introspection"
-                                },
-                                {
-                                    "path": "pages/content/03-reference/01-tools-and-interfaces/05-prisma-cli",
-                                    "name": "05-prisma-cli",
-                                    "children": [
-                                        {
-                                            "path": "pages/content/03-reference/01-tools-and-interfaces/05-prisma-cli/01-installation.mdx",
-                                            "name": "01-installation.mdx",
-                                            "title": "",
-                                            "url": "/content/03-reference/01-tools-and-interfaces/05-prisma-cli/01-installation"
-                                        },
-                                        {
-                                            "path": "pages/content/03-reference/01-tools-and-interfaces/05-prisma-cli/02-command-reference.mdx",
-                                            "name": "02-command-reference.mdx",
-                                            "title": "",
-                                            "url": "/content/03-reference/01-tools-and-interfaces/05-prisma-cli/02-command-reference"
-                                        },
-                                        {
-                                            "path": "pages/content/03-reference/01-tools-and-interfaces/05-prisma-cli/index.mdx",
-                                            "name": "index.mdx",
-                                            "title": "",
-                                            "url": "/content/03-reference/01-tools-and-interfaces/05-prisma-cli"
-                                        }
-                                    ],
-                                    "size": null,
-                                    "type": "directory"
-                                },
-                                {
-                                    "path": "pages/content/03-reference/01-tools-and-interfaces/06-prisma-studio.mdx",
-                                    "name": "06-prisma-studio.mdx",
-                                    "title": "",
-                                    "url": "/content/03-reference/01-tools-and-interfaces/06-prisma-studio"
-                                },
-                                {
-                                    "path": "pages/content/03-reference/01-tools-and-interfaces/index.mdx",
-                                    "name": "index.mdx",
-                                    "title": "",
-                                    "url": "/content/03-reference/01-tools-and-interfaces"
-                                }
-                            ],
-                            "size": null,
-                            "type": "directory"
+                            "path": "pages/03-reference/03-more/01-editor-setup.mdx",
+                            "name": "01-editor-setup.mdx",
+                            "title": "",
+                            "url": "/03-reference/03-more/01-editor-setup"
                         },
                         {
-                            "path": "pages/content/03-reference/02-database-connectors",
-                            "name": "02-database-connectors",
-                            "children": [
-                                {
-                                    "path": "pages/content/03-reference/02-database-connectors/01-database-features.mdx",
-                                    "name": "01-database-features.mdx",
-                                    "title": "",
-                                    "url": "/content/03-reference/02-database-connectors/01-database-features"
-                                },
-                                {
-                                    "path": "pages/content/03-reference/02-database-connectors/02-connection-urls.mdx",
-                                    "name": "02-connection-urls.mdx",
-                                    "title": "",
-                                    "url": "/content/03-reference/02-database-connectors/02-connection-urls"
-                                },
-                                {
-                                    "path": "pages/content/03-reference/02-database-connectors/03-postgresql.mdx",
-                                    "name": "03-postgresql.mdx",
-                                    "title": "",
-                                    "url": "/content/03-reference/02-database-connectors/03-postgresql"
-                                },
-                                {
-                                    "path": "pages/content/03-reference/02-database-connectors/04-mysql.mdx",
-                                    "name": "04-mysql.mdx",
-                                    "title": "",
-                                    "url": "/content/03-reference/02-database-connectors/04-mysql"
-                                },
-                                {
-                                    "path": "pages/content/03-reference/02-database-connectors/05-sqlite.mdx",
-                                    "name": "05-sqlite.mdx",
-                                    "title": "",
-                                    "url": "/content/03-reference/02-database-connectors/05-sqlite"
-                                },
-                                {
-                                    "path": "pages/content/03-reference/02-database-connectors/index.mdx",
-                                    "name": "index.mdx",
-                                    "title": "",
-                                    "url": "/content/03-reference/02-database-connectors"
-                                }
-                            ],
-                            "size": null,
-                            "type": "directory"
+                            "path": "pages/03-reference/03-more/02-telemetry.mdx",
+                            "name": "02-telemetry.mdx",
+                            "title": "",
+                            "url": "/03-reference/03-more/02-telemetry"
                         },
                         {
-                            "path": "pages/content/03-reference/03-more",
-                            "name": "03-more",
-                            "children": [
-                                {
-                                    "path": "pages/content/03-reference/03-more/01-editor-setup.mdx",
-                                    "name": "01-editor-setup.mdx",
-                                    "title": "",
-                                    "url": "/content/03-reference/03-more/01-editor-setup"
-                                },
-                                {
-                                    "path": "pages/content/03-reference/03-more/02-telemetry.mdx",
-                                    "name": "02-telemetry.mdx",
-                                    "title": "",
-                                    "url": "/content/03-reference/03-more/02-telemetry"
-                                },
-                                {
-                                    "path": "pages/content/03-reference/03-more/index.mdx",
-                                    "name": "index.mdx",
-                                    "title": "",
-                                    "url": "/content/03-reference/03-more"
-                                }
-                            ],
-                            "size": null,
-                            "type": "directory"
-                        },
-                        {
-                            "path": "pages/content/03-reference/index.mdx",
+                            "path": "pages/03-reference/03-more/index.mdx",
                             "name": "index.mdx",
                             "title": "",
-                            "url": "/content/03-reference"
+                            "url": "/03-reference/03-more"
                         }
                     ],
                     "size": null,
                     "type": "directory"
                 },
                 {
-                    "path": "pages/content/04-guides",
-                    "name": "04-guides",
-                    "children": [
-                        {
-                            "path": "pages/content/04-guides/01-database-workflows",
-                            "name": "01-database-workflows",
-                            "children": [
-                                {
-                                    "path": "pages/content/04-guides/01-database-workflows/01-setting-up-a-database",
-                                    "name": "01-setting-up-a-database",
-                                    "children": [
-                                        {
-                                            "path": "pages/content/04-guides/01-database-workflows/01-setting-up-a-database/01-postgresql.mdx",
-                                            "name": "01-postgresql.mdx",
-                                            "title": "",
-                                            "url": "/content/04-guides/01-database-workflows/01-setting-up-a-database/01-postgresql"
-                                        },
-                                        {
-                                            "path": "pages/content/04-guides/01-database-workflows/01-setting-up-a-database/02-mysql.mdx",
-                                            "name": "02-mysql.mdx",
-                                            "title": "",
-                                            "url": "/content/04-guides/01-database-workflows/01-setting-up-a-database/02-mysql"
-                                        },
-                                        {
-                                            "path": "pages/content/04-guides/01-database-workflows/01-setting-up-a-database/03-sqlite.mdx",
-                                            "name": "03-sqlite.mdx",
-                                            "title": "",
-                                            "url": "/content/04-guides/01-database-workflows/01-setting-up-a-database/03-sqlite"
-                                        },
-                                        {
-                                            "path": "pages/content/04-guides/01-database-workflows/01-setting-up-a-database/index.mdx",
-                                            "name": "index.mdx",
-                                            "title": "",
-                                            "url": "/content/04-guides/01-database-workflows/01-setting-up-a-database"
-                                        },
-                                        {
-                                            "path": "pages/content/04-guides/01-database-workflows/01-setting-up-a-database/mysql_macos",
-                                            "name": "mysql_macos",
-                                            "children": [],
-                                            "size": 0,
-                                            "type": "directory"
-                                        },
-                                        {
-                                            "path": "pages/content/04-guides/01-database-workflows/01-setting-up-a-database/mysql_windows",
-                                            "name": "mysql_windows",
-                                            "children": [],
-                                            "size": 0,
-                                            "type": "directory"
-                                        },
-                                        {
-                                            "path": "pages/content/04-guides/01-database-workflows/01-setting-up-a-database/postgresql_macos",
-                                            "name": "postgresql_macos",
-                                            "children": [],
-                                            "size": 0,
-                                            "type": "directory"
-                                        },
-                                        {
-                                            "path": "pages/content/04-guides/01-database-workflows/01-setting-up-a-database/postgresql_windows",
-                                            "name": "postgresql_windows",
-                                            "children": [],
-                                            "size": 0,
-                                            "type": "directory"
-                                        },
-                                        {
-                                            "path": "pages/content/04-guides/01-database-workflows/01-setting-up-a-database/setting-up-a-database",
-                                            "name": "setting-up-a-database",
-                                            "children": [],
-                                            "size": 0,
-                                            "type": "directory"
-                                        },
-                                        {
-                                            "path": "pages/content/04-guides/01-database-workflows/01-setting-up-a-database/sqlite_linux",
-                                            "name": "sqlite_linux",
-                                            "children": [],
-                                            "size": 0,
-                                            "type": "directory"
-                                        },
-                                        {
-                                            "path": "pages/content/04-guides/01-database-workflows/01-setting-up-a-database/sqlite_macos",
-                                            "name": "sqlite_macos",
-                                            "children": [],
-                                            "size": 0,
-                                            "type": "directory"
-                                        },
-                                        {
-                                            "path": "pages/content/04-guides/01-database-workflows/01-setting-up-a-database/sqlite_windows",
-                                            "name": "sqlite_windows",
-                                            "children": [],
-                                            "size": 0,
-                                            "type": "directory"
-                                        }
-                                    ],
-                                    "size": null,
-                                    "type": "directory"
-                                },
-                                {
-                                    "path": "pages/content/04-guides/01-database-workflows/02-import-and-export-data",
-                                    "name": "02-import-and-export-data",
-                                    "children": [
-                                        {
-                                            "path": "pages/content/04-guides/01-database-workflows/02-import-and-export-data/01-postgresql.mdx",
-                                            "name": "01-postgresql.mdx",
-                                            "title": "",
-                                            "url": "/content/04-guides/01-database-workflows/02-import-and-export-data/01-postgresql"
-                                        },
-                                        {
-                                            "path": "pages/content/04-guides/01-database-workflows/02-import-and-export-data/02-mysql.mdx",
-                                            "name": "02-mysql.mdx",
-                                            "title": "",
-                                            "url": "/content/04-guides/01-database-workflows/02-import-and-export-data/02-mysql"
-                                        },
-                                        {
-                                            "path": "pages/content/04-guides/01-database-workflows/02-import-and-export-data/03-sqlite.mdx",
-                                            "name": "03-sqlite.mdx",
-                                            "title": "",
-                                            "url": "/content/04-guides/01-database-workflows/02-import-and-export-data/03-sqlite"
-                                        },
-                                        {
-                                            "path": "pages/content/04-guides/01-database-workflows/02-import-and-export-data/index.mdx",
-                                            "name": "index.mdx",
-                                            "title": "",
-                                            "url": "/content/04-guides/01-database-workflows/02-import-and-export-data"
-                                        }
-                                    ],
-                                    "size": null,
-                                    "type": "directory"
-                                },
-                                {
-                                    "path": "pages/content/04-guides/01-database-workflows/04-unique-constraints-and-indexes",
-                                    "name": "04-unique-constraints-and-indexes",
-                                    "children": [
-                                        {
-                                            "path": "pages/content/04-guides/01-database-workflows/04-unique-constraints-and-indexes/01-postgresql.mdx",
-                                            "name": "01-postgresql.mdx",
-                                            "title": "",
-                                            "url": "/content/04-guides/01-database-workflows/04-unique-constraints-and-indexes/01-postgresql"
-                                        },
-                                        {
-                                            "path": "pages/content/04-guides/01-database-workflows/04-unique-constraints-and-indexes/02-mysql.mdx",
-                                            "name": "02-mysql.mdx",
-                                            "title": "",
-                                            "url": "/content/04-guides/01-database-workflows/04-unique-constraints-and-indexes/02-mysql"
-                                        },
-                                        {
-                                            "path": "pages/content/04-guides/01-database-workflows/04-unique-constraints-and-indexes/03-sqlite.mdx",
-                                            "name": "03-sqlite.mdx",
-                                            "title": "",
-                                            "url": "/content/04-guides/01-database-workflows/04-unique-constraints-and-indexes/03-sqlite"
-                                        },
-                                        {
-                                            "path": "pages/content/04-guides/01-database-workflows/04-unique-constraints-and-indexes/index.mdx",
-                                            "name": "index.mdx",
-                                            "title": "",
-                                            "url": "/content/04-guides/01-database-workflows/04-unique-constraints-and-indexes"
-                                        },
-                                        {
-                                            "path": "pages/content/04-guides/01-database-workflows/04-unique-constraints-and-indexes/unique-constraints-and-indexes",
-                                            "name": "unique-constraints-and-indexes",
-                                            "children": [],
-                                            "size": 0,
-                                            "type": "directory"
-                                        }
-                                    ],
-                                    "size": null,
-                                    "type": "directory"
-                                },
-                                {
-                                    "path": "pages/content/04-guides/01-database-workflows/05-foreign-keys",
-                                    "name": "05-foreign-keys",
-                                    "children": [
-                                        {
-                                            "path": "pages/content/04-guides/01-database-workflows/05-foreign-keys/01-postgresql.mdx",
-                                            "name": "01-postgresql.mdx",
-                                            "title": "",
-                                            "url": "/content/04-guides/01-database-workflows/05-foreign-keys/01-postgresql"
-                                        },
-                                        {
-                                            "path": "pages/content/04-guides/01-database-workflows/05-foreign-keys/02-mysql.mdx",
-                                            "name": "02-mysql.mdx",
-                                            "title": "",
-                                            "url": "/content/04-guides/01-database-workflows/05-foreign-keys/02-mysql"
-                                        },
-                                        {
-                                            "path": "pages/content/04-guides/01-database-workflows/05-foreign-keys/03-sqlite.mdx",
-                                            "name": "03-sqlite.mdx",
-                                            "title": "",
-                                            "url": "/content/04-guides/01-database-workflows/05-foreign-keys/03-sqlite"
-                                        },
-                                        {
-                                            "path": "pages/content/04-guides/01-database-workflows/05-foreign-keys/foreign-keys",
-                                            "name": "foreign-keys",
-                                            "children": [],
-                                            "size": 0,
-                                            "type": "directory"
-                                        },
-                                        {
-                                            "path": "pages/content/04-guides/01-database-workflows/05-foreign-keys/index.mdx",
-                                            "name": "index.mdx",
-                                            "title": "",
-                                            "url": "/content/04-guides/01-database-workflows/05-foreign-keys"
-                                        }
-                                    ],
-                                    "size": null,
-                                    "type": "directory"
-                                },
-                                {
-                                    "path": "pages/content/04-guides/01-database-workflows/06-cascading-deletes",
-                                    "name": "06-cascading-deletes",
-                                    "children": [
-                                        {
-                                            "path": "pages/content/04-guides/01-database-workflows/06-cascading-deletes/01-postgresql.mdx",
-                                            "name": "01-postgresql.mdx",
-                                            "title": "",
-                                            "url": "/content/04-guides/01-database-workflows/06-cascading-deletes/01-postgresql"
-                                        },
-                                        {
-                                            "path": "pages/content/04-guides/01-database-workflows/06-cascading-deletes/02-mysql.mdx",
-                                            "name": "02-mysql.mdx",
-                                            "title": "",
-                                            "url": "/content/04-guides/01-database-workflows/06-cascading-deletes/02-mysql"
-                                        },
-                                        {
-                                            "path": "pages/content/04-guides/01-database-workflows/06-cascading-deletes/03-sqlite.mdx",
-                                            "name": "03-sqlite.mdx",
-                                            "title": "",
-                                            "url": "/content/04-guides/01-database-workflows/06-cascading-deletes/03-sqlite"
-                                        },
-                                        {
-                                            "path": "pages/content/04-guides/01-database-workflows/06-cascading-deletes/cascading-deletes",
-                                            "name": "cascading-deletes",
-                                            "children": [],
-                                            "size": 0,
-                                            "type": "directory"
-                                        },
-                                        {
-                                            "path": "pages/content/04-guides/01-database-workflows/06-cascading-deletes/index.mdx",
-                                            "name": "index.mdx",
-                                            "title": "",
-                                            "url": "/content/04-guides/01-database-workflows/06-cascading-deletes"
-                                        }
-                                    ],
-                                    "size": null,
-                                    "type": "directory"
-                                },
-                                {
-                                    "path": "pages/content/04-guides/01-database-workflows/07-data-validation",
-                                    "name": "07-data-validation",
-                                    "children": [
-                                        {
-                                            "path": "pages/content/04-guides/01-database-workflows/07-data-validation/01-postgresql.mdx",
-                                            "name": "01-postgresql.mdx",
-                                            "title": "",
-                                            "url": "/content/04-guides/01-database-workflows/07-data-validation/01-postgresql"
-                                        },
-                                        {
-                                            "path": "pages/content/04-guides/01-database-workflows/07-data-validation/index.mdx",
-                                            "name": "index.mdx",
-                                            "title": "",
-                                            "url": "/content/04-guides/01-database-workflows/07-data-validation"
-                                        }
-                                    ],
-                                    "size": null,
-                                    "type": "directory"
-                                },
-                                {
-                                    "path": "pages/content/04-guides/01-database-workflows/index.mdx",
-                                    "name": "index.mdx",
-                                    "title": "",
-                                    "url": "/content/04-guides/01-database-workflows"
-                                }
-                            ],
-                            "size": null,
-                            "type": "directory"
-                        },
-                        {
-                            "path": "pages/content/04-guides/02-deployment",
-                            "name": "02-deployment",
-                            "children": [
-                                {
-                                    "path": "pages/content/04-guides/02-deployment/01-deploying-to-vercel.mdx",
-                                    "name": "01-deploying-to-vercel.mdx",
-                                    "title": "",
-                                    "url": "/content/04-guides/02-deployment/01-deploying-to-vercel"
-                                },
-                                {
-                                    "path": "pages/content/04-guides/02-deployment/02-deploying-to-aws-lambda.mdx",
-                                    "name": "02-deploying-to-aws-lambda.mdx",
-                                    "title": "",
-                                    "url": "/content/04-guides/02-deployment/02-deploying-to-aws-lambda"
-                                },
-                                {
-                                    "path": "pages/content/04-guides/02-deployment/04-deploying-to-netlify.mdx",
-                                    "name": "04-deploying-to-netlify.mdx",
-                                    "title": "",
-                                    "url": "/content/04-guides/02-deployment/04-deploying-to-netlify"
-                                },
-                                {
-                                    "path": "pages/content/04-guides/02-deployment/index.mdx",
-                                    "name": "index.mdx",
-                                    "title": "",
-                                    "url": "/content/04-guides/02-deployment"
-                                }
-                            ],
-                            "size": null,
-                            "type": "directory"
-                        },
-                        {
-                            "path": "pages/content/04-guides/03-upgrade-from-prisma-1",
-                            "name": "03-upgrade-from-prisma-1",
-                            "children": [
-                                {
-                                    "path": "pages/content/04-guides/03-upgrade-from-prisma-1/01-should-you-upgrade.mdx",
-                                    "name": "01-should-you-upgrade.mdx",
-                                    "title": "",
-                                    "url": "/content/04-guides/03-upgrade-from-prisma-1/01-should-you-upgrade"
-                                },
-                                {
-                                    "path": "pages/content/04-guides/03-upgrade-from-prisma-1/02-schema-incompatibilities.mdx",
-                                    "name": "02-schema-incompatibilities.mdx",
-                                    "title": "",
-                                    "url": "/content/04-guides/03-upgrade-from-prisma-1/02-schema-incompatibilities"
-                                },
-                                {
-                                    "path": "pages/content/04-guides/03-upgrade-from-prisma-1/03-upgrading-the-prisma-layer.mdx",
-                                    "name": "03-upgrading-the-prisma-layer.mdx",
-                                    "title": "",
-                                    "url": "/content/04-guides/03-upgrade-from-prisma-1/03-upgrading-the-prisma-layer"
-                                },
-                                {
-                                    "path": "pages/content/04-guides/03-upgrade-from-prisma-1/04-upgrading-nexus-prisma-to-nexus.mdx",
-                                    "name": "04-upgrading-nexus-prisma-to-nexus.mdx",
-                                    "title": "",
-                                    "url": "/content/04-guides/03-upgrade-from-prisma-1/04-upgrading-nexus-prisma-to-nexus"
-                                },
-                                {
-                                    "path": "pages/content/04-guides/03-upgrade-from-prisma-1/05-upgrading-prisma-binding-to-nexus.mdx",
-                                    "name": "05-upgrading-prisma-binding-to-nexus.mdx",
-                                    "title": "",
-                                    "url": "/content/04-guides/03-upgrade-from-prisma-1/05-upgrading-prisma-binding-to-nexus"
-                                },
-                                {
-                                    "path": "pages/content/04-guides/03-upgrade-from-prisma-1/06-upgrading-prisma-binding-to-sdl-first.mdx",
-                                    "name": "06-upgrading-prisma-binding-to-sdl-first.mdx",
-                                    "title": "",
-                                    "url": "/content/04-guides/03-upgrade-from-prisma-1/06-upgrading-prisma-binding-to-sdl-first"
-                                },
-                                {
-                                    "path": "pages/content/04-guides/03-upgrade-from-prisma-1/07-upgrading-a-rest-api.mdx",
-                                    "name": "07-upgrading-a-rest-api.mdx",
-                                    "title": "",
-                                    "url": "/content/04-guides/03-upgrade-from-prisma-1/07-upgrading-a-rest-api"
-                                },
-                                {
-                                    "path": "pages/content/04-guides/03-upgrade-from-prisma-1/index.mdx",
-                                    "name": "index.mdx",
-                                    "title": "",
-                                    "url": "/content/04-guides/03-upgrade-from-prisma-1"
-                                }
-                            ],
-                            "size": null,
-                            "type": "directory"
-                        },
-                        {
-                            "path": "pages/content/04-guides/index.mdx",
-                            "name": "index.mdx",
-                            "title": "",
-                            "url": "/content/04-guides"
-                        }
-                    ],
-                    "size": null,
-                    "type": "directory"
-                },
-                {
-                    "path": "pages/content/05-more",
-                    "name": "05-more",
-                    "children": [
-                        {
-                            "path": "pages/content/05-more/01-about-the-docs.mdx",
-                            "name": "01-about-the-docs.mdx",
-                            "title": "",
-                            "url": "/content/05-more/01-about-the-docs"
-                        },
-                        {
-                            "path": "pages/content/05-more/02-style-guide",
-                            "name": "02-style-guide",
-                            "children": [
-                                {
-                                    "path": "pages/content/05-more/02-style-guide/01-mdx-examples.mdx",
-                                    "name": "01-mdx-examples.mdx",
-                                    "title": "",
-                                    "url": "/content/05-more/02-style-guide/01-mdx-examples"
-                                },
-                                {
-                                    "path": "pages/content/05-more/02-style-guide/index.mdx",
-                                    "name": "index.mdx",
-                                    "title": "",
-                                    "url": "/content/05-more/02-style-guide"
-                                }
-                            ],
-                            "size": null,
-                            "type": "directory"
-                        },
-                        {
-                            "path": "pages/content/05-more/03-supported-databases.mdx",
-                            "name": "03-supported-databases.mdx",
-                            "title": "",
-                            "url": "/content/05-more/03-supported-databases"
-                        },
-                        {
-                            "path": "pages/content/05-more/04-creating-bug-reports.mdx",
-                            "name": "04-creating-bug-reports.mdx",
-                            "title": "",
-                            "url": "/content/05-more/04-creating-bug-reports"
-                        },
-                        {
-                            "path": "pages/content/05-more/05-faq.mdx",
-                            "name": "05-faq.mdx",
-                            "title": "",
-                            "url": "/content/05-more/05-faq"
-                        },
-                        {
-                            "path": "pages/content/05-more/06-limitations.mdx",
-                            "name": "06-limitations.mdx",
-                            "title": "",
-                            "url": "/content/05-more/06-limitations"
-                        },
-                        {
-                            "path": "pages/content/05-more/07-roadmap.mdx",
-                            "name": "07-roadmap.mdx",
-                            "title": "",
-                            "url": "/content/05-more/07-roadmap"
-                        },
-                        {
-                            "path": "pages/content/05-more/index.mdx",
-                            "name": "index.mdx",
-                            "title": "",
-                            "url": "/content/05-more"
-                        }
-                    ],
-                    "size": null,
-                    "type": "directory"
-                },
-                {
-                    "path": "pages/content/index.mdx",
+                    "path": "pages/03-reference/index.mdx",
                     "name": "index.mdx",
                     "title": "",
-                    "url": "/content"
+                    "url": "/03-reference"
+                }
+            ],
+            "size": null,
+            "type": "directory"
+        },
+        {
+            "path": "pages/04-guides",
+            "name": "04-guides",
+            "children": [
+                {
+                    "path": "pages/04-guides/01-database-workflows",
+                    "name": "01-database-workflows",
+                    "children": [
+                        {
+                            "path": "pages/04-guides/01-database-workflows/01-setting-up-a-database",
+                            "name": "01-setting-up-a-database",
+                            "children": [
+                                {
+                                    "path": "pages/04-guides/01-database-workflows/01-setting-up-a-database/01-postgresql.mdx",
+                                    "name": "01-postgresql.mdx",
+                                    "title": "",
+                                    "url": "/04-guides/01-database-workflows/01-setting-up-a-database/01-postgresql"
+                                },
+                                {
+                                    "path": "pages/04-guides/01-database-workflows/01-setting-up-a-database/02-mysql.mdx",
+                                    "name": "02-mysql.mdx",
+                                    "title": "",
+                                    "url": "/04-guides/01-database-workflows/01-setting-up-a-database/02-mysql"
+                                },
+                                {
+                                    "path": "pages/04-guides/01-database-workflows/01-setting-up-a-database/03-sqlite.mdx",
+                                    "name": "03-sqlite.mdx",
+                                    "title": "",
+                                    "url": "/04-guides/01-database-workflows/01-setting-up-a-database/03-sqlite"
+                                },
+                                {
+                                    "path": "pages/04-guides/01-database-workflows/01-setting-up-a-database/index.mdx",
+                                    "name": "index.mdx",
+                                    "title": "",
+                                    "url": "/04-guides/01-database-workflows/01-setting-up-a-database"
+                                },
+                                {
+                                    "path": "pages/04-guides/01-database-workflows/01-setting-up-a-database/mysql_macos",
+                                    "name": "mysql_macos",
+                                    "children": [],
+                                    "size": 0,
+                                    "type": "directory"
+                                },
+                                {
+                                    "path": "pages/04-guides/01-database-workflows/01-setting-up-a-database/mysql_windows",
+                                    "name": "mysql_windows",
+                                    "children": [],
+                                    "size": 0,
+                                    "type": "directory"
+                                },
+                                {
+                                    "path": "pages/04-guides/01-database-workflows/01-setting-up-a-database/postgresql_macos",
+                                    "name": "postgresql_macos",
+                                    "children": [],
+                                    "size": 0,
+                                    "type": "directory"
+                                },
+                                {
+                                    "path": "pages/04-guides/01-database-workflows/01-setting-up-a-database/postgresql_windows",
+                                    "name": "postgresql_windows",
+                                    "children": [],
+                                    "size": 0,
+                                    "type": "directory"
+                                },
+                                {
+                                    "path": "pages/04-guides/01-database-workflows/01-setting-up-a-database/setting-up-a-database",
+                                    "name": "setting-up-a-database",
+                                    "children": [],
+                                    "size": 0,
+                                    "type": "directory"
+                                },
+                                {
+                                    "path": "pages/04-guides/01-database-workflows/01-setting-up-a-database/sqlite_linux",
+                                    "name": "sqlite_linux",
+                                    "children": [],
+                                    "size": 0,
+                                    "type": "directory"
+                                },
+                                {
+                                    "path": "pages/04-guides/01-database-workflows/01-setting-up-a-database/sqlite_macos",
+                                    "name": "sqlite_macos",
+                                    "children": [],
+                                    "size": 0,
+                                    "type": "directory"
+                                },
+                                {
+                                    "path": "pages/04-guides/01-database-workflows/01-setting-up-a-database/sqlite_windows",
+                                    "name": "sqlite_windows",
+                                    "children": [],
+                                    "size": 0,
+                                    "type": "directory"
+                                }
+                            ],
+                            "size": null,
+                            "type": "directory"
+                        },
+                        {
+                            "path": "pages/04-guides/01-database-workflows/02-import-and-export-data",
+                            "name": "02-import-and-export-data",
+                            "children": [
+                                {
+                                    "path": "pages/04-guides/01-database-workflows/02-import-and-export-data/01-postgresql.mdx",
+                                    "name": "01-postgresql.mdx",
+                                    "title": "",
+                                    "url": "/04-guides/01-database-workflows/02-import-and-export-data/01-postgresql"
+                                },
+                                {
+                                    "path": "pages/04-guides/01-database-workflows/02-import-and-export-data/02-mysql.mdx",
+                                    "name": "02-mysql.mdx",
+                                    "title": "",
+                                    "url": "/04-guides/01-database-workflows/02-import-and-export-data/02-mysql"
+                                },
+                                {
+                                    "path": "pages/04-guides/01-database-workflows/02-import-and-export-data/03-sqlite.mdx",
+                                    "name": "03-sqlite.mdx",
+                                    "title": "",
+                                    "url": "/04-guides/01-database-workflows/02-import-and-export-data/03-sqlite"
+                                },
+                                {
+                                    "path": "pages/04-guides/01-database-workflows/02-import-and-export-data/index.mdx",
+                                    "name": "index.mdx",
+                                    "title": "",
+                                    "url": "/04-guides/01-database-workflows/02-import-and-export-data"
+                                }
+                            ],
+                            "size": null,
+                            "type": "directory"
+                        },
+                        {
+                            "path": "pages/04-guides/01-database-workflows/04-unique-constraints-and-indexes",
+                            "name": "04-unique-constraints-and-indexes",
+                            "children": [
+                                {
+                                    "path": "pages/04-guides/01-database-workflows/04-unique-constraints-and-indexes/01-postgresql.mdx",
+                                    "name": "01-postgresql.mdx",
+                                    "title": "",
+                                    "url": "/04-guides/01-database-workflows/04-unique-constraints-and-indexes/01-postgresql"
+                                },
+                                {
+                                    "path": "pages/04-guides/01-database-workflows/04-unique-constraints-and-indexes/02-mysql.mdx",
+                                    "name": "02-mysql.mdx",
+                                    "title": "",
+                                    "url": "/04-guides/01-database-workflows/04-unique-constraints-and-indexes/02-mysql"
+                                },
+                                {
+                                    "path": "pages/04-guides/01-database-workflows/04-unique-constraints-and-indexes/03-sqlite.mdx",
+                                    "name": "03-sqlite.mdx",
+                                    "title": "",
+                                    "url": "/04-guides/01-database-workflows/04-unique-constraints-and-indexes/03-sqlite"
+                                },
+                                {
+                                    "path": "pages/04-guides/01-database-workflows/04-unique-constraints-and-indexes/index.mdx",
+                                    "name": "index.mdx",
+                                    "title": "",
+                                    "url": "/04-guides/01-database-workflows/04-unique-constraints-and-indexes"
+                                },
+                                {
+                                    "path": "pages/04-guides/01-database-workflows/04-unique-constraints-and-indexes/unique-constraints-and-indexes",
+                                    "name": "unique-constraints-and-indexes",
+                                    "children": [],
+                                    "size": 0,
+                                    "type": "directory"
+                                }
+                            ],
+                            "size": null,
+                            "type": "directory"
+                        },
+                        {
+                            "path": "pages/04-guides/01-database-workflows/05-foreign-keys",
+                            "name": "05-foreign-keys",
+                            "children": [
+                                {
+                                    "path": "pages/04-guides/01-database-workflows/05-foreign-keys/01-postgresql.mdx",
+                                    "name": "01-postgresql.mdx",
+                                    "title": "",
+                                    "url": "/04-guides/01-database-workflows/05-foreign-keys/01-postgresql"
+                                },
+                                {
+                                    "path": "pages/04-guides/01-database-workflows/05-foreign-keys/02-mysql.mdx",
+                                    "name": "02-mysql.mdx",
+                                    "title": "",
+                                    "url": "/04-guides/01-database-workflows/05-foreign-keys/02-mysql"
+                                },
+                                {
+                                    "path": "pages/04-guides/01-database-workflows/05-foreign-keys/03-sqlite.mdx",
+                                    "name": "03-sqlite.mdx",
+                                    "title": "",
+                                    "url": "/04-guides/01-database-workflows/05-foreign-keys/03-sqlite"
+                                },
+                                {
+                                    "path": "pages/04-guides/01-database-workflows/05-foreign-keys/foreign-keys",
+                                    "name": "foreign-keys",
+                                    "children": [],
+                                    "size": 0,
+                                    "type": "directory"
+                                },
+                                {
+                                    "path": "pages/04-guides/01-database-workflows/05-foreign-keys/index.mdx",
+                                    "name": "index.mdx",
+                                    "title": "",
+                                    "url": "/04-guides/01-database-workflows/05-foreign-keys"
+                                }
+                            ],
+                            "size": null,
+                            "type": "directory"
+                        },
+                        {
+                            "path": "pages/04-guides/01-database-workflows/06-cascading-deletes",
+                            "name": "06-cascading-deletes",
+                            "children": [
+                                {
+                                    "path": "pages/04-guides/01-database-workflows/06-cascading-deletes/01-postgresql.mdx",
+                                    "name": "01-postgresql.mdx",
+                                    "title": "",
+                                    "url": "/04-guides/01-database-workflows/06-cascading-deletes/01-postgresql"
+                                },
+                                {
+                                    "path": "pages/04-guides/01-database-workflows/06-cascading-deletes/02-mysql.mdx",
+                                    "name": "02-mysql.mdx",
+                                    "title": "",
+                                    "url": "/04-guides/01-database-workflows/06-cascading-deletes/02-mysql"
+                                },
+                                {
+                                    "path": "pages/04-guides/01-database-workflows/06-cascading-deletes/03-sqlite.mdx",
+                                    "name": "03-sqlite.mdx",
+                                    "title": "",
+                                    "url": "/04-guides/01-database-workflows/06-cascading-deletes/03-sqlite"
+                                },
+                                {
+                                    "path": "pages/04-guides/01-database-workflows/06-cascading-deletes/cascading-deletes",
+                                    "name": "cascading-deletes",
+                                    "children": [],
+                                    "size": 0,
+                                    "type": "directory"
+                                },
+                                {
+                                    "path": "pages/04-guides/01-database-workflows/06-cascading-deletes/index.mdx",
+                                    "name": "index.mdx",
+                                    "title": "",
+                                    "url": "/04-guides/01-database-workflows/06-cascading-deletes"
+                                }
+                            ],
+                            "size": null,
+                            "type": "directory"
+                        },
+                        {
+                            "path": "pages/04-guides/01-database-workflows/07-data-validation",
+                            "name": "07-data-validation",
+                            "children": [
+                                {
+                                    "path": "pages/04-guides/01-database-workflows/07-data-validation/01-postgresql.mdx",
+                                    "name": "01-postgresql.mdx",
+                                    "title": "",
+                                    "url": "/04-guides/01-database-workflows/07-data-validation/01-postgresql"
+                                },
+                                {
+                                    "path": "pages/04-guides/01-database-workflows/07-data-validation/index.mdx",
+                                    "name": "index.mdx",
+                                    "title": "",
+                                    "url": "/04-guides/01-database-workflows/07-data-validation"
+                                }
+                            ],
+                            "size": null,
+                            "type": "directory"
+                        },
+                        {
+                            "path": "pages/04-guides/01-database-workflows/index.mdx",
+                            "name": "index.mdx",
+                            "title": "",
+                            "url": "/04-guides/01-database-workflows"
+                        }
+                    ],
+                    "size": null,
+                    "type": "directory"
+                },
+                {
+                    "path": "pages/04-guides/02-deployment",
+                    "name": "02-deployment",
+                    "children": [
+                        {
+                            "path": "pages/04-guides/02-deployment/01-deploying-to-vercel.mdx",
+                            "name": "01-deploying-to-vercel.mdx",
+                            "title": "",
+                            "url": "/04-guides/02-deployment/01-deploying-to-vercel"
+                        },
+                        {
+                            "path": "pages/04-guides/02-deployment/02-deploying-to-aws-lambda.mdx",
+                            "name": "02-deploying-to-aws-lambda.mdx",
+                            "title": "",
+                            "url": "/04-guides/02-deployment/02-deploying-to-aws-lambda"
+                        },
+                        {
+                            "path": "pages/04-guides/02-deployment/04-deploying-to-netlify.mdx",
+                            "name": "04-deploying-to-netlify.mdx",
+                            "title": "",
+                            "url": "/04-guides/02-deployment/04-deploying-to-netlify"
+                        },
+                        {
+                            "path": "pages/04-guides/02-deployment/index.mdx",
+                            "name": "index.mdx",
+                            "title": "",
+                            "url": "/04-guides/02-deployment"
+                        }
+                    ],
+                    "size": null,
+                    "type": "directory"
+                },
+                {
+                    "path": "pages/04-guides/03-upgrade-from-prisma-1",
+                    "name": "03-upgrade-from-prisma-1",
+                    "children": [
+                        {
+                            "path": "pages/04-guides/03-upgrade-from-prisma-1/01-should-you-upgrade.mdx",
+                            "name": "01-should-you-upgrade.mdx",
+                            "title": "",
+                            "url": "/04-guides/03-upgrade-from-prisma-1/01-should-you-upgrade"
+                        },
+                        {
+                            "path": "pages/04-guides/03-upgrade-from-prisma-1/02-schema-incompatibilities.mdx",
+                            "name": "02-schema-incompatibilities.mdx",
+                            "title": "",
+                            "url": "/04-guides/03-upgrade-from-prisma-1/02-schema-incompatibilities"
+                        },
+                        {
+                            "path": "pages/04-guides/03-upgrade-from-prisma-1/03-upgrading-the-prisma-layer.mdx",
+                            "name": "03-upgrading-the-prisma-layer.mdx",
+                            "title": "",
+                            "url": "/04-guides/03-upgrade-from-prisma-1/03-upgrading-the-prisma-layer"
+                        },
+                        {
+                            "path": "pages/04-guides/03-upgrade-from-prisma-1/04-upgrading-nexus-prisma-to-nexus.mdx",
+                            "name": "04-upgrading-nexus-prisma-to-nexus.mdx",
+                            "title": "",
+                            "url": "/04-guides/03-upgrade-from-prisma-1/04-upgrading-nexus-prisma-to-nexus"
+                        },
+                        {
+                            "path": "pages/04-guides/03-upgrade-from-prisma-1/05-upgrading-prisma-binding-to-nexus.mdx",
+                            "name": "05-upgrading-prisma-binding-to-nexus.mdx",
+                            "title": "",
+                            "url": "/04-guides/03-upgrade-from-prisma-1/05-upgrading-prisma-binding-to-nexus"
+                        },
+                        {
+                            "path": "pages/04-guides/03-upgrade-from-prisma-1/06-upgrading-prisma-binding-to-sdl-first.mdx",
+                            "name": "06-upgrading-prisma-binding-to-sdl-first.mdx",
+                            "title": "",
+                            "url": "/04-guides/03-upgrade-from-prisma-1/06-upgrading-prisma-binding-to-sdl-first"
+                        },
+                        {
+                            "path": "pages/04-guides/03-upgrade-from-prisma-1/07-upgrading-a-rest-api.mdx",
+                            "name": "07-upgrading-a-rest-api.mdx",
+                            "title": "",
+                            "url": "/04-guides/03-upgrade-from-prisma-1/07-upgrading-a-rest-api"
+                        },
+                        {
+                            "path": "pages/04-guides/03-upgrade-from-prisma-1/index.mdx",
+                            "name": "index.mdx",
+                            "title": "",
+                            "url": "/04-guides/03-upgrade-from-prisma-1"
+                        }
+                    ],
+                    "size": null,
+                    "type": "directory"
+                },
+                {
+                    "path": "pages/04-guides/index.mdx",
+                    "name": "index.mdx",
+                    "title": "",
+                    "url": "/04-guides"
+                }
+            ],
+            "size": null,
+            "type": "directory"
+        },
+        {
+            "path": "pages/05-more",
+            "name": "05-more",
+            "children": [
+                {
+                    "path": "pages/05-more/01-about-the-docs.mdx",
+                    "name": "01-about-the-docs.mdx",
+                    "title": "",
+                    "url": "/05-more/01-about-the-docs"
+                },
+                {
+                    "path": "pages/05-more/02-style-guide",
+                    "name": "02-style-guide",
+                    "children": [
+                        {
+                            "path": "pages/05-more/02-style-guide/01-mdx-examples.mdx",
+                            "name": "01-mdx-examples.mdx",
+                            "title": "",
+                            "url": "/05-more/02-style-guide/01-mdx-examples"
+                        },
+                        {
+                            "path": "pages/05-more/02-style-guide/index.mdx",
+                            "name": "index.mdx",
+                            "title": "",
+                            "url": "/05-more/02-style-guide"
+                        }
+                    ],
+                    "size": null,
+                    "type": "directory"
+                },
+                {
+                    "path": "pages/05-more/03-supported-databases.mdx",
+                    "name": "03-supported-databases.mdx",
+                    "title": "",
+                    "url": "/05-more/03-supported-databases"
+                },
+                {
+                    "path": "pages/05-more/04-creating-bug-reports.mdx",
+                    "name": "04-creating-bug-reports.mdx",
+                    "title": "",
+                    "url": "/05-more/04-creating-bug-reports"
+                },
+                {
+                    "path": "pages/05-more/05-faq.mdx",
+                    "name": "05-faq.mdx",
+                    "title": "",
+                    "url": "/05-more/05-faq"
+                },
+                {
+                    "path": "pages/05-more/06-limitations.mdx",
+                    "name": "06-limitations.mdx",
+                    "title": "",
+                    "url": "/05-more/06-limitations"
+                },
+                {
+                    "path": "pages/05-more/07-roadmap.mdx",
+                    "name": "07-roadmap.mdx",
+                    "title": "",
+                    "url": "/05-more/07-roadmap"
+                },
+                {
+                    "path": "pages/05-more/index.mdx",
+                    "name": "index.mdx",
+                    "title": "",
+                    "url": "/05-more"
                 }
             ],
             "size": null,

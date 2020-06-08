@@ -1,4 +1,13 @@
-import { Box, BoxProps, Heading, Link, Stack, Divider } from '@chakra-ui/core'
+import {
+    Box,
+    BoxProps,
+    Heading,
+    Link,
+    Stack,
+    Divider,
+    useDisclosure,
+    Collapse,
+} from '@chakra-ui/core'
 import orderBy from 'lodash/orderBy'
 import React from 'react'
 import { ComponentLink } from './NavLink'
@@ -136,47 +145,108 @@ const NavTreeComponent = ({
     ...rest
 }: DirectoryTree & { depth?: number; hideDivider?: boolean }) => {
     const w = 10
-    const isNavHeading = depth === 1 && children
+    const isFolder = !url
     const formattedTitle = title || formatTitle(name || '')
-    return (
-        <Stack
-            spacing='0px'
-            // lineHeight='2.8em'
-            // pl={depth * w + 'px'}
-            // pb={depth === 1 ? '20px' : '0px'}
-        >
-            {name &&
-                (url ? (
-                    <ComponentLink
-                        my='0.2em'
-                        // h='2em'
-                        // display='block'
-                        href={url}
-                        isTruncated
-                        // {...(isNavHeading ? headingStyles : {})}
-                    >
+    const subTree =
+        children &&
+        children.map((x) => {
+            return (
+                <NavTreeComponent
+                    key={x.path || x.title}
+                    {...x}
+                    depth={depth + 1}
+                />
+            )
+        })
+    if (isFolder && depth > 0) {
+        return (
+            <CollapsableTreeNode
+                depth={depth}
+                title={formattedTitle}
+                subTree={subTree}
+            />
+        )
+    }
+    if (isFolder) {
+        return (
+            <Stack spacing='0px'>
+                <Box my='0.2em'>
+                    {!hideDivider && <Divider />}
+                    <Box py='1.4em' fontWeight='semibold'>
                         {formattedTitle}
-                    </ComponentLink>
-                ) : (
-                    <Box my='0.2em'>
-                        {!hideDivider && <Divider />}
-                        <Box py='1.4em' fontWeight='semibold'>
-                            {formattedTitle.toUpperCase()}
-                        </Box>
                     </Box>
-                ))}
-            {children &&
-                children.map((x) => {
-                    return (
-                        <NavTreeComponent
-                            key={x.path || x.title}
-                            {...x}
-                            depth={depth + 1}
-                        />
-                    )
-                })}
-            {/* {!children && <Link href={rest.path}>{rest.title}</Link>} */}
+                </Box>
+                {subTree}
+            </Stack>
+        )
+    }
+    return (
+        <Stack spacing='0px'>
+            <ComponentLink py='0.2em' my='0.2em' href={url} isTruncated>
+                {formattedTitle}
+            </ComponentLink>
+            {subTree}
         </Stack>
+    )
+}
+
+function CollapsableTreeNode({ title, depth, subTree }) {
+    const { onToggle, isOpen } = useDisclosure()
+    return (
+        <Stack spacing='0px'>
+            <Box
+                display='flex'
+                alignItems='center'
+                cursor='pointer'
+                onClick={onToggle}
+                py='0.2em'
+                my='0.2em'
+            >
+                <Box
+                    mr='0.4em'
+                    size='0.6em'
+                    opacity={0.6}
+                    display='inline-block'
+                    as={isOpen ? CollapseDown : CollapseRight}
+                />
+                {title}
+            </Box>
+            <Collapse isOpen={isOpen} pl={depth * 20 + 'px'}>
+                {subTree}
+            </Collapse>
+        </Stack>
+    )
+}
+
+const CollapseRight = (props) => {
+    return (
+        <svg
+            viewBox='0 0 5 8'
+            fill='currentColor'
+            xmlns='http://www.w3.org/2000/svg'
+            {...props}
+        >
+            <path
+                d='M0 0.724246C0 0.111374 0.681914 -0.223425 1.13107 0.168926L4.66916 3.25957C5.11028 3.6449 5.11028 4.3551 4.66916 4.74043L1.13107 7.83107C0.681913 8.22342 0 7.88863 0 7.27575V0.724246Z'
+                fill='currentColor'
+            ></path>
+        </svg>
+    )
+}
+
+const CollapseDown = (props) => {
+    return (
+        <svg
+            viewBox='0 0 8 6'
+            fill='currentColor'
+            xmlns='http://www.w3.org/2000/svg'
+            {...props}
+        >
+            <path
+                d='M7.27575 0.5C7.88863 0.5 8.22342 1.18191 7.83107 1.63107L4.74043 5.16916C4.3551 5.61028 3.6449 5.61028 3.25957 5.16916L0.168926 1.63107C-0.223425 1.18191 0.111375 0.5 0.724247 0.5L7.27575 0.5Z'
+                fill='currentColor'
+            ></path>
+        </svg>
     )
 }
 
