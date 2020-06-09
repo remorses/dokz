@@ -31,3 +31,18 @@ The above code block will be render as follows
         {message}
     </div>
 </Playground>
+
+## Rendering inside an iframe
+
+If you use media queries you probably want to render inside an iframe to preview how the component is rendered in small screens
+
+
+```md
+import { Playground } from 'dokz'
+
+<Playground iframe>
+    <div style={{ height: 100, background: 'lightblue' }}>
+        i am inside an iframe
+    </div>
+</Playground>
+```
