@@ -85,7 +85,7 @@ const NavBar = ({ logo, tree, items: navs, ...props }) => {
                         justify='flex-end'
                     >
                         {Array.isArray(navs) ? (
-                            <Stack direction='row' spacing='40px'>
+                            <Stack direction='row' spacing='20px'>
                                 {navs.map((x, i) => (
                                     <Stack
                                         key={i}
