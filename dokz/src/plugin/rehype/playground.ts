@@ -25,7 +25,7 @@ export interface PluginOpts {
     root: string
 }
 
-const playgroundRegex = /<Playground\s*>/
+export const playgroundRegex = /<Playground\b/
 
 export const injectCodeToPlayground = () => (
     tree: any,
