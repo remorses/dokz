@@ -31,6 +31,10 @@ const globalStyles = css`
         overflow: hidden;
         height: 100%;
     }
+    #__next {
+        min-height: 100%;
+        height: 100%;
+    }
     body {
         height: 100%;
         overflow: auto;
