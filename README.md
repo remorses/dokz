@@ -12,10 +12,11 @@
 
 🔥 Features
 
+-   File based routing
 -   SideBar automatically generated from mdx paths
 -   Table of contents generated from headings
--   Preview React Components inside jsx code blocks
 -   Dark Mode
+-   Preview React Components inside jsx code blocks
 -   Can be integrated with existing Nextjs app
 
 ## Quick Start
