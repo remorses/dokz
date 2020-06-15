@@ -13,9 +13,11 @@ export function TableOfContents({
         return null
     }
     return (
-        <Box
+        <Stack
+            spacing='0.6em'
             width='200px'
-            lineHeight='2.2em'
+            // minH='1.6em'
+            // lineHeight='2.2em'
             // fontWeight='medium'
             fontSize='0.8em'
             borderLeftWidth='1px'
@@ -28,7 +30,7 @@ export function TableOfContents({
                 table.children.map((table) => {
                     return <TableItem key={table.slug} {...table} />
                 })}
-        </Box>
+        </Stack>
     )
 }
 
@@ -36,7 +38,7 @@ function TableItem({ children, depth, title, slug }: DoczTableOfContents) {
     const baseW = 20
     return (
         <Stack>
-            <Box isTruncated minH='30px'>
+            <Box isTruncated minH='1.6em'>
                 <Link href={slug}>{title}</Link>
             </Box>
             <Stack ml={baseW * depth + 'px'}>
