@@ -26,6 +26,7 @@ export default function App(props) {
                     <DokzProvider
                         docsRootPath='pages/docs'
                         headerItems={[
+                            // <a>ciao</a>,
                             <GithubLink
                                 key={0}
                                 url='https://github.com/remorses/dokz'

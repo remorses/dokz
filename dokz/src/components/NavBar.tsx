@@ -41,7 +41,7 @@ export const ColorModeSwitch = ({ ...rest }) => {
         <IconButton
             variant='ghost'
             color='current'
-            ml='2'
+            // ml='2'
             fontSize='20px'
             aria-label={`Switch to ${
                 colorMode === 'light' ? 'dark' : 'light'
