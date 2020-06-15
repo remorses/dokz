@@ -3,8 +3,8 @@ import {
 Button, Footer,
     // Hero,
     Heading, HowItWorks, LandingProvider, NavBar, PageContainer, Section, Subheading, TestimonialsTweets
-} from 'landing-blocks'
-import { GradientCurtains } from 'landing-blocks/dist/decorations'
+} from 'landing-blocks/src'
+import { GradientCurtains } from 'landing-blocks/src/decorations'
 import React from 'react'
 import { Logo } from '../components/Logo'
 import isometric_check_icon from '../public/isometric_check_icon.png'
@@ -13,7 +13,7 @@ import isometric_text_icon from '../public/isometric_text_icon.png'
 
 const Page = () => (
     <LandingProvider bg='gray.800' primary='#3884FF' dark>
-        <Stack spacing='40px'>
+        <Stack align='stretch' spacing='40px'>
             <NavBar
                 logo={<Box as={Logo} width='30px' />}
                 navs={[

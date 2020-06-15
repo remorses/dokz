@@ -1,6 +1,6 @@
 import { ThemeProvider } from '@chakra-ui/core'
 import { ColorModeSwitch, DokzProvider, GithubLink } from 'dokz/src'
-import { LandingProvider } from 'landing-blocks'
+import { LandingProvider } from 'landing-blocks/src'
 import 'mini-graphiql/dist/style.css'
 import React, { Fragment } from 'react'
 import { Logo } from '../components/Logo'
