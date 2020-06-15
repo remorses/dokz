@@ -34,7 +34,7 @@ export const Playground = ({
     scope,
     iframe = false,
     previewEnabled = true,
-    ...props
+    ...rest
 }) => {
     let { prismTheme } = useDokzConfig()
     const [editorCode, setEditorCode] = useState(code)
@@ -54,7 +54,7 @@ export const Playground = ({
         // transformCode: (code) => '/** @jsx mdx */' + code,
         scope: { ...scope, mdx },
         // noInline: true,
-        ...props,
+        // ...props,
     }
 
     const handleCodeChange = useCallback(
@@ -111,50 +111,57 @@ export const Playground = ({
         />
     )
     return (
-        <Resizable
-            {...resizableProps}
-            handleComponent={{ right: <HandleComponent height='100%' /> }}
-        >
-            <LiveProvider {...(liveProviderProps as any)}>
-                <Stack
-                    w='100%'
-                    maxWidth='100%'
-                    borderWidth='1px'
-                    // borderColor='inherit'
-                    borderRadius='8px'
-                    overflow='hidden'
-                    height='auto'
-                    shadow='lg'
-                    spacing='0px'
-                    isInline
-                >
-                    <Stack maxWidth='100%' height='100%' spacing='0px' flex='1'>
-                        {previewEnabled && editorBar}
+        <Box my='20px' {...rest}>
+            <Resizable
+                {...resizableProps}
+                handleComponent={{ right: <HandleComponent height='100%' /> }}
+            >
+                <LiveProvider {...(liveProviderProps as any)}>
+                    <Stack
+                        w='100%'
+                        maxWidth='100%'
+                        borderWidth='1px'
+                        // borderColor='inherit'
+                        borderRadius='8px'
+                        overflow='hidden'
+                        height='auto'
+                        shadow='lg'
+                        spacing='0px'
+                        isInline
+                    >
                         <Stack
+                            maxWidth='100%'
+                            height='100%'
+                            spacing='0px'
                             flex='1'
-                            maxW='100%'
-                            minW='100%'
-                            display={!showCode ? 'block' : 'none'}
                         >
-                            {iframe ? (
-                                <IframeWrapper onMount={forceRender}>
-                                    {livePreview}
-                                </IframeWrapper>
-                            ) : (
-                                livePreview
+                            {previewEnabled && editorBar}
+                            <Stack
+                                flex='1'
+                                maxW='100%'
+                                minW='100%'
+                                display={!showCode ? 'block' : 'none'}
+                            >
+                                {iframe ? (
+                                    <IframeWrapper onMount={forceRender}>
+                                        {livePreview}
+                                    </IframeWrapper>
+                                ) : (
+                                    livePreview
+                                )}
+                            </Stack>
+                            {showCode && (
+                                <LiveEditor
+                                    onChange={handleCodeChange}
+                                    style={liveEditorStyle}
+                                />
                             )}
+                            {<LiveError style={liveErrorStyle} />}
                         </Stack>
-                        {showCode && (
-                            <LiveEditor
-                                onChange={handleCodeChange}
-                                style={liveEditorStyle}
-                            />
-                        )}
-                        {<LiveError style={liveErrorStyle} />}
                     </Stack>
-                </Stack>
-            </LiveProvider>
-        </Resizable>
+                </LiveProvider>
+            </Resizable>
+        </Box>
     )
 }
 
