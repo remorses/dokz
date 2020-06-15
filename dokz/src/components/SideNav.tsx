@@ -175,7 +175,7 @@ const NavTreeComponent = ({
             <Stack spacing='0px'>
                 <Box my='0.2em'>
                     {!hideDivider && <Divider />}
-                    <Box py='1.4em' fontWeight='semibold'>
+                    <Box py='0.2em' pt='1.4em' my='0.2em' fontWeight='semibold'>
                         {formattedTitle}
                     </Box>
                 </Box>
