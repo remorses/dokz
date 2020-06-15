@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - master
-    paths:
-      - dokz/**
+    # paths:
+    #   - dokz/**
 
 jobs:
   build:
