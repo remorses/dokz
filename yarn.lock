@@ -7224,17 +7224,17 @@ klaw@^1.0.0:
   optionalDependencies:
     graceful-fs "^4.1.9"
 
-landing-blocks@^1.0.45:
-  version "1.0.45"
-  resolved "https://registry.yarnpkg.com/landing-blocks/-/landing-blocks-1.0.45.tgz#900440eefc70712ef82884d3f174f521943f638a"
-  integrity sha512-iC26rmHF9QJ4E0h5mXRi0TnQNEdI0TeS5yCx1dFKA1ClK11FTVZBJKWqDycOV0ucS3UvuNWI3GTa3TGVwd8whQ==
+landing-blocks@latest:
+  version "1.0.49"
+  resolved "https://registry.yarnpkg.com/landing-blocks/-/landing-blocks-1.0.49.tgz#b3719c1417ce58449030cf0bb11da1b090e935b1"
+  integrity sha512-e/sRUbCGCSVcNSR7JIEnSbm3DiFKgf+Qqfn0J+FNMHzcecVVRfG5BDfLyz6z9tqPmsD0U6NdtDNMC95MtPexDA==
   dependencies:
     "@emotion/styled" "^10.0.27"
     baby-i-am-faded "^0.0.12"
     color-js "^1.0.5"
     emotion-theming "^10.0.27"
     intersection-observer "^0.7.0"
-    layout-kit-react "^0.1.7"
+    layout-kit-react "^0.1.8"
     lodash.get "^4.4.2"
     lodash.merge "^4.6.2"
     prism-react-renderer "^1.1.0"
@@ -7245,7 +7245,7 @@ landing-blocks@^1.0.45:
     react-typist "^2.0.5"
     utility-types "^3.10.0"
 
-layout-kit-react@^0.1.7:
+layout-kit-react@^0.1.8:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/layout-kit-react/-/layout-kit-react-0.1.8.tgz#04853f3629a3d53f437edaec8a065fca197dad3b"
   integrity sha512-EobfXeaWyrichpmC/JFL2kn3fc8yZWpUDgchfxoKUxxsUBVmaBcgA2XBYcpozcK5nhDQ1smMPggjSXKc/p/lfg==
