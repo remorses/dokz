@@ -103,7 +103,7 @@ const DocsHeading = (props) => {
 
 const MdxText = (props) => {
     const { colorMode } = useColorMode()
-    return <Text as='p' my='10px' lineHeight='1.8em' {...props} />
+    return <Box as='p' my='10px' lineHeight='1.8em' {...props} />
 }
 const MDXComponents = {
     wrapper: Wrapper,

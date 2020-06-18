@@ -68,6 +68,10 @@ export type DokzProviderProps = {
     The order of the sidebar links
     */
     sidebarOrdering?: SidebarOrdering
+    /*
+    The font family
+    */
+    fontFamily?: string
 }
 
 export type SidebarOrdering = { [k: string]: SidebarOrdering } | boolean
@@ -95,6 +99,8 @@ const defaultDokzContext: DokzProviderProps = {
     maxPageWidth: '1600px',
     bodyColor: { light: '#222', dark: 'rgba(255,255,255,.9)' },
     headingColor: { light: '#111', dark: 'rgba(255,255,255,1)' },
+    fontFamily:
+        `-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`,
 }
 
 const DokzContext = createContext(defaultDokzContext)

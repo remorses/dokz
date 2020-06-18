@@ -33,7 +33,6 @@ const globalStyles = css`
     }
     #__next {
         min-height: 100%;
-        height: 100%;
     }
     body {
         height: 100%;
@@ -63,6 +62,7 @@ export function Wrapper(props) {
         maxPageWidth,
         bodyColor,
         fontSize,
+        fontFamily,
     } = useDokzConfig()
     const index = getMdxIndex()
     const { colorMode } = useColorMode()
@@ -74,8 +74,8 @@ export function Wrapper(props) {
                 align='center'
                 color={bodyColor[colorMode]}
                 fontSize={fontSize}
-                fontWeight='normal'
-                // fontFamily='Roboto, Arial'
+                fontFamily={fontFamily}
+                fontWeight='500'
                 // color={colorMode == 'dark' ? 'white' : black}
             >
                 <Box position='relative' w='100%' maxWidth={maxPageWidth}>
@@ -96,6 +96,7 @@ export function Wrapper(props) {
                         alignSelf='flex-start'
                         position='fixed'
                         top={NAVBAR_H}
+                        fontSize='0.9em'
                         // left={0}
                         tree={index}
                         height='100%'
@@ -115,11 +116,15 @@ export function Wrapper(props) {
                             px={['10px', null, '20px', '30px']}
                             flex='1'
                             minW='0'
+                            borderRightWidth='1px'
+                            borderLeftWidth='1px'
                         >
                             {props.children}
                             {footer}
                         </Stack>
                         <TableOfContents
+                            fontSize='0.9em'
+                            // fontWeight='400'
                             position='sticky'
                             alignSelf='flex-start'
                             top={NAVBAR_H}
@@ -128,7 +133,8 @@ export function Wrapper(props) {
                             ml='auto'
                             height='auto'
                             display={['none', null, null, null, 'block']}
-                            pt='40px'
+                            pt='20px'
+                            opacity={0.8}
                             table={tableOfContents}
                         />
                     </Stack>

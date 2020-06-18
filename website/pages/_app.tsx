@@ -19,7 +19,7 @@ export default function App(props) {
             </Head>
             <ThemeProvider>
                 <LandingProvider
-                    fontFamily='Roboto, Arial'
+                    // fontFamily='Roboto, Arial'
                     black='#222'
                     primary='#2D7FF9'
                 >

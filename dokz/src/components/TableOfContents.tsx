@@ -19,10 +19,8 @@ export function TableOfContents({
             // minH='1.6em'
             // lineHeight='2.2em'
             // fontWeight='medium'
-            fontSize='0.8em'
-            borderLeftWidth='1px'
+            // borderLeftWidth='1px'
             pl='20px'
-            opacity={0.8}
             {...rest}
         >
             <Box fontWeight='semibold'>ON THIS PAGE</Box>

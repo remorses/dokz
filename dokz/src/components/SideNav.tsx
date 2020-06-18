@@ -50,8 +50,7 @@ export const SideNav = ({ tree, ...rest }: SideNavProps) => {
 
     return (
         <Box
-            fontSize='0.9em'
-            borderRightWidth='1px'
+            // borderRightWidth='1px'
             minWidth='240px'
             height='auto'
             {...rest}
@@ -175,7 +174,7 @@ const NavTreeComponent = ({
             <Stack spacing='0px'>
                 <Box my='0.2em'>
                     {!hideDivider && <Divider />}
-                    <Box py='0.2em' pt='1.4em' my='0.2em' fontWeight='semibold'>
+                    <Box py='0.2em' pt='1.4em' my='0.2em' fontSize='1.1em' fontWeight='semibold'>
                         {formattedTitle}
                     </Box>
                 </Box>
@@ -185,7 +184,7 @@ const NavTreeComponent = ({
     }
     return (
         <Stack spacing='0px'>
-            <ComponentLink py='0.2em' my='0.2em' href={url} isTruncated>
+            <ComponentLink opacity={0.8} py='0.2em' my='0.2em' href={url} isTruncated>
                 {formattedTitle}
             </ComponentLink>
             {subTree}
