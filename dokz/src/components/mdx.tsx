@@ -18,7 +18,8 @@ import { Code } from './Code'
 import { Wrapper } from './Wrapper'
 import { Link } from './Link'
 import { useDokzConfig } from '../provider'
-import { Fragment } from 'react'
+import { Fragment, Children, cloneElement, isValidElement } from 'react'
+import { clone } from 'lodash'
 
 const Pre = (props) => <Box as='pre' rounded='sm' {...props} />
 
@@ -161,20 +162,61 @@ const MDXComponents = {
     p: (props) => {
         return <MdxText as='p' {...props} />
     },
-    ul: (props) => <Box as='ul' {...props} />,
-    ol: (props) => <Box as='ol' pl='1em' {...props} />,
-    li: (props) => {
-        const { listItemIcon } = useDokzConfig()
+    ul: ({ children, isOdd, ...props }) => {
         return (
-            <Box my='1em'>
-                {/* TODO use primary color to add some more style */}
+            <Box as='ul' pl='1em' {...props}>
+                {Children.map(children, (child) => {
+                    return cloneElement(child, { isOdd: !isOdd })
+                })}
+            </Box>
+        )
+    },
+    ol: ({ children, isOdd, ...props }) => {
+        return (
+            <Box as='ol' pl='1em' {...props}>
+                {Children.map(children, (child, number) => {
+                    return cloneElement(child, {
+                        isOdd: !isOdd,
+                        number: number + 1,
+                    })
+                })}
+            </Box>
+        )
+    },
+    li: ({ isOdd, number, children, ...props }) => {
+        const { listItemIcon, listItemIconEmpty } = useDokzConfig()
+        const listIcon =
+            number !== undefined ? (
                 <Box
                     mr='1em'
                     display='inline-block'
                     size='1.1em'
-                    as={listItemIcon}
+                    fontWeight='semibold'
+                >
+                    {number}.
+                </Box>
+            ) : (
+                <Box
+                    mr='1em'
+                    display='inline-block'
+                    size='1.1em'
+                    as={isOdd ? listItemIcon : listItemIconEmpty}
                 />
-                <Box display='inline' as='li' {...props} />
+            )
+        return (
+            <Box mt='1em'>
+                {/* TODO use primary color to add some more style */}
+                {listIcon}
+                <Box display='inline' as='li' {...props}>
+                    {Children.map(children, (child) => {
+                        if (isValidElement(child)) {
+                            return cloneElement<any>(child, {
+                                isOdd,
+                            })
+                        }
+                        return child
+                    })}
+                </Box>
             </Box>
         )
     },
