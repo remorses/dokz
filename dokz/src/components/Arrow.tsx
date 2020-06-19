@@ -21,7 +21,7 @@ export const ArrowEmpty = (props) => {
             style={{
                 display: 'inline-block',
                 verticalAlign: 'middle',
-                padding: '1px',
+                padding: '2px',
             }}
             {...props}
         >

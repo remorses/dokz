@@ -42,6 +42,12 @@ const globalStyles = css`
         -moz-osx-font-smoothing: grayscale;
         text-rendering: optimizeLegibility;
     }
+    ul.dokz {
+        list-style-type: none;
+    }
+    /* ol {
+        list-style-type: none;
+    } */
 `
 
 export function PropagatedThemeProvider({ theme, children }) {

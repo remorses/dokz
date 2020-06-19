@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/core'
 import { jsx } from '@emotion/core'
 import NextLink from 'next/link'
-import { Code,  } from './Code'
+import { Code } from './Code'
 import { Wrapper } from './Wrapper'
 import { Link } from './Link'
 import { useDokzConfig } from '../provider'
@@ -166,7 +166,7 @@ const MDXComponents = {
     },
     ul: ({ children, isOdd, ...props }) => {
         return (
-            <Box as='ul' pl='1em' {...props}>
+            <Box className='dokz' as='ul' pl='1em' {...props}>
                 {Children.map(children, (child) => {
                     return cloneElement(child, { isOdd: !isOdd })
                 })}
@@ -175,7 +175,7 @@ const MDXComponents = {
     },
     ol: ({ children, isOdd, ...props }) => {
         return (
-            <Box as='ol' pl='1em' {...props}>
+            <Box className='dokz' as='ol' pl='2em' {...props}>
                 {Children.map(children, (child, number) => {
                     return cloneElement(child, {
                         isOdd: !isOdd,
@@ -189,14 +189,7 @@ const MDXComponents = {
         const { listItemIcon, listItemIconEmpty } = useDokzConfig()
         const listIcon =
             number !== undefined ? (
-                <Box
-                    mr='1em'
-                    display='inline-block'
-                    size='1.1em'
-                    fontWeight='semibold'
-                >
-                    {number}.
-                </Box>
+                <Box display='inline-block' mr='0.4em' />
             ) : (
                 <Box
                     mr='1em'
@@ -206,10 +199,10 @@ const MDXComponents = {
                 />
             )
         return (
-            <Box mt='1em'>
+            <Box mr='1em' as='li' my='0.8em'>
                 {/* TODO use primary color to add some more style */}
                 {listIcon}
-                <Box display='inline' as='li' {...props}>
+                <Box as='p' display='inline' {...props}>
                     {Children.map(children, (child) => {
                         if (isValidElement(child)) {
                             return cloneElement<any>(child, {
