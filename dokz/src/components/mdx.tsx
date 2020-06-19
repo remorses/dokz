@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/core'
 import { jsx } from '@emotion/core'
 import NextLink from 'next/link'
-import { Code } from './Code'
+import { Code, CODE_FONT } from './Code'
 import { Wrapper } from './Wrapper'
 import { Link } from './Link'
 import { useDokzConfig } from '../provider'
@@ -106,6 +106,7 @@ const MdxText = (props) => {
     const { colorMode } = useColorMode()
     return <Box as='p' my='10px' lineHeight='1.8em' {...props} />
 }
+
 const MDXComponents = {
     wrapper: Wrapper,
     h1: (props) => <DocsHeading as='h1' fontSize='2em' {...props} />,
@@ -130,7 +131,7 @@ const MDXComponents = {
             <Box
                 as='code'
                 display='inline-block'
-                fontFamily='mono'
+                fontFamily={CODE_FONT}
                 fontSize='0.9em'
                 px='0.2em'
                 rounded='sm'

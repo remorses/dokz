@@ -4,7 +4,7 @@ import React, { useEffect } from 'react'
 import { FiCheck, FiCopy } from 'react-icons/fi'
 import { useDokzConfig } from '../provider'
 
-export const CODE_FONT = `'Fira Code',SFMono-Regular,Menlo,Monaco,"Liberation Mono","Courier New",monospace`
+export const CODE_FONT = `'Fira Code',SFMono-Regular,Menlo,Monaco,"Liberation Mono","Courier New",monospace,mono`
 
 export const Code = ({ children, className, ...rest }) => {
     // console.log({rest, live})
