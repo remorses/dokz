@@ -179,25 +179,24 @@ const MDXComponents = {
                 {Children.map(children, (child, number) => {
                     return cloneElement(child, {
                         isOdd: !isOdd,
-                        number: number + 1,
+                        isOrdered: true,
                     })
                 })}
             </Box>
         )
     },
-    li: ({ isOdd, number, children, ...props }) => {
+    li: ({ isOdd, isOrdered, children, ...props }) => {
         const { listItemIcon, listItemIconEmpty } = useDokzConfig()
-        const listIcon =
-            number !== undefined ? (
-                <Box display='inline-block' mr='0.4em' />
-            ) : (
-                <Box
-                    mr='1em'
-                    display='inline-block'
-                    size='1.1em'
-                    as={isOdd ? listItemIcon : listItemIconEmpty}
-                />
-            )
+        const listIcon = isOrdered ? (
+            <Box display='inline-block' mr='0.4em' />
+        ) : (
+            <Box
+                mr='1em'
+                display='inline-block'
+                size='1.1em'
+                as={isOdd ? listItemIcon : listItemIconEmpty}
+            />
+        )
         return (
             <Box mr='1em' as='li' my='0.8em'>
                 {/* TODO use primary color to add some more style */}
