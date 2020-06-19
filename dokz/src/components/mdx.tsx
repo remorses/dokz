@@ -14,12 +14,13 @@ import {
 } from '@chakra-ui/core'
 import { jsx } from '@emotion/core'
 import NextLink from 'next/link'
-import { Code, CODE_FONT } from './Code'
+import { Code,  } from './Code'
 import { Wrapper } from './Wrapper'
 import { Link } from './Link'
 import { useDokzConfig } from '../provider'
 import { Fragment, Children, cloneElement, isValidElement } from 'react'
 import { clone } from 'lodash'
+import { CODE_FONT } from './support'
 
 const Pre = (props) => <Box as='pre' rounded='sm' {...props} />
 

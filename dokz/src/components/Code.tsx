@@ -3,8 +3,7 @@ import Highlight, { defaultProps } from 'prism-react-renderer'
 import React, { useEffect } from 'react'
 import { FiCheck, FiCopy } from 'react-icons/fi'
 import { useDokzConfig } from '../provider'
-
-export const CODE_FONT = `'Fira Code',SFMono-Regular,Menlo,Monaco,"Liberation Mono","Courier New",monospace,mono`
+import { CODE_FONT } from './support'
 
 export const Code = ({ children, className, ...rest }) => {
     // console.log({rest, live})

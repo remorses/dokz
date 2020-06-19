@@ -24,8 +24,9 @@ import {
     LiveProviderProps,
 } from 'react-live'
 import { useDokzConfig } from '../provider'
-import { CopyButton, CODE_FONT } from './Code'
+import { CopyButton,  } from './Code'
 import { mdx } from '@mdx-js/react'
+import { CODE_FONT } from './support'
 
 export const Playground = ({
     className,
