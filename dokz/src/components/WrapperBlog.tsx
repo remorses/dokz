@@ -67,7 +67,7 @@ export function WrapperBlog(props) {
                         right={0}
                     />
                     {/* TODO add social links */}
-                    <Box height={['40px', null, '100px']} />
+                    <Box height={['40px', null, '40px']} />
                     <Flex direction='column' maxW='800px'>
                         <Stack spacing='6' align='center'>
                             <Box
