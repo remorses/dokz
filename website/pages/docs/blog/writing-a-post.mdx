@@ -1,0 +1,31 @@
+# Writing a post
+
+You can write MDX exactly the same way you do with documentation
+
+There are also additional options you should pass that are `title` and `date`:
+
+```md
+export const title = 'My first blog post'
+
+export const date = '24 June, 2020'
+
+Blog post content...
+```
+
+> Notice the space between the exports, MDX parse seems to have a bug with exports that have not at least 1 line of space between them
+
+## Adding SEO
+
+You can use the package `next-seo` to easily add SEO tags to any nextjs page
+
+```jsx
+import { NextSeo } from 'next-seo'
+
+export const title = 'My first blog post'
+
+export const date = '24 June, 2020'
+
+<NextSeo title={title} description='A short description goes here.' />
+
+My content...
+```

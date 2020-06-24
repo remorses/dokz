@@ -20,7 +20,9 @@ export default function App(props) {
     }
     if (pathname.startsWith('/blog')) {
         return (
-            <DokzBlogProvider>
+            <DokzBlogProvider
+                headerLogo={<Logo height='30px' opacity={0.92} />}
+            >
                 <Component {...pageProps} />
             </DokzBlogProvider>
         )
