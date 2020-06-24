@@ -1,13 +1,30 @@
 import { ThemeProvider } from '@chakra-ui/core'
-import { ColorModeSwitch, DokzProvider, GithubLink } from 'dokz/src'
+import {
+    ColorModeSwitch,
+    DokzProvider,
+    GithubLink,
+    DokzBlogProvider,
+} from 'dokz/src'
 import { LandingProvider } from 'landing-blocks/src'
 import 'mini-graphiql/dist/style.css'
 import React, { Fragment } from 'react'
 import { Logo } from '../components/Logo'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 
 export default function App(props) {
     const { Component, pageProps } = props
+    const { pathname } = useRouter()
+    if (!pathname) {
+        throw new Error('pathname undefined')
+    }
+    if (pathname.startsWith('/blog')) {
+        return (
+            <DokzBlogProvider>
+                <Component {...pageProps} />
+            </DokzBlogProvider>
+        )
+    }
     return (
         <Fragment>
             <Head>

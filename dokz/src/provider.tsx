@@ -88,7 +88,7 @@ const defaultDarkPrismTheme = {
     },
 }
 
-const defaultDokzContext: DokzProviderProps = {
+export const defaultDokzContext: DokzProviderProps = {
     initialColorMode: 'light',
     footer: <Box height='100px' />,
     headerLogo: (

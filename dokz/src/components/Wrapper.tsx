@@ -3,12 +3,12 @@ import {
     Box,
     ColorModeProvider,
     CSSReset,
-    Stack,
     ThemeProvider,
     useColorMode,
     useTheme,
     theme,
 } from '@chakra-ui/core'
+import { Stack, Flex } from 'layout-kit-react'
 import merge from 'lodash/fp/merge'
 import { jsx } from '@emotion/core'
 import { useDokzConfig } from '../provider'
@@ -17,47 +17,12 @@ import { SideNav } from './SideNav'
 import { Global, css } from '@emotion/core'
 import { TableOfContents } from './TableOfContents'
 import { Fragment, useMemo } from 'react'
+import { globalStyles, getMdxSidebarTree } from './support'
 
 const SIDENAV_W = 280
 const TABLE_OF_C_W = 200
 
 const NAVBAR_H = 62
-
-const globalStyles = css`
-    * {
-        box-sizing: border-box;
-    }
-    html {
-        overflow: hidden;
-        height: 100%;
-    }
-    #__next {
-        min-height: 100%;
-    }
-    body {
-        height: 100%;
-        overflow: auto;
-        scroll-behavior: smooth;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-rendering: optimizeLegibility;
-    }
-    ul.dokz {
-        list-style-type: none;
-    }
-    /* ol {
-        list-style-type: none;
-    } */
-`
-
-export function PropagatedThemeProvider({ theme, children }) {
-    const existingTheme = useTheme()
-    // console.log({ existingTheme: existingTheme.sizes })
-    const merged = useMemo(() => {
-        return merge(existingTheme, theme)
-    }, [theme, existingTheme])
-    return <ThemeProvider theme={merged}>{children}</ThemeProvider>
-}
 
 export function Wrapper(props) {
     const { tableOfContents } = props.meta || {}
@@ -70,7 +35,7 @@ export function Wrapper(props) {
         fontSize,
         fontFamily,
     } = useDokzConfig()
-    const index = getMdxIndex()
+    const index = getMdxSidebarTree()
     const { colorMode } = useColorMode()
     return (
         <PropagatedThemeProvider theme={theme}>
@@ -112,14 +77,18 @@ export function Wrapper(props) {
                         overflowX='hidden'
                     />
                     <Stack
-                        isInline
+                        direction='row'
+                        align='stretch'
                         ml={['none', null, SIDENAV_W]}
                         // mr={['none', null, TABLE_OF_C_W + 30 + 'px']}
                         mt={[NAVBAR_H + 'px']}
                     >
-                        <Stack
+                        <Flex
+                            direction='column'
+                            align='stretch'
                             overflow='auto'
                             px={['10px', null, '20px', '30px']}
+                            // spacing='10px'
                             flex='1'
                             minW='0'
                             borderRightWidth='1px'
@@ -127,7 +96,7 @@ export function Wrapper(props) {
                         >
                             {props.children}
                             {footer}
-                        </Stack>
+                        </Flex>
                         <TableOfContents
                             fontSize='0.9em'
                             // fontWeight='400'
@@ -150,12 +119,11 @@ export function Wrapper(props) {
     )
 }
 
-function getMdxIndex() {
-    try {
-        return require('nextjs_root_folder_/sidebar.json')
-    } catch {
-        return {
-            children: [],
-        }
-    }
+export function PropagatedThemeProvider({ theme, children }) {
+    const existingTheme = useTheme()
+    // console.log({ existingTheme: existingTheme.sizes })
+    const merged = useMemo(() => {
+        return merge(existingTheme, theme)
+    }, [theme, existingTheme])
+    return <ThemeProvider theme={merged}>{children}</ThemeProvider>
 }

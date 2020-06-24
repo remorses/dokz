@@ -84,6 +84,7 @@
         "hast-util-to-string": "^1.0.3",
         "js-string-escape": "^1.0.1",
         "jsx-ast-utils": "^2.3.0",
+        "layout-kit-react": "^0.1.8",
         "lodash": "^4.17.15",
         "mdast": "^3.0.0",
         "mdast-util-to-string": "^1.1.0",

@@ -53,7 +53,7 @@ export const ColorModeSwitch = ({ ...rest }) => {
     )
 }
 
-const NavBar = ({ logo, tree, items: navs, ...props }) => {
+const NavBar = ({ logo, tree = null as any, items: navs, ...props }) => {
     const { colorMode, toggleColorMode } = useColorMode()
     const bg = { light: 'white', dark: 'gray.800' }
     const { maxPageWidth } = useDokzConfig()
@@ -73,7 +73,7 @@ const NavBar = ({ logo, tree, items: navs, ...props }) => {
                 // height='60px'
                 justify='center'
             >
-                <Flex size='100%' px='6' align='center' justify='space-between'>
+                <Flex size='100%' px='2' align='center' justify='space-between'>
                     <Flex align='center' mr={5}>
                         {logo}
                     </Flex>
@@ -101,7 +101,7 @@ const NavBar = ({ logo, tree, items: navs, ...props }) => {
                         ) : (
                             navs
                         )}
-                        <MobileNav tree={tree} />
+                        {tree && <MobileNav tree={tree} />}
                     </Flex>
                 </Flex>
             </Stack>

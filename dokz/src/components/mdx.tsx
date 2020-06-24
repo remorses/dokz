@@ -65,7 +65,8 @@ const DocsHeading = (props) => {
             fontWeight='semibold'
             // color='black'
             color={headingColor[colorMode]}
-            my='40px'
+            mt='40px'
+            mb='10px'
             css={{
                 '&[id]': {
                     pointerEvents: 'none',

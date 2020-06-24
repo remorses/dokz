@@ -12,24 +12,6 @@ import { shouldUseYarn } from './helpers/should-use-yarn'
 const TEMPLATE_FOLDER = `example`
 const TEMPLATE_REPO = `remorses/dokz`
 
-function install({ useYarn }) {
-    return new Promise((resolve, reject) => {
-        let child
-        if (useYarn) {
-            child = spawn('yarn', [], { stdio: 'inherit' })
-        } else {
-            child = spawn('npm', ['i'], { stdio: 'inherit' })
-        }
-        child.on('close', (code) => {
-            if (code !== 0) {
-                reject('cannot install')
-                return
-            }
-            resolve()
-        })
-    })
-}
-
 export async function createApp({
     appPath,
     useNpm,

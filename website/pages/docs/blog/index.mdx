@@ -1,0 +1,51 @@
+---
+name: Adding a blog
+---
+
+# Adding a blog (experimental)
+
+Many documentation websites nowadays have a blog, it's an awesome way to announce new features and new releases in an official way
+
+You can view a demo of how it looks [here](/blog)
+
+## Enabling the Blog for a site subpath
+
+Dokz have a built in blog feature that can be enabled for a sub path of your website:
+
+```jsx
+import { DokzProvider, DokzBlogProvider } from 'dokz'
+import { useRouter } from 'next/router'
+
+export default function App(props) {
+    const { Component, pageProps } = props
+    const { pathname } = useRouter()
+    if (pathname.startsWith('/blog')) {
+        return (
+            <DokzBlogProvider>
+                <Component {...pageProps} />
+            </DokzBlogProvider>
+        )
+    }
+    if (pathname.startsWith('/docs')) {
+        return (
+            <DokzProvider>
+                <Component {...pageProps} />
+            </DokzProvider>
+        )
+    }
+    return <Component {...pageProps} />
+}
+```
+
+## Customization
+
+The customization you can do to the blog are similar to what you can do to the docs site
+
+For example you can pass the following props to `DokzBlogProvider`:
+
+-   headerLogo
+-   headerItems
+-   footer
+-   prismTheme
+-   initialColorMode
+-   fontFamily
