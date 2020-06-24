@@ -5,7 +5,7 @@ import {
     GithubLink,
     DokzBlogProvider,
 } from 'dokz/src'
-import { LandingProvider } from 'landing-blocks/src'
+import { LandingProvider, Link } from 'landing-blocks/src'
 import 'mini-graphiql/dist/style.css'
 import React, { Fragment } from 'react'
 import { Logo } from '../components/Logo'
@@ -22,6 +22,11 @@ export default function App(props) {
         return (
             <DokzBlogProvider
                 headerLogo={<Logo height='30px' opacity={0.92} />}
+                headerItems={[
+                    <Link href='https://github.com/remorses/dokz'>Dokz</Link>,
+
+                    <ColorModeSwitch key={1} />,
+                ]}
             >
                 <Component {...pageProps} />
             </DokzBlogProvider>
