@@ -9,11 +9,6 @@ import { getMdxSidebarTree, globalStyles } from './support'
 import { TableOfContents } from './TableOfContents'
 import { PropagatedThemeProvider } from './Wrapper'
 
-const SIDENAV_W = 280
-const TABLE_OF_C_W = 200
-
-const NAVBAR_H = 62
-
 export function WrapperBlog(props) {
     const {
         title = 'Add a title to this blog post exporting a variable called `title`',
@@ -68,7 +63,7 @@ export function WrapperBlog(props) {
                     />
                     {/* TODO add social links */}
                     <Box height={['40px', null, '40px']} />
-                    <Flex direction='column' maxW='800px'>
+                    <Flex direction='column' width='100%' maxW='800px'>
                         <Stack spacing='6' align='center'>
                             <Box
                                 fontWeight='600'
