@@ -83,7 +83,7 @@ export function WrapperBlog(props) {
                                 // fontWeight='400'
                             >
                                 <Box size='0.8em' as={DateIcon} />
-                                <Box>{date}</Box>
+                                <Box fontWeight='500'>{date}</Box>
                             </Stack>
                         </Stack>
                         <Box height={['40px', null, '40px']} />
