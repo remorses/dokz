@@ -156,7 +156,7 @@ const MDXComponents = {
     ),
     pre: Pre,
     kbd: Kbd,
-    br: (props) => <Box height='24px' {...props} />,
+    // br: (props) => <Box {...props} />,
     hr: (props) => <Divider my='60px' {...props} />,
     table: Table,
     th: THead,

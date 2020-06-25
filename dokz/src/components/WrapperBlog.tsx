@@ -67,6 +67,7 @@ export function WrapperBlog(props) {
                     <Flex direction='column' width='100%' maxW='800px'>
                         <Stack spacing='6' align='center'>
                             <Box
+                                as='h1'
                                 fontWeight='600'
                                 textAlign='center'
                                 lineHeight='1.2em'

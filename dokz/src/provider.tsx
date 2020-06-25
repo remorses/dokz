@@ -109,6 +109,8 @@ export const defaultDokzContext: DokzProviderProps = {
     headingColor: { light: '#111', dark: 'rgba(255,255,255,1)' },
     fontSize: ['16px', null, null, '18px'],
     fontFamily: `-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`,
+    // fontFamily:
+    //     '-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji',
     fontWeight: '400',
 }
 
