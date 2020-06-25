@@ -33,6 +33,7 @@ export function Wrapper(props) {
         maxPageWidth,
         bodyColor,
         fontSize,
+        fontWeight,
         fontFamily,
     } = useDokzConfig()
     const index = getMdxSidebarTree()
@@ -46,7 +47,7 @@ export function Wrapper(props) {
                 color={bodyColor[colorMode]}
                 fontSize={fontSize}
                 fontFamily={fontFamily}
-                fontWeight='500'
+                fontWeight={fontWeight}
                 // color={colorMode == 'dark' ? 'white' : black}
             >
                 <Box position='relative' w='100%' maxWidth={maxPageWidth}>
@@ -68,6 +69,7 @@ export function Wrapper(props) {
                         position='fixed'
                         top={NAVBAR_H}
                         fontSize='0.9em'
+                        // fontWeight='500'
                         // left={0}
                         tree={index}
                         height='100%'

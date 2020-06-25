@@ -22,6 +22,7 @@ export function WrapperBlog(props) {
         bodyColor,
         fontSize,
         fontFamily,
+        fontWeight,
     } = useDokzBlogConfig()
     // const index = getMdxSidebarTree()
     const { colorMode } = useColorMode()
@@ -34,7 +35,7 @@ export function WrapperBlog(props) {
                 color={bodyColor[colorMode]}
                 fontSize={fontSize}
                 fontFamily={fontFamily}
-                fontWeight='500'
+                fontWeight={fontWeight}
                 // color={colorMode == 'dark' ? 'white' : black}
             >
                 <Flex

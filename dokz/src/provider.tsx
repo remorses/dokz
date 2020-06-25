@@ -21,9 +21,13 @@ export type DokzProviderProps = {
     */
     headerLogo?: ReactNode
     /*
-    The logo displayed on the header nav bar
+    The page fontSize
     */
     fontSize?: string | string[]
+    /*
+    The page fontWeight, defaults to 400
+    */
+    fontWeight?: string
     /*
     The root folder of your docs documents, hides the outer folders from the sidenav
     */
@@ -98,14 +102,14 @@ export const defaultDokzContext: DokzProviderProps = {
     ),
     listItemIcon: Arrow,
     listItemIconEmpty: ArrowEmpty,
-    fontSize: ['16px', null, null, '18px'],
     headerItems: [<ColorModeSwitch key={0} />],
     prismTheme: { dark: defaultDarkPrismTheme, light: darkPrismTheme },
     maxPageWidth: '1600px',
     bodyColor: { light: '#222', dark: 'rgba(255,255,255,.9)' },
     headingColor: { light: '#111', dark: 'rgba(255,255,255,1)' },
-    fontFamily:
-        `-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`,
+    fontSize: ['16px', null, null, '18px'],
+    fontFamily: `-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`,
+    fontWeight: '400',
 }
 
 const DokzContext = createContext(defaultDokzContext)
