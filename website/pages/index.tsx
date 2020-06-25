@@ -1,8 +1,16 @@
 import { Box, Image, Stack } from '@chakra-ui/core'
 import {
-Button, Footer,
+    Button,
+    Footer,
     // Hero,
-    Heading, HowItWorks, LandingProvider, NavBar, PageContainer, Section, Subheading, TestimonialsTweets
+    Heading,
+    HowItWorks,
+    LandingProvider,
+    NavBar,
+    PageContainer,
+    Section,
+    Subheading,
+    TestimonialsTweets,
 } from 'landing-blocks/src'
 import { GradientCurtains } from 'landing-blocks/src/decorations'
 import React from 'react'
@@ -165,7 +173,15 @@ const Hero = (props) => {
                 <CtaButton />
                 <br />
                 <br />
-                <Image maxW='900px' w='100%' minW='300px' src='/screen.png' />
+                <Image
+                    borderRadius='lg'
+                    overflow='hidden'
+                    maxW='900px'
+                    w='100%'
+                    minW='300px'
+                    shadow='xl'
+                    src='/screen.jpg'
+                />
             </Stack>
         </PageContainer>
     )
