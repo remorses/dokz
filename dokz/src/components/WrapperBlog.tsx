@@ -8,12 +8,50 @@ import { SideNav } from './SideNav'
 import { getMdxSidebarTree, globalStyles } from './support'
 import { TableOfContents } from './TableOfContents'
 import { PropagatedThemeProvider } from './Wrapper'
+import { DateIcon } from './icons'
 
 export function WrapperBlog(props) {
     const {
-        title = 'Add a title to this blog post exporting a variable called `title`',
-        date = 'Add a date to this blog post exporting a variable called `date`',
-    } = props
+        name: title = 'Add a `name` to the document frontmatter',
+        date = 'Add a `date` to the document frontmatter',
+    } = props.meta || {}
+    const { footer } = useDokzBlogConfig()
+
+    return (
+        <BaseWrapperBlog>
+            {/* TODO add social links */}
+            <Box height={['40px', null, '40px']} />
+            <Flex direction='column' width='100%' maxW='800px'>
+                <Stack spacing='6' align='center'>
+                    <Box
+                        as='h1'
+                        fontWeight='600'
+                        textAlign='center'
+                        lineHeight='1.2em'
+                        fontSize='2.4em'
+                    >
+                        {title}
+                    </Box>
+                    <Stack
+                        align='center'
+                        spacing='2'
+                        direction='row'
+                        opacity={0.5}
+                        // fontWeight='400'
+                    >
+                        <Box size='0.8em' as={DateIcon} />
+                        <Box fontWeight='500'>{date}</Box>
+                    </Stack>
+                </Stack>
+                <Box height={['40px', null, '40px']} />
+                {props.children}
+                {footer}
+            </Flex>
+        </BaseWrapperBlog>
+    )
+}
+
+export const BaseWrapperBlog = ({ children, ...rest }) => {
     const {
         footer,
         headerLogo,
@@ -24,7 +62,6 @@ export function WrapperBlog(props) {
         fontFamily,
         fontWeight,
     } = useDokzBlogConfig()
-    // const index = getMdxSidebarTree()
     const { colorMode } = useColorMode()
     return (
         <PropagatedThemeProvider theme={theme}>
@@ -48,6 +85,7 @@ export function WrapperBlog(props) {
                     // spacing='10px'
                     flex='1'
                     minW='0'
+                    {...rest}
                 >
                     <NavBar
                         logo={headerLogo}
@@ -62,55 +100,9 @@ export function WrapperBlog(props) {
                         left={0}
                         right={0}
                     />
-                    {/* TODO add social links */}
-                    <Box height={['40px', null, '40px']} />
-                    <Flex direction='column' width='100%' maxW='800px'>
-                        <Stack spacing='6' align='center'>
-                            <Box
-                                as='h1'
-                                fontWeight='600'
-                                textAlign='center'
-                                lineHeight='1.2em'
-                                fontSize='2.4em'
-                            >
-                                {title}
-                            </Box>
-                            <Stack
-                                align='center'
-                                spacing='2'
-                                direction='row'
-                                opacity={0.5}
-                                // fontWeight='400'
-                            >
-                                <Box size='0.8em' as={DateIcon} />
-                                <Box fontWeight='500'>{date}</Box>
-                            </Stack>
-                        </Stack>
-                        <Box height={['40px', null, '40px']} />
-                        {props.children}
-                        {footer}
-                    </Flex>
+                    {children}
                 </Flex>
             </Stack>
         </PropagatedThemeProvider>
-    )
-}
-
-const DateIcon = (props) => {
-    return (
-        <svg
-            xmlns='http://www.w3.org/2000/svg'
-            role='img'
-            viewBox='0 0 24 24'
-            fill='none'
-            stroke='currentColor'
-            stroke-width='1.5'
-            {...props}
-        >
-            <g buffered-rendering='static'>
-                <circle cx='12' cy='12' r='10.5' />
-                <path d='M11.998 4.254l.002 7.746M16.569 14.639l-4.571-2.639' />
-            </g>
-        </svg>
     )
 }

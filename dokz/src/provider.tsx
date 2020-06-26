@@ -12,7 +12,7 @@ import { PrismTheme } from 'prism-react-renderer'
 // import lightTheme from 'prism-react-renderer/themes/nightOwlLight'
 import darkPrismTheme from 'prism-react-renderer/themes/oceanicNext'
 import { GithubLink, ColorModeSwitch } from './components/NavBar'
-import { Arrow, ArrowEmpty } from './components/Arrow'
+import { Arrow, ArrowEmpty } from './components/icons'
 
 export type DokzProviderProps = {
     children?: any

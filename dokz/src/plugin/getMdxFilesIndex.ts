@@ -10,37 +10,18 @@ export async function getMdxFilesIndex() {
     const tree = dirTree(
         pagesPath,
         { normalizePath: true, extensions: /\.mdx?/ },
-        (node) => {
+        (node: dirTree.DirectoryTree & { url; meta; title }) => {
             const pathName = node.path
-            // console.log({ pathName })
-
-            // const file = await read(pathName)
             const content = fs.readFileSync(pathName).toString()
-            const frontMatter = getFrontMatter(content)
+            const { attributes = {} as any } = getFrontMatter(content)
             // console.log({ frontMatter: frontMatter.attributes })
-            const { name = '' } = frontMatter.attributes || ({} as any)
-            let relativePath = path
-                .relative(pagesPath, pathName)
-                .replace('.mdx', '')
-                .replace('.md', '')
-                .replace('.jsx', '')
-                .replace('.tsx', '')
-                .replace('.js', '')
-                .replace(/\/index$/, '')
-
-            relativePath = relativePath || '/'
-
+            const { name = '', ...meta } = attributes
+            node.meta = meta || {}
+            node.title = name
+            node.url = formatRelativePath(path.relative(pagesPath, pathName))
             delete node.extension
             delete node.size
             delete node.type
-            // @ts-ignore
-            node.title = name
-            // @ts-ignore
-            node.url = `/${relativePath}`
-            // return {
-            //     title,
-            //     path: `/${relativePath}`,
-            // }
         },
     )
 
@@ -51,6 +32,19 @@ export async function getMdxFilesIndex() {
     }
     // console.log({ tree })
     return tree
+}
+
+function formatRelativePath(path) {
+    let relativePath = path
+        .replace('.mdx', '')
+        .replace('.md', '')
+        .replace('.jsx', '')
+        .replace('.tsx', '')
+        .replace('.js', '')
+        .replace(/\/index$/, '')
+
+    relativePath = relativePath || '/'
+    return '/' + relativePath
 }
 
 async function getPagesPath() {

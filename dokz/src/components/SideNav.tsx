@@ -13,6 +13,7 @@ import React, { useEffect } from 'react'
 import { ComponentLink } from './NavLink'
 import { SidebarOrdering, useDokzConfig } from '../provider'
 import { useStorageState } from 'react-storage-hooks'
+import { formatTitle, findTreeInPath, DirectoryTree } from './support'
 
 const MDX_EXTENSION_REGEX = /\.mdx?/
 
@@ -21,27 +22,12 @@ export type SideNavProps = {
     contentHeight?: string
 } & BoxProps
 
-function findTreeInPath(tree: DirectoryTree, path): DirectoryTree | null {
-    if (!tree?.children?.length) {
-        return null
-    }
-    if (tree.path === path) {
-        return tree
-    }
-    for (let child of tree.children) {
-        let found = findTreeInPath(child, path)
-        if (found) {
-            return found
-        }
-    }
-}
-
 export const SideNav = ({ tree, ...rest }: SideNavProps) => {
     // console.log({ tree })
     const { sidebarOrdering, docsRootPath = 'pages' } = useDokzConfig()
     tree = applySidebarOrdering({ tree, order: sidebarOrdering })
     // console.log(tree)
-    tree = findTreeInPath(tree, docsRootPath.replace(/^\/|\/$/g, '')) || tree
+    tree = findTreeInPath(tree, docsRootPath) || tree
     // console.log(tree)
     if (!tree) {
         console.error(new Error(`sidenav tree is null`))
@@ -73,14 +59,6 @@ export const SideNav = ({ tree, ...rest }: SideNavProps) => {
             </Box>
         </Box>
     )
-}
-
-export interface DirectoryTree {
-    path?: string
-    name: string
-    children?: DirectoryTree[]
-    url?: string
-    title?: string
 }
 
 function equalWithoutExtension(a, b) {
@@ -276,17 +254,4 @@ const CollapseDown = (props) => {
             ></path>
         </svg>
     )
-}
-
-function formatTitle(name: string) {
-    return capitalizeFirstLetter(
-        name
-            .replace(/_/g, ' ')
-            .replace(/-/g, ' ')
-            .replace(/\.mdx?/, ''),
-    )
-}
-
-function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1)
 }

@@ -28,7 +28,7 @@ export const ArrowEmpty = (props) => {
             <g
                 id='Artboard'
                 stroke='none'
-                stroke-width='1'
+                strokeWidth='1'
                 fill='none'
                 fill-rule='evenodd'
             >
@@ -43,6 +43,25 @@ export const ArrowEmpty = (props) => {
                         id='Shape'
                     ></path>
                 </g>
+            </g>
+        </svg>
+    )
+}
+
+export const DateIcon = (props) => {
+    return (
+        <svg
+            xmlns='http://www.w3.org/2000/svg'
+            role='img'
+            viewBox='0 0 24 24'
+            fill='none'
+            stroke='currentColor'
+            strokeWidth='2'
+            {...props}
+        >
+            <g buffered-rendering='static'>
+                <circle cx='12' cy='12' r='10.5' />
+                <path d='M11.998 4.254l.002 7.746M16.569 14.639l-4.571-2.639' />
             </g>
         </svg>
     )

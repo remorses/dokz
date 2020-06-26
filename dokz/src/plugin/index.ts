@@ -1,22 +1,29 @@
 import chokidar from 'chokidar'
 import { debounce } from 'debounce'
 import fs from 'fs'
+import { pipe } from 'lodash/fp'
 import path from 'path'
+import extractFrontmatter from 'remark-extract-frontmatter'
+import frontmatter from 'remark-frontmatter'
 import addMeta from 'remark-mdx-metadata'
 import slug from 'remark-slug'
+import YAML from 'yaml'
 import { generateTableOfContents } from './generateTableOfContents'
 import { getMdxFilesIndex } from './getMdxFilesIndex'
 import { injectCodeToPlayground } from './rehype/playground'
 import { withMdx } from './withMdx'
 
-const EXTESNIONS_TO_WATCH = ['.mdx', '.md']
+const EXTENSIONS_TO_WATCH = ['.mdx', '.md']
 
 export function withDokz(nextConfig = {} as any) {
     if (process.env.NODE_ENV !== 'production') {
         const watcher = chokidar.watch('./**', {
             persistent: true,
         })
-        watcher.on('add', onFileChange).on('unlink', onFileChange)
+        watcher
+            .on('add', onFileChange)
+            .on('unlink', onFileChange)
+            .on('change', onFileChange)
     } else {
         writeMdxIndex()
     }
@@ -30,18 +37,25 @@ export function withDokz(nextConfig = {} as any) {
         extension: /\.mdx?$/,
         options: {
             remarkPlugins: [
+                frontmatter,
+                [extractFrontmatter, { yaml: YAML.parse }],
                 slug,
                 () => (tree, vfile) => {
                     const tableOfContents = generateTableOfContents(tree)
-                    const { cwd, contents, history } = vfile
-                    // console.log(JSON.stringify(tableOfContents, null, 4))
-                    addMeta({
-                        // TODO add more meta like breadcrumbs, title, ...
-                        meta: {
-                            // lastEdited: `${new Date().toISOString()}`,
-                            tableOfContents,
-                        },
-                    })(tree)
+                    const { cwd, contents, history, data } = vfile
+                    if (process.env.DEBUG) {
+                        console.log('frontmatter', data)
+                    }
+                    const plugin = pipe(
+                        addMeta({
+                            meta: {
+                                // lastEdited: `${new Date().toISOString()}`,
+                                ...data,
+                                tableOfContents,
+                            },
+                        }),
+                    )
+                    plugin(tree)
                 },
             ],
             rehypePlugins: [injectCodeToPlayground],
@@ -51,11 +65,12 @@ export function withDokz(nextConfig = {} as any) {
 
 function onFileChange(name) {
     const ext = path.extname(name)
-    if (!EXTESNIONS_TO_WATCH.includes(ext)) {
+    if (!EXTENSIONS_TO_WATCH.includes(ext)) {
         return
     }
     return writeMdxIndex()
 }
+
 const writeMdxIndex = debounce(
     () => {
         console.log('[ info ]  generating mdx sidebar file')

@@ -97,10 +97,13 @@
         "react-live": "^2.2.2",
         "react-storage-hooks": "^4.0.1",
         "remark": "^12.0.0",
+        "remark-extract-frontmatter": "^2.0.2",
+        "remark-frontmatter": "^2.0.0",
         "remark-mdx-metadata": "^1.0.1",
         "remark-slug": "^6.0.0",
         "strip-indent": "^3.0.0",
         "unist-util-is": "^4.0.2",
-        "unist-util-visit": "^2.0.2"
+        "unist-util-visit": "^2.0.2",
+        "yaml": "^1.10.0"
     }
 }

@@ -28,12 +28,57 @@ export const globalStyles = css`
 } */
 `
 
-export function getMdxSidebarTree() {
+export function getMdxSidebarTree(): DirectoryTree {
     try {
         return require('nextjs_root_folder_/sidebar.json')
     } catch {
         return {
+            name: 'pages',
             children: [],
+        }
+    }
+}
+
+export function formatTitle(name: string) {
+    return capitalizeFirstLetter(
+        name
+            .replace(/_/g, ' ')
+            .replace(/-/g, ' ')
+            .replace(/\.mdx?/, ''),
+    )
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1)
+}
+
+/////////// tree utils ///////////////////
+
+export interface DirectoryTree {
+    path?: string
+    name: string
+    children?: DirectoryTree[]
+    url?: string
+    title?: string
+    meta?: Record<string, any>
+}
+
+export function findTreeInPath(
+    tree: DirectoryTree,
+    path,
+): DirectoryTree | null {
+    // remove leading and trailing slashes
+    path = path.replace(/^\/|\/$/g, '')
+    if (!tree?.children?.length) {
+        return null
+    }
+    if (tree.path === path) {
+        return tree
+    }
+    for (let child of tree.children) {
+        let found = findTreeInPath(child, path)
+        if (found) {
+            return found
         }
     }
 }

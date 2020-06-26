@@ -1,10 +1,15 @@
+---
+name: Example post
+date: 25 June, 2020
+description: An example post made just to test the dokz blog feature
+---
+
 import { NextSeo } from 'next-seo'
 
-export const title = 'My first blog post'
-
-export const date = '24 June, 2020'
-
-<NextSeo title={title} description='A short description goes here.' />
+<NextSeo
+    title='My first blog post'
+    description='A short description goes here.'
+/>
 
 Dokz enables you to quickly create live-reloading, seo-friendly, production-ready documentation sites with MDX.
 It is based on `Next.js` so you get all its awesome features with it.

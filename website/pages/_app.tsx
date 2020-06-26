@@ -21,6 +21,7 @@ export default function App(props) {
     if (pathname.startsWith('/blog')) {
         return (
             <DokzBlogProvider
+                blogRootPath='pages/blog'
                 headerLogo={<Logo height='30px' opacity={0.92} />}
                 headerItems={[
                     <Link href='https://github.com/remorses/dokz'>Dokz</Link>,
