@@ -11,6 +11,7 @@ import React, { useEffect } from 'react'
 import { MdDehaze } from 'react-icons/md'
 import { SideNav } from './SideNav'
 import { useRouter } from 'next/router'
+import { Box } from 'layout-kit-react'
 
 const useRouteChanged = (callback) => {
     const router = useRouter()
@@ -23,7 +24,8 @@ const useRouteChanged = (callback) => {
         router && router.events.on('routeChangeComplete', handleRouteChange)
 
         return () => {
-            router && router.events.off('routeChangeComplete', handleRouteChange)
+            router &&
+                router.events.off('routeChangeComplete', handleRouteChange)
         }
     }, [router && router.events, callback])
 }
@@ -50,11 +52,10 @@ const MobileNav = (props) => {
                 onClose={onClose}
             >
                 <DrawerOverlay />
-                <DrawerContent height='100vh' overflowY='auto' >
+                <DrawerContent height='100vh' overflowY='auto'>
                     <DrawerBody p={0}>
-                        <Stack  >
-                            <SideNav fontSize='1em' {...props} />
-                        </Stack>
+                        <SideNav fontSize='1em' {...props} />
+                        <Box h='100px' />
                     </DrawerBody>
                 </DrawerContent>
             </Drawer>

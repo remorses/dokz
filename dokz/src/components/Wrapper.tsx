@@ -52,6 +52,7 @@ export function Wrapper(props) {
             >
                 <Box position='relative' w='100%' maxWidth={maxPageWidth}>
                     <NavBar
+                        px='4'
                         logo={headerLogo}
                         items={headerItems}
                         tree={index}
@@ -68,11 +69,12 @@ export function Wrapper(props) {
                         alignSelf='flex-start'
                         position='fixed'
                         top={NAVBAR_H}
+                        bottom={0}
                         fontSize='0.9em'
                         // fontWeight='500'
                         // left={0}
                         tree={index}
-                        height='100%'
+                        // height='100%'
                         width={SIDENAV_W}
                         display={['none', null, 'block']}
                         overflowY='auto'

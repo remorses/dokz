@@ -51,11 +51,16 @@ export const SideNav = ({ tree, ...rest }: SideNavProps) => {
     return (
         <Box
             // borderRightWidth='1px'
-            minWidth='240px'
-            height='auto'
+            // minWidth='240px'
+            overflowY='auto'
+            as='nav'
+            aria-label='Main navigation'
+            py='6'
+            px='4'
+            pr='6'
             {...rest}
         >
-            <Box overflowY='auto' as='nav' aria-label='Main navigation' p='6'>
+            <Box>
                 {tree.children.map((
                     x, // i map on children to exclude the `pages` or `docsRootPage` first node
                 ) => (
@@ -174,7 +179,13 @@ const NavTreeComponent = ({
             <Stack spacing='0px'>
                 <Box my='0.2em'>
                     {!hideDivider && <Divider />}
-                    <Box py='0.2em' pt='1.4em' my='0.2em' fontSize='1.1em' fontWeight='semibold'>
+                    <Box
+                        py='0.2em'
+                        pt='1.4em'
+                        my='0.2em'
+                        fontSize='1.1em'
+                        fontWeight='semibold'
+                    >
                         {formattedTitle}
                     </Box>
                 </Box>
@@ -184,7 +195,13 @@ const NavTreeComponent = ({
     }
     return (
         <Stack spacing='0px'>
-            <ComponentLink opacity={0.8} py='0.2em' my='0.2em' href={url} isTruncated>
+            <ComponentLink
+                opacity={0.8}
+                py='0.2em'
+                my='0.2em'
+                href={url}
+                isTruncated
+            >
                 {formattedTitle}
             </ComponentLink>
             {subTree}
