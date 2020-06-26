@@ -55,7 +55,7 @@ export const SideNav = ({ tree, ...rest }: SideNavProps) => {
             height='auto'
             {...rest}
         >
-            <Box as='nav' aria-label='Main navigation' p='6'>
+            <Box overflowY='auto' as='nav' aria-label='Main navigation' p='6'>
                 {tree.children.map((
                     x, // i map on children to exclude the `pages` or `docsRootPage` first node
                 ) => (

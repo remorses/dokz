@@ -62,6 +62,7 @@ const NavBar = ({ logo, tree = null as any, items: navs, ...props }) => {
             bg={bg[colorMode]}
             zIndex={4}
             borderBottomWidth='1px'
+            borderBottomStyle='solid'
             justifyContent='center'
             alignItems='center'
             {...props}
