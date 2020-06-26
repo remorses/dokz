@@ -74,7 +74,7 @@ const NavBar = ({ logo, tree = null as any, items: navs, ...props }) => {
                 // height='60px'
                 justify='center'
             >
-                <Flex size='100%' align='center' justify='space-between'>
+                <Flex px='2' size='100%' align='center' justify='space-between'>
                     <Flex align='center' mr={5}>
                         {logo}
                     </Flex>
