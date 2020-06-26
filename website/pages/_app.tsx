@@ -52,6 +52,7 @@ export default function App(props) {
                         docsRootPath='pages/docs'
                         headerItems={[
                             // <a>ciao</a>,
+                            <Link href='/blog'>Blog</Link>,
                             <GithubLink
                                 key={0}
                                 url='https://github.com/remorses/dokz'
