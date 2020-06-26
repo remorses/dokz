@@ -9,6 +9,36 @@
                 {
                     "path": "pages/01-getting-started/01-quickstart.mdx",
                     "name": "01-quickstart.mdx",
+                    "meta": {
+                        "title": "Quickstart",
+                        "metaTitle": "Quickstart (5 min)",
+                        "metaDescription": "Get started with Prisma in 5 minutes. You will learn how to send queries to a SQLite database in a plain Node.js or TypeScript script using Prisma Client.",
+                        "duration": "5 min",
+                        "langSwitcher": [
+                            "typescript",
+                            "node"
+                        ],
+                        "techMetaTitles": [
+                            {
+                                "name": "node",
+                                "value": "Quickstart (Node.js & SQLite)"
+                            },
+                            {
+                                "name": "typescript",
+                                "value": "Quickstart (TypeScript & SQLite)"
+                            }
+                        ],
+                        "techMetaDescriptions": [
+                            {
+                                "name": "node",
+                                "value": "Get started with Prisma in 5 minutes. You will learn how to send queries to a SQLite database in a plain Node.js script using Prisma Client."
+                            },
+                            {
+                                "name": "typescript",
+                                "value": "Get started with Prisma in 5 minutes. You will learn how to send queries to a SQLite database in a plain TypeScript script using Prisma Client."
+                            }
+                        ]
+                    },
                     "title": "",
                     "url": "/01-getting-started/01-quickstart"
                 },
@@ -19,24 +49,124 @@
                         {
                             "path": "pages/01-getting-started/02-setup-prisma/01-add-to-existing-project.mdx",
                             "name": "01-add-to-existing-project.mdx",
+                            "meta": {
+                                "title": "Add to existing project",
+                                "metaTitle": "Add Prisma to an existing project (15 min)",
+                                "metaDescription": "Learn how to add Prisma to an existing Node.js or TypeScript project by connecting it to your database and generating Prisma Client for database access.",
+                                "langSwitcher": [
+                                    "typescript",
+                                    "node"
+                                ],
+                                "dbSwitcher": [
+                                    "postgres",
+                                    "mysql"
+                                ],
+                                "techMetaTitles": [
+                                    {
+                                        "name": "node-postgres",
+                                        "value": "Add to existing project (Node.js & PostgreSQL)"
+                                    },
+                                    {
+                                        "name": "typescript-postgres",
+                                        "value": "Add to existing project (TypeScript & PostgreSQL)"
+                                    },
+                                    {
+                                        "name": "node-mysql",
+                                        "value": "Add to existing project (Node.js & MySQL)"
+                                    },
+                                    {
+                                        "name": "typescript-mysql",
+                                        "value": "Add to existing project (TypeScript & MySQL)"
+                                    }
+                                ]
+                            },
                             "title": "",
                             "url": "/01-getting-started/02-setup-prisma/01-add-to-existing-project"
                         },
                         {
                             "path": "pages/01-getting-started/02-setup-prisma/02-start-from-scratch-sql.mdx",
                             "name": "02-start-from-scratch-sql.mdx",
+                            "meta": {
+                                "title": "Start from scratch",
+                                "metaTitle": "Set up a new project with Prisma from scratch (SQL)",
+                                "metaDescription": "Learn how to create a new Node.js or TypeScript project from scratch by connecting Prisma to your database and generating Prisma Client for database access.",
+                                "langSwitcher": [
+                                    "typescript",
+                                    "node"
+                                ],
+                                "dbSwitcher": [
+                                    "postgres",
+                                    "mysql"
+                                ],
+                                "techMetaTitles": [
+                                    {
+                                        "name": "node-postgres",
+                                        "value": "Start from scratch (Node.js & PostgreSQL)"
+                                    },
+                                    {
+                                        "name": "typescript-postgres",
+                                        "value": "Start from scratch (TypeScript & PostgreSQL)"
+                                    },
+                                    {
+                                        "name": "node-mysql",
+                                        "value": "Start from scratch (Node.js & MySQL)"
+                                    },
+                                    {
+                                        "name": "typescript-mysql",
+                                        "value": "Start from scratch (TypeScript & MySQL)"
+                                    }
+                                ]
+                            },
                             "title": "",
                             "url": "/01-getting-started/02-setup-prisma/02-start-from-scratch-sql"
                         },
                         {
                             "path": "pages/01-getting-started/02-setup-prisma/03-start-from-scratch-prisma-migrate.mdx",
                             "name": "03-start-from-scratch-prisma-migrate.mdx",
+                            "meta": {
+                                "title": "Start from scratch (Prisma Migrate)",
+                                "metaTitle": "Set up a new project with Prisma from scratch (Prisma Migrate)",
+                                "metaDescription": "Learn how to create a new Node.js or TypeScript project from scratch by connecting Prisma to your database and generating Prisma Client for database access.",
+                                "langSwitcher": [
+                                    "typescript",
+                                    "node"
+                                ],
+                                "dbSwitcher": [
+                                    "postgres",
+                                    "mysql"
+                                ],
+                                "techMetaTitles": [
+                                    {
+                                        "name": "node-postgres",
+                                        "value": "Start from scratch (Prisma Migrate | Node.js & PostgreSQL)"
+                                    },
+                                    {
+                                        "name": "typescript-postgres",
+                                        "value": "Start from scratch (Prisma Migrate | TypeScript & PostgreSQL)"
+                                    },
+                                    {
+                                        "name": "node-mysql",
+                                        "value": "Start from scratch (Prisma Migrate | Node.js & MySQL)"
+                                    },
+                                    {
+                                        "name": "typescript-mysql",
+                                        "value": "Start from scratch (Prisma Migrate | TypeScript & MySQL)"
+                                    }
+                                ]
+                            },
                             "title": "",
                             "url": "/01-getting-started/02-setup-prisma/03-start-from-scratch-prisma-migrate"
                         },
                         {
                             "path": "pages/01-getting-started/02-setup-prisma/index.mdx",
                             "name": "index.mdx",
+                            "meta": {
+                                "title": "Set up Prisma",
+                                "metaTitle": "",
+                                "metaDescription": "",
+                                "duration": "15 min",
+                                "toc": false
+                            },
                             "title": "",
                             "url": "/01-getting-started/02-setup-prisma"
                         },
@@ -54,6 +184,12 @@
                 {
                     "path": "pages/01-getting-started/index.mdx",
                     "name": "index.mdx",
+                    "meta": {
+                        "title": "Getting started",
+                        "metaTitle": "Getting started",
+                        "metaDescription": "Getting started",
+                        "toc": false
+                    },
                     "title": "",
                     "url": "/01-getting-started"
                 }
@@ -64,6 +200,13 @@
         {
             "path": "pages/01-mongodb.mdx",
             "name": "01-mongodb.mdx",
+            "meta": {
+                "title": "MongoDB",
+                "metaTitle": "MongoDB",
+                "metaDescription": "Updates on future support for MongoDB.",
+                "hidePage": true,
+                "toc": false
+            },
             "title": "",
             "url": "/01-mongodb"
         },
@@ -74,12 +217,22 @@
                 {
                     "path": "pages/02-understand-prisma/01-introduction.mdx",
                     "name": "01-introduction.mdx",
+                    "meta": {
+                        "title": "Introduction",
+                        "metaTitle": "Introduction to Prisma",
+                        "metaDescription": "This page gives a high-level overview of what Prisma is and how it works. It's a great starting point for Prisma newcomers!"
+                    },
                     "title": "",
                     "url": "/02-understand-prisma/01-introduction"
                 },
                 {
                     "path": "pages/02-understand-prisma/02-why-prisma.mdx",
                     "name": "02-why-prisma.mdx",
+                    "meta": {
+                        "title": "Why Prisma?",
+                        "metaTitle": "Why Prisma? (Comparison with SQL query builders & ORMs)",
+                        "metaDescription": "Learn about the motivation for Prisma and how it compares to other Node.js and TypeScript database tools like ORMs and SQL query builders."
+                    },
                     "title": "",
                     "url": "/02-understand-prisma/02-why-prisma"
                 },
@@ -90,24 +243,45 @@
                         {
                             "path": "pages/02-understand-prisma/03-prisma-in-your-stack/01-rest.md",
                             "name": "01-rest.md",
+                            "meta": {
+                                "title": "REST",
+                                "metaTitle": "Building REST APIs with Prisma",
+                                "metaDescription": "This page gives an overview of the most important things when building REST APIs with Prisma. It shows practical examples and the supported libraries."
+                            },
                             "title": "",
                             "url": "/02-understand-prisma/03-prisma-in-your-stack/01-rest"
                         },
                         {
                             "path": "pages/02-understand-prisma/03-prisma-in-your-stack/02-graphql.md",
                             "name": "02-graphql.md",
+                            "meta": {
+                                "title": "GraphQL",
+                                "metaTitle": "Building GraphQL servers with Prisma",
+                                "metaDescription": "This page gives explains how to build GraphQL servers with Prisma. It shows how Prisma fits into the GraphQL ecosystem and provides practical examples."
+                            },
                             "title": "",
                             "url": "/02-understand-prisma/03-prisma-in-your-stack/02-graphql"
                         },
                         {
                             "path": "pages/02-understand-prisma/03-prisma-in-your-stack/03-is-prisma-an-orm.mdx",
                             "name": "03-is-prisma-an-orm.mdx",
+                            "meta": {
+                                "title": "Is Prisma an ORM?",
+                                "metaTitle": "Is Prisma an ORM?",
+                                "metaDescription": "Learn why Prisma is not an ORM. It shares similar goals with ORMs and wants to make working with databases easy, but it does not map classes to tables as ORMs do."
+                            },
                             "title": "",
                             "url": "/02-understand-prisma/03-prisma-in-your-stack/03-is-prisma-an-orm"
                         },
                         {
                             "path": "pages/02-understand-prisma/03-prisma-in-your-stack/index.mdx",
                             "name": "index.mdx",
+                            "meta": {
+                                "title": "Prisma in your stack",
+                                "metaTitle": "How Prisma fits into your stack",
+                                "metaDescription": "How Prisma fits into your stack",
+                                "toc": false
+                            },
                             "title": "",
                             "url": "/02-understand-prisma/03-prisma-in-your-stack"
                         }
@@ -118,12 +292,22 @@
                 {
                     "path": "pages/02-understand-prisma/04-data-modeling.mdx",
                     "name": "04-data-modeling.mdx",
+                    "meta": {
+                        "title": "Data modeling",
+                        "metaTitle": "Data modeling with Prisma",
+                        "metaDescription": "Learn how data modeling with Prisma differs from data modeling with SQL or ORMs. Prisma uses a declarative data modeling language to describe a database schema."
+                    },
                     "title": "",
                     "url": "/02-understand-prisma/04-data-modeling"
                 },
                 {
                     "path": "pages/02-understand-prisma/05-under-the-hood.mdx",
                     "name": "05-under-the-hood.mdx",
+                    "meta": {
+                        "title": "Under the hood",
+                        "metaTitle": "Prisma under the hood",
+                        "metaDescription": "Learn about Prisma internals and how it works \"under the hood\". Prisma tools are based on an engine-layer which manages the communication with the database."
+                    },
                     "title": "",
                     "url": "/02-understand-prisma/05-under-the-hood"
                 },
@@ -134,24 +318,44 @@
                         {
                             "path": "pages/02-understand-prisma/06-api-comparisons/01-prisma-and-typeorm.mdx",
                             "name": "01-prisma-and-typeorm.mdx",
+                            "meta": {
+                                "title": "Comparing Prisma and TypeORM",
+                                "metaTitle": "Comparing Prisma and TypeORM",
+                                "metaDescription": "Compare Prisma and TypeORM."
+                            },
                             "title": "",
                             "url": "/02-understand-prisma/06-api-comparisons/01-prisma-and-typeorm"
                         },
                         {
                             "path": "pages/02-understand-prisma/06-api-comparisons/02-prisma-and-sequelize.mdx",
                             "name": "02-prisma-and-sequelize.mdx",
+                            "meta": {
+                                "title": "Comparing Prisma and Sequelize",
+                                "metaTitle": "Comparing Prisma and Sequelize",
+                                "metaDescription": "Compare the Prisma and Sequelize APIs."
+                            },
                             "title": "",
                             "url": "/02-understand-prisma/06-api-comparisons/02-prisma-and-sequelize"
                         },
                         {
                             "path": "pages/02-understand-prisma/06-api-comparisons/03-prisma-and-mongoose.mdx",
                             "name": "03-prisma-and-mongoose.mdx",
+                            "meta": {
+                                "title": "Comparing Prisma and Mongoose",
+                                "metaTitle": "Comparing Prisma and Mongoose",
+                                "metaDescription": "Compare the Prisma and Mongoose APIs."
+                            },
                             "title": "",
                             "url": "/02-understand-prisma/06-api-comparisons/03-prisma-and-mongoose"
                         },
                         {
                             "path": "pages/02-understand-prisma/06-api-comparisons/index.mdx",
                             "name": "index.mdx",
+                            "meta": {
+                                "title": "API comparisons",
+                                "metaTitle": "API comparisons",
+                                "metaDescription": "Comparing Prisma to ORMs and ODMs."
+                            },
                             "title": "",
                             "url": "/02-understand-prisma/06-api-comparisons"
                         }
@@ -162,6 +366,12 @@
                 {
                     "path": "pages/02-understand-prisma/index.mdx",
                     "name": "index.mdx",
+                    "meta": {
+                        "title": "Understand Prisma",
+                        "metaTitle": "Understand Prisma",
+                        "metaDescription": "Understand Prisma",
+                        "toc": false
+                    },
                     "title": "",
                     "url": "/02-understand-prisma"
                 }
@@ -184,36 +394,66 @@
                                 {
                                     "path": "pages/03-reference/01-tools-and-interfaces/01-prisma-schema/02-data-sources.mdx",
                                     "name": "02-data-sources.mdx",
+                                    "meta": {
+                                        "title": "Data sources",
+                                        "metaTitle": "Data sources (Reference)",
+                                        "metaDescription": "Data sources enable Prisma to connect to your database. This page explains how to configure data sources in your Prisma schema."
+                                    },
                                     "title": "",
                                     "url": "/03-reference/01-tools-and-interfaces/01-prisma-schema/02-data-sources"
                                 },
                                 {
                                     "path": "pages/03-reference/01-tools-and-interfaces/01-prisma-schema/03-generators.mdx",
                                     "name": "03-generators.mdx",
+                                    "meta": {
+                                        "title": "Generators",
+                                        "metaTitle": "Generators (Reference)",
+                                        "metaDescription": "Generators in your Prisma schema specify what assets are generated when the `prisma generate` command is invoked. This page explains how to configure generators."
+                                    },
                                     "title": "",
                                     "url": "/03-reference/01-tools-and-interfaces/01-prisma-schema/03-generators"
                                 },
                                 {
                                     "path": "pages/03-reference/01-tools-and-interfaces/01-prisma-schema/04-data-model.mdx",
                                     "name": "04-data-model.mdx",
+                                    "meta": {
+                                        "title": "Data model",
+                                        "metaTitle": "Data model (Reference)",
+                                        "metaDescription": "Learn about the concepts for building your data model with Prisma: Models, scalar types, enums, attributes, functions, IDs, default values and more."
+                                    },
                                     "title": "",
                                     "url": "/03-reference/01-tools-and-interfaces/01-prisma-schema/04-data-model"
                                 },
                                 {
                                     "path": "pages/03-reference/01-tools-and-interfaces/01-prisma-schema/05-models.mdx",
                                     "name": "05-models.mdx",
+                                    "meta": {
+                                        "title": "Models",
+                                        "metaTitle": "Models (Reference)",
+                                        "metaDescription": "Learn about defining your application models with Prisma. Models represent tables in the database and serve as the foundation for generated Prisma Client queries."
+                                    },
                                     "title": "",
                                     "url": "/03-reference/01-tools-and-interfaces/01-prisma-schema/05-models"
                                 },
                                 {
                                     "path": "pages/03-reference/01-tools-and-interfaces/01-prisma-schema/06-relations.mdx",
                                     "name": "06-relations.mdx",
+                                    "meta": {
+                                        "title": "Relations",
+                                        "metaTitle": "Relations (Reference)",
+                                        "metaDescription": "A relation is a connection between two models in the Prisma schema. This page explains how you can define 1-1, 1-n and m-n relations in Prisma."
+                                    },
                                     "title": "",
                                     "url": "/03-reference/01-tools-and-interfaces/01-prisma-schema/06-relations"
                                 },
                                 {
                                     "path": "pages/03-reference/01-tools-and-interfaces/01-prisma-schema/index.mdx",
                                     "name": "index.mdx",
+                                    "meta": {
+                                        "title": "Prisma schema",
+                                        "metaTitle": "Prisma schema (Reference)",
+                                        "metaDescription": "The Prisma schema is the main configuration file when using Prisma. It is typically called schema.prisma and contains your database connection and data model."
+                                    },
                                     "title": "",
                                     "url": "/03-reference/01-tools-and-interfaces/01-prisma-schema"
                                 },
@@ -235,102 +475,187 @@
                                 {
                                     "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/01-generating-prisma-client.mdx",
                                     "name": "01-generating-prisma-client.mdx",
+                                    "meta": {
+                                        "title": "Generating Prisma Client",
+                                        "metaTitle": "Generating Prisma Client (Reference)",
+                                        "metaDescription": "This page explains how to generate Prisma Client. It also provides additional context on the generated client, typical workflows and Node.js configuration."
+                                    },
                                     "title": "",
                                     "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/01-generating-prisma-client"
                                 },
                                 {
                                     "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/03-configuring-the-prisma-client-api.mdx",
                                     "name": "03-configuring-the-prisma-client-api.mdx",
+                                    "meta": {
+                                        "title": "Configuring the Prisma Client API",
+                                        "metaTitle": "Configuring the Prisma Client API (Reference)",
+                                        "metaDescription": "Learn how you can decouple the naming of Prisma models from database tables to improve the ergonomics of the generated Prisma Client API."
+                                    },
                                     "title": "",
                                     "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/03-configuring-the-prisma-client-api"
                                 },
                                 {
                                     "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/04-crud.mdx",
                                     "name": "04-crud.mdx",
+                                    "meta": {
+                                        "title": "CRUD",
+                                        "metaTitle": "CRUD (Reference)",
+                                        "metaDescription": "This page provides a detailed reference of the auto-generated CRUD queries that are exposed in the Prisma Client API, such as findOne, findMany, create, ..."
+                                    },
                                     "title": "",
                                     "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/04-crud"
                                 },
                                 {
                                     "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/05-filtering.mdx",
                                     "name": "05-filtering.mdx",
+                                    "meta": {
+                                        "title": "Filtering",
+                                        "metaTitle": "Filtering (Reference)",
+                                        "metaDescription": "Use the Prisma Client API to filter records by any combination of fields or related record fields."
+                                    },
                                     "title": "",
                                     "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/05-filtering"
                                 },
                                 {
                                     "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/06-relation-queries.mdx",
                                     "name": "06-relation-queries.mdx",
+                                    "meta": {
+                                        "title": "Relation queries",
+                                        "metaTitle": "Relation queries (Reference)",
+                                        "metaDescription": "Prisma Client provides convenient queries for working with relations, such as a fluent API, nested writes (transactions), nested reads and relation filters."
+                                    },
                                     "title": "",
                                     "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/06-relation-queries"
                                 },
                                 {
                                     "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/07-field-selection.mdx",
                                     "name": "07-field-selection.mdx",
+                                    "meta": {
+                                        "title": "Field selection",
+                                        "metaTitle": "Field selection (Reference)",
+                                        "metaDescription": "This page explains how to select only a subset of a model's fields and/or include relations (\"eager loading\") in a Prisma Client query."
+                                    },
                                     "title": "",
                                     "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/07-field-selection"
                                 },
                                 {
                                     "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/08-raw-database-access.mdx",
                                     "name": "08-raw-database-access.mdx",
+                                    "meta": {
+                                        "title": "Raw database access",
+                                        "metaTitle": "Raw database access (Reference)",
+                                        "metaDescription": "Learn how you can send raw SQL queries to your database using the raw() method from the Prisma Client API."
+                                    },
                                     "title": "",
                                     "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/08-raw-database-access"
                                 },
                                 {
                                     "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/09-connection-management.mdx",
                                     "name": "09-connection-management.mdx",
+                                    "meta": {
+                                        "title": "Connection management",
+                                        "metaTitle": "Connection management (Reference)",
+                                        "metaDescription": "This page explains how database connections are handled with Prisma Client and how to manually connect and disconnect your database."
+                                    },
                                     "title": "",
                                     "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/09-connection-management"
                                 },
                                 {
                                     "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/10-advanced-usage-of-generated-types.mdx",
                                     "name": "10-advanced-usage-of-generated-types.mdx",
+                                    "meta": {
+                                        "title": "Advanced usage of generated types",
+                                        "metaTitle": "Advanced usage of generated types (Reference)",
+                                        "metaDescription": "Prisma Client provides full type safety for queries, even for partial queries or included relations. This page explains how to leverage the generated types."
+                                    },
                                     "title": "",
                                     "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/10-advanced-usage-of-generated-types"
                                 },
                                 {
                                     "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/13-logging.mdx",
                                     "name": "13-logging.mdx",
+                                    "meta": {
+                                        "title": "Logging",
+                                        "metaTitle": "Logging (Reference)",
+                                        "metaDescription": "Learn how to configure Prismaa Client to log the raw SQL queries it sends to the database and other information."
+                                    },
                                     "title": "",
                                     "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/13-logging"
                                 },
                                 {
                                     "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/14-debugging.mdx",
                                     "name": "14-debugging.mdx",
+                                    "meta": {
+                                        "title": "Debugging",
+                                        "metaTitle": "Debugging (Reference)",
+                                        "metaDescription": "This page explains how to enable debugging output for Prisma Client by setting the `DEBUG` environment variable."
+                                    },
                                     "title": "",
                                     "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/14-debugging"
                                 },
                                 {
                                     "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/15-error-formatting.mdx",
                                     "name": "15-error-formatting.mdx",
+                                    "meta": {
+                                        "title": "Error formatting",
+                                        "metaTitle": "Error formatting (Reference)",
+                                        "metaDescription": "This page expains how to configure the formatting of errors when using Prisma Client."
+                                    },
                                     "title": "",
                                     "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/15-error-formatting"
                                 },
                                 {
                                     "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/16-transactions.mdx",
                                     "name": "16-transactions.mdx",
+                                    "meta": {
+                                        "title": "Transactions",
+                                        "metaTitle": "Transactions (Reference)",
+                                        "metaDescription": "This page explains the current transactions API of Prisma Client."
+                                    },
                                     "title": "",
                                     "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/16-transactions"
                                 },
                                 {
                                     "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/17-deployment.mdx",
                                     "name": "17-deployment.mdx",
+                                    "meta": {
+                                        "title": "Deployment",
+                                        "metaTitle": "Deployment (Reference)",
+                                        "metaDescription": "Learn the basics about deploying Node.js and TypeScript applications that are using Prisma Client."
+                                    },
                                     "title": "",
                                     "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/17-deployment"
                                 },
                                 {
                                     "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/18-query-engine.mdx",
                                     "name": "18-query-engine.mdx",
+                                    "meta": {
+                                        "title": "Query engine",
+                                        "metaTitle": "Query engine (Reference)",
+                                        "metaDescription": "Prisma's query engine manages the comunication with the database when using Prisma Client. Learn how it works on this page."
+                                    },
                                     "title": "",
                                     "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/18-query-engine"
                                 },
                                 {
                                     "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/19-module-bundlers.mdx",
                                     "name": "19-module-bundlers.mdx",
+                                    "meta": {
+                                        "title": "Module bundlers",
+                                        "metaTitle": "Module bundlers (Reference)",
+                                        "metaDescription": "This page gives an overview of the most important things to be aware of when using a module bundler to bundle an application that uses Prisma Client."
+                                    },
                                     "title": "",
                                     "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/19-module-bundlers"
                                 },
                                 {
                                     "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/20-database-polyfills.mdx",
                                     "name": "20-database-polyfills.mdx",
+                                    "meta": {
+                                        "title": "Database polyfills",
+                                        "metaTitle": "Database polyfills (Reference)",
+                                        "metaDescription": "Prisma Client provides features that are not achievable with relational databases. These features are referred to as \"polyfills\" and explained on this page."
+                                    },
                                     "title": "",
                                     "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/20-database-polyfills"
                                 },
@@ -344,6 +669,11 @@
                                 {
                                     "path": "pages/03-reference/01-tools-and-interfaces/02-prisma-client/index.mdx",
                                     "name": "index.mdx",
+                                    "meta": {
+                                        "title": "Prisma Client",
+                                        "metaTitle": "Prisma Client (Reference)",
+                                        "metaDescription": "This page gives an overview of the Prisma Client API and links to more detailed explanations. It is a great starting point for exploring Prisma Client."
+                                    },
                                     "title": "",
                                     "url": "/03-reference/01-tools-and-interfaces/02-prisma-client"
                                 }
@@ -354,12 +684,23 @@
                         {
                             "path": "pages/03-reference/01-tools-and-interfaces/03-prisma-migrate.mdx",
                             "name": "03-prisma-migrate.mdx",
+                            "meta": {
+                                "title": "Prisma Migrate",
+                                "metaTitle": "Prisma Migrate (Reference)",
+                                "metaDescription": "Prisma Migrate is a declarative data modeling and schema migration tool that is available via the Prisma CLI.",
+                                "experimental": true
+                            },
                             "title": "",
                             "url": "/03-reference/01-tools-and-interfaces/03-prisma-migrate"
                         },
                         {
                             "path": "pages/03-reference/01-tools-and-interfaces/04-introspection.mdx",
                             "name": "04-introspection.mdx",
+                            "meta": {
+                                "title": "Introspection",
+                                "metaTitle": "Introspection (Reference)",
+                                "metaDescription": "Learn how you can introspect your database to generate a data model into your Prisma schema."
+                            },
                             "title": "",
                             "url": "/03-reference/01-tools-and-interfaces/04-introspection"
                         },
@@ -370,18 +711,34 @@
                                 {
                                     "path": "pages/03-reference/01-tools-and-interfaces/05-prisma-cli/01-installation.mdx",
                                     "name": "01-installation.mdx",
+                                    "meta": {
+                                        "title": "Installing the Prisma CLI",
+                                        "metaTitle": "Prisma CLI Installation (Reference)",
+                                        "metaDescription": ""
+                                    },
                                     "title": "",
                                     "url": "/03-reference/01-tools-and-interfaces/05-prisma-cli/01-installation"
                                 },
                                 {
                                     "path": "pages/03-reference/01-tools-and-interfaces/05-prisma-cli/02-command-reference.mdx",
                                     "name": "02-command-reference.mdx",
+                                    "meta": {
+                                        "title": "CLI command reference",
+                                        "metaTitle": "Prisma CLI Command Reference",
+                                        "metaDescription": "This page gives an overview of all available Prisma CLI commands, explains their options and shows numerous usage examples."
+                                    },
                                     "title": "",
                                     "url": "/03-reference/01-tools-and-interfaces/05-prisma-cli/02-command-reference"
                                 },
                                 {
                                     "path": "pages/03-reference/01-tools-and-interfaces/05-prisma-cli/index.mdx",
                                     "name": "index.mdx",
+                                    "meta": {
+                                        "title": "Prisma CLI",
+                                        "metaTitle": "",
+                                        "metaDescription": "",
+                                        "toc": false
+                                    },
                                     "title": "",
                                     "url": "/03-reference/01-tools-and-interfaces/05-prisma-cli"
                                 }
@@ -392,12 +749,25 @@
                         {
                             "path": "pages/03-reference/01-tools-and-interfaces/06-prisma-studio.mdx",
                             "name": "06-prisma-studio.mdx",
+                            "meta": {
+                                "title": "Prisma Studio",
+                                "metaTitle": "Prisma Studio (Reference)",
+                                "metaDescription": "Prisma Studio is a visual database editor.",
+                                "experimental": true
+                            },
                             "title": "",
                             "url": "/03-reference/01-tools-and-interfaces/06-prisma-studio"
                         },
                         {
                             "path": "pages/03-reference/01-tools-and-interfaces/index.mdx",
                             "name": "index.mdx",
+                            "meta": {
+                                "title": "Tools & Interfaces",
+                                "metaTitle": "",
+                                "metaDescription": "",
+                                "staticLink": true,
+                                "toc": false
+                            },
                             "title": "",
                             "url": "/03-reference/01-tools-and-interfaces"
                         }
@@ -412,36 +782,68 @@
                         {
                             "path": "pages/03-reference/02-database-connectors/01-database-features.mdx",
                             "name": "01-database-features.mdx",
+                            "meta": {
+                                "title": "Database features",
+                                "metaTitle": "Database features (Reference)",
+                                "metaDescription": "Learn which database features are supported in Prisma and how they map to the different Prisma tools."
+                            },
                             "title": "",
                             "url": "/03-reference/02-database-connectors/01-database-features"
                         },
                         {
                             "path": "pages/03-reference/02-database-connectors/02-connection-urls.mdx",
                             "name": "02-connection-urls.mdx",
+                            "meta": {
+                                "title": "Connection URLs",
+                                "metaTitle": "Connection URLs (Reference)",
+                                "metaDescription": "Learn about the format and syntax Prisma uses for defining database connection URLs for PostgreSQL, MySQL and SQLite."
+                            },
                             "title": "",
                             "url": "/03-reference/02-database-connectors/02-connection-urls"
                         },
                         {
                             "path": "pages/03-reference/02-database-connectors/03-postgresql.mdx",
                             "name": "03-postgresql.mdx",
+                            "meta": {
+                                "title": "PostgreSQL",
+                                "metaTitle": "PostgreSQL database connector (Reference)",
+                                "metaDescription": "This page explains how Prisma can connect to a PostgreSQL database using the PostgreSQL database connector."
+                            },
                             "title": "",
                             "url": "/03-reference/02-database-connectors/03-postgresql"
                         },
                         {
                             "path": "pages/03-reference/02-database-connectors/04-mysql.mdx",
                             "name": "04-mysql.mdx",
+                            "meta": {
+                                "title": "MySQL",
+                                "metaTitle": "MySQL database connector (Reference)",
+                                "metaDescription": "This page explains how Prisma can connect to a MySQL database using the MySQL database connector."
+                            },
                             "title": "",
                             "url": "/03-reference/02-database-connectors/04-mysql"
                         },
                         {
                             "path": "pages/03-reference/02-database-connectors/05-sqlite.mdx",
                             "name": "05-sqlite.mdx",
+                            "meta": {
+                                "title": "SQLite",
+                                "metaTitle": "SQLite database connector (Reference)",
+                                "metaDescription": "This page explains how Prisma can connect to a SQLite database using the SQLite database connector."
+                            },
                             "title": "",
                             "url": "/03-reference/02-database-connectors/05-sqlite"
                         },
                         {
                             "path": "pages/03-reference/02-database-connectors/index.mdx",
                             "name": "index.mdx",
+                            "meta": {
+                                "title": "Database connectors",
+                                "metaTitle": "",
+                                "metaDescription": "",
+                                "staticLink": true,
+                                "toc": false
+                            },
                             "title": "",
                             "url": "/03-reference/02-database-connectors"
                         }
@@ -456,18 +858,35 @@
                         {
                             "path": "pages/03-reference/03-more/01-editor-setup.mdx",
                             "name": "01-editor-setup.mdx",
+                            "meta": {
+                                "title": "Editor setup",
+                                "metaTitle": "Editor and IDE setup (Reference)",
+                                "metaDescription": "Learn how to configure your editor and IDEs for an optimal developer experience with Prisma."
+                            },
                             "title": "",
                             "url": "/03-reference/03-more/01-editor-setup"
                         },
                         {
                             "path": "pages/03-reference/03-more/02-telemetry.mdx",
                             "name": "02-telemetry.mdx",
+                            "meta": {
+                                "title": "Telemetry",
+                                "metaTitle": "Telemetry (Reference)",
+                                "metaDescription": "Thiis page explains how Prisma uses telemetry features to improve the Prisma developer experience."
+                            },
                             "title": "",
                             "url": "/03-reference/03-more/02-telemetry"
                         },
                         {
                             "path": "pages/03-reference/03-more/index.mdx",
                             "name": "index.mdx",
+                            "meta": {
+                                "title": "More",
+                                "metaTitle": "",
+                                "metaDescription": "",
+                                "staticLink": true,
+                                "toc": false
+                            },
                             "title": "",
                             "url": "/03-reference/03-more"
                         }
@@ -478,6 +897,12 @@
                 {
                     "path": "pages/03-reference/index.mdx",
                     "name": "index.mdx",
+                    "meta": {
+                        "title": "Reference",
+                        "metaTitle": "Reference",
+                        "metaDescription": "Reference",
+                        "toc": false
+                    },
                     "title": "",
                     "url": "/03-reference"
                 }
@@ -500,24 +925,44 @@
                                 {
                                     "path": "pages/04-guides/01-database-workflows/01-setting-up-a-database/01-postgresql.mdx",
                                     "name": "01-postgresql.mdx",
+                                    "meta": {
+                                        "title": "Setting up a database (PostgreSQL)",
+                                        "metaTitle": "Set up a PostgreSQL database on Windows, Mac OS or Linux",
+                                        "metaDescription": "Learn how to set up a PostgreSQL database on Windows, Mac OS or Linux by following the step-by-step instructions in this practical guide."
+                                    },
                                     "title": "",
                                     "url": "/04-guides/01-database-workflows/01-setting-up-a-database/01-postgresql"
                                 },
                                 {
                                     "path": "pages/04-guides/01-database-workflows/01-setting-up-a-database/02-mysql.mdx",
                                     "name": "02-mysql.mdx",
+                                    "meta": {
+                                        "title": "Setting up a database (MySQL)",
+                                        "metaTitle": "Set up a MySQL database on Windows, Mac OS or Linux",
+                                        "metaDescription": "Learn how to set up a MySQL database on Windows, Mac OS or Linux by following the step-by-step instructions in this practical guide."
+                                    },
                                     "title": "",
                                     "url": "/04-guides/01-database-workflows/01-setting-up-a-database/02-mysql"
                                 },
                                 {
                                     "path": "pages/04-guides/01-database-workflows/01-setting-up-a-database/03-sqlite.mdx",
                                     "name": "03-sqlite.mdx",
+                                    "meta": {
+                                        "title": "Setting up a database (SQLite)",
+                                        "metaTitle": "Set up a SQLite database on Windows, Mac OS or Linux",
+                                        "metaDescription": "Learn how to set up a SQLite database on Windows, Mac OS or Linux by following the step-by-step instructions in this practical guide."
+                                    },
                                     "title": "",
                                     "url": "/04-guides/01-database-workflows/01-setting-up-a-database/03-sqlite"
                                 },
                                 {
                                     "path": "pages/04-guides/01-database-workflows/01-setting-up-a-database/index.mdx",
                                     "name": "index.mdx",
+                                    "meta": {
+                                        "title": "Setting up a database",
+                                        "metaTitle": "Setting up a database (Guides)",
+                                        "toc": false
+                                    },
                                     "title": "",
                                     "url": "/04-guides/01-database-workflows/01-setting-up-a-database"
                                 },
@@ -588,24 +1033,44 @@
                                 {
                                     "path": "pages/04-guides/01-database-workflows/02-import-and-export-data/01-postgresql.mdx",
                                     "name": "01-postgresql.mdx",
+                                    "meta": {
+                                        "title": "Import and export data (PostgreSQL)",
+                                        "metaTitle": "Import and export data with a PostgreSQL database",
+                                        "metaDescription": "Learn how to import and export data with a PostgreSQL database."
+                                    },
                                     "title": "",
                                     "url": "/04-guides/01-database-workflows/02-import-and-export-data/01-postgresql"
                                 },
                                 {
                                     "path": "pages/04-guides/01-database-workflows/02-import-and-export-data/02-mysql.mdx",
                                     "name": "02-mysql.mdx",
+                                    "meta": {
+                                        "title": "Importing and exporting data (MySQL)",
+                                        "metaTitle": "Import and export data with a MySQL database",
+                                        "metaDescription": "Learn how to import and export data with a MySQL database."
+                                    },
                                     "title": "",
                                     "url": "/04-guides/01-database-workflows/02-import-and-export-data/02-mysql"
                                 },
                                 {
                                     "path": "pages/04-guides/01-database-workflows/02-import-and-export-data/03-sqlite.mdx",
                                     "name": "03-sqlite.mdx",
+                                    "meta": {
+                                        "title": "Importing and exporting data (SQLite)",
+                                        "metaTitle": "Import and export data with a SQLite database",
+                                        "metaDescription": "Learn how to import and export data with a SQLite database."
+                                    },
                                     "title": "",
                                     "url": "/04-guides/01-database-workflows/02-import-and-export-data/03-sqlite"
                                 },
                                 {
                                     "path": "pages/04-guides/01-database-workflows/02-import-and-export-data/index.mdx",
                                     "name": "index.mdx",
+                                    "meta": {
+                                        "title": "Data import and export",
+                                        "metaTitle": "Importing and exporting data",
+                                        "toc": false
+                                    },
                                     "title": "",
                                     "url": "/04-guides/01-database-workflows/02-import-and-export-data"
                                 }
@@ -620,24 +1085,44 @@
                                 {
                                     "path": "pages/04-guides/01-database-workflows/04-unique-constraints-and-indexes/01-postgresql.mdx",
                                     "name": "01-postgresql.mdx",
+                                    "meta": {
+                                        "title": "Unique constraints and indexes (PostgreSQL)",
+                                        "metaTitle": "Unique constraints and indexes with Prisma and PostgreSQL",
+                                        "metaDescription": "Learn how to configure unique constraints and indexes with Prisma and PostgreSQL by following the step-by-step instructions in this practical guide."
+                                    },
                                     "title": "",
                                     "url": "/04-guides/01-database-workflows/04-unique-constraints-and-indexes/01-postgresql"
                                 },
                                 {
                                     "path": "pages/04-guides/01-database-workflows/04-unique-constraints-and-indexes/02-mysql.mdx",
                                     "name": "02-mysql.mdx",
+                                    "meta": {
+                                        "title": "Unique constraints and indexes (MySQL)",
+                                        "metaTitle": "Unique constraints and indexes with Prisma and MySQL",
+                                        "metaDescription": "Learn how to configure unique constraints and indexes with Prisma and MySQL by following the step-by-step instructions in this practical guide."
+                                    },
                                     "title": "",
                                     "url": "/04-guides/01-database-workflows/04-unique-constraints-and-indexes/02-mysql"
                                 },
                                 {
                                     "path": "pages/04-guides/01-database-workflows/04-unique-constraints-and-indexes/03-sqlite.mdx",
                                     "name": "03-sqlite.mdx",
+                                    "meta": {
+                                        "title": "Unique constraints and indexes (SQLite)",
+                                        "metaTitle": "Unique constraints and indexes with Prisma and SQLite",
+                                        "metaDescription": "Learn how to configure unique constraints and indexes with Prisma and SQLite by following the step-by-step instructions in this practical guide."
+                                    },
                                     "title": "",
                                     "url": "/04-guides/01-database-workflows/04-unique-constraints-and-indexes/03-sqlite"
                                 },
                                 {
                                     "path": "pages/04-guides/01-database-workflows/04-unique-constraints-and-indexes/index.mdx",
                                     "name": "index.mdx",
+                                    "meta": {
+                                        "title": "Unique constraints",
+                                        "metaTitle": "",
+                                        "toc": false
+                                    },
                                     "title": "",
                                     "url": "/04-guides/01-database-workflows/04-unique-constraints-and-indexes"
                                 },
@@ -659,18 +1144,33 @@
                                 {
                                     "path": "pages/04-guides/01-database-workflows/05-foreign-keys/01-postgresql.mdx",
                                     "name": "01-postgresql.mdx",
+                                    "meta": {
+                                        "title": "Foreign keys / Relations (PostgreSQL)",
+                                        "metaTitle": "Configure foreign keys with Prisma and PostgreSQL",
+                                        "metaDescription": "Learn how to configure foreign keys with Prisma and PostgreSQL by following the step-by-step instructions in this practical guide."
+                                    },
                                     "title": "",
                                     "url": "/04-guides/01-database-workflows/05-foreign-keys/01-postgresql"
                                 },
                                 {
                                     "path": "pages/04-guides/01-database-workflows/05-foreign-keys/02-mysql.mdx",
                                     "name": "02-mysql.mdx",
+                                    "meta": {
+                                        "title": "Foreign keys / Relations (MySQL)",
+                                        "metaTitle": "Configure foreign keys with Prisma and MySQL",
+                                        "metaDescription": "Learn how to configure foreign keys with Prisma and MySQL by following the step-by-step instructions in this practical guide."
+                                    },
                                     "title": "",
                                     "url": "/04-guides/01-database-workflows/05-foreign-keys/02-mysql"
                                 },
                                 {
                                     "path": "pages/04-guides/01-database-workflows/05-foreign-keys/03-sqlite.mdx",
                                     "name": "03-sqlite.mdx",
+                                    "meta": {
+                                        "title": "Foreign keys / Relations (SQLite)",
+                                        "metaTitle": "Configure foreign keys with Prisma and SQLite",
+                                        "metaDescription": "Learn how to configure foreign keys with Prisma and SQLite by following the step-by-step instructions in this practical guide."
+                                    },
                                     "title": "",
                                     "url": "/04-guides/01-database-workflows/05-foreign-keys/03-sqlite"
                                 },
@@ -684,6 +1184,11 @@
                                 {
                                     "path": "pages/04-guides/01-database-workflows/05-foreign-keys/index.mdx",
                                     "name": "index.mdx",
+                                    "meta": {
+                                        "title": "Foreign keys",
+                                        "metaTitle": "",
+                                        "toc": false
+                                    },
                                     "title": "",
                                     "url": "/04-guides/01-database-workflows/05-foreign-keys"
                                 }
@@ -698,18 +1203,33 @@
                                 {
                                     "path": "pages/04-guides/01-database-workflows/06-cascading-deletes/01-postgresql.mdx",
                                     "name": "01-postgresql.mdx",
+                                    "meta": {
+                                        "title": "Cascading deletes (PostgreSQL)",
+                                        "metaTitle": "Configure cascading deletes with Prisma and PostgreSQL",
+                                        "metaDescription": "Learn how to configure cascading deletes with Prisma and PostgreSQL by following the step-by-step instructions in this practical guide."
+                                    },
                                     "title": "",
                                     "url": "/04-guides/01-database-workflows/06-cascading-deletes/01-postgresql"
                                 },
                                 {
                                     "path": "pages/04-guides/01-database-workflows/06-cascading-deletes/02-mysql.mdx",
                                     "name": "02-mysql.mdx",
+                                    "meta": {
+                                        "title": "Cascading deletes (MySQL)",
+                                        "metaTitle": "Configure cascading deletes with Prisma and MySQL",
+                                        "metaDescription": "Learn how to configure cascading deletes with Prisma and MySQL by following the step-by-step instructions in this practical guide."
+                                    },
                                     "title": "",
                                     "url": "/04-guides/01-database-workflows/06-cascading-deletes/02-mysql"
                                 },
                                 {
                                     "path": "pages/04-guides/01-database-workflows/06-cascading-deletes/03-sqlite.mdx",
                                     "name": "03-sqlite.mdx",
+                                    "meta": {
+                                        "title": "Cascading deletes (SQLite)",
+                                        "metaTitle": "Configure cascading deletes with Prisma and SQLite",
+                                        "metaDescription": "Learn how to configure cascading deletes with Prisma and SQLite by following the step-by-step instructions in this practical guide."
+                                    },
                                     "title": "",
                                     "url": "/04-guides/01-database-workflows/06-cascading-deletes/03-sqlite"
                                 },
@@ -723,6 +1243,11 @@
                                 {
                                     "path": "pages/04-guides/01-database-workflows/06-cascading-deletes/index.mdx",
                                     "name": "index.mdx",
+                                    "meta": {
+                                        "title": "Cascading deletes",
+                                        "metaTitle": "",
+                                        "toc": false
+                                    },
                                     "title": "",
                                     "url": "/04-guides/01-database-workflows/06-cascading-deletes"
                                 }
@@ -737,12 +1262,23 @@
                                 {
                                     "path": "pages/04-guides/01-database-workflows/07-data-validation/01-postgresql.mdx",
                                     "name": "01-postgresql.mdx",
+                                    "meta": {
+                                        "title": "Data validation with CHECK constraints (PostgreSQL)",
+                                        "metaTitle": "Data validation with CHECK constraints (PostgreSQL)",
+                                        "metaDescription": "Learn how to configure CHECK constraints for data validation with Prisma and PostgreSQL by following the step-by-step instructions in this practical guide."
+                                    },
                                     "title": "",
                                     "url": "/04-guides/01-database-workflows/07-data-validation/01-postgresql"
                                 },
                                 {
                                     "path": "pages/04-guides/01-database-workflows/07-data-validation/index.mdx",
                                     "name": "index.mdx",
+                                    "meta": {
+                                        "title": "Data validation",
+                                        "metaTitle": "",
+                                        "metaDescription": null,
+                                        "toc": false
+                                    },
                                     "title": "",
                                     "url": "/04-guides/01-database-workflows/07-data-validation"
                                 }
@@ -753,6 +1289,12 @@
                         {
                             "path": "pages/04-guides/01-database-workflows/index.mdx",
                             "name": "index.mdx",
+                            "meta": {
+                                "title": "Database workflows",
+                                "metaTitle": "Database workflows",
+                                "staticLink": true,
+                                "toc": false
+                            },
                             "title": "",
                             "url": "/04-guides/01-database-workflows"
                         }
@@ -767,24 +1309,46 @@
                         {
                             "path": "pages/04-guides/02-deployment/01-deploying-to-vercel.mdx",
                             "name": "01-deploying-to-vercel.mdx",
+                            "meta": {
+                                "title": "Deploying to Vercel (ZEIT Now)",
+                                "metaTitle": "Deploying to Vercel (ZEIT Now)",
+                                "metaDescription": "Learn how to deploy Node.js and TypeScript that are using Prisma Client to Vercel."
+                            },
                             "title": "",
                             "url": "/04-guides/02-deployment/01-deploying-to-vercel"
                         },
                         {
                             "path": "pages/04-guides/02-deployment/02-deploying-to-aws-lambda.mdx",
                             "name": "02-deploying-to-aws-lambda.mdx",
+                            "meta": {
+                                "title": "Deploying to AWS Lambda",
+                                "metaTitle": "Deploying to AWS Lambda",
+                                "metaDescription": "Learn how to deploy Node.js and TypeScript that are using Prisma Client to AWS Lambda."
+                            },
                             "title": "",
                             "url": "/04-guides/02-deployment/02-deploying-to-aws-lambda"
                         },
                         {
                             "path": "pages/04-guides/02-deployment/04-deploying-to-netlify.mdx",
                             "name": "04-deploying-to-netlify.mdx",
+                            "meta": {
+                                "title": "Deploying to Netlify",
+                                "metaTitle": "Deploying to Netlify",
+                                "metaDescription": "Learn how to deploy Node.js and TypeScript that are using Prisma Client to Netlify."
+                            },
                             "title": "",
                             "url": "/04-guides/02-deployment/04-deploying-to-netlify"
                         },
                         {
                             "path": "pages/04-guides/02-deployment/index.mdx",
                             "name": "index.mdx",
+                            "meta": {
+                                "title": "Deployment",
+                                "metaTitle": "Deployment",
+                                "metaDescription": "Deployment",
+                                "staticLink": true,
+                                "toc": false
+                            },
                             "title": "",
                             "url": "/04-guides/02-deployment"
                         }
@@ -799,48 +1363,97 @@
                         {
                             "path": "pages/04-guides/03-upgrade-from-prisma-1/01-should-you-upgrade.mdx",
                             "name": "01-should-you-upgrade.mdx",
+                            "meta": {
+                                "title": "Should you upgrade?",
+                                "metaTitle": "Should you upgrade from Prisma 1 to Prisma 2.0?",
+                                "metaDescription": "Learn whether you should already upgrade your Prisma 1 project to Prisma 2.0"
+                            },
                             "title": "",
                             "url": "/04-guides/03-upgrade-from-prisma-1/01-should-you-upgrade"
                         },
                         {
                             "path": "pages/04-guides/03-upgrade-from-prisma-1/02-schema-incompatibilities.mdx",
                             "name": "02-schema-incompatibilities.mdx",
+                            "meta": {
+                                "title": "Schema incompatibilities",
+                                "metaTitle": "Problems and workarounds for Prisma 1 and 2.0 schemas",
+                                "metaDescription": "Learn about the schema incompatibilities between Prisma 1 and Prisma 2.0 and how to resolve them with several workarounds.",
+                                "dbSwitcher": [
+                                    "postgres",
+                                    "mysql"
+                                ]
+                            },
                             "title": "",
                             "url": "/04-guides/03-upgrade-from-prisma-1/02-schema-incompatibilities"
                         },
                         {
                             "path": "pages/04-guides/03-upgrade-from-prisma-1/03-upgrading-the-prisma-layer.mdx",
                             "name": "03-upgrading-the-prisma-layer.mdx",
+                            "meta": {
+                                "title": "Upgrading the Prisma layer",
+                                "metaTitle": "Upgrading the Prisma layer to Prisma 2.0",
+                                "metaDescription": "Learn how to the Prisma layer to Prisma 2.0 and create your Prisma schema.",
+                                "dbSwitcher": [
+                                    "postgres",
+                                    "mysql"
+                                ]
+                            },
                             "title": "",
                             "url": "/04-guides/03-upgrade-from-prisma-1/03-upgrading-the-prisma-layer"
                         },
                         {
                             "path": "pages/04-guides/03-upgrade-from-prisma-1/04-upgrading-nexus-prisma-to-nexus.mdx",
                             "name": "04-upgrading-nexus-prisma-to-nexus.mdx",
+                            "meta": {
+                                "title": "Old to new Nexus",
+                                "metaTitle": "Upgrading from Prisma 1 with prisma-binding to Nexus",
+                                "metaDescription": "Learn how to upgrade existing Prisma 1 projects with prisma-binding to Prisma 2.0 and Nexus."
+                            },
                             "title": "",
                             "url": "/04-guides/03-upgrade-from-prisma-1/04-upgrading-nexus-prisma-to-nexus"
                         },
                         {
                             "path": "pages/04-guides/03-upgrade-from-prisma-1/05-upgrading-prisma-binding-to-nexus.mdx",
                             "name": "05-upgrading-prisma-binding-to-nexus.mdx",
+                            "meta": {
+                                "title": "prisma-binding to Nexus",
+                                "metaTitle": "Upgrading from Prisma 1 with prisma-binding to Nexus",
+                                "metaDescription": "Learn how to upgrade existing Prisma 1 projects with prisma-binding to Prisma 2.0 and Nexus."
+                            },
                             "title": "",
                             "url": "/04-guides/03-upgrade-from-prisma-1/05-upgrading-prisma-binding-to-nexus"
                         },
                         {
                             "path": "pages/04-guides/03-upgrade-from-prisma-1/06-upgrading-prisma-binding-to-sdl-first.mdx",
                             "name": "06-upgrading-prisma-binding-to-sdl-first.mdx",
+                            "meta": {
+                                "title": "prisma-binding to SDL-first",
+                                "metaTitle": "Upgrading from Prisma 1 with prisma-binding to SDL-first",
+                                "metaDescription": "Learn how to upgrade existing Prisma 1 projects with prisma-binding to Prisma 2.0 and Nexus."
+                            },
                             "title": "",
                             "url": "/04-guides/03-upgrade-from-prisma-1/06-upgrading-prisma-binding-to-sdl-first"
                         },
                         {
                             "path": "pages/04-guides/03-upgrade-from-prisma-1/07-upgrading-a-rest-api.mdx",
                             "name": "07-upgrading-a-rest-api.mdx",
+                            "meta": {
+                                "title": "REST API",
+                                "metaTitle": "Upgrading a REST API from Prisma 1 to Prisma 2.0",
+                                "metaDescription": "Learn how to upgrade existing Prisma 1 projects to Prisma 2.0."
+                            },
                             "title": "",
                             "url": "/04-guides/03-upgrade-from-prisma-1/07-upgrading-a-rest-api"
                         },
                         {
                             "path": "pages/04-guides/03-upgrade-from-prisma-1/index.mdx",
                             "name": "index.mdx",
+                            "meta": {
+                                "title": "Upgrade from Prisma 1",
+                                "metaTitle": "Upgrade from Prisma 1",
+                                "staticLink": true,
+                                "toc": false
+                            },
                             "title": "",
                             "url": "/04-guides/03-upgrade-from-prisma-1"
                         }
@@ -851,6 +1464,12 @@
                 {
                     "path": "pages/04-guides/index.mdx",
                     "name": "index.mdx",
+                    "meta": {
+                        "title": "Guides",
+                        "metaTitle": "Guides",
+                        "metaDescription": "Guides",
+                        "toc": false
+                    },
                     "title": "",
                     "url": "/04-guides"
                 }
@@ -865,6 +1484,11 @@
                 {
                     "path": "pages/05-more/01-about-the-docs.mdx",
                     "name": "01-about-the-docs.mdx",
+                    "meta": {
+                        "title": "About the docs",
+                        "metaTitle": "About the Prisma documentation",
+                        "metaDescription": "This page gives a meta-overview about different topics that are relevant to better understand and navigate the Prisma documentation."
+                    },
                     "title": "",
                     "url": "/05-more/01-about-the-docs"
                 },
@@ -875,12 +1499,18 @@
                         {
                             "path": "pages/05-more/02-style-guide/01-mdx-examples.mdx",
                             "name": "01-mdx-examples.mdx",
+                            "meta": {},
                             "title": "",
                             "url": "/05-more/02-style-guide/01-mdx-examples"
                         },
                         {
                             "path": "pages/05-more/02-style-guide/index.mdx",
                             "name": "index.mdx",
+                            "meta": {
+                                "title": "Prisma style guide",
+                                "metaTitle": "Prisma documentation style guide",
+                                "metaDescription": "The Prisma style guide contains a number of rules and conventions for the content in the Prisma documentation."
+                            },
                             "title": "",
                             "url": "/05-more/02-style-guide"
                         }
@@ -891,36 +1521,68 @@
                 {
                     "path": "pages/05-more/03-supported-databases.mdx",
                     "name": "03-supported-databases.mdx",
+                    "meta": {
+                        "title": "Supported databases",
+                        "metaTitle": "Databases supported by Prisma",
+                        "metaDescription": "This page lists all the databases and their versions that are supported by Prisma."
+                    },
                     "title": "",
                     "url": "/05-more/03-supported-databases"
                 },
                 {
                     "path": "pages/05-more/04-creating-bug-reports.mdx",
                     "name": "04-creating-bug-reports.mdx",
+                    "meta": {
+                        "title": "Creating bug reports",
+                        "metaTitle": "Creating bug reports for Prisma",
+                        "metaDescription": "This page explains best practices for creating bug reports for Prisma, inlcuding sharing additional debugging output and other recommendations."
+                    },
                     "title": "",
                     "url": "/05-more/04-creating-bug-reports"
                 },
                 {
                     "path": "pages/05-more/05-faq.mdx",
                     "name": "05-faq.mdx",
+                    "meta": {
+                        "title": "FAQ",
+                        "metaTitle": "Prisma FAQs",
+                        "metaDescription": "Frequently asked questions (FAQ) about the Prisma tools and their ecosystem."
+                    },
                     "title": "",
                     "url": "/05-more/05-faq"
                 },
                 {
                     "path": "pages/05-more/06-limitations.mdx",
                     "name": "06-limitations.mdx",
+                    "meta": {
+                        "title": "Limitations",
+                        "metaTitle": "Limitations",
+                        "metaDescription": "This page lists a number of current limitations of Prisma."
+                    },
                     "title": "",
                     "url": "/05-more/06-limitations"
                 },
                 {
                     "path": "pages/05-more/07-roadmap.mdx",
                     "name": "07-roadmap.mdx",
+                    "meta": {
+                        "title": "Roadmap",
+                        "metaTitle": "Prisma Public Roadmap – See what we are working on next",
+                        "metaDescription": "Want to know what we are up to? Our roadmap provides an overview of our priorities and where we are planning to take Prisma next."
+                    },
                     "title": "",
                     "url": "/05-more/07-roadmap"
                 },
                 {
                     "path": "pages/05-more/index.mdx",
                     "name": "index.mdx",
+                    "meta": {
+                        "title": "More",
+                        "metaTitle": "More",
+                        "metaDescription": "More",
+                        "toc": false,
+                        "hidePage": false
+                    },
                     "title": "",
                     "url": "/05-more"
                 }
@@ -931,6 +1593,7 @@
         {
             "path": "pages/index.mdx",
             "name": "index.mdx",
+            "meta": {},
             "title": "xxx",
             "url": "/index"
         }

@@ -42,8 +42,8 @@ export const BlogPosts = ({
             <Stack
                 position='relative'
                 align='center'
-                my='24'
-                mb='32'
+                mt={['8', null, '24']}
+                mb={['10', null, '32']}
                 spacing='10'
                 alignSelf='center'
             >
