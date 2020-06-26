@@ -25,7 +25,7 @@ export default function App(props) {
                 headerLogo={<Logo height='30px' opacity={0.92} />}
                 headerItems={[
                     <Link href='https://github.com/remorses/dokz'>Dokz</Link>,
-
+                    <Link href='/blog'>Blog</Link>,
                     <ColorModeSwitch key={1} />,
                 ]}
             >
