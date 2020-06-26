@@ -116,7 +116,7 @@ export const BlogPostCard = ({ title, date, url, description, ...rest }) => {
             <Stack w='100%' spacing='4' p='6'>
                 <Box fontWeight='semibold'>{title}</Box>
                 <Box fontSize='0.9em' opacity={0.7}>
-                    {description || 'No description'}
+                    {description || ''}
                 </Box>
             </Stack>
             <Box flex='1' />
