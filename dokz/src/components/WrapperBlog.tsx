@@ -90,7 +90,7 @@ export const BaseWrapperBlog = ({ children, ...rest }) => {
                     <NavBar
                         logo={headerLogo}
                         items={headerItems}
-                        // maxW={PAGE_MAX_W}
+                        bg='transparent'
                         width='100%'
                         // mr='auto'
                         // top={0}

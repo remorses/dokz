@@ -12,6 +12,8 @@ export type BlogPostsProps = {
     footer?: ReactNode
 }
 
+const BG = 'linear-gradient(90deg, rgb(44, 206, 193), rgb(0, 129, 214))'
+
 export const BlogPosts = ({
     heading = 'Blog Posts',
     subheading = 'NEWS, ANNOUNCEMENTS & TIPS',
@@ -25,10 +27,20 @@ export const BlogPosts = ({
     }
     let tree = getMdxSidebarTree()
     tree = findTreeInPath(tree, blogRootPath) || tree
-
+    const { colorMode } = useColorMode()
     return (
-        <BaseWrapperBlog align='center'>
+        <BaseWrapperBlog overflow='hidden' align='center'>
+            <Box
+                position='absolute'
+                bg={{ light: 'gray.100', dark: 'rgba(0,0,0,.1)' }[colorMode]}
+                top='-100px'
+                left='0'
+                right='0'
+                height='700px'
+                transform='rotate(4deg) skew(4deg)'
+            />
             <Stack
+                position='relative'
                 align='center'
                 my='24'
                 mb='32'
@@ -55,7 +67,12 @@ export const BlogPosts = ({
                 </Box>
             </Stack>
 
-            <Flex justify='center' direction='row' flexWrap='wrap'>
+            <Flex
+                position='relative'
+                justify='center'
+                direction='row'
+                flexWrap='wrap'
+            >
                 {tree.children &&
                     tree.children.map((node, i) => {
                         const { meta = {} } = node
