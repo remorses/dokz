@@ -7224,7 +7224,7 @@ klaw@^1.0.0:
   optionalDependencies:
     graceful-fs "^4.1.9"
 
-landing-blocks@latest:
+landing-blocks@^1.0.49:
   version "1.0.49"
   resolved "https://registry.yarnpkg.com/landing-blocks/-/landing-blocks-1.0.49.tgz#b3719c1417ce58449030cf0bb11da1b090e935b1"
   integrity sha512-e/sRUbCGCSVcNSR7JIEnSbm3DiFKgf+Qqfn0J+FNMHzcecVVRfG5BDfLyz6z9tqPmsD0U6NdtDNMC95MtPexDA==
