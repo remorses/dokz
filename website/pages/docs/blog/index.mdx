@@ -21,7 +21,7 @@ export default function App(props) {
     const { pathname } = useRouter()
     if (pathname.startsWith('/blog')) {
         return (
-            <DokzBlogProvider>
+            <DokzBlogProvider blogRootPath='pages/blog'>
                 <Component {...pageProps} />
             </DokzBlogProvider>
         )
@@ -37,6 +37,19 @@ export default function App(props) {
 }
 ```
 
+## Adding a post list
+
+To add a page to list all your posts you can add a page that exports the `BlogPosts` component
+
+```jsx
+// pages/index.jsx
+export { BlogPosts as default } from 'dokz/src'
+```
+
+This page will render a grid of all you documents under the `blogRootPath` directory, using the details given in the front matter
+
+To see a demo of how it looks you can go to the [dokz blog](/blog)
+
 ## Customization
 
 The customization you can do to the blog are similar to what you can do to the docs site
@@ -49,3 +62,14 @@ For example you can pass the following props to `DokzBlogProvider`:
 -   prismTheme
 -   initialColorMode
 -   fontFamily
+
+You can also change the main blog posts grid heading and subheading
+
+```jsx
+// pages/index.jsx
+import { BlogPosts } from 'dokz/src'
+
+export default function Page() {
+    return <BlogPosts heading='My Blog' subheading='Awesome articles every week' />
+}
+```

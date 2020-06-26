@@ -2,14 +2,24 @@
 
 You can write MDX exactly the same way you do with documentation
 
-There are also additional options you should pass that are `title` and `date`:
+There are also additional options you should pass to the front matter:
+
+-   name
+-   date
+-   description
+
+The `name` option will be the main `title` of you post page and the `date` option will be positioned below, in a pretty and simple layout
+
+These details are also used by the `BlogPosts` component to show a grid of all your posts
 
 ```md
-export const title = 'My first blog post'
+---
+name: Example post
+date: 25 June, 2020
+description: An example post made just to test the dokz blog feature
+---
 
-export const date = '24 June, 2020'
-
-Blog post content...
+## Blog post content...
 ```
 
 > Notice the space between the exports, MDX parse seems to have a bug with exports that have not at least 1 line of space between them
@@ -18,14 +28,16 @@ Blog post content...
 
 You can use the package `next-seo` to easily add SEO tags to any nextjs page
 
-```jsx
+```md
+---
+name: Example post
+date: 25 June, 2020
+description: An example post made just to test the dokz blog feature
+---
+
 import { NextSeo } from 'next-seo'
 
-export const title = 'My first blog post'
+<NextSeo title='Title' description='A short description goes here.' />
 
-export const date = '24 June, 2020'
-
-<NextSeo title={title} description='A short description goes here.' />
-
-My content...
+## My content...
 ```

@@ -26,7 +26,7 @@ const Page = () => (
                 logo={<Box as={Logo} width='30px' />}
                 navs={[
                     <a href='https://github.com/remorses/dokz'>Github</a>,
-                    <a href='/docs'>Demo</a>,
+                    // <a href='/docs'>Demo</a>,
                     <a href='/docs'>Docs</a>,
                     <a href='/blog'>Blog</a>,
                     <CtaButton px='10px' />,
