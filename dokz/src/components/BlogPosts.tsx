@@ -100,7 +100,7 @@ export const BlogPostCard = ({ title, date, url, description, ...rest }) => {
     return (
         <Stack
             as='a'
-            borderRadius='md'
+            borderRadius='lg'
             // borderWidth='1px'
             // @ts-ignore
             href={url}
@@ -109,7 +109,7 @@ export const BlogPostCard = ({ title, date, url, description, ...rest }) => {
             p='0'
             align='stretch'
             // minWidth='300px'
-            shadow='lg'
+            shadow='md'
             bg={{ light: 'white', dark: 'gray.700' }[colorMode]}
             {...rest}
         >
@@ -128,7 +128,8 @@ export const BlogPostCard = ({ title, date, url, description, ...rest }) => {
                 w='100%'
                 px='6'
                 py='4'
-                bg={{ light: 'gray.100', dark: 'gray.800' }[colorMode]}
+                borderTopWidth={{ light: '1px', dark: '0px' }[colorMode]}
+                bg={{ light: 'gray.50', dark: 'gray.800' }[colorMode]}
             >
                 <Stack
                     align='center'
