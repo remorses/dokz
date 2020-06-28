@@ -100,7 +100,7 @@ export const BlogPostCard = ({ title, date, url, description, ...rest }) => {
     return (
         <Stack
             as='a'
-            borderRadius='lg'
+            borderRadius='md'
             // borderWidth='1px'
             // @ts-ignore
             href={url}
