@@ -18,6 +18,7 @@ import { Global, css } from '@emotion/core'
 import { TableOfContents } from './TableOfContents'
 import { Fragment, useMemo } from 'react'
 import { globalStyles, getMdxSidebarTree } from './support'
+import { FooterButtons } from './FooterButtons'
 
 const SIDENAV_W = 280
 const TABLE_OF_C_W = 200
@@ -99,6 +100,7 @@ export function Wrapper(props) {
                             borderLeftWidth='1px'
                         >
                             {props.children}
+                            <FooterButtons my='20' width='100%' />
                             {footer}
                         </Flex>
                         <TableOfContents

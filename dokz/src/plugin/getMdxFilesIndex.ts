@@ -17,7 +17,7 @@ export async function getMdxFilesIndex() {
             // console.log({ frontMatter: frontMatter.attributes })
             const { name = '', ...meta } = attributes
             node.meta = meta || {}
-            node.title = name
+            node.title = name || formatTitle(node.name || '')
             node.url = formatRelativePath(path.relative(pagesPath, pathName))
             delete node.extension
             delete node.size
@@ -46,6 +46,20 @@ function formatRelativePath(path) {
     relativePath = relativePath || '/'
     return '/' + relativePath
 }
+
+function formatTitle(name: string) {
+    return capitalizeFirstLetter(
+        name
+            .replace(/_/g, ' ')
+            .replace(/-/g, ' ')
+            .replace(/\.mdx?/, ''),
+    )
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1)
+}
+
 
 async function getPagesPath() {
     var [err, stats] = await to(fs.promises.stat('src/pages'))

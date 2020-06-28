@@ -21,7 +21,7 @@ import isometric_text_icon from '../public/isometric_text_icon.png'
 
 const Page = () => (
     <LandingProvider bg='gray.800' primary='#3884FF' dark>
-        <Stack align='stretch' spacing='40px'>
+        <Stack align='stretch' spacing='60px'>
             <NavBar
                 logo={<Box as={Logo} width='30px' />}
                 navs={[

@@ -82,3 +82,26 @@ export function findTreeInPath(
         }
     }
 }
+
+export function findSubtreeInPathByUrl(
+    tree: DirectoryTree,
+    url,
+): { current?: DirectoryTree; previous?: DirectoryTree; next?: DirectoryTree } {
+    if (!tree?.children?.length) {
+        return null
+    }
+    for (let i = 0; i < tree.children.length; i++) {
+        let child = tree.children[i]
+        if (child.url === url) {
+            return {
+                previous: tree.children[i - 1],
+                current: tree,
+                next: tree.children[i + 1], // TODO if type is directory get the first node in folder
+            }
+        }
+        let found = findSubtreeInPathByUrl(child, url)
+        if (found) {
+            return found
+        }
+    }
+}
