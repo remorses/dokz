@@ -53,7 +53,7 @@ export function Wrapper(props) {
             >
                 <Box position='relative' w='100%' maxWidth={maxPageWidth}>
                     <NavBar
-                        px='4'
+                        // px='4'
                         logo={headerLogo}
                         items={headerItems}
                         tree={index}
