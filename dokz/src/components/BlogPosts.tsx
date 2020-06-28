@@ -109,7 +109,7 @@ export const BlogPostCard = ({ title, date, url, description, ...rest }) => {
             p='0'
             align='stretch'
             // minWidth='300px'
-            shadow='md'
+            shadow='sm'
             bg={{ light: 'white', dark: 'gray.700' }[colorMode]}
             {...rest}
         >
