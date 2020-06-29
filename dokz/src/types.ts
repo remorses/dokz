@@ -1,6 +1,6 @@
-export type DoczTableOfContents = {
+export type DokzTableOfContents = {
     depth: number
     slug?: string
     title?: string
-    children: DoczTableOfContents[]
+    children: DokzTableOfContents[]
 }

@@ -6,7 +6,7 @@ import { useDokzBlogConfig } from '../blog'
 import NavBar from './NavBar'
 import { SideNav } from './SideNav'
 import { getMdxSidebarTree, globalStyles } from './support'
-import { TableOfContents } from './TableOfContents'
+import { FloatingTableOfContents } from './FloatingTableOfContents'
 import { PropagatedThemeProvider } from './Wrapper'
 import { DateIcon } from './icons'
 

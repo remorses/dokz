@@ -1,13 +1,13 @@
-import { DoczTableOfContents } from '../types'
+import { DokzTableOfContents } from '../types'
 import { Stack, Box, Link } from '@chakra-ui/core'
 import React from 'react'
 import { StackProps } from '@chakra-ui/core'
 
-export function TableOfContents({
+export function FloatingTableOfContents({
     table,
     ...rest
 }: {
-    table: DoczTableOfContents
+    table: DokzTableOfContents
 } & StackProps) {
     if (!table) {
         return null
@@ -32,7 +32,7 @@ export function TableOfContents({
     )
 }
 
-function TableItem({ children, depth, title, slug }: DoczTableOfContents) {
+function TableItem({ children, depth, title, slug }: DokzTableOfContents) {
     const baseW = 20
     return (
         <Stack>

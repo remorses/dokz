@@ -15,7 +15,7 @@ import { useDokzConfig } from '../provider'
 import NavBar from './NavBar'
 import { SideNav } from './SideNav'
 import { Global, css } from '@emotion/core'
-import { TableOfContents } from './TableOfContents'
+import { FloatingTableOfContents } from './FloatingTableOfContents'
 import { Fragment, useMemo } from 'react'
 import { globalStyles, getMdxSidebarTree } from './support'
 import { FooterButtons } from './FooterButtons'
@@ -120,7 +120,7 @@ export function Wrapper(props) {
                             />
                             {footer}
                         </Flex>
-                        <TableOfContents
+                        <FloatingTableOfContents
                             className='dokz hiddenInPrint'
                             fontSize='0.9em'
                             // fontWeight='400'

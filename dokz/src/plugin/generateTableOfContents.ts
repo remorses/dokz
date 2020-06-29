@@ -1,9 +1,9 @@
 import makeToc from 'mdast-util-toc'
 import visit from 'unist-util-visit'
 import { Node } from 'unist'
-import { DoczTableOfContents } from '../types'
+import { DokzTableOfContents } from '../types'
 
-export function generateTableOfContents(root): DoczTableOfContents {
+export function generateTableOfContents(root): DokzTableOfContents {
     const toc = makeToc(root)
     return getItems(toc?.map, { depth: 0 })
 }
