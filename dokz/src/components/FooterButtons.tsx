@@ -1,4 +1,6 @@
 import { Stack, Box } from 'layout-kit-react'
+import { jsx, css } from '@emotion/core'
+jsx
 import NextLink from 'next/link'
 import { Link } from '@chakra-ui/core'
 import React from 'react'
@@ -62,6 +64,12 @@ const Button = ({ href = '', title, type, ...rest }) => {
                 py='4'
                 as='a'
                 fontWeight='medium'
+                transition='box-shadow 0.3s'
+                css={css`
+                    :hover {
+                        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+                    }
+                `}
                 {...rest}
             >
                 <Stack direction='row' align='center' spacing='2' opacity={0.4}>
