@@ -38,20 +38,22 @@ export const Code = ({ children, className, ...rest }) => {
                         as='pre'
                         fontFamily={CODE_FONT}
                         fontSize='0.9em'
-                        className={className}
+                        className={'dokz codeContainer ' + className}
                         style={{ ...style }}
                         overflowX='auto'
                     >
                         <Box
+                            className='dokz hiddenInPrint'
                             opacity={0.6}
-                            fontSize='14px'
+                            fontSize='0.9em'
                             position='absolute'
                             right='40px'
-                            top='10px'
+                            top='8px'
                         >
                             {language}
                         </Box>
                         <CopyButton
+                            className='dokz hiddenInPrint'
                             onClick={onCopy}
                             hasCopied={hasCopied}
                             position='absolute'
@@ -85,7 +87,7 @@ export const CopyButton = (props) => {
                 strokeWidth: '2px',
             }}
             opacity={0.7}
-            size='18px'
+            size='1.1em'
             as={hasCopied ? FiCheck : FiCopy}
             {...props}
         />

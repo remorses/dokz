@@ -35,12 +35,16 @@ const cssForPdfRendering = css`
         .dokz.noMarginInPrint {
             margin: 0px !important;
         }
+        .dokz.codeContainer {
+            padding-top: 20px;
+        }
         .dokz.mainContent {
             border: none;
             contain: none;
             margin: 0px !important;
             position: relative;
             overflow: visible !important;
+            font-size: 15px;
         }
         /* force visibility and not overflow scroll */
         #__next .dokz.visibleInPrint {
