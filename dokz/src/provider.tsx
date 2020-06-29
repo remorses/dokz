@@ -94,7 +94,7 @@ const defaultDarkPrismTheme = {
 
 export const defaultDokzContext: DokzProviderProps = {
     initialColorMode: 'light',
-    footer: <Box height='100px' />,
+    footer: null,
     headerLogo: (
         <Box fontWeight='medium' fontSize='32px'>
             Your Logo
