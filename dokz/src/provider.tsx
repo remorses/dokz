@@ -13,6 +13,7 @@ import { PrismTheme } from 'prism-react-renderer'
 import darkPrismTheme from 'prism-react-renderer/themes/oceanicNext'
 import { GithubLink, ColorModeSwitch } from './components/NavBar'
 import { Arrow, ArrowEmpty } from './components/icons'
+import { DokzTableOfContents } from './types'
 
 export type DokzProviderProps = {
     children?: any
@@ -137,3 +138,14 @@ export function DokzProvider({ children, ...rest }: DokzProviderProps) {
         </DokzContext.Provider>
     )
 }
+
+// table of contents
+
+const defaultTableOfContents: DokzTableOfContents = {
+    children: [],
+    depth: 0,
+}
+
+export const TableOfContentsContext = createContext({
+    tableOfContents: defaultTableOfContents,
+})

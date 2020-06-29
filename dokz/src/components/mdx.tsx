@@ -57,7 +57,7 @@ const TData = (props) => (
     />
 )
 
-const DocsHeading = (props) => {
+export const DocsHeading = (props) => {
     const { headingColor } = useDokzConfig()
     const { colorMode } = useColorMode()
     return (
