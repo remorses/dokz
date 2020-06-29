@@ -12,11 +12,11 @@ Cascading deletes allow you to configure deletion behavior on relations (e.g. sp
 
 There generally are five options for configuring deletion behavior in PostgreSQL (quoting from the [PostgreSQL docs](https://www.postgresql.org/docs/8.2/ddl-constraints.html#DDL-CONSTRAINTS-FK)):
 
-- `NO ACTION` (default): If any referencing rows still exist when the constraint is checked, an error is raised
-- `RESTRICT`: Prevents deletion of a referenced row. The essential difference between these two choices is that `NO ACTION` allows the check to be deferred until later in the transaction, whereas `RESTRICT` does not.
-- `CASCADE`: When a referenced row is deleted, row(s) referencing it should be automatically deleted as well.
-- `SET NULL`: Causes the referencing columns to be set to `NULL` when the referenced row is deleted.
-- `SET DEFAULT`: Causes the referencing columns to be set to their default values when the referenced row is deleted. Note that these do not excuse you from observing any constraints. For example, if an action specifies `SET DEFAULT` but the default value would not satisfy the foreign key, the operation will fail.
+-   `NO ACTION` (default): If any referencing rows still exist when the constraint is checked, an error is raised
+-   `RESTRICT`: Prevents deletion of a referenced row. The essential difference between these two choices is that `NO ACTION` allows the check to be deferred until later in the transaction, whereas `RESTRICT` does not.
+-   `CASCADE`: When a referenced row is deleted, row(s) referencing it should be automatically deleted as well.
+-   `SET NULL`: Causes the referencing columns to be set to `NULL` when the referenced row is deleted.
+-   `SET DEFAULT`: Causes the referencing columns to be set to their default values when the referenced row is deleted. Note that these do not excuse you from observing any constraints. For example, if an action specifies `SET DEFAULT` but the default value would not satisfy the foreign key, the operation will fail.
 
 In this guide, you'll create two tables where one references the other via a foreign key and explore the different options for cascading deletes.
 
@@ -26,10 +26,10 @@ At the end of the guide, you'll introspect your database to reflect the foreign 
 
 In order to follow this guide, you need:
 
-- a [PostgreSQL](https://www.postgresql.org/) database server running
-- the [`createdb`](https://www.postgresql.org/docs/9.1/app-createdb.html) command line utility
-- the [`psql`](https://www.postgresql.org/docs/10/app-psql.html) command line client for PostgreSQL
-- the [Node.js](https://nodejs.org/) runtime for JavaScript installed on your machine
+-   a [PostgreSQL](https://www.postgresql.org/) database server running
+-   the [`createdb`](https://www.postgresql.org/docs/9.1/app-createdb.html) command line utility
+-   the [`psql`](https://www.postgresql.org/docs/10/app-psql.html) command line client for PostgreSQL
+-   the [Node.js](https://nodejs.org/) runtime for JavaScript installed on your machine
 
 ## 1. Create a new database and project directory
 
@@ -102,7 +102,7 @@ CREATE TABLE "public"."Post" (
 );
 ```
 
-</details> 
+</details>
 
 ## 3. Create two tables with a foreign key and `CASCADE` deletion behavior
 
@@ -251,11 +251,11 @@ Since `TheLastPost` records can only ever reference existing `TheLastUser` recor
 
 In the previous sections, you created five times two tables with foreign key constraints:
 
-- The table `Post` uses `RESTRICT` behavior on the foreign key column `authorId` which points to the `User` table
-- The table `AnotherPost` uses `CASCADE` behavior on the foreign key column `authorId` which points to the `AnotherUser` table
-- The table `OneMorePost` uses `NO ACTION` behavior on the foreign key column `authorId` which points to the `OneMoreUser` table
-- The table `AlmostTheLastPost` uses `SET NULL` behavior on the foreign key column `authorId` which points to the `AlmostTheLastUser` table
-- The table `TheLastPost` uses `SET DEFAULT` behavior on the foreign key column `authorId` which points to the `TheLastUser` table
+-   The table `Post` uses `RESTRICT` behavior on the foreign key column `authorId` which points to the `User` table
+-   The table `AnotherPost` uses `CASCADE` behavior on the foreign key column `authorId` which points to the `AnotherUser` table
+-   The table `OneMorePost` uses `NO ACTION` behavior on the foreign key column `authorId` which points to the `OneMoreUser` table
+-   The table `AlmostTheLastPost` uses `SET NULL` behavior on the foreign key column `authorId` which points to the `AlmostTheLastUser` table
+-   The table `TheLastPost` uses `SET DEFAULT` behavior on the foreign key column `authorId` which points to the `TheLastUser` table
 
 In this section you'll introspect your database to generate the Prisma models for these tables.
 
@@ -408,30 +408,30 @@ To test the `RESTRICT` behavior, you need to access the `User` and `Post` tables
 Create a new file called `index.js` and add the following code to it:
 
 ```js
-const { PrismaClient } = require('@prisma/client');
+const { PrismaClient } = require('@prisma/client')
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient()
 
 async function main() {
-  const userWithPost = await prisma.user.create({
-    data: {
-      name: 'Alice',
-      Post: {
-        create: { title: 'Hello World' },
-      },
-    },
-  });
+    const userWithPost = await prisma.user.create({
+        data: {
+            name: 'Alice',
+            Post: {
+                create: { title: 'Hello World' },
+            },
+        },
+    })
 
-  try {
-    const deletedUser = await prisma.user.delete({
-      where: { id: userWithPost.id },
-    });
-  } catch (e) {
-    console.log(e);
-  }
+    try {
+        const deletedUser = await prisma.user.delete({
+            where: { id: userWithPost.id },
+        })
+    } catch (e) {
+        console.log(e)
+    }
 }
 
-main();
+main()
 ```
 
 Run the code with this command:
@@ -458,8 +458,6 @@ This is a non-recoverable error which probably happens when the Prisma Query Eng
 Please create an issue in https://github.com/prisma/prisma-client-js describing the last Prisma Client query you called.
 ```
 
-TODO: Replace when https://github.com/prisma/prisma-client-js/issues/609 was closed.
-
 ### 9.2. Validating `CASCADE`
 
 The `CASCADE` keyword ensures that when a referenced row is deleted, all the rows that are referencing it get deleted as well. So, when trying to delete an `AnotherUser` record that is referenced by one or more `AnotherPost` records, these `AnotherPost` records will be deleted too.
@@ -469,40 +467,40 @@ To test the `CASCADE` behavior, you need to access the `AnotherUser` and `Anothe
 Open the `index.js` file and replace its contents with the following code:
 
 ```js
-const { PrismaClient } = require('@prisma/client');
+const { PrismaClient } = require('@prisma/client')
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient()
 
 async function main() {
-  const userWithPost = await prisma.anotherUser.create({
-    data: {
-      name: 'Alice',
-      anotherPost: {
-        create: { title: 'Hello World' },
-      },
-    },
-  });
+    const userWithPost = await prisma.anotherUser.create({
+        data: {
+            name: 'Alice',
+            anotherPost: {
+                create: { title: 'Hello World' },
+            },
+        },
+    })
 
-  const allUsers1 = await prisma.anotherUser.findMany();
-  const allPosts1 = await prisma.anotherPost.findMany();
+    const allUsers1 = await prisma.anotherUser.findMany()
+    const allPosts1 = await prisma.anotherPost.findMany()
 
-  console.log(
-    `Before deleting the \`AnotherUser\` record there are ${allUsers1.length} users and ${allPosts1.length} posts.`
-  );
+    console.log(
+        `Before deleting the \`AnotherUser\` record there are ${allUsers1.length} users and ${allPosts1.length} posts.`,
+    )
 
-  const deletedUser = await prisma.anotherUser.delete({
-    where: { id: userWithPost.id },
-  });
+    const deletedUser = await prisma.anotherUser.delete({
+        where: { id: userWithPost.id },
+    })
 
-  const allUsers2 = await prisma.anotherUser.findMany();
-  const allPosts2 = await prisma.anotherPost.findMany();
+    const allUsers2 = await prisma.anotherUser.findMany()
+    const allPosts2 = await prisma.anotherPost.findMany()
 
-  console.log(
-    `After deleting the \`AnotherUser\` record there are ${allUsers2.length} users and ${allPosts2.length} posts.`
-  );
+    console.log(
+        `After deleting the \`AnotherUser\` record there are ${allUsers2.length} users and ${allPosts2.length} posts.`,
+    )
 }
 
-main();
+main()
 ```
 
 Run the code with this command:
@@ -527,30 +525,30 @@ To test the `NO ACTION` behavior, you need to access the `OneMoreUser` and `OneM
 Open the `index.js` file and replace its contents with the following code:
 
 ```js
-const { PrismaClient } = require('@prisma/client');
+const { PrismaClient } = require('@prisma/client')
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient()
 
 async function main() {
-  const userWithPost = await prisma.oneMoreUser.create({
-    data: {
-      name: 'Alice',
-      OneMorePost: {
-        create: { title: 'Hello World' },
-      },
-    },
-  });
+    const userWithPost = await prisma.oneMoreUser.create({
+        data: {
+            name: 'Alice',
+            OneMorePost: {
+                create: { title: 'Hello World' },
+            },
+        },
+    })
 
-  try {
-    const deletedUser = await prisma.oneMoreUser.delete({
-      where: { id: userWithPost.id },
-    });
-  } catch (e) {
-    console.log(e);
-  }
+    try {
+        const deletedUser = await prisma.oneMoreUser.delete({
+            where: { id: userWithPost.id },
+        })
+    } catch (e) {
+        console.log(e)
+    }
 }
 
-main();
+main()
 ```
 
 Run the code with this command:
@@ -583,8 +581,6 @@ This is a non-recoverable error which probably happens when the Prisma Query Eng
 Please create an issue in https://github.com/prisma/prisma-client-js describing the last Prisma Client query you called.
 ```
 
-TODO: Replace when https://github.com/prisma/prisma-client-js/issues/609 was closed.
-
 ### 9.4. Validating `SET NULL`
 
 The `SET NULL` keyword ensures that when a referenced row is deleted, all the rows that are referencing it reset their foreign key to `NULL`. So, when deleting an `AlmostTheLastUser` record that is referenced by one or more `AlmostTheLastPost` records, these `AlmostTheLastPost` records will reset their `authorId` fields to `NULL`.
@@ -594,51 +590,51 @@ To test the `SET NULL` behavior, you need to access the `AlmostTheLastUser` and 
 Open the `index.js` file and replace its contents with the following code:
 
 ```js
-const { PrismaClient } = require('@prisma/client');
+const { PrismaClient } = require('@prisma/client')
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient()
 
 async function main() {
-  const userWithPost = await prisma.almostTheLastUser.create({
-    data: {
-      name: 'Alice',
-      AlmostTheLastPost: {
-        create: { title: 'Hello World' },
-      },
-    },
-    include: {
-      AlmostTheLastPost: true,
-    },
-  });
+    const userWithPost = await prisma.almostTheLastUser.create({
+        data: {
+            name: 'Alice',
+            AlmostTheLastPost: {
+                create: { title: 'Hello World' },
+            },
+        },
+        include: {
+            AlmostTheLastPost: true,
+        },
+    })
 
-  const postBefore = await prisma.almostTheLastPost.findOne({
-    where: { id: userWithPost.AlmostTheLastPost[0].id },
-    include: { AlmostTheLastUser: true },
-  });
+    const postBefore = await prisma.almostTheLastPost.findOne({
+        where: { id: userWithPost.AlmostTheLastPost[0].id },
+        include: { AlmostTheLastUser: true },
+    })
 
-  console.log(
-    `Before deleting the \`AlmostTheLastUser\` record, the \`AlmostTheLastPost\` record looks as follows:\n${JSON.stringify(
-      postBefore
-    )}`
-  );
+    console.log(
+        `Before deleting the \`AlmostTheLastUser\` record, the \`AlmostTheLastPost\` record looks as follows:\n${JSON.stringify(
+            postBefore,
+        )}`,
+    )
 
-  const deletedUser = await prisma.almostTheLastUser.delete({
-    where: { id: userWithPost.id },
-  });
+    const deletedUser = await prisma.almostTheLastUser.delete({
+        where: { id: userWithPost.id },
+    })
 
-  const postAfter = await prisma.almostTheLastPost.findOne({
-    where: { id: postBefore.id },
-    include: { AlmostTheLastUser: true },
-  });
+    const postAfter = await prisma.almostTheLastPost.findOne({
+        where: { id: postBefore.id },
+        include: { AlmostTheLastUser: true },
+    })
 
-  console.log(
-    `After deleting the \`AlmostTheLastUser\` record, the \`AlmostTheLastPost\` record looks as follows:\n${JSON.stringify(
-      postAfter
-    )}`
-  );
+    console.log(
+        `After deleting the \`AlmostTheLastUser\` record, the \`AlmostTheLastPost\` record looks as follows:\n${JSON.stringify(
+            postAfter,
+        )}`,
+    )
 }
 
-main();
+main()
 ```
 
 Run the code with this command:
@@ -666,51 +662,51 @@ To test the `SET DEFAULT` behavior, you need to access the `TheLastUser` and `Th
 Open the `index.js` file and replace its contents with the following code:
 
 ```js
-const { PrismaClient } = require('@prisma/client');
+const { PrismaClient } = require('@prisma/client')
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient()
 
 async function main() {
-  const userWithPost = await prisma.theLastUser.create({
-    data: {
-      name: 'Alice',
-      TheLastPost: {
-        create: { title: 'Hello World' },
-      },
-    },
-    include: {
-      TheLastPost: true,
-    },
-  });
+    const userWithPost = await prisma.theLastUser.create({
+        data: {
+            name: 'Alice',
+            TheLastPost: {
+                create: { title: 'Hello World' },
+            },
+        },
+        include: {
+            TheLastPost: true,
+        },
+    })
 
-  const postBefore = await prisma.theLastPost.findOne({
-    where: { id: userWithPost.TheLastPost[0].id },
-    include: { TheLastUser: true },
-  });
+    const postBefore = await prisma.theLastPost.findOne({
+        where: { id: userWithPost.TheLastPost[0].id },
+        include: { TheLastUser: true },
+    })
 
-  console.log(
-    `Before deleting the \`TheLastUser\` record, the \`TheLastPost\` record looks as follows:\n${JSON.stringify(
-      postBefore
-    )}`
-  );
+    console.log(
+        `Before deleting the \`TheLastUser\` record, the \`TheLastPost\` record looks as follows:\n${JSON.stringify(
+            postBefore,
+        )}`,
+    )
 
-  const deletedUser = await prisma.theLastUser.delete({
-    where: { id: userWithPost.id },
-  });
+    const deletedUser = await prisma.theLastUser.delete({
+        where: { id: userWithPost.id },
+    })
 
-  const postAfter = await prisma.theLastPost.findOne({
-    where: { id: postBefore.id },
-    include: { TheLastUser: true },
-  });
+    const postAfter = await prisma.theLastPost.findOne({
+        where: { id: postBefore.id },
+        include: { TheLastUser: true },
+    })
 
-  console.log(
-    `After deleting the \`TheLastUser\` record, the \`TheLastPost\` record looks as follows:\n${JSON.stringify(
-      postAfter
-    )}`
-  );
+    console.log(
+        `After deleting the \`TheLastUser\` record, the \`TheLastPost\` record looks as follows:\n${JSON.stringify(
+            postAfter,
+        )}`,
+    )
 }
 
-main();
+main()
 ```
 
 Run the code with this command:
@@ -740,8 +736,6 @@ PANIC: column on null constraint violation error
 (node:1348) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
 (node:1348) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
 ```
-
-TODO: Replace when https://github.com/prisma/prisma-client-js/issues/609 was closed.
 
 If there is a `User` record with an `id` of `42`, the output will look similar to this:
 

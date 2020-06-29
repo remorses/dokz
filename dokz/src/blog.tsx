@@ -43,7 +43,6 @@ export function DokzBlogProvider({ children, ...rest }: DokzBlogProviderProps) {
     const ctx = { ...defaultDokzBlogContext, ...rest }
     const { mdxComponents: userMDXComponents = {}, initialColorMode } = ctx
     return (
-        // TODO merge configs
         <DokzBlogContext.Provider value={ctx}>
             <ColorModeProvider value={initialColorMode}>
                 <MDXProvider
