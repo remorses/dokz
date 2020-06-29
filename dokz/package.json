@@ -62,6 +62,7 @@
         "@chakra-ui/core": "o.x",
         "@emotion/core": "*",
         "react": "*",
+        "next": "*",
         "react-dom": "*"
     },
     "dependencies": {

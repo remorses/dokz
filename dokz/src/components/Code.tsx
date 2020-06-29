@@ -10,7 +10,7 @@ export const Code = ({ children, className, ...rest }) => {
     const { colorMode } = useColorMode()
     let { prismTheme } = useDokzConfig()
 
-    const code = children ? children.trim() : ''
+    const code = typeof children === 'string' ? children.trim() : ''
     const language = className && className.replace(/language-/, '')
     const { onCopy, hasCopied } = useClipboard(code)
 
