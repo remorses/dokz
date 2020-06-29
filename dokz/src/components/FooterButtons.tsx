@@ -55,7 +55,7 @@ const Button = ({ href = '', title, type, ...rest }) => {
             <Stack
                 align={type === 'next' ? 'flex-end' : 'flex-start'}
                 spacing='2'
-                // shadow='sm'
+                shadow='md'
                 borderWidth='1px'
                 borderRadius='md'
                 px='6'
