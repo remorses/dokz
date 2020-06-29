@@ -9,6 +9,7 @@ import { getMdxSidebarTree, globalStyles } from './support'
 import { FloatingTableOfContents } from './FloatingTableOfContents'
 import { PropagatedThemeProvider } from './Wrapper'
 import { DateIcon } from './icons'
+import { TableOfContentsContext } from '../provider'
 
 export function WrapperBlog(props) {
     const {
@@ -63,46 +64,52 @@ export const BaseWrapperBlog = ({ children, ...rest }) => {
         fontWeight,
     } = useDokzBlogConfig()
     const { colorMode } = useColorMode()
+    const { tableOfContents } = rest.meta || {}
     return (
         <PropagatedThemeProvider theme={theme}>
-            <CSSReset />
-            <Global styles={globalStyles} />
-            <Stack
-                align='center'
-                color={bodyColor[colorMode]}
-                fontSize={fontSize}
-                fontFamily={fontFamily}
-                fontWeight={fontWeight}
-                // color={colorMode == 'dark' ? 'white' : black}
-            >
-                <Flex
-                    direction='column'
+            <TableOfContentsContext.Provider value={{ tableOfContents }}>
+                <CSSReset />
+                <Global styles={globalStyles} />
+                <Stack
+                    className='dokz visibleInPrint noMarginInPrint'
                     align='center'
-                    overflow='auto'
-                    width='100%'
-                    maxW={maxPageWidth}
-                    px={['10px', null, '20px', '30px']}
-                    // spacing='10px'
-                    flex='1'
-                    minW='0'
-                    {...rest}
+                    color={bodyColor[colorMode]}
+                    fontSize={fontSize}
+                    fontFamily={fontFamily}
+                    fontWeight={fontWeight}
+                    // color={colorMode == 'dark' ? 'white' : black}
                 >
-                    <NavBar
-                        logo={headerLogo}
-                        items={headerItems}
-                        bg='transparent'
+                    <Flex
+                        className='dokz visibleInPrint noMarginInPrint mainContent'
+                        direction='column'
+                        align='center'
+                        overflow='auto'
                         width='100%'
-                        // mr='auto'
-                        // top={0}
-                        py='6'
-                        px='0'
-                        borderBottomWidth='0px'
-                        left={0}
-                        right={0}
-                    />
-                    {children}
-                </Flex>
-            </Stack>
+                        maxW={maxPageWidth}
+                        px={['10px', null, '20px', '30px']}
+                        // spacing='10px'
+                        flex='1'
+                        minW='0'
+                        {...rest}
+                    >
+                        <NavBar
+                            className='dokz hiddenInPrint'
+                            logo={headerLogo}
+                            items={headerItems}
+                            bg='transparent'
+                            width='100%'
+                            // mr='auto'
+                            // top={0}
+                            py='6'
+                            px='0'
+                            borderBottomWidth='0px'
+                            left={0}
+                            right={0}
+                        />
+                        {children}
+                    </Flex>
+                </Stack>
+            </TableOfContentsContext.Provider>
         </PropagatedThemeProvider>
     )
 }
