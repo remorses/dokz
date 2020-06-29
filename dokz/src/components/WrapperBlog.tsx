@@ -19,7 +19,7 @@ export function WrapperBlog(props) {
     const { footer } = useDokzBlogConfig()
 
     return (
-        <BaseWrapperBlog>
+        <BaseWrapperBlog {...props}>
             {/* TODO add social links */}
             <Box height={['40px', null, '40px']} />
             <Flex direction='column' width='100%' maxW='800px'>

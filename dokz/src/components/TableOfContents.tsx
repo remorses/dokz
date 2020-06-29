@@ -11,7 +11,7 @@ export function TableOfContents({ ...rest }: StackProps) {
         return null
     }
     return (
-        <Stack my='20px' spacing='0.6em' {...rest}>
+        <Stack my='10px' spacing='0.6em' {...rest}>
             {/* <Box fontWeight='600' opacity={0.6}>
                 Table of Contents
             </Box> */}
