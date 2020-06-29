@@ -29,6 +29,7 @@
         "@svgr/cli": "^5.3.1",
         "@types/node": "^13.11.1",
         "@types/react": "^16.9.34",
+        "babel-plugin-emotion": "^10.0.33",
         "compose-function": "^3.0.3",
         "next-images": "^1.4.0",
         "typescript": "^3.8.3"

@@ -44,16 +44,24 @@ export function Wrapper(props) {
             <CSSReset />
             <Global styles={globalStyles} />
             <Stack
+                className='dokz visibleInPrint noMarginInPrint'
                 align='center'
+                minHeight='100%'
                 color={bodyColor[colorMode]}
                 fontSize={fontSize}
                 fontFamily={fontFamily}
                 fontWeight={fontWeight}
                 // color={colorMode == 'dark' ? 'white' : black}
             >
-                <Box position='relative' w='100%' maxWidth={maxPageWidth}>
+                <Box
+                    className='dokz visibleInPrint'
+                    minHeight='100%'
+                    position='relative'
+                    w='100%'
+                    maxWidth={maxPageWidth}
+                >
                     <NavBar
-                        // px='4'
+                        className='dokz hiddenInPrint'
                         logo={headerLogo}
                         items={headerItems}
                         tree={index}
@@ -67,6 +75,7 @@ export function Wrapper(props) {
                         right={0}
                     />
                     <SideNav
+                        className='dokz hiddenInPrint'
                         alignSelf='flex-start'
                         position='fixed'
                         top={NAVBAR_H}
@@ -83,12 +92,16 @@ export function Wrapper(props) {
                     />
                     <Stack
                         direction='row'
+                        minHeight='100%'
+                        className='dokz visibleInPrint noMarginInPrint'
                         align='stretch'
                         ml={['none', null, SIDENAV_W]}
                         // mr={['none', null, TABLE_OF_C_W + 30 + 'px']}
                         mt={[NAVBAR_H + 'px']}
                     >
                         <Flex
+                            minHeight='100%'
+                            className='dokz visibleInPrint mainContent'
                             direction='column'
                             align='stretch'
                             overflow='auto'
@@ -100,10 +113,15 @@ export function Wrapper(props) {
                             borderLeftWidth='1px'
                         >
                             {props.children}
-                            <FooterButtons my='20' width='100%' />
+                            <FooterButtons
+                                className='dokz hiddenInPrint'
+                                my='20'
+                                width='100%'
+                            />
                             {footer}
                         </Flex>
                         <TableOfContents
+                            className='dokz hiddenInPrint'
                             fontSize='0.9em'
                             // fontWeight='400'
                             position='sticky'

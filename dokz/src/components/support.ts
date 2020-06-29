@@ -1,6 +1,56 @@
 export const CODE_FONT = `'Fira Code',SFMono-Regular,Menlo,Monaco,"Liberation Mono","Courier New",monospace,mono`
 import { css } from '@emotion/core'
 
+const cssForPdfRendering = css`
+    @media print {
+        /* basic styles */
+        body,
+        h1,
+        h2,
+        h3,
+        ol,
+        ul,
+        div {
+            position: static;
+            overflow: visible;
+            -webkit-print-color-adjust: exact;
+        }
+        div {
+            page-break-inside: avoid;
+        }
+        h2 {
+            page-break-before: always;
+        }
+        /* remove scroll bars */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        body {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+        .dokz.hiddenInPrint {
+            display: none !important;
+        }
+        .dokz.noMarginInPrint {
+            margin: 0px !important;
+        }
+        .dokz.mainContent {
+            border: none;
+            contain: none;
+            margin: 0px !important;
+            position: relative;
+            overflow: visible !important;
+        }
+        /* force visibility and not overflow scroll */
+        #__next .dokz.visibleInPrint {
+            position: static !important;
+            contain: none;
+            overflow-y: visible !important;
+        }
+    }
+`
+
 export const globalStyles = css`
     * {
         box-sizing: border-box;
@@ -23,9 +73,7 @@ export const globalStyles = css`
     ul.dokz {
         list-style-type: none;
     }
-    /* ol {
-    list-style-type: none;
-} */
+    ${cssForPdfRendering}
 `
 
 export function getMdxSidebarTree(): DirectoryTree {
