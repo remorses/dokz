@@ -1,0 +1,18 @@
+import { MiniGraphiQL } from 'mini-graphiql'
+import { Box } from '@chakra-ui/core'
+
+# Export to pdf
+
+You can export a document to pdf using the browser "print" functionality and selecting "save as pdf"
+
+Dokz styling is optimized for pdf exporting and does some things like hiding the side nav and the nav bar
+
+![](/printing-document.jpg)
+
+## Limitations
+
+Even if dokz support pdf export, there are still some limitations that are being worked on:
+
+-   Cannot export when in dark mode
+-   Bad styling of images when using the `![]()` syntax (because MDX wraps them inside `p` tags)
+-   Code snippets are sometimes cut between pages
