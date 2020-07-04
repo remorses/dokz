@@ -26,7 +26,7 @@ const Pre = (props) => <Box as='pre' rounded='sm' {...props} />
 
 const Table = (props) => (
     <Box overflowX='auto'>
-        <Box as='table' textAlign='left' mt='32px' width='full' {...props} />
+        <Box as='table' textAlign='left' my='32px' width='full' {...props} />
     </Box>
 )
 
