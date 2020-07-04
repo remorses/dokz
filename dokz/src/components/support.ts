@@ -77,6 +77,10 @@ export const globalStyles = css`
     ul.dokz {
         list-style-type: none;
     }
+    .dokz.mainContent {
+        -webkit-overflow-scrolling: touch;
+    }
+
     ${cssForPdfRendering}
 `
 

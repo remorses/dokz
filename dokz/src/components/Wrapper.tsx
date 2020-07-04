@@ -76,6 +76,9 @@ export function Wrapper(props) {
                             right={0}
                         />
                         <SideNav
+                            css={css`
+                                -webkit-overflow-scrolling: touch;
+                            `}
                             className='dokz hiddenInPrint'
                             alignSelf='flex-start'
                             position='fixed'
@@ -101,6 +104,7 @@ export function Wrapper(props) {
                             mt={[NAVBAR_H + 'px']}
                         >
                             <Flex
+                            
                                 minHeight='100%'
                                 className='dokz visibleInPrint mainContent'
                                 direction='column'
