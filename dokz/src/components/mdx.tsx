@@ -189,17 +189,18 @@ const MDXComponents = {
     li: ({ isOdd, isOrdered, children, ...props }) => {
         const { listItemIcon, listItemIconEmpty } = useDokzConfig()
         const listIcon = isOrdered ? (
-            <Box display='inline-block' mr='0.4em' />
+            <Box display='inline-block' />
         ) : (
             <Box
-                mr='1em'
+                mr='0.6em'
+                ml='-1.6em'
                 display='inline-block'
                 size='1.1em'
                 as={isOdd ? listItemIcon : listItemIconEmpty}
             />
         )
         return (
-            <Box mr='1em' as='li' my='0.8em'>
+            <Box ml={!isOrdered ? '1em' : '0'} as='li' my='0.8em'>
                 {/* TODO use primary color to add some more style */}
                 {listIcon}
                 <Box as='p' display='inline' {...props}>
