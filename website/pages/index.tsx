@@ -3,6 +3,7 @@ import {
     Button,
     Footer,
     // Hero,
+    Link,
     Heading,
     HowItWorks,
     LandingProvider,
@@ -18,6 +19,8 @@ import { Logo } from '../components/Logo'
 import isometric_check_icon from '../public/isometric_check_icon.png'
 import isometric_code_icon from '../public/isometric_code_icon.png'
 import isometric_text_icon from '../public/isometric_text_icon.png'
+import NextLink from 'next/link'
+import { Bullet } from 'landing-blocks'
 
 const Page = () => (
     <LandingProvider bg='gray.800' primary='#3884FF' dark>
@@ -164,14 +167,24 @@ const Hero = (props) => {
             <Stack align='center' spacing='40px'>
                 {/* <Box maxW='400px' minW='300px' as={LogoFull} /> */}
                 <Stack align='center' spacing='10px' textAlign='center'>
+                    <Bullet>Dokz analytics coming soon</Bullet>
                     <Heading fontSize='42px'>Effortless documentation</Heading>
                     <Subheading lineHeight='2em' opacity={0.7}>
-                        Dokz builds an awesome website around your Markdown
-                        documents <br />
-                        Using Nextjs and MDX
+                        Build awesome documentation websites using Nextjs and
+                        MDX
+                        <br />
+                        Soon with documentation analytics and management
+                        service!
                     </Subheading>
                 </Stack>
-                <CtaButton />
+
+                <a
+                    href='https://beatsbymorse.typeform.com/to/jDgdeAbX'
+                    target='_blank'
+                >
+                    <Button>Get the early release</Button>
+                </a>
+                {/* <CtaButton /> */}
                 <br />
                 <br />
                 <Image
