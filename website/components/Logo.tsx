@@ -2,7 +2,8 @@ import { DokzProvider, GithubLink, ColorModeSwitch } from 'dokz/dist'
 import { useColorMode } from '@chakra-ui/core'
 import React from 'react'
 import NextLink from 'next/link'
-import { Logo as Logo_, LogoWhite } from '../svgs'
+import LogoWhite from '../svgs/LogoWhite'
+import  Logo_ from '../svgs/Logo'
 
 export const Logo = (props) => {
     const { colorMode } = useColorMode()

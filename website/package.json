@@ -15,14 +15,12 @@
         "dokz": "*",
         "landing-blocks": "^1.0.49",
         "mini-graphiql": "^1.0.4",
-        "next": "^9.3.5",
+        "next": "^9.5.0",
         "next-seo": "^4.5.0",
-        "next-transpile-modules": "^3.3.0",
+        "next-transpile-modules": "^4.0.0",
         "react": "^16.13.1",
-        "react-dom": "16.13.1",
-        "react-frame-component": "^4.1.1",
-        "react-icons": "^3.9.0",
-        "recharts": "^1.8.5"
+        "react-dom": "^16.13.1",
+        "react-icons": "^3.9.0"
     },
     "devDependencies": {
         "@next/bundle-analyzer": "^9.4.4",

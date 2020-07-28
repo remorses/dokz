@@ -1,0 +1,52 @@
+import { Stack, Box } from 'layout-kit-react'
+import { Playground } from 'dokz/src'
+
+### Define margins in parent elements
+
+Margins is a relation between elements, it is not a property of a single element, it should be defined it parent element for all of its children
+
+This is what the `Stack` element does
+
+Stack layouts some elements vertically or horizontally
+
+<Playground>
+    <Stack borderWidth='1px' direction='row' spacing='6'>
+        <Box w='100px' h='100px' bg='gray.400' />
+        <Box w='100px' h='100px' bg='gray.400' />
+        <Box w='100px' h='100px' bg='gray.400' />
+        <Box w='100px' h='100px' bg='gray.400' />
+    </Stack>
+</Playground>
+
+<Playground>
+    <Stack borderWidth='1px' spacing='6'>
+        <Box w='100px' h='100px' bg='gray.400' />
+        <Box w='100px' h='100px' bg='gray.400' />
+        <Box w='100px' h='100px' bg='gray.400' />
+        <Box w='100px' h='100px' bg='gray.400' />
+    </Stack>
+</Playground>
+
+Asymmetrical spacing using `Spacer` component
+
+A Spacer component is just a box with flexGrow set to 1
+
+<Playground>
+    <Stack borderWidth='1px' direction='row'>
+        <Box w='100px' h='100px' bg='gray.400' />
+        <Box flex='1' />
+        <Box w='100px' h='100px' bg='gray.400' />
+    </Stack>
+</Playground>
+
+To make a component 
+
+<Playground>
+    <Stack borderWidth='1px' align='stretch'>
+        <Stack direction='row' borderWidth='1px'>
+            <Box w='100px' h='100px' bg='gray.400' />
+            <Box flex='1 0' />
+            <Box w='100px' h='100px' bg='gray.400' />
+        </Stack>
+    </Stack>
+</Playground>

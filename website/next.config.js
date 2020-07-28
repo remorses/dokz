@@ -4,10 +4,9 @@ const withTM = require('next-transpile-modules')(['dokz', 'landing-blocks'])
 const withImages = require('next-images')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
     enabled: !!process.env.ANAL,
-  })
-  
+})
 
-const composed = compose(withBundleAnalyzer, withTM, withDokz, withImages)
+const composed = compose(withTM, withDokz, withImages)
 
 module.exports = composed({
     pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
