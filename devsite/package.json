@@ -10,6 +10,7 @@
         "@emotion/core": "^10.0.28",
         "dokz": "*",
         "next": "^9.3.4",
+        "next-transpile-modules": "^4.0.2",
         "react": "^16.13.1",
         "react-dom": "16.13.1"
     },

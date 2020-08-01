@@ -40,6 +40,8 @@ export const Code = ({ children, className, ...rest }) => {
                         fontSize='0.9em'
                         className={'dokz codeContainer ' + className}
                         style={{ ...style }}
+                        // boxShadow='0 0 10px 20px rgba(0,0,0,0.01)'
+                        shadow='sm'
                         overflowX='auto'
                     >
                         <Box

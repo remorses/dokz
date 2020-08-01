@@ -168,7 +168,7 @@
                                 "toc": false
                             },
                             "title": "Index",
-                            "url": "/01-getting-started/02-setup-prisma"
+                            "url": "/01-getting-started/02-setup-prisma/"
                         },
                         {
                             "path": "pages/01-getting-started/02-setup-prisma/setup-prisma",
@@ -191,7 +191,7 @@
                         "toc": false
                     },
                     "title": "Index",
-                    "url": "/01-getting-started"
+                    "url": "/01-getting-started/"
                 }
             ],
             "size": null,
@@ -283,7 +283,7 @@
                                 "toc": false
                             },
                             "title": "Index",
-                            "url": "/02-understand-prisma/03-prisma-in-your-stack"
+                            "url": "/02-understand-prisma/03-prisma-in-your-stack/"
                         }
                     ],
                     "size": null,
@@ -357,7 +357,7 @@
                                 "metaDescription": "Comparing Prisma to ORMs and ODMs."
                             },
                             "title": "Index",
-                            "url": "/02-understand-prisma/06-api-comparisons"
+                            "url": "/02-understand-prisma/06-api-comparisons/"
                         }
                     ],
                     "size": null,
@@ -373,7 +373,7 @@
                         "toc": false
                     },
                     "title": "Index",
-                    "url": "/02-understand-prisma"
+                    "url": "/02-understand-prisma/"
                 }
             ],
             "size": null,
@@ -455,7 +455,7 @@
                                         "metaDescription": "The Prisma schema is the main configuration file when using Prisma. It is typically called schema.prisma and contains your database connection and data model."
                                     },
                                     "title": "Index",
-                                    "url": "/03-reference/01-tools-and-interfaces/01-prisma-schema"
+                                    "url": "/03-reference/01-tools-and-interfaces/01-prisma-schema/"
                                 },
                                 {
                                     "path": "pages/03-reference/01-tools-and-interfaces/01-prisma-schema/prisma-schema",
@@ -675,7 +675,7 @@
                                         "metaDescription": "This page gives an overview of the Prisma Client API and links to more detailed explanations. It is a great starting point for exploring Prisma Client."
                                     },
                                     "title": "Index",
-                                    "url": "/03-reference/01-tools-and-interfaces/02-prisma-client"
+                                    "url": "/03-reference/01-tools-and-interfaces/02-prisma-client/"
                                 }
                             ],
                             "size": null,
@@ -740,7 +740,7 @@
                                         "toc": false
                                     },
                                     "title": "Index",
-                                    "url": "/03-reference/01-tools-and-interfaces/05-prisma-cli"
+                                    "url": "/03-reference/01-tools-and-interfaces/05-prisma-cli/"
                                 }
                             ],
                             "size": null,
@@ -769,7 +769,7 @@
                                 "toc": false
                             },
                             "title": "Index",
-                            "url": "/03-reference/01-tools-and-interfaces"
+                            "url": "/03-reference/01-tools-and-interfaces/"
                         }
                     ],
                     "size": null,
@@ -845,7 +845,7 @@
                                 "toc": false
                             },
                             "title": "Index",
-                            "url": "/03-reference/02-database-connectors"
+                            "url": "/03-reference/02-database-connectors/"
                         }
                     ],
                     "size": null,
@@ -888,7 +888,7 @@
                                 "toc": false
                             },
                             "title": "Index",
-                            "url": "/03-reference/03-more"
+                            "url": "/03-reference/03-more/"
                         }
                     ],
                     "size": null,
@@ -904,7 +904,7 @@
                         "toc": false
                     },
                     "title": "Index",
-                    "url": "/03-reference"
+                    "url": "/03-reference/"
                 }
             ],
             "size": null,
@@ -964,7 +964,7 @@
                                         "toc": false
                                     },
                                     "title": "Index",
-                                    "url": "/04-guides/01-database-workflows/01-setting-up-a-database"
+                                    "url": "/04-guides/01-database-workflows/01-setting-up-a-database/"
                                 },
                                 {
                                     "path": "pages/04-guides/01-database-workflows/01-setting-up-a-database/mysql_macos",
@@ -1072,7 +1072,7 @@
                                         "toc": false
                                     },
                                     "title": "Index",
-                                    "url": "/04-guides/01-database-workflows/02-import-and-export-data"
+                                    "url": "/04-guides/01-database-workflows/02-import-and-export-data/"
                                 }
                             ],
                             "size": null,
@@ -1124,7 +1124,7 @@
                                         "toc": false
                                     },
                                     "title": "Index",
-                                    "url": "/04-guides/01-database-workflows/04-unique-constraints-and-indexes"
+                                    "url": "/04-guides/01-database-workflows/04-unique-constraints-and-indexes/"
                                 },
                                 {
                                     "path": "pages/04-guides/01-database-workflows/04-unique-constraints-and-indexes/unique-constraints-and-indexes",
@@ -1190,7 +1190,7 @@
                                         "toc": false
                                     },
                                     "title": "Index",
-                                    "url": "/04-guides/01-database-workflows/05-foreign-keys"
+                                    "url": "/04-guides/01-database-workflows/05-foreign-keys/"
                                 }
                             ],
                             "size": null,
@@ -1249,7 +1249,7 @@
                                         "toc": false
                                     },
                                     "title": "Index",
-                                    "url": "/04-guides/01-database-workflows/06-cascading-deletes"
+                                    "url": "/04-guides/01-database-workflows/06-cascading-deletes/"
                                 }
                             ],
                             "size": null,
@@ -1280,7 +1280,7 @@
                                         "toc": false
                                     },
                                     "title": "Index",
-                                    "url": "/04-guides/01-database-workflows/07-data-validation"
+                                    "url": "/04-guides/01-database-workflows/07-data-validation/"
                                 }
                             ],
                             "size": null,
@@ -1296,7 +1296,7 @@
                                 "toc": false
                             },
                             "title": "Index",
-                            "url": "/04-guides/01-database-workflows"
+                            "url": "/04-guides/01-database-workflows/"
                         }
                     ],
                     "size": null,
@@ -1350,7 +1350,7 @@
                                 "toc": false
                             },
                             "title": "Index",
-                            "url": "/04-guides/02-deployment"
+                            "url": "/04-guides/02-deployment/"
                         }
                     ],
                     "size": null,
@@ -1455,7 +1455,7 @@
                                 "toc": false
                             },
                             "title": "Index",
-                            "url": "/04-guides/03-upgrade-from-prisma-1"
+                            "url": "/04-guides/03-upgrade-from-prisma-1/"
                         }
                     ],
                     "size": null,
@@ -1471,7 +1471,7 @@
                         "toc": false
                     },
                     "title": "Index",
-                    "url": "/04-guides"
+                    "url": "/04-guides/"
                 }
             ],
             "size": null,
@@ -1512,7 +1512,7 @@
                                 "metaDescription": "The Prisma style guide contains a number of rules and conventions for the content in the Prisma documentation."
                             },
                             "title": "Index",
-                            "url": "/05-more/02-style-guide"
+                            "url": "/05-more/02-style-guide/"
                         }
                     ],
                     "size": null,
@@ -1584,7 +1584,7 @@
                         "hidePage": false
                     },
                     "title": "Index",
-                    "url": "/05-more"
+                    "url": "/05-more/"
                 }
             ],
             "size": null,
@@ -1595,7 +1595,7 @@
             "name": "index.mdx",
             "meta": {},
             "title": "xxx",
-            "url": "/index"
+            "url": "/"
         }
     ],
     "size": null,

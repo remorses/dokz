@@ -1,11 +1,16 @@
 {
     "private": true,
-    "workspaces": [
-        "dokz",
-        "website",
-        "example",
-        "devsite"
-    ],
+    "workspaces": {
+        "packages": [
+            "dokz",
+            "website",
+            "example",
+            "devsite"
+        ],
+        "nohoist": [
+            "**/next"
+        ]
+    },
     "scripts": {
         "dev": "cd website && yarn dev",
         "build": "yarn --cwd dokz compile"

@@ -61,8 +61,8 @@
     "peerDependencies": {
         "@chakra-ui/core": "o.x",
         "@emotion/core": "*",
-        "react": "*",
         "next": "*",
+        "react": "*",
         "react-dom": "*"
     },
     "dependencies": {
