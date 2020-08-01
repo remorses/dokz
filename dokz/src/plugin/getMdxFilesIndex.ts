@@ -35,16 +35,16 @@ export async function getMdxFilesIndex() {
 }
 
 function formatRelativePath(path) {
+    console.log(path)
     let relativePath = path
         .replace('.mdx', '')
         .replace('.md', '')
         .replace('.jsx', '')
         .replace('.tsx', '')
         .replace('.js', '')
-        .replace(/\/index$/, '')
+        .replace(/\bindex$/, '')
 
-    relativePath = relativePath || '/'
-    return '/' + relativePath
+    return '/' + (relativePath || '')
 }
 
 function formatTitle(name: string) {
@@ -59,7 +59,6 @@ function formatTitle(name: string) {
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1)
 }
-
 
 async function getPagesPath() {
     var [err, stats] = await to(fs.promises.stat('src/pages'))

@@ -3,6 +3,7 @@
     "workspaces": [
         "dokz",
         "website",
+        "example",
         "devsite"
     ],
     "scripts": {
