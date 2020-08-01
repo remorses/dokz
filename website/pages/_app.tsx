@@ -11,6 +11,8 @@ import React, { Fragment } from 'react'
 import { Logo } from '../components/Logo'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import lightPrismTheme from 'prism-react-renderer/themes/nightOwlLight'
+import darkPrismTheme from 'prism-react-renderer/themes/nightOwl'
 
 export default function App(props) {
     const { Component, pageProps } = props
@@ -59,6 +61,10 @@ export default function App(props) {
                             />,
                             <ColorModeSwitch key={1} />,
                         ]}
+                        prismTheme={{
+                            dark: darkPrismTheme,
+                            light: lightPrismTheme,
+                        }}
                         headerLogo={<Logo height='30px' opacity={0.92} />}
                         sidebarOrdering={{
                             docs: {

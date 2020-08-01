@@ -62,6 +62,16 @@ export const Code = ({ children, className, ...rest }) => {
                         />
                         {tokens.map((line, i) => (
                             <div key={i} {...getLineProps({ line, key: i })}>
+                                <Box
+                                    display='inline-block'
+                                    // position='absolute'
+                                    textAlign='right'
+                                    minW='40px'
+                                    opacity={0.4}
+                                    pr='30px'
+                                >
+                                    {i + 1}
+                                </Box>
                                 {line.map((token, key) => (
                                     <span
                                         key={key}
