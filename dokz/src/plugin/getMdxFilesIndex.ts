@@ -35,7 +35,7 @@ export async function getMdxFilesIndex() {
 }
 
 function formatRelativePath(path) {
-    console.log(path)
+    // console.log(path)
     let relativePath = path
         .replace('.mdx', '')
         .replace('.md', '')
