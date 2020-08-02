@@ -33,7 +33,7 @@ export const Code = ({ children, className, ...rest }) => {
                 }) => (
                     <Box
                         p='20px'
-                        pt='30px'
+                        // pt='30px'
                         borderRadius='8px'
                         as='pre'
                         fontFamily={CODE_FONT}

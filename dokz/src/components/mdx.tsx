@@ -1,32 +1,26 @@
 /** @jsx jsx */
 import {
     Box,
-    Divider,
     Callout,
-    Code as InlineCode,
+    Divider,
     Heading,
     Kbd,
     Link as ChakraLink,
-    Text,
     useColorMode,
-    Image,
-    Stack,
 } from '@chakra-ui/core'
 import { jsx } from '@emotion/core'
-import NextLink from 'next/link'
-import { Code } from './Code'
-import { Wrapper } from './Wrapper'
-import { Link } from './Link'
+import { Children, cloneElement, isValidElement } from 'react'
 import { useDokzConfig } from '../provider'
-import { Fragment, Children, cloneElement, isValidElement } from 'react'
-import { clone } from 'lodash'
+import { Code } from './Code'
+import { Link } from './Link'
 import { CODE_FONT } from './support'
+import { Wrapper } from './Wrapper'
 
 const Pre = (props) => <Box as='pre' rounded='sm' {...props} />
 
 const Table = (props) => (
     <Box overflowX='auto'>
-        <Box as='table' textAlign='left' my='32px' width='full' {...props} />
+        <Box as='table' textAlign='left' my='2em' width='full' {...props} />
     </Box>
 )
 
@@ -63,10 +57,11 @@ export const DocsHeading = (props) => {
     return (
         <Heading
             fontWeight='semibold'
+            pt='0.6em'
             // color='black'
             color={headingColor[colorMode]}
-            mt='40px'
-            mb='10px'
+            // mt='2.2em !important'
+            // mb='10px !important'
             css={{
                 '&[id]': {
                     pointerEvents: 'none',
@@ -74,7 +69,7 @@ export const DocsHeading = (props) => {
                 '&[id]:before': {
                     display: 'block',
                     height: ' 6rem',
-                    marginTop: '-6rem',
+                    marginTop: '-6rem !important',
                     visibility: 'hidden',
                     content: `""`,
                 },
@@ -106,7 +101,7 @@ export const DocsHeading = (props) => {
 
 const MdxText = (props) => {
     const { colorMode } = useColorMode()
-    return <Box as='p' my='10px' lineHeight='1.8em' {...props} />
+    return <Box as='p' lineHeight='1.8em' {...props} />
 }
 
 const MDXComponents = {
@@ -135,7 +130,7 @@ const MDXComponents = {
                 display='inline-block'
                 fontFamily={CODE_FONT}
                 fontSize='0.9em'
-                px='0.2em'
+                px='0.2em !important'
                 rounded='sm'
                 bg={
                     {
@@ -149,15 +144,11 @@ const MDXComponents = {
             />
         )
     },
-    code: (props) => (
-        <Box my='20px'>
-            <Code {...props} />
-        </Box>
-    ),
+    code: (props) => <Code {...props} />,
     pre: Pre,
     kbd: Kbd,
     // br: (props) => <Box {...props} />,
-    hr: (props) => <Divider my='60px' {...props} />,
+    hr: (props) => <Divider my='3em !important' {...props} />,
     table: Table,
     th: THead,
     td: TData,
@@ -167,7 +158,7 @@ const MDXComponents = {
     },
     ul: ({ children, isOdd, ...props }) => {
         return (
-            <Box className='dokz' as='ul' pl='1em' {...props}>
+            <Box mt='0 !important' className='dokz' as='ul' pl='1em' {...props}>
                 {Children.map(children, (child) => {
                     return cloneElement(child, { isOdd: !isOdd })
                 })}
@@ -176,7 +167,7 @@ const MDXComponents = {
     },
     ol: ({ children, isOdd, ...props }) => {
         return (
-            <Box className='dokz' as='ol' pl='2em' {...props}>
+            <Box mt='0 !important' className='dokz' as='ol' pl='2em' {...props}>
                 {Children.map(children, (child, number) => {
                     return cloneElement(child, {
                         isOdd: !isOdd,
@@ -200,7 +191,11 @@ const MDXComponents = {
             />
         )
         return (
-            <Box ml={!isOrdered ? '1em' : '0'} as='li' my='0.8em'>
+            <Box
+                ml={(!isOrdered ? '1em' : '0') + ' !important'}
+                as='li'
+                my='0.8em'
+            >
                 {/* TODO use primary color to add some more style */}
                 {listIcon}
                 <Box as='p' display='inline' {...props}>
@@ -218,7 +213,7 @@ const MDXComponents = {
     },
     blockquote: (props) => (
         <Callout
-            mt={4}
+            // mt='20px !important'
             variant='left-accent'
             status='warning'
             css={{ '> *:first-of-type': { marginTop: 0 } }}

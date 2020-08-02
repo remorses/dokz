@@ -103,8 +103,8 @@ export function Wrapper(props) {
                             // mr={['none', null, TABLE_OF_C_W + 30 + 'px']}
                             mt={[NAVBAR_H + 'px']}
                         >
-                            <Flex
-                            
+                            <Stack
+                                spacing='2em'
                                 minHeight='100%'
                                 className='dokz visibleInPrint mainContent'
                                 direction='column'
@@ -124,7 +124,7 @@ export function Wrapper(props) {
                                     width='100%'
                                 />
                                 {footer}
-                            </Flex>
+                            </Stack>
                             <FloatingTableOfContents
                                 className='dokz hiddenInPrint'
                                 fontSize='0.9em'

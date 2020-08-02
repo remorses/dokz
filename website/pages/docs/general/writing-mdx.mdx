@@ -25,7 +25,13 @@ export const query1 = `
 }
 `
 
-<Box borderColor='red.500' borderWidth='2px' my='40px' borderRadius='lg' overflow='hidden' shadow='xl'>
+<Box
+    borderColor='red.500'
+    borderWidth='2px'
+    borderRadius='lg'
+    overflow='hidden'
+    shadow='xl'
+>
     <MiniGraphiQL url='https://countries.trevorblades.com' query={query1} />
 </Box>
 
@@ -37,10 +43,10 @@ import { Box } from '@chakra-ui/core'
 
 export const query1 = \`
 {
-    continents {
-      code
-      name
-    }
+continents {
+code
+name
+}
 }
 \`
 
@@ -48,8 +54,8 @@ export const query1 = \`
     <MiniGraphiQL url='https://countries.trevorblades.com' query={query1} />
 </Box>
 ```
-> Remember that to declare variables inside MDX you have to export them, this way mdx understands that it is jsx code instead of markdown
 
+> Remember that to declare variables inside MDX you have to export them, this way mdx understands that it is jsx code instead of markdown
 
 ## Importing relative components
 
