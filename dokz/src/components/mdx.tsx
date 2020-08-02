@@ -213,6 +213,7 @@ const MDXComponents = {
     },
     blockquote: (props) => (
         <Callout
+            shadow='sm'
             // mt='20px !important'
             variant='left-accent'
             status='warning'
