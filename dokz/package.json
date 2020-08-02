@@ -79,6 +79,7 @@
         "chokidar": "^3.3.1",
         "debounce": "^1.2.0",
         "directory-tree": "^2.2.4",
+        "edit-this-page": "^0.0.1",
         "emotion-theming": "^10.0.27",
         "front-matter": "^3.1.0",
         "github-slugger": "^1.3.0",
