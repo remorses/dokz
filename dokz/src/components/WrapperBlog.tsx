@@ -22,7 +22,7 @@ export function WrapperBlog(props) {
         <BaseWrapperBlog {...props}>
             {/* TODO add social links */}
             <Box height={['40px', null, '40px']} />
-            <Flex direction='column' width='100%' maxW='800px'>
+            <Stack spacing='2em' direction='column' width='100%' maxW='800px'>
                 <Stack spacing='6' align='center'>
                     <Box
                         as='h1'
@@ -47,7 +47,8 @@ export function WrapperBlog(props) {
                 <Box height={['40px', null, '40px']} />
                 {props.children}
                 {footer}
-            </Flex>
+                <Box height={['40px', null, '40px']} />
+            </Stack>
         </BaseWrapperBlog>
     )
 }
