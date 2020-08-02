@@ -1,5 +1,5 @@
 import { DokzTableOfContents } from '../types'
-import { Stack, Box, Link } from '@chakra-ui/core'
+import { Stack, Box, Link, Button } from '@chakra-ui/core'
 import React from 'react'
 import { StackProps } from '@chakra-ui/core'
 
@@ -14,7 +14,7 @@ export function FloatingTableOfContents({
     }
     return (
         <Stack
-            spacing='0.6em'
+            spacing='1em'
             width='200px'
             // minH='1.6em'
             // lineHeight='2.2em'
@@ -23,7 +23,10 @@ export function FloatingTableOfContents({
             pl='20px'
             {...rest}
         >
-            <Box fontWeight='semibold'>ON THIS PAGE</Box>
+            <Button fontWeight='600' variant='solid'>
+                Edit This Page
+            </Button>
+            {/* <Box fontWeight='semibold'>ON THIS PAGE</Box> */}
             {table.children &&
                 table.children.map((table) => {
                     return <TableItem key={table.slug} {...table} />

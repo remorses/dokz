@@ -10,4 +10,13 @@ const composed = compose(withTM, withDokz, withImages)
 
 module.exports = composed({
     pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+    // webpack: c => {
+    //     console.log(c.module.rules.map(x => {
+    //         if (x.loader && x.loader.loader === 'next-babel-loader') {
+    //             // console.log(x.loader.options)
+    //             console.log(x)
+    //         }
+    //     }))
+    //     return c
+    // }
 })

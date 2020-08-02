@@ -7,6 +7,7 @@ import {
     useColorMode,
     useTheme,
     theme,
+    Button,
 } from '@chakra-ui/core'
 import { Stack, Flex } from 'layout-kit-react'
 import merge from 'lodash/fp/merge'
@@ -104,7 +105,6 @@ export function Wrapper(props) {
                             mt={[NAVBAR_H + 'px']}
                         >
                             <Stack
-                                spacing='2em'
                                 minHeight='100%'
                                 className='dokz visibleInPrint mainContent'
                                 direction='column'
@@ -117,14 +117,16 @@ export function Wrapper(props) {
                                 borderRightWidth='1px'
                                 borderLeftWidth='1px'
                             >
-                                {props.children}
-                                <FooterButtons
-                                    className='dokz hiddenInPrint'
-                                    mt='60px !important'
-                                    mb='2em !important'
-                                    width='100%'
-                                />
-                                {footer}
+                                <Stack spacing='2em' align='stretch'>
+                                    {props.children}
+                                    <FooterButtons
+                                        className='dokz hiddenInPrint'
+                                        mt='60px !important'
+                                        mb='2em !important'
+                                        width='100%'
+                                    />
+                                    {footer}
+                                </Stack>
                             </Stack>
                             <FloatingTableOfContents
                                 className='dokz hiddenInPrint'
