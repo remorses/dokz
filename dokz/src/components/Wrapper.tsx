@@ -120,7 +120,8 @@ export function Wrapper(props) {
                                 {props.children}
                                 <FooterButtons
                                     className='dokz hiddenInPrint'
-                                    my='20'
+                                    mt='60px !important'
+                                    mb='2em !important'
                                     width='100%'
                                 />
                                 {footer}
