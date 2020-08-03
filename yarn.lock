@@ -3328,6 +3328,18 @@ babel-plugin-edit-this-page@^0.0.1:
     get-git-config "^0.0.4"
     minimatch "^3.0.4"
 
+babel-plugin-edit-this-page@latest:
+  version "0.0.26"
+  resolved "https://registry.yarnpkg.com/babel-plugin-edit-this-page/-/babel-plugin-edit-this-page-0.0.26.tgz#4e79d40b65c9f128c4aed5f2b775704f9fa2b1b7"
+  integrity sha512-slgKfgzKT1ZXHhb39STVIymXMMZQ2Nv69scezv80fi9dZPHR+u9wIBCvMy0v1TV7h6CypOxTL7H0VGggCWqQwQ==
+  dependencies:
+    "@babel/core" "^7.11.0"
+    "@babel/traverse" "^7.11.0"
+    "@babel/types" "^7.11.0"
+    babel-plugin-syntax-jsx "^6.18.0"
+    get-git-config "^0.0.4"
+    minimatch "^3.0.4"
+
 babel-plugin-emotion@^10.0.20, babel-plugin-emotion@^10.0.27, babel-plugin-emotion@^10.0.33:
   version "10.0.33"
   resolved "https://registry.yarnpkg.com/babel-plugin-emotion/-/babel-plugin-emotion-10.0.33.tgz#ce1155dcd1783bbb9286051efee53f4e2be63e03"
@@ -4127,7 +4139,7 @@ chokidar@2.1.8, chokidar@^2.0.4, chokidar@^2.1.8:
   optionalDependencies:
     fsevents "^1.2.7"
 
-chokidar@^3.3.1, chokidar@^3.4.1:
+chokidar@^3.4.1:
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.4.1.tgz#e905bdecf10eaa0a0b1db0c664481cc4cbc22ba1"
   integrity sha512-TQTJyr2stihpC4Sya9hs2Xh+O2wf+igjL36Y75xx2WdHuiICcn/XJza46Jwt0eT5hVpQOzo3FpY3cj3RVYLX0g==
