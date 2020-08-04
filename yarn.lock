@@ -3316,10 +3316,10 @@ babel-plugin-dynamic-import-node@^2.3.3:
   dependencies:
     object.assign "^4.1.0"
 
-babel-plugin-edit-this-page@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/babel-plugin-edit-this-page/-/babel-plugin-edit-this-page-0.0.1.tgz#636dd9004391a3c9cc331505b0aafa044579425b"
-  integrity sha512-orkWYCHrZdmblk2xEUcB6IxBp4nfQmA8c6ZdCiHlwfnWVgTdMrX71nA5cFN9i2Zw2STxarl4TnITORvPOaNuqw==
+babel-plugin-edit-this-page@^0.0.28:
+  version "0.0.28"
+  resolved "https://registry.yarnpkg.com/babel-plugin-edit-this-page/-/babel-plugin-edit-this-page-0.0.28.tgz#f28460d3ebf1cee9167fde33c3c53ca5d39a20bc"
+  integrity sha512-0UHU3sz4Ecshpvj/Z87fgqIWZCcnBv5Y1JStMoLTw45NBFgy6K9o+RfNxIocjajs4/rexz4+4KEjHrNn8pe4Wg==
   dependencies:
     "@babel/core" "^7.11.0"
     "@babel/traverse" "^7.11.0"
