@@ -6,7 +6,7 @@ module.exports = {
             'edit-this-page',
             {
                 editableFiles: 'pages/**',
-                githubUrl: 'https://github.com/myusername/myrepo',
+                githubUrl: 'myusername/myrepo',
                 branch: 'master',
             },
         ],

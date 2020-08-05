@@ -7,7 +7,7 @@ module.exports = {
             'edit-this-page',
             {
                 editableFiles: 'pages/**',
-                githubUrl: 'https://github.com/remorses/dokz',
+                githubUrl: 'remorses/dokz',
                 branch: 'master',
             },
         ],
