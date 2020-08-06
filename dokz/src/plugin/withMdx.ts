@@ -3,6 +3,7 @@ import { Configuration } from 'webpack'
 type Options = {
     extension?: RegExp
     options?: any
+    onStart?: (config, options) => any
 }
 
 export const withMdx = (pluginOptions: Options = {}) => (
@@ -16,6 +17,9 @@ export const withMdx = (pluginOptions: Options = {}) => (
                 throw new Error(
                     'This plugin is not compatible with Next.js versions below 5.0.0 https://err.sh/next-plugins/upgrade',
                 )
+            }
+            if (pluginOptions.onStart) {
+                pluginOptions.onStart(config, options)
             }
             config.resolve.alias['nextjs_root_folder_'] = path.join(
                 process.cwd(),

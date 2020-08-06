@@ -17,6 +17,7 @@
         "react-dom": "16.13.1"
     },
     "devDependencies": {
-        "compose-function": "^3.0.3"
+        "compose-function": "^3.0.3",
+        "babel-plugin-edit-this-page": "latest"
     }
 }

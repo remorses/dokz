@@ -1,6 +1,7 @@
 import { DokzTableOfContents } from '../types'
 import { Stack, Box, Link, Button } from '@chakra-ui/core'
 import React from 'react'
+import EditThisPage from 'edit-this-page'
 import { StackProps } from '@chakra-ui/core'
 
 export function FloatingTableOfContents({
@@ -23,9 +24,14 @@ export function FloatingTableOfContents({
             pl='20px'
             {...rest}
         >
-            <Button fontWeight='600' variant='solid'>
-                Edit This Page
-            </Button>
+            {/* TODO add the edit this page button here */}
+            <Box>
+                <EditThisPage unstyled>
+                    <Button fontWeight='600' variant='solid'>
+                        Edit This Page
+                    </Button>
+                </EditThisPage>
+            </Box>
             {/* <Box fontWeight='semibold'>ON THIS PAGE</Box> */}
             {table.children &&
                 table.children.map((table) => {

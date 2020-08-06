@@ -1,0 +1,49 @@
+import { Image } from '@chakra-ui/core'
+
+# Let users edit your contents
+
+On every document there is an "Edit This Page" button, the button opens a modal to change the source code of the page and opens a pull request automatically
+
+The pull request will be opened by a bot, to enable this feature you will need to give the bot access to open pull requests on your repo
+
+Here are the steps to enable this feature
+
+### 1. Add the babel plugin
+
+Install the `babel-plugin-edit-this-page` plugin
+
+```
+yarn add babel-plugin-edit-this-page
+```
+
+Add it to your babel config next to `next.config.js`
+
+```js
+// babel.config.js
+module.exports = {
+    presets: ['next/babel'],
+    plugins: [
+        [
+            'edit-this-page',
+            {
+                editableFiles: 'pages/**',
+                githubUrl: 'https://github.com/myusername/myrepo',
+                branch: 'master',
+            },
+        ],
+    ],
+}
+```
+
+### 2. Install the github application
+
+Go to [https://github.com/apps/edit-this-page-app](https://github.com/apps/edit-this-page-app) and install the `Edit This Page` application on your repo
+
+<img src='/edit-this-page/github_app.jpg' width='800px' />
+
+### 3. Try it out
+
+You can now let your readers extend your documentation
+
+
+<video src='/edit-this-page/video.mp4' width='800px' autoplay='true' loop='true' />

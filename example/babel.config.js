@@ -1,5 +1,4 @@
-
-// you need to give access to the github app fist, https://github.com/apps/edit-this-page-app 
+// you need to give access to the github app fist, https://github.com/apps/edit-this-page-app
 module.exports = {
     presets: ['next/babel'],
     plugins: [
@@ -7,7 +6,7 @@ module.exports = {
             'edit-this-page',
             {
                 editableFiles: 'pages/**',
-                githubUrl: 'remorses/dokz',
+                githubUrl: 'myusername/myrepo',
                 branch: 'master',
             },
         ],
