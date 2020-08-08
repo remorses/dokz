@@ -55,12 +55,13 @@ export const ColorModeSwitch = ({ ...rest }) => {
 
 const NavBar = ({ logo, tree = null as any, items: navs, ...props }) => {
     const { colorMode, toggleColorMode } = useColorMode()
-    const bg = { light: 'white', dark: 'gray.800' }
+    const bg = { light: 'gray.50', dark: '#2A2B2F' }
     const { maxPageWidth } = useDokzConfig()
     return (
         <Stack
             bg={bg[colorMode]}
             zIndex={4}
+            // boxShadow='0 0 20px rgba(0, 0, 0, 0.1)'
             borderBottomWidth='1px'
             borderBottomStyle='solid'
             justifyContent='center'

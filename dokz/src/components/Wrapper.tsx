@@ -46,6 +46,7 @@ export function Wrapper(props) {
                 <CSSReset />
                 <Global styles={globalStyles} />
                 <Stack
+                    bg={{ light: 'gray.50', dark: '#2A2B2F' }[colorMode]}
                     className='dokz visibleInPrint noMarginInPrint'
                     align='center'
                     minHeight='100%'
@@ -105,12 +106,19 @@ export function Wrapper(props) {
                             mt={[NAVBAR_H + 'px']}
                         >
                             <Stack
+                                bg={
+                                    { light: 'white', dark: '#2F3237' }[
+                                        colorMode
+                                    ]
+                                }
+                                // borderRadius='8px'
+                                boxShadow='0 0 40px 10px rgba(0, 0, 0, 0.08)'
                                 minHeight='100%'
                                 className='dokz visibleInPrint mainContent'
                                 direction='column'
                                 align='stretch'
                                 overflow='auto'
-                                px={['10px', null, '20px', '30px']}
+                                px={['10px', null, '30px', '40px']}
                                 // spacing='10px'
                                 flex='1'
                                 minW='0'
