@@ -11,7 +11,8 @@ import { Arrow } from './icons'
 import { title } from 'process'
 
 export const FooterButtons = ({ ...rest }) => {
-    const { pathname } = useRouter()
+    const router = useRouter()
+    const pathname = router?.pathname || ''
     const tree = getMdxSidebarTree()
     // console.log('tree', tree)
     // console.log('pathname', pathname)

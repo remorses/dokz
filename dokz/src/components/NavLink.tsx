@@ -5,10 +5,11 @@ import React, { cloneElement, forwardRef } from 'react'
 
 const NavLink = ({ children, ...props }: any) => {
     const router = useRouter()
+    const pathname = router?.pathname || ''
     let isActive = false
 
     if (
-        router.pathname?.replace(/\/$/, '').replace(/\bindex$/, '') ===
+        pathname?.replace(/\/$/, '').replace(/\bindex$/, '') ===
         props.href.replace(/\/$/, '')
     ) {
         isActive = true

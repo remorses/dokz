@@ -16,7 +16,8 @@ import darkPrismTheme from 'prism-react-renderer/themes/nightOwl'
 
 export default function App(props) {
     const { Component, pageProps } = props
-    const { pathname } = useRouter()
+    const router = useRouter()
+    const pathname = router?.pathname || ''
     if (!pathname) {
         throw new Error('pathname undefined')
     }
