@@ -52,6 +52,8 @@ export default function App(props) {
                     primary='#2D7FF9'
                 >
                     <DokzProvider
+                        githubUrl='remorses/dokz'
+                        branch='master'
                         docsRootPath='pages/docs'
                         headerItems={[
                             // <a>ciao</a>,

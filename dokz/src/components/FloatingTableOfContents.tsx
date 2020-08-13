@@ -1,8 +1,10 @@
 import { DokzTableOfContents } from '../types'
 import { Stack, Box, Link, Button } from '@chakra-ui/core'
-import React from 'react'
-import EditThisPage from 'edit-this-page'
+import React, { useState, useEffect } from 'react'
 import { StackProps } from '@chakra-ui/core'
+import pick from 'lodash/pick'
+import parseGithubUrl from 'parse-github-url'
+import { useDokzConfig } from '../provider'
 
 export function FloatingTableOfContents({
     table,
@@ -10,6 +12,13 @@ export function FloatingTableOfContents({
 }: {
     table: DokzTableOfContents
 } & StackProps) {
+    const { branch, githubUrl } = useDokzConfig()
+    const { editThisPagePath } = useWindowParams()
+    const editUrl = makeGithubEditUrl({
+        branch,
+        githubUrl,
+        path: editThisPagePath,
+    })
     if (!table) {
         return null
     }
@@ -24,14 +33,20 @@ export function FloatingTableOfContents({
             pl='20px'
             {...rest}
         >
-            {/* TODO add the edit this page button here */}
-            <Box>
-                <EditThisPage unstyled>
+            {githubUrl && (
+                <Box
+                    as='a'
+                    display='inline-block'
+                    // @ts-ignore
+                    target='_blank'
+                    // @ts-ignore
+                    href={editUrl}
+                >
                     <Button fontWeight='600' variant='solid'>
                         Edit This Page
                     </Button>
-                </EditThisPage>
-            </Box>
+                </Box>
+            )}
             {/* <Box fontWeight='semibold'>ON THIS PAGE</Box> */}
             {table.children &&
                 table.children.map((table) => {
@@ -56,4 +71,30 @@ function TableItem({ children, depth, title, slug }: DokzTableOfContents) {
             </Stack>
         </Stack>
     )
+}
+
+function makeGithubEditUrl({ githubUrl = '', branch, path: p }) {
+    try {
+        const parsed = parseGithubUrl(githubUrl)
+        return `https://github.com/${parsed?.owner}/${parsed?.name}/edit/${branch}/${p}`
+    } catch {
+        return ''
+    }
+}
+
+function useWindowParams(): { editThisPagePath?: string } {
+    const [picked, setC] = useState({ editThisPagePath: '' })
+    useEffect(() => {
+        if (typeof window === undefined) {
+            return
+        } else {
+            const keys = ['editThisPagePath']
+            const picked = pick(window as {}, keys)
+            if (Object.keys(picked).length === 0) {
+                return
+            }
+            setC(picked as any)
+        }
+    }, [])
+    return picked
 }

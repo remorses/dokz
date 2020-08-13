@@ -18,7 +18,6 @@ const EXTENSIONS_TO_WATCH = ['.mdx', '.md']
 const EDIT_THIS_PAGE_GUIDE = 'https://dokz.site/docs/general/edit-this-page'
 
 export function withDokz(nextConfig = {} as any) {
-    checkBabelConfig()
     // .on('change', writeMdxIndex)
     nextConfig.pageExtensions = unique([
         ...(nextConfig.pageExtensions || []),
@@ -106,27 +105,4 @@ function unique(arr) {
         }
     }
     return a
-}
-
-async function checkBabelConfig() {
-    const babelConfigPath = [
-        '.babelrc',
-        '.babelrc.json',
-        'babel.config.js',
-        'babel.config.json',
-    ]
-        .map((p) => fs.existsSync(p) && p)
-        .find(Boolean)
-    if (
-        !babelConfigPath ||
-        (await fs.promises.readFile(babelConfigPath))
-            .toString()
-            .search('edit-this-page') === -1
-    ) {
-        console.log(
-            chalk.yellow(
-                `\nYou have not yet configured 'edit-this-page' feature\nFollow the guide at '${EDIT_THIS_PAGE_GUIDE}' to see how\n`,
-            ),
-        )
-    }
 }

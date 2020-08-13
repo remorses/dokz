@@ -5256,16 +5256,6 @@ edit-this-page@^0.0.1:
     prism-react-renderer "^1.1.1"
     react-overlays "^4.1.0"
 
-edit-this-page@^0.0.25:
-  version "0.0.25"
-  resolved "https://registry.yarnpkg.com/edit-this-page/-/edit-this-page-0.0.25.tgz#3c67ea2fc0db9af8f106ac0a262878e62f57e5a4"
-  integrity sha512-upbTdu5tjZMxDA7bb/Hkmg2nXE8hFtOcQOZNDbBfddZ4jp5rXfHZ9a4MyH4Xjm9CZ7Q9etqJ4z7gBeoGhHBD0Q==
-  dependencies:
-    layout-kit-react "^0.1.8"
-    lodash "^4.17.19"
-    prism-react-renderer "^1.1.1"
-    react-overlays "^4.1.0"
-
 ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
@@ -8674,6 +8664,11 @@ parse-entities@^2.0.0:
     is-alphanumerical "^1.0.0"
     is-decimal "^1.0.0"
     is-hexadecimal "^1.0.0"
+
+parse-github-url@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/parse-github-url/-/parse-github-url-1.0.2.tgz#242d3b65cbcdda14bb50439e3242acf6971db395"
+  integrity sha512-kgBf6avCbO3Cn6+RnzRGLkUsv4ZVqv/VfAYkRsyBcgkshNvVBkRn1FEZcW0Jb+npXQWm2vHPnnOqFteZxRRGNw==
 
 parse-json@^4.0.0:
   version "4.0.0"

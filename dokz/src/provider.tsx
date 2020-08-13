@@ -81,6 +81,14 @@ export type DokzProviderProps = {
     The font family
     */
     fontFamily?: string
+    /*
+    The github url, used by the `Edit this page` feature
+    */
+    githubUrl?: string
+    /*
+    The branch with up to date code, used by the `Edit this page` feature
+    */
+    branch?: string
 }
 
 export type SidebarOrdering = { [k: string]: SidebarOrdering } | boolean
@@ -95,6 +103,7 @@ const defaultDarkPrismTheme = {
 
 export const defaultDokzContext: DokzProviderProps = {
     initialColorMode: 'light',
+    branch: 'master',
     footer: null,
     headerLogo: (
         <Box fontWeight='medium' fontSize='32px'>

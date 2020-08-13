@@ -32,6 +32,9 @@ export const withMdx = (pluginOptions: Options = {}) => (
                     options.defaultLoaders.babel,
                     ...makeDebugLoader(),
                     {
+                        loader: require.resolve('./injectorLoader'),
+                    },
+                    {
                         loader: '@mdx-js/loader',
                         options: mdxOptions,
                     },

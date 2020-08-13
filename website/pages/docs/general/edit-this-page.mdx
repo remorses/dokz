@@ -2,50 +2,26 @@ import { Image } from '@chakra-ui/core'
 
 # Let users edit your contents
 
-On every document there is an "Edit This Page" button, the button opens a modal to change the source code of the page and opens a pull request automatically
+On every document there is an "Edit This Page" button, the button will redirect to github to let the user edit the current page
 
-The pull request will be opened by a bot, to enable this feature you will need to give the bot access to open pull requests on your repo
+To activate this feature you need to add the `githubUrl` and `branch` props to the provider
 
-Here are the steps to enable this feature
+```jsx
+// _app.jsx
+import { DokzProvider } from 'dokz'
+import { useRouter } from 'next/router'
 
-> You can try it right now clicking on the "edit this page" button on the top right corner (only visible on desktop)
-
-## 1. Add the babel plugin
-
-Install the `babel-plugin-edit-this-page` plugin
-
-```
-yarn add babel-plugin-edit-this-page
-```
-
-Add it to your babel config next to `next.config.js`
-
-```js
-// babel.config.js
-module.exports = {
-    presets: ['next/babel'],
-    plugins: [
-        [
-            'edit-this-page',
-            {
-                editableFiles: 'pages/**',
-                githubUrl: 'myusername/myrepo',
-                branch: 'master',
-            },
-        ],
-    ],
+export default function App(props) {
+    return (
+        <DokzProvider
+            docsRootPath='pages/docs'
+            githubUrl='remorses/dokz'
+            branch='master'
+        >
+            <Component {...pageProps} />
+        </DokzProvider>
+    )
 }
 ```
 
-## 2. Install the github application
-
-Go to [https://github.com/apps/edit-this-page-app](https://github.com/apps/edit-this-page-app) and install the `Edit This Page` application on your repo
-
-<img src='/edit-this-page/github_app.jpg' width='800px' />
-
-## 3. Try it out
-
-You can now let your readers extend your documentation
-
-
-<video src='/edit-this-page/video.mp4' width='800px' autoplay='true' loop='true' />
+> Remember the `githubUrl` and `branch` props!
