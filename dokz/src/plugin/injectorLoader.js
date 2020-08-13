@@ -1,15 +1,16 @@
 const { getRepoRoot } = require('get-git-config')
 const path = require('path')
 
-
 module.exports = function (content) {
     const callback = this.async()
     // const options = this.getOptions()
     const root = getRepoRoot()
     if (!root) {
-        throw new Error(
-            `cannot find the .git directory, edit-this-page plugin only works with git repos`,
+        console.log(
+            `cannot find the .git directory, edit-this-page feature is disabled`,
         )
+        callback(null, content)
+        return
     }
     const filePath = this.resourcePath
     const editThisPagePath = path.relative(root, filePath)

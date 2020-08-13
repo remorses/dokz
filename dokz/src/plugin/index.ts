@@ -15,7 +15,6 @@ import { injectCodeToPlayground } from './rehype/playground'
 import { withMdx } from './withMdx'
 
 const EXTENSIONS_TO_WATCH = ['.mdx', '.md']
-const EDIT_THIS_PAGE_GUIDE = 'https://dokz.site/docs/general/edit-this-page'
 
 export function withDokz(nextConfig = {} as any) {
     // .on('change', writeMdxIndex)
