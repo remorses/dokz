@@ -4,14 +4,15 @@ import { jsx, css } from '@emotion/core'
 import ColorScheme from 'color-scheme'
 import throttle from 'lodash/throttle'
 import { useCallback } from 'react'
+import { useRouter } from 'next/router'
 
-const DURATION = 400
+const DURATION = 500
 
 function step(s, max = DURATION, steps = 5) {
     return max - s * (max / steps)
 }
 
-export const makeStyles = (hue = 21) => {
+export const makeStyles = (hue = 10) => {
     var scheme = new ColorScheme()
     const colors = scheme
         .from_hue(hue) // Start the scheme
@@ -62,15 +63,29 @@ export const makeStyles = (hue = 21) => {
     `
 }
 
-export const PageTransition = ({ path }) => {
+export const PageTransition = ({ hue=200 }) => {
     // console.log(path)
     const [active, setActive] = useState(false)
     // const setActiveThrottled = useCallback(throttle(setActive, 40), [setActive])
-    const styles = useMemo(() => makeStyles(50), [])
-    useEffect(() => {
+    const router = useRouter()
+    // useEffect(() => {
+    //     // alert(path)
+    //     const handler = () => {
+    //         setActive(false)
+    //     }
+    //     router.events.on('routeChangeStart', handler)
+    //     // Router.events.on('routeChangeCompleted', () => {
+    //     //     setActive(false)
+    //     // })
+    //     return () => {
+    //         return router.events.off('routeChangeStart', handler)
+    //     }
+    // }, [])
+    const styles = useMemo(() => makeStyles(hue), [])
+    useLayoutEffect(() => {
         // alert(path)
         setActive((x) => !x)
-    }, [path])
+    }, [router?.pathname])
     const base = active ? 'active ' : ''
     return (
         // @ts-ignore

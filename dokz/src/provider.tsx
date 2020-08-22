@@ -14,6 +14,8 @@ import darkPrismTheme from 'prism-react-renderer/themes/oceanicNext'
 import { GithubLink, ColorModeSwitch } from './components/NavBar'
 import { Arrow, ArrowEmpty } from './components/icons'
 import { DokzTableOfContents } from './types'
+import { Global } from '@emotion/core'
+import { makeStyles } from './components/PageTransition'
 
 export type DokzProviderProps = {
     children?: any
@@ -137,6 +139,7 @@ export function DokzProvider({ children, ...rest }: DokzProviderProps) {
     return (
         // TODO merge configs
         <DokzContext.Provider value={ctx}>
+            
             <ColorModeProvider value={initialColorMode}>
                 <MDXProvider
                     components={{ ...MDXComponents, ...userMDXComponents }}

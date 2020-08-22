@@ -150,7 +150,7 @@ export function Wrapper(props) {
                         </Stack>
                     </Box>
                 </Stack>
-                <PageTransition path={router?.pathname} />
+                {/* <PageTransition path={router?.pathname} /> */}
             </TableOfContentsContext.Provider>
         </PropagatedThemeProvider>
     )
