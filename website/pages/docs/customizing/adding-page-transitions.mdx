@@ -1,0 +1,21 @@
+# Adding page transitions
+
+You can install `page-enter-transition` package and use it in the `_app.jsx` App component
+
+This site already uses page transitions, try changing page to see how it looks
+
+```jsx
+import { DokzProvider } from 'dokz'
+import { PageEnterTransition } from 'page-enter-transition'
+import React from 'react'
+
+export default function App(props) {
+    const { Component, pageProps } = props
+    return (
+        <DokzProvider>
+            <Component {...pageProps} />
+            <PageEnterTransition hue={200} duration={500} />
+        </DokzProvider>
+    )
+}
+```

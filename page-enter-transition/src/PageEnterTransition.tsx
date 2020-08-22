@@ -4,8 +4,6 @@ import { jsx, css } from '@emotion/core'
 import ColorScheme from 'color-scheme'
 import { useRouter } from 'next/router'
 
-
-
 export const makeStyles = ({ hue = 10, duration: DURATION }) => {
     function step(s, max = DURATION, steps = 5) {
         return max - s * (max / steps)
@@ -80,7 +78,10 @@ export const PageEnterTransition = ({ hue = 200, duration = 500 }) => {
     // }, [])
     const styles = useMemo(() => makeStyles({ hue, duration }), [hue, duration])
     useEffect(() => {
-        // alert(path)
+        // skip on mobile
+        if (/Mobi|Android/i.test(navigator.userAgent)) {
+            return
+        }
         setActive((x) => !x)
     }, [router?.pathname])
     const base = active ? 'active ' : ''
