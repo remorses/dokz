@@ -58,7 +58,7 @@ export const makeStyles = ({ hue = 10, duration: DURATION }) => {
     `
 }
 
-export const PageEnterTransition = ({ hue = 200, duration = 500 }) => {
+export const PageEnterTransition = ({ hue = 200, duration = 300 }) => {
     // console.log(path)
     const [active, setActive] = useState(false)
     // const setActiveThrottled = useCallback(throttle(setActive, 40), [setActive])
