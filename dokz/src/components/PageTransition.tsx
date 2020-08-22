@@ -82,7 +82,7 @@ export const PageTransition = ({ hue=200 }) => {
     //     }
     // }, [])
     const styles = useMemo(() => makeStyles(hue), [])
-    useLayoutEffect(() => {
+    useEffect(() => {
         // alert(path)
         setActive((x) => !x)
     }, [router?.pathname])
