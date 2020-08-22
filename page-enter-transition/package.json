@@ -1,0 +1,27 @@
+{
+    "name": "page-enter-transition",
+    "version": "0.1.1",
+    "main": "dist/index.js",
+    "files": [
+        "dist",
+        "src"
+    ],
+    "scripts": {
+        "build": "tsc",
+        "publ": "yarn build && yarn publish"
+    },
+    "dependencies": {
+        "color-scheme": "^1.0.1"
+    },
+    "peerDependencies": {
+        "@emotion/core": "^10.0.28",
+        "color-scheme": "^1.0.1"
+    },
+    "devDependencies": {
+        "@emotion/core": "^10.0.28",
+        "compose-function": "^3.0.3",
+        "react": "16.13.1",
+        "react-dom": "16.13.1",
+        "typescript": "^4.0.2"
+    }
+}
