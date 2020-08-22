@@ -20,6 +20,8 @@ import { FloatingTableOfContents } from './FloatingTableOfContents'
 import { Fragment, useMemo } from 'react'
 import { globalStyles, getMdxSidebarTree } from './support'
 import { FooterButtons } from './FooterButtons'
+import { PageTransition } from './PageTransition'
+import { useRouter } from 'next/router'
 
 const SIDENAV_W = 280
 const TABLE_OF_C_W = 200
@@ -39,6 +41,7 @@ export function Wrapper(props) {
         fontFamily,
     } = useDokzConfig()
     const index = getMdxSidebarTree()
+    const router = useRouter()
     const { colorMode } = useColorMode()
     return (
         <PropagatedThemeProvider theme={theme}>
@@ -147,6 +150,7 @@ export function Wrapper(props) {
                         </Stack>
                     </Box>
                 </Stack>
+                <PageTransition path={router?.pathname} />
             </TableOfContentsContext.Provider>
         </PropagatedThemeProvider>
     )

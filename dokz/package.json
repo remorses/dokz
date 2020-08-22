@@ -78,6 +78,7 @@
         "await-to-js": "^2.1.1",
         "chalk": "^4.1.0",
         "chokidar": "^3.4.1",
+        "color-scheme": "^1.0.1",
         "debounce": "^1.2.0",
         "directory-tree": "^2.2.4",
         "emotion-theming": "^10.0.27",
