@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "esModuleInterop": true,
+        "jsx": "react",
+        "moduleResolution": "Node",
+        "target": "ES5",
+        "outDir": "dist"
+    }
+}

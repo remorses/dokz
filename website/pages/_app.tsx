@@ -13,7 +13,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import lightPrismTheme from 'prism-react-renderer/themes/nightOwlLight'
 import darkPrismTheme from 'prism-react-renderer/themes/nightOwl'
-import { PageTransition } from 'dokz/src/components/PageTransition'
+import { PageEnterTransition } from 'page-enter-transition'
 
 export default function App(props) {
     const { Component, pageProps } = props
@@ -90,7 +90,7 @@ export default function App(props) {
                         <Component {...pageProps} />
                     </DokzProvider>
                 </LandingProvider>
-                <PageTransition />
+                <PageEnterTransition />
             </ThemeProvider>
         </Fragment>
     )

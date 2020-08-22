@@ -2,17 +2,14 @@
 import React, { useState, useEffect, useMemo, useLayoutEffect } from 'react'
 import { jsx, css } from '@emotion/core'
 import ColorScheme from 'color-scheme'
-import throttle from 'lodash/throttle'
-import { useCallback } from 'react'
 import { useRouter } from 'next/router'
 
-const DURATION = 500
 
-function step(s, max = DURATION, steps = 5) {
-    return max - s * (max / steps)
-}
 
-export const makeStyles = (hue = 10) => {
+export const makeStyles = ({ hue = 10, duration: DURATION }) => {
+    function step(s, max = DURATION, steps = 5) {
+        return max - s * (max / steps)
+    }
     var scheme = new ColorScheme()
     const colors = scheme
         .from_hue(hue) // Start the scheme
@@ -63,7 +60,7 @@ export const makeStyles = (hue = 10) => {
     `
 }
 
-export const PageTransition = ({ hue=200 }) => {
+export const PageEnterTransition = ({ hue = 200, duration = 500 }) => {
     // console.log(path)
     const [active, setActive] = useState(false)
     // const setActiveThrottled = useCallback(throttle(setActive, 40), [setActive])
@@ -81,7 +78,7 @@ export const PageTransition = ({ hue=200 }) => {
     //         return router.events.off('routeChangeStart', handler)
     //     }
     // }, [])
-    const styles = useMemo(() => makeStyles(hue), [])
+    const styles = useMemo(() => makeStyles({ hue, duration }), [hue, duration])
     useEffect(() => {
         // alert(path)
         setActive((x) => !x)

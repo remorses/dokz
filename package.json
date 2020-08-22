@@ -5,10 +5,8 @@
             "dokz",
             "website",
             "example",
+            "page-enter-transition",
             "devsite"
-        ],
-        "nohoist": [
-            "**/next"
         ]
     },
     "scripts": {
