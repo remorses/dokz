@@ -20,7 +20,6 @@ import { FloatingTableOfContents } from './FloatingTableOfContents'
 import { Fragment, useMemo } from 'react'
 import { globalStyles, getMdxSidebarTree } from './support'
 import { FooterButtons } from './FooterButtons'
-import { PageTransition } from './PageTransition'
 import { useRouter } from 'next/router'
 
 const SIDENAV_W = 280

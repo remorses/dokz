@@ -15,7 +15,6 @@ import { GithubLink, ColorModeSwitch } from './components/NavBar'
 import { Arrow, ArrowEmpty } from './components/icons'
 import { DokzTableOfContents } from './types'
 import { Global } from '@emotion/core'
-import { makeStyles } from './components/PageTransition'
 
 export type DokzProviderProps = {
     children?: any
