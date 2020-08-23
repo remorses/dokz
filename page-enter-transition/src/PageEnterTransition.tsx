@@ -10,6 +10,10 @@ import { jsx, css } from '@emotion/core'
 import ColorScheme from 'color-scheme'
 import { useRouter } from 'next/router'
 
+const CONTAINER_CLASS = 'dokz-transition-container'
+
+const MAIN_CLASS = 'dokz-transition-layer'
+
 export const makeStyles = ({ hue = 10, duration: DURATION }) => {
     function step(s, max = DURATION, steps = 5) {
         return max - s * (max / steps)
@@ -25,7 +29,7 @@ export const makeStyles = ({ hue = 10, duration: DURATION }) => {
         .map((x) => '#' + x)
     // console.log(colors)
     return `
-        .top-layer {
+        .${MAIN_CLASS} {
             z-index: 4000;
             position: absolute;
             width: 100vw;
@@ -38,33 +42,31 @@ export const makeStyles = ({ hue = 10, duration: DURATION }) => {
             transition: transform ${DURATION}ms cubic-bezier(0.6, 0.05, 0.4, 1);
             /* opacity: 0.8; */
         }
-        .top-layer.active {
+        .${MAIN_CLASS}.active {
             transform: translateY(200vh);
         }
-        .top-layer--2 {
+        .${CONTAINER_CLASS} .top-layer--2 {
             background: ${colors[1]};
 
             transition-delay: ${step(1)}ms;
         }
-        .top-layer--3 {
+        .${CONTAINER_CLASS} .top-layer--3 {
             background: ${colors[2]};
 
             transition-delay: ${step(2)}ms;
         }
-        .top-layer--4 {
+        .${CONTAINER_CLASS} .top-layer--4 {
             background: ${colors[3]};
 
             transition-delay: ${step(3)}ms;
         }
-        .top-layer--5 {
+        .${CONTAINER_CLASS} .top-layer--5 {
             background: ${colors[4]};
 
             transition-delay: ${step(4)}ms;
         }
     `
 }
-
-const CONTAINER_CLASS = 'transition-container'
 
 export const PageEnterTransition = ({ hue = 200, duration = 300 }) => {
     // const setActiveThrottled = useCallback(throttle(setActive, 40), [setActive])
@@ -76,11 +78,11 @@ export const PageEnterTransition = ({ hue = 200, duration = 300 }) => {
             <style type="text/css">
             ${styles}
             </style>
-            <div class="top-layer"></div>
-            <div class="top-layer top-layer--2"></div>
-            <div class="top-layer top-layer--3"></div>
-            <div class="top-layer top-layer--4"></div>
-            <div class="top-layer top-layer--5"></div>
+            <div class="${MAIN_CLASS}"></div>
+            <div class="${MAIN_CLASS} top-layer--2"></div>
+            <div class="${MAIN_CLASS} top-layer--3"></div>
+            <div class="${MAIN_CLASS} top-layer--4"></div>
+            <div class="${MAIN_CLASS} top-layer--5"></div>
         <div/>
     `
     useLayoutEffect(() => {
@@ -94,7 +96,7 @@ export const PageEnterTransition = ({ hue = 200, duration = 300 }) => {
     }, [])
 
     const animate = useCallback(() => {
-        const layerClass = '.top-layer'
+        const layerClass = '.' + MAIN_CLASS
         var layers = document.querySelectorAll(layerClass)
         layers.forEach((layer) => {
             layer.classList.toggle('active')
