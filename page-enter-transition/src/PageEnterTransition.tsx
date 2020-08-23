@@ -28,18 +28,18 @@ export const makeStyles = ({ hue = 10, duration: DURATION }) => {
         .top-layer {
             z-index: 4000;
             position: absolute;
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             top: -100%;
             left: 0;
             bottom: auto;
-            right: auto;
+            right: 0;
             background: ${colors[0]};
-            transition: all ${DURATION}ms cubic-bezier(0.6, 0.05, 0.4, 1);
+            transition: transform ${DURATION}ms cubic-bezier(0.6, 0.05, 0.4, 1);
             /* opacity: 0.8; */
         }
         .top-layer.active {
-            top: 100%;
+            transform: translateY(200vh);
         }
         .top-layer--2 {
             background: ${colors[1]};
