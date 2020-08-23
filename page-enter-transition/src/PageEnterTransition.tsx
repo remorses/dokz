@@ -1,5 +1,11 @@
 /** @jsx jsx */
-import React, { useState, useEffect, useMemo, useLayoutEffect } from 'react'
+import React, {
+    useState,
+    useEffect,
+    useMemo,
+    useLayoutEffect,
+    useCallback,
+} from 'react'
 import { jsx, css } from '@emotion/core'
 import ColorScheme from 'color-scheme'
 import { useRouter } from 'next/router'
@@ -18,7 +24,7 @@ export const makeStyles = ({ hue = 10, duration: DURATION }) => {
         .colors()
         .map((x) => '#' + x)
     // console.log(colors)
-    return css`
+    return `
         .top-layer {
             z-index: 4000;
             position: absolute;
@@ -58,41 +64,56 @@ export const makeStyles = ({ hue = 10, duration: DURATION }) => {
     `
 }
 
+const CONTAINER_CLASS = 'transition-container'
+
 export const PageEnterTransition = ({ hue = 200, duration = 300 }) => {
-    // console.log(path)
-    const [active, setActive] = useState(false)
     // const setActiveThrottled = useCallback(throttle(setActive, 40), [setActive])
     const router = useRouter()
-    // useEffect(() => {
-    //     // alert(path)
-    //     const handler = () => {
-    //         setActive(false)
-    //     }
-    //     router.events.on('routeChangeStart', handler)
-    //     // Router.events.on('routeChangeCompleted', () => {
-    //     //     setActive(false)
-    //     // })
-    //     return () => {
-    //         return router.events.off('routeChangeStart', handler)
-    //     }
-    // }, [])
+
     const styles = useMemo(() => makeStyles({ hue, duration }), [hue, duration])
-    useEffect(() => {
-        // skip on mobile
-        if (/Mobi|Android/i.test(navigator.userAgent)) {
-            return
+    const html = `
+        <div class="${CONTAINER_CLASS}">
+            <style type="text/css">
+            ${styles}
+            </style>
+            <div class="top-layer"></div>
+            <div class="top-layer top-layer--2"></div>
+            <div class="top-layer top-layer--3"></div>
+            <div class="top-layer top-layer--4"></div>
+            <div class="top-layer top-layer--5"></div>
+        <div/>
+    `
+    useLayoutEffect(() => {
+        document.body.insertAdjacentHTML('beforeend', html)
+        return () => {
+            const nodes = document.getElementsByClassName(CONTAINER_CLASS)
+            if (nodes.length) {
+                document.body.removeChild(nodes[0])
+            }
         }
-        setActive((x) => !x)
-    }, [router?.pathname])
-    const base = active ? 'active ' : ''
-    return (
-        // @ts-ignore
-        <div css={styles}>
-            <div className={base + 'top-layer'} />
-            <div className={base + 'top-layer top-layer--2'} />
-            <div className={base + 'top-layer top-layer--3'} />
-            <div className={base + 'top-layer top-layer--4'} />
-            <div className={base + 'top-layer top-layer--5'} />
-        </div>
-    )
+    }, [])
+
+    const animate = useCallback(() => {
+        const layerClass = '.top-layer'
+        var layers = document.querySelectorAll(layerClass)
+        layers.forEach((layer) => {
+            layer.classList.toggle('active')
+        })
+    }, [])
+
+    useEffect(() => {
+        // alert(path)
+        const handler = () => {
+            animate()
+        }
+        router.events.on('routeChangeStart', handler)
+        // Router.events.on('routeChangeCompleted', () => {
+        //     setActive(false)
+        // })
+        return () => {
+            return router.events.off('routeChangeStart', handler)
+        }
+    }, [])
+
+    return null
 }
