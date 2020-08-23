@@ -34,7 +34,7 @@ export const makeStyles = ({ hue = 10, duration: DURATION }) => {
             position: absolute;
             width: 100vw;
             height: 100vh;
-            top: -100%;
+            top: -100vh;
             left: 0;
             bottom: auto;
             right: 0;
@@ -68,7 +68,7 @@ export const makeStyles = ({ hue = 10, duration: DURATION }) => {
     `
 }
 
-export const PageEnterTransition = ({ hue = 200, duration = 300 }) => {
+export const PageEnterTransition = ({ hue = 200, duration = 400 }) => {
     // const setActiveThrottled = useCallback(throttle(setActive, 40), [setActive])
     const router = useRouter()
 
