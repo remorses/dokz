@@ -85,7 +85,7 @@ export const PageEnterTransition = ({ hue = 200, duration = 400 }) => {
             <div class="${MAIN_CLASS} top-layer--5"></div>
         <div/>
     `
-    useLayoutEffect(() => {
+    useEffect(() => {
         document.body.insertAdjacentHTML('beforeend', html)
         return () => {
             const nodes = document.getElementsByClassName(CONTAINER_CLASS)
