@@ -26,6 +26,7 @@ export default function App(props) {
             <DokzBlogProvider
                 blogRootPath='pages/blog'
                 headerLogo={<Logo height='30px' opacity={0.92} />}
+                headTitlePrefix='Dokz Blog - '
                 headerItems={[
                     <Link href='https://github.com/remorses/dokz'>Dokz</Link>,
                     <Link href='/blog'>Blog</Link>,
@@ -55,6 +56,7 @@ export default function App(props) {
                         githubUrl='remorses/dokz'
                         branch='master'
                         docsRootPath='pages/docs'
+                        headTitlePrefix='Dokz - '
                         headerItems={[
                             // <a>ciao</a>,
                             <Link href='/blog'>Blog</Link>,

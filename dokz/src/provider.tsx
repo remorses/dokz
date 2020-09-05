@@ -14,6 +14,7 @@ import darkPrismTheme from 'prism-react-renderer/themes/oceanicNext'
 import { GithubLink, ColorModeSwitch } from './components/NavBar'
 import { Arrow, ArrowEmpty } from './components/icons'
 import { DokzTableOfContents } from './types'
+import NextHead from 'next/head'
 
 export type DokzProviderProps = {
     children?: any
@@ -33,6 +34,10 @@ export type DokzProviderProps = {
     The root folder of your docs documents, hides the outer folders from the sidenav
     */
     docsRootPath?: string
+    /*
+    The <title/> in <head/> prefix
+    */
+    headTitlePrefix?: string
     /*
     The icon used to prefix a list item inside <ul> or <ol>
     */
@@ -103,6 +108,7 @@ const defaultDarkPrismTheme = {
 
 export const defaultDokzContext: DokzProviderProps = {
     initialColorMode: 'light',
+    headTitlePrefix: '',
     branch: 'master',
     footer: null,
     headerLogo: (

@@ -14,6 +14,7 @@ import merge from 'lodash/fp/merge'
 import { jsx } from '@emotion/core'
 import { useDokzConfig, TableOfContentsContext } from '../provider'
 import NavBar from './NavBar'
+import NextHead from 'next/head'
 import { SideNav } from './SideNav'
 import { Global, css } from '@emotion/core'
 import { FloatingTableOfContents } from './FloatingTableOfContents'
@@ -27,7 +28,7 @@ const TABLE_OF_C_W = 200
 const NAVBAR_H = 62
 
 export function Wrapper(props) {
-    const { tableOfContents } = props.meta || {}
+    const { tableOfContents, name, ...rest } = props.meta || {}
     const {
         footer,
         headerLogo,
@@ -37,11 +38,20 @@ export function Wrapper(props) {
         fontSize,
         fontWeight,
         fontFamily,
+        headTitlePrefix = '',
     } = useDokzConfig()
     const index = getMdxSidebarTree()
     const { colorMode } = useColorMode()
     return (
         <PropagatedThemeProvider theme={theme}>
+            <NextHead>
+                {name && (
+                    <title>
+                        {headTitlePrefix}
+                        {name}
+                    </title>
+                )}
+            </NextHead>
             <TableOfContentsContext.Provider value={{ tableOfContents }}>
                 <CSSReset />
                 <Global styles={globalStyles} />

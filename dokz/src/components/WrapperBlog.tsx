@@ -10,16 +10,25 @@ import { FloatingTableOfContents } from './FloatingTableOfContents'
 import { PropagatedThemeProvider } from './Wrapper'
 import { DateIcon } from './icons'
 import { TableOfContentsContext } from '../provider'
+import NextHead from 'next/head'
 
 export function WrapperBlog(props) {
     const {
         name: title = 'Add a `name` to the document frontmatter',
         date = 'Add a `date` to the document frontmatter',
     } = props.meta || {}
-    const { footer } = useDokzBlogConfig()
+    const { footer, headTitlePrefix } = useDokzBlogConfig()
 
     return (
         <BaseWrapperBlog {...props}>
+            <NextHead>
+                {name && (
+                    <title>
+                        {headTitlePrefix}
+                        {name}
+                    </title>
+                )}
+            </NextHead>
             {/* TODO add social links */}
             <Box height={['40px', null, '40px']} />
             <Stack spacing='2em' direction='column' width='100%' maxW='800px'>

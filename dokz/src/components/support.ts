@@ -1,4 +1,5 @@
 export const CODE_FONT = `'Fira Code',SFMono-Regular,Menlo,Monaco,"Liberation Mono","Courier New",monospace,mono`
+import startCase from 'lodash/startCase'
 import { css } from '@emotion/core'
 
 const cssForPdfRendering = css`
@@ -96,12 +97,7 @@ export function getMdxSidebarTree(): DirectoryTree {
 }
 
 export function formatTitle(name: string) {
-    return capitalizeFirstLetter(
-        name
-            .replace(/_/g, ' ')
-            .replace(/-/g, ' ')
-            .replace(/\.mdx?/, ''),
-    )
+    return capitalizeFirstLetter(startCase(name.replace(/\.mdx?/, '')))
 }
 
 function capitalizeFirstLetter(string) {
