@@ -52,7 +52,7 @@ export function withDokz(nextConfig = {} as any) {
                 () => (tree, vfile) => {
                     const tableOfContents = generateTableOfContents(tree)
                     // console.log(vfile)
-                    const { cwd, contents, history, data } = vfile
+                    const { cwd, contents, history = [], data } = vfile
                     const filePath: string = history[0] || ''
                     if (process.env.DEBUG) {
                         console.log('frontmatter', data)
