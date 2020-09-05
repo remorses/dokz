@@ -8,7 +8,12 @@ import { FiCheck, FiCopy } from 'react-icons/fi'
 import { useDokzConfig } from '../provider'
 import { CODE_FONT } from './support'
 
-export const Code = ({ children, className, ...rest }) => {
+export const Code = ({
+    children,
+    className,
+    hideLinesNumbers = false,
+    ...rest
+}) => {
     // console.log({rest, live})
     const { colorMode } = useColorMode()
     let { prismTheme } = useDokzConfig()
@@ -65,27 +70,55 @@ export const Code = ({ children, className, ...rest }) => {
                             top='10px'
                             right='10px'
                         />
-                        {tokens.map((line, i) => (
-                            <div key={i} {...getLineProps({ line, key: i })}>
-                                <Box
-                                    userSelect='none'
-                                    display='inline-block'
-                                    // position='absolute'
-                                    textAlign='right'
-                                    minW='40px'
-                                    opacity={0.4}
-                                    pr='30px'
+                        <Box
+                            flexShrink={0}
+                            overflow='visible'
+                            // direction='column'
+                            // spacing='0'
+                            // p='20px'
+                            // pt='30px'
+                            // borderRadius='8px'
+                            as='pre'
+                            fontFamily={CODE_FONT}
+                            // fontSize='0.9em'
+                            // style={{ ...style }}
+                            // overflowX='auto'
+                            fontWeight='500'
+                            className={className}
+                            style={style}
+
+                            // {...rest}
+                        >
+                            {tokens.map((line, i) => (
+                                <div
+                                    key={i}
+                                    {...getLineProps({ line, key: i })}
                                 >
-                                    {i + 1}
-                                </Box>
-                                {line.map((token, key) => (
-                                    <span
-                                        key={key}
-                                        {...getTokenProps({ token, key })}
-                                    />
-                                ))}
-                            </div>
-                        ))}
+                                    {!hideLinesNumbers && (
+                                        <Box
+                                            d='inline-block'
+                                            userSelect='none'
+                                            position='absolute'
+                                            left='0px'
+                                            textAlign='right'
+                                            minW='40px'
+                                            opacity={0.4}
+                                            pr='40px'
+                                            pl='20px'
+                                        >
+                                            {i + 1}
+                                        </Box>
+                                    )}
+                                    <Box display='inline-block' w='50px' />
+                                    {line.map((token, key) => (
+                                        <span
+                                            key={key}
+                                            {...getTokenProps({ token, key })}
+                                        />
+                                    ))}
+                                </div>
+                            ))}
+                        </Box>
                     </Box>
                 )}
             </Highlight>
