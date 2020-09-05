@@ -136,7 +136,7 @@ export const CopyButton = (props) => {
                 strokeWidth: '2px',
             }}
             opacity={0.7}
-            size='1.1em'
+            size='1em'
             as={hasCopied ? FiCheck : FiCopy}
             {...props}
         />
