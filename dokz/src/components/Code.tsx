@@ -1,3 +1,6 @@
+/** @jsx jsx */
+
+import { css, jsx } from '@emotion/core'
 import { Box, useClipboard, useColorMode } from '@chakra-ui/core'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import React, { useEffect } from 'react'
@@ -65,6 +68,7 @@ export const Code = ({ children, className, ...rest }) => {
                         {tokens.map((line, i) => (
                             <div key={i} {...getLineProps({ line, key: i })}>
                                 <Box
+                                    userSelect='none'
                                     display='inline-block'
                                     // position='absolute'
                                     textAlign='right'
