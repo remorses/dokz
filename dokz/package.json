@@ -1,7 +1,7 @@
 {
     "name": "dokz",
     "_": "[bump if dokz]",
-    "version": "1.0.70",
+    "version": "1.0.71",
     "description": "",
     "main": "dist/index.js",
     "module": "esm/index.js",
