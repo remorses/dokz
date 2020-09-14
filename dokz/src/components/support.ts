@@ -61,11 +61,11 @@ export const globalStyles = css`
         box-sizing: border-box;
     }
     html {
-        overflow: hidden;
         height: 100%;
     }
     #__next {
         min-height: 100%;
+        overflow-x: hidden;
     }
     body {
         height: 100%;
