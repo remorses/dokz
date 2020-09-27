@@ -24,9 +24,11 @@ import {
     LiveProviderProps,
 } from 'react-live'
 import { useDokzConfig } from '../provider'
-import { CopyButton,  } from './Code'
+import { CopyButton } from './Code'
 import { mdx } from '@mdx-js/react'
 import { CODE_FONT } from './support'
+
+
 
 export const Playground = ({
     className,
@@ -46,6 +48,8 @@ export const Playground = ({
     const [width, setWidth] = React.useState('100%')
     const [_, forceRender] = useState('')
     const resizableProps = getResizableProps(width, setWidth)
+
+    const BUTTON_BG = colorMode === 'light' ? 'gray.100' : 'whiteAlpha.200'
 
     const liveProviderProps: LiveProviderProps = {
         theme: prismTheme[colorMode],
@@ -77,14 +81,16 @@ export const Playground = ({
             >
                 <Box h='1' flex='1' />
                 <Button
-                    variant={!showCode ? 'solid' : 'unstyled'}
+                    transition='background 300ms'
+                    bg={!showCode ? BUTTON_BG : 'transparent'}
                     onClick={() => setShowCode(false)}
                     size='sm'
                 >
                     Preview
                 </Button>
                 <Button
-                    variant={showCode ? 'solid' : 'unstyled'}
+                    transition='background 300ms'
+                    bg={showCode ? BUTTON_BG : 'transparent'}
                     onClick={() => setShowCode(true)}
                     size='sm'
                 >
