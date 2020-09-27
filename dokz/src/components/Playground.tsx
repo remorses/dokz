@@ -81,7 +81,7 @@ export const Playground = ({
                     onClick={() => setShowCode(false)}
                     size='sm'
                 >
-                    preview
+                    Preview
                 </Button>
                 <Button
                     variant={showCode ? 'solid' : 'unstyled'}
