@@ -60,7 +60,7 @@ function TableItem({ children, depth, title, slug }: DokzTableOfContents) {
     const baseW = 20
     return (
         <Stack>
-            <Box isTruncated minH='1.6em'>
+            <Box whiteSpace='nowrap' minH='1.6em'>
                 <Link href={slug}>{title}</Link>
             </Box>
             <Stack ml={baseW * depth + 'px'}>

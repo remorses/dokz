@@ -151,6 +151,7 @@ export function Wrapper(props) {
                                 height='auto'
                                 display={['none', null, null, null, 'block']}
                                 pt='20px'
+                                overflowX='visible'
                                 opacity={0.8}
                                 table={tableOfContents}
                             />
