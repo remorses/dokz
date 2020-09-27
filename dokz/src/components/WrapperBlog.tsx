@@ -22,10 +22,10 @@ export function WrapperBlog(props) {
     return (
         <BaseWrapperBlog {...props}>
             <NextHead>
-                {name && (
+                {title && (
                     <title>
                         {headTitlePrefix}
-                        {name}
+                        {title}
                     </title>
                 )}
             </NextHead>
