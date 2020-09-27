@@ -4,6 +4,7 @@ import React, {
     useContext,
     ReactNode,
     ComponentType,
+    useEffect,
 } from 'react'
 import MDXComponents from './components/mdx'
 import { ColorModeProvider, Box } from '@chakra-ui/core'
@@ -15,6 +16,7 @@ import { GithubLink, ColorModeSwitch } from './components/NavBar'
 import { Arrow, ArrowEmpty } from './components/icons'
 import { DokzTableOfContents } from './types'
 import NextHead from 'next/head'
+import { useRouter } from 'next/router'
 
 export type DokzProviderProps = {
     children?: any
@@ -140,6 +142,7 @@ export function useDokzConfig(): DokzProviderProps {
 export function DokzProvider({ children, ...rest }: DokzProviderProps) {
     const ctx = { ...defaultDokzContext, ...rest }
     const { mdxComponents: userMDXComponents = {}, initialColorMode } = ctx
+    useRouterScroll()
     return (
         // TODO merge configs
         <DokzContext.Provider value={ctx}>
@@ -164,3 +167,29 @@ const defaultTableOfContents: DokzTableOfContents = {
 export const TableOfContentsContext = createContext({
     tableOfContents: defaultTableOfContents,
 })
+
+function useRouterScroll({
+    behavior = 'smooth' as ScrollBehavior,
+    left = 0,
+    top = 0,
+} = {}) {
+    const router = useRouter()
+    useEffect(() => {
+        // Scroll to given coordinates when router finishes navigating
+        // This fixes an inconsistent behaviour between `<Link/>` and `next/router`
+        // See https://github.com/vercel/next.js/issues/3249
+        const handleRouteChangeComplete = () => {
+            if (typeof document !== 'undefined') {
+                document.body.scrollTop = document.documentElement.scrollTop = 0
+            }
+        }
+
+        router.events.on('routeChangeComplete', handleRouteChangeComplete)
+
+        // If the component is unmounted, unsubscribe from the event
+        return () => {
+            router.events.off('routeChangeComplete', handleRouteChangeComplete)
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [behavior, left, top])
+}
