@@ -1,5 +1,6 @@
 import { useColorMode } from '@chakra-ui/core'
 import { Box, Flex, Stack } from 'layout-kit-react'
+import Router from 'next/router';
 import React, { ReactNode } from 'react'
 import { useDokzBlogConfig } from '../blog'
 import { DateIcon } from './icons'
@@ -104,6 +105,10 @@ export const BlogPostCard = ({ title, date, url, description, ...rest }) => {
             // borderWidth='1px'
             // @ts-ignore
             href={url}
+            onClick={(ev) => {
+                ev.preventDefault();
+                Router.push(url);
+            }}
             overflow='hidden'
             h='auto'
             p='0'
