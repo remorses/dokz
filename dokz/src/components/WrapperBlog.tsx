@@ -31,7 +31,7 @@ export function WrapperBlog(props) {
             </NextHead>
             {/* TODO add social links */}
             <Box height={['40px', null, '40px']} />
-            <Stack spacing='2em' direction='column' width='100%' maxW='800px'>
+            <Stack spacing='2em' direction='column' width='100%' maxW='800px' align='stretch'>
                 <Stack spacing='6' align='center'>
                     <Box
                         as='h1'
