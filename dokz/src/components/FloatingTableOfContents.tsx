@@ -7,7 +7,7 @@ import parseGithubUrl from 'parse-github-url'
 import { useDokzConfig } from '../provider'
 
 export function FloatingTableOfContents({
-    table,
+    table,   
     ...rest
 }: {
     table: DokzTableOfContents
@@ -25,12 +25,11 @@ export function FloatingTableOfContents({
     return (
         <Stack
             spacing='1em'
-            width='200px'
             // minH='1.6em'
             // lineHeight='2.2em'
             // fontWeight='medium'
             // borderLeftWidth='1px'
-            pl='20px'
+            pl='10px'
             {...rest}
         >
             {githubUrl && (
@@ -48,10 +47,12 @@ export function FloatingTableOfContents({
                 </Box>
             )}
             {/* <Box fontWeight='semibold'>ON THIS PAGE</Box> */}
-            {table.children &&
-                table.children.map((table) => {
-                    return <TableItem key={table.slug} {...table} />
-                })}
+            <Stack overflowX="auto">
+                {table.children &&
+                    table.children.map((table) => {
+                        return <TableItem key={table.slug} {...table} />
+                    })}
+            </Stack>
         </Stack>
     )
 }
