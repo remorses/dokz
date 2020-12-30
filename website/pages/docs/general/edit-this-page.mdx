@@ -10,16 +10,19 @@ To activate this feature you need to add the `githubUrl` and `branch` props to t
 // _app.jsx
 import { DokzProvider } from 'dokz'
 import { useRouter } from 'next/router'
+import { ChakraProvider } from '@chakra-ui/react'
 
 export default function App(props) {
     return (
-        <DokzProvider
-            docsRootPath='pages/docs'
-            githubUrl='remorses/dokz'
-            branch='master'
-        >
-            <Component {...pageProps} />
-        </DokzProvider>
+        <ChakraProvider>
+            <DokzProvider
+                docsRootPath='pages/docs'
+                githubUrl='remorses/dokz'
+                branch='master'
+            >
+                <Component {...pageProps} />
+            </DokzProvider>
+        </ChakraProvider>
     )
 }
 ```
