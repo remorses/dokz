@@ -13,7 +13,7 @@
         "@emotion/react": "latest",
         "@emotion/styled": "11",
         "dokz": "*",
-        "landing-blocks": "^1.0.49",
+        "landing-blocks": "^2.0.2",
         "mini-graphiql": "^1.0.4",
         "next": "^10.0.4",
         "next-images": "^1.6.2",
