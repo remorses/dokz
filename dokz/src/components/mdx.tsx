@@ -1,14 +1,14 @@
 /** @jsx jsx */
 import {
     Box,
-    Callout,
+    Alert,
     Divider,
     Heading,
     Kbd,
     Link as ChakraLink,
     useColorMode,
-} from '@chakra-ui/core'
-import { jsx } from '@emotion/core'
+} from '@chakra-ui/react'
+import { jsx } from '@emotion/react'
 import { Children, cloneElement, isValidElement } from 'react'
 import { useDokzConfig } from '../provider'
 import { Code } from './Code'
@@ -186,7 +186,7 @@ const MDXComponents = {
                 mr='0.6em'
                 ml='-1.6em'
                 display='inline-block'
-                size='1.1em'
+                boxSize='1.1em'
                 as={isOdd ? listItemIcon : listItemIconEmpty}
             />
         )
@@ -212,7 +212,7 @@ const MDXComponents = {
         )
     },
     blockquote: (props) => (
-        <Callout
+        <Alert
             shadow='sm'
             // mt='20px !important'
             variant='left-accent'

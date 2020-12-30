@@ -1,5 +1,5 @@
-import { useColorMode } from '@chakra-ui/core'
-import { Box, Flex, Stack } from 'layout-kit-react'
+import { useColorMode } from '@chakra-ui/react'
+import { Box, Flex, Stack } from '@chakra-ui/react'
 import Router from 'next/router';
 import React, { ReactNode } from 'react'
 import { useDokzBlogConfig } from '../blog'

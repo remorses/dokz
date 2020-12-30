@@ -9,9 +9,9 @@
         "start": "next start"
     },
     "dependencies": {
-        "@chakra-ui/core": "^0.8.0",
-        "@emotion/core": "^10.0.28",
-        "@emotion/styled": "^10.0.27",
+        "@chakra-ui/react": "latest",
+        "@emotion/react": "latest",
+        "@emotion/styled": "11",
         "dokz": "*",
         "landing-blocks": "^1.0.49",
         "mini-graphiql": "^1.0.4",

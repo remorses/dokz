@@ -1,4 +1,4 @@
-import { ThemeProvider } from '@chakra-ui/core'
+import { ChakraProvider } from '@chakra-ui/react'
 import {
     ColorModeSwitch,
     DokzProvider,
@@ -23,18 +23,22 @@ export default function App(props) {
     }
     if (pathname.startsWith('/blog')) {
         return (
-            <DokzBlogProvider
-                blogRootPath='pages/blog'
-                headerLogo={<Logo height='30px' opacity={0.92} />}
-                headTitlePrefix='Dokz Blog - '
-                headerItems={[
-                    <Link href='https://github.com/remorses/dokz'>Dokz</Link>,
-                    <Link href='/blog'>Blog</Link>,
-                    <ColorModeSwitch key={1} />,
-                ]}
-            >
-                <Component {...pageProps} />
-            </DokzBlogProvider>
+            <ChakraProvider resetCSS>
+                <DokzBlogProvider
+                    blogRootPath='pages/blog'
+                    headerLogo={<Logo height='30px' opacity={0.92} />}
+                    headTitlePrefix='Dokz Blog - '
+                    headerItems={[
+                        <Link href='https://github.com/remorses/dokz'>
+                            Dokz
+                        </Link>,
+                        <Link href='/blog'>Blog</Link>,
+                        <ColorModeSwitch key={1} />,
+                    ]}
+                >
+                    <Component {...pageProps} />
+                </DokzBlogProvider>
+            </ChakraProvider>
         )
     }
     return (
@@ -46,7 +50,7 @@ export default function App(props) {
                     key='google-font-Fira'
                 />
             </Head>
-            <ThemeProvider>
+            <ChakraProvider resetCSS>
                 <LandingProvider
                     // fontFamily='Roboto, Arial'
                     black='#222'
@@ -91,7 +95,7 @@ export default function App(props) {
                         <Component {...pageProps} />
                     </DokzProvider>
                 </LandingProvider>
-            </ThemeProvider>
+            </ChakraProvider>
         </Fragment>
     )
 }

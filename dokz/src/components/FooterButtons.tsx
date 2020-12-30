@@ -1,8 +1,9 @@
-import { Stack, Box } from 'layout-kit-react'
-import { jsx, css } from '@emotion/core'
+// @jsx jsx
+import { Stack, Box } from '@chakra-ui/react'
+import { jsx, css } from '@emotion/react'
 jsx
 import NextLink from 'next/link'
-import { Link } from '@chakra-ui/core'
+import { Link } from '@chakra-ui/react'
 import React from 'react'
 import { useDokzConfig } from '../provider'
 import { getMdxSidebarTree, findSubtreeInPathByUrl } from './support'

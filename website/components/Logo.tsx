@@ -1,5 +1,5 @@
 import { DokzProvider, GithubLink, ColorModeSwitch } from 'dokz/dist'
-import { useColorMode } from '@chakra-ui/core'
+import { useColorMode } from '@chakra-ui/react'
 import React from 'react'
 import NextLink from 'next/link'
 import LogoWhite from '../svgs/LogoWhite'

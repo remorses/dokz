@@ -8,15 +8,15 @@ import {
     useTheme,
     theme,
     Button,
-} from '@chakra-ui/core'
-import { Stack, Flex } from 'layout-kit-react'
+} from '@chakra-ui/react'
+import { Stack, Flex } from '@chakra-ui/react'
 import merge from 'lodash/fp/merge'
-import { jsx } from '@emotion/core'
+import { jsx } from '@emotion/react'
 import { useDokzConfig, TableOfContentsContext } from '../provider'
 import NavBar from './NavBar'
 import NextHead from 'next/head'
 import { SideNav } from './SideNav'
-import { Global, css } from '@emotion/core'
+import { Global, css } from '@emotion/react'
 import { FloatingTableOfContents } from './FloatingTableOfContents'
 import { Fragment, useMemo } from 'react'
 import { globalStyles, getMdxSidebarTree } from './support'
@@ -53,7 +53,7 @@ export function Wrapper(props) {
                 )}
             </NextHead>
             <TableOfContentsContext.Provider value={{ tableOfContents }}>
-                <CSSReset />
+                {/* <CSSReset /> */}
                 <Global styles={globalStyles} />
                 <Stack
                     className='dokz visibleInPrint noMarginInPrint'

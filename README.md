@@ -38,7 +38,7 @@ After the installation is complete run `npm run dev` to start the development se
 You can also install `dokz` in an existing nextjs application:
 
 ```bash
-npm install dokz @emotion/core @chakra-ui/core emotion-theming @emotion/styled
+npm install dokz @emotion/react @chakra-ui/react @emotion/styled framer-motion
 ```
 
 Add the dokz provider to the main nextjs entrypoint

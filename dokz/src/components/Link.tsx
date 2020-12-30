@@ -1,4 +1,4 @@
-import { Link as Link_, LinkProps as LinkProps_, useColorMode } from '@chakra-ui/core'
+import { Link as Link_, LinkProps as LinkProps_, useColorMode } from '@chakra-ui/react'
 import React from 'react'
 
 export type LinkProps = LinkProps_

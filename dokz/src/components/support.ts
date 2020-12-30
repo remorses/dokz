@@ -1,6 +1,6 @@
 export const CODE_FONT = `'Fira Code',SFMono-Regular,Menlo,Monaco,"Liberation Mono","Courier New",monospace,mono`
 import startCase from 'lodash/startCase'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 
 const cssForPdfRendering = css`
     @media print {

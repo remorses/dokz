@@ -7,7 +7,14 @@ import React, {
     useEffect,
 } from 'react'
 import MDXComponents from './components/mdx'
-import { ColorModeProvider, Box } from '@chakra-ui/core'
+import {
+    ColorModeProvider,
+    Box,
+    CSSReset,
+    GlobalStyle,
+    theme,
+    ThemeProvider,
+} from '@chakra-ui/react'
 
 import { PrismTheme } from 'prism-react-renderer'
 // import lightTheme from 'prism-react-renderer/themes/nightOwlLight'
@@ -17,6 +24,7 @@ import { Arrow, ArrowEmpty } from './components/icons'
 import { DokzTableOfContents } from './types'
 import NextHead from 'next/head'
 import { useRouter } from 'next/router'
+import { PropagatedThemeProvider } from './components/Wrapper'
 
 export type DokzProviderProps = {
     children?: any
@@ -144,15 +152,12 @@ export function DokzProvider({ children, ...rest }: DokzProviderProps) {
     const { mdxComponents: userMDXComponents = {}, initialColorMode } = ctx
     useRouterScroll()
     return (
-        // TODO merge configs
         <DokzContext.Provider value={ctx}>
-            <ColorModeProvider value={initialColorMode}>
-                <MDXProvider
-                    components={{ ...MDXComponents, ...userMDXComponents }}
-                >
-                    {children}
-                </MDXProvider>
-            </ColorModeProvider>
+            <MDXProvider
+                components={{ ...MDXComponents, ...userMDXComponents }}
+            >
+                {children}
+            </MDXProvider>
         </DokzContext.Provider>
     )
 }

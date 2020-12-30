@@ -1,6 +1,6 @@
 import NextLink from 'next/link'
 import { DokzProvider, GithubLink, ColorModeSwitch } from 'dokz/dist'
-import { useColorMode, Button as Button_, useTheme } from '@chakra-ui/core'
+import { useColorMode, Button as Button_, useTheme } from '@chakra-ui/react'
 import React from 'react'
 import { Button as Button__ } from 'landing-blocks'
 import { Logo as Logo_, LogoWhite } from '../svgs'

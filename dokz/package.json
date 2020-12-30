@@ -1,7 +1,7 @@
 {
     "name": "dokz",
     "_": "[bump if dokz]",
-    "version": "1.0.79",
+    "version": "2.0.0",
     "description": "",
     "main": "dist/index.js",
     "module": "esm/index.js",
@@ -19,8 +19,9 @@
     },
     "homepage": "https://dokz.site",
     "files": [
-        "/dist/*",
-        "/esm/*"
+        "dist",
+        "src",
+        "esm"
     ],
     "scripts": {
         "compile": "tsc --incremental && tsc --module ESNext --outDir esm --incremental",
@@ -35,7 +36,7 @@
     "license": "ISC",
     "devDependencies": {
         "@babel/core": "^7.9.0",
-        "@emotion/core": "^10.0.28",
+        "@emotion/react": "latest",
         "@storybook/addon-actions": "^5.3.17",
         "@storybook/addon-links": "^5.3.17",
         "@storybook/addons": "^5.3.17",
@@ -59,8 +60,9 @@
         "typescript": "^3.8.3"
     },
     "peerDependencies": {
-        "@chakra-ui/core": "o.x",
-        "@emotion/core": "*",
+        "@chakra-ui/react": "*",
+        "@emotion/react": "*",
+        "framer-motion": "*",
         "next": "*",
         "react": "*",
         "react-dom": "*"
@@ -69,7 +71,7 @@
         "@babel/generator": "^7.10.2",
         "@babel/parser": "^7.10.2",
         "@babel/traverse": "^7.10.1",
-        "@emotion/styled": "^10.0.27",
+        "@emotion/styled": "^11.0.0",
         "@mdx-js/loader": "^1.5.8",
         "@mdx-js/react": "^1.5.8",
         "@next/mdx": "^9.3.4",
@@ -80,14 +82,12 @@
         "chokidar": "^3.4.1",
         "debounce": "^1.2.0",
         "directory-tree": "^2.2.4",
-        "emotion-theming": "^10.0.27",
         "front-matter": "^3.1.0",
         "get-git-config": "^0.0.4",
         "github-slugger": "^1.3.0",
         "hast-util-to-string": "^1.0.3",
         "js-string-escape": "^1.0.1",
         "jsx-ast-utils": "^2.3.0",
-        "layout-kit-react": "^0.1.8",
         "lodash": "^4.17.15",
         "mdast": "^3.0.0",
         "mdast-util-to-string": "^1.1.0",

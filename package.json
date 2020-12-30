@@ -15,5 +15,8 @@
         "dev": "cd website && yarn dev",
         "build": "yarn --cwd dokz compile",
         "watch": "rm -rf dokz/esm dokz/dist && yarn --cwd dokz tsc -w"
+    },
+    "devDependencies": {
+        "framer-motion": "^3.1.1"
     }
 }

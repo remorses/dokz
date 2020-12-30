@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
-import { css, jsx } from '@emotion/core'
-import { Box, useClipboard, useColorMode } from '@chakra-ui/core'
+import { css, jsx } from '@emotion/react'
+import { Box, useClipboard, useColorMode } from '@chakra-ui/react'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import React, { useEffect } from 'react'
 import { FiCheck, FiCopy } from 'react-icons/fi'
@@ -126,8 +126,7 @@ export const Code = ({
     )
 }
 
-export const CopyButton = (props) => {
-    const { hasCopied } = props
+export const CopyButton = ({ hasCopied, ...props }) => {
     return (
         <Box
             cursor='pointer'

@@ -7,9 +7,9 @@ import {
     Divider,
     useDisclosure,
     Collapse,
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 import orderBy from 'lodash/orderBy'
-import React, { useEffect } from 'react'
+import React, { ReactNode, useEffect } from 'react'
 import { ComponentLink } from './NavLink'
 import { SidebarOrdering, useDokzConfig } from '../provider'
 import { useStorageState } from 'react-storage-hooks'
@@ -194,7 +194,7 @@ function CollapsableTreeNode({ title, path, depth, subTree }) {
         key,
         '',
     )
-    const { onToggle, isOpen } = useDisclosure(!!active)
+    const { onToggle, isOpen } = useDisclosure({ isOpen: !!active })
     useEffect(() => {
         setActive(isOpen ? 'true' : null)
     }, [isOpen])
@@ -217,9 +217,8 @@ function CollapsableTreeNode({ title, path, depth, subTree }) {
                 />
                 {title}
             </Box>
-            <Collapse isOpen={isOpen} pl={depth * 20 + 'px'}>
-                {subTree}
-            </Collapse>
+            {/* @ts-ignore */}
+            <Collapse in={isOpen}>{subTree}</Collapse>
         </Stack>
     )
 }

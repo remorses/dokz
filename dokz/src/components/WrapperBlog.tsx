@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { Box, CSSReset, theme, useColorMode } from '@chakra-ui/core'
-import { Global, jsx } from '@emotion/core'
-import { Flex, Stack } from 'layout-kit-react'
+import { Box, CSSReset, theme, useColorMode } from '@chakra-ui/react'
+import { Global, jsx } from '@emotion/react'
+import { Flex, Stack } from '@chakra-ui/react'
 import { useDokzBlogConfig } from '../blog'
 import NavBar from './NavBar'
 import { SideNav } from './SideNav'
@@ -78,7 +78,7 @@ export const BaseWrapperBlog = ({ children, ...rest }) => {
     return (
         <PropagatedThemeProvider theme={theme}>
             <TableOfContentsContext.Provider value={{ tableOfContents }}>
-                <CSSReset />
+                {/* <CSSReset /> */}
                 <Global styles={globalStyles} />
                 <Stack
                     className='dokz visibleInPrint noMarginInPrint'

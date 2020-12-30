@@ -31,9 +31,11 @@ const order = {
 export default function App(props) {
     const { Component, pageProps } = props
     return (
-        <DokzProvider sidebarOrdering={order}>
-            <Component {...pageProps} />
-        </DokzProvider>
+        <ChakraProvider>
+            <DokzProvider sidebarOrdering={order}>
+                <Component {...pageProps} />
+            </DokzProvider>
+        </ChakraProvider>
     )
 }
 ```

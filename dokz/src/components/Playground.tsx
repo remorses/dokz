@@ -5,7 +5,7 @@ import {
     Stack,
     useClipboard,
     useColorMode,
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 import flatten from 'lodash/fp/flatten'
 import { Resizable } from 're-resizable'
 import React, {
@@ -107,7 +107,7 @@ export const Playground = ({
     )
     const livePreview = (
         <Box
-            as={LivePreview}
+            as={LivePreview as any}
             fontFamily='body'
             p='0px'
             height='auto'
