@@ -144,7 +144,7 @@ export function findSubtreeInPathByUrl(
     }
     for (let i = 0; i < tree.children.length; i++) {
         let child = tree.children[i]
-        if (child.url === url) {
+        if (child.url && child.url.replace(/\/$/, '') === url) {
             return {
                 previous: tree.children[i - 1],
                 current: tree,
