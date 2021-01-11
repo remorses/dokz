@@ -12,8 +12,8 @@ import {
     Section,
     Subheading,
     TestimonialsTweets,
-} from 'landing-blocks/src'
-import { GradientCurtains } from 'landing-blocks/src/decorations'
+} from 'landing-blocks'
+import { GradientCurtains } from 'landing-blocks/dist/decorations'
 import React from 'react'
 import { Logo } from '../components/Logo'
 import isometric_check_icon from '../public/isometric_check_icon.png'
