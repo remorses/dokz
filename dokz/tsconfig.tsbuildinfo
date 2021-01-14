@@ -516,12 +516,12 @@
         "signature": "71c1350814b0e0683b2725e5eb7d44abf44944d23d5b9ca215cd7e0efe0496e2",
         "affectsGlobalScope": false
       },
-      "../node_modules/@emotion/react/node_modules/@emotion/utils/types/index.d.ts": {
+      "../node_modules/@emotion/serialize/node_modules/@emotion/utils/types/index.d.ts": {
         "version": "4b46f4712ae966996b2cc81949d482063887c55478706e25d942482a44b99b71",
         "signature": "4b46f4712ae966996b2cc81949d482063887c55478706e25d942482a44b99b71",
         "affectsGlobalScope": false
       },
-      "../node_modules/@emotion/react/node_modules/@emotion/serialize/types/index.d.ts": {
+      "../node_modules/@emotion/serialize/types/index.d.ts": {
         "version": "93b24ca76698e62732d72800da132367639a4426363c821338bbbd7cf6b64443",
         "signature": "93b24ca76698e62732d72800da132367639a4426363c821338bbbd7cf6b64443",
         "affectsGlobalScope": false
@@ -569,11 +569,6 @@
       "../node_modules/@chakra-ui/system/dist/types/system.utils.d.ts": {
         "version": "91a0eb2b06d13d1bc697616e4816cb8317daf22f9fdd748faab4e039d4dbc48d",
         "signature": "91a0eb2b06d13d1bc697616e4816cb8317daf22f9fdd748faab4e039d4dbc48d",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@emotion/styled/node_modules/@emotion/serialize/types/index.d.ts": {
-        "version": "93b24ca76698e62732d72800da132367639a4426363c821338bbbd7cf6b64443",
-        "signature": "93b24ca76698e62732d72800da132367639a4426363c821338bbbd7cf6b64443",
         "affectsGlobalScope": false
       },
       "../node_modules/@emotion/styled/types/base.d.ts": {
@@ -3222,10 +3217,10 @@
     "referencedMap": {
       "./node_modules/@emotion/react/types/index.d.ts": [
         "../node_modules/@emotion/cache/types/index.d.ts",
-        "../node_modules/@emotion/react/node_modules/@emotion/serialize/types/index.d.ts",
         "../node_modules/@emotion/react/types/helper.d.ts",
         "../node_modules/@emotion/react/types/jsx-namespace.d.ts",
         "../node_modules/@emotion/react/types/theming.d.ts",
+        "../node_modules/@emotion/serialize/types/index.d.ts",
         "../node_modules/@types/react/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -6360,20 +6355,6 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@emotion/react/node_modules/@emotion/serialize/types/index.d.ts": [
-        "../node_modules/@emotion/cache/node_modules/@emotion/utils/types/index.d.ts",
-        "../node_modules/csstype/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@emotion/react/node_modules/@emotion/utils/types/index.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
       "../node_modules/@emotion/react/types/helper.d.ts": [
         "../node_modules/@types/react/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
@@ -6383,10 +6364,10 @@
       ],
       "../node_modules/@emotion/react/types/index.d.ts": [
         "../node_modules/@emotion/cache/types/index.d.ts",
-        "../node_modules/@emotion/react/node_modules/@emotion/serialize/types/index.d.ts",
         "../node_modules/@emotion/react/types/helper.d.ts",
         "../node_modules/@emotion/react/types/jsx-namespace.d.ts",
         "../node_modules/@emotion/react/types/theming.d.ts",
+        "../node_modules/@emotion/serialize/types/index.d.ts",
         "../node_modules/@types/react/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -6394,8 +6375,8 @@
         "./node_modules/@types/node/util.d.ts"
       ],
       "../node_modules/@emotion/react/types/jsx-namespace.d.ts": [
-        "../node_modules/@emotion/react/node_modules/@emotion/serialize/types/index.d.ts",
         "../node_modules/@emotion/react/types/index.d.ts",
+        "../node_modules/@emotion/serialize/types/index.d.ts",
         "../node_modules/@types/react/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -6411,7 +6392,13 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@emotion/styled/node_modules/@emotion/serialize/types/index.d.ts": [
+      "../node_modules/@emotion/serialize/node_modules/@emotion/utils/types/index.d.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/@emotion/serialize/types/index.d.ts": [
         "../node_modules/@emotion/cache/node_modules/@emotion/utils/types/index.d.ts",
         "../node_modules/csstype/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
@@ -6420,8 +6407,8 @@
         "./node_modules/@types/node/util.d.ts"
       ],
       "../node_modules/@emotion/styled/types/base.d.ts": [
-        "../node_modules/@emotion/react/node_modules/@emotion/serialize/types/index.d.ts",
         "../node_modules/@emotion/react/types/index.d.ts",
+        "../node_modules/@emotion/serialize/types/index.d.ts",
         "../node_modules/@types/react/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -11437,20 +11424,6 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@emotion/react/node_modules/@emotion/serialize/types/index.d.ts": [
-        "../node_modules/@emotion/cache/node_modules/@emotion/utils/types/index.d.ts",
-        "../node_modules/@types/react/node_modules/csstype/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@emotion/react/node_modules/@emotion/utils/types/index.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
       "../node_modules/@emotion/react/types/helper.d.ts": [
         "../node_modules/@types/react/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
@@ -11488,9 +11461,15 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@emotion/styled/node_modules/@emotion/serialize/types/index.d.ts": [
+      "../node_modules/@emotion/serialize/node_modules/@emotion/utils/types/index.d.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/@emotion/serialize/types/index.d.ts": [
         "../node_modules/@emotion/cache/node_modules/@emotion/utils/types/index.d.ts",
-        "../node_modules/@types/react/node_modules/csstype/index.d.ts",
+        "../node_modules/csstype/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -14037,13 +14016,12 @@
       "../node_modules/@chakra-ui/visually-hidden/dist/types/visually-hidden.d.ts",
       "../node_modules/@emotion/cache/node_modules/@emotion/utils/types/index.d.ts",
       "../node_modules/@emotion/cache/types/index.d.ts",
-      "../node_modules/@emotion/react/node_modules/@emotion/serialize/types/index.d.ts",
-      "../node_modules/@emotion/react/node_modules/@emotion/utils/types/index.d.ts",
       "../node_modules/@emotion/react/types/helper.d.ts",
       "../node_modules/@emotion/react/types/index.d.ts",
       "../node_modules/@emotion/react/types/jsx-namespace.d.ts",
       "../node_modules/@emotion/react/types/theming.d.ts",
-      "../node_modules/@emotion/styled/node_modules/@emotion/serialize/types/index.d.ts",
+      "../node_modules/@emotion/serialize/node_modules/@emotion/utils/types/index.d.ts",
+      "../node_modules/@emotion/serialize/types/index.d.ts",
       "../node_modules/@emotion/styled/types/base.d.ts",
       "../node_modules/@emotion/styled/types/index.d.ts",
       "../node_modules/@next/env/types/index.d.ts",
