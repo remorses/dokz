@@ -10,8 +10,9 @@
     "dependencies": {
         "@chakra-ui/react": "latest",
         "@emotion/react": "latest",
-        "@emotion/styled": "11",
-        "dokz": "*",
+        "@emotion/styled": "latest",
+        "framer-motion": "latest",
+        "dokz": "latest",
         "next": "latest",
         "react": "16.13.1",
         "react-dom": "16.13.1"

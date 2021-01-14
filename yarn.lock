@@ -2095,7 +2095,7 @@
     "@emotion/serialize" "^0.11.15"
     "@emotion/utils" "0.11.3"
 
-"@emotion/styled@11", "@emotion/styled@^11", "@emotion/styled@^11.0.0":
+"@emotion/styled@11", "@emotion/styled@^11", "@emotion/styled@^11.0.0", "@emotion/styled@latest":
   version "11.0.0"
   resolved "https://registry.yarnpkg.com/@emotion/styled/-/styled-11.0.0.tgz#698196c2822746360a8644a73a5d842b2d1a78a5"
   integrity sha512-498laccxJlBiJqrr2r/fx9q+Pr55D0URP2UyOkoSGLjevb8LLAFWueqthsQ5XijE66iGo7y3rzzEYdA7CHmZEQ==
@@ -5850,6 +5850,53 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
+dokz@latest:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/dokz/-/dokz-2.0.3.tgz#29ba6296a954d97ebd20bab0a693aa8a77613a59"
+  integrity sha512-dxGNFcTdyzessPZy4FwIFjUKja0i/g2diKr88+W/vK4AoL+JPQbKYwk89+G/BhPQTd1uDi3RiLlgD5ftOJfPAA==
+  dependencies:
+    "@babel/generator" "^7.10.2"
+    "@babel/parser" "^7.10.2"
+    "@babel/traverse" "^7.10.1"
+    "@emotion/styled" "^11.0.0"
+    "@mdx-js/loader" "^1.5.8"
+    "@mdx-js/react" "^1.5.8"
+    "@next/mdx" "^9.3.4"
+    "@philpl/buble" "^0.19.7"
+    "@types/mdast" "^3.0.3"
+    await-to-js "^2.1.1"
+    chalk "^4.1.0"
+    chokidar "^3.4.1"
+    debounce "^1.2.0"
+    directory-tree "^2.2.4"
+    front-matter "^3.1.0"
+    get-git-config "^0.0.4"
+    github-slugger "^1.3.0"
+    hast-util-to-string "^1.0.3"
+    js-string-escape "^1.0.1"
+    jsx-ast-utils "^2.3.0"
+    lodash "^4.17.15"
+    mdast "^3.0.0"
+    mdast-util-to-string "^1.1.0"
+    mdast-util-toc "^5.0.3"
+    parse-github-url "^1.0.2"
+    prettier "^2.0.5"
+    prism-react-renderer "^1.0.2"
+    re-resizable "^6.4.0"
+    react-frame-component "^4.1.1"
+    react-icons "^3.9.0"
+    react-live "^2.2.2"
+    react-storage-hooks "^4.0.1"
+    remark "^12.0.0"
+    remark-extract-frontmatter "^2.0.2"
+    remark-frontmatter "^2.0.0"
+    remark-mdx-metadata "^1.0.1"
+    remark-slug "^6.0.0"
+    strip-indent "^3.0.0"
+    unist-util-is "^4.0.2"
+    unist-util-visit "^2.0.2"
+    yaml "^1.10.0"
+
 dom-converter@^0.2:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/dom-converter/-/dom-converter-0.2.0.tgz#6721a9daee2e293682955b6afe416771627bb768"
@@ -6794,6 +6841,19 @@ framer-motion@^3.1.1:
     hey-listen "^1.0.8"
     popmotion "^9.0.2"
     style-value-types "^3.2.0"
+    tslib "^1.10.0"
+  optionalDependencies:
+    "@emotion/is-prop-valid" "^0.8.2"
+
+framer-motion@latest:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-3.2.1.tgz#66eeb883a0b5c425dd7767ecacdeac451c184cdb"
+  integrity sha512-5AWrh4JElgFAXWLqk0u8lVcdkigyuofyEy2LSsjuCxKbAb1hHqRn3PPdrV0KgPrysTHq95QO1bHFTLA7/Q8g+Q==
+  dependencies:
+    framesync "^5.0.0"
+    hey-listen "^1.0.8"
+    popmotion "^9.1.0"
+    style-value-types "^4.0.1"
     tslib "^1.10.0"
   optionalDependencies:
     "@emotion/is-prop-valid" "^0.8.2"
@@ -9911,6 +9971,16 @@ popmotion@^9.0.2:
     style-value-types "3.2.0"
     tslib "^1.10.0"
 
+popmotion@^9.1.0:
+  version "9.1.0"
+  resolved "https://registry.yarnpkg.com/popmotion/-/popmotion-9.1.0.tgz#4360d06bd18ce8baa8f9284ecec7d55344af6325"
+  integrity sha512-+J7pzzBy5kk2qsP8ilowKs/CH+HoZa3kOGEBNCleCvsPXEF3nKHdfAR3SboMyPvdpIrofaT7ZIy/xWgz446Azw==
+  dependencies:
+    framesync "5.0.0"
+    hey-listen "^1.0.8"
+    style-value-types "^4.0.1"
+    tslib "^1.10.0"
+
 popper.js@^1.14.4, popper.js@^1.14.7:
   version "1.16.1"
   resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.16.1.tgz#2a223cb3dc7b6213d740e40372be40de43e65b1b"
@@ -12146,6 +12216,14 @@ style-value-types@3.2.0, style-value-types@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/style-value-types/-/style-value-types-3.2.0.tgz#eb89cab1340823fa7876f3e289d29d99c92111bb"
   integrity sha512-ih0mGsrYYmVvdDi++/66O6BaQPRPRMQHoZevNNdMMcPlP/cH28Rnfsqf1UEba/Bwfuw9T8BmIMwbGdzsPwQKrQ==
+  dependencies:
+    hey-listen "^1.0.8"
+    tslib "^1.10.0"
+
+style-value-types@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/style-value-types/-/style-value-types-4.0.1.tgz#23f05dd03e8a850654defc22cf03ebac572aaa00"
+  integrity sha512-aOV/HHyynIyTmU27qfs0oAHhFde6BFIvV4+nMerE2MAPZMwYOeQk1/F3S6djxF2u4HdbiieCPs3ZzWsbNUoc9A==
   dependencies:
     hey-listen "^1.0.8"
     tslib "^1.10.0"
