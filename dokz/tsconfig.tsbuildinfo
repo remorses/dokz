@@ -2662,7 +2662,7 @@
         "affectsGlobalScope": false
       },
       "./src/components/support.ts": {
-        "version": "61b80f6d96e0605f2cdfa8514e0d1e71821d011ff4728cff78715d57f1fe36b0",
+        "version": "9714abc088fdc0899ea36b7e78d73759d5f503da9d8c7ad1cc37daa6b73da808",
         "signature": "2fdec13724db8247138963fba47fa8db4f87537e70dd632291324c573f0bc8ab",
         "affectsGlobalScope": false
       },
