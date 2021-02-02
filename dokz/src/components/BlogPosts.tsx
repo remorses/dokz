@@ -143,7 +143,7 @@ export const BlogPostCard = ({ title, date, url, description, ...rest }) => {
                     opacity={0.6}
                     // fontWeight='400'
                 >
-                    <Box size='0.9em' as={DateIcon} />
+                    <Box boxSize='0.9em' as={DateIcon} />
                     <Box>{date || 'Unknown publishing date'}</Box>
                 </Stack>
             </Stack>

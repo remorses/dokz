@@ -194,9 +194,11 @@ function CollapsableTreeNode({ title, path, depth, subTree }) {
         key,
         '',
     )
-    const { onToggle, isOpen } = useDisclosure({ isOpen: !!active })
+    const { onToggle, isOpen } = useDisclosure({
+        defaultIsOpen: Boolean(active),
+    })
     useEffect(() => {
-        setActive(isOpen ? 'true' : null)
+        setActive(isOpen ? 'true' : '')
     }, [isOpen])
     return (
         <Stack spacing='0px'>
@@ -210,15 +212,16 @@ function CollapsableTreeNode({ title, path, depth, subTree }) {
             >
                 <Box
                     mr='0.4em'
-                    size='0.6em'
+                    boxSize='0.6em'
                     opacity={0.6}
                     display='inline-block'
                     as={isOpen ? CollapseDown : CollapseRight}
                 />
                 {title}
             </Box>
-            {/* @ts-ignore */}
-            <Collapse in={isOpen}>{subTree}</Collapse>
+            <Collapse in={isOpen}>
+                <Box ml='20px'>{subTree}</Box>
+            </Collapse>
         </Stack>
     )
 }

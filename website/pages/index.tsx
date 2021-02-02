@@ -56,7 +56,7 @@ const Page = () => (
                             <Box
                                 style={{ strokeWidth: '1px' }}
                                 color='primary'
-                                size='60px'
+                                boxSize='60px'
                                 as={FiFileText}
                             />
                         ),
@@ -68,7 +68,7 @@ const Page = () => (
                             <Box
                                 style={{ strokeWidth: '1px' }}
                                 color='primary'
-                                size='60px'
+                                boxSize='60px'
                                 as={FiFileText}
                             />
                         ),

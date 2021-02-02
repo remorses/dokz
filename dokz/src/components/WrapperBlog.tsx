@@ -49,7 +49,7 @@ export function WrapperBlog(props) {
                         opacity={0.5}
                         // fontWeight='400'
                     >
-                        <Box size='0.8em' as={DateIcon} />
+                        <Box boxSize='0.8em' as={DateIcon} />
                         <Box fontWeight='500'>{date}</Box>
                     </Stack>
                 </Stack>

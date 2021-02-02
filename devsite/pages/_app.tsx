@@ -1,6 +1,7 @@
 import { DokzProvider } from 'dokz/src'
 import React from 'react'
 import Head from 'next/head'
+import { ChakraProvider } from '@chakra-ui/react'
 
 const order = { '05-more': {}, '01-mongodb': true }
 
@@ -15,12 +16,14 @@ export default function App(props) {
                     key='google-font-Fira'
                 />
             </Head>
-            <DokzProvider
-                // playgroundScope={{...chackra}}
-                sidebarOrdering={order}
-            >
-                <Component {...pageProps} />
-            </DokzProvider>
+            <ChakraProvider>
+                <DokzProvider
+                    // playgroundScope={{...chackra}}
+                    sidebarOrdering={order}
+                >
+                    <Component {...pageProps} />
+                </DokzProvider>
+            </ChakraProvider>
         </>
     )
 }
