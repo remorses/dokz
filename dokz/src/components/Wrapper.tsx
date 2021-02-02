@@ -119,7 +119,7 @@ export function Wrapper(props) {
                                 className='dokz visibleInPrint mainContent'
                                 direction='column'
                                 align='stretch'
-                                overflowY='auto'
+                                overflowY='visible'
                                 px={['10px', null, '20px', '30px']}
                                 // spacing='10px'
                                 flex='1'

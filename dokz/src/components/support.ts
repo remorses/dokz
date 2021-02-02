@@ -69,7 +69,7 @@ export const globalStyles = css`
     }
     body {
         height: 100%;
-        overflow: auto;
+        overflow-y: scroll;
         scroll-behavior: smooth;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
