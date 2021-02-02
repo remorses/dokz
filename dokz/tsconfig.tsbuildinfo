@@ -2657,12 +2657,12 @@
         "affectsGlobalScope": false
       },
       "./src/components/support.ts": {
-        "version": "9714abc088fdc0899ea36b7e78d73759d5f503da9d8c7ad1cc37daa6b73da808",
+        "version": "d73d6011d5b32dee9295bd531bbd54df541d6eedbd7f0c26c7166fe0a2482e60",
         "signature": "2fdec13724db8247138963fba47fa8db4f87537e70dd632291324c573f0bc8ab",
         "affectsGlobalScope": false
       },
       "./src/components/SideNav.tsx": {
-        "version": "f0d01f21a251974a537d9652f1aa08c1a375888857e9075f731ad2dee6290283",
+        "version": "df7ce208895439be0b6af40f7f566fc8b22b0a0fe78b8d66ce870ec7fd761122",
         "signature": "b8d7126550a892d6c28b129e52ec9bc56979dab0256d1e0e6620c795bc3060f6",
         "affectsGlobalScope": false
       },
@@ -2672,7 +2672,7 @@
         "affectsGlobalScope": false
       },
       "./src/components/NavBar.tsx": {
-        "version": "21a41c48c6e9424cf00d49f464c5765ffa433e7a77bcf79b638f52b86407a787",
+        "version": "e308f5b2aceca4f52015e983ba346d7720ffae34db69720e3d30cce763290561",
         "signature": "a27f32bb93a46dbbe79508057fbbb9df16c893755dd2022c31df11fe6e926a9d",
         "affectsGlobalScope": false
       },
@@ -2717,7 +2717,7 @@
         "affectsGlobalScope": false
       },
       "./src/components/Wrapper.tsx": {
-        "version": "f2c07189d32ae5db1ac9efba35231e8d75906db8d1d81ea58864c4f2a4224229",
+        "version": "fe4790763b0b6b216e0a5182a259e16b928768eb24f72c6cf44a2df4c705d4ea",
         "signature": "cf9983079f248007bbb97cfd46f18777e54e0bf9df66ce17b39aa2de75dc2311",
         "affectsGlobalScope": false
       },
@@ -2727,7 +2727,7 @@
         "affectsGlobalScope": false
       },
       "./src/components/Code.tsx": {
-        "version": "6e42c204f9047d6b8bfea3c138dc2450b04c9b64739635b02257f625e4fa48eb",
+        "version": "141c3121fd7bdf2f9329c8320600157666bd7f39666ada20fd95aa8fa65c2d61",
         "signature": "60229caf880ad85b47e3979a0c6694bb438c933b95d53bff7ebce317448c1098",
         "affectsGlobalScope": false
       },
@@ -2742,7 +2742,7 @@
         "affectsGlobalScope": false
       },
       "./src/components/WrapperBlog.tsx": {
-        "version": "85dfb1dc38e3842c1ae0e986525238f7d2afec9d9d9b83d95a03a0d45b4b98e8",
+        "version": "8db762c7f15c521dedb29120bcb696e09b7373b85da9b7570c62814c800d9cc9",
         "signature": "d711792b4ec925aad5fe6d77a4861312facb49a58481db7607da7d671af820f7",
         "affectsGlobalScope": false
       },
@@ -2752,7 +2752,7 @@
         "affectsGlobalScope": false
       },
       "./src/components/BlogPosts.tsx": {
-        "version": "cc852df967a2daa467ea4a5ff29f7acb2fad236577f2780cc67fc5e646bde00b",
+        "version": "044a5237348d6ee1f43ee2e1802de4f54dda7825054e8304066a8104c1e8859b",
         "signature": "5ece1ffc03124d68226366f7a051fc2ae7d321fbea4d5d22108fb06b1e6e54a9",
         "affectsGlobalScope": false
       },
