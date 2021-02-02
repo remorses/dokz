@@ -23,7 +23,7 @@ import { globalStyles, getMdxSidebarTree } from './support'
 import { FooterButtons } from './FooterButtons'
 
 const SIDENAV_W = 280
-const TABLE_OF_C_W = 200
+const TABLE_OF_C_W = 250
 
 const NAVBAR_H = 62
 
@@ -145,9 +145,8 @@ export function Wrapper(props) {
                                 position='sticky'
                                 alignSelf='flex-start'
                                 top={NAVBAR_H}
-                                width={TABLE_OF_C_W + 'px'}
+                                width={TABLE_OF_C_W}
                                 // right={0}
-                                ml='auto'
                                 height='auto'
                                 display={['none', null, null, null, 'block']}
                                 pt='20px'
