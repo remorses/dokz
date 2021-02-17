@@ -1,10 +1,6 @@
 const compose = require('compose-function')
 const { withDokz } = require('dokz/dist/plugin')
-const withTM = require('next-transpile-modules')([
-    'dokz',
-    'landing-blocks',
-    'page-enter-transition',
-])
+const withTM = require('next-transpile-modules')(['dokz', 'landing-blocks'])
 const withImages = require('next-images')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
     enabled: !!process.env.ANAL,
