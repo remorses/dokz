@@ -506,7 +506,7 @@
         "signature": "a86530a64b9f470970e02e2a4288625cd1cb09a03f2a1dd914aec1dc0510d074",
         "affectsGlobalScope": false
       },
-      "../node_modules/@emotion/cache/node_modules/@emotion/utils/types/index.d.ts": {
+      "../node_modules/@emotion/utils/types/index.d.ts": {
         "version": "4b46f4712ae966996b2cc81949d482063887c55478706e25d942482a44b99b71",
         "signature": "4b46f4712ae966996b2cc81949d482063887c55478706e25d942482a44b99b71",
         "affectsGlobalScope": false
@@ -514,11 +514,6 @@
       "../node_modules/@emotion/cache/types/index.d.ts": {
         "version": "71c1350814b0e0683b2725e5eb7d44abf44944d23d5b9ca215cd7e0efe0496e2",
         "signature": "71c1350814b0e0683b2725e5eb7d44abf44944d23d5b9ca215cd7e0efe0496e2",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@emotion/serialize/node_modules/@emotion/utils/types/index.d.ts": {
-        "version": "4b46f4712ae966996b2cc81949d482063887c55478706e25d942482a44b99b71",
-        "signature": "4b46f4712ae966996b2cc81949d482063887c55478706e25d942482a44b99b71",
         "affectsGlobalScope": false
       },
       "../node_modules/@emotion/serialize/types/index.d.ts": {
@@ -2146,14 +2141,14 @@
         "signature": "69a752534a47c1d189c8142a7f6bbf20b79501f07edc7d26fbab0e4cd2194750",
         "affectsGlobalScope": false
       },
-      "./node_modules/@emotion/react/types/index.d.ts": {
-        "version": "413c03b679ca5bbe6456b8a38ac999fffb3834d0e4a9638bd186533d629ab8cb",
-        "signature": "413c03b679ca5bbe6456b8a38ac999fffb3834d0e4a9638bd186533d629ab8cb",
-        "affectsGlobalScope": false
-      },
       "../node_modules/prism-react-renderer/index.d.ts": {
         "version": "c049825db31784c6ac8c54a28a5eefbed58217ba48e0593cecd1d3e4a2643667",
         "signature": "c049825db31784c6ac8c54a28a5eefbed58217ba48e0593cecd1d3e4a2643667",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/baby-i-am-faded/dist/index.d.ts": {
+        "version": "75561791611fdf57feebed23e4106640c6df203a8c5ec86e5911bce08a475562",
+        "signature": "75561791611fdf57feebed23e4106640c6df203a8c5ec86e5911bce08a475562",
         "affectsGlobalScope": false
       },
       "../node_modules/react-icons/lib/cjs/iconsManifest.d.ts": {
@@ -2441,12 +2436,12 @@
         "signature": "d522314e80ed71b57e3c2939d3c9594eaae63a4adf028559e6574f6b270b0fee",
         "affectsGlobalScope": false
       },
-      "./node_modules/next/dist/client/link.d.ts": {
+      "../node_modules/next/dist/client/link.d.ts": {
         "version": "74587d651c85f1cc2690e5ddca3458c34d7674bea2e0ef43e2c0cd5cc354cabe",
         "signature": "74587d651c85f1cc2690e5ddca3458c34d7674bea2e0ef43e2c0cd5cc354cabe",
         "affectsGlobalScope": false
       },
-      "./node_modules/next/link.d.ts": {
+      "../node_modules/next/link.d.ts": {
         "version": "25488ec0923fa0fd699444ad2456ce5e8b8ae66f4681f3c27da4d15dc26e28b9",
         "signature": "25488ec0923fa0fd699444ad2456ce5e8b8ae66f4681f3c27da4d15dc26e28b9",
         "affectsGlobalScope": false
@@ -2491,107 +2486,107 @@
         "signature": "3f1bfa5b1d3e8d4ea1f64c13e0060453a52282f7fce02a536856de40dab3f7e1",
         "affectsGlobalScope": false
       },
-      "./node_modules/next/dist/next-server/server/config.d.ts": {
+      "../node_modules/next/dist/next-server/server/config.d.ts": {
         "version": "8d34c8f83d8876d95700f88ed4c1e6e23115c4102724e667e1010118883f2b09",
         "signature": "8d34c8f83d8876d95700f88ed4c1e6e23115c4102724e667e1010118883f2b09",
         "affectsGlobalScope": false
       },
-      "./node_modules/next/dist/lib/load-custom-routes.d.ts": {
+      "../node_modules/next/dist/lib/load-custom-routes.d.ts": {
         "version": "b14ae28e93053306f57c53d4f10a7ebee38ccca657bcd4613c4206d4ac20503a",
         "signature": "b14ae28e93053306f57c53d4f10a7ebee38ccca657bcd4613c4206d4ac20503a",
         "affectsGlobalScope": false
       },
-      "./node_modules/next/dist/build/webpack/plugins/build-manifest-plugin.d.ts": {
+      "../node_modules/next/dist/build/webpack/plugins/build-manifest-plugin.d.ts": {
         "version": "5da63c54649b2850acb1f27f020e546372e6265e675b6090cb253901f47d1592",
         "signature": "5da63c54649b2850acb1f27f020e546372e6265e675b6090cb253901f47d1592",
         "affectsGlobalScope": false
       },
-      "./node_modules/next/dist/client/route-loader.d.ts": {
+      "../node_modules/next/dist/client/route-loader.d.ts": {
         "version": "b3c715522b05b61b97705c85eda0555fd8c5d6ef2c891e94bffcbc0ad8a97161",
         "signature": "b3c715522b05b61b97705c85eda0555fd8c5d6ef2c891e94bffcbc0ad8a97161",
         "affectsGlobalScope": true
       },
-      "./node_modules/next/dist/client/page-loader.d.ts": {
+      "../node_modules/next/dist/client/page-loader.d.ts": {
         "version": "036eabe286928110a6db0f122c3779b484882fcc13aa9d820a9203fab78d9768",
         "signature": "036eabe286928110a6db0f122c3779b484882fcc13aa9d820a9203fab78d9768",
         "affectsGlobalScope": false
       },
-      "./node_modules/next/dist/next-server/lib/mitt.d.ts": {
+      "../node_modules/next/dist/next-server/lib/mitt.d.ts": {
         "version": "6e1b354578c8ed8a5432ac004e6a6bebb340ceed54e127c4f5e75696842bded1",
         "signature": "6e1b354578c8ed8a5432ac004e6a6bebb340ceed54e127c4f5e75696842bded1",
         "affectsGlobalScope": false
       },
-      "./node_modules/next/dist/next-server/server/get-page-files.d.ts": {
+      "../node_modules/next/dist/next-server/server/get-page-files.d.ts": {
         "version": "714bc11c4ece2d28d6b70207fcefce4651c138cc77ce0b8147a6bab25c66b67a",
         "signature": "714bc11c4ece2d28d6b70207fcefce4651c138cc77ce0b8147a6bab25c66b67a",
         "affectsGlobalScope": false
       },
-      "./node_modules/next/dist/next-server/server/router.d.ts": {
+      "../node_modules/next/dist/next-server/server/router.d.ts": {
         "version": "27437cddadd6c616e606525a539d47e7ec155a97bb3f0075de39a29cc36198e9",
         "signature": "27437cddadd6c616e606525a539d47e7ec155a97bb3f0075de39a29cc36198e9",
         "affectsGlobalScope": false
       },
-      "./node_modules/next/dist/next-server/server/api-utils.d.ts": {
+      "../node_modules/next/dist/next-server/server/api-utils.d.ts": {
         "version": "5ca017b9ca9a62f86c5d293b5d5d25716b236f774961f4e40bce53803872bf1e",
         "signature": "5ca017b9ca9a62f86c5d293b5d5d25716b236f774961f4e40bce53803872bf1e",
         "affectsGlobalScope": false
       },
-      "./node_modules/next/dist/build/index.d.ts": {
+      "../node_modules/next/dist/build/index.d.ts": {
         "version": "af7682f5bb8cbc4954b3e9dc48f878ae7bc6853779681c467fa3aea37b399f67",
         "signature": "af7682f5bb8cbc4954b3e9dc48f878ae7bc6853779681c467fa3aea37b399f67",
         "affectsGlobalScope": false
       },
-      "./node_modules/next/dist/next-server/lib/router/utils/route-regex.d.ts": {
+      "../node_modules/next/dist/next-server/lib/router/utils/route-regex.d.ts": {
         "version": "60ddf289b84ec12508b4e130412906b1fceac3aa9c8174e25b55685afa8571fd",
         "signature": "60ddf289b84ec12508b4e130412906b1fceac3aa9c8174e25b55685afa8571fd",
         "affectsGlobalScope": false
       },
-      "./node_modules/next/dist/next-server/lib/router/utils/route-matcher.d.ts": {
+      "../node_modules/next/dist/next-server/lib/router/utils/route-matcher.d.ts": {
         "version": "e990bfb110c37fa629d8679ac8bba89d36a566d2c0984ab0190a70e4d54f5576",
         "signature": "e990bfb110c37fa629d8679ac8bba89d36a566d2c0984ab0190a70e4d54f5576",
         "affectsGlobalScope": false
       },
-      "./node_modules/next/dist/next-server/lib/router/utils/sorted-routes.d.ts": {
+      "../node_modules/next/dist/next-server/lib/router/utils/sorted-routes.d.ts": {
         "version": "d2d90639077deb5644ec7cee738126779eff847692d95ebcd9f76d6ef2f08cec",
         "signature": "d2d90639077deb5644ec7cee738126779eff847692d95ebcd9f76d6ef2f08cec",
         "affectsGlobalScope": false
       },
-      "./node_modules/next/dist/next-server/lib/router/utils/is-dynamic.d.ts": {
+      "../node_modules/next/dist/next-server/lib/router/utils/is-dynamic.d.ts": {
         "version": "d2bd714b146c0c6c27a0bc9f16c96522ef1c829923fad14b6a33e2580a012323",
         "signature": "d2bd714b146c0c6c27a0bc9f16c96522ef1c829923fad14b6a33e2580a012323",
         "affectsGlobalScope": false
       },
-      "./node_modules/next/dist/next-server/lib/router/utils/index.d.ts": {
+      "../node_modules/next/dist/next-server/lib/router/utils/index.d.ts": {
         "version": "a0e2a5c9452564716496fa1215ccd43bc919be41be89c9b33d3b6d98a61d08d5",
         "signature": "a0e2a5c9452564716496fa1215ccd43bc919be41be89c9b33d3b6d98a61d08d5",
         "affectsGlobalScope": false
       },
-      "./node_modules/next/dist/build/webpack/plugins/pages-manifest-plugin.d.ts": {
+      "../node_modules/next/dist/build/webpack/plugins/pages-manifest-plugin.d.ts": {
         "version": "83f475dbe94405f3720fb3b25c5e2465bb1fc8d6389ac7cea6d453360045f4e3",
         "signature": "83f475dbe94405f3720fb3b25c5e2465bb1fc8d6389ac7cea6d453360045f4e3",
         "affectsGlobalScope": false
       },
-      "./node_modules/next/dist/next-server/server/font-utils.d.ts": {
+      "../node_modules/next/dist/next-server/server/font-utils.d.ts": {
         "version": "dd1b2492877b4d5b42fc2724d18d9805248efc5648be6ebea3c70b8bbff0a804",
         "signature": "dd1b2492877b4d5b42fc2724d18d9805248efc5648be6ebea3c70b8bbff0a804",
         "affectsGlobalScope": false
       },
-      "./node_modules/next/dist/next-server/server/next-server.d.ts": {
+      "../node_modules/next/dist/next-server/server/next-server.d.ts": {
         "version": "a69377e3406a5a380b97018e3f202ee650d948bcfa0824b85afd553c638535e2",
         "signature": "a69377e3406a5a380b97018e3f202ee650d948bcfa0824b85afd553c638535e2",
         "affectsGlobalScope": false
       },
-      "./node_modules/next/dist/server/next.d.ts": {
+      "../node_modules/next/dist/server/next.d.ts": {
         "version": "5c9ea728d70fb206084479992cf49f3a54f23a58ff7b386d7e03341237f2ba71",
         "signature": "5c9ea728d70fb206084479992cf49f3a54f23a58ff7b386d7e03341237f2ba71",
         "affectsGlobalScope": false
       },
-      "./node_modules/next/types/index.d.ts": {
+      "../node_modules/next/types/index.d.ts": {
         "version": "1a5fca238ba7a11e29afd0546bf7a0e60a907cb8685a294b86deda4ce8876ca8",
         "signature": "1a5fca238ba7a11e29afd0546bf7a0e60a907cb8685a294b86deda4ce8876ca8",
         "affectsGlobalScope": false
       },
-      "./node_modules/next/dist/next-server/server/load-components.d.ts": {
+      "../node_modules/next/dist/next-server/server/load-components.d.ts": {
         "version": "0e02cfb5ba166da0f788bc1d2703a935cc6a68b1fd044cadef8de743784748f6",
         "signature": "0e02cfb5ba166da0f788bc1d2703a935cc6a68b1fd044cadef8de743784748f6",
         "affectsGlobalScope": false
@@ -2601,27 +2596,27 @@
         "signature": "764f5b39a73fd6371e5a118ee037b685cec4ff2fc3579225eb57d0f82a38ab18",
         "affectsGlobalScope": false
       },
-      "./node_modules/next/dist/next-server/lib/utils.d.ts": {
+      "../node_modules/next/dist/next-server/lib/utils.d.ts": {
         "version": "af80707f30046ace3a05e7c782955663b788206cb0cf51d3b8273715f9cceba0",
         "signature": "af80707f30046ace3a05e7c782955663b788206cb0cf51d3b8273715f9cceba0",
         "affectsGlobalScope": false
       },
-      "./node_modules/next/dist/next-server/lib/router/router.d.ts": {
+      "../node_modules/next/dist/next-server/lib/router/router.d.ts": {
         "version": "f25f0fdc8390529ac60661033ac451bef7fb4413574d2afa52ad190339063533",
         "signature": "f25f0fdc8390529ac60661033ac451bef7fb4413574d2afa52ad190339063533",
         "affectsGlobalScope": false
       },
-      "./node_modules/next/dist/client/with-router.d.ts": {
+      "../node_modules/next/dist/client/with-router.d.ts": {
         "version": "b40b28dd06ed7a612b4125e4dfde7f60aef46f132c19f6d514a572cefd637fb1",
         "signature": "b40b28dd06ed7a612b4125e4dfde7f60aef46f132c19f6d514a572cefd637fb1",
         "affectsGlobalScope": false
       },
-      "./node_modules/next/dist/client/router.d.ts": {
+      "../node_modules/next/dist/client/router.d.ts": {
         "version": "e8465d77688a84bb1e4a047a88d34d1cdcb4c3ad8763db13d51ed4aa9b7598b4",
         "signature": "e8465d77688a84bb1e4a047a88d34d1cdcb4c3ad8763db13d51ed4aa9b7598b4",
         "affectsGlobalScope": false
       },
-      "./node_modules/next/router.d.ts": {
+      "../node_modules/next/router.d.ts": {
         "version": "2d7d2d542a30602ad869c89e497ffc1d45ebee0352f3806833bb1a73f88a26a7",
         "signature": "2d7d2d542a30602ad869c89e497ffc1d45ebee0352f3806833bb1a73f88a26a7",
         "affectsGlobalScope": false
@@ -2658,27 +2653,27 @@
       },
       "./src/components/support.ts": {
         "version": "d73d6011d5b32dee9295bd531bbd54df541d6eedbd7f0c26c7166fe0a2482e60",
-        "signature": "2fdec13724db8247138963fba47fa8db4f87537e70dd632291324c573f0bc8ab",
+        "signature": "f2ad1498369fbf2b2acd42ba9b9c5ba938ff4ea9357c93579d795922fe05f4e7",
         "affectsGlobalScope": false
       },
       "./src/components/SideNav.tsx": {
-        "version": "df7ce208895439be0b6af40f7f566fc8b22b0a0fe78b8d66ce870ec7fd761122",
-        "signature": "b8d7126550a892d6c28b129e52ec9bc56979dab0256d1e0e6620c795bc3060f6",
+        "version": "45c6d04d015b84a7a6a4baa36faecad3fca77b8e8ad44e2c9e19e061f53256e9",
+        "signature": "593f3e80b966e2bb074bcac39a480dc412c63e96ae21af779c32ebb1c9890173",
         "affectsGlobalScope": false
       },
       "./src/components/MobileNav.tsx": {
-        "version": "cc0e7e8aa00f3fc019a8e74f23de73bf8c1af63cdddd99c4c2020a32bf46f4dd",
-        "signature": "95d6733a69ba9470ceb878af97654def8fcfafc52c21f28ad0358b29a51ad20d",
+        "version": "2c4521e588a227278e29a50df84e667990f16feb94f529c8a83bfc6becb0d66a",
+        "signature": "668ac9f6f3f31a3c35619fc1b25a7415cbdf07394948dc390b1fd0ceeaadbfca",
         "affectsGlobalScope": false
       },
       "./src/components/NavBar.tsx": {
-        "version": "e308f5b2aceca4f52015e983ba346d7720ffae34db69720e3d30cce763290561",
+        "version": "f62493bfb2c9eedc2ca016204d2043e2327db106db277e0c4f7896fccbcfa57e",
         "signature": "a27f32bb93a46dbbe79508057fbbb9df16c893755dd2022c31df11fe6e926a9d",
         "affectsGlobalScope": false
       },
       "./src/components/icons.tsx": {
         "version": "5af28b03f4311d78de5cb2413c73429dd0608387537c9fd2b9320991fa2d052d",
-        "signature": "16dcc78135f3bd1672ca97532e9cbbd40a4877ad8f24b5672887ea7eb80cf488",
+        "signature": "cbebacf03fa58413edb23ff81ba6c20dc5957f761395de4079498f9cc859c41f",
         "affectsGlobalScope": false
       },
       "./src/types.ts": {
@@ -2686,12 +2681,12 @@
         "signature": "bc288f7fdd0446ae76ce39e3c5e6469d64dd52902e1a986c4c5950132f3cd0c2",
         "affectsGlobalScope": false
       },
-      "./node_modules/next/dist/next-server/lib/head.d.ts": {
+      "../node_modules/next/dist/next-server/lib/head.d.ts": {
         "version": "290ec1a014c3c8b26a8b789a61426c41035574efac7e96562f5d7388747c5f32",
         "signature": "290ec1a014c3c8b26a8b789a61426c41035574efac7e96562f5d7388747c5f32",
         "affectsGlobalScope": false
       },
-      "./node_modules/next/head.d.ts": {
+      "../node_modules/next/head.d.ts": {
         "version": "d37d571aa706edfc60f426239c6973414ab78c194f851d43f036b0d935125687",
         "signature": "d37d571aa706edfc60f426239c6973414ab78c194f851d43f036b0d935125687",
         "affectsGlobalScope": false
@@ -2707,23 +2702,23 @@
         "affectsGlobalScope": false
       },
       "./src/components/FloatingTableOfContents.tsx": {
-        "version": "72c89c771c9bf62c9425bb655b80ae6891ba45a8d454bdc3beff85820d21b802",
-        "signature": "5a26c51778dcd97124b251b4c6d3f50743c03448198412779744bfc4d7417c90",
+        "version": "df32b1f8a73c7ab52f6810b1150af1c04e9ac4e1104f60a3679e23f4bccddd35",
+        "signature": "7ea8d4e953b671543feadd32117c9ed4126a5cfaba8881f0039422d1843be2eb",
         "affectsGlobalScope": false
       },
       "./src/components/FooterButtons.tsx": {
         "version": "a2d4a686bbabbd6585cdf647f9b47cd75bde82255d5aa63b94598ab67ebe93ad",
-        "signature": "86b52ee4545f475d1d9867faad1b698287b9cdf7ebcaea4535b1d2cdd673b70a",
+        "signature": "a428ca63eb011f8472fa48a2e3a52e791a6ff095fa5d934440ddbd3375952646",
         "affectsGlobalScope": false
       },
       "./src/components/Wrapper.tsx": {
-        "version": "fe4790763b0b6b216e0a5182a259e16b928768eb24f72c6cf44a2df4c705d4ea",
+        "version": "cbbcf21f826888953e2096c52cbee26a4538f4fccfcbecee7e60a1183df5dbc3",
         "signature": "cf9983079f248007bbb97cfd46f18777e54e0bf9df66ce17b39aa2de75dc2311",
         "affectsGlobalScope": false
       },
       "./src/provider.tsx": {
-        "version": "20ff0aac0bb1dc33979327c0cc4ec11477c8345e0031c20dbb64a49a67a3d547",
-        "signature": "6b1e9c268baa20e65f6c4ed32a08f355948245e74fd94a1d54fe4967228f9ae6",
+        "version": "619f46352dce2d4bcbc247e51534696751895d3cd79f4e044f0119015b229933",
+        "signature": "9cda2f6aa04fe48e65f1987f6629ff4d2cb720a43192e20e537edbfdda0b3ca0",
         "affectsGlobalScope": false
       },
       "./src/components/Code.tsx": {
@@ -2733,12 +2728,12 @@
       },
       "./src/components/Link.tsx": {
         "version": "b7d75568380c55054ae326e7105c386bad363ce86f540fee5e0778a1bb09f88d",
-        "signature": "af0f71a45cd60d4348f59f0afd57d2aa09256cb27c5e7b6e3f4ecb5a7c3e3c1c",
+        "signature": "62768543282f83e4979a93ea6388ed6234b10bb30c57733127765c9ecfedfeff",
         "affectsGlobalScope": false
       },
       "./src/components/mdx.tsx": {
         "version": "aa3a8ddec117f883c1ad14ee356509cf786a646e94a45e0063370023d9fdb68d",
-        "signature": "7daee50792bcce7490a1dbfb865b0eccf3e561d252f2e71b1af94138ec2537d8",
+        "signature": "975472ef054350a09f871f6af4e3278566035740d4c48713d8391f275e9e3393",
         "affectsGlobalScope": false
       },
       "./src/components/WrapperBlog.tsx": {
@@ -2748,7 +2743,7 @@
       },
       "./src/blog.tsx": {
         "version": "60a023e32fbdc68aa31c65260d22fd3a5518528cb3d95c5aab52ce03daa82796",
-        "signature": "3c2ca3c2921f286c075154e5666ff89a37894f64bc894601fd82798d6f45a88e",
+        "signature": "eae341d8b309796f005e4a3b8cbe6ac069fd8d6931949ec6a3480e71e295c3fd",
         "affectsGlobalScope": false
       },
       "./src/components/BlogPosts.tsx": {
@@ -2782,8 +2777,8 @@
         "affectsGlobalScope": false
       },
       "./src/components/TableOfContents.tsx": {
-        "version": "59b2ce6432ce803e1cc84cd7774c044e60639744286a18381e49b4ea5fab9d97",
-        "signature": "c0b3331b4344a629b31772040116e4776096efaaaec5896de59992d6dd291b84",
+        "version": "d8ba55e4bd4ed3a3f2b41600b431179c229d39030caf76525a94466e8aaefe9f",
+        "signature": "fc64bcc4bdb4306998d9799ed0f632c172ec9a7d84b844635c2aaebf163fceff",
         "affectsGlobalScope": false
       },
       "./src/components/index.ts": {
@@ -2856,7 +2851,7 @@
         "signature": "011811d09e775803c791ed2f274058e78d6a6a037353df69b97cbacf8bbda679",
         "affectsGlobalScope": false
       },
-      "./node_modules/chokidar/types/index.d.ts": {
+      "../node_modules/chokidar/types/index.d.ts": {
         "version": "ca7f76d3ea132bde53dca1a0f33cda95397d20c248e452c050773f01504d9802",
         "signature": "ca7f76d3ea132bde53dca1a0f33cda95397d20c248e452c050773f01504d9802",
         "affectsGlobalScope": false
@@ -2936,16 +2931,6 @@
         "signature": "04467c3822f065aee977f9e1225b86b9ac0e976cb42b0c8da0b893a3290920e1",
         "affectsGlobalScope": false
       },
-      "../node_modules/@types/babel__traverse/node_modules/@babel/types/lib/index.d.ts": {
-        "version": "e1d0b45d2995163faae5784de982d49be585d0f77073ec4567850e2feb20e880",
-        "signature": "e1d0b45d2995163faae5784de982d49be585d0f77073ec4567850e2feb20e880",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@types/babel__traverse/index.d.ts": {
-        "version": "704d8cb257ede7d0e88a353b712bb8324885ccc860cb5fdf8bbd435da810c1e6",
-        "signature": "704d8cb257ede7d0e88a353b712bb8324885ccc860cb5fdf8bbd435da810c1e6",
-        "affectsGlobalScope": false
-      },
       "./src/plugin/rehype/utils/ast.ts": {
         "version": "f89449257a0a3c16b2b6a150baa76894d76746a38c71435fd6ef387e57efbf25",
         "signature": "afc096d533af317957880eab0d577f9464961eed5e9bdd3ff2c383835c236307",
@@ -2954,16 +2939,6 @@
       "./src/plugin/rehype/utils/jsx.ts": {
         "version": "e4f396df416a116a0bb8f34d20ef36a17716641c25c3d927b6f50032649fd219",
         "signature": "6e57d9581f5d60ec81dbd3230cd73fc35786aaba64150da4c6f651821b7c4e63",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@types/babel__generator/node_modules/@babel/types/lib/index.d.ts": {
-        "version": "e1d0b45d2995163faae5784de982d49be585d0f77073ec4567850e2feb20e880",
-        "signature": "e1d0b45d2995163faae5784de982d49be585d0f77073ec4567850e2feb20e880",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@types/babel__generator/index.d.ts": {
-        "version": "b25c5f2970d06c729f464c0aeaa64b1a5b5f1355aa93554bb5f9c199b8624b1e",
-        "signature": "b25c5f2970d06c729f464c0aeaa64b1a5b5f1355aa93554bb5f9c199b8624b1e",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/lodash/ts3.1/get.d.ts": {
@@ -2982,12 +2957,12 @@
         "affectsGlobalScope": false
       },
       "./src/plugin/rehype/playground.ts": {
-        "version": "ba36d87038e581df7488acbb32626471f334be801a156c0ae85780378c2d1e10",
+        "version": "967ac09f7adbcbc54fd2d061b45dca058a9b81925e8415eb77c291f52ea55a39",
         "signature": "cc92cfec03f5cbb6d64ee0c988e1e619379a0854030a4df793e27cc2ca566b14",
         "affectsGlobalScope": false
       },
       "./src/plugin/withMdx.ts": {
-        "version": "c8adf702fc37bcefd3d4b53a2364a54bf58b5a700354d4817123ab46b08e0229",
+        "version": "7681481c57589ac6acddf97aebafb093273acc2a32b03cd1c7ffdfaff248e1a4",
         "signature": "d0d150852e925ac4ee7c4e694840aedfe86ab50f3699707dee4d855bdee734d0",
         "affectsGlobalScope": false
       },
@@ -3002,7 +2977,7 @@
         "affectsGlobalScope": false
       },
       "./src/plugin/injectorLoader.js": {
-        "version": "49374b255c9392370ab79e7b40e5b6ae629aab651481a35b1677102e0fa05f1a",
+        "version": "c150c3b28482fd21b107889ea8cd236f69f293c9eb64f47b440e6fda2c3d69ab",
         "signature": "da9aa1d4e803b837ed589dcab884097be1af7133c45e384d21bd109630c030ee",
         "affectsGlobalScope": true
       },
@@ -3011,44 +2986,9 @@
         "signature": "02117315847a4569a9304f9602197ea14715f21dad6f7004b3e5b2e11dc24251",
         "affectsGlobalScope": false
       },
-      "./node_modules/@types/json-schema/index.d.ts": {
-        "version": "ecdf947a5111318568ba99f2a87b8498382d8871207f1bc6271ff3b9536a2448",
-        "signature": "ecdf947a5111318568ba99f2a87b8498382d8871207f1bc6271ff3b9536a2448",
-        "affectsGlobalScope": false
-      },
       "../node_modules/@types/anymatch/index.d.ts": {
         "version": "48b52264fa193879a074197839dbb4796fa07e86350ff888e5361e06aa46df76",
         "signature": "48b52264fa193879a074197839dbb4796fa07e86350ff888e5361e06aa46df76",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@types/babel__template/node_modules/@babel/types/lib/index.d.ts": {
-        "version": "e1d0b45d2995163faae5784de982d49be585d0f77073ec4567850e2feb20e880",
-        "signature": "e1d0b45d2995163faae5784de982d49be585d0f77073ec4567850e2feb20e880",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@types/babel__template/node_modules/@babel/parser/typings/babel-parser.d.ts": {
-        "version": "98c2e3c00ed72daf568c0526ea4f4257f2c43dc5eaacd3d703c3b33f6df1ae86",
-        "signature": "98c2e3c00ed72daf568c0526ea4f4257f2c43dc5eaacd3d703c3b33f6df1ae86",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@types/babel__template/index.d.ts": {
-        "version": "3e0a34f7207431d967dc32d593d1cda0c23975e9484bc8895b39d96ffca4a0d8",
-        "signature": "3e0a34f7207431d967dc32d593d1cda0c23975e9484bc8895b39d96ffca4a0d8",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@types/babel__core/node_modules/@babel/types/lib/index.d.ts": {
-        "version": "e1d0b45d2995163faae5784de982d49be585d0f77073ec4567850e2feb20e880",
-        "signature": "e1d0b45d2995163faae5784de982d49be585d0f77073ec4567850e2feb20e880",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@types/babel__core/node_modules/@babel/parser/typings/babel-parser.d.ts": {
-        "version": "98c2e3c00ed72daf568c0526ea4f4257f2c43dc5eaacd3d703c3b33f6df1ae86",
-        "signature": "98c2e3c00ed72daf568c0526ea4f4257f2c43dc5eaacd3d703c3b33f6df1ae86",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@types/babel__core/index.d.ts": {
-        "version": "7df3163944694feeac63067632a8dc2e2dea1350119ec8b43df277af69198369",
-        "signature": "7df3163944694feeac63067632a8dc2e2dea1350119ec8b43df277af69198369",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/chai/index.d.ts": {
@@ -3066,49 +3006,9 @@
         "signature": "b6e83cdeca61289e5ffd770e55ed035babdffadd87d1ffa42b03e9fe8411333f",
         "affectsGlobalScope": false
       },
-      "../node_modules/@types/history/DOMUtils.d.ts": {
-        "version": "271cde49dfd9b398ccc91bb3aaa43854cf76f4d14e10fed91cbac649aa6cbc63",
-        "signature": "271cde49dfd9b398ccc91bb3aaa43854cf76f4d14e10fed91cbac649aa6cbc63",
-        "affectsGlobalScope": true
-      },
-      "../node_modules/@types/history/createBrowserHistory.d.ts": {
-        "version": "c6f2572e21f626260d2e4a65e4e1e42b9b273b6f43b5c3bc115c2926417d3eca",
-        "signature": "c6f2572e21f626260d2e4a65e4e1e42b9b273b6f43b5c3bc115c2926417d3eca",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@types/history/createHashHistory.d.ts": {
-        "version": "374ab77e05e0bf5a52acad6d65121d4bd31068108f23d70186dba5fcd7d6a1a3",
-        "signature": "374ab77e05e0bf5a52acad6d65121d4bd31068108f23d70186dba5fcd7d6a1a3",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@types/history/createMemoryHistory.d.ts": {
-        "version": "a4ecd4bb653aa71093375845fba6250ca0f3c633d0e933fc9bf4b301834eab27",
-        "signature": "a4ecd4bb653aa71093375845fba6250ca0f3c633d0e933fc9bf4b301834eab27",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@types/history/LocationUtils.d.ts": {
-        "version": "25d91fb9ed77a828cc6c7a863236fb712dafcd52f816eec481bd0c1f589f4404",
-        "signature": "25d91fb9ed77a828cc6c7a863236fb712dafcd52f816eec481bd0c1f589f4404",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@types/history/PathUtils.d.ts": {
-        "version": "4cd14cea22eed1bfb0dc76183e56989f897ac5b14c0e2a819e5162eafdcfe243",
-        "signature": "4cd14cea22eed1bfb0dc76183e56989f897ac5b14c0e2a819e5162eafdcfe243",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@types/history/index.d.ts": {
-        "version": "80a54fa1520c12a4e57f0c2d33c5a5aefce76d6e53d7ada334881b161180f02e",
-        "signature": "80a54fa1520c12a4e57f0c2d33c5a5aefce76d6e53d7ada334881b161180f02e",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@types/html-minifier-terser/index.d.ts": {
-        "version": "7505ea08af82f5d51c975a04d16fe0fc0bd34f3e22958acf2bc06959c53c64cc",
-        "signature": "7505ea08af82f5d51c975a04d16fe0fc0bd34f3e22958acf2bc06959c53c64cc",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@types/is-function/index.d.ts": {
-        "version": "11ef35fa1e8aef8229ce6b62ac1a6a0761d1d4bb4de1538bce6d10762a919139",
-        "signature": "11ef35fa1e8aef8229ce6b62ac1a6a0761d1d4bb4de1538bce6d10762a919139",
+      "../node_modules/@types/json-schema/index.d.ts": {
+        "version": "b2be568d8ce95fcb26eebd04c035d94825655fdf689bf67d799f5ff8cbbb1024",
+        "signature": "b2be568d8ce95fcb26eebd04c035d94825655fdf689bf67d799f5ff8cbbb1024",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/lodash.isequal/index.d.ts": {
@@ -3120,11 +3020,6 @@
         "version": "c4c03cf65951d980ba618ae9601d10438730803fc9c8a1f7b34af8739981e205",
         "signature": "c4c03cf65951d980ba618ae9601d10438730803fc9c8a1f7b34af8739981e205",
         "affectsGlobalScope": true
-      },
-      "../node_modules/@types/npmlog/index.d.ts": {
-        "version": "0d65b782b1a9b5891802ef2022c78481b19dfe133ba8d9f7596fe1320314342d",
-        "signature": "0d65b782b1a9b5891802ef2022c78481b19dfe133ba8d9f7596fe1320314342d",
-        "affectsGlobalScope": false
       },
       "../node_modules/@types/parse-json/index.d.ts": {
         "version": "2b8264b2fefd7367e0f20e2c04eed5d3038831fe00f5efbc110ff0131aab899b",
@@ -3141,55 +3036,10 @@
         "signature": "f9a2dd6a6084665f093ed0e9664b8e673be2a45e342a59dd4e0e4e552e68a9ad",
         "affectsGlobalScope": false
       },
-      "../node_modules/@types/reach__router/node_modules/@types/react/global.d.ts": {
-        "version": "ecf78e637f710f340ec08d5d92b3f31b134a46a4fcf2e758690d8c46ce62cba6",
-        "signature": "ecf78e637f710f340ec08d5d92b3f31b134a46a4fcf2e758690d8c46ce62cba6",
-        "affectsGlobalScope": true
-      },
-      "../node_modules/@types/reach__router/node_modules/csstype/index.d.ts": {
-        "version": "389ff64c4d75538171782c347554a2cb6328ffb2e838e9b012da3bda94e0767b",
-        "signature": "389ff64c4d75538171782c347554a2cb6328ffb2e838e9b012da3bda94e0767b",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@types/reach__router/node_modules/@types/react/index.d.ts": {
-        "version": "081425611368b52c9c42d36ac1ac14287f20521f10447f7dd4f4174143e375fd",
-        "signature": "081425611368b52c9c42d36ac1ac14287f20521f10447f7dd4f4174143e375fd",
-        "affectsGlobalScope": true
-      },
-      "../node_modules/@types/reach__router/index.d.ts": {
-        "version": "50ae7132d927a01f4c32f5bc1ea392d969f530fcbc37c03ff883a7cfe0dfc776",
-        "signature": "50ae7132d927a01f4c32f5bc1ea392d969f530fcbc37c03ff883a7cfe0dfc776",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/@types/react-syntax-highlighter/node_modules/@types/react/index.d.ts": {
-        "version": "081425611368b52c9c42d36ac1ac14287f20521f10447f7dd4f4174143e375fd",
-        "signature": "081425611368b52c9c42d36ac1ac14287f20521f10447f7dd4f4174143e375fd",
-        "affectsGlobalScope": true
-      },
-      "../node_modules/@types/react-syntax-highlighter/index.d.ts": {
-        "version": "83800fe6ed3ecb114e0ddb6f82f9ac621e2847fa6f77f9f04a56c0c51d13a162",
-        "signature": "83800fe6ed3ecb114e0ddb6f82f9ac621e2847fa6f77f9f04a56c0c51d13a162",
-        "affectsGlobalScope": true
-      },
-      "../node_modules/@types/react-textarea-autosize/node_modules/@types/react/index.d.ts": {
-        "version": "081425611368b52c9c42d36ac1ac14287f20521f10447f7dd4f4174143e375fd",
-        "signature": "081425611368b52c9c42d36ac1ac14287f20521f10447f7dd4f4174143e375fd",
-        "affectsGlobalScope": true
-      },
-      "../node_modules/@types/react-textarea-autosize/index.d.ts": {
-        "version": "654bd884851f74a93fc2165c9d3d7ec9a6346c5c4ca8a00caa49868c72ad2363",
-        "signature": "654bd884851f74a93fc2165c9d3d7ec9a6346c5c4ca8a00caa49868c72ad2363",
-        "affectsGlobalScope": false
-      },
       "../node_modules/@types/warning/index.d.ts": {
         "version": "abd79d61be476addd783d0e0bace2e3c02bb3e38ec23bdfd236adc421b038939",
         "signature": "abd79d61be476addd783d0e0bace2e3c02bb3e38ec23bdfd236adc421b038939",
         "affectsGlobalScope": false
-      },
-      "../node_modules/@types/webpack-env/index.d.ts": {
-        "version": "1db2b55f2381ed9558f93cbf4068096d72e1c8d59bb3a66aafa0fc11c1f17530",
-        "signature": "1db2b55f2381ed9558f93cbf4068096d72e1c8d59bb3a66aafa0fc11c1f17530",
-        "affectsGlobalScope": true
       }
     },
     "options": {
@@ -3215,24 +3065,6 @@
       "configFilePath": "./tsconfig.json"
     },
     "referencedMap": {
-      "./node_modules/@emotion/react/types/index.d.ts": [
-        "../node_modules/@emotion/cache/types/index.d.ts",
-        "../node_modules/@emotion/react/types/helper.d.ts",
-        "../node_modules/@emotion/react/types/jsx-namespace.d.ts",
-        "../node_modules/@emotion/react/types/theming.d.ts",
-        "../node_modules/@emotion/serialize/types/index.d.ts",
-        "../node_modules/@types/react/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/@types/json-schema/index.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
       "./node_modules/@types/node/async_hooks.d.ts": [
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -3624,270 +3456,6 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "./node_modules/chokidar/types/index.d.ts": [
-        "./node_modules/@types/node/events.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/ts3.7/index.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/next/dist/build/index.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/next-server/server/api-utils.d.ts"
-      ],
-      "./node_modules/next/dist/build/webpack/plugins/build-manifest-plugin.d.ts": [
-        "../node_modules/@types/webpack/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/lib/load-custom-routes.d.ts"
-      ],
-      "./node_modules/next/dist/build/webpack/plugins/pages-manifest-plugin.d.ts": [
-        "../node_modules/@types/webpack/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/next/dist/client/link.d.ts": [
-        "../node_modules/@types/react/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/ts3.7/index.d.ts",
-        "./node_modules/@types/node/url.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/next/dist/client/page-loader.d.ts": [
-        "../node_modules/@types/react/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/client/route-loader.d.ts"
-      ],
-      "./node_modules/next/dist/client/route-loader.d.ts": [
-        "../node_modules/@types/react/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/build/webpack/plugins/build-manifest-plugin.d.ts"
-      ],
-      "./node_modules/next/dist/client/router.d.ts": [
-        "../node_modules/@types/react/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/querystring.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/ts3.7/index.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/client/with-router.d.ts",
-        "./node_modules/next/dist/next-server/lib/router/router.d.ts"
-      ],
-      "./node_modules/next/dist/client/with-router.d.ts": [
-        "../node_modules/@types/react/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/client/router.d.ts",
-        "./node_modules/next/dist/next-server/lib/utils.d.ts"
-      ],
-      "./node_modules/next/dist/lib/load-custom-routes.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/next-server/server/config.d.ts"
-      ],
-      "./node_modules/next/dist/next-server/lib/head.d.ts": [
-        "../node_modules/@types/react/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/next/dist/next-server/lib/mitt.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/next/dist/next-server/lib/router/router.d.ts": [
-        "../node_modules/@types/react/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/querystring.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/ts3.7/index.d.ts",
-        "./node_modules/@types/node/url.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/client/page-loader.d.ts",
-        "./node_modules/next/dist/next-server/lib/mitt.d.ts",
-        "./node_modules/next/dist/next-server/lib/utils.d.ts"
-      ],
-      "./node_modules/next/dist/next-server/lib/router/utils/index.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/next-server/lib/router/utils/is-dynamic.d.ts",
-        "./node_modules/next/dist/next-server/lib/router/utils/route-matcher.d.ts",
-        "./node_modules/next/dist/next-server/lib/router/utils/route-regex.d.ts",
-        "./node_modules/next/dist/next-server/lib/router/utils/sorted-routes.d.ts"
-      ],
-      "./node_modules/next/dist/next-server/lib/router/utils/is-dynamic.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/next/dist/next-server/lib/router/utils/route-matcher.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/next-server/lib/router/utils/route-regex.d.ts"
-      ],
-      "./node_modules/next/dist/next-server/lib/router/utils/route-regex.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/next/dist/next-server/lib/router/utils/sorted-routes.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/next/dist/next-server/lib/utils.d.ts": [
-        "../node_modules/@next/env/types/index.d.ts",
-        "../node_modules/@types/react/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/http.d.ts",
-        "./node_modules/@types/node/querystring.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/ts3.7/index.d.ts",
-        "./node_modules/@types/node/url.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/next-server/lib/router/router.d.ts",
-        "./node_modules/next/dist/next-server/server/get-page-files.d.ts",
-        "./node_modules/next/dist/next-server/server/load-components.d.ts"
-      ],
-      "./node_modules/next/dist/next-server/server/api-utils.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/http.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/ts3.7/index.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/next-server/lib/utils.d.ts",
-        "./node_modules/next/dist/next-server/server/router.d.ts"
-      ],
-      "./node_modules/next/dist/next-server/server/config.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/lib/load-custom-routes.d.ts"
-      ],
-      "./node_modules/next/dist/next-server/server/font-utils.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/next/dist/next-server/server/get-page-files.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/next/dist/next-server/server/load-components.d.ts": [
-        "../node_modules/@types/react/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/next-server/lib/utils.d.ts",
-        "./node_modules/next/dist/next-server/server/get-page-files.d.ts",
-        "./node_modules/next/types/index.d.ts"
-      ],
-      "./node_modules/next/dist/next-server/server/next-server.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/http.d.ts",
-        "./node_modules/@types/node/querystring.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/ts3.7/index.d.ts",
-        "./node_modules/@types/node/url.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/build/index.d.ts",
-        "./node_modules/next/dist/build/webpack/plugins/pages-manifest-plugin.d.ts",
-        "./node_modules/next/dist/lib/load-custom-routes.d.ts",
-        "./node_modules/next/dist/next-server/lib/router/utils/index.d.ts",
-        "./node_modules/next/dist/next-server/server/api-utils.d.ts",
-        "./node_modules/next/dist/next-server/server/config.d.ts",
-        "./node_modules/next/dist/next-server/server/font-utils.d.ts",
-        "./node_modules/next/dist/next-server/server/router.d.ts"
-      ],
-      "./node_modules/next/dist/next-server/server/router.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/http.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/ts3.7/index.d.ts",
-        "./node_modules/@types/node/url.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/next/dist/server/next.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/next-server/server/next-server.d.ts"
-      ],
-      "./node_modules/next/head.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/next-server/lib/head.d.ts"
-      ],
-      "./node_modules/next/link.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/client/link.d.ts"
-      ],
-      "./node_modules/next/router.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/client/router.d.ts"
-      ],
-      "./node_modules/next/types/index.d.ts": [
-        "../node_modules/@types/react/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/http.d.ts",
-        "./node_modules/@types/node/querystring.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/ts3.7/index.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/next-server/lib/utils.d.ts",
-        "./node_modules/next/dist/server/next.d.ts"
-      ],
       "./src/blog.tsx": [
         "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
         "../node_modules/@types/lodash/ts3.1/fp/omit.d.ts",
@@ -3905,11 +3473,11 @@
       "./src/components/BlogPosts.tsx": [
         "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
         "../node_modules/@types/react/index.d.ts",
+        "../node_modules/next/router.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/router.d.ts",
         "./src/blog.tsx",
         "./src/components/WrapperBlog.tsx",
         "./src/components/icons.tsx",
@@ -3932,6 +3500,7 @@
         "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
         "../node_modules/@types/lodash/ts3.1/pick.d.ts",
         "../node_modules/@types/react/index.d.ts",
+        "../node_modules/baby-i-am-faded/dist/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -3943,13 +3512,13 @@
         "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
         "../node_modules/@emotion/react/types/index.d.ts",
         "../node_modules/@types/react/index.d.ts",
+        "../node_modules/next/link.d.ts",
+        "../node_modules/next/router.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/process.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/link.d.ts",
-        "./node_modules/next/router.d.ts",
         "./src/components/icons.tsx",
         "./src/components/support.ts",
         "./src/provider.tsx"
@@ -3965,17 +3534,18 @@
       "./src/components/MobileNav.tsx": [
         "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
         "../node_modules/@types/react/index.d.ts",
+        "../node_modules/next/router.d.ts",
         "../node_modules/react-icons/md/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/router.d.ts",
         "./src/components/SideNav.tsx"
       ],
       "./src/components/NavBar.tsx": [
         "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
         "../node_modules/@emotion/react/types/index.d.ts",
+        "../node_modules/baby-i-am-faded/dist/index.d.ts",
         "../node_modules/react-icons/di/index.d.ts",
         "../node_modules/react-icons/fi/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
@@ -3988,12 +3558,12 @@
       "./src/components/NavLink.tsx": [
         "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
         "../node_modules/@types/react/index.d.ts",
+        "../node_modules/next/link.d.ts",
+        "../node_modules/next/router.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/link.d.ts",
-        "./node_modules/next/router.d.ts"
+        "./node_modules/@types/node/util.d.ts"
       ],
       "./src/components/Playground.tsx": [
         "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
@@ -4013,6 +3583,7 @@
         "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
         "../node_modules/@types/lodash/ts3.1/orderBy.d.ts",
         "../node_modules/@types/react/index.d.ts",
+        "../node_modules/baby-i-am-faded/dist/index.d.ts",
         "../node_modules/react-storage-hooks/dist/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -4024,7 +3595,9 @@
       ],
       "./src/components/TableOfContents.tsx": [
         "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
+        "../node_modules/@emotion/react/types/index.d.ts",
         "../node_modules/@types/react/index.d.ts",
+        "../node_modules/baby-i-am-faded/dist/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -4038,11 +3611,13 @@
         "../node_modules/@emotion/react/types/index.d.ts",
         "../node_modules/@types/lodash/ts3.1/fp/merge.d.ts",
         "../node_modules/@types/react/index.d.ts",
+        "../node_modules/baby-i-am-faded/dist/index.d.ts",
+        "../node_modules/next/head.d.ts",
+        "../node_modules/next/router.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/head.d.ts",
         "./src/components/FloatingTableOfContents.tsx",
         "./src/components/FooterButtons.tsx",
         "./src/components/NavBar.tsx",
@@ -4053,11 +3628,11 @@
       "./src/components/WrapperBlog.tsx": [
         "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
         "../node_modules/@emotion/react/types/index.d.ts",
+        "../node_modules/next/head.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/head.d.ts",
         "./src/blog.tsx",
         "./src/components/FloatingTableOfContents.tsx",
         "./src/components/NavBar.tsx",
@@ -4149,6 +3724,7 @@
       "./src/plugin/index.ts": [
         "../node_modules/@types/lodash/ts3.1/fp.d.ts",
         "../node_modules/@types/lodash/ts3.1/throttle.d.ts",
+        "../node_modules/chokidar/types/index.d.ts",
         "../node_modules/remark-frontmatter/types/index.d.ts",
         "../node_modules/yaml/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
@@ -4157,7 +3733,6 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/chalk/index.d.ts",
-        "./node_modules/chokidar/types/index.d.ts",
         "./src/components/support.ts",
         "./src/plugin/generateTableOfContents.ts",
         "./src/plugin/getMdxFilesIndex.ts",
@@ -4185,7 +3760,6 @@
       ],
       "./src/plugin/rehype/utils/ast.ts": [
         "../node_modules/@babel/parser/typings/babel-parser.d.ts",
-        "../node_modules/@types/babel__traverse/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -4193,7 +3767,6 @@
       ],
       "./src/plugin/rehype/utils/exports.ts": [
         "../node_modules/@babel/parser/typings/babel-parser.d.ts",
-        "../node_modules/@types/babel__traverse/index.d.ts",
         "../node_modules/@types/lodash/ts3.1/get.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -4208,8 +3781,6 @@
       ],
       "./src/plugin/rehype/utils/imports.ts": [
         "../node_modules/@babel/parser/typings/babel-parser.d.ts",
-        "../node_modules/@types/babel__generator/index.d.ts",
-        "../node_modules/@types/babel__traverse/index.d.ts",
         "../node_modules/@types/lodash/ts3.1/get.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -4246,13 +3817,14 @@
       "./src/provider.tsx": [
         "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
         "../node_modules/@types/react/index.d.ts",
+        "../node_modules/baby-i-am-faded/dist/index.d.ts",
+        "../node_modules/next/head.d.ts",
+        "../node_modules/next/router.d.ts",
         "../node_modules/prism-react-renderer/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/head.d.ts",
-        "./node_modules/next/router.d.ts",
         "./src/components/NavBar.tsx",
         "./src/components/Wrapper.tsx",
         "./src/components/icons.tsx",
@@ -6342,14 +5914,8 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@emotion/cache/node_modules/@emotion/utils/types/index.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
       "../node_modules/@emotion/cache/types/index.d.ts": [
-        "../node_modules/@emotion/cache/node_modules/@emotion/utils/types/index.d.ts",
+        "../node_modules/@emotion/utils/types/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -6392,14 +5958,8 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@emotion/serialize/node_modules/@emotion/utils/types/index.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
       "../node_modules/@emotion/serialize/types/index.d.ts": [
-        "../node_modules/@emotion/cache/node_modules/@emotion/utils/types/index.d.ts",
+        "../node_modules/@emotion/utils/types/index.d.ts",
         "../node_modules/csstype/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -6418,6 +5978,12 @@
       "../node_modules/@emotion/styled/types/index.d.ts": [
         "../node_modules/@emotion/react/types/index.d.ts",
         "../node_modules/@emotion/styled/types/base.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/@emotion/utils/types/index.d.ts": [
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -6548,77 +6114,6 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@types/babel__core/index.d.ts": [
-        "../node_modules/@types/babel__generator/index.d.ts",
-        "../node_modules/@types/babel__template/index.d.ts",
-        "../node_modules/@types/babel__template/node_modules/@babel/parser/typings/babel-parser.d.ts",
-        "../node_modules/@types/babel__traverse/index.d.ts",
-        "../node_modules/@types/babel__traverse/node_modules/@babel/types/lib/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/babel__core/node_modules/@babel/parser/typings/babel-parser.d.ts": [
-        "../node_modules/@types/babel__traverse/node_modules/@babel/types/lib/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/babel__core/node_modules/@babel/types/lib/index.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/babel__generator/index.d.ts": [
-        "../node_modules/@types/babel__traverse/node_modules/@babel/types/lib/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/babel__generator/node_modules/@babel/types/lib/index.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/babel__template/index.d.ts": [
-        "../node_modules/@types/babel__template/node_modules/@babel/parser/typings/babel-parser.d.ts",
-        "../node_modules/@types/babel__traverse/node_modules/@babel/types/lib/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/babel__template/node_modules/@babel/parser/typings/babel-parser.d.ts": [
-        "../node_modules/@types/babel__traverse/node_modules/@babel/types/lib/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/babel__template/node_modules/@babel/types/lib/index.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/babel__traverse/index.d.ts": [
-        "../node_modules/@types/babel__traverse/node_modules/@babel/types/lib/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/babel__traverse/node_modules/@babel/types/lib/index.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
       "../node_modules/@types/chai/index.d.ts": [
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -6638,68 +6133,7 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@types/history/DOMUtils.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/history/LocationUtils.d.ts": [
-        "../node_modules/@types/history/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/history/PathUtils.d.ts": [
-        "../node_modules/@types/history/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/history/createBrowserHistory.d.ts": [
-        "../node_modules/@types/history/DOMUtils.d.ts",
-        "../node_modules/@types/history/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/history/createHashHistory.d.ts": [
-        "../node_modules/@types/history/DOMUtils.d.ts",
-        "../node_modules/@types/history/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/history/createMemoryHistory.d.ts": [
-        "../node_modules/@types/history/DOMUtils.d.ts",
-        "../node_modules/@types/history/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/history/index.d.ts": [
-        "../node_modules/@types/history/LocationUtils.d.ts",
-        "../node_modules/@types/history/PathUtils.d.ts",
-        "../node_modules/@types/history/createBrowserHistory.d.ts",
-        "../node_modules/@types/history/createHashHistory.d.ts",
-        "../node_modules/@types/history/createMemoryHistory.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/html-minifier-terser/index.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/is-function/index.d.ts": [
+      "../node_modules/@types/json-schema/index.d.ts": [
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -7036,13 +6470,6 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@types/npmlog/index.d.ts": [
-        "./node_modules/@types/node/events.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
       "../node_modules/@types/object-assign/index.d.ts": [
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -7068,68 +6495,6 @@
         "./node_modules/@types/node/util.d.ts"
       ],
       "../node_modules/@types/q/index.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/reach__router/index.d.ts": [
-        "../node_modules/@types/history/index.d.ts",
-        "../node_modules/@types/reach__router/node_modules/@types/react/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/reach__router/node_modules/@types/react/global.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/reach__router/node_modules/@types/react/index.d.ts": [
-        "../node_modules/@types/prop-types/index.d.ts",
-        "../node_modules/@types/reach__router/node_modules/@types/react/global.d.ts",
-        "../node_modules/@types/reach__router/node_modules/csstype/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/reach__router/node_modules/csstype/index.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/react-syntax-highlighter/index.d.ts": [
-        "../node_modules/@types/reach__router/node_modules/@types/react/index.d.ts",
-        "../node_modules/@types/react-syntax-highlighter/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/react-syntax-highlighter/node_modules/@types/react/index.d.ts": [
-        "../node_modules/@types/prop-types/index.d.ts",
-        "../node_modules/@types/reach__router/node_modules/csstype/index.d.ts",
-        "../node_modules/@types/react-syntax-highlighter/node_modules/@types/react/global.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/react-textarea-autosize/index.d.ts": [
-        "../node_modules/@types/reach__router/node_modules/@types/react/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/react-textarea-autosize/node_modules/@types/react/index.d.ts": [
-        "../node_modules/@types/prop-types/index.d.ts",
-        "../node_modules/@types/reach__router/node_modules/csstype/index.d.ts",
-        "../node_modules/@types/react-textarea-autosize/node_modules/@types/react/global.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -7187,12 +6552,6 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@types/webpack-env/index.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
       "../node_modules/@types/webpack-sources/index.d.ts": [
         "../node_modules/@types/source-list-map/index.d.ts",
         "../node_modules/@types/webpack-sources/node_modules/source-map/source-map.d.ts",
@@ -7232,6 +6591,23 @@
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/baby-i-am-faded/dist/index.d.ts": [
+        "../node_modules/@emotion/react/types/index.d.ts",
+        "../node_modules/@emotion/serialize/types/index.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/chokidar/types/index.d.ts": [
+        "./node_modules/@types/node/events.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/ts3.7/index.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
       "../node_modules/css-box-model/src/index.d.ts": [
@@ -7882,6 +7258,262 @@
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/build/index.d.ts": [
+        "../node_modules/next/dist/next-server/server/api-utils.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/build/webpack/plugins/build-manifest-plugin.d.ts": [
+        "../node_modules/@types/webpack/index.d.ts",
+        "../node_modules/next/dist/lib/load-custom-routes.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/build/webpack/plugins/pages-manifest-plugin.d.ts": [
+        "../node_modules/@types/webpack/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/client/link.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/ts3.7/index.d.ts",
+        "./node_modules/@types/node/url.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/client/page-loader.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/next/dist/client/route-loader.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/client/route-loader.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/next/dist/build/webpack/plugins/build-manifest-plugin.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/client/router.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/next/dist/client/with-router.d.ts",
+        "../node_modules/next/dist/next-server/lib/router/router.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/querystring.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/ts3.7/index.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/client/with-router.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/next/dist/client/router.d.ts",
+        "../node_modules/next/dist/next-server/lib/utils.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/lib/load-custom-routes.d.ts": [
+        "../node_modules/next/dist/next-server/server/config.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/next-server/lib/head.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/next-server/lib/mitt.d.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/next-server/lib/router/router.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/next/dist/client/page-loader.d.ts",
+        "../node_modules/next/dist/next-server/lib/mitt.d.ts",
+        "../node_modules/next/dist/next-server/lib/utils.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/querystring.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/ts3.7/index.d.ts",
+        "./node_modules/@types/node/url.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/next-server/lib/router/utils/index.d.ts": [
+        "../node_modules/next/dist/next-server/lib/router/utils/is-dynamic.d.ts",
+        "../node_modules/next/dist/next-server/lib/router/utils/route-matcher.d.ts",
+        "../node_modules/next/dist/next-server/lib/router/utils/route-regex.d.ts",
+        "../node_modules/next/dist/next-server/lib/router/utils/sorted-routes.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/next-server/lib/router/utils/is-dynamic.d.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/next-server/lib/router/utils/route-matcher.d.ts": [
+        "../node_modules/next/dist/next-server/lib/router/utils/route-regex.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/next-server/lib/router/utils/route-regex.d.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/next-server/lib/router/utils/sorted-routes.d.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/next-server/lib/utils.d.ts": [
+        "../node_modules/@next/env/types/index.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/next/dist/next-server/lib/router/router.d.ts",
+        "../node_modules/next/dist/next-server/server/get-page-files.d.ts",
+        "../node_modules/next/dist/next-server/server/load-components.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/http.d.ts",
+        "./node_modules/@types/node/querystring.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/ts3.7/index.d.ts",
+        "./node_modules/@types/node/url.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/next-server/server/api-utils.d.ts": [
+        "../node_modules/next/dist/next-server/lib/utils.d.ts",
+        "../node_modules/next/dist/next-server/server/router.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/http.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/ts3.7/index.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/next-server/server/config.d.ts": [
+        "../node_modules/next/dist/lib/load-custom-routes.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/next-server/server/font-utils.d.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/next-server/server/get-page-files.d.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/next-server/server/load-components.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/next/dist/next-server/lib/utils.d.ts",
+        "../node_modules/next/dist/next-server/server/get-page-files.d.ts",
+        "../node_modules/next/types/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/next-server/server/next-server.d.ts": [
+        "../node_modules/next/dist/build/index.d.ts",
+        "../node_modules/next/dist/build/webpack/plugins/pages-manifest-plugin.d.ts",
+        "../node_modules/next/dist/lib/load-custom-routes.d.ts",
+        "../node_modules/next/dist/next-server/lib/router/utils/index.d.ts",
+        "../node_modules/next/dist/next-server/server/api-utils.d.ts",
+        "../node_modules/next/dist/next-server/server/config.d.ts",
+        "../node_modules/next/dist/next-server/server/font-utils.d.ts",
+        "../node_modules/next/dist/next-server/server/router.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/http.d.ts",
+        "./node_modules/@types/node/querystring.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/ts3.7/index.d.ts",
+        "./node_modules/@types/node/url.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/next-server/server/router.d.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/http.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/ts3.7/index.d.ts",
+        "./node_modules/@types/node/url.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/server/next.d.ts": [
+        "../node_modules/next/dist/next-server/server/next-server.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/head.d.ts": [
+        "../node_modules/next/dist/next-server/lib/head.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/link.d.ts": [
+        "../node_modules/next/dist/client/link.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/router.d.ts": [
+        "../node_modules/next/dist/client/router.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/types/index.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/next/dist/next-server/lib/utils.d.ts",
+        "../node_modules/next/dist/server/next.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/http.d.ts",
+        "./node_modules/@types/node/querystring.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/ts3.7/index.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
       "../node_modules/popmotion/lib/animations/generators/decay.d.ts": [
@@ -8580,24 +8212,6 @@
       ]
     },
     "exportedModulesMap": {
-      "./node_modules/@emotion/react/types/index.d.ts": [
-        "../node_modules/@emotion/cache/types/index.d.ts",
-        "../node_modules/@emotion/react/node_modules/@emotion/serialize/types/index.d.ts",
-        "../node_modules/@emotion/react/types/helper.d.ts",
-        "../node_modules/@emotion/react/types/jsx-namespace.d.ts",
-        "../node_modules/@emotion/react/types/theming.d.ts",
-        "../node_modules/@types/react/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/@types/json-schema/index.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
       "./node_modules/@types/node/async_hooks.d.ts": [
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -8989,270 +8603,6 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "./node_modules/chokidar/types/index.d.ts": [
-        "./node_modules/@types/node/events.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/ts3.7/index.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/next/dist/build/index.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/next-server/server/api-utils.d.ts"
-      ],
-      "./node_modules/next/dist/build/webpack/plugins/build-manifest-plugin.d.ts": [
-        "../node_modules/@types/webpack/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/lib/load-custom-routes.d.ts"
-      ],
-      "./node_modules/next/dist/build/webpack/plugins/pages-manifest-plugin.d.ts": [
-        "../node_modules/@types/webpack/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/next/dist/client/link.d.ts": [
-        "../node_modules/@types/react/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/ts3.7/index.d.ts",
-        "./node_modules/@types/node/url.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/next/dist/client/page-loader.d.ts": [
-        "../node_modules/@types/react/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/client/route-loader.d.ts"
-      ],
-      "./node_modules/next/dist/client/route-loader.d.ts": [
-        "../node_modules/@types/react/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/build/webpack/plugins/build-manifest-plugin.d.ts"
-      ],
-      "./node_modules/next/dist/client/router.d.ts": [
-        "../node_modules/@types/react/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/querystring.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/ts3.7/index.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/client/with-router.d.ts",
-        "./node_modules/next/dist/next-server/lib/router/router.d.ts"
-      ],
-      "./node_modules/next/dist/client/with-router.d.ts": [
-        "../node_modules/@types/react/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/client/router.d.ts",
-        "./node_modules/next/dist/next-server/lib/utils.d.ts"
-      ],
-      "./node_modules/next/dist/lib/load-custom-routes.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/next-server/server/config.d.ts"
-      ],
-      "./node_modules/next/dist/next-server/lib/head.d.ts": [
-        "../node_modules/@types/react/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/next/dist/next-server/lib/mitt.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/next/dist/next-server/lib/router/router.d.ts": [
-        "../node_modules/@types/react/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/querystring.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/ts3.7/index.d.ts",
-        "./node_modules/@types/node/url.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/client/page-loader.d.ts",
-        "./node_modules/next/dist/next-server/lib/mitt.d.ts",
-        "./node_modules/next/dist/next-server/lib/utils.d.ts"
-      ],
-      "./node_modules/next/dist/next-server/lib/router/utils/index.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/next-server/lib/router/utils/is-dynamic.d.ts",
-        "./node_modules/next/dist/next-server/lib/router/utils/route-matcher.d.ts",
-        "./node_modules/next/dist/next-server/lib/router/utils/route-regex.d.ts",
-        "./node_modules/next/dist/next-server/lib/router/utils/sorted-routes.d.ts"
-      ],
-      "./node_modules/next/dist/next-server/lib/router/utils/is-dynamic.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/next/dist/next-server/lib/router/utils/route-matcher.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/next-server/lib/router/utils/route-regex.d.ts"
-      ],
-      "./node_modules/next/dist/next-server/lib/router/utils/route-regex.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/next/dist/next-server/lib/router/utils/sorted-routes.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/next/dist/next-server/lib/utils.d.ts": [
-        "../node_modules/@next/env/types/index.d.ts",
-        "../node_modules/@types/react/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/http.d.ts",
-        "./node_modules/@types/node/querystring.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/ts3.7/index.d.ts",
-        "./node_modules/@types/node/url.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/next-server/lib/router/router.d.ts",
-        "./node_modules/next/dist/next-server/server/get-page-files.d.ts",
-        "./node_modules/next/dist/next-server/server/load-components.d.ts"
-      ],
-      "./node_modules/next/dist/next-server/server/api-utils.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/http.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/ts3.7/index.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/next-server/lib/utils.d.ts",
-        "./node_modules/next/dist/next-server/server/router.d.ts"
-      ],
-      "./node_modules/next/dist/next-server/server/config.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/lib/load-custom-routes.d.ts"
-      ],
-      "./node_modules/next/dist/next-server/server/font-utils.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/next/dist/next-server/server/get-page-files.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/next/dist/next-server/server/load-components.d.ts": [
-        "../node_modules/@types/react/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/next-server/lib/utils.d.ts",
-        "./node_modules/next/dist/next-server/server/get-page-files.d.ts",
-        "./node_modules/next/types/index.d.ts"
-      ],
-      "./node_modules/next/dist/next-server/server/next-server.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/http.d.ts",
-        "./node_modules/@types/node/querystring.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/ts3.7/index.d.ts",
-        "./node_modules/@types/node/url.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/build/index.d.ts",
-        "./node_modules/next/dist/build/webpack/plugins/pages-manifest-plugin.d.ts",
-        "./node_modules/next/dist/lib/load-custom-routes.d.ts",
-        "./node_modules/next/dist/next-server/lib/router/utils/index.d.ts",
-        "./node_modules/next/dist/next-server/server/api-utils.d.ts",
-        "./node_modules/next/dist/next-server/server/config.d.ts",
-        "./node_modules/next/dist/next-server/server/font-utils.d.ts",
-        "./node_modules/next/dist/next-server/server/router.d.ts"
-      ],
-      "./node_modules/next/dist/next-server/server/router.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/http.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/ts3.7/index.d.ts",
-        "./node_modules/@types/node/url.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./node_modules/next/dist/server/next.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/next-server/server/next-server.d.ts"
-      ],
-      "./node_modules/next/head.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/next-server/lib/head.d.ts"
-      ],
-      "./node_modules/next/link.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/client/link.d.ts"
-      ],
-      "./node_modules/next/router.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/client/router.d.ts"
-      ],
-      "./node_modules/next/types/index.d.ts": [
-        "../node_modules/@types/react/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/http.d.ts",
-        "./node_modules/@types/node/querystring.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/ts3.7/index.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/next/dist/next-server/lib/utils.d.ts",
-        "./node_modules/next/dist/server/next.d.ts"
-      ],
       "./src/blog.tsx": [
         "./src/provider.tsx"
       ],
@@ -9284,7 +8634,8 @@
         "./src/provider.tsx"
       ],
       "./src/components/TableOfContents.tsx": [
-        "../node_modules/@chakra-ui/react/dist/types/index.d.ts"
+        "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
+        "../node_modules/@emotion/react/types/index.d.ts"
       ],
       "./src/components/Wrapper.tsx": [
         "../node_modules/@emotion/react/types/index.d.ts"
@@ -9309,7 +8660,7 @@
         "./src/components/Wrapper.tsx"
       ],
       "./src/components/support.ts": [
-        "../node_modules/@emotion/react/types/index.d.ts"
+        "../node_modules/@emotion/utils/types/index.d.ts"
       ],
       "./src/index.tsx": [
         "./src/blog.tsx",
@@ -9331,6 +8682,7 @@
       ],
       "./src/provider.tsx": [
         "../node_modules/@types/react/index.d.ts",
+        "../node_modules/baby-i-am-faded/dist/index.d.ts",
         "../node_modules/prism-react-renderer/index.d.ts",
         "./src/types.ts"
       ],
@@ -11411,12 +10763,6 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@emotion/cache/node_modules/@emotion/utils/types/index.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
       "../node_modules/@emotion/cache/types/index.d.ts": [
         "../node_modules/@emotion/cache/node_modules/@emotion/utils/types/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
@@ -11461,12 +10807,6 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@emotion/serialize/node_modules/@emotion/utils/types/index.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
       "../node_modules/@emotion/serialize/types/index.d.ts": [
         "../node_modules/@emotion/cache/node_modules/@emotion/utils/types/index.d.ts",
         "../node_modules/csstype/index.d.ts",
@@ -11487,6 +10827,12 @@
       "../node_modules/@emotion/styled/types/index.d.ts": [
         "../node_modules/@emotion/react/types/index.d.ts",
         "../node_modules/@emotion/styled/types/base.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/@emotion/utils/types/index.d.ts": [
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -11617,77 +10963,6 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@types/babel__core/index.d.ts": [
-        "../node_modules/@types/babel__generator/index.d.ts",
-        "../node_modules/@types/babel__template/index.d.ts",
-        "../node_modules/@types/babel__template/node_modules/@babel/parser/typings/babel-parser.d.ts",
-        "../node_modules/@types/babel__traverse/index.d.ts",
-        "../node_modules/@types/babel__traverse/node_modules/@babel/types/lib/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/babel__core/node_modules/@babel/parser/typings/babel-parser.d.ts": [
-        "../node_modules/@types/babel__traverse/node_modules/@babel/types/lib/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/babel__core/node_modules/@babel/types/lib/index.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/babel__generator/index.d.ts": [
-        "../node_modules/@types/babel__traverse/node_modules/@babel/types/lib/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/babel__generator/node_modules/@babel/types/lib/index.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/babel__template/index.d.ts": [
-        "../node_modules/@types/babel__template/node_modules/@babel/parser/typings/babel-parser.d.ts",
-        "../node_modules/@types/babel__traverse/node_modules/@babel/types/lib/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/babel__template/node_modules/@babel/parser/typings/babel-parser.d.ts": [
-        "../node_modules/@types/babel__traverse/node_modules/@babel/types/lib/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/babel__template/node_modules/@babel/types/lib/index.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/babel__traverse/index.d.ts": [
-        "../node_modules/@types/babel__traverse/node_modules/@babel/types/lib/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/babel__traverse/node_modules/@babel/types/lib/index.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
       "../node_modules/@types/chai/index.d.ts": [
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -11707,68 +10982,7 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@types/history/DOMUtils.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/history/LocationUtils.d.ts": [
-        "../node_modules/@types/history/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/history/PathUtils.d.ts": [
-        "../node_modules/@types/history/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/history/createBrowserHistory.d.ts": [
-        "../node_modules/@types/history/DOMUtils.d.ts",
-        "../node_modules/@types/history/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/history/createHashHistory.d.ts": [
-        "../node_modules/@types/history/DOMUtils.d.ts",
-        "../node_modules/@types/history/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/history/createMemoryHistory.d.ts": [
-        "../node_modules/@types/history/DOMUtils.d.ts",
-        "../node_modules/@types/history/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/history/index.d.ts": [
-        "../node_modules/@types/history/LocationUtils.d.ts",
-        "../node_modules/@types/history/PathUtils.d.ts",
-        "../node_modules/@types/history/createBrowserHistory.d.ts",
-        "../node_modules/@types/history/createHashHistory.d.ts",
-        "../node_modules/@types/history/createMemoryHistory.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/html-minifier-terser/index.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/is-function/index.d.ts": [
+      "../node_modules/@types/json-schema/index.d.ts": [
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -12105,13 +11319,6 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@types/npmlog/index.d.ts": [
-        "./node_modules/@types/node/events.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
       "../node_modules/@types/object-assign/index.d.ts": [
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -12137,68 +11344,6 @@
         "./node_modules/@types/node/util.d.ts"
       ],
       "../node_modules/@types/q/index.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/reach__router/index.d.ts": [
-        "../node_modules/@types/history/index.d.ts",
-        "../node_modules/@types/reach__router/node_modules/@types/react/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/reach__router/node_modules/@types/react/global.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/reach__router/node_modules/@types/react/index.d.ts": [
-        "../node_modules/@types/prop-types/index.d.ts",
-        "../node_modules/@types/reach__router/node_modules/@types/react/global.d.ts",
-        "../node_modules/@types/reach__router/node_modules/csstype/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/reach__router/node_modules/csstype/index.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/react-syntax-highlighter/index.d.ts": [
-        "../node_modules/@types/reach__router/node_modules/@types/react/index.d.ts",
-        "../node_modules/@types/react-syntax-highlighter/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/react-syntax-highlighter/node_modules/@types/react/index.d.ts": [
-        "../node_modules/@types/prop-types/index.d.ts",
-        "../node_modules/@types/reach__router/node_modules/csstype/index.d.ts",
-        "../node_modules/@types/react-syntax-highlighter/node_modules/@types/react/global.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/react-textarea-autosize/index.d.ts": [
-        "../node_modules/@types/reach__router/node_modules/@types/react/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/@types/react-textarea-autosize/node_modules/@types/react/index.d.ts": [
-        "../node_modules/@types/prop-types/index.d.ts",
-        "../node_modules/@types/reach__router/node_modules/csstype/index.d.ts",
-        "../node_modules/@types/react-textarea-autosize/node_modules/@types/react/global.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -12256,12 +11401,6 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@types/webpack-env/index.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
       "../node_modules/@types/webpack-sources/index.d.ts": [
         "../node_modules/@types/source-list-map/index.d.ts",
         "../node_modules/@types/webpack-sources/node_modules/source-map/source-map.d.ts",
@@ -12301,6 +11440,23 @@
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/baby-i-am-faded/dist/index.d.ts": [
+        "../node_modules/@emotion/react/types/index.d.ts",
+        "../node_modules/@emotion/serialize/types/index.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/chokidar/types/index.d.ts": [
+        "./node_modules/@types/node/events.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/ts3.7/index.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
       "../node_modules/css-box-model/src/index.d.ts": [
@@ -12951,6 +12107,262 @@
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/build/index.d.ts": [
+        "../node_modules/next/dist/next-server/server/api-utils.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/build/webpack/plugins/build-manifest-plugin.d.ts": [
+        "../node_modules/@types/webpack/index.d.ts",
+        "../node_modules/next/dist/lib/load-custom-routes.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/build/webpack/plugins/pages-manifest-plugin.d.ts": [
+        "../node_modules/@types/webpack/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/client/link.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/ts3.7/index.d.ts",
+        "./node_modules/@types/node/url.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/client/page-loader.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/next/dist/client/route-loader.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/client/route-loader.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/next/dist/build/webpack/plugins/build-manifest-plugin.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/client/router.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/next/dist/client/with-router.d.ts",
+        "../node_modules/next/dist/next-server/lib/router/router.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/querystring.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/ts3.7/index.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/client/with-router.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/next/dist/client/router.d.ts",
+        "../node_modules/next/dist/next-server/lib/utils.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/lib/load-custom-routes.d.ts": [
+        "../node_modules/next/dist/next-server/server/config.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/next-server/lib/head.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/next-server/lib/mitt.d.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/next-server/lib/router/router.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/next/dist/client/page-loader.d.ts",
+        "../node_modules/next/dist/next-server/lib/mitt.d.ts",
+        "../node_modules/next/dist/next-server/lib/utils.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/querystring.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/ts3.7/index.d.ts",
+        "./node_modules/@types/node/url.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/next-server/lib/router/utils/index.d.ts": [
+        "../node_modules/next/dist/next-server/lib/router/utils/is-dynamic.d.ts",
+        "../node_modules/next/dist/next-server/lib/router/utils/route-matcher.d.ts",
+        "../node_modules/next/dist/next-server/lib/router/utils/route-regex.d.ts",
+        "../node_modules/next/dist/next-server/lib/router/utils/sorted-routes.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/next-server/lib/router/utils/is-dynamic.d.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/next-server/lib/router/utils/route-matcher.d.ts": [
+        "../node_modules/next/dist/next-server/lib/router/utils/route-regex.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/next-server/lib/router/utils/route-regex.d.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/next-server/lib/router/utils/sorted-routes.d.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/next-server/lib/utils.d.ts": [
+        "../node_modules/@next/env/types/index.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/next/dist/next-server/lib/router/router.d.ts",
+        "../node_modules/next/dist/next-server/server/get-page-files.d.ts",
+        "../node_modules/next/dist/next-server/server/load-components.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/http.d.ts",
+        "./node_modules/@types/node/querystring.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/ts3.7/index.d.ts",
+        "./node_modules/@types/node/url.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/next-server/server/api-utils.d.ts": [
+        "../node_modules/next/dist/next-server/lib/utils.d.ts",
+        "../node_modules/next/dist/next-server/server/router.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/http.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/ts3.7/index.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/next-server/server/config.d.ts": [
+        "../node_modules/next/dist/lib/load-custom-routes.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/next-server/server/font-utils.d.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/next-server/server/get-page-files.d.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/next-server/server/load-components.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/next/dist/next-server/lib/utils.d.ts",
+        "../node_modules/next/dist/next-server/server/get-page-files.d.ts",
+        "../node_modules/next/types/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/next-server/server/next-server.d.ts": [
+        "../node_modules/next/dist/build/index.d.ts",
+        "../node_modules/next/dist/build/webpack/plugins/pages-manifest-plugin.d.ts",
+        "../node_modules/next/dist/lib/load-custom-routes.d.ts",
+        "../node_modules/next/dist/next-server/lib/router/utils/index.d.ts",
+        "../node_modules/next/dist/next-server/server/api-utils.d.ts",
+        "../node_modules/next/dist/next-server/server/config.d.ts",
+        "../node_modules/next/dist/next-server/server/font-utils.d.ts",
+        "../node_modules/next/dist/next-server/server/router.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/http.d.ts",
+        "./node_modules/@types/node/querystring.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/ts3.7/index.d.ts",
+        "./node_modules/@types/node/url.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/next-server/server/router.d.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/http.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/ts3.7/index.d.ts",
+        "./node_modules/@types/node/url.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/dist/server/next.d.ts": [
+        "../node_modules/next/dist/next-server/server/next-server.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/head.d.ts": [
+        "../node_modules/next/dist/next-server/lib/head.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/link.d.ts": [
+        "../node_modules/next/dist/client/link.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/router.d.ts": [
+        "../node_modules/next/dist/client/router.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/next/types/index.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/next/dist/next-server/lib/utils.d.ts",
+        "../node_modules/next/dist/server/next.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/http.d.ts",
+        "./node_modules/@types/node/querystring.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/ts3.7/index.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
       "../node_modules/popmotion/lib/animations/generators/decay.d.ts": [
@@ -13649,8 +13061,6 @@
       ]
     },
     "semanticDiagnosticsPerFile": [
-      "./node_modules/@emotion/react/types/index.d.ts",
-      "./node_modules/@types/json-schema/index.d.ts",
       "./node_modules/@types/node/async_hooks.d.ts",
       "./node_modules/@types/node/base.d.ts",
       "./node_modules/@types/node/buffer.d.ts",
@@ -13701,37 +13111,6 @@
       "./node_modules/@types/node/worker_threads.d.ts",
       "./node_modules/@types/node/zlib.d.ts",
       "./node_modules/chalk/index.d.ts",
-      "./node_modules/chokidar/types/index.d.ts",
-      "./node_modules/next/dist/build/index.d.ts",
-      "./node_modules/next/dist/build/webpack/plugins/build-manifest-plugin.d.ts",
-      "./node_modules/next/dist/build/webpack/plugins/pages-manifest-plugin.d.ts",
-      "./node_modules/next/dist/client/link.d.ts",
-      "./node_modules/next/dist/client/page-loader.d.ts",
-      "./node_modules/next/dist/client/route-loader.d.ts",
-      "./node_modules/next/dist/client/router.d.ts",
-      "./node_modules/next/dist/client/with-router.d.ts",
-      "./node_modules/next/dist/lib/load-custom-routes.d.ts",
-      "./node_modules/next/dist/next-server/lib/head.d.ts",
-      "./node_modules/next/dist/next-server/lib/mitt.d.ts",
-      "./node_modules/next/dist/next-server/lib/router/router.d.ts",
-      "./node_modules/next/dist/next-server/lib/router/utils/index.d.ts",
-      "./node_modules/next/dist/next-server/lib/router/utils/is-dynamic.d.ts",
-      "./node_modules/next/dist/next-server/lib/router/utils/route-matcher.d.ts",
-      "./node_modules/next/dist/next-server/lib/router/utils/route-regex.d.ts",
-      "./node_modules/next/dist/next-server/lib/router/utils/sorted-routes.d.ts",
-      "./node_modules/next/dist/next-server/lib/utils.d.ts",
-      "./node_modules/next/dist/next-server/server/api-utils.d.ts",
-      "./node_modules/next/dist/next-server/server/config.d.ts",
-      "./node_modules/next/dist/next-server/server/font-utils.d.ts",
-      "./node_modules/next/dist/next-server/server/get-page-files.d.ts",
-      "./node_modules/next/dist/next-server/server/load-components.d.ts",
-      "./node_modules/next/dist/next-server/server/next-server.d.ts",
-      "./node_modules/next/dist/next-server/server/router.d.ts",
-      "./node_modules/next/dist/server/next.d.ts",
-      "./node_modules/next/head.d.ts",
-      "./node_modules/next/link.d.ts",
-      "./node_modules/next/router.d.ts",
-      "./node_modules/next/types/index.d.ts",
       "./src/blog.tsx",
       "./src/components/BlogPosts.tsx",
       "./src/components/Code.tsx",
@@ -14014,16 +13393,15 @@
       "../node_modules/@chakra-ui/utils/dist/types/types.d.ts",
       "../node_modules/@chakra-ui/visually-hidden/dist/types/index.d.ts",
       "../node_modules/@chakra-ui/visually-hidden/dist/types/visually-hidden.d.ts",
-      "../node_modules/@emotion/cache/node_modules/@emotion/utils/types/index.d.ts",
       "../node_modules/@emotion/cache/types/index.d.ts",
       "../node_modules/@emotion/react/types/helper.d.ts",
       "../node_modules/@emotion/react/types/index.d.ts",
       "../node_modules/@emotion/react/types/jsx-namespace.d.ts",
       "../node_modules/@emotion/react/types/theming.d.ts",
-      "../node_modules/@emotion/serialize/node_modules/@emotion/utils/types/index.d.ts",
       "../node_modules/@emotion/serialize/types/index.d.ts",
       "../node_modules/@emotion/styled/types/base.d.ts",
       "../node_modules/@emotion/styled/types/index.d.ts",
+      "../node_modules/@emotion/utils/types/index.d.ts",
       "../node_modules/@next/env/types/index.d.ts",
       "../node_modules/@popperjs/core/index.d.ts",
       "../node_modules/@popperjs/core/lib/enums.d.ts",
@@ -14040,28 +13418,10 @@
       "../node_modules/@popperjs/core/lib/types.d.ts",
       "../node_modules/@popperjs/core/lib/utils/detectOverflow.d.ts",
       "../node_modules/@types/anymatch/index.d.ts",
-      "../node_modules/@types/babel__core/index.d.ts",
-      "../node_modules/@types/babel__core/node_modules/@babel/parser/typings/babel-parser.d.ts",
-      "../node_modules/@types/babel__core/node_modules/@babel/types/lib/index.d.ts",
-      "../node_modules/@types/babel__generator/index.d.ts",
-      "../node_modules/@types/babel__generator/node_modules/@babel/types/lib/index.d.ts",
-      "../node_modules/@types/babel__template/index.d.ts",
-      "../node_modules/@types/babel__template/node_modules/@babel/parser/typings/babel-parser.d.ts",
-      "../node_modules/@types/babel__template/node_modules/@babel/types/lib/index.d.ts",
-      "../node_modules/@types/babel__traverse/index.d.ts",
-      "../node_modules/@types/babel__traverse/node_modules/@babel/types/lib/index.d.ts",
       "../node_modules/@types/chai/index.d.ts",
       "../node_modules/@types/color-name/index.d.ts",
       "../node_modules/@types/hast/index.d.ts",
-      "../node_modules/@types/history/DOMUtils.d.ts",
-      "../node_modules/@types/history/LocationUtils.d.ts",
-      "../node_modules/@types/history/PathUtils.d.ts",
-      "../node_modules/@types/history/createBrowserHistory.d.ts",
-      "../node_modules/@types/history/createHashHistory.d.ts",
-      "../node_modules/@types/history/createMemoryHistory.d.ts",
-      "../node_modules/@types/history/index.d.ts",
-      "../node_modules/@types/html-minifier-terser/index.d.ts",
-      "../node_modules/@types/is-function/index.d.ts",
+      "../node_modules/@types/json-schema/index.d.ts",
       "../node_modules/@types/lodash.isequal/index.d.ts",
       "../node_modules/@types/lodash.mergewith/index.d.ts",
       "../node_modules/@types/lodash/ts3.1/common/array.d.ts",
@@ -14089,20 +13449,11 @@
       "../node_modules/@types/lodash/ts3.1/throttle.d.ts",
       "../node_modules/@types/mdast/index.d.ts",
       "../node_modules/@types/mocha/index.d.ts",
-      "../node_modules/@types/npmlog/index.d.ts",
       "../node_modules/@types/object-assign/index.d.ts",
       "../node_modules/@types/parse-json/index.d.ts",
       "../node_modules/@types/parse5/index.d.ts",
       "../node_modules/@types/prop-types/index.d.ts",
       "../node_modules/@types/q/index.d.ts",
-      "../node_modules/@types/reach__router/index.d.ts",
-      "../node_modules/@types/reach__router/node_modules/@types/react/global.d.ts",
-      "../node_modules/@types/reach__router/node_modules/@types/react/index.d.ts",
-      "../node_modules/@types/reach__router/node_modules/csstype/index.d.ts",
-      "../node_modules/@types/react-syntax-highlighter/index.d.ts",
-      "../node_modules/@types/react-syntax-highlighter/node_modules/@types/react/index.d.ts",
-      "../node_modules/@types/react-textarea-autosize/index.d.ts",
-      "../node_modules/@types/react-textarea-autosize/node_modules/@types/react/index.d.ts",
       "../node_modules/@types/react/global.d.ts",
       "../node_modules/@types/react/index.d.ts",
       "../node_modules/@types/source-list-map/index.d.ts",
@@ -14111,12 +13462,13 @@
       "../node_modules/@types/uglify-js/index.d.ts",
       "../node_modules/@types/unist/index.d.ts",
       "../node_modules/@types/warning/index.d.ts",
-      "../node_modules/@types/webpack-env/index.d.ts",
       "../node_modules/@types/webpack-sources/index.d.ts",
       "../node_modules/@types/webpack-sources/node_modules/source-map/source-map.d.ts",
       "../node_modules/@types/webpack/index.d.ts",
       "../node_modules/anymatch/index.d.ts",
       "../node_modules/await-to-js/dist/types/await-to-js.d.ts",
+      "../node_modules/baby-i-am-faded/dist/index.d.ts",
+      "../node_modules/chokidar/types/index.d.ts",
       "../node_modules/css-box-model/src/index.d.ts",
       "../node_modules/csstype/index.d.ts",
       "../node_modules/directory-tree/index.d.ts",
@@ -14189,6 +13541,36 @@
       "../node_modules/front-matter/index.d.ts",
       "../node_modules/get-git-config/dist/index.d.ts",
       "../node_modules/mdast-util-toc/types/index.d.ts",
+      "../node_modules/next/dist/build/index.d.ts",
+      "../node_modules/next/dist/build/webpack/plugins/build-manifest-plugin.d.ts",
+      "../node_modules/next/dist/build/webpack/plugins/pages-manifest-plugin.d.ts",
+      "../node_modules/next/dist/client/link.d.ts",
+      "../node_modules/next/dist/client/page-loader.d.ts",
+      "../node_modules/next/dist/client/route-loader.d.ts",
+      "../node_modules/next/dist/client/router.d.ts",
+      "../node_modules/next/dist/client/with-router.d.ts",
+      "../node_modules/next/dist/lib/load-custom-routes.d.ts",
+      "../node_modules/next/dist/next-server/lib/head.d.ts",
+      "../node_modules/next/dist/next-server/lib/mitt.d.ts",
+      "../node_modules/next/dist/next-server/lib/router/router.d.ts",
+      "../node_modules/next/dist/next-server/lib/router/utils/index.d.ts",
+      "../node_modules/next/dist/next-server/lib/router/utils/is-dynamic.d.ts",
+      "../node_modules/next/dist/next-server/lib/router/utils/route-matcher.d.ts",
+      "../node_modules/next/dist/next-server/lib/router/utils/route-regex.d.ts",
+      "../node_modules/next/dist/next-server/lib/router/utils/sorted-routes.d.ts",
+      "../node_modules/next/dist/next-server/lib/utils.d.ts",
+      "../node_modules/next/dist/next-server/server/api-utils.d.ts",
+      "../node_modules/next/dist/next-server/server/config.d.ts",
+      "../node_modules/next/dist/next-server/server/font-utils.d.ts",
+      "../node_modules/next/dist/next-server/server/get-page-files.d.ts",
+      "../node_modules/next/dist/next-server/server/load-components.d.ts",
+      "../node_modules/next/dist/next-server/server/next-server.d.ts",
+      "../node_modules/next/dist/next-server/server/router.d.ts",
+      "../node_modules/next/dist/server/next.d.ts",
+      "../node_modules/next/head.d.ts",
+      "../node_modules/next/link.d.ts",
+      "../node_modules/next/router.d.ts",
+      "../node_modules/next/types/index.d.ts",
       "../node_modules/popmotion/lib/animations/generators/decay.d.ts",
       "../node_modules/popmotion/lib/animations/generators/keyframes.d.ts",
       "../node_modules/popmotion/lib/animations/generators/spring.d.ts",
