@@ -5,6 +5,7 @@ import React, {
     ReactNode,
     ComponentType,
     useEffect,
+    useMemo,
 } from 'react'
 import MDXComponents from './components/mdx'
 import {
@@ -25,6 +26,7 @@ import { DokzTableOfContents } from './types'
 import NextHead from 'next/head'
 import { useRouter } from 'next/router'
 import { PropagatedThemeProvider } from './components/Wrapper'
+import { Faded } from 'baby-i-am-faded'
 
 export type DokzProviderProps = {
     children?: any
@@ -32,6 +34,10 @@ export type DokzProviderProps = {
     The logo displayed on the header nav bar
     */
     headerLogo?: ReactNode
+    /*
+    Enable website on mount animations
+    */
+    animate?: boolean
     /*
     The page fontSize
     */
@@ -119,6 +125,7 @@ const defaultDarkPrismTheme = {
 export const defaultDokzContext: DokzProviderProps = {
     initialColorMode: 'light',
     headTitlePrefix: '',
+    animate: false,
     branch: 'master',
     footer: null,
     headerLogo: (
@@ -133,7 +140,7 @@ export const defaultDokzContext: DokzProviderProps = {
     maxPageWidth: '1600px',
     bodyColor: { light: '#222', dark: 'rgba(255,255,255,.9)' },
     headingColor: { light: '#111', dark: 'rgba(255,255,255,1)' },
-    fontSize: ['16px', null, null, '18px'],
+    fontSize: '16px',
     fontFamily: `-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`,
     // fontFamily:
     //     '-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji',
@@ -145,6 +152,19 @@ const DokzContext = createContext(defaultDokzContext)
 export function useDokzConfig(): DokzProviderProps {
     const ctx = useContext(DokzContext)
     return ctx
+}
+
+export function useAnimationComponent() {
+    const { animate } = useDokzConfig()
+    const C = useMemo(() => {
+        if (animate) {
+            return Faded
+        }
+        return ({ cascade, ...rest }) => {
+            return <div {...rest} />
+        }
+    }, [animate])
+    return C
 }
 
 export function DokzProvider({ children, ...rest }: DokzProviderProps) {

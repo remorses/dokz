@@ -2,7 +2,10 @@
     "compilerOptions": {
         "esModuleInterop": true,
         "jsx": "react",
+        "declaration": true,
+        "skipLibCheck": true,
         "moduleResolution": "Node",
+        "strict": false,
         "target": "ES5",
         "outDir": "dist"
     }

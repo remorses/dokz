@@ -12,8 +12,9 @@ import {
 import { Stack, Flex } from '@chakra-ui/react'
 import merge from 'lodash/fp/merge'
 import { jsx } from '@emotion/react'
-import { useDokzConfig, TableOfContentsContext } from '../provider'
+import { useDokzConfig, TableOfContentsContext, useAnimationComponent } from '../provider'
 import NavBar from './NavBar'
+import { Faded } from 'baby-i-am-faded'
 import NextHead from 'next/head'
 import { SideNav } from './SideNav'
 import { Global, css } from '@emotion/react'
@@ -44,6 +45,7 @@ export function Wrapper(props) {
     const index = getMdxSidebarTree()
     const router = useRouter()
     const { colorMode } = useColorMode()
+    const Faded = useAnimationComponent()
     return (
         <PropagatedThemeProvider theme={theme}>
             <NextHead>
@@ -75,6 +77,7 @@ export function Wrapper(props) {
                         maxWidth={maxPageWidth}
                     >
                         <NavBar
+                            px='6'
                             className='dokz hiddenInPrint'
                             logo={headerLogo}
                             items={headerItems}
@@ -82,7 +85,6 @@ export function Wrapper(props) {
                             height={NAVBAR_H + 'px'}
                             // maxW={PAGE_MAX_W}
                             position='fixed'
-                            width='100%'
                             // mr='auto'
                             // top={0}
                             left={0}
@@ -92,6 +94,7 @@ export function Wrapper(props) {
                             css={css`
                                 -webkit-overflow-scrolling: touch;
                             `}
+                            pl='6'
                             className='dokz hiddenInPrint'
                             alignSelf='flex-start'
                             position='fixed'
@@ -117,7 +120,7 @@ export function Wrapper(props) {
                             mt={[NAVBAR_H + 'px']}
                         >
                             <Stack
-                                minHeight='100%'
+                                minHeight='100vh'
                                 className='dokz visibleInPrint mainContent'
                                 direction='column'
                                 align='stretch'
@@ -126,10 +129,21 @@ export function Wrapper(props) {
                                 // spacing='10px'
                                 flex='1'
                                 minW='0'
-                                borderRightWidth='1px'
-                                borderLeftWidth='1px'
+                                borderRightWidth={[
+                                    '0px',
+                                    null,
+                                    null,
+                                    null,
+                                    '1px',
+                                ]}
+                                borderLeftWidth={['0px', null, '1px']}
                             >
-                                <Stack spacing='2em' align='stretch'>
+                                <Stack
+                                    as={Faded}
+                                    cascade
+                                    spacing='2em'
+                                    align='stretch'
+                                >
                                     {props.children}
                                     <FooterButtons
                                         className='dokz hiddenInPrint'

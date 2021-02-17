@@ -8,19 +8,20 @@
     ],
     "scripts": {
         "build": "tsc",
+        "watch": "tsc -w",
         "publ": "yarn build && yarn publish"
     },
     "dependencies": {
         "color-scheme": "^1.0.1"
     },
     "peerDependencies": {
-        "@emotion/core": "^10.0.28",
+        "@emotion/react": "*",
         "next": "*",
         "react": "*",
         "react-dom": "*"
     },
     "devDependencies": {
-        "@emotion/core": "^10.0.28",
+        "@emotion/react": "^11.1.5",
         "react": "16.13.1",
         "react-dom": "16.13.1",
         "typescript": "^4.0.2"

@@ -58,6 +58,7 @@ export default function App(props) {
                     primary='#2D7FF9'
                 >
                     <DokzProvider
+                        animate
                         githubUrl='remorses/dokz'
                         branch='master'
                         docsRootPath='pages/docs'
@@ -96,7 +97,7 @@ export default function App(props) {
                         <Component {...pageProps} />
                     </DokzProvider>
                 </LandingProvider>
-                <PageEnterTransition />
+                {/* <PageEnterTransition /> */}
             </ChakraProvider>
         </Fragment>
     )

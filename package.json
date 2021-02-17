@@ -12,9 +12,10 @@
     "scripts": {
         "dev": "cd website && yarn dev",
         "build": "yarn --cwd dokz compile",
-        "watch": "rm -rf dokz/esm dokz/dist && yarn --cwd dokz tsc -w"
+        "watch": "ultra -r watch"
     },
     "devDependencies": {
-        "framer-motion": "^3.1.1"
+        "framer-motion": "^3.1.1",
+        "ultra-runner": "^3.9.0"
     }
 }

@@ -11,7 +11,12 @@ import {
 import orderBy from 'lodash/orderBy'
 import React, { ReactNode, useEffect } from 'react'
 import { ComponentLink } from './NavLink'
-import { SidebarOrdering, useDokzConfig } from '../provider'
+import {
+    SidebarOrdering,
+    useAnimationComponent,
+    useDokzConfig,
+} from '../provider'
+import { Faded } from 'baby-i-am-faded'
 import { useStorageState } from 'react-storage-hooks'
 import { formatTitle, findTreeInPath, DirectoryTree } from './support'
 
@@ -33,7 +38,7 @@ export const SideNav = ({ tree, ...rest }: SideNavProps) => {
         console.error(new Error(`sidenav tree is null`))
         tree = { name: '', children: [] }
     }
-
+    const Faded = useAnimationComponent()
     return (
         <Box
             // borderRightWidth='1px'
@@ -42,11 +47,10 @@ export const SideNav = ({ tree, ...rest }: SideNavProps) => {
             as='nav'
             aria-label='Main navigation'
             py='6'
-            px='4'
             pr='6'
             {...rest}
         >
-            <Box>
+            <Box as={Faded} cascade>
                 {tree.children.map((
                     x, // i map on children to exclude the `pages` or `docsRootPage` first node
                 ) => (
@@ -131,6 +135,7 @@ const NavTreeComponent = ({
     const w = 10
     const isFolder = !url
     const formattedTitle = title || formatTitle(name || '')
+    const Faded = useAnimationComponent()
     const subTree =
         children &&
         children.map((x) => {
@@ -149,12 +154,13 @@ const NavTreeComponent = ({
                 depth={depth}
                 title={formattedTitle}
                 subTree={subTree}
+                {...rest}
             />
         )
     }
     if (isFolder) {
         return (
-            <Stack spacing='0px'>
+            <Stack as={Faded} cascade spacing='0px' {...rest}>
                 <Box my='0.2em'>
                     {!hideDivider && <Divider />}
                     <Box
@@ -172,7 +178,7 @@ const NavTreeComponent = ({
         )
     }
     return (
-        <Stack spacing='0px'>
+        <Stack spacing='0px' {...rest}>
             <ComponentLink
                 opacity={0.8}
                 py='0.2em'

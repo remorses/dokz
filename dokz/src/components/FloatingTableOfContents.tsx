@@ -2,9 +2,10 @@ import { DokzTableOfContents } from '../types'
 import { Stack, Box, Link, Button } from '@chakra-ui/react'
 import React, { useState, useEffect } from 'react'
 import { StackProps } from '@chakra-ui/react'
+import { Faded } from 'baby-i-am-faded'
 import pick from 'lodash/pick'
 import parseGithubUrl from 'parse-github-url'
-import { useDokzConfig } from '../provider'
+import { useAnimationComponent, useDokzConfig } from '../provider'
 
 export function FloatingTableOfContents({
     table,
@@ -22,6 +23,7 @@ export function FloatingTableOfContents({
     if (!table) {
         return null
     }
+    const Faded = useAnimationComponent()
     return (
         <Stack
             spacing='1em'
@@ -30,6 +32,8 @@ export function FloatingTableOfContents({
             // lineHeight='2.2em'
             // fontWeight='medium'
             // borderLeftWidth='1px'
+            as={Faded}
+            cascade
             pl='20px'
             {...rest}
         >
@@ -56,10 +60,16 @@ export function FloatingTableOfContents({
     )
 }
 
-function TableItem({ children, depth, title, slug }: DokzTableOfContents) {
+function TableItem({
+    children,
+    depth,
+    title,
+    slug,
+    ...rest
+}: DokzTableOfContents) {
     const baseW = 20
     return (
-        <Stack>
+        <Stack {...rest}>
             <Box whiteSpace='nowrap' minH='1.6em'>
                 <Link href={slug}>{title}</Link>
             </Box>

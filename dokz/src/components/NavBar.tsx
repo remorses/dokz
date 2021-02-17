@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import { Faded } from 'baby-i-am-faded'
 import { Box, Flex, IconButton, Stack, useColorMode } from '@chakra-ui/react'
 import { jsx } from '@emotion/react'
 import { DiGithubBadge } from 'react-icons/di'
@@ -64,7 +65,7 @@ const NavBar = ({ logo, tree = null as any, items: navs, ...props }) => {
                 // height='60px'
                 justify='center'
             >
-                <Flex px='2' align='center' justify='space-between'>
+                <Flex align='center' justify='space-between'>
                     <Flex align='center' mr={5}>
                         {logo}
                     </Flex>
