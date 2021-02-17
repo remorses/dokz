@@ -18,7 +18,7 @@ module.exports = function (content) {
         const toInject = {
             editThisPagePath,
         }
-        console.log(editThisPagePath)
+        // console.log(editThisPagePath)
         const codeToInsert = `
     \n
     if (typeof window !== 'undefined') {

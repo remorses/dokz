@@ -1,0 +1,18 @@
+# Adding page transitions
+
+You can enable page transitions passing the `animate` prop to the provider
+
+```jsx
+import { DokzProvider } from 'dokz'
+import React from 'react'
+
+export default function App(props) {
+    const { Component, pageProps } = props
+    return (
+        <DokzProvider animate>
+            <Component {...pageProps} />
+            <PageEnterTransition hue={200} duration={500} />
+        </DokzProvider>
+    )
+}
+```

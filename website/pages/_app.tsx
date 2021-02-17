@@ -14,6 +14,7 @@ import { useRouter } from 'next/router'
 import lightPrismTheme from 'prism-react-renderer/themes/nightOwlLight'
 import darkPrismTheme from 'prism-react-renderer/themes/nightOwl'
 
+
 export default function App(props) {
     const { Component, pageProps } = props
     const router = useRouter()
@@ -57,6 +58,7 @@ export default function App(props) {
                     primary='#2D7FF9'
                 >
                     <DokzProvider
+                        animate
                         githubUrl='remorses/dokz'
                         branch='master'
                         docsRootPath='pages/docs'
@@ -95,6 +97,7 @@ export default function App(props) {
                         <Component {...pageProps} />
                     </DokzProvider>
                 </LandingProvider>
+                {/* <PageEnterTransition /> */}
             </ChakraProvider>
         </Fragment>
     )

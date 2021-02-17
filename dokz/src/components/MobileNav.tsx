@@ -53,7 +53,7 @@ const MobileNav = (props) => {
             >
                 <DrawerOverlay />
                 <DrawerContent height='100vh' overflowY='auto'>
-                    <DrawerBody p={0}>
+                    <DrawerBody pl='4'>
                         <SideNav fontSize='1em' {...props} />
                         <Box h='100px' />
                     </DrawerBody>

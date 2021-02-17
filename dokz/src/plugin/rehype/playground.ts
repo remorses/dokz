@@ -45,7 +45,7 @@ export const injectCodeToPlayground = () => (
     const importNodes = tree.children.filter((n: any) => n.type === 'import')
     const exportNodes = tree.children.filter((n: any) => n.type === 'export')
     const importedScopes = flatten<string>(importNodes.map(getImportsVariables))
-    const exportedScopes = flatten<string>(exportNodes.map(getExportsVariables)) // TODO exports not working
+    const exportedScopes = flatten<string>(exportNodes.map(getExportsVariables)) // TODO exports not working, migrate to es lexer
     // filter added to avoid throwing if an unexpected type is exported
     const scopes: string[] = [...importedScopes, ...exportedScopes].filter(
         Boolean,

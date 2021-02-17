@@ -25,11 +25,8 @@
     ],
     "scripts": {
         "compile": "tsc --incremental && tsc --module ESNext --outDir esm --incremental",
-        "build": "build-storybook -c .storybook -o public",
         "test": "NODE_ENV=test mocha --colors --exit",
-        "dev": "yarn compile && node dist",
-        "storybook": "start-storybook -p 6006",
-        "build-storybook": "build-storybook"
+        "watch": "rm -rf dokz/esm dokz/dist && yarn tsc -w"
     },
     "keywords": [],
     "author": "Tommaso De Rossi, morse <beats.by.morse@gmail.com>",
@@ -37,11 +34,6 @@
     "devDependencies": {
         "@babel/core": "^7.9.0",
         "@emotion/react": "latest",
-        "@storybook/addon-actions": "^5.3.17",
-        "@storybook/addon-links": "^5.3.17",
-        "@storybook/addons": "^5.3.17",
-        "@storybook/preset-typescript": "^3.0.0",
-        "@storybook/react": "^5.3.17",
         "@types/chai": "^4.2.11",
         "@types/lodash": "^4.14.149",
         "@types/mocha": "^5.2.7",
@@ -56,13 +48,13 @@
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "sucrase": "^3.12.1",
-        "ts-loader": "^6.2.2",
         "typescript": "^3.8.3"
     },
     "peerDependencies": {
         "@chakra-ui/react": "*",
         "@emotion/react": "*",
         "framer-motion": "*",
+        "remark-mdx": "*",
         "next": "*",
         "react": "*",
         "react-dom": "*"
@@ -74,23 +66,18 @@
         "@emotion/styled": "^11.0.0",
         "@mdx-js/loader": "^1.5.8",
         "@mdx-js/react": "^1.5.8",
-        "@next/mdx": "^9.3.4",
         "@philpl/buble": "^0.19.7",
-        "@types/mdast": "^3.0.3",
         "await-to-js": "^2.1.1",
         "chalk": "^4.1.0",
         "chokidar": "^3.4.1",
-        "debounce": "^1.2.0",
+        "baby-i-am-faded": "^2.0.1",
         "directory-tree": "^2.2.4",
         "front-matter": "^3.1.0",
         "get-git-config": "^0.0.4",
-        "github-slugger": "^1.3.0",
         "hast-util-to-string": "^1.0.3",
         "js-string-escape": "^1.0.1",
         "jsx-ast-utils": "^2.3.0",
         "lodash": "^4.17.15",
-        "mdast": "^3.0.0",
-        "mdast-util-to-string": "^1.1.0",
         "mdast-util-toc": "^5.0.3",
         "parse-github-url": "^1.0.2",
         "prettier": "^2.0.5",
@@ -106,7 +93,6 @@
         "remark-mdx-metadata": "^1.0.1",
         "remark-slug": "^6.0.0",
         "strip-indent": "^3.0.0",
-        "unist-util-is": "^4.0.2",
         "unist-util-visit": "^2.0.2",
         "yaml": "^1.10.0"
     }

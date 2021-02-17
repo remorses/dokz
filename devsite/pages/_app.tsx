@@ -18,6 +18,7 @@ export default function App(props) {
             </Head>
             <ChakraProvider>
                 <DokzProvider
+                    animate
                     // playgroundScope={{...chackra}}
                     sidebarOrdering={order}
                 >

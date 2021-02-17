@@ -38,9 +38,6 @@ export const withMdx = (pluginOptions: Options = {}) => (
                         loader: '@mdx-js/loader',
                         options: mdxOptions,
                     },
-                    // {
-                    //     loader: require.resolve('./mdxLoader'),
-                    // },
                 ],
             })
 

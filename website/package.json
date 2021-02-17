@@ -17,6 +17,7 @@
         "mini-graphiql": "^1.0.4",
         "next": "^10.0.4",
         "next-images": "^1.6.2",
+        "page-enter-transition": "*",
         "next-seo": "^4.17.0",
         "next-transpile-modules": "^6.0.0",
         "react": "^16.13.1",
