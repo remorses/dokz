@@ -1,7 +1,7 @@
 import { DokzTableOfContents } from '../types'
-import { Stack, Box, Link, Button } from '@chakra-ui/core'
+import { Stack, Box, Link, Button } from '@chakra-ui/react'
 import React, { useState, useEffect } from 'react'
-import { StackProps } from '@chakra-ui/core'
+import { StackProps } from '@chakra-ui/react'
 import pick from 'lodash/pick'
 import parseGithubUrl from 'parse-github-url'
 import { useDokzConfig } from '../provider'
@@ -60,7 +60,7 @@ function TableItem({ children, depth, title, slug }: DokzTableOfContents) {
     const baseW = 20
     return (
         <Stack>
-            <Box isTruncated minH='1.6em'>
+            <Box whiteSpace='nowrap' minH='1.6em'>
                 <Link href={slug}>{title}</Link>
             </Box>
             <Stack ml={baseW * depth + 'px'}>

@@ -4,9 +4,17 @@ import React, {
     useContext,
     ReactNode,
     ComponentType,
+    useEffect,
 } from 'react'
 import MDXComponents from './components/mdx'
-import { ColorModeProvider, Box } from '@chakra-ui/core'
+import {
+    ColorModeProvider,
+    Box,
+    CSSReset,
+    GlobalStyle,
+    theme,
+    ThemeProvider,
+} from '@chakra-ui/react'
 
 import { PrismTheme } from 'prism-react-renderer'
 // import lightTheme from 'prism-react-renderer/themes/nightOwlLight'
@@ -14,7 +22,9 @@ import darkPrismTheme from 'prism-react-renderer/themes/oceanicNext'
 import { GithubLink, ColorModeSwitch } from './components/NavBar'
 import { Arrow, ArrowEmpty } from './components/icons'
 import { DokzTableOfContents } from './types'
-import { Global } from '@emotion/core'
+import NextHead from 'next/head'
+import { useRouter } from 'next/router'
+import { PropagatedThemeProvider } from './components/Wrapper'
 
 export type DokzProviderProps = {
     children?: any
@@ -34,6 +44,10 @@ export type DokzProviderProps = {
     The root folder of your docs documents, hides the outer folders from the sidenav
     */
     docsRootPath?: string
+    /*
+    The <title/> in <head/> prefix
+    */
+    headTitlePrefix?: string
     /*
     The icon used to prefix a list item inside <ul> or <ol>
     */
@@ -104,6 +118,7 @@ const defaultDarkPrismTheme = {
 
 export const defaultDokzContext: DokzProviderProps = {
     initialColorMode: 'light',
+    headTitlePrefix: '',
     branch: 'master',
     footer: null,
     headerLogo: (
@@ -135,17 +150,14 @@ export function useDokzConfig(): DokzProviderProps {
 export function DokzProvider({ children, ...rest }: DokzProviderProps) {
     const ctx = { ...defaultDokzContext, ...rest }
     const { mdxComponents: userMDXComponents = {}, initialColorMode } = ctx
+    useRouterScroll()
     return (
-        // TODO merge configs
         <DokzContext.Provider value={ctx}>
-            
-            <ColorModeProvider value={initialColorMode}>
-                <MDXProvider
-                    components={{ ...MDXComponents, ...userMDXComponents }}
-                >
-                    {children}
-                </MDXProvider>
-            </ColorModeProvider>
+            <MDXProvider
+                components={{ ...MDXComponents, ...userMDXComponents }}
+            >
+                {children}
+            </MDXProvider>
         </DokzContext.Provider>
     )
 }
@@ -160,3 +172,29 @@ const defaultTableOfContents: DokzTableOfContents = {
 export const TableOfContentsContext = createContext({
     tableOfContents: defaultTableOfContents,
 })
+
+function useRouterScroll({
+    behavior = 'smooth' as ScrollBehavior,
+    left = 0,
+    top = 0,
+} = {}) {
+    const router = useRouter()
+    useEffect(() => {
+        // Scroll to given coordinates when router finishes navigating
+        // This fixes an inconsistent behaviour between `<Link/>` and `next/router`
+        // See https://github.com/vercel/next.js/issues/3249
+        const handleRouteChangeComplete = () => {
+            if (typeof document !== 'undefined') {
+                document.body.scrollTop = document.documentElement.scrollTop = 0
+            }
+        }
+
+        router.events.on('routeChangeComplete', handleRouteChangeComplete)
+
+        // If the component is unmounted, unsubscribe from the event
+        return () => {
+            router.events.off('routeChangeComplete', handleRouteChangeComplete)
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [behavior, left, top])
+}

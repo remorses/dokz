@@ -8,14 +8,15 @@ import {
     useTheme,
     theme,
     Button,
-} from '@chakra-ui/core'
-import { Stack, Flex } from 'layout-kit-react'
+} from '@chakra-ui/react'
+import { Stack, Flex } from '@chakra-ui/react'
 import merge from 'lodash/fp/merge'
-import { jsx } from '@emotion/core'
+import { jsx } from '@emotion/react'
 import { useDokzConfig, TableOfContentsContext } from '../provider'
 import NavBar from './NavBar'
+import NextHead from 'next/head'
 import { SideNav } from './SideNav'
-import { Global, css } from '@emotion/core'
+import { Global, css } from '@emotion/react'
 import { FloatingTableOfContents } from './FloatingTableOfContents'
 import { Fragment, useMemo } from 'react'
 import { globalStyles, getMdxSidebarTree } from './support'
@@ -28,7 +29,7 @@ const TABLE_OF_C_W = 200
 const NAVBAR_H = 62
 
 export function Wrapper(props) {
-    const { tableOfContents } = props.meta || {}
+    const { tableOfContents, name, ...rest } = props.meta || {}
     const {
         footer,
         headerLogo,
@@ -38,14 +39,23 @@ export function Wrapper(props) {
         fontSize,
         fontWeight,
         fontFamily,
+        headTitlePrefix = '',
     } = useDokzConfig()
     const index = getMdxSidebarTree()
     const router = useRouter()
     const { colorMode } = useColorMode()
     return (
         <PropagatedThemeProvider theme={theme}>
+            <NextHead>
+                {name && (
+                    <title>
+                        {headTitlePrefix}
+                        {name}
+                    </title>
+                )}
+            </NextHead>
             <TableOfContentsContext.Provider value={{ tableOfContents }}>
-                <CSSReset />
+                {/* <CSSReset /> */}
                 <Global styles={globalStyles} />
                 <Stack
                     className='dokz visibleInPrint noMarginInPrint'
@@ -111,7 +121,7 @@ export function Wrapper(props) {
                                 className='dokz visibleInPrint mainContent'
                                 direction='column'
                                 align='stretch'
-                                overflow='auto'
+                                overflowY='visible'
                                 px={['10px', null, '20px', '30px']}
                                 // spacing='10px'
                                 flex='1'
@@ -143,6 +153,7 @@ export function Wrapper(props) {
                                 height='auto'
                                 display={['none', null, null, null, 'block']}
                                 pt='20px'
+                                overflowX='visible'
                                 opacity={0.8}
                                 table={tableOfContents}
                             />

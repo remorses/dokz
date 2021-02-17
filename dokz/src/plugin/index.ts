@@ -13,6 +13,7 @@ import { generateTableOfContents } from './generateTableOfContents'
 import { getMdxFilesIndex } from './getMdxFilesIndex'
 import { injectCodeToPlayground } from './rehype/playground'
 import { withMdx } from './withMdx'
+import { formatTitle } from '../components/support'
 
 const EXTENSIONS_TO_WATCH = ['.mdx', '.md']
 
@@ -50,7 +51,9 @@ export function withDokz(nextConfig = {} as any) {
                 slug,
                 () => (tree, vfile) => {
                     const tableOfContents = generateTableOfContents(tree)
-                    const { cwd, contents, history, data } = vfile
+                    // console.log(vfile)
+                    const { cwd, contents, history = [], data } = vfile
+                    const filePath: string = history[0] || ''
                     if (process.env.DEBUG) {
                         console.log('frontmatter', data)
                     }
@@ -58,6 +61,9 @@ export function withDokz(nextConfig = {} as any) {
                         addMeta({
                             meta: {
                                 // lastEdited: `${new Date().toISOString()}`,
+                                name: formatTitle(
+                                    filePath.split('/').slice(-1)[0] || '',
+                                ),
                                 ...data,
                                 tableOfContents,
                             },

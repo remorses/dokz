@@ -1,11 +1,11 @@
-import { ColorModeProvider, useColorMode } from '@chakra-ui/core'
+import { ColorModeProvider, useColorMode } from '@chakra-ui/react'
 import { MDXProvider } from '@mdx-js/react'
 import omit from 'lodash/fp/omit'
 import React, { createContext, useContext, ReactNode } from 'react'
 import MDXComponents from './components/mdx'
 import { WrapperBlog, BaseWrapperBlog } from './components/WrapperBlog'
 import { defaultDokzContext, DokzProviderProps } from './provider'
-import { Stack, Box, Flex } from 'layout-kit-react'
+import { Stack, Box, Flex } from '@chakra-ui/react'
 import {
     getMdxSidebarTree,
     findTreeInPath,
@@ -44,13 +44,11 @@ export function DokzBlogProvider({ children, ...rest }: DokzBlogProviderProps) {
     const { mdxComponents: userMDXComponents = {}, initialColorMode } = ctx
     return (
         <DokzBlogContext.Provider value={ctx}>
-            <ColorModeProvider value={initialColorMode}>
-                <MDXProvider
-                    components={{ ...blogMDXComponents, ...userMDXComponents }}
-                >
-                    {children}
-                </MDXProvider>
-            </ColorModeProvider>
+            <MDXProvider
+                components={{ ...blogMDXComponents, ...userMDXComponents }}
+            >
+                {children}
+            </MDXProvider>
         </DokzBlogContext.Provider>
     )
 }

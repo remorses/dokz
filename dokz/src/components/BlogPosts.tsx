@@ -1,5 +1,6 @@
-import { useColorMode } from '@chakra-ui/core'
-import { Box, Flex, Stack } from 'layout-kit-react'
+import { useColorMode } from '@chakra-ui/react'
+import { Box, Flex, Stack } from '@chakra-ui/react'
+import Router from 'next/router';
 import React, { ReactNode } from 'react'
 import { useDokzBlogConfig } from '../blog'
 import { DateIcon } from './icons'
@@ -104,6 +105,10 @@ export const BlogPostCard = ({ title, date, url, description, ...rest }) => {
             // borderWidth='1px'
             // @ts-ignore
             href={url}
+            onClick={(ev) => {
+                ev.preventDefault();
+                Router.push(url);
+            }}
             overflow='hidden'
             h='auto'
             p='0'
@@ -138,7 +143,7 @@ export const BlogPostCard = ({ title, date, url, description, ...rest }) => {
                     opacity={0.6}
                     // fontWeight='400'
                 >
-                    <Box size='0.9em' as={DateIcon} />
+                    <Box boxSize='0.9em' as={DateIcon} />
                     <Box>{date || 'Unknown publishing date'}</Box>
                 </Stack>
             </Stack>

@@ -1,11 +1,12 @@
 import { DokzProvider, GithubLink, ColorModeSwitch } from 'dokz'
 import React, { Fragment } from 'react'
 import Head from 'next/head'
+import { ChakraProvider } from '@chakra-ui/react'
 
 export default function App(props) {
     const { Component, pageProps } = props
     return (
-        <Fragment>
+        <ChakraProvider resetCSS>
             <Head>
                 <link
                     href='https://fonts.googleapis.com/css?family=Fira+Code'
@@ -30,6 +31,6 @@ export default function App(props) {
             >
                 <Component {...pageProps} />
             </DokzProvider>
-        </Fragment>
+        </ChakraProvider>
     )
 }

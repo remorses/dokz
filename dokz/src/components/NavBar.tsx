@@ -1,23 +1,13 @@
 /** @jsx jsx */
-import {
-    Box,
-    Flex,
-    Icon,
-    Input,
-    InputGroup,
-    InputLeftElement,
-    IconButton,
-    useColorMode,
-    PseudoBox,
-    Stack,
-} from '@chakra-ui/core'
-import { jsx, css } from '@emotion/core'
+import { Box, Flex, IconButton, Stack, useColorMode } from '@chakra-ui/react'
+import { jsx } from '@emotion/react'
 import { DiGithubBadge } from 'react-icons/di'
-import MobileNav from './MobileNav'
+import { FiMoon, FiSun } from 'react-icons/fi'
 import { useDokzConfig } from '../provider'
+import MobileNav from './MobileNav'
 
 export const GithubLink = ({ url = '', ...rest }: any) => (
-    <PseudoBox
+    <Box
         as='a'
         href={url}
         rel='noopener noreferrer'
@@ -31,8 +21,8 @@ export const GithubLink = ({ url = '', ...rest }: any) => (
         }}
         {...rest}
     >
-        <Box as={DiGithubBadge} size='8' color='current' />
-    </PseudoBox>
+        <Box as={DiGithubBadge} boxSize='8' color='current' />
+    </Box>
 )
 
 export const ColorModeSwitch = ({ ...rest }) => {
@@ -47,7 +37,7 @@ export const ColorModeSwitch = ({ ...rest }) => {
                 colorMode === 'light' ? 'dark' : 'light'
             } mode`}
             onClick={toggleColorMode}
-            icon={colorMode === 'light' ? 'moon' : 'sun'}
+            icon={colorMode === 'light' ? <FiMoon /> : <FiSun />}
             {...rest}
         />
     )
@@ -74,7 +64,7 @@ const NavBar = ({ logo, tree = null as any, items: navs, ...props }) => {
                 // height='60px'
                 justify='center'
             >
-                <Flex px='2' size='100%' align='center' justify='space-between'>
+                <Flex px='2' align='center' justify='space-between'>
                     <Flex align='center' mr={5}>
                         {logo}
                     </Flex>

@@ -1,5 +1,6 @@
 export const CODE_FONT = `'Fira Code',SFMono-Regular,Menlo,Monaco,"Liberation Mono","Courier New",monospace,mono`
-import { css } from '@emotion/core'
+import startCase from 'lodash/startCase'
+import { css } from '@emotion/react'
 
 const cssForPdfRendering = css`
     @media print {
@@ -60,15 +61,15 @@ export const globalStyles = css`
         box-sizing: border-box;
     }
     html {
-        overflow: hidden;
         height: 100%;
     }
     #__next {
         min-height: 100%;
+        overflow-x: hidden;
     }
     body {
         height: 100%;
-        overflow: auto;
+        overflow-y: scroll;
         scroll-behavior: smooth;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -96,12 +97,7 @@ export function getMdxSidebarTree(): DirectoryTree {
 }
 
 export function formatTitle(name: string) {
-    return capitalizeFirstLetter(
-        name
-            .replace(/_/g, ' ')
-            .replace(/-/g, ' ')
-            .replace(/\.mdx?/, ''),
-    )
+    return capitalizeFirstLetter(startCase(name.replace(/\.mdx?/, '')))
 }
 
 function capitalizeFirstLetter(string) {
@@ -148,7 +144,7 @@ export function findSubtreeInPathByUrl(
     }
     for (let i = 0; i < tree.children.length; i++) {
         let child = tree.children[i]
-        if (child.url === url) {
+        if (child.url && child.url.replace(/\/$/, '') === url) {
             return {
                 previous: tree.children[i - 1],
                 current: tree,

@@ -7,9 +7,9 @@ name: Adding to an existing website
 First you have to install the dependencies
 
 ```bash
-npm install dokz @emotion/core @chakra-ui/core emotion-theming @emotion/styled
+npm install dokz @emotion/react @chakra-ui/react @emotion/styled
 # or
-yarn add dokz @emotion/core @chakra-ui/core emotion-theming @emotion/styled
+yarn add dokz @emotion/react @chakra-ui/react @emotion/styled
 ```
 
 Add the dokz provider to the main nextjs `_app.jsx` component
@@ -22,15 +22,18 @@ In this example i am also using `docsRootPath='pages/docs'` to hide other pages 
 // _app.jsx
 import { DokzProvider } from 'dokz'
 import { useRouter } from 'next/router'
+import { ChakraProvider } from '@chakra-ui/react'
 
 export default function App(props) {
     const { Component, pageProps } = props
     const { pathname } = useRouter()
     if (pathname.startsWith('/docs')) {
         return (
-            <DokzProvider docsRootPath='pages/docs'>
-                <Component {...pageProps} />
-            </DokzProvider>
+            <ChakraProvider resetCSS>
+                <DokzProvider docsRootPath='pages/docs'>
+                    <Component {...pageProps} />
+                </DokzProvider>
+            </ChakraProvider>
         )
     }
     return <Component {...pageProps} />
@@ -46,5 +49,3 @@ module.exports = withDokz()
 ```
 
 Now you can add MDX documents in the `pages/docs` directory and live preview them at `http://localhost:3000/docs`
-
-

@@ -33,9 +33,9 @@ After the installation is complete run `npm run dev` to start the development se
 You can also install `dokz` in an existing nextjs application:
 
 ```bash
-npm install dokz @emotion/core @chakra-ui/core emotion-theming @emotion/styled
+npm install dokz @emotion/react @chakra-ui/react @emotion/styled framer-motion
 # or
-yarn add dokz @emotion/core @chakra-ui/core
+yarn add dokz @emotion/react @emotion/styled @chakra-ui/react framer-motion
 ```
 
 Add the dokz provider to the main nextjs entry point
@@ -43,14 +43,17 @@ Add the dokz provider to the main nextjs entry point
 ```jsx
 // _app.jsx
 import { DokzProvider } from 'dokz'
+import { ChakraProvider } from '@chakra-ui/react'
 import React from 'react'
 
 export default function App(props) {
     const { Component, pageProps } = props
     return (
-        <DokzProvider headerLogo={<img src='/logo.svg' width='100px' />}>
-            <Component {...pageProps} />
-        </DokzProvider>
+        <ChakraProvider resetCSS>
+            <DokzProvider headerLogo={<img src='/logo.svg' width='100px' />}>
+                <Component {...pageProps} />
+            </DokzProvider>
+        </ChakraProvider>
     )
 }
 ```

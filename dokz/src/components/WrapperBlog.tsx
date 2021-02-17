@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { Box, CSSReset, theme, useColorMode } from '@chakra-ui/core'
-import { Global, jsx } from '@emotion/core'
-import { Flex, Stack } from 'layout-kit-react'
+import { Box, CSSReset, theme, useColorMode } from '@chakra-ui/react'
+import { Global, jsx } from '@emotion/react'
+import { Flex, Stack } from '@chakra-ui/react'
 import { useDokzBlogConfig } from '../blog'
 import NavBar from './NavBar'
 import { SideNav } from './SideNav'
@@ -10,19 +10,28 @@ import { FloatingTableOfContents } from './FloatingTableOfContents'
 import { PropagatedThemeProvider } from './Wrapper'
 import { DateIcon } from './icons'
 import { TableOfContentsContext } from '../provider'
+import NextHead from 'next/head'
 
 export function WrapperBlog(props) {
     const {
         name: title = 'Add a `name` to the document frontmatter',
         date = 'Add a `date` to the document frontmatter',
     } = props.meta || {}
-    const { footer } = useDokzBlogConfig()
+    const { footer, headTitlePrefix } = useDokzBlogConfig()
 
     return (
         <BaseWrapperBlog {...props}>
+            <NextHead>
+                {title && (
+                    <title>
+                        {headTitlePrefix}
+                        {title}
+                    </title>
+                )}
+            </NextHead>
             {/* TODO add social links */}
             <Box height={['40px', null, '40px']} />
-            <Stack spacing='2em' direction='column' width='100%' maxW='800px'>
+            <Stack spacing='2em' direction='column' width='100%' maxW='800px' align='stretch'>
                 <Stack spacing='6' align='center'>
                     <Box
                         as='h1'
@@ -40,7 +49,7 @@ export function WrapperBlog(props) {
                         opacity={0.5}
                         // fontWeight='400'
                     >
-                        <Box size='0.8em' as={DateIcon} />
+                        <Box boxSize='0.8em' as={DateIcon} />
                         <Box fontWeight='500'>{date}</Box>
                     </Stack>
                 </Stack>
@@ -69,7 +78,7 @@ export const BaseWrapperBlog = ({ children, ...rest }) => {
     return (
         <PropagatedThemeProvider theme={theme}>
             <TableOfContentsContext.Provider value={{ tableOfContents }}>
-                <CSSReset />
+                {/* <CSSReset /> */}
                 <Global styles={globalStyles} />
                 <Stack
                     className='dokz visibleInPrint noMarginInPrint'

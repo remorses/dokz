@@ -1,8 +1,9 @@
-import { Stack, Box } from 'layout-kit-react'
-import { jsx, css } from '@emotion/core'
+// @jsx jsx
+import { Stack, Box, useColorMode } from '@chakra-ui/react'
+import { jsx, css } from '@emotion/react'
 jsx
 import NextLink from 'next/link'
-import { Link } from '@chakra-ui/core'
+import { Link } from '@chakra-ui/react'
 import React from 'react'
 import { useDokzConfig } from '../provider'
 import { getMdxSidebarTree, findSubtreeInPathByUrl } from './support'
@@ -28,9 +29,8 @@ export const FooterButtons = ({ ...rest }) => {
                     w='100%'
                 />
             ) : (
-                <Box w='100%' />
+                <Box flex='1' />
             )}
-            {/* <Box flex='1' /> */}
             {next?.url ? (
                 <Button
                     title={next?.title}
@@ -39,17 +39,18 @@ export const FooterButtons = ({ ...rest }) => {
                     w='100%'
                 />
             ) : (
-                <Box w='100%' />
+                <Box flex='1' />
             )}
         </Stack>
     )
 }
 
 const Button = ({ href = '', title, type, ...rest }) => {
+    const { colorMode } = useColorMode()
     const arrow = (
         <Box
             transform={type === 'next' ? 'none' : 'scale(-1, 1)'}
-            size='1.2em'
+            boxSize='1.2em'
             as={Arrow}
         />
     )
@@ -58,14 +59,16 @@ const Button = ({ href = '', title, type, ...rest }) => {
             <Stack
                 align={type === 'next' ? 'flex-end' : 'flex-start'}
                 spacing='2'
+                flex='1'
                 shadow='sm'
                 borderWidth='1px'
                 borderRadius='md'
+                borderColor={{ dark: 'gary.700', light: 'gray.200' }[colorMode]}
                 px='6'
                 py='4'
                 as='a'
                 fontWeight='medium'
-                transition='box-shadow 0.3s'
+                // transition='box-shadow 0.3s'
                 css={css`
                     :hover {
                         box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);

@@ -1,8 +1,8 @@
 import { DokzTableOfContents } from '../types'
-import { Stack, Box } from '@chakra-ui/core'
+import { Stack, Box } from '@chakra-ui/react'
 import { Link } from './Link'
 import React, { createContext, useContext } from 'react'
-import { StackProps } from '@chakra-ui/core'
+import { StackProps } from '@chakra-ui/react'
 import { TableOfContentsContext } from '../provider'
 
 export function TableOfContents({ ...rest }: StackProps) {

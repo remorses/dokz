@@ -6,12 +6,12 @@ import {
     DrawerOverlay,
     DrawerContent,
     Stack,
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 import React, { useEffect } from 'react'
 import { MdDehaze } from 'react-icons/md'
 import { SideNav } from './SideNav'
 import { useRouter } from 'next/router'
-import { Box } from 'layout-kit-react'
+import { Box } from '@chakra-ui/react'
 
 const useRouteChanged = (callback) => {
     const router = useRouter()
@@ -41,7 +41,7 @@ const MobileNav = (props) => {
                 aria-label='Navigation Menu'
                 fontSize='30px'
                 variant='ghost'
-                icon={MdDehaze}
+                icon={<MdDehaze />}
                 onClick={onToggle}
                 marginRight='-16px'
             />

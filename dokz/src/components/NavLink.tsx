@@ -1,4 +1,4 @@
-import { Box, PseudoBox, useColorMode } from '@chakra-ui/core'
+import { Box, useColorMode } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import React, { cloneElement, forwardRef } from 'react'
@@ -31,7 +31,7 @@ export const SideNavLink = forwardRef(
         const { colorMode } = useColorMode()
         const color = { light: 'gray.700', dark: 'whiteAlpha.700' }
         return (
-            <PseudoBox
+            <Box
                 ref={ref}
                 as='a'
                 mx={-2}
@@ -50,7 +50,7 @@ export const SideNavLink = forwardRef(
             >
                 {icon && cloneElement(icon, { mr: 3 })}
                 <Box>{children}</Box>
-            </PseudoBox>
+            </Box>
         )
     },
 )

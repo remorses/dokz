@@ -18,14 +18,4 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: cd create-dokz-app && yarn
       # - run: yarn test
-      - run: cd create-dokz-app && yarn release
-      - name: Bump version
-        uses: remorses/bump-version@js
-        with:
-          version_file: create-dokz-app/VERSION
-          prefix: create-dokz-app
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: cd create-dokz-app && yarn publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
+      
