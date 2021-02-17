@@ -158,6 +158,7 @@ export function useAnimationComponent() {
     const { animate } = useDokzConfig()
     const C = useMemo(() => {
         if (animate) {
+            Faded.defaultProps = { damping: 0.18 }
             return Faded
         }
         return ({ cascade, ...rest }) => {
