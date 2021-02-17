@@ -13,7 +13,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import lightPrismTheme from 'prism-react-renderer/themes/nightOwlLight'
 import darkPrismTheme from 'prism-react-renderer/themes/nightOwl'
-import { PageEnterTransition } from 'page-enter-transition/src'
+
 
 export default function App(props) {
     const { Component, pageProps } = props
