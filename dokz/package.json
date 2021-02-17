@@ -25,11 +25,8 @@
     ],
     "scripts": {
         "compile": "tsc --incremental && tsc --module ESNext --outDir esm --incremental",
-        "build": "build-storybook -c .storybook -o public",
         "test": "NODE_ENV=test mocha --colors --exit",
-        "watch": "rm -rf dokz/esm dokz/dist && yarn tsc -w",
-        "storybook": "start-storybook -p 6006",
-        "build-storybook": "build-storybook"
+        "watch": "rm -rf dokz/esm dokz/dist && yarn tsc -w"
     },
     "keywords": [],
     "author": "Tommaso De Rossi, morse <beats.by.morse@gmail.com>",
