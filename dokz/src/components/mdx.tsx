@@ -194,6 +194,7 @@ const MDXComponents = {
             <Box
                 ml={(!isOrdered ? '1em' : '0') + ' !important'}
                 as='li'
+                listStyleType={isOrdered ? 'inherit' : 'none'}
                 my='0.8em'
             >
                 {/* TODO use primary color to add some more style */}
