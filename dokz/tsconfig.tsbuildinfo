@@ -2712,13 +2712,13 @@
         "affectsGlobalScope": false
       },
       "./src/components/Wrapper.tsx": {
-        "version": "cbbcf21f826888953e2096c52cbee26a4538f4fccfcbecee7e60a1183df5dbc3",
+        "version": "5588065d7a74e088fc34d276da05b984a127d5d6e9688f1824b3386ef966bfa2",
         "signature": "cf9983079f248007bbb97cfd46f18777e54e0bf9df66ce17b39aa2de75dc2311",
         "affectsGlobalScope": false
       },
       "./src/provider.tsx": {
-        "version": "619f46352dce2d4bcbc247e51534696751895d3cd79f4e044f0119015b229933",
-        "signature": "9cda2f6aa04fe48e65f1987f6629ff4d2cb720a43192e20e537edbfdda0b3ca0",
+        "version": "1e7dfc4d3ff2772b7e6ec6568d1e96a1172c61bca2fe2cfe4b41d56fe118e932",
+        "signature": "664d415d8a0386b68992212fc65342c4cff7c9f5a271fad687b1f4f7b94db6b8",
         "affectsGlobalScope": false
       },
       "./src/components/Code.tsx": {
@@ -2732,7 +2732,7 @@
         "affectsGlobalScope": false
       },
       "./src/components/mdx.tsx": {
-        "version": "aa3a8ddec117f883c1ad14ee356509cf786a646e94a45e0063370023d9fdb68d",
+        "version": "9743658b086ed373ed9b71ec0d57022b0ea4830dc8c2c0f35f7c83de49067ef1",
         "signature": "975472ef054350a09f871f6af4e3278566035740d4c48713d8391f275e9e3393",
         "affectsGlobalScope": false
       },
@@ -3611,7 +3611,6 @@
         "../node_modules/@emotion/react/types/index.d.ts",
         "../node_modules/@types/lodash/ts3.1/fp/merge.d.ts",
         "../node_modules/@types/react/index.d.ts",
-        "../node_modules/baby-i-am-faded/dist/index.d.ts",
         "../node_modules/next/head.d.ts",
         "../node_modules/next/router.d.ts",
         "./node_modules/@types/node/fs.d.ts",
