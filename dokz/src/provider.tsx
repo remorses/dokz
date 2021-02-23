@@ -156,15 +156,17 @@ export function useDokzConfig(): DokzProviderProps {
 
 export function useAnimationComponent() {
     const { animate } = useDokzConfig()
+    const isFirstLoad =
+        typeof window === 'undefined' || !window['DOKZ_ROUTE_CHANGED']
     const C = useMemo(() => {
-        if (animate) {
+        if (!isFirstLoad && animate) {
             Faded.defaultProps = { damping: 0.18 }
             return Faded
         }
-        return ({ cascade, ...rest }) => {
+        return ({ cascade, damping, ...rest }) => {
             return <div {...rest} />
         }
-    }, [animate])
+    }, [animate, isFirstLoad])
     return C
 }
 
@@ -172,6 +174,20 @@ export function DokzProvider({ children, ...rest }: DokzProviderProps) {
     const ctx = { ...defaultDokzContext, ...rest }
     const { mdxComponents: userMDXComponents = {}, initialColorMode } = ctx
     useRouterScroll()
+    const router = useRouter()
+    useEffect(() => {
+        const handler = () => {
+            if (typeof window !== 'undefined') {
+                window['DOKZ_ROUTE_CHANGED'] = true
+            }
+        }
+
+        router.events.on('routeChangeStart', handler)
+
+        return () => {
+            router.events.off('routeChangeStart', handler)
+        }
+    }, [])
     return (
         <DokzContext.Provider value={ctx}>
             <MDXProvider
