@@ -17,7 +17,7 @@ import { formatTitle } from '../components/support'
 
 const EXTENSIONS_TO_WATCH = ['.mdx', '.md']
 
-export function withDokz(nextConfig = {} as any) {
+export function withDokz(nextConfig = {} as any, remarkPlugins = [], rehypePlugins = []) {
     // .on('change', writeMdxIndex)
     nextConfig.pageExtensions = unique([
         ...(nextConfig.pageExtensions || []),
@@ -71,8 +71,9 @@ export function withDokz(nextConfig = {} as any) {
                     )
                     plugin(tree)
                 },
+                ...(remarkPlugins || [])
             ],
-            rehypePlugins: [injectCodeToPlayground],
+            rehypePlugins: [injectCodeToPlayground, ...(rehypePlugins || [])],
         },
     })(nextConfig)
 }
