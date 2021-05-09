@@ -118,12 +118,12 @@ const defaultDarkPrismTheme = {
     ...darkPrismTheme,
     plain: {
         ...darkPrismTheme.plain,
-        backgroundColor: '#2D3748',
+        backgroundColor: '#121212',
     },
 }
 
 export const defaultDokzContext: DokzProviderProps = {
-    initialColorMode: 'light',
+    initialColorMode: 'dark',
     headTitlePrefix: '',
     animate: false,
     branch: 'master',

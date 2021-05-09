@@ -1166,7 +1166,7 @@
         "signature": "3192b54876effeb978785858ec960ba7c57f81171070b5a0054a011ca09795f2",
         "affectsGlobalScope": false
       },
-      "../node_modules/@popperjs/core/lib/modifiers/popperOffsets.d.ts": {
+      "../node_modules/@popperjs/core/lib/modifiers/popperoffsets.d.ts": {
         "version": "1e77c0e8b7ce3c4568bc06f28be0e17844df09879679d5911d6d656276546f44",
         "signature": "1e77c0e8b7ce3c4568bc06f28be0e17844df09879679d5911d6d656276546f44",
         "affectsGlobalScope": false
@@ -1186,12 +1186,12 @@
         "signature": "975f2c755adfb08c939b418daab31f743625d1ebe3755bd6cd6c95337d0dd975",
         "affectsGlobalScope": false
       },
-      "../node_modules/@popperjs/core/lib/modifiers/eventListeners.d.ts": {
+      "../node_modules/@popperjs/core/lib/modifiers/eventlisteners.d.ts": {
         "version": "3536aa6999475104d3efe7ce04848b504420290759139332317eada6fed92a49",
         "signature": "3536aa6999475104d3efe7ce04848b504420290759139332317eada6fed92a49",
         "affectsGlobalScope": false
       },
-      "../node_modules/@popperjs/core/lib/modifiers/computeStyles.d.ts": {
+      "../node_modules/@popperjs/core/lib/modifiers/computestyles.d.ts": {
         "version": "1f649291e027bf8591cb0b5e50c1e32df35481ddc5b29eb265147bd88aeeddc1",
         "signature": "1f649291e027bf8591cb0b5e50c1e32df35481ddc5b29eb265147bd88aeeddc1",
         "affectsGlobalScope": false
@@ -1201,12 +1201,12 @@
         "signature": "f8e425cb20db2f8ad8b881e569a720ac69cc1ed62cea84de49a91c0579ce1aab",
         "affectsGlobalScope": false
       },
-      "../node_modules/@popperjs/core/lib/modifiers/preventOverflow.d.ts": {
+      "../node_modules/@popperjs/core/lib/modifiers/preventoverflow.d.ts": {
         "version": "8c2e4bbbd640b8d0bc51496f606bb3169a5a3b9bc520246be50b10faad340f8f",
         "signature": "8c2e4bbbd640b8d0bc51496f606bb3169a5a3b9bc520246be50b10faad340f8f",
         "affectsGlobalScope": false
       },
-      "../node_modules/@popperjs/core/lib/modifiers/applyStyles.d.ts": {
+      "../node_modules/@popperjs/core/lib/modifiers/applystyles.d.ts": {
         "version": "7475302435289b5b18c6bed0bea1216a6aaad51ef81ceb28a2349abd7b08d2c8",
         "signature": "7475302435289b5b18c6bed0bea1216a6aaad51ef81ceb28a2349abd7b08d2c8",
         "affectsGlobalScope": false
@@ -1216,7 +1216,7 @@
         "signature": "96d6cf60ec526cd3db83e77c9b89a8f4bff1d37cfa581e24bdd3fd156439c059",
         "affectsGlobalScope": false
       },
-      "../node_modules/@popperjs/core/lib/utils/detectOverflow.d.ts": {
+      "../node_modules/@popperjs/core/lib/utils/detectoverflow.d.ts": {
         "version": "1327fc0ade4b997e580f63d8557a724caadce61beb9653fbbc74871ab1d1923d",
         "signature": "1327fc0ade4b997e580f63d8557a724caadce61beb9653fbbc74871ab1d1923d",
         "affectsGlobalScope": false
@@ -1296,7 +1296,7 @@
         "signature": "4d6a9c011145763de8ba964b9434315023d944f75ce1fc65897622e38c34a4da",
         "affectsGlobalScope": false
       },
-      "../node_modules/framer-motion/types/render/VisualElement/types.d.ts": {
+      "../node_modules/framer-motion/types/render/visualelement/types.d.ts": {
         "version": "f5e8a315dff55ceef7ad8e5534ddce17959068ae5ea1a595c5eeb9bb656e68dd",
         "signature": "f5e8a315dff55ceef7ad8e5534ddce17959068ae5ea1a595c5eeb9bb656e68dd",
         "affectsGlobalScope": false
@@ -1316,7 +1316,7 @@
         "signature": "69455f401e0a2680e300f7f8ca0d2c8f140d6d0b691ca0bdb296f4779bdc48a8",
         "affectsGlobalScope": false
       },
-      "../node_modules/framer-motion/types/components/AnimateSharedLayout/types.d.ts": {
+      "../node_modules/framer-motion/types/components/animatesharedlayout/types.d.ts": {
         "version": "e17f9e23a155435fa52a1bcee93101e5ddf80feb1d69a329d5c398fa44e56add",
         "signature": "e17f9e23a155435fa52a1bcee93101e5ddf80feb1d69a329d5c398fa44e56add",
         "affectsGlobalScope": false
@@ -1326,12 +1326,12 @@
         "signature": "7b52cd3846ce04540f47952f753e212bddcfa712f25115a6203aa7e342961599",
         "affectsGlobalScope": false
       },
-      "../node_modules/framer-motion/types/render/dom/HTMLVisualElement.d.ts": {
+      "../node_modules/framer-motion/types/render/dom/htmlvisualelement.d.ts": {
         "version": "8b9462c2def0862fb9744cc586af8a22d8ff5ce93edef37cbf06d96c4e300e95",
         "signature": "8b9462c2def0862fb9744cc586af8a22d8ff5ce93edef37cbf06d96c4e300e95",
         "affectsGlobalScope": false
       },
-      "../node_modules/framer-motion/types/components/AnimateSharedLayout/utils/stack.d.ts": {
+      "../node_modules/framer-motion/types/components/animatesharedlayout/utils/stack.d.ts": {
         "version": "8111ff411c13fe7936581705b08cbc93edd5d2eb8f3241831450b20241780eb3",
         "signature": "8111ff411c13fe7936581705b08cbc93edd5d2eb8f3241831450b20241780eb3",
         "affectsGlobalScope": false
@@ -1551,27 +1551,27 @@
         "signature": "366e708447fde78d9e200bb6ca7b1d1a2edaa3ca4d77be30df42b7bab361f39d",
         "affectsGlobalScope": false
       },
-      "../node_modules/framer-motion/types/motion/context/MotionContext.d.ts": {
+      "../node_modules/framer-motion/types/motion/context/motioncontext.d.ts": {
         "version": "f82db75349a9babc4aa385b0fd55a6f8297ecd5e76f067b994de187c91017404",
         "signature": "f82db75349a9babc4aa385b0fd55a6f8297ecd5e76f067b994de187c91017404",
         "affectsGlobalScope": false
       },
-      "../node_modules/framer-motion/types/render/VisualElement/utils/animation.d.ts": {
+      "../node_modules/framer-motion/types/render/visualelement/utils/animation.d.ts": {
         "version": "62ca9729f3c18096c367a6421844e808c0e4995ec35367f889910a2992826edc",
         "signature": "62ca9729f3c18096c367a6421844e808c0e4995ec35367f889910a2992826edc",
         "affectsGlobalScope": false
       },
-      "../node_modules/framer-motion/types/render/VisualElement/utils/animation-state.d.ts": {
+      "../node_modules/framer-motion/types/render/visualelement/utils/animation-state.d.ts": {
         "version": "9f4e7ac3bcc26d2ad607692e66730c9ba00be18356dd606be6a81feb058e7e3d",
         "signature": "9f4e7ac3bcc26d2ad607692e66730c9ba00be18356dd606be6a81feb058e7e3d",
         "affectsGlobalScope": false
       },
-      "../node_modules/framer-motion/types/render/VisualElement/index.d.ts": {
+      "../node_modules/framer-motion/types/render/visualelement/index.d.ts": {
         "version": "5181d41d367c6fed59db83d25c72a4f22220282379859a6c87c003f289e6e79a",
         "signature": "5181d41d367c6fed59db83d25c72a4f22220282379859a6c87c003f289e6e79a",
         "affectsGlobalScope": false
       },
-      "../node_modules/framer-motion/types/animation/AnimationControls.d.ts": {
+      "../node_modules/framer-motion/types/animation/animationcontrols.d.ts": {
         "version": "e07341c7b4393f46a0b42c9f269c47d12969376c781db731d30c3c63de91a4b0",
         "signature": "e07341c7b4393f46a0b42c9f269c47d12969376c781db731d30c3c63de91a4b0",
         "affectsGlobalScope": false
@@ -1581,7 +1581,7 @@
         "signature": "0aa846127bd08994a3a27ccb265424b5c0262c1b7ef55882a92af93ef4d110ca",
         "affectsGlobalScope": false
       },
-      "../node_modules/framer-motion/types/gestures/PanSession.d.ts": {
+      "../node_modules/framer-motion/types/gestures/pansession.d.ts": {
         "version": "02dae6f6599e751d898117652a643583f00c256b682032c5b5e3a356a3493659",
         "signature": "02dae6f6599e751d898117652a643583f00c256b682032c5b5e3a356a3493659",
         "affectsGlobalScope": false
@@ -1616,7 +1616,7 @@
         "signature": "a7707f83cc407c48068540804ffd25c77094025f77c202b17362f0ad5f65dada",
         "affectsGlobalScope": false
       },
-      "../node_modules/framer-motion/types/gestures/drag/VisualElementDragControls.d.ts": {
+      "../node_modules/framer-motion/types/gestures/drag/visualelementdragcontrols.d.ts": {
         "version": "35ad23b0400def53dc622dda246f2c6bc95280897ff4af57aeb966b8e030a09f",
         "signature": "35ad23b0400def53dc622dda246f2c6bc95280897ff4af57aeb966b8e030a09f",
         "affectsGlobalScope": false
@@ -1656,22 +1656,22 @@
         "signature": "baf879624e6b9c6a09187d2cee884aca74f40975da01d88f4c322f1857587ccd",
         "affectsGlobalScope": false
       },
-      "../node_modules/framer-motion/types/components/AnimatePresence/types.d.ts": {
+      "../node_modules/framer-motion/types/components/animatepresence/types.d.ts": {
         "version": "179631421acd1f2376b3b965d99ec7b675b6f72f743281fbfe24b6967914a06d",
         "signature": "179631421acd1f2376b3b965d99ec7b675b6f72f743281fbfe24b6967914a06d",
         "affectsGlobalScope": false
       },
-      "../node_modules/framer-motion/types/components/AnimatePresence/index.d.ts": {
+      "../node_modules/framer-motion/types/components/animatepresence/index.d.ts": {
         "version": "1d46d9b4703e59d46cc949c6edfd1af64618d56c07c275c23949c13009dbe91d",
         "signature": "1d46d9b4703e59d46cc949c6edfd1af64618d56c07c275c23949c13009dbe91d",
         "affectsGlobalScope": false
       },
-      "../node_modules/framer-motion/types/components/AnimateSharedLayout/SharedLayoutContext.d.ts": {
+      "../node_modules/framer-motion/types/components/animatesharedlayout/sharedlayoutcontext.d.ts": {
         "version": "708ff68d9b54952336a512b2b852415cefd2763a791905f32c5940e338cbb1d9",
         "signature": "708ff68d9b54952336a512b2b852415cefd2763a791905f32c5940e338cbb1d9",
         "affectsGlobalScope": false
       },
-      "../node_modules/framer-motion/types/components/AnimateSharedLayout/index.d.ts": {
+      "../node_modules/framer-motion/types/components/animatesharedlayout/index.d.ts": {
         "version": "bb54103094176f7ba3a4b814b31ee487a672d8a66e00f58c569329f27d945da9",
         "signature": "bb54103094176f7ba3a4b814b31ee487a672d8a66e00f58c569329f27d945da9",
         "affectsGlobalScope": false
@@ -1696,7 +1696,7 @@
         "signature": "dbca4598d461d12768b3ee0a6999ca56637dea21bf6ef355b48f1d622f696e8a",
         "affectsGlobalScope": false
       },
-      "../node_modules/framer-motion/types/motion/features/layout/Animate.d.ts": {
+      "../node_modules/framer-motion/types/motion/features/layout/animate.d.ts": {
         "version": "ae3cc557810c45b3545f83960ad758abf1e1616314b283769e5e99d1a78ede48",
         "signature": "ae3cc557810c45b3545f83960ad758abf1e1616314b283769e5e99d1a78ede48",
         "affectsGlobalScope": false
@@ -1771,12 +1771,12 @@
         "signature": "020935cf0d2ddc5efe7391abc5940c12065a36b9073ff7c919b121f962c03046",
         "affectsGlobalScope": false
       },
-      "../node_modules/framer-motion/types/components/AnimatePresence/PresenceContext.d.ts": {
+      "../node_modules/framer-motion/types/components/animatepresence/presencecontext.d.ts": {
         "version": "be86cc16b87e87a24ac4d3e000711b4da4624d082ab456f73cc437d6328a3297",
         "signature": "be86cc16b87e87a24ac4d3e000711b4da4624d082ab456f73cc437d6328a3297",
         "affectsGlobalScope": false
       },
-      "../node_modules/framer-motion/types/components/AnimatePresence/use-presence.d.ts": {
+      "../node_modules/framer-motion/types/components/animatepresence/use-presence.d.ts": {
         "version": "9c85df20830fb9fa3ae7d3aaa0d0093689c58dbc39d0332c6fb75613b44194f5",
         "signature": "9c85df20830fb9fa3ae7d3aaa0d0093689c58dbc39d0332c6fb75613b44194f5",
         "affectsGlobalScope": false
@@ -1796,12 +1796,12 @@
         "signature": "8e93cab3679d70de9f3a2263b13cd7afda1d194812202eeb97499d04e60ae890",
         "affectsGlobalScope": false
       },
-      "../node_modules/framer-motion/types/motion/context/MotionConfigContext.d.ts": {
+      "../node_modules/framer-motion/types/motion/context/motionconfigcontext.d.ts": {
         "version": "324c1a63e12881222b45ce2845f9706eb0ae3f94863e864ab6e46c327071c0b4",
         "signature": "324c1a63e12881222b45ce2845f9706eb0ae3f94863e864ab6e46c327071c0b4",
         "affectsGlobalScope": false
       },
-      "../node_modules/framer-motion/types/components/AnimateSharedLayout/LayoutGroupContext.d.ts": {
+      "../node_modules/framer-motion/types/components/animatesharedlayout/layoutgroupcontext.d.ts": {
         "version": "a55f13869b9c091950c130353c4f2fb61c0b13c2054c1cd04982f29eca434caf",
         "signature": "a55f13869b9c091950c130353c4f2fb61c0b13c2054c1cd04982f29eca434caf",
         "affectsGlobalScope": false
@@ -2151,17 +2151,17 @@
         "signature": "75561791611fdf57feebed23e4106640c6df203a8c5ec86e5911bce08a475562",
         "affectsGlobalScope": false
       },
-      "../node_modules/react-icons/lib/cjs/iconsManifest.d.ts": {
+      "../node_modules/react-icons/lib/cjs/iconsmanifest.d.ts": {
         "version": "9af0933b1aaaa6adc78a918c56929845c51a9d08f9c707165a9170acb2ca6ccb",
         "signature": "9af0933b1aaaa6adc78a918c56929845c51a9d08f9c707165a9170acb2ca6ccb",
         "affectsGlobalScope": false
       },
-      "../node_modules/react-icons/lib/cjs/iconBase.d.ts": {
+      "../node_modules/react-icons/lib/cjs/iconbase.d.ts": {
         "version": "2549ec9de97db0b737f827958cf6dbd08be95c444e070dac156930dcfe919cf7",
         "signature": "2549ec9de97db0b737f827958cf6dbd08be95c444e070dac156930dcfe919cf7",
         "affectsGlobalScope": false
       },
-      "../node_modules/react-icons/lib/cjs/iconContext.d.ts": {
+      "../node_modules/react-icons/lib/cjs/iconcontext.d.ts": {
         "version": "6460cd7020078dcaae752b71342a5d16df35f61f7404db53e5d176438f7880b1",
         "signature": "6460cd7020078dcaae752b71342a5d16df35f61f7404db53e5d176438f7880b1",
         "affectsGlobalScope": false
@@ -2186,7 +2186,7 @@
         "signature": "f8d604686d3fdfce2eaafefbc7cef968e1a073ca14d5dbec39402fef2c9d1f82",
         "affectsGlobalScope": false
       },
-      "../node_modules/@types/lodash/ts3.1/orderBy.d.ts": {
+      "../node_modules/@types/lodash/ts3.1/orderby.d.ts": {
         "version": "306f17bebc63d2c9a8d7f3d9d78df6561513172e95f46c997105d9407899de92",
         "signature": "306f17bebc63d2c9a8d7f3d9d78df6561513172e95f46c997105d9407899de92",
         "affectsGlobalScope": false
@@ -2621,7 +2621,7 @@
         "signature": "2d7d2d542a30602ad869c89e497ffc1d45ebee0352f3806833bb1a73f88a26a7",
         "affectsGlobalScope": false
       },
-      "./src/components/NavLink.tsx": {
+      "./src/components/navlink.tsx": {
         "version": "0870310a4c5b5752e415db495bb8b60db512dcffabca139a73ae695280a432bb",
         "signature": "bbe75ae5314c7977812b7b4fe2923928869582e7a9689d691959e00ad6458c95",
         "affectsGlobalScope": false
@@ -2646,7 +2646,7 @@
         "signature": "9cd8171b15a95760ba6674f97d0222a6290bb43e74a54d6232e31f5a4a1b02b2",
         "affectsGlobalScope": false
       },
-      "../node_modules/@types/lodash/ts3.1/startCase.d.ts": {
+      "../node_modules/@types/lodash/ts3.1/startcase.d.ts": {
         "version": "257511614ce25e8445c8c7ffedd86a618680f2a937e420403c10baa12321b92a",
         "signature": "257511614ce25e8445c8c7ffedd86a618680f2a937e420403c10baa12321b92a",
         "affectsGlobalScope": false
@@ -2656,17 +2656,17 @@
         "signature": "f2ad1498369fbf2b2acd42ba9b9c5ba938ff4ea9357c93579d795922fe05f4e7",
         "affectsGlobalScope": false
       },
-      "./src/components/SideNav.tsx": {
+      "./src/components/sidenav.tsx": {
         "version": "45c6d04d015b84a7a6a4baa36faecad3fca77b8e8ad44e2c9e19e061f53256e9",
         "signature": "593f3e80b966e2bb074bcac39a480dc412c63e96ae21af779c32ebb1c9890173",
         "affectsGlobalScope": false
       },
-      "./src/components/MobileNav.tsx": {
+      "./src/components/mobilenav.tsx": {
         "version": "2c4521e588a227278e29a50df84e667990f16feb94f529c8a83bfc6becb0d66a",
         "signature": "668ac9f6f3f31a3c35619fc1b25a7415cbdf07394948dc390b1fd0ceeaadbfca",
         "affectsGlobalScope": false
       },
-      "./src/components/NavBar.tsx": {
+      "./src/components/navbar.tsx": {
         "version": "f62493bfb2c9eedc2ca016204d2043e2327db106db277e0c4f7896fccbcfa57e",
         "signature": "a27f32bb93a46dbbe79508057fbbb9df16c893755dd2022c31df11fe6e926a9d",
         "affectsGlobalScope": false
@@ -2701,17 +2701,17 @@
         "signature": "4807f4518f03c61ee6909977fe98d21e753e698c94c1d84202636d4f3954d024",
         "affectsGlobalScope": false
       },
-      "./src/components/FloatingTableOfContents.tsx": {
+      "./src/components/floatingtableofcontents.tsx": {
         "version": "df32b1f8a73c7ab52f6810b1150af1c04e9ac4e1104f60a3679e23f4bccddd35",
         "signature": "7ea8d4e953b671543feadd32117c9ed4126a5cfaba8881f0039422d1843be2eb",
         "affectsGlobalScope": false
       },
-      "./src/components/FooterButtons.tsx": {
+      "./src/components/footerbuttons.tsx": {
         "version": "a2d4a686bbabbd6585cdf647f9b47cd75bde82255d5aa63b94598ab67ebe93ad",
         "signature": "a428ca63eb011f8472fa48a2e3a52e791a6ff095fa5d934440ddbd3375952646",
         "affectsGlobalScope": false
       },
-      "./src/components/Wrapper.tsx": {
+      "./src/components/wrapper.tsx": {
         "version": "5588065d7a74e088fc34d276da05b984a127d5d6e9688f1824b3386ef966bfa2",
         "signature": "cf9983079f248007bbb97cfd46f18777e54e0bf9df66ce17b39aa2de75dc2311",
         "affectsGlobalScope": false
@@ -2721,12 +2721,12 @@
         "signature": "664d415d8a0386b68992212fc65342c4cff7c9f5a271fad687b1f4f7b94db6b8",
         "affectsGlobalScope": false
       },
-      "./src/components/Code.tsx": {
+      "./src/components/code.tsx": {
         "version": "141c3121fd7bdf2f9329c8320600157666bd7f39666ada20fd95aa8fa65c2d61",
         "signature": "60229caf880ad85b47e3979a0c6694bb438c933b95d53bff7ebce317448c1098",
         "affectsGlobalScope": false
       },
-      "./src/components/Link.tsx": {
+      "./src/components/link.tsx": {
         "version": "b7d75568380c55054ae326e7105c386bad363ce86f540fee5e0778a1bb09f88d",
         "signature": "62768543282f83e4979a93ea6388ed6234b10bb30c57733127765c9ecfedfeff",
         "affectsGlobalScope": false
@@ -2736,7 +2736,7 @@
         "signature": "975472ef054350a09f871f6af4e3278566035740d4c48713d8391f275e9e3393",
         "affectsGlobalScope": false
       },
-      "./src/components/WrapperBlog.tsx": {
+      "./src/components/wrapperblog.tsx": {
         "version": "8db762c7f15c521dedb29120bcb696e09b7373b85da9b7570c62814c800d9cc9",
         "signature": "d711792b4ec925aad5fe6d77a4861312facb49a58481db7607da7d671af820f7",
         "affectsGlobalScope": false
@@ -2746,7 +2746,7 @@
         "signature": "eae341d8b309796f005e4a3b8cbe6ac069fd8d6931949ec6a3480e71e295c3fd",
         "affectsGlobalScope": false
       },
-      "./src/components/BlogPosts.tsx": {
+      "./src/components/blogposts.tsx": {
         "version": "044a5237348d6ee1f43ee2e1802de4f54dda7825054e8304066a8104c1e8859b",
         "signature": "5ece1ffc03124d68226366f7a051fc2ae7d321fbea4d5d22108fb06b1e6e54a9",
         "affectsGlobalScope": false
@@ -2771,12 +2771,12 @@
         "signature": "bb57f31fbd25d406dc0235b29487ab8657a21a04243f1497583582d58ab31188",
         "affectsGlobalScope": false
       },
-      "./src/components/Playground.tsx": {
+      "./src/components/playground.tsx": {
         "version": "e34f1b8cc3009e7f496934da27753d8f8141f068916df1f9e96fb62aaa85bb13",
         "signature": "ded76b24d4ac3190c9aa2d3da6312e107a9e4689fa1fbd7d395bf8133fb8c922",
         "affectsGlobalScope": false
       },
-      "./src/components/TableOfContents.tsx": {
+      "./src/components/tableofcontents.tsx": {
         "version": "d8ba55e4bd4ed3a3f2b41600b431179c229d39030caf76525a94466e8aaefe9f",
         "signature": "fc64bcc4bdb4306998d9799ed0f632c172ec9a7d84b844635c2aaebf163fceff",
         "affectsGlobalScope": false
@@ -2791,7 +2791,7 @@
         "signature": "60f14f4148184a05707fa8bb2c4ae313d0523d784b77c561060f1c34a66d196a",
         "affectsGlobalScope": false
       },
-      "./src/plugin/debugLoader.js": {
+      "./src/plugin/debugloader.js": {
         "version": "513dd7a42442173886d90f4b75f061740f4ef6b47c14b5f7001a6d8bade6f7f5",
         "signature": "da9aa1d4e803b837ed589dcab884097be1af7133c45e384d21bd109630c030ee",
         "affectsGlobalScope": true
@@ -2826,7 +2826,7 @@
         "signature": "19b9ab65ed201676380ecd0e12fd1c5fd1808e909f41d6a257fa8fd285eb1816",
         "affectsGlobalScope": false
       },
-      "./src/plugin/generateTableOfContents.ts": {
+      "./src/plugin/generatetableofcontents.ts": {
         "version": "63629319ac87065b3dbcb323ab3165a5c191d4cf5c0ba300e4f64a1d6a84c697",
         "signature": "5d5c65e17c205bf0015b8b509c204f4ed1e451ef77e1a741ae4f541da2041175",
         "affectsGlobalScope": false
@@ -2846,7 +2846,7 @@
         "signature": "bbb38bf30ea306637e8cceda007344eb64c0ab297abb955aafc29279494ab61f",
         "affectsGlobalScope": false
       },
-      "./src/plugin/getMdxFilesIndex.ts": {
+      "./src/plugin/getmdxfilesindex.ts": {
         "version": "720940fa9074d51c784d4d82a55bdfb5a6db3b16b6c257003e440bce9c7a0931",
         "signature": "011811d09e775803c791ed2f274058e78d6a6a037353df69b97cbacf8bbda679",
         "affectsGlobalScope": false
@@ -2961,7 +2961,7 @@
         "signature": "cc92cfec03f5cbb6d64ee0c988e1e619379a0854030a4df793e27cc2ca566b14",
         "affectsGlobalScope": false
       },
-      "./src/plugin/withMdx.ts": {
+      "./src/plugin/withmdx.ts": {
         "version": "7681481c57589ac6acddf97aebafb093273acc2a32b03cd1c7ffdfaff248e1a4",
         "signature": "d0d150852e925ac4ee7c4e694840aedfe86ab50f3699707dee4d855bdee734d0",
         "affectsGlobalScope": false
@@ -2976,7 +2976,7 @@
         "signature": "f9dba48110e105309e2a7e51bf6c9042b65cafc47b674c1d43253d371c41379f",
         "affectsGlobalScope": false
       },
-      "./src/plugin/injectorLoader.js": {
+      "./src/plugin/injectorloader.js": {
         "version": "c150c3b28482fd21b107889ea8cd236f69f293c9eb64f47b440e6fda2c3d69ab",
         "signature": "da9aa1d4e803b837ed589dcab884097be1af7133c45e384d21bd109630c030ee",
         "affectsGlobalScope": true
@@ -3464,13 +3464,13 @@
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts",
-        "./src/components/WrapperBlog.tsx",
         "./src/components/icons.tsx",
         "./src/components/mdx.tsx",
         "./src/components/support.ts",
+        "./src/components/wrapperblog.tsx",
         "./src/provider.tsx"
       ],
-      "./src/components/BlogPosts.tsx": [
+      "./src/components/blogposts.tsx": [
         "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
         "../node_modules/@types/react/index.d.ts",
         "../node_modules/next/router.d.ts",
@@ -3479,11 +3479,11 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts",
         "./src/blog.tsx",
-        "./src/components/WrapperBlog.tsx",
         "./src/components/icons.tsx",
-        "./src/components/support.ts"
+        "./src/components/support.ts",
+        "./src/components/wrapperblog.tsx"
       ],
-      "./src/components/Code.tsx": [
+      "./src/components/code.tsx": [
         "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
         "../node_modules/@emotion/react/types/index.d.ts",
         "../node_modules/@types/react/index.d.ts",
@@ -3496,7 +3496,7 @@
         "./src/components/support.ts",
         "./src/provider.tsx"
       ],
-      "./src/components/FloatingTableOfContents.tsx": [
+      "./src/components/floatingtableofcontents.tsx": [
         "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
         "../node_modules/@types/lodash/ts3.1/pick.d.ts",
         "../node_modules/@types/react/index.d.ts",
@@ -3508,7 +3508,7 @@
         "./src/provider.tsx",
         "./src/types.ts"
       ],
-      "./src/components/FooterButtons.tsx": [
+      "./src/components/footerbuttons.tsx": [
         "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
         "../node_modules/@emotion/react/types/index.d.ts",
         "../node_modules/@types/react/index.d.ts",
@@ -3519,124 +3519,6 @@
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts",
-        "./src/components/icons.tsx",
-        "./src/components/support.ts",
-        "./src/provider.tsx"
-      ],
-      "./src/components/Link.tsx": [
-        "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
-        "../node_modules/@types/react/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./src/components/MobileNav.tsx": [
-        "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
-        "../node_modules/@types/react/index.d.ts",
-        "../node_modules/next/router.d.ts",
-        "../node_modules/react-icons/md/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./src/components/SideNav.tsx"
-      ],
-      "./src/components/NavBar.tsx": [
-        "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
-        "../node_modules/@emotion/react/types/index.d.ts",
-        "../node_modules/baby-i-am-faded/dist/index.d.ts",
-        "../node_modules/react-icons/di/index.d.ts",
-        "../node_modules/react-icons/fi/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./src/components/MobileNav.tsx",
-        "./src/provider.tsx"
-      ],
-      "./src/components/NavLink.tsx": [
-        "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
-        "../node_modules/@types/react/index.d.ts",
-        "../node_modules/next/link.d.ts",
-        "../node_modules/next/router.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "./src/components/Playground.tsx": [
-        "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
-        "../node_modules/@types/lodash/ts3.1/fp/flatten.d.ts",
-        "../node_modules/@types/react/index.d.ts",
-        "../node_modules/re-resizable/lib/index.d.ts",
-        "../node_modules/react-live/typings/react-live.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./src/components/Code.tsx",
-        "./src/components/support.ts",
-        "./src/provider.tsx"
-      ],
-      "./src/components/SideNav.tsx": [
-        "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
-        "../node_modules/@types/lodash/ts3.1/orderBy.d.ts",
-        "../node_modules/@types/react/index.d.ts",
-        "../node_modules/baby-i-am-faded/dist/index.d.ts",
-        "../node_modules/react-storage-hooks/dist/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./src/components/NavLink.tsx",
-        "./src/components/support.ts",
-        "./src/provider.tsx"
-      ],
-      "./src/components/TableOfContents.tsx": [
-        "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
-        "../node_modules/@emotion/react/types/index.d.ts",
-        "../node_modules/@types/react/index.d.ts",
-        "../node_modules/baby-i-am-faded/dist/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./src/components/Link.tsx",
-        "./src/provider.tsx",
-        "./src/types.ts"
-      ],
-      "./src/components/Wrapper.tsx": [
-        "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
-        "../node_modules/@emotion/react/types/index.d.ts",
-        "../node_modules/@types/lodash/ts3.1/fp/merge.d.ts",
-        "../node_modules/@types/react/index.d.ts",
-        "../node_modules/next/head.d.ts",
-        "../node_modules/next/router.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./src/components/FloatingTableOfContents.tsx",
-        "./src/components/FooterButtons.tsx",
-        "./src/components/NavBar.tsx",
-        "./src/components/SideNav.tsx",
-        "./src/components/support.ts",
-        "./src/provider.tsx"
-      ],
-      "./src/components/WrapperBlog.tsx": [
-        "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
-        "../node_modules/@emotion/react/types/index.d.ts",
-        "../node_modules/next/head.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./src/blog.tsx",
-        "./src/components/FloatingTableOfContents.tsx",
-        "./src/components/NavBar.tsx",
-        "./src/components/SideNav.tsx",
-        "./src/components/Wrapper.tsx",
         "./src/components/icons.tsx",
         "./src/components/support.ts",
         "./src/provider.tsx"
@@ -3653,15 +3535,23 @@
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts",
-        "./src/components/BlogPosts.tsx",
-        "./src/components/Code.tsx",
-        "./src/components/FloatingTableOfContents.tsx",
-        "./src/components/Link.tsx",
-        "./src/components/NavBar.tsx",
-        "./src/components/Playground.tsx",
-        "./src/components/TableOfContents.tsx",
-        "./src/components/Wrapper.tsx",
-        "./src/components/mdx.tsx"
+        "./src/components/blogposts.tsx",
+        "./src/components/code.tsx",
+        "./src/components/floatingtableofcontents.tsx",
+        "./src/components/link.tsx",
+        "./src/components/mdx.tsx",
+        "./src/components/navbar.tsx",
+        "./src/components/playground.tsx",
+        "./src/components/tableofcontents.tsx",
+        "./src/components/wrapper.tsx"
+      ],
+      "./src/components/link.tsx": [
+        "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
       ],
       "./src/components/mdx.tsx": [
         "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
@@ -3671,19 +3561,129 @@
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts",
-        "./src/components/Code.tsx",
-        "./src/components/Link.tsx",
-        "./src/components/Wrapper.tsx",
+        "./src/components/code.tsx",
+        "./src/components/link.tsx",
+        "./src/components/support.ts",
+        "./src/components/wrapper.tsx",
+        "./src/provider.tsx"
+      ],
+      "./src/components/mobilenav.tsx": [
+        "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/next/router.d.ts",
+        "../node_modules/react-icons/md/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./src/components/sidenav.tsx"
+      ],
+      "./src/components/navbar.tsx": [
+        "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
+        "../node_modules/@emotion/react/types/index.d.ts",
+        "../node_modules/baby-i-am-faded/dist/index.d.ts",
+        "../node_modules/react-icons/di/index.d.ts",
+        "../node_modules/react-icons/fi/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./src/components/mobilenav.tsx",
+        "./src/provider.tsx"
+      ],
+      "./src/components/navlink.tsx": [
+        "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/next/link.d.ts",
+        "../node_modules/next/router.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "./src/components/playground.tsx": [
+        "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
+        "../node_modules/@types/lodash/ts3.1/fp/flatten.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/re-resizable/lib/index.d.ts",
+        "../node_modules/react-live/typings/react-live.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./src/components/code.tsx",
+        "./src/components/support.ts",
+        "./src/provider.tsx"
+      ],
+      "./src/components/sidenav.tsx": [
+        "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
+        "../node_modules/@types/lodash/ts3.1/orderby.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/baby-i-am-faded/dist/index.d.ts",
+        "../node_modules/react-storage-hooks/dist/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./src/components/navlink.tsx",
         "./src/components/support.ts",
         "./src/provider.tsx"
       ],
       "./src/components/support.ts": [
         "../node_modules/@emotion/react/types/index.d.ts",
-        "../node_modules/@types/lodash/ts3.1/startCase.d.ts",
+        "../node_modules/@types/lodash/ts3.1/startcase.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
+      ],
+      "./src/components/tableofcontents.tsx": [
+        "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
+        "../node_modules/@emotion/react/types/index.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/baby-i-am-faded/dist/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./src/components/link.tsx",
+        "./src/provider.tsx",
+        "./src/types.ts"
+      ],
+      "./src/components/wrapper.tsx": [
+        "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
+        "../node_modules/@emotion/react/types/index.d.ts",
+        "../node_modules/@types/lodash/ts3.1/fp/merge.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/next/head.d.ts",
+        "../node_modules/next/router.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./src/components/floatingtableofcontents.tsx",
+        "./src/components/footerbuttons.tsx",
+        "./src/components/navbar.tsx",
+        "./src/components/sidenav.tsx",
+        "./src/components/support.ts",
+        "./src/provider.tsx"
+      ],
+      "./src/components/wrapperblog.tsx": [
+        "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
+        "../node_modules/@emotion/react/types/index.d.ts",
+        "../node_modules/next/head.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./src/blog.tsx",
+        "./src/components/floatingtableofcontents.tsx",
+        "./src/components/icons.tsx",
+        "./src/components/navbar.tsx",
+        "./src/components/sidenav.tsx",
+        "./src/components/support.ts",
+        "./src/components/wrapper.tsx",
+        "./src/provider.tsx"
       ],
       "./src/index.tsx": [
         "./node_modules/@types/node/fs.d.ts",
@@ -3694,13 +3694,13 @@
         "./src/components/index.ts",
         "./src/provider.tsx"
       ],
-      "./src/plugin/debugLoader.js": [
+      "./src/plugin/debugloader.js": [
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "./src/plugin/generateTableOfContents.ts": [
+      "./src/plugin/generatetableofcontents.ts": [
         "../node_modules/@types/unist/index.d.ts",
         "../node_modules/mdast-util-toc/types/index.d.ts",
         "../node_modules/unist-util-visit/types/index.d.ts",
@@ -3710,7 +3710,7 @@
         "./node_modules/@types/node/util.d.ts",
         "./src/types.ts"
       ],
-      "./src/plugin/getMdxFilesIndex.ts": [
+      "./src/plugin/getmdxfilesindex.ts": [
         "../node_modules/await-to-js/dist/types/await-to-js.d.ts",
         "../node_modules/directory-tree/index.d.ts",
         "../node_modules/front-matter/index.d.ts",
@@ -3733,12 +3733,12 @@
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/chalk/index.d.ts",
         "./src/components/support.ts",
-        "./src/plugin/generateTableOfContents.ts",
-        "./src/plugin/getMdxFilesIndex.ts",
+        "./src/plugin/generatetableofcontents.ts",
+        "./src/plugin/getmdxfilesindex.ts",
         "./src/plugin/rehype/playground.ts",
-        "./src/plugin/withMdx.ts"
+        "./src/plugin/withmdx.ts"
       ],
-      "./src/plugin/injectorLoader.js": [
+      "./src/plugin/injectorloader.js": [
         "../node_modules/get-git-config/dist/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/path.d.ts",
@@ -3805,7 +3805,7 @@
         "./node_modules/@types/node/util.d.ts",
         "./src/plugin/rehype/utils/ast.ts"
       ],
-      "./src/plugin/withMdx.ts": [
+      "./src/plugin/withmdx.ts": [
         "../node_modules/@types/webpack/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/path.d.ts",
@@ -3824,10 +3824,10 @@
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts",
-        "./src/components/NavBar.tsx",
-        "./src/components/Wrapper.tsx",
         "./src/components/icons.tsx",
         "./src/components/mdx.tsx",
+        "./src/components/navbar.tsx",
+        "./src/components/wrapper.tsx",
         "./src/types.ts"
       ],
       "./src/types.ts": [
@@ -6010,13 +6010,13 @@
       "../node_modules/@popperjs/core/lib/index.d.ts": [
         "../node_modules/@popperjs/core/lib/enums.d.ts",
         "../node_modules/@popperjs/core/lib/types.d.ts",
-        "../node_modules/@popperjs/core/lib/utils/detectOverflow.d.ts",
+        "../node_modules/@popperjs/core/lib/utils/detectoverflow.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@popperjs/core/lib/modifiers/applyStyles.d.ts": [
+      "../node_modules/@popperjs/core/lib/modifiers/applystyles.d.ts": [
         "../node_modules/@popperjs/core/lib/types.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -6030,7 +6030,7 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@popperjs/core/lib/modifiers/computeStyles.d.ts": [
+      "../node_modules/@popperjs/core/lib/modifiers/computestyles.d.ts": [
         "../node_modules/@popperjs/core/lib/enums.d.ts",
         "../node_modules/@popperjs/core/lib/types.d.ts",
         "./node_modules/@types/node/fs.d.ts",
@@ -6038,7 +6038,7 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@popperjs/core/lib/modifiers/eventListeners.d.ts": [
+      "../node_modules/@popperjs/core/lib/modifiers/eventlisteners.d.ts": [
         "../node_modules/@popperjs/core/lib/types.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -6068,14 +6068,14 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@popperjs/core/lib/modifiers/popperOffsets.d.ts": [
+      "../node_modules/@popperjs/core/lib/modifiers/popperoffsets.d.ts": [
         "../node_modules/@popperjs/core/lib/types.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@popperjs/core/lib/modifiers/preventOverflow.d.ts": [
+      "../node_modules/@popperjs/core/lib/modifiers/preventoverflow.d.ts": [
         "../node_modules/@popperjs/core/lib/enums.d.ts",
         "../node_modules/@popperjs/core/lib/types.d.ts",
         "./node_modules/@types/node/fs.d.ts",
@@ -6085,21 +6085,21 @@
       ],
       "../node_modules/@popperjs/core/lib/types.d.ts": [
         "../node_modules/@popperjs/core/lib/enums.d.ts",
-        "../node_modules/@popperjs/core/lib/modifiers/applyStyles.d.ts",
+        "../node_modules/@popperjs/core/lib/modifiers/applystyles.d.ts",
         "../node_modules/@popperjs/core/lib/modifiers/arrow.d.ts",
-        "../node_modules/@popperjs/core/lib/modifiers/computeStyles.d.ts",
-        "../node_modules/@popperjs/core/lib/modifiers/eventListeners.d.ts",
+        "../node_modules/@popperjs/core/lib/modifiers/computestyles.d.ts",
+        "../node_modules/@popperjs/core/lib/modifiers/eventlisteners.d.ts",
         "../node_modules/@popperjs/core/lib/modifiers/flip.d.ts",
         "../node_modules/@popperjs/core/lib/modifiers/hide.d.ts",
         "../node_modules/@popperjs/core/lib/modifiers/offset.d.ts",
-        "../node_modules/@popperjs/core/lib/modifiers/popperOffsets.d.ts",
-        "../node_modules/@popperjs/core/lib/modifiers/preventOverflow.d.ts",
+        "../node_modules/@popperjs/core/lib/modifiers/popperoffsets.d.ts",
+        "../node_modules/@popperjs/core/lib/modifiers/preventoverflow.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@popperjs/core/lib/utils/detectOverflow.d.ts": [
+      "../node_modules/@popperjs/core/lib/utils/detectoverflow.d.ts": [
         "../node_modules/@popperjs/core/lib/enums.d.ts",
         "../node_modules/@popperjs/core/lib/types.d.ts",
         "./node_modules/@types/node/fs.d.ts",
@@ -6428,7 +6428,7 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@types/lodash/ts3.1/orderBy.d.ts": [
+      "../node_modules/@types/lodash/ts3.1/orderby.d.ts": [
         "../node_modules/@types/lodash/ts3.1/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -6442,7 +6442,7 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@types/lodash/ts3.1/startCase.d.ts": [
+      "../node_modules/@types/lodash/ts3.1/startcase.d.ts": [
         "../node_modules/@types/lodash/ts3.1/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -6627,17 +6627,17 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/framer-motion/types/animation/AnimationControls.d.ts": [
-        "../node_modules/framer-motion/types/render/VisualElement/index.d.ts",
+      "../node_modules/framer-motion/types/animation/animate.d.ts": [
         "../node_modules/framer-motion/types/types.d.ts",
+        "../node_modules/framer-motion/types/value/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/framer-motion/types/animation/animate.d.ts": [
+      "../node_modules/framer-motion/types/animation/animationcontrols.d.ts": [
+        "../node_modules/framer-motion/types/render/visualelement/index.d.ts",
         "../node_modules/framer-motion/types/types.d.ts",
-        "../node_modules/framer-motion/types/value/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -6650,7 +6650,7 @@
         "./node_modules/@types/node/util.d.ts"
       ],
       "../node_modules/framer-motion/types/animation/use-animation.d.ts": [
-        "../node_modules/framer-motion/types/animation/AnimationControls.d.ts",
+        "../node_modules/framer-motion/types/animation/animationcontrols.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -6665,7 +6665,15 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/framer-motion/types/components/AnimatePresence/PresenceContext.d.ts": [
+      "../node_modules/framer-motion/types/components/animatepresence/index.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/framer-motion/types/components/animatepresence/types.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/framer-motion/types/components/animatepresence/presencecontext.d.ts": [
         "../node_modules/@types/react/index.d.ts",
         "../node_modules/framer-motion/types/motion/types.d.ts",
         "./node_modules/@types/node/fs.d.ts",
@@ -6673,55 +6681,47 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/framer-motion/types/components/AnimatePresence/index.d.ts": [
+      "../node_modules/framer-motion/types/components/animatepresence/types.d.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/framer-motion/types/components/animatepresence/use-presence.d.ts": [
+        "../node_modules/framer-motion/types/components/animatepresence/presencecontext.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/framer-motion/types/components/animatesharedlayout/index.d.ts": [
         "../node_modules/@types/react/index.d.ts",
-        "../node_modules/framer-motion/types/components/AnimatePresence/types.d.ts",
+        "../node_modules/framer-motion/types/components/animatesharedlayout/sharedlayoutcontext.d.ts",
+        "../node_modules/framer-motion/types/components/animatesharedlayout/types.d.ts",
+        "../node_modules/framer-motion/types/components/animatesharedlayout/utils/stack.d.ts",
+        "../node_modules/framer-motion/types/motion/context/motioncontext.d.ts",
+        "../node_modules/framer-motion/types/render/dom/htmlvisualelement.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/framer-motion/types/components/AnimatePresence/types.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/framer-motion/types/components/AnimatePresence/use-presence.d.ts": [
-        "../node_modules/framer-motion/types/components/AnimatePresence/PresenceContext.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/framer-motion/types/components/AnimateSharedLayout/LayoutGroupContext.d.ts": [
+      "../node_modules/framer-motion/types/components/animatesharedlayout/layoutgroupcontext.d.ts": [
         "../node_modules/@types/react/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/framer-motion/types/components/AnimateSharedLayout/SharedLayoutContext.d.ts": [
+      "../node_modules/framer-motion/types/components/animatesharedlayout/sharedlayoutcontext.d.ts": [
         "../node_modules/@types/react/index.d.ts",
-        "../node_modules/framer-motion/types/render/dom/HTMLVisualElement.d.ts",
+        "../node_modules/framer-motion/types/render/dom/htmlvisualelement.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/framer-motion/types/components/AnimateSharedLayout/index.d.ts": [
-        "../node_modules/@types/react/index.d.ts",
-        "../node_modules/framer-motion/types/components/AnimateSharedLayout/SharedLayoutContext.d.ts",
-        "../node_modules/framer-motion/types/components/AnimateSharedLayout/types.d.ts",
-        "../node_modules/framer-motion/types/components/AnimateSharedLayout/utils/stack.d.ts",
-        "../node_modules/framer-motion/types/motion/context/MotionContext.d.ts",
-        "../node_modules/framer-motion/types/render/dom/HTMLVisualElement.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/framer-motion/types/components/AnimateSharedLayout/types.d.ts": [
+      "../node_modules/framer-motion/types/components/animatesharedlayout/types.d.ts": [
         "../node_modules/@types/react/index.d.ts",
         "../node_modules/framer-motion/types/types.d.ts",
         "../node_modules/framer-motion/types/types/geometry.d.ts",
@@ -6731,9 +6731,9 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/framer-motion/types/components/AnimateSharedLayout/utils/stack.d.ts": [
-        "../node_modules/framer-motion/types/render/VisualElement/types.d.ts",
-        "../node_modules/framer-motion/types/render/dom/HTMLVisualElement.d.ts",
+      "../node_modules/framer-motion/types/components/animatesharedlayout/utils/stack.d.ts": [
+        "../node_modules/framer-motion/types/render/dom/htmlvisualelement.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/types.d.ts",
         "../node_modules/framer-motion/types/types.d.ts",
         "../node_modules/framer-motion/types/types/geometry.d.ts",
         "./node_modules/@types/node/fs.d.ts",
@@ -6756,29 +6756,10 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/framer-motion/types/gestures/PanSession.d.ts": [
-        "../node_modules/framer-motion/types/types/geometry.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/framer-motion/types/gestures/drag/VisualElementDragControls.d.ts": [
-        "../node_modules/@types/react/index.d.ts",
-        "../node_modules/framer-motion/types/gestures/PanSession.d.ts",
-        "../node_modules/framer-motion/types/gestures/drag/types.d.ts",
-        "../node_modules/framer-motion/types/motion/index.d.ts",
-        "../node_modules/framer-motion/types/render/dom/HTMLVisualElement.d.ts",
-        "../node_modules/framer-motion/types/types/geometry.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
       "../node_modules/framer-motion/types/gestures/drag/types.d.ts": [
         "../node_modules/@types/react/index.d.ts",
-        "../node_modules/framer-motion/types/gestures/PanSession.d.ts",
         "../node_modules/framer-motion/types/gestures/drag/use-drag-controls.d.ts",
+        "../node_modules/framer-motion/types/gestures/pansession.d.ts",
         "../node_modules/framer-motion/types/motion/types.d.ts",
         "../node_modules/framer-motion/types/types.d.ts",
         "../node_modules/framer-motion/types/types/geometry.d.ts",
@@ -6790,14 +6771,26 @@
       ],
       "../node_modules/framer-motion/types/gestures/drag/use-drag-controls.d.ts": [
         "../node_modules/@types/react/index.d.ts",
-        "../node_modules/framer-motion/types/gestures/drag/VisualElementDragControls.d.ts",
+        "../node_modules/framer-motion/types/gestures/drag/visualelementdragcontrols.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/framer-motion/types/gestures/drag/visualelementdragcontrols.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/framer-motion/types/gestures/drag/types.d.ts",
+        "../node_modules/framer-motion/types/gestures/pansession.d.ts",
+        "../node_modules/framer-motion/types/motion/index.d.ts",
+        "../node_modules/framer-motion/types/render/dom/htmlvisualelement.d.ts",
+        "../node_modules/framer-motion/types/types/geometry.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
       "../node_modules/framer-motion/types/gestures/index.d.ts": [
-        "../node_modules/framer-motion/types/gestures/PanSession.d.ts",
+        "../node_modules/framer-motion/types/gestures/pansession.d.ts",
         "../node_modules/framer-motion/types/gestures/use-focus-gesture.d.ts",
         "../node_modules/framer-motion/types/gestures/use-gestures.d.ts",
         "../node_modules/framer-motion/types/gestures/use-hover-gesture.d.ts",
@@ -6808,9 +6801,16 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
+      "../node_modules/framer-motion/types/gestures/pansession.d.ts": [
+        "../node_modules/framer-motion/types/types/geometry.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
       "../node_modules/framer-motion/types/gestures/use-focus-gesture.d.ts": [
         "../node_modules/framer-motion/types/motion/types.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/index.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/index.d.ts",
         "../node_modules/framer-motion/types/types.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -6822,7 +6822,7 @@
         "../node_modules/framer-motion/types/gestures/use-hover-gesture.d.ts",
         "../node_modules/framer-motion/types/gestures/use-pan-gesture.d.ts",
         "../node_modules/framer-motion/types/gestures/use-tap-gesture.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/index.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -6831,7 +6831,7 @@
       "../node_modules/framer-motion/types/gestures/use-hover-gesture.d.ts": [
         "../node_modules/framer-motion/types/events/types.d.ts",
         "../node_modules/framer-motion/types/motion/types.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/index.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/index.d.ts",
         "../node_modules/framer-motion/types/types.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -6841,8 +6841,8 @@
       "../node_modules/framer-motion/types/gestures/use-pan-gesture.d.ts": [
         "../node_modules/@types/react/index.d.ts",
         "../node_modules/framer-motion/types/events/types.d.ts",
-        "../node_modules/framer-motion/types/gestures/PanSession.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/index.d.ts",
+        "../node_modules/framer-motion/types/gestures/pansession.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -6850,7 +6850,7 @@
       ],
       "../node_modules/framer-motion/types/gestures/use-tap-gesture.d.ts": [
         "../node_modules/framer-motion/types/motion/types.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/index.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/index.d.ts",
         "../node_modules/framer-motion/types/types.d.ts",
         "../node_modules/framer-motion/types/types/geometry.d.ts",
         "./node_modules/@types/node/fs.d.ts",
@@ -6859,41 +6859,41 @@
         "./node_modules/@types/node/util.d.ts"
       ],
       "../node_modules/framer-motion/types/index.d.ts": [
-        "../node_modules/framer-motion/types/animation/AnimationControls.d.ts",
         "../node_modules/framer-motion/types/animation/animate.d.ts",
+        "../node_modules/framer-motion/types/animation/animationcontrols.d.ts",
         "../node_modules/framer-motion/types/animation/use-animated-state.d.ts",
         "../node_modules/framer-motion/types/animation/use-animation.d.ts",
-        "../node_modules/framer-motion/types/components/AnimatePresence/PresenceContext.d.ts",
-        "../node_modules/framer-motion/types/components/AnimatePresence/index.d.ts",
-        "../node_modules/framer-motion/types/components/AnimatePresence/types.d.ts",
-        "../node_modules/framer-motion/types/components/AnimatePresence/use-presence.d.ts",
-        "../node_modules/framer-motion/types/components/AnimateSharedLayout/LayoutGroupContext.d.ts",
-        "../node_modules/framer-motion/types/components/AnimateSharedLayout/SharedLayoutContext.d.ts",
-        "../node_modules/framer-motion/types/components/AnimateSharedLayout/index.d.ts",
-        "../node_modules/framer-motion/types/components/AnimateSharedLayout/types.d.ts",
+        "../node_modules/framer-motion/types/components/animatepresence/index.d.ts",
+        "../node_modules/framer-motion/types/components/animatepresence/presencecontext.d.ts",
+        "../node_modules/framer-motion/types/components/animatepresence/types.d.ts",
+        "../node_modules/framer-motion/types/components/animatepresence/use-presence.d.ts",
+        "../node_modules/framer-motion/types/components/animatesharedlayout/index.d.ts",
+        "../node_modules/framer-motion/types/components/animatesharedlayout/layoutgroupcontext.d.ts",
+        "../node_modules/framer-motion/types/components/animatesharedlayout/sharedlayoutcontext.d.ts",
+        "../node_modules/framer-motion/types/components/animatesharedlayout/types.d.ts",
         "../node_modules/framer-motion/types/events/types.d.ts",
         "../node_modules/framer-motion/types/events/use-dom-event.d.ts",
         "../node_modules/framer-motion/types/gestures/drag/types.d.ts",
         "../node_modules/framer-motion/types/gestures/drag/use-drag-controls.d.ts",
         "../node_modules/framer-motion/types/gestures/index.d.ts",
-        "../node_modules/framer-motion/types/motion/context/MotionConfigContext.d.ts",
+        "../node_modules/framer-motion/types/motion/context/motionconfigcontext.d.ts",
         "../node_modules/framer-motion/types/motion/features/animation.d.ts",
         "../node_modules/framer-motion/types/motion/features/drag.d.ts",
         "../node_modules/framer-motion/types/motion/features/exit.d.ts",
         "../node_modules/framer-motion/types/motion/features/gestures.d.ts",
-        "../node_modules/framer-motion/types/motion/features/layout/Animate.d.ts",
+        "../node_modules/framer-motion/types/motion/features/layout/animate.d.ts",
         "../node_modules/framer-motion/types/motion/features/layout/types.d.ts",
         "../node_modules/framer-motion/types/motion/features/types.d.ts",
         "../node_modules/framer-motion/types/motion/index.d.ts",
         "../node_modules/framer-motion/types/motion/types.d.ts",
         "../node_modules/framer-motion/types/motion/utils/use-external-ref.d.ts",
         "../node_modules/framer-motion/types/motion/utils/valid-prop.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/utils/animation.d.ts",
-        "../node_modules/framer-motion/types/render/dom/HTMLVisualElement.d.ts",
+        "../node_modules/framer-motion/types/render/dom/htmlvisualelement.d.ts",
         "../node_modules/framer-motion/types/render/dom/index.d.ts",
         "../node_modules/framer-motion/types/render/dom/layout/scale-correction.d.ts",
         "../node_modules/framer-motion/types/render/dom/minimal-component.d.ts",
         "../node_modules/framer-motion/types/render/dom/types.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/utils/animation.d.ts",
         "../node_modules/framer-motion/types/types.d.ts",
         "../node_modules/framer-motion/types/types/geometry.d.ts",
         "../node_modules/framer-motion/types/utils/transform.d.ts",
@@ -6914,7 +6914,7 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/framer-motion/types/motion/context/MotionConfigContext.d.ts": [
+      "../node_modules/framer-motion/types/motion/context/motionconfigcontext.d.ts": [
         "../node_modules/@types/react/index.d.ts",
         "../node_modules/framer-motion/types/motion/features/types.d.ts",
         "../node_modules/framer-motion/types/types/geometry.d.ts",
@@ -6923,10 +6923,10 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/framer-motion/types/motion/context/MotionContext.d.ts": [
+      "../node_modules/framer-motion/types/motion/context/motioncontext.d.ts": [
         "../node_modules/@types/react/index.d.ts",
         "../node_modules/framer-motion/types/motion/types.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/index.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -6961,7 +6961,7 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/framer-motion/types/motion/features/layout/Animate.d.ts": [
+      "../node_modules/framer-motion/types/motion/features/layout/animate.d.ts": [
         "../node_modules/framer-motion/types/motion/features/types.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -6978,8 +6978,8 @@
       "../node_modules/framer-motion/types/motion/features/types.d.ts": [
         "../node_modules/@types/react/index.d.ts",
         "../node_modules/framer-motion/types/motion/types.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/index.d.ts",
-        "../node_modules/framer-motion/types/render/dom/HTMLVisualElement.d.ts",
+        "../node_modules/framer-motion/types/render/dom/htmlvisualelement.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -6989,7 +6989,7 @@
         "../node_modules/@types/react/index.d.ts",
         "../node_modules/framer-motion/types/motion/features/types.d.ts",
         "../node_modules/framer-motion/types/motion/types.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/types.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/types.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -6997,11 +6997,11 @@
       ],
       "../node_modules/framer-motion/types/motion/types.d.ts": [
         "../node_modules/@types/react/index.d.ts",
-        "../node_modules/framer-motion/types/animation/AnimationControls.d.ts",
+        "../node_modules/framer-motion/types/animation/animationcontrols.d.ts",
         "../node_modules/framer-motion/types/gestures/drag/types.d.ts",
         "../node_modules/framer-motion/types/gestures/index.d.ts",
         "../node_modules/framer-motion/types/motion/features/layout/types.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/types.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/types.d.ts",
         "../node_modules/framer-motion/types/types.d.ts",
         "../node_modules/framer-motion/types/value/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
@@ -7022,58 +7022,13 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/framer-motion/types/render/VisualElement/index.d.ts": [
-        "../node_modules/@types/react/index.d.ts",
-        "../node_modules/framer-motion/types/animation/utils/transitions.d.ts",
-        "../node_modules/framer-motion/types/components/AnimateSharedLayout/utils/stack.d.ts",
-        "../node_modules/framer-motion/types/motion/types.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/types.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/utils/animation-state.d.ts",
-        "../node_modules/framer-motion/types/types.d.ts",
-        "../node_modules/framer-motion/types/types/geometry.d.ts",
-        "../node_modules/framer-motion/types/value/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/framer-motion/types/render/VisualElement/types.d.ts": [
-        "../node_modules/@types/react/index.d.ts",
-        "../node_modules/framer-motion/types/motion/types.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/framer-motion/types/render/VisualElement/utils/animation-state.d.ts": [
-        "../node_modules/framer-motion/types/motion/context/MotionContext.d.ts",
-        "../node_modules/framer-motion/types/motion/index.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/index.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/utils/animation.d.ts",
-        "../node_modules/framer-motion/types/types.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/framer-motion/types/render/VisualElement/utils/animation.d.ts": [
-        "../node_modules/framer-motion/types/index.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/index.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/utils/animation-state.d.ts",
-        "../node_modules/framer-motion/types/types.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/framer-motion/types/render/dom/HTMLVisualElement.d.ts": [
-        "../node_modules/framer-motion/types/components/AnimateSharedLayout/types.d.ts",
+      "../node_modules/framer-motion/types/render/dom/htmlvisualelement.d.ts": [
+        "../node_modules/framer-motion/types/components/animatesharedlayout/types.d.ts",
         "../node_modules/framer-motion/types/motion/features/layout/types.d.ts",
         "../node_modules/framer-motion/types/motion/index.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/index.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/types.d.ts",
         "../node_modules/framer-motion/types/render/dom/types.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/index.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/types.d.ts",
         "../node_modules/framer-motion/types/types.d.ts",
         "../node_modules/framer-motion/types/types/geometry.d.ts",
         "../node_modules/framer-motion/types/value/index.d.ts",
@@ -7111,8 +7066,8 @@
       "../node_modules/framer-motion/types/render/dom/types.d.ts": [
         "../node_modules/@types/react/index.d.ts",
         "../node_modules/framer-motion/types/motion/types.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/types.d.ts",
         "../node_modules/framer-motion/types/render/dom/utils/supported-elements.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/types.d.ts",
         "../node_modules/framer-motion/types/types/geometry.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -7120,6 +7075,51 @@
         "./node_modules/@types/node/util.d.ts"
       ],
       "../node_modules/framer-motion/types/render/dom/utils/supported-elements.d.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/framer-motion/types/render/visualelement/index.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/framer-motion/types/animation/utils/transitions.d.ts",
+        "../node_modules/framer-motion/types/components/animatesharedlayout/utils/stack.d.ts",
+        "../node_modules/framer-motion/types/motion/types.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/types.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/utils/animation-state.d.ts",
+        "../node_modules/framer-motion/types/types.d.ts",
+        "../node_modules/framer-motion/types/types/geometry.d.ts",
+        "../node_modules/framer-motion/types/value/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/framer-motion/types/render/visualelement/types.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/framer-motion/types/motion/types.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/framer-motion/types/render/visualelement/utils/animation-state.d.ts": [
+        "../node_modules/framer-motion/types/motion/context/motioncontext.d.ts",
+        "../node_modules/framer-motion/types/motion/index.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/index.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/utils/animation.d.ts",
+        "../node_modules/framer-motion/types/types.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/framer-motion/types/render/visualelement/utils/animation.d.ts": [
+        "../node_modules/framer-motion/types/index.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/index.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/utils/animation-state.d.ts",
+        "../node_modules/framer-motion/types/types.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -7821,30 +7821,30 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/react-icons/lib/cjs/iconBase.d.ts": [
+      "../node_modules/react-icons/lib/cjs/iconbase.d.ts": [
         "../node_modules/@types/react/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/react-icons/lib/cjs/iconContext.d.ts": [
+      "../node_modules/react-icons/lib/cjs/iconcontext.d.ts": [
         "../node_modules/@types/react/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/react-icons/lib/cjs/iconsManifest.d.ts": [
+      "../node_modules/react-icons/lib/cjs/iconsmanifest.d.ts": [
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
       "../node_modules/react-icons/lib/cjs/index.d.ts": [
-        "../node_modules/react-icons/lib/cjs/iconBase.d.ts",
-        "../node_modules/react-icons/lib/cjs/iconContext.d.ts",
-        "../node_modules/react-icons/lib/cjs/iconsManifest.d.ts",
+        "../node_modules/react-icons/lib/cjs/iconbase.d.ts",
+        "../node_modules/react-icons/lib/cjs/iconcontext.d.ts",
+        "../node_modules/react-icons/lib/cjs/iconsmanifest.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -8605,71 +8605,71 @@
       "./src/blog.tsx": [
         "./src/provider.tsx"
       ],
-      "./src/components/BlogPosts.tsx": [
+      "./src/components/blogposts.tsx": [
         "../node_modules/@types/react/index.d.ts"
       ],
-      "./src/components/Code.tsx": [
+      "./src/components/code.tsx": [
         "../node_modules/@emotion/react/types/index.d.ts"
       ],
-      "./src/components/FloatingTableOfContents.tsx": [
+      "./src/components/floatingtableofcontents.tsx": [
         "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
         "./src/types.ts"
       ],
-      "./src/components/Link.tsx": [
-        "../node_modules/@chakra-ui/react/dist/types/index.d.ts"
-      ],
-      "./src/components/NavBar.tsx": [
-        "../node_modules/@emotion/react/types/index.d.ts"
-      ],
-      "./src/components/NavLink.tsx": [
-        "../node_modules/@types/react/index.d.ts"
-      ],
-      "./src/components/Playground.tsx": [
-        "../node_modules/@types/react/index.d.ts"
-      ],
-      "./src/components/SideNav.tsx": [
-        "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
-        "./src/components/support.ts",
-        "./src/provider.tsx"
-      ],
-      "./src/components/TableOfContents.tsx": [
-        "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
-        "../node_modules/@emotion/react/types/index.d.ts"
-      ],
-      "./src/components/Wrapper.tsx": [
-        "../node_modules/@emotion/react/types/index.d.ts"
-      ],
-      "./src/components/WrapperBlog.tsx": [
-        "../node_modules/@emotion/react/types/index.d.ts"
-      ],
       "./src/components/index.ts": [
-        "./src/components/BlogPosts.tsx",
-        "./src/components/Code.tsx",
-        "./src/components/FloatingTableOfContents.tsx",
-        "./src/components/Link.tsx",
-        "./src/components/NavBar.tsx",
-        "./src/components/Playground.tsx",
-        "./src/components/TableOfContents.tsx",
-        "./src/components/Wrapper.tsx",
-        "./src/components/mdx.tsx"
+        "./src/components/blogposts.tsx",
+        "./src/components/code.tsx",
+        "./src/components/floatingtableofcontents.tsx",
+        "./src/components/link.tsx",
+        "./src/components/mdx.tsx",
+        "./src/components/navbar.tsx",
+        "./src/components/playground.tsx",
+        "./src/components/tableofcontents.tsx",
+        "./src/components/wrapper.tsx"
+      ],
+      "./src/components/link.tsx": [
+        "../node_modules/@chakra-ui/react/dist/types/index.d.ts"
       ],
       "./src/components/mdx.tsx": [
         "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
         "../node_modules/@emotion/react/types/index.d.ts",
-        "./src/components/Wrapper.tsx"
+        "./src/components/wrapper.tsx"
+      ],
+      "./src/components/navbar.tsx": [
+        "../node_modules/@emotion/react/types/index.d.ts"
+      ],
+      "./src/components/navlink.tsx": [
+        "../node_modules/@types/react/index.d.ts"
+      ],
+      "./src/components/playground.tsx": [
+        "../node_modules/@types/react/index.d.ts"
+      ],
+      "./src/components/sidenav.tsx": [
+        "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
+        "./src/components/support.ts",
+        "./src/provider.tsx"
       ],
       "./src/components/support.ts": [
         "../node_modules/@emotion/utils/types/index.d.ts"
+      ],
+      "./src/components/tableofcontents.tsx": [
+        "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
+        "../node_modules/@emotion/react/types/index.d.ts"
+      ],
+      "./src/components/wrapper.tsx": [
+        "../node_modules/@emotion/react/types/index.d.ts"
+      ],
+      "./src/components/wrapperblog.tsx": [
+        "../node_modules/@emotion/react/types/index.d.ts"
       ],
       "./src/index.tsx": [
         "./src/blog.tsx",
         "./src/components/index.ts",
         "./src/provider.tsx"
       ],
-      "./src/plugin/generateTableOfContents.ts": [
+      "./src/plugin/generatetableofcontents.ts": [
         "./src/types.ts"
       ],
-      "./src/plugin/getMdxFilesIndex.ts": [
+      "./src/plugin/getmdxfilesindex.ts": [
         "../node_modules/directory-tree/index.d.ts"
       ],
       "./src/plugin/rehype/utils/index.ts": [
@@ -10859,13 +10859,13 @@
       "../node_modules/@popperjs/core/lib/index.d.ts": [
         "../node_modules/@popperjs/core/lib/enums.d.ts",
         "../node_modules/@popperjs/core/lib/types.d.ts",
-        "../node_modules/@popperjs/core/lib/utils/detectOverflow.d.ts",
+        "../node_modules/@popperjs/core/lib/utils/detectoverflow.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@popperjs/core/lib/modifiers/applyStyles.d.ts": [
+      "../node_modules/@popperjs/core/lib/modifiers/applystyles.d.ts": [
         "../node_modules/@popperjs/core/lib/types.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -10879,7 +10879,7 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@popperjs/core/lib/modifiers/computeStyles.d.ts": [
+      "../node_modules/@popperjs/core/lib/modifiers/computestyles.d.ts": [
         "../node_modules/@popperjs/core/lib/enums.d.ts",
         "../node_modules/@popperjs/core/lib/types.d.ts",
         "./node_modules/@types/node/fs.d.ts",
@@ -10887,7 +10887,7 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@popperjs/core/lib/modifiers/eventListeners.d.ts": [
+      "../node_modules/@popperjs/core/lib/modifiers/eventlisteners.d.ts": [
         "../node_modules/@popperjs/core/lib/types.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -10917,14 +10917,14 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@popperjs/core/lib/modifiers/popperOffsets.d.ts": [
+      "../node_modules/@popperjs/core/lib/modifiers/popperoffsets.d.ts": [
         "../node_modules/@popperjs/core/lib/types.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@popperjs/core/lib/modifiers/preventOverflow.d.ts": [
+      "../node_modules/@popperjs/core/lib/modifiers/preventoverflow.d.ts": [
         "../node_modules/@popperjs/core/lib/enums.d.ts",
         "../node_modules/@popperjs/core/lib/types.d.ts",
         "./node_modules/@types/node/fs.d.ts",
@@ -10934,21 +10934,21 @@
       ],
       "../node_modules/@popperjs/core/lib/types.d.ts": [
         "../node_modules/@popperjs/core/lib/enums.d.ts",
-        "../node_modules/@popperjs/core/lib/modifiers/applyStyles.d.ts",
+        "../node_modules/@popperjs/core/lib/modifiers/applystyles.d.ts",
         "../node_modules/@popperjs/core/lib/modifiers/arrow.d.ts",
-        "../node_modules/@popperjs/core/lib/modifiers/computeStyles.d.ts",
-        "../node_modules/@popperjs/core/lib/modifiers/eventListeners.d.ts",
+        "../node_modules/@popperjs/core/lib/modifiers/computestyles.d.ts",
+        "../node_modules/@popperjs/core/lib/modifiers/eventlisteners.d.ts",
         "../node_modules/@popperjs/core/lib/modifiers/flip.d.ts",
         "../node_modules/@popperjs/core/lib/modifiers/hide.d.ts",
         "../node_modules/@popperjs/core/lib/modifiers/offset.d.ts",
-        "../node_modules/@popperjs/core/lib/modifiers/popperOffsets.d.ts",
-        "../node_modules/@popperjs/core/lib/modifiers/preventOverflow.d.ts",
+        "../node_modules/@popperjs/core/lib/modifiers/popperoffsets.d.ts",
+        "../node_modules/@popperjs/core/lib/modifiers/preventoverflow.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@popperjs/core/lib/utils/detectOverflow.d.ts": [
+      "../node_modules/@popperjs/core/lib/utils/detectoverflow.d.ts": [
         "../node_modules/@popperjs/core/lib/enums.d.ts",
         "../node_modules/@popperjs/core/lib/types.d.ts",
         "./node_modules/@types/node/fs.d.ts",
@@ -11277,7 +11277,7 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@types/lodash/ts3.1/orderBy.d.ts": [
+      "../node_modules/@types/lodash/ts3.1/orderby.d.ts": [
         "../node_modules/@types/lodash/ts3.1/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -11291,7 +11291,7 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/@types/lodash/ts3.1/startCase.d.ts": [
+      "../node_modules/@types/lodash/ts3.1/startcase.d.ts": [
         "../node_modules/@types/lodash/ts3.1/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -11476,17 +11476,17 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/framer-motion/types/animation/AnimationControls.d.ts": [
-        "../node_modules/framer-motion/types/render/VisualElement/index.d.ts",
+      "../node_modules/framer-motion/types/animation/animate.d.ts": [
         "../node_modules/framer-motion/types/types.d.ts",
+        "../node_modules/framer-motion/types/value/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/framer-motion/types/animation/animate.d.ts": [
+      "../node_modules/framer-motion/types/animation/animationcontrols.d.ts": [
+        "../node_modules/framer-motion/types/render/visualelement/index.d.ts",
         "../node_modules/framer-motion/types/types.d.ts",
-        "../node_modules/framer-motion/types/value/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -11499,7 +11499,7 @@
         "./node_modules/@types/node/util.d.ts"
       ],
       "../node_modules/framer-motion/types/animation/use-animation.d.ts": [
-        "../node_modules/framer-motion/types/animation/AnimationControls.d.ts",
+        "../node_modules/framer-motion/types/animation/animationcontrols.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -11514,7 +11514,15 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/framer-motion/types/components/AnimatePresence/PresenceContext.d.ts": [
+      "../node_modules/framer-motion/types/components/animatepresence/index.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/framer-motion/types/components/animatepresence/types.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/framer-motion/types/components/animatepresence/presencecontext.d.ts": [
         "../node_modules/@types/react/index.d.ts",
         "../node_modules/framer-motion/types/motion/types.d.ts",
         "./node_modules/@types/node/fs.d.ts",
@@ -11522,55 +11530,47 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/framer-motion/types/components/AnimatePresence/index.d.ts": [
+      "../node_modules/framer-motion/types/components/animatepresence/types.d.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/framer-motion/types/components/animatepresence/use-presence.d.ts": [
+        "../node_modules/framer-motion/types/components/animatepresence/presencecontext.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/framer-motion/types/components/animatesharedlayout/index.d.ts": [
         "../node_modules/@types/react/index.d.ts",
-        "../node_modules/framer-motion/types/components/AnimatePresence/types.d.ts",
+        "../node_modules/framer-motion/types/components/animatesharedlayout/sharedlayoutcontext.d.ts",
+        "../node_modules/framer-motion/types/components/animatesharedlayout/types.d.ts",
+        "../node_modules/framer-motion/types/components/animatesharedlayout/utils/stack.d.ts",
+        "../node_modules/framer-motion/types/motion/context/motioncontext.d.ts",
+        "../node_modules/framer-motion/types/render/dom/htmlvisualelement.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/framer-motion/types/components/AnimatePresence/types.d.ts": [
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/framer-motion/types/components/AnimatePresence/use-presence.d.ts": [
-        "../node_modules/framer-motion/types/components/AnimatePresence/PresenceContext.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/framer-motion/types/components/AnimateSharedLayout/LayoutGroupContext.d.ts": [
+      "../node_modules/framer-motion/types/components/animatesharedlayout/layoutgroupcontext.d.ts": [
         "../node_modules/@types/react/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/framer-motion/types/components/AnimateSharedLayout/SharedLayoutContext.d.ts": [
+      "../node_modules/framer-motion/types/components/animatesharedlayout/sharedlayoutcontext.d.ts": [
         "../node_modules/@types/react/index.d.ts",
-        "../node_modules/framer-motion/types/render/dom/HTMLVisualElement.d.ts",
+        "../node_modules/framer-motion/types/render/dom/htmlvisualelement.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/framer-motion/types/components/AnimateSharedLayout/index.d.ts": [
-        "../node_modules/@types/react/index.d.ts",
-        "../node_modules/framer-motion/types/components/AnimateSharedLayout/SharedLayoutContext.d.ts",
-        "../node_modules/framer-motion/types/components/AnimateSharedLayout/types.d.ts",
-        "../node_modules/framer-motion/types/components/AnimateSharedLayout/utils/stack.d.ts",
-        "../node_modules/framer-motion/types/motion/context/MotionContext.d.ts",
-        "../node_modules/framer-motion/types/render/dom/HTMLVisualElement.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/framer-motion/types/components/AnimateSharedLayout/types.d.ts": [
+      "../node_modules/framer-motion/types/components/animatesharedlayout/types.d.ts": [
         "../node_modules/@types/react/index.d.ts",
         "../node_modules/framer-motion/types/types.d.ts",
         "../node_modules/framer-motion/types/types/geometry.d.ts",
@@ -11580,9 +11580,9 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/framer-motion/types/components/AnimateSharedLayout/utils/stack.d.ts": [
-        "../node_modules/framer-motion/types/render/VisualElement/types.d.ts",
-        "../node_modules/framer-motion/types/render/dom/HTMLVisualElement.d.ts",
+      "../node_modules/framer-motion/types/components/animatesharedlayout/utils/stack.d.ts": [
+        "../node_modules/framer-motion/types/render/dom/htmlvisualelement.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/types.d.ts",
         "../node_modules/framer-motion/types/types.d.ts",
         "../node_modules/framer-motion/types/types/geometry.d.ts",
         "./node_modules/@types/node/fs.d.ts",
@@ -11605,29 +11605,10 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/framer-motion/types/gestures/PanSession.d.ts": [
-        "../node_modules/framer-motion/types/types/geometry.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/framer-motion/types/gestures/drag/VisualElementDragControls.d.ts": [
-        "../node_modules/@types/react/index.d.ts",
-        "../node_modules/framer-motion/types/gestures/PanSession.d.ts",
-        "../node_modules/framer-motion/types/gestures/drag/types.d.ts",
-        "../node_modules/framer-motion/types/motion/index.d.ts",
-        "../node_modules/framer-motion/types/render/dom/HTMLVisualElement.d.ts",
-        "../node_modules/framer-motion/types/types/geometry.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
       "../node_modules/framer-motion/types/gestures/drag/types.d.ts": [
         "../node_modules/@types/react/index.d.ts",
-        "../node_modules/framer-motion/types/gestures/PanSession.d.ts",
         "../node_modules/framer-motion/types/gestures/drag/use-drag-controls.d.ts",
+        "../node_modules/framer-motion/types/gestures/pansession.d.ts",
         "../node_modules/framer-motion/types/motion/types.d.ts",
         "../node_modules/framer-motion/types/types.d.ts",
         "../node_modules/framer-motion/types/types/geometry.d.ts",
@@ -11639,14 +11620,26 @@
       ],
       "../node_modules/framer-motion/types/gestures/drag/use-drag-controls.d.ts": [
         "../node_modules/@types/react/index.d.ts",
-        "../node_modules/framer-motion/types/gestures/drag/VisualElementDragControls.d.ts",
+        "../node_modules/framer-motion/types/gestures/drag/visualelementdragcontrols.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/framer-motion/types/gestures/drag/visualelementdragcontrols.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/framer-motion/types/gestures/drag/types.d.ts",
+        "../node_modules/framer-motion/types/gestures/pansession.d.ts",
+        "../node_modules/framer-motion/types/motion/index.d.ts",
+        "../node_modules/framer-motion/types/render/dom/htmlvisualelement.d.ts",
+        "../node_modules/framer-motion/types/types/geometry.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
       "../node_modules/framer-motion/types/gestures/index.d.ts": [
-        "../node_modules/framer-motion/types/gestures/PanSession.d.ts",
+        "../node_modules/framer-motion/types/gestures/pansession.d.ts",
         "../node_modules/framer-motion/types/gestures/use-focus-gesture.d.ts",
         "../node_modules/framer-motion/types/gestures/use-gestures.d.ts",
         "../node_modules/framer-motion/types/gestures/use-hover-gesture.d.ts",
@@ -11657,9 +11650,16 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
+      "../node_modules/framer-motion/types/gestures/pansession.d.ts": [
+        "../node_modules/framer-motion/types/types/geometry.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
       "../node_modules/framer-motion/types/gestures/use-focus-gesture.d.ts": [
         "../node_modules/framer-motion/types/motion/types.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/index.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/index.d.ts",
         "../node_modules/framer-motion/types/types.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -11671,7 +11671,7 @@
         "../node_modules/framer-motion/types/gestures/use-hover-gesture.d.ts",
         "../node_modules/framer-motion/types/gestures/use-pan-gesture.d.ts",
         "../node_modules/framer-motion/types/gestures/use-tap-gesture.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/index.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -11680,7 +11680,7 @@
       "../node_modules/framer-motion/types/gestures/use-hover-gesture.d.ts": [
         "../node_modules/framer-motion/types/events/types.d.ts",
         "../node_modules/framer-motion/types/motion/types.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/index.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/index.d.ts",
         "../node_modules/framer-motion/types/types.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -11690,8 +11690,8 @@
       "../node_modules/framer-motion/types/gestures/use-pan-gesture.d.ts": [
         "../node_modules/@types/react/index.d.ts",
         "../node_modules/framer-motion/types/events/types.d.ts",
-        "../node_modules/framer-motion/types/gestures/PanSession.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/index.d.ts",
+        "../node_modules/framer-motion/types/gestures/pansession.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -11699,7 +11699,7 @@
       ],
       "../node_modules/framer-motion/types/gestures/use-tap-gesture.d.ts": [
         "../node_modules/framer-motion/types/motion/types.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/index.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/index.d.ts",
         "../node_modules/framer-motion/types/types.d.ts",
         "../node_modules/framer-motion/types/types/geometry.d.ts",
         "./node_modules/@types/node/fs.d.ts",
@@ -11708,41 +11708,41 @@
         "./node_modules/@types/node/util.d.ts"
       ],
       "../node_modules/framer-motion/types/index.d.ts": [
-        "../node_modules/framer-motion/types/animation/AnimationControls.d.ts",
         "../node_modules/framer-motion/types/animation/animate.d.ts",
+        "../node_modules/framer-motion/types/animation/animationcontrols.d.ts",
         "../node_modules/framer-motion/types/animation/use-animated-state.d.ts",
         "../node_modules/framer-motion/types/animation/use-animation.d.ts",
-        "../node_modules/framer-motion/types/components/AnimatePresence/PresenceContext.d.ts",
-        "../node_modules/framer-motion/types/components/AnimatePresence/index.d.ts",
-        "../node_modules/framer-motion/types/components/AnimatePresence/types.d.ts",
-        "../node_modules/framer-motion/types/components/AnimatePresence/use-presence.d.ts",
-        "../node_modules/framer-motion/types/components/AnimateSharedLayout/LayoutGroupContext.d.ts",
-        "../node_modules/framer-motion/types/components/AnimateSharedLayout/SharedLayoutContext.d.ts",
-        "../node_modules/framer-motion/types/components/AnimateSharedLayout/index.d.ts",
-        "../node_modules/framer-motion/types/components/AnimateSharedLayout/types.d.ts",
+        "../node_modules/framer-motion/types/components/animatepresence/index.d.ts",
+        "../node_modules/framer-motion/types/components/animatepresence/presencecontext.d.ts",
+        "../node_modules/framer-motion/types/components/animatepresence/types.d.ts",
+        "../node_modules/framer-motion/types/components/animatepresence/use-presence.d.ts",
+        "../node_modules/framer-motion/types/components/animatesharedlayout/index.d.ts",
+        "../node_modules/framer-motion/types/components/animatesharedlayout/layoutgroupcontext.d.ts",
+        "../node_modules/framer-motion/types/components/animatesharedlayout/sharedlayoutcontext.d.ts",
+        "../node_modules/framer-motion/types/components/animatesharedlayout/types.d.ts",
         "../node_modules/framer-motion/types/events/types.d.ts",
         "../node_modules/framer-motion/types/events/use-dom-event.d.ts",
         "../node_modules/framer-motion/types/gestures/drag/types.d.ts",
         "../node_modules/framer-motion/types/gestures/drag/use-drag-controls.d.ts",
         "../node_modules/framer-motion/types/gestures/index.d.ts",
-        "../node_modules/framer-motion/types/motion/context/MotionConfigContext.d.ts",
+        "../node_modules/framer-motion/types/motion/context/motionconfigcontext.d.ts",
         "../node_modules/framer-motion/types/motion/features/animation.d.ts",
         "../node_modules/framer-motion/types/motion/features/drag.d.ts",
         "../node_modules/framer-motion/types/motion/features/exit.d.ts",
         "../node_modules/framer-motion/types/motion/features/gestures.d.ts",
-        "../node_modules/framer-motion/types/motion/features/layout/Animate.d.ts",
+        "../node_modules/framer-motion/types/motion/features/layout/animate.d.ts",
         "../node_modules/framer-motion/types/motion/features/layout/types.d.ts",
         "../node_modules/framer-motion/types/motion/features/types.d.ts",
         "../node_modules/framer-motion/types/motion/index.d.ts",
         "../node_modules/framer-motion/types/motion/types.d.ts",
         "../node_modules/framer-motion/types/motion/utils/use-external-ref.d.ts",
         "../node_modules/framer-motion/types/motion/utils/valid-prop.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/utils/animation.d.ts",
-        "../node_modules/framer-motion/types/render/dom/HTMLVisualElement.d.ts",
+        "../node_modules/framer-motion/types/render/dom/htmlvisualelement.d.ts",
         "../node_modules/framer-motion/types/render/dom/index.d.ts",
         "../node_modules/framer-motion/types/render/dom/layout/scale-correction.d.ts",
         "../node_modules/framer-motion/types/render/dom/minimal-component.d.ts",
         "../node_modules/framer-motion/types/render/dom/types.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/utils/animation.d.ts",
         "../node_modules/framer-motion/types/types.d.ts",
         "../node_modules/framer-motion/types/types/geometry.d.ts",
         "../node_modules/framer-motion/types/utils/transform.d.ts",
@@ -11763,7 +11763,7 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/framer-motion/types/motion/context/MotionConfigContext.d.ts": [
+      "../node_modules/framer-motion/types/motion/context/motionconfigcontext.d.ts": [
         "../node_modules/@types/react/index.d.ts",
         "../node_modules/framer-motion/types/motion/features/types.d.ts",
         "../node_modules/framer-motion/types/types/geometry.d.ts",
@@ -11772,10 +11772,10 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/framer-motion/types/motion/context/MotionContext.d.ts": [
+      "../node_modules/framer-motion/types/motion/context/motioncontext.d.ts": [
         "../node_modules/@types/react/index.d.ts",
         "../node_modules/framer-motion/types/motion/types.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/index.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -11810,7 +11810,7 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/framer-motion/types/motion/features/layout/Animate.d.ts": [
+      "../node_modules/framer-motion/types/motion/features/layout/animate.d.ts": [
         "../node_modules/framer-motion/types/motion/features/types.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -11827,8 +11827,8 @@
       "../node_modules/framer-motion/types/motion/features/types.d.ts": [
         "../node_modules/@types/react/index.d.ts",
         "../node_modules/framer-motion/types/motion/types.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/index.d.ts",
-        "../node_modules/framer-motion/types/render/dom/HTMLVisualElement.d.ts",
+        "../node_modules/framer-motion/types/render/dom/htmlvisualelement.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -11838,7 +11838,7 @@
         "../node_modules/@types/react/index.d.ts",
         "../node_modules/framer-motion/types/motion/features/types.d.ts",
         "../node_modules/framer-motion/types/motion/types.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/types.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/types.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -11846,11 +11846,11 @@
       ],
       "../node_modules/framer-motion/types/motion/types.d.ts": [
         "../node_modules/@types/react/index.d.ts",
-        "../node_modules/framer-motion/types/animation/AnimationControls.d.ts",
+        "../node_modules/framer-motion/types/animation/animationcontrols.d.ts",
         "../node_modules/framer-motion/types/gestures/drag/types.d.ts",
         "../node_modules/framer-motion/types/gestures/index.d.ts",
         "../node_modules/framer-motion/types/motion/features/layout/types.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/types.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/types.d.ts",
         "../node_modules/framer-motion/types/types.d.ts",
         "../node_modules/framer-motion/types/value/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
@@ -11871,58 +11871,13 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/framer-motion/types/render/VisualElement/index.d.ts": [
-        "../node_modules/@types/react/index.d.ts",
-        "../node_modules/framer-motion/types/animation/utils/transitions.d.ts",
-        "../node_modules/framer-motion/types/components/AnimateSharedLayout/utils/stack.d.ts",
-        "../node_modules/framer-motion/types/motion/types.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/types.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/utils/animation-state.d.ts",
-        "../node_modules/framer-motion/types/types.d.ts",
-        "../node_modules/framer-motion/types/types/geometry.d.ts",
-        "../node_modules/framer-motion/types/value/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/framer-motion/types/render/VisualElement/types.d.ts": [
-        "../node_modules/@types/react/index.d.ts",
-        "../node_modules/framer-motion/types/motion/types.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/framer-motion/types/render/VisualElement/utils/animation-state.d.ts": [
-        "../node_modules/framer-motion/types/motion/context/MotionContext.d.ts",
-        "../node_modules/framer-motion/types/motion/index.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/index.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/utils/animation.d.ts",
-        "../node_modules/framer-motion/types/types.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/framer-motion/types/render/VisualElement/utils/animation.d.ts": [
-        "../node_modules/framer-motion/types/index.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/index.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/utils/animation-state.d.ts",
-        "../node_modules/framer-motion/types/types.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
-      "../node_modules/framer-motion/types/render/dom/HTMLVisualElement.d.ts": [
-        "../node_modules/framer-motion/types/components/AnimateSharedLayout/types.d.ts",
+      "../node_modules/framer-motion/types/render/dom/htmlvisualelement.d.ts": [
+        "../node_modules/framer-motion/types/components/animatesharedlayout/types.d.ts",
         "../node_modules/framer-motion/types/motion/features/layout/types.d.ts",
         "../node_modules/framer-motion/types/motion/index.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/index.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/types.d.ts",
         "../node_modules/framer-motion/types/render/dom/types.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/index.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/types.d.ts",
         "../node_modules/framer-motion/types/types.d.ts",
         "../node_modules/framer-motion/types/types/geometry.d.ts",
         "../node_modules/framer-motion/types/value/index.d.ts",
@@ -11960,8 +11915,8 @@
       "../node_modules/framer-motion/types/render/dom/types.d.ts": [
         "../node_modules/@types/react/index.d.ts",
         "../node_modules/framer-motion/types/motion/types.d.ts",
-        "../node_modules/framer-motion/types/render/VisualElement/types.d.ts",
         "../node_modules/framer-motion/types/render/dom/utils/supported-elements.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/types.d.ts",
         "../node_modules/framer-motion/types/types/geometry.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -11969,6 +11924,51 @@
         "./node_modules/@types/node/util.d.ts"
       ],
       "../node_modules/framer-motion/types/render/dom/utils/supported-elements.d.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/framer-motion/types/render/visualelement/index.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/framer-motion/types/animation/utils/transitions.d.ts",
+        "../node_modules/framer-motion/types/components/animatesharedlayout/utils/stack.d.ts",
+        "../node_modules/framer-motion/types/motion/types.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/types.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/utils/animation-state.d.ts",
+        "../node_modules/framer-motion/types/types.d.ts",
+        "../node_modules/framer-motion/types/types/geometry.d.ts",
+        "../node_modules/framer-motion/types/value/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/framer-motion/types/render/visualelement/types.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/framer-motion/types/motion/types.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/framer-motion/types/render/visualelement/utils/animation-state.d.ts": [
+        "../node_modules/framer-motion/types/motion/context/motioncontext.d.ts",
+        "../node_modules/framer-motion/types/motion/index.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/index.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/utils/animation.d.ts",
+        "../node_modules/framer-motion/types/types.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/framer-motion/types/render/visualelement/utils/animation.d.ts": [
+        "../node_modules/framer-motion/types/index.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/index.d.ts",
+        "../node_modules/framer-motion/types/render/visualelement/utils/animation-state.d.ts",
+        "../node_modules/framer-motion/types/types.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -12670,30 +12670,30 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/react-icons/lib/cjs/iconBase.d.ts": [
+      "../node_modules/react-icons/lib/cjs/iconbase.d.ts": [
         "../node_modules/@types/react/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/react-icons/lib/cjs/iconContext.d.ts": [
+      "../node_modules/react-icons/lib/cjs/iconcontext.d.ts": [
         "../node_modules/@types/react/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/react-icons/lib/cjs/iconsManifest.d.ts": [
+      "../node_modules/react-icons/lib/cjs/iconsmanifest.d.ts": [
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
       "../node_modules/react-icons/lib/cjs/index.d.ts": [
-        "../node_modules/react-icons/lib/cjs/iconBase.d.ts",
-        "../node_modules/react-icons/lib/cjs/iconContext.d.ts",
-        "../node_modules/react-icons/lib/cjs/iconsManifest.d.ts",
+        "../node_modules/react-icons/lib/cjs/iconbase.d.ts",
+        "../node_modules/react-icons/lib/cjs/iconcontext.d.ts",
+        "../node_modules/react-icons/lib/cjs/iconsmanifest.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -13111,29 +13111,29 @@
       "./node_modules/@types/node/zlib.d.ts",
       "./node_modules/chalk/index.d.ts",
       "./src/blog.tsx",
-      "./src/components/BlogPosts.tsx",
-      "./src/components/Code.tsx",
-      "./src/components/FloatingTableOfContents.tsx",
-      "./src/components/FooterButtons.tsx",
-      "./src/components/Link.tsx",
-      "./src/components/MobileNav.tsx",
-      "./src/components/NavBar.tsx",
-      "./src/components/NavLink.tsx",
-      "./src/components/Playground.tsx",
-      "./src/components/SideNav.tsx",
-      "./src/components/TableOfContents.tsx",
-      "./src/components/Wrapper.tsx",
-      "./src/components/WrapperBlog.tsx",
+      "./src/components/blogposts.tsx",
+      "./src/components/code.tsx",
+      "./src/components/floatingtableofcontents.tsx",
+      "./src/components/footerbuttons.tsx",
       "./src/components/icons.tsx",
       "./src/components/index.ts",
+      "./src/components/link.tsx",
       "./src/components/mdx.tsx",
+      "./src/components/mobilenav.tsx",
+      "./src/components/navbar.tsx",
+      "./src/components/navlink.tsx",
+      "./src/components/playground.tsx",
+      "./src/components/sidenav.tsx",
       "./src/components/support.ts",
+      "./src/components/tableofcontents.tsx",
+      "./src/components/wrapper.tsx",
+      "./src/components/wrapperblog.tsx",
       "./src/index.tsx",
-      "./src/plugin/debugLoader.js",
-      "./src/plugin/generateTableOfContents.ts",
-      "./src/plugin/getMdxFilesIndex.ts",
+      "./src/plugin/debugloader.js",
+      "./src/plugin/generatetableofcontents.ts",
+      "./src/plugin/getmdxfilesindex.ts",
       "./src/plugin/index.ts",
-      "./src/plugin/injectorLoader.js",
+      "./src/plugin/injectorloader.js",
       "./src/plugin/rehype/playground.ts",
       "./src/plugin/rehype/utils/ast.ts",
       "./src/plugin/rehype/utils/exports.ts",
@@ -13141,7 +13141,7 @@
       "./src/plugin/rehype/utils/imports.ts",
       "./src/plugin/rehype/utils/index.ts",
       "./src/plugin/rehype/utils/jsx.ts",
-      "./src/plugin/withMdx.ts",
+      "./src/plugin/withmdx.ts",
       "./src/provider.tsx",
       "./src/types.ts",
       "../node_modules/@babel/parser/typings/babel-parser.d.ts",
@@ -13405,17 +13405,17 @@
       "../node_modules/@popperjs/core/index.d.ts",
       "../node_modules/@popperjs/core/lib/enums.d.ts",
       "../node_modules/@popperjs/core/lib/index.d.ts",
-      "../node_modules/@popperjs/core/lib/modifiers/applyStyles.d.ts",
+      "../node_modules/@popperjs/core/lib/modifiers/applystyles.d.ts",
       "../node_modules/@popperjs/core/lib/modifiers/arrow.d.ts",
-      "../node_modules/@popperjs/core/lib/modifiers/computeStyles.d.ts",
-      "../node_modules/@popperjs/core/lib/modifiers/eventListeners.d.ts",
+      "../node_modules/@popperjs/core/lib/modifiers/computestyles.d.ts",
+      "../node_modules/@popperjs/core/lib/modifiers/eventlisteners.d.ts",
       "../node_modules/@popperjs/core/lib/modifiers/flip.d.ts",
       "../node_modules/@popperjs/core/lib/modifiers/hide.d.ts",
       "../node_modules/@popperjs/core/lib/modifiers/offset.d.ts",
-      "../node_modules/@popperjs/core/lib/modifiers/popperOffsets.d.ts",
-      "../node_modules/@popperjs/core/lib/modifiers/preventOverflow.d.ts",
+      "../node_modules/@popperjs/core/lib/modifiers/popperoffsets.d.ts",
+      "../node_modules/@popperjs/core/lib/modifiers/preventoverflow.d.ts",
       "../node_modules/@popperjs/core/lib/types.d.ts",
-      "../node_modules/@popperjs/core/lib/utils/detectOverflow.d.ts",
+      "../node_modules/@popperjs/core/lib/utils/detectoverflow.d.ts",
       "../node_modules/@types/anymatch/index.d.ts",
       "../node_modules/@types/chai/index.d.ts",
       "../node_modules/@types/color-name/index.d.ts",
@@ -13442,9 +13442,9 @@
       "../node_modules/@types/lodash/ts3.1/fp/omit.d.ts",
       "../node_modules/@types/lodash/ts3.1/get.d.ts",
       "../node_modules/@types/lodash/ts3.1/index.d.ts",
-      "../node_modules/@types/lodash/ts3.1/orderBy.d.ts",
+      "../node_modules/@types/lodash/ts3.1/orderby.d.ts",
       "../node_modules/@types/lodash/ts3.1/pick.d.ts",
-      "../node_modules/@types/lodash/ts3.1/startCase.d.ts",
+      "../node_modules/@types/lodash/ts3.1/startcase.d.ts",
       "../node_modules/@types/lodash/ts3.1/throttle.d.ts",
       "../node_modules/@types/mdast/index.d.ts",
       "../node_modules/@types/mocha/index.d.ts",
@@ -13471,56 +13471,56 @@
       "../node_modules/css-box-model/src/index.d.ts",
       "../node_modules/csstype/index.d.ts",
       "../node_modules/directory-tree/index.d.ts",
-      "../node_modules/framer-motion/types/animation/AnimationControls.d.ts",
       "../node_modules/framer-motion/types/animation/animate.d.ts",
+      "../node_modules/framer-motion/types/animation/animationcontrols.d.ts",
       "../node_modules/framer-motion/types/animation/use-animated-state.d.ts",
       "../node_modules/framer-motion/types/animation/use-animation.d.ts",
       "../node_modules/framer-motion/types/animation/utils/transitions.d.ts",
-      "../node_modules/framer-motion/types/components/AnimatePresence/PresenceContext.d.ts",
-      "../node_modules/framer-motion/types/components/AnimatePresence/index.d.ts",
-      "../node_modules/framer-motion/types/components/AnimatePresence/types.d.ts",
-      "../node_modules/framer-motion/types/components/AnimatePresence/use-presence.d.ts",
-      "../node_modules/framer-motion/types/components/AnimateSharedLayout/LayoutGroupContext.d.ts",
-      "../node_modules/framer-motion/types/components/AnimateSharedLayout/SharedLayoutContext.d.ts",
-      "../node_modules/framer-motion/types/components/AnimateSharedLayout/index.d.ts",
-      "../node_modules/framer-motion/types/components/AnimateSharedLayout/types.d.ts",
-      "../node_modules/framer-motion/types/components/AnimateSharedLayout/utils/stack.d.ts",
+      "../node_modules/framer-motion/types/components/animatepresence/index.d.ts",
+      "../node_modules/framer-motion/types/components/animatepresence/presencecontext.d.ts",
+      "../node_modules/framer-motion/types/components/animatepresence/types.d.ts",
+      "../node_modules/framer-motion/types/components/animatepresence/use-presence.d.ts",
+      "../node_modules/framer-motion/types/components/animatesharedlayout/index.d.ts",
+      "../node_modules/framer-motion/types/components/animatesharedlayout/layoutgroupcontext.d.ts",
+      "../node_modules/framer-motion/types/components/animatesharedlayout/sharedlayoutcontext.d.ts",
+      "../node_modules/framer-motion/types/components/animatesharedlayout/types.d.ts",
+      "../node_modules/framer-motion/types/components/animatesharedlayout/utils/stack.d.ts",
       "../node_modules/framer-motion/types/events/types.d.ts",
       "../node_modules/framer-motion/types/events/use-dom-event.d.ts",
-      "../node_modules/framer-motion/types/gestures/PanSession.d.ts",
-      "../node_modules/framer-motion/types/gestures/drag/VisualElementDragControls.d.ts",
       "../node_modules/framer-motion/types/gestures/drag/types.d.ts",
       "../node_modules/framer-motion/types/gestures/drag/use-drag-controls.d.ts",
+      "../node_modules/framer-motion/types/gestures/drag/visualelementdragcontrols.d.ts",
       "../node_modules/framer-motion/types/gestures/index.d.ts",
+      "../node_modules/framer-motion/types/gestures/pansession.d.ts",
       "../node_modules/framer-motion/types/gestures/use-focus-gesture.d.ts",
       "../node_modules/framer-motion/types/gestures/use-gestures.d.ts",
       "../node_modules/framer-motion/types/gestures/use-hover-gesture.d.ts",
       "../node_modules/framer-motion/types/gestures/use-pan-gesture.d.ts",
       "../node_modules/framer-motion/types/gestures/use-tap-gesture.d.ts",
       "../node_modules/framer-motion/types/index.d.ts",
-      "../node_modules/framer-motion/types/motion/context/MotionConfigContext.d.ts",
-      "../node_modules/framer-motion/types/motion/context/MotionContext.d.ts",
+      "../node_modules/framer-motion/types/motion/context/motionconfigcontext.d.ts",
+      "../node_modules/framer-motion/types/motion/context/motioncontext.d.ts",
       "../node_modules/framer-motion/types/motion/features/animation.d.ts",
       "../node_modules/framer-motion/types/motion/features/drag.d.ts",
       "../node_modules/framer-motion/types/motion/features/exit.d.ts",
       "../node_modules/framer-motion/types/motion/features/gestures.d.ts",
-      "../node_modules/framer-motion/types/motion/features/layout/Animate.d.ts",
+      "../node_modules/framer-motion/types/motion/features/layout/animate.d.ts",
       "../node_modules/framer-motion/types/motion/features/layout/types.d.ts",
       "../node_modules/framer-motion/types/motion/features/types.d.ts",
       "../node_modules/framer-motion/types/motion/index.d.ts",
       "../node_modules/framer-motion/types/motion/types.d.ts",
       "../node_modules/framer-motion/types/motion/utils/use-external-ref.d.ts",
       "../node_modules/framer-motion/types/motion/utils/valid-prop.d.ts",
-      "../node_modules/framer-motion/types/render/VisualElement/index.d.ts",
-      "../node_modules/framer-motion/types/render/VisualElement/types.d.ts",
-      "../node_modules/framer-motion/types/render/VisualElement/utils/animation-state.d.ts",
-      "../node_modules/framer-motion/types/render/VisualElement/utils/animation.d.ts",
-      "../node_modules/framer-motion/types/render/dom/HTMLVisualElement.d.ts",
+      "../node_modules/framer-motion/types/render/dom/htmlvisualelement.d.ts",
       "../node_modules/framer-motion/types/render/dom/index.d.ts",
       "../node_modules/framer-motion/types/render/dom/layout/scale-correction.d.ts",
       "../node_modules/framer-motion/types/render/dom/minimal-component.d.ts",
       "../node_modules/framer-motion/types/render/dom/types.d.ts",
       "../node_modules/framer-motion/types/render/dom/utils/supported-elements.d.ts",
+      "../node_modules/framer-motion/types/render/visualelement/index.d.ts",
+      "../node_modules/framer-motion/types/render/visualelement/types.d.ts",
+      "../node_modules/framer-motion/types/render/visualelement/utils/animation-state.d.ts",
+      "../node_modules/framer-motion/types/render/visualelement/utils/animation.d.ts",
       "../node_modules/framer-motion/types/types.d.ts",
       "../node_modules/framer-motion/types/types/geometry.d.ts",
       "../node_modules/framer-motion/types/utils/subscription-manager.d.ts",
@@ -13611,9 +13611,9 @@
       "../node_modules/re-resizable/lib/resizer.d.ts",
       "../node_modules/react-icons/di/index.d.ts",
       "../node_modules/react-icons/fi/index.d.ts",
-      "../node_modules/react-icons/lib/cjs/iconBase.d.ts",
-      "../node_modules/react-icons/lib/cjs/iconContext.d.ts",
-      "../node_modules/react-icons/lib/cjs/iconsManifest.d.ts",
+      "../node_modules/react-icons/lib/cjs/iconbase.d.ts",
+      "../node_modules/react-icons/lib/cjs/iconcontext.d.ts",
+      "../node_modules/react-icons/lib/cjs/iconsmanifest.d.ts",
       "../node_modules/react-icons/lib/cjs/index.d.ts",
       "../node_modules/react-icons/md/index.d.ts",
       "../node_modules/react-live/typings/react-live.d.ts",

@@ -1,5 +1,5 @@
 {
-    "name": "dokz",
+    "name": "@aserto/dokz",
     "_": "[bump if dokz]",
     "version": "2.0.7",
     "description": "",
@@ -14,7 +14,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "remorses/dokz",
+        "url": "ogazitt/dokz",
         "directory": "dokz"
     },
     "homepage": "https://dokz.site",
@@ -26,7 +26,8 @@
     "scripts": {
         "compile": "tsc --incremental && tsc --module ESNext --outDir esm --incremental",
         "test": "NODE_ENV=test mocha --colors --exit",
-        "watch": "rm -rf dokz/esm dokz/dist && yarn tsc -w"
+        "watch": "rm -rf dokz/esm dokz/dist && yarn tsc -w",
+        "publish": "npm version patch && npm publish --access public"
     },
     "keywords": [],
     "author": "Tommaso De Rossi, morse <beats.by.morse@gmail.com>",
