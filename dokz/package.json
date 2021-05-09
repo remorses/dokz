@@ -1,7 +1,7 @@
 {
     "name": "@aserto/dokz",
     "_": "[bump if dokz]",
-    "version": "2.0.7",
+    "version": "2.0.9",
     "description": "",
     "main": "dist/index.js",
     "module": "esm/index.js",
@@ -27,7 +27,7 @@
         "compile": "tsc --incremental && tsc --module ESNext --outDir esm --incremental",
         "test": "NODE_ENV=test mocha --colors --exit",
         "watch": "rm -rf dokz/esm dokz/dist && yarn tsc -w",
-        "publish": "npm version patch && npm publish --access public"
+        "release": "npm version patch && npm publish --access public"
     },
     "keywords": [],
     "author": "Tommaso De Rossi, morse <beats.by.morse@gmail.com>",
@@ -55,10 +55,10 @@
         "@chakra-ui/react": "*",
         "@emotion/react": "*",
         "framer-motion": "*",
-        "remark-mdx": "*",
         "next": "*",
         "react": "*",
-        "react-dom": "*"
+        "react-dom": "*",
+        "remark-mdx": "*"
     },
     "dependencies": {
         "@babel/generator": "^7.10.2",
@@ -69,9 +69,9 @@
         "@mdx-js/react": "^1.5.8",
         "@philpl/buble": "^0.19.7",
         "await-to-js": "^2.1.1",
+        "baby-i-am-faded": "^2.0.1",
         "chalk": "^4.1.0",
         "chokidar": "^3.4.1",
-        "baby-i-am-faded": "^2.0.1",
         "directory-tree": "^2.2.4",
         "front-matter": "^3.1.0",
         "get-git-config": "^0.0.4",
