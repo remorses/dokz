@@ -2712,7 +2712,7 @@
         "affectsGlobalScope": false
       },
       "./src/components/wrapper.tsx": {
-        "version": "8d47eee812f7100509ed2aca9f5639bacdb88562e1ccf89989bc6e3646d4633b",
+        "version": "b5c9477529c556b528d2e51d82fc4d48637078245401bdcb383de8201e13f6bd",
         "signature": "cf9983079f248007bbb97cfd46f18777e54e0bf9df66ce17b39aa2de75dc2311",
         "affectsGlobalScope": false
       },
