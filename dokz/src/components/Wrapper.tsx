@@ -36,6 +36,7 @@ export function Wrapper(props) {
         headerItems,
         maxPageWidth,
         bodyColor,
+        bodyBackgroundColor,
         fontSize,
         fontWeight,
         fontFamily,
@@ -63,6 +64,7 @@ export function Wrapper(props) {
                     align='center'
                     minHeight='100%'
                     color={bodyColor[colorMode]}
+                    backgroundColor={bodyBackgroundColor[colorMode]}
                     fontSize={fontSize}
                     fontFamily={fontFamily}
                     fontWeight={fontWeight}

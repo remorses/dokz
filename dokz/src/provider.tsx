@@ -91,6 +91,10 @@ export type DokzProviderProps = {
     */
     bodyColor?: { dark: string; light: string }
     /*
+    The color of the page background
+    */
+    bodyBackgroundColor?: { dark: string; light: string }
+    /*
     The color of the heading elements
     */
     headingColor?: { dark: string; light: string }
@@ -138,7 +142,8 @@ export const defaultDokzContext: DokzProviderProps = {
     headerItems: [<ColorModeSwitch key={0} />],
     prismTheme: { dark: defaultDarkPrismTheme, light: darkPrismTheme },
     maxPageWidth: '1600px',
-    bodyColor: { light: '#222', dark: '#121212' },
+    bodyColor: { light: '#222', dark: 'rgba(255,255,255,.9)' },
+    bodyBackgroundColor: { light: 'white', dark: '#121212' },
     headingColor: { light: '#111', dark: 'rgba(255,255,255,1)' },
     fontSize: '16px',
     fontFamily: `-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`,

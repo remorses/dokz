@@ -69,6 +69,7 @@ export const BaseWrapperBlog = ({ children, ...rest }) => {
         headerItems,
         maxPageWidth,
         bodyColor,
+        bodyBackgroundColor,
         fontSize,
         fontFamily,
         fontWeight,
@@ -84,6 +85,7 @@ export const BaseWrapperBlog = ({ children, ...rest }) => {
                     className='dokz visibleInPrint noMarginInPrint'
                     align='center'
                     color={bodyColor[colorMode]}
+                    backgroundColor={bodyBackgroundColor[colorMode]}
                     fontSize={fontSize}
                     fontFamily={fontFamily}
                     fontWeight={fontWeight}
