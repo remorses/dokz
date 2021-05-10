@@ -46,7 +46,7 @@ export const ColorModeSwitch = ({ ...rest }) => {
 
 const NavBar = ({ logo, tree = null as any, items: navs, ...props }) => {
     const { colorMode, toggleColorMode } = useColorMode()
-    const bg = { light: 'white', dark: 'rgb(31, 34, 36, 0.9)' }
+    const bg = { light: 'rgb(31, 34, 36, 0.9)', dark: 'rgb(31, 34, 36, 0.9)' }
     const { maxPageWidth } = useDokzConfig()
     return (
         <Stack
