@@ -121,7 +121,7 @@ export function Wrapper(props) {
                             mt={[NAVBAR_H + 'px']}
                         >
                             <Stack
-                                minHeight={`calc(100vh-${NAVBAR_H}px)`}
+                                minHeight={`calc(100vh - ${NAVBAR_H}px)`}
                                 className='dokz visibleInPrint mainContent'
                                 direction='column'
                                 align='stretch'
