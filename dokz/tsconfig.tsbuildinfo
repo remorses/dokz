@@ -2717,7 +2717,7 @@
         "affectsGlobalScope": false
       },
       "./src/provider.tsx": {
-        "version": "282f87935c15c3b27a5e8a3ed9ca149cb186eb159da0b0c57383ebefdafe71c6",
+        "version": "74ead1f17edf38eee79f64eab7b98e05ce17fe0950729d67ef24ae572de2541f",
         "signature": "664d415d8a0386b68992212fc65342c4cff7c9f5a271fad687b1f4f7b94db6b8",
         "affectsGlobalScope": false
       },
