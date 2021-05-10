@@ -1,7 +1,7 @@
 {
     "name": "@aserto/dokz",
     "_": "[bump if dokz]",
-    "version": "2.0.13",
+    "version": "2.0.14",
     "description": "",
     "main": "dist/index.js",
     "module": "esm/index.js",
@@ -26,8 +26,7 @@
     "scripts": {
         "compile": "tsc --incremental && tsc --module ESNext --outDir esm --incremental",
         "test": "NODE_ENV=test mocha --colors --exit",
-        "watch": "rm -rf dokz/esm dokz/dist && yarn tsc -w",
-        "release": "npm version patch && npm publish --access public"
+        "watch": "rm -rf dokz/esm dokz/dist && yarn tsc -w"
     },
     "keywords": [],
     "author": "Tommaso De Rossi, morse <beats.by.morse@gmail.com>",
