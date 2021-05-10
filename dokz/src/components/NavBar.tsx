@@ -39,9 +39,6 @@ export const ColorModeSwitch = ({ ...rest }) => {
             } mode`}
             onClick={toggleColorMode}
             icon={colorMode === 'light' ? <FiMoon /> : <FiSun />}
-            _focus={{
-                background: '#121212',
-            }}
             {...rest}
         />
     )
