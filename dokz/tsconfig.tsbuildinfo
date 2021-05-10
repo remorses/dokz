@@ -2667,7 +2667,7 @@
         "affectsGlobalScope": false
       },
       "./src/components/navbar.tsx": {
-        "version": "95824b1399087bbeaebc82539a8c9219e4e18c2f3978e2cd154d1220d4abafe1",
+        "version": "eaba8d53d708fc2de62437dea0671ee51c36b219bf51fdc2ed6cb294df3634ff",
         "signature": "a27f32bb93a46dbbe79508057fbbb9df16c893755dd2022c31df11fe6e926a9d",
         "affectsGlobalScope": false
       },
