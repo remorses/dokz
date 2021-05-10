@@ -46,7 +46,7 @@ export const ColorModeSwitch = ({ ...rest }) => {
 
 const NavBar = ({ logo, tree = null as any, items: navs, ...props }) => {
     const { colorMode, toggleColorMode } = useColorMode()
-    const bg = { light: 'white', dark: '#121212' }
+    const bg = { light: 'white', dark: 'rgb(31, 34, 36, 0.9)' }
     const { maxPageWidth } = useDokzConfig()
     return (
         <Stack
@@ -73,7 +73,7 @@ const NavBar = ({ logo, tree = null as any, items: navs, ...props }) => {
                         flex={{ sm: '1', md: 'none' }}
                         ml={5}
                         align='center'
-                        color='gray.500'
+                        color='#ECEDED'
                         justify='flex-end'
                     >
                         {Array.isArray(navs) ? (

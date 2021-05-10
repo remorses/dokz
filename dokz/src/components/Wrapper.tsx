@@ -26,7 +26,7 @@ import { useRouter } from 'next/router'
 const SIDENAV_W = 280
 const TABLE_OF_C_W = 200
 
-const NAVBAR_H = 62
+const NAVBAR_H = 82
 
 export function Wrapper(props) {
     const { tableOfContents, name, ...rest } = props.meta || {}
