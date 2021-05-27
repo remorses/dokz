@@ -147,17 +147,19 @@ const NavTreeComponent = ({
                 />
             )
         })
-    if (isFolder && depth > 0) {
+    if (isFolder) {
         return (
             <CollapsableTreeNode
                 path={path}
                 depth={depth}
                 title={formattedTitle}
                 subTree={subTree}
+                hideDivider={hideDivider}
                 {...rest}
             />
         )
     }
+    /*
     if (isFolder) {
         return (
             <Stack as={Faded} cascade spacing='0px' {...rest}>
@@ -177,6 +179,7 @@ const NavTreeComponent = ({
             </Stack>
         )
     }
+    */
     return (
         <Stack spacing='0px' {...rest}>
             <ComponentLink
@@ -193,7 +196,7 @@ const NavTreeComponent = ({
     )
 }
 
-function CollapsableTreeNode({ title, path, depth, subTree }) {
+function CollapsableTreeNode({ title, path, depth, subTree, hideDivider }) {
     const key = 'sidenav-state-' + path
     const [active, setActive] = useStorageState(
         typeof window === 'undefined' ? null : localStorage,
@@ -207,28 +210,48 @@ function CollapsableTreeNode({ title, path, depth, subTree }) {
         setActive(isOpen ? 'true' : '')
     }, [isOpen])
     return (
-        <Stack spacing='0px'>
-            <Box
-                display='flex'
-                alignItems='center'
-                cursor='pointer'
-                onClick={onToggle}
-                py='0.2em'
-                my='0.2em'
-            >
+        depth > 0 ? (
+            <Stack spacing='0px'>
                 <Box
-                    mr='0.4em'
-                    boxSize='0.6em'
-                    opacity={0.6}
-                    display='inline-block'
-                    as={isOpen ? CollapseDown : CollapseRight}
-                />
-                {title}
-            </Box>
-            <Collapse in={isOpen}>
-                <Box ml='20px'>{subTree}</Box>
-            </Collapse>
-        </Stack>
+                    display='flex'
+                    alignItems='center'
+                    cursor='pointer'
+                    onClick={onToggle}
+                    py='0.2em'
+                    my='0.2em'
+                >
+                    <Box
+                        mr='0.4em'
+                        boxSize='0.6em'
+                        opacity={0.6}
+                        display='inline-block'
+                        as={isOpen ? CollapseDown : CollapseRight}
+                    />
+                    {title}
+                </Box>
+                <Collapse in={isOpen}>
+                    <Box ml='20px'>{subTree}</Box>
+                </Collapse>
+            </Stack>
+        ) : (
+            <Stack as={Faded} cascade spacing='0px'>
+                <Box my='0.2em'>
+                    {!hideDivider && <Divider />}
+                    <Box
+                        py='0.2em'
+                        pt='1.4em'
+                        my='0.2em'
+                        fontSize='1.1em'
+                        fontWeight='semibold'
+                    >
+                        {title}
+                    </Box>
+                </Box>
+                <Collapse in={isOpen}>
+                    <Box ml='20px'>{subTree}</Box>
+                </Collapse>
+            </Stack>            
+        )
     )
 }
 
