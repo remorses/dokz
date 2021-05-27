@@ -130,8 +130,9 @@ const NavTreeComponent = ({
     url = '',
     title = '',
     path,
+    isActive,
     ...rest
-}: DirectoryTree & { depth?: number; hideDivider?: boolean }) => {
+}: DirectoryTree & { depth?: number; hideDivider?: boolean; isActive?: boolean }) => {
     const w = 10
     const isFolder = !url
     const formattedTitle = title || formatTitle(name || '')
@@ -155,6 +156,7 @@ const NavTreeComponent = ({
                 title={formattedTitle}
                 subTree={subTree}
                 hideDivider={hideDivider}
+                isActive={isActive}
                 {...rest}
             />
         )
@@ -181,7 +183,7 @@ const NavTreeComponent = ({
     }
     */
     return (
-        <Stack spacing='0px' {...rest}>
+        <Stack spacing='0px' isActive={isActive} {...rest}>
             <ComponentLink
                 opacity={0.8}
                 py='0.2em'
@@ -196,7 +198,7 @@ const NavTreeComponent = ({
     )
 }
 
-function CollapsableTreeNode({ title, path, depth, subTree, hideDivider }) {
+function CollapsableTreeNode({ title, path, depth, subTree, hideDivider, isActive }) {
     const key = 'sidenav-state-' + path
     const [active, setActive] = useStorageState(
         typeof window === 'undefined' ? null : localStorage,
@@ -207,7 +209,7 @@ function CollapsableTreeNode({ title, path, depth, subTree, hideDivider }) {
         defaultIsOpen: Boolean(active),
     })
     useEffect(() => {
-        setActive(isOpen ? 'true' : '')
+        setActive(isOpen || isActive ? 'true' : '')
     }, [isOpen])
     return (
         depth > 0 ? (
