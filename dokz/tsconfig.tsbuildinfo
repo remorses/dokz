@@ -2657,7 +2657,7 @@
         "affectsGlobalScope": false
       },
       "./src/components/sidenav.tsx": {
-        "version": "a4fc037006dc09ec005fe9a19f5e2c8c3420348d157eb7d1f7d0c2b33c20e426",
+        "version": "81d3d9767eaa092780f951e1e0996fd2b0b882426b2950ae8b06701a2c8ea835",
         "signature": "593f3e80b966e2bb074bcac39a480dc412c63e96ae21af779c32ebb1c9890173",
         "affectsGlobalScope": false
       },
