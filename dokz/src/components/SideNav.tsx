@@ -253,9 +253,6 @@ function CollapsableTreeNode({ title, path, depth, subTree, hideDivider }) {
                             as={isOpen ? CollapseDown : CollapseRight}
                         />
                         <Box
-                            py='0.2em'
-                            pt='1.4em'
-                            my='0.2em'
                             fontSize='1.1em'
                             fontWeight='semibold'
                         >
