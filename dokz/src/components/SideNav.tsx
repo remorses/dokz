@@ -238,18 +238,34 @@ function CollapsableTreeNode({ title, path, depth, subTree, hideDivider }) {
                 <Box my='0.2em'>
                     {!hideDivider && <Divider />}
                     <Box
+                        display='flex'
+                        alignItems='center'
+                        cursor='pointer'
+                        onClick={onToggle}
                         py='0.2em'
-                        pt='1.4em'
                         my='0.2em'
-                        fontSize='1.1em'
-                        fontWeight='semibold'
                     >
-                        {title}
+                        <Box
+                            mr='0.4em'
+                            boxSize='0.6em'
+                            opacity={0.6}
+                            display='inline-block'
+                            as={isOpen ? CollapseDown : CollapseRight}
+                        />
+                        <Box
+                            py='0.2em'
+                            pt='1.4em'
+                            my='0.2em'
+                            fontSize='1.1em'
+                            fontWeight='semibold'
+                        >
+                            {title}
+                        </Box>
                     </Box>
+                    <Collapse in={isOpen}>
+                        <Box ml='20px'>{subTree}</Box>
+                    </Collapse>
                 </Box>
-                <Collapse in={isOpen}>
-                    <Box ml='20px'>{subTree}</Box>
-                </Collapse>
             </Stack>            
         )
     )
