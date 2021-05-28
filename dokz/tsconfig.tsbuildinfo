@@ -2622,7 +2622,7 @@
         "affectsGlobalScope": false
       },
       "./src/components/navlink.tsx": {
-        "version": "54fc947e4090c79eefb74f5b258900d4885405839161ca72d913f20b5f36feb4",
+        "version": "a05f75f072d75edc8d6feb72daf5ef55c9f5316c3722463e606f4410fe02052b",
         "signature": "bbe75ae5314c7977812b7b4fe2923928869582e7a9689d691959e00ad6458c95",
         "affectsGlobalScope": false
       },
@@ -2667,7 +2667,7 @@
         "affectsGlobalScope": false
       },
       "./src/components/navbar.tsx": {
-        "version": "bee673afc5c9ef12ece67a7e65671354538b7c5292a09a3bce784f82194b9f41",
+        "version": "3bd88afebce4c0f7d5d9b76339921b382fa51fb1d6136e91281f569717f0aea4",
         "signature": "a27f32bb93a46dbbe79508057fbbb9df16c893755dd2022c31df11fe6e926a9d",
         "affectsGlobalScope": false
       },
