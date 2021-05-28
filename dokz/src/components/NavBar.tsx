@@ -6,6 +6,7 @@ import { DiGithubBadge } from 'react-icons/di'
 import { FiMoon, FiSun } from 'react-icons/fi'
 import { useDokzConfig } from '../provider'
 import MobileNav from './MobileNav'
+import { useEffect } from 'react'
 
 export const GithubLink = ({ url = '', ...rest }: any) => (
     <Box
@@ -48,6 +49,14 @@ const NavBar = ({ logo, tree = null as any, items: navs, ...props }) => {
     const { colorMode, toggleColorMode } = useColorMode()
     const bg = { light: 'rgb(31, 34, 36, 0.9)', dark: 'rgb(31, 34, 36, 0.9)' }
     const { maxPageWidth } = useDokzConfig()
+    useEffect(() => {
+        let el = document.querySelector(`[href="${window.location.pathname}"]`)
+        if (el) {
+            setTimeout(() => {
+                el.scrollIntoView({behavior: "smooth"})
+            }, 900)
+        }
+    })
     return (
         <Stack
             bg={bg[colorMode]}
