@@ -147,7 +147,7 @@ const NavTreeComponent = ({
                 />
             )
         })
-    if (isFolder && depth > 0) {
+    if (isFolder) {
         return (
             <CollapsableTreeNode
                 path={path}
