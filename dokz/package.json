@@ -59,6 +59,7 @@
         "remark-mdx": "*"
     },
     "dependencies": {
+        "@aserto/aserto-react-components": "1.1.3-beta.0",
         "@babel/generator": "^7.10.2",
         "@babel/parser": "^7.10.2",
         "@babel/traverse": "^7.10.1",

@@ -139,7 +139,7 @@ export const defaultDokzContext: DokzProviderProps = {
     ),
     listItemIcon: Arrow,
     listItemIconEmpty: ArrowEmpty,
-    headerItems: [<ColorModeSwitch key={0} />],
+    headerItems: [],
     prismTheme: { dark: defaultDarkPrismTheme, light: darkPrismTheme },
     maxPageWidth: '1600px',
     bodyColor: { light: '#222', dark: 'rgba(255,255,255,.9)' },

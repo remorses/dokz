@@ -7,6 +7,7 @@ import { FiMoon, FiSun } from 'react-icons/fi'
 import { useDokzConfig } from '../provider'
 import MobileNav from './MobileNav'
 import { useEffect } from 'react'
+import {NavItem, NavBar as AsertoNavBar} from "@aserto/aserto-react-components";
 
 export const GithubLink = ({ url = '', ...rest }: any) => (
     <Box
@@ -46,67 +47,24 @@ export const ColorModeSwitch = ({ ...rest }) => {
 }
 
 const NavBar = ({ logo, tree = null as any, items: navs, ...props }) => {
-    const { colorMode, toggleColorMode } = useColorMode()
-    const bg = { light: 'rgb(31, 34, 36, 0.9)', dark: 'rgb(31, 34, 36, 0.9)' }
-    const { maxPageWidth } = useDokzConfig()
     useEffect(() => {
         let el = document.querySelector(`[href="${window.location.pathname}"]`)
         if (el) {
             setTimeout(() => {
-                el.scrollIntoView({behavior: "smooth"})
+                el.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'})
             }, 900)
         }
     })
     return (
-        <Stack
-            bg={bg[colorMode]}
-            zIndex={4}
-            borderBottomWidth='1px'
-            borderBottomStyle='solid'
-            justifyContent='center'
-            alignItems='center'
-            {...props}
-        >
-            <Stack
-                maxWidth={maxPageWidth}
-                as='header'
-                width='full'
-                // height='60px'
-                justify='center'
-            >
-                <Flex align='center' justify='space-between'>
-                    <Flex align='center' mr={5}>
-                        {logo}
-                    </Flex>
-                    <Flex
-                        flex={{ sm: '1', md: 'none' }}
-                        ml={5}
-                        align='center'
-                        color='#ECEDED'
-                        justify='flex-end'
-                    >
-                        {Array.isArray(navs) ? (
-                            <Stack direction='row' spacing='20px'>
-                                {navs.map((x, i) => (
-                                    <Stack
-                                        key={i}
-                                        fontSize='text'
-                                        alignItems='center'
-                                        justify='center'
-                                        fontWeight='medium'
-                                    >
-                                        {x}
-                                    </Stack>
-                                ))}
-                            </Stack>
-                        ) : (
-                            navs
-                        )}
-                        {tree && <MobileNav tree={tree} />}
-                    </Flex>
-                </Flex>
-            </Stack>
-        </Stack>
+        <AsertoNavBar>
+            <ul>
+                {navs.map((x, i) => (
+                    <NavItem key={x}>
+                        {x}
+                    </NavItem>
+                ))}
+            </ul>
+        </AsertoNavBar>
     )
 }
 
