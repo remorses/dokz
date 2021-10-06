@@ -1,4 +1,4 @@
-/** @jsx jsx */
+
 import React, {
     useState,
     useEffect,
@@ -6,7 +6,7 @@ import React, {
     useLayoutEffect,
     useCallback,
 } from 'react'
-import { jsx, css } from '@emotion/core'
+
 import ColorScheme from 'color-scheme'
 import { useRouter } from 'next/router'
 

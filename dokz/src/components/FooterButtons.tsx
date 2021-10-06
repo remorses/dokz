@@ -1,3 +1,4 @@
+/** @jsxRuntime classic */
 // @jsx jsx
 import { Stack, Box, useColorMode } from '@chakra-ui/react'
 import { jsx, css } from '@emotion/react'

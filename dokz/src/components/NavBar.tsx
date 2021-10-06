@@ -1,3 +1,4 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
 import { Faded } from 'baby-i-am-faded'
 import { Box, Flex, IconButton, Stack, useColorMode } from '@chakra-ui/react'

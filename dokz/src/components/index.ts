@@ -1,4 +1,4 @@
-/** @jsx jsx */
+
 
 export { Code } from './Code'
 export { Link } from './Link'

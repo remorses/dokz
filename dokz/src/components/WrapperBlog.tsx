@@ -1,3 +1,4 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
 import { Box, CSSReset, theme, useColorMode } from '@chakra-ui/react'
 import { Global, jsx } from '@emotion/react'
