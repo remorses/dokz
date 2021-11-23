@@ -5,7 +5,7 @@ import {
     GithubLink,
     DokzBlogProvider,
 } from 'dokz/src'
-import { LandingProvider, Link } from 'landing-blocks'
+import { LandingProvider, Link } from 'landing-blocks/src'
 import 'mini-graphiql/dist/style.css'
 import React, { Fragment } from 'react'
 import { Logo } from '../components/Logo'

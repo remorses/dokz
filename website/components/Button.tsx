@@ -2,7 +2,7 @@ import NextLink from 'next/link'
 import { DokzProvider, GithubLink, ColorModeSwitch } from 'dokz/dist'
 import { useColorMode, Button as Button_, useTheme } from '@chakra-ui/react'
 import React from 'react'
-import { Button as Button__ } from 'landing-blocks'
+import { Button as Button__ } from 'landing-blocks/src'
 import { Logo as Logo_, LogoWhite } from '../svgs'
 
 export const Button = ({ href, ...props }: any) => {

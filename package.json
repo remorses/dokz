@@ -14,8 +14,11 @@
         "build": "yarn --cwd dokz compile",
         "watch": "ultra -r watch"
     },
+    "overrides": {
+        "@emotion/react": "11.4.1"
+    },
     "devDependencies": {
-        "framer-motion": "^3.1.1",
+        "framer-motion": "^5.3.1",
         "ultra-runner": "^3.9.0"
     }
 }

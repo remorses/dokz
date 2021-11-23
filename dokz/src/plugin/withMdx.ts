@@ -26,6 +26,8 @@ export const withMdx = (pluginOptions: Options = {}) => (
             ) // needed to find the sidebar.json
             config.resolve.alias['buble'] = '@philpl/buble' // smaller buble version
 
+            config.module = config.module || {} as any
+            config.module.rules = config.module.rules || []
             config.module.rules.push({
                 test: extension,
                 use: [

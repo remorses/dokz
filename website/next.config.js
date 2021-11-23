@@ -10,6 +10,10 @@ const composed = compose(withTM, withDokz, withImages)
 
 module.exports = composed({
     pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+    // webpack5: false,
+    images: {
+        disableStaticImages: true,
+    },
     webpack: (c, options) => {
         // console.log(JSON.stringify(options.isServer, null, 4))
         // console.log(c.module.rules.map(x => {

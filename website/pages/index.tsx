@@ -12,15 +12,15 @@ import {
     Section,
     Subheading,
     TestimonialsTweets,
-} from 'landing-blocks'
-import { GradientCurtains } from 'landing-blocks/dist/decorations'
+} from 'landing-blocks/src'
+import { GradientCurtains } from 'landing-blocks/src/decorations'
 import React from 'react'
 import { Logo } from '../components/Logo'
 import isometric_check_icon from '../public/isometric_check_icon.png'
 import isometric_code_icon from '../public/isometric_code_icon.png'
 import isometric_text_icon from '../public/isometric_text_icon.png'
 import NextLink from 'next/link'
-import { Bullet } from 'landing-blocks'
+import { Bullet } from 'landing-blocks/src'
 
 const Page = () => (
     <Stack align='stretch' spacing='60px'>

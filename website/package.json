@@ -9,17 +9,17 @@
         "start": "next start"
     },
     "dependencies": {
-        "@chakra-ui/react": "latest",
+        "@chakra-ui/react": "^1.7.2",
         "@emotion/react": "latest",
         "@emotion/styled": "11",
         "dokz": "*",
-        "landing-blocks": "^2.0.2",
+        "landing-blocks": "https://gitpkg.now.sh/remorses/landing-blocks/landing-blocks",
         "mini-graphiql": "^1.0.4",
-        "next": "^10.0.4",
-        "next-images": "^1.6.2",
+        "next": "^12.0.4",
+        "next-images": "^1.8.2",
         "page-enter-transition": "*",
         "next-seo": "^4.17.0",
-        "next-transpile-modules": "^6.0.0",
+        "next-transpile-modules": "^9.0.0",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "react-icons": "^3.9.0"

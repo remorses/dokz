@@ -1,6 +1,8 @@
 const { getRepoRoot } = require('get-git-config')
 const path = require('path')
 
+const runtimeClassic = `/** @jsxRuntime classic */\n`
+
 module.exports = function (content) {
     try {
         const callback = this.async()
@@ -10,7 +12,7 @@ module.exports = function (content) {
             console.log(
                 `cannot find the .git directory, edit-this-page feature is disabled`,
             )
-            callback(null, content)
+            callback(null, runtimeClassic + content)
             return
         }
         const filePath = this.resourcePath
@@ -27,9 +29,9 @@ module.exports = function (content) {
             window[k] = toInject[k];
         }
     };\n`
-        return callback(null, content + codeToInsert)
+        return callback(null, runtimeClassic + content + codeToInsert)
     } catch (e) {
         console.error(`got an error in edit this page loader: ${e}`)
-        return callback(null, content)
+        return callback(null, runtimeClassic + content)
     }
 }
