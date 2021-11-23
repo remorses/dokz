@@ -1,14 +1,17 @@
 <div align='center'>
     <br/>
     <br/>
-    <img src='https://dokz.site/logo_full.svg' width='300px'>
-    <br/>
     <br/>
     <h3>Effortless documentation with Next.js and MDX
     </h3>
     <br/>
     <br/>
 </div>
+
+Sponsored by: [Notaku](https://notaku.website/)
+<a href="https://notaku.website">
+<img src="https://dokz.vercel.app/Notaku_banner.svg">
+</a>
 
 🔥 Features
 
