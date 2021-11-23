@@ -12,7 +12,6 @@
 Sponsored by: <a target="_blank" href="https://notaku.website">Notaku</a>
 </div>
 <br/>
-<br/>
 
 <div>
 <a target="_blank" href="https://notaku.website">
