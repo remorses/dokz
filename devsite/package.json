@@ -11,8 +11,8 @@
         "dokz": "*",
         "next": "^10.0.4",
         "next-transpile-modules": "^6.0.0",
-        "react": "^16.13.1",
-        "react-dom": "16.13.1"
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
     },
     "devDependencies": {
         "compose-function": "^3.0.3",
