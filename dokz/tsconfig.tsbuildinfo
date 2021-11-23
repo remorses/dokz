@@ -3188,12 +3188,32 @@
         "signature": "69a752534a47c1d189c8142a7f6bbf20b79501f07edc7d26fbab0e4cd2194750",
         "affectsGlobalScope": false
       },
+      "./node_modules/@emotion/react/types/jsx-namespace.d.ts": {
+        "version": "ecfa9ce3a5a37d15b813065e8a7cdf677a0f493018e47ce59815443dfbb9c910",
+        "signature": "ecfa9ce3a5a37d15b813065e8a7cdf677a0f493018e47ce59815443dfbb9c910",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/@emotion/react/types/helper.d.ts": {
+        "version": "83e56d3337e1a6dbafdbe5a2502a84c330b1a328ed2860d689b2ded82b1f5c95",
+        "signature": "83e56d3337e1a6dbafdbe5a2502a84c330b1a328ed2860d689b2ded82b1f5c95",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/@emotion/react/types/theming.d.ts": {
+        "version": "e630f8a3c49d5db0a8af774799abdb8f19675b940a6cfa25eca35e5280709f28",
+        "signature": "e630f8a3c49d5db0a8af774799abdb8f19675b940a6cfa25eca35e5280709f28",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/@emotion/react/types/index.d.ts": {
+        "version": "413c03b679ca5bbe6456b8a38ac999fffb3834d0e4a9638bd186533d629ab8cb",
+        "signature": "413c03b679ca5bbe6456b8a38ac999fffb3834d0e4a9638bd186533d629ab8cb",
+        "affectsGlobalScope": false
+      },
       "../node_modules/prism-react-renderer/index.d.ts": {
         "version": "c049825db31784c6ac8c54a28a5eefbed58217ba48e0593cecd1d3e4a2643667",
         "signature": "c049825db31784c6ac8c54a28a5eefbed58217ba48e0593cecd1d3e4a2643667",
         "affectsGlobalScope": false
       },
-      "../node_modules/baby-i-am-faded/dist/index.d.ts": {
+      "./node_modules/baby-i-am-faded/dist/index.d.ts": {
         "version": "75561791611fdf57feebed23e4106640c6df203a8c5ec86e5911bce08a475562",
         "signature": "75561791611fdf57feebed23e4106640c6df203a8c5ec86e5911bce08a475562",
         "affectsGlobalScope": false
@@ -3299,8 +3319,8 @@
         "affectsGlobalScope": false
       },
       "./src/components/NavBar.tsx": {
-        "version": "62497c5ffa269beb11c895b37b139ff920807c45cfdb2914376b9ac3f8809bee",
-        "signature": "a27f32bb93a46dbbe79508057fbbb9df16c893755dd2022c31df11fe6e926a9d",
+        "version": "1eea713c4f0694da6c7313733dc1eb8c2dfa556d5641577130d7016ebc80b869",
+        "signature": "cd1447d5916c34ac29c2f7c58b06275c43d8a876bd91fc7d8435df08ed8290e8",
         "affectsGlobalScope": false
       },
       "./src/components/icons.tsx": {
@@ -3339,13 +3359,13 @@
         "affectsGlobalScope": false
       },
       "./src/components/FooterButtons.tsx": {
-        "version": "27ab5c0c855811ac231e7add10a8ecce3c8b6a0c088fbc53c23e965e8be6ff6e",
+        "version": "5abe175b5ca1dcf3af0c73ea8ea0bd369246ecb056159f704b23ca6e7bf1c9a1",
         "signature": "a428ca63eb011f8472fa48a2e3a52e791a6ff095fa5d934440ddbd3375952646",
         "affectsGlobalScope": false
       },
       "./src/components/Wrapper.tsx": {
-        "version": "65da8fc8239248790178e13c0e6463bf9e2852b6d9082400190c0da1c19d5bf3",
-        "signature": "cf9983079f248007bbb97cfd46f18777e54e0bf9df66ce17b39aa2de75dc2311",
+        "version": "81e853d985b0b167d64c71c4adbe6cd9c04a7357f296eef0d1d3612952093c73",
+        "signature": "a868bd33b275b7d262e3d10fa872ecfc69b1a83ee842ac90fa13044cb44b4663",
         "affectsGlobalScope": false
       },
       "./src/provider.tsx": {
@@ -3354,8 +3374,8 @@
         "affectsGlobalScope": false
       },
       "./src/components/Code.tsx": {
-        "version": "dd34094b5c288f5024ac537801e0ed3ac9037e367f7b67842f5af06c17babbfa",
-        "signature": "0d6963760caf2d77a418818a15ab1b63705c2748634ff7a1630ee48bb016ded5",
+        "version": "4661396505e3c6abce4c9d06ba7676c452b063dd3b3a55f9609e19d783e7a70a",
+        "signature": "dcba540d1a7de12b8b5561298d4e35145135f741bfb730e1cc4f21ac41c9abc0",
         "affectsGlobalScope": false
       },
       "./src/components/Link.tsx": {
@@ -3364,13 +3384,13 @@
         "affectsGlobalScope": false
       },
       "./src/components/mdx.tsx": {
-        "version": "10477808474dcd791d424911cc5d67863e034a1be801663852ca9e207a8cebb4",
-        "signature": "975472ef054350a09f871f6af4e3278566035740d4c48713d8391f275e9e3393",
+        "version": "6b5998f774eb03f8cf278f31b88a75194b2c49202c2ecb066881ed6e4d0546a4",
+        "signature": "3bd8abaf335a63cc3cf111093151c1755fe75d9e0615b97991ae9d215a6b4f29",
         "affectsGlobalScope": false
       },
       "./src/components/WrapperBlog.tsx": {
-        "version": "48be12cc791e10a9f2148244144035c65b89908e52c272a72e4430f3906135f2",
-        "signature": "d711792b4ec925aad5fe6d77a4861312facb49a58481db7607da7d671af820f7",
+        "version": "97baffa8736817267e64827c35642b595d7fbc07f9b55dc8fc9a4ad84570f663",
+        "signature": "9867f11e0fdc05b63f37e5510358a2c8c48efccab5dda785d994e61b0febdd87",
         "affectsGlobalScope": false
       },
       "./src/blog.tsx": {
@@ -3409,8 +3429,8 @@
         "affectsGlobalScope": false
       },
       "./src/components/TableOfContents.tsx": {
-        "version": "816b2f98ee6828f9062855a321e7794b6d1a84c22b078343a769729678b37c8e",
-        "signature": "fb0e258aa18eeff90da1e65d00970f56f67e5ef42f8ab802e8c08edb59a54a66",
+        "version": "169996852ca2a361cfb04a637c84ba18c53bf645b91f606b53d76c7af7251c49",
+        "signature": "79d3934ce69707fbf4b2e7fb4d8edcf842b7ee506bfa7c379e83fb4ba771c2d8",
         "affectsGlobalScope": false
       },
       "./src/components/index.ts": {
@@ -3747,6 +3767,43 @@
       "configFilePath": "./tsconfig.json"
     },
     "referencedMap": {
+      "./node_modules/@emotion/react/types/helper.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "./node_modules/@emotion/react/types/index.d.ts": [
+        "../node_modules/@emotion/cache/types/index.d.ts",
+        "../node_modules/@emotion/serialize/types/index.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "./node_modules/@emotion/react/types/helper.d.ts",
+        "./node_modules/@emotion/react/types/jsx-namespace.d.ts",
+        "./node_modules/@emotion/react/types/theming.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "./node_modules/@emotion/react/types/jsx-namespace.d.ts": [
+        "../node_modules/@emotion/serialize/types/index.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "./node_modules/@emotion/react/types/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "./node_modules/@emotion/react/types/theming.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "./node_modules/@emotion/react/types/helper.d.ts",
+        "./node_modules/@emotion/react/types/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
       "./node_modules/@types/json-schema/index.d.ts": [
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -4138,6 +4195,15 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
+      "./node_modules/baby-i-am-faded/dist/index.d.ts": [
+        "../node_modules/@emotion/serialize/types/index.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "./node_modules/@emotion/react/types/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
       "./node_modules/chalk/index.d.ts": [
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -4173,10 +4239,10 @@
       ],
       "./src/components/Code.tsx": [
         "../node_modules/@chakra-ui/react/dist/chakra-ui-react.cjs.d.ts",
-        "../node_modules/@emotion/react/types/index.d.ts",
         "../node_modules/@types/react/index.d.ts",
         "../node_modules/prism-react-renderer/index.d.ts",
         "../node_modules/react-icons/fi/index.d.ts",
+        "./node_modules/@emotion/react/types/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -4188,20 +4254,20 @@
         "../node_modules/@chakra-ui/react/dist/chakra-ui-react.cjs.d.ts",
         "../node_modules/@types/lodash/ts3.1/pick.d.ts",
         "../node_modules/@types/react/index.d.ts",
-        "../node_modules/baby-i-am-faded/dist/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts",
+        "./node_modules/baby-i-am-faded/dist/index.d.ts",
         "./src/provider.tsx",
         "./src/types.ts"
       ],
       "./src/components/FooterButtons.tsx": [
         "../node_modules/@chakra-ui/react/dist/chakra-ui-react.cjs.d.ts",
-        "../node_modules/@emotion/react/types/index.d.ts",
         "../node_modules/@types/react/index.d.ts",
         "../node_modules/next/link.d.ts",
         "../node_modules/next/router.d.ts",
+        "./node_modules/@emotion/react/types/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/process.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -4232,14 +4298,15 @@
       ],
       "./src/components/NavBar.tsx": [
         "../node_modules/@chakra-ui/react/dist/chakra-ui-react.cjs.d.ts",
-        "../node_modules/@emotion/react/types/index.d.ts",
-        "../node_modules/baby-i-am-faded/dist/index.d.ts",
+        "../node_modules/@types/react/index.d.ts",
         "../node_modules/react-icons/di/index.d.ts",
         "../node_modules/react-icons/fi/index.d.ts",
+        "./node_modules/@emotion/react/types/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts",
+        "./node_modules/baby-i-am-faded/dist/index.d.ts",
         "./src/components/MobileNav.tsx",
         "./src/provider.tsx"
       ],
@@ -4271,36 +4338,36 @@
         "../node_modules/@chakra-ui/react/dist/chakra-ui-react.cjs.d.ts",
         "../node_modules/@types/lodash/ts3.1/orderBy.d.ts",
         "../node_modules/@types/react/index.d.ts",
-        "../node_modules/baby-i-am-faded/dist/index.d.ts",
         "../node_modules/react-storage-hooks/dist/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts",
+        "./node_modules/baby-i-am-faded/dist/index.d.ts",
         "./src/components/NavLink.tsx",
         "./src/components/support.ts",
         "./src/provider.tsx"
       ],
       "./src/components/TableOfContents.tsx": [
         "../node_modules/@chakra-ui/react/dist/chakra-ui-react.cjs.d.ts",
-        "../node_modules/@emotion/react/types/index.d.ts",
         "../node_modules/@types/react/index.d.ts",
-        "../node_modules/baby-i-am-faded/dist/index.d.ts",
+        "./node_modules/@emotion/react/types/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts",
+        "./node_modules/baby-i-am-faded/dist/index.d.ts",
         "./src/components/Link.tsx",
         "./src/provider.tsx",
         "./src/types.ts"
       ],
       "./src/components/Wrapper.tsx": [
         "../node_modules/@chakra-ui/react/dist/chakra-ui-react.cjs.d.ts",
-        "../node_modules/@emotion/react/types/index.d.ts",
         "../node_modules/@types/lodash/ts3.1/fp/merge.d.ts",
         "../node_modules/@types/react/index.d.ts",
         "../node_modules/next/head.d.ts",
         "../node_modules/next/router.d.ts",
+        "./node_modules/@emotion/react/types/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -4314,8 +4381,9 @@
       ],
       "./src/components/WrapperBlog.tsx": [
         "../node_modules/@chakra-ui/react/dist/chakra-ui-react.cjs.d.ts",
-        "../node_modules/@emotion/react/types/index.d.ts",
+        "../node_modules/@types/react/index.d.ts",
         "../node_modules/next/head.d.ts",
+        "./node_modules/@emotion/react/types/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -4353,8 +4421,8 @@
       ],
       "./src/components/mdx.tsx": [
         "../node_modules/@chakra-ui/react/dist/chakra-ui-react.cjs.d.ts",
-        "../node_modules/@emotion/react/types/index.d.ts",
         "../node_modules/@types/react/index.d.ts",
+        "./node_modules/@emotion/react/types/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -4366,8 +4434,8 @@
         "./src/provider.tsx"
       ],
       "./src/components/support.ts": [
-        "../node_modules/@emotion/react/types/index.d.ts",
         "../node_modules/@types/lodash/ts3.1/startCase.d.ts",
+        "./node_modules/@emotion/react/types/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
@@ -4504,7 +4572,6 @@
       "./src/provider.tsx": [
         "../node_modules/@chakra-ui/react/dist/chakra-ui-react.cjs.d.ts",
         "../node_modules/@types/react/index.d.ts",
-        "../node_modules/baby-i-am-faded/dist/index.d.ts",
         "../node_modules/next/head.d.ts",
         "../node_modules/next/router.d.ts",
         "../node_modules/prism-react-renderer/index.d.ts",
@@ -4512,6 +4579,7 @@
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts",
+        "./node_modules/baby-i-am-faded/dist/index.d.ts",
         "./src/components/NavBar.tsx",
         "./src/components/Wrapper.tsx",
         "./src/components/icons.tsx",
@@ -8140,15 +8208,6 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/baby-i-am-faded/dist/index.d.ts": [
-        "../node_modules/@emotion/react/types/index.d.ts",
-        "../node_modules/@emotion/serialize/types/index.d.ts",
-        "../node_modules/@types/react/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
       "../node_modules/chokidar/types/index.d.ts": [
         "./node_modules/@types/node/events.d.ts",
         "./node_modules/@types/node/fs.d.ts",
@@ -10001,6 +10060,43 @@
       ]
     },
     "exportedModulesMap": {
+      "./node_modules/@emotion/react/types/helper.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "./node_modules/@emotion/react/types/index.d.ts": [
+        "../node_modules/@emotion/cache/types/index.d.ts",
+        "../node_modules/@emotion/serialize/types/index.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "./node_modules/@emotion/react/types/helper.d.ts",
+        "./node_modules/@emotion/react/types/jsx-namespace.d.ts",
+        "./node_modules/@emotion/react/types/theming.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "./node_modules/@emotion/react/types/jsx-namespace.d.ts": [
+        "../node_modules/@emotion/serialize/types/index.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "./node_modules/@emotion/react/types/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
+      "./node_modules/@emotion/react/types/theming.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "./node_modules/@emotion/react/types/helper.d.ts",
+        "./node_modules/@emotion/react/types/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
       "./node_modules/@types/json-schema/index.d.ts": [
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -10392,6 +10488,15 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
+      "./node_modules/baby-i-am-faded/dist/index.d.ts": [
+        "../node_modules/@emotion/serialize/types/index.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "./node_modules/@emotion/react/types/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
+      ],
       "./node_modules/chalk/index.d.ts": [
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -10404,18 +10509,12 @@
       "./src/components/BlogPosts.tsx": [
         "../node_modules/@types/react/index.d.ts"
       ],
-      "./src/components/Code.tsx": [
-        "../node_modules/@emotion/react/types/index.d.ts"
-      ],
       "./src/components/FloatingTableOfContents.tsx": [
         "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
         "./src/types.ts"
       ],
       "./src/components/Link.tsx": [
         "../node_modules/@chakra-ui/react/dist/types/index.d.ts"
-      ],
-      "./src/components/NavBar.tsx": [
-        "../node_modules/@emotion/react/types/index.d.ts"
       ],
       "./src/components/NavLink.tsx": [
         "../node_modules/@types/react/index.d.ts"
@@ -10429,14 +10528,7 @@
         "./src/provider.tsx"
       ],
       "./src/components/TableOfContents.tsx": [
-        "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
-        "../node_modules/@emotion/react/types/index.d.ts"
-      ],
-      "./src/components/Wrapper.tsx": [
-        "../node_modules/@emotion/react/types/index.d.ts"
-      ],
-      "./src/components/WrapperBlog.tsx": [
-        "../node_modules/@emotion/react/types/index.d.ts"
+        "../node_modules/@chakra-ui/react/dist/chakra-ui-react.cjs.d.ts"
       ],
       "./src/components/index.ts": [
         "./src/components/BlogPosts.tsx",
@@ -10450,8 +10542,7 @@
         "./src/components/mdx.tsx"
       ],
       "./src/components/mdx.tsx": [
-        "../node_modules/@chakra-ui/react/dist/types/index.d.ts",
-        "../node_modules/@emotion/react/types/index.d.ts",
+        "../node_modules/@chakra-ui/react/dist/chakra-ui-react.cjs.d.ts",
         "./src/components/Wrapper.tsx"
       ],
       "./src/components/support.ts": [
@@ -14073,15 +14164,6 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
-      "../node_modules/baby-i-am-faded/dist/index.d.ts": [
-        "../node_modules/@emotion/react/types/index.d.ts",
-        "../node_modules/@emotion/serialize/types/index.d.ts",
-        "../node_modules/@types/react/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts",
-        "./node_modules/@types/node/util.d.ts"
-      ],
       "../node_modules/chokidar/types/index.d.ts": [
         "./node_modules/@types/node/events.d.ts",
         "./node_modules/@types/node/fs.d.ts",
@@ -15934,6 +16016,10 @@
       ]
     },
     "semanticDiagnosticsPerFile": [
+      "./node_modules/@emotion/react/types/helper.d.ts",
+      "./node_modules/@emotion/react/types/index.d.ts",
+      "./node_modules/@emotion/react/types/jsx-namespace.d.ts",
+      "./node_modules/@emotion/react/types/theming.d.ts",
       "./node_modules/@types/json-schema/index.d.ts",
       "./node_modules/@types/node/async_hooks.d.ts",
       "./node_modules/@types/node/base.d.ts",
@@ -15984,6 +16070,7 @@
       "./node_modules/@types/node/vm.d.ts",
       "./node_modules/@types/node/worker_threads.d.ts",
       "./node_modules/@types/node/zlib.d.ts",
+      "./node_modules/baby-i-am-faded/dist/index.d.ts",
       "./node_modules/chalk/index.d.ts",
       "./src/blog.tsx",
       "./src/components/BlogPosts.tsx",
@@ -16447,7 +16534,6 @@
       "../node_modules/@types/webpack/node_modules/source-map/source-map.d.ts",
       "../node_modules/anymatch/index.d.ts",
       "../node_modules/await-to-js/dist/types/await-to-js.d.ts",
-      "../node_modules/baby-i-am-faded/dist/index.d.ts",
       "../node_modules/chokidar/types/index.d.ts",
       "../node_modules/css-box-model/src/index.d.ts",
       "../node_modules/csstype/index.d.ts",
