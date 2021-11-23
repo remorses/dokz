@@ -8,11 +8,14 @@
     <br/>
 </div>
 <br/>
-Sponsored by: [Notaku](https://notaku.website/)
+<div>
+Sponsored by: <a target="_blank" href="https://notaku.website">Notaku</a>
+</div>
+<br/>
 <br/>
 
 <div>
-<a href="https://notaku.website">
+<a target="_blank" href="https://notaku.website">
 <img src="https://dokz.vercel.app/Notaku_banner.svg">
 </a>
 </div>
