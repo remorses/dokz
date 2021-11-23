@@ -1,5 +1,4 @@
-/** @jsxRuntime classic */
-/** @jsx jsx */
+
 import { jsx } from '@emotion/react'
 import { DokzTableOfContents } from '../types'
 import { Stack, Box } from '@chakra-ui/react'

@@ -1,5 +1,4 @@
-/** @jsxRuntime classic */
-/** @jsx jsx */
+import React from 'react'
 import {
     Box,
     ColorModeProvider,
@@ -13,7 +12,11 @@ import {
 import { Stack, Flex } from '@chakra-ui/react'
 import merge from 'lodash/fp/merge'
 import { jsx } from '@emotion/react'
-import { useDokzConfig, TableOfContentsContext, useAnimationComponent } from '../provider'
+import {
+    useDokzConfig,
+    TableOfContentsContext,
+    useAnimationComponent,
+} from '../provider'
 import NavBar from './NavBar'
 import NextHead from 'next/head'
 import { SideNav } from './SideNav'

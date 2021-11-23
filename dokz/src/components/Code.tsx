@@ -1,5 +1,4 @@
-/** @jsxRuntime classic */
-/** @jsx jsx */
+
 
 import { css, jsx } from '@emotion/react'
 import { Box, useClipboard, useColorMode } from '@chakra-ui/react'
