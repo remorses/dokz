@@ -7,11 +7,15 @@
     <br/>
     <br/>
 </div>
-
+<br/>
 Sponsored by: [Notaku](https://notaku.website/)
+<br/>
+
+<div>
 <a href="https://notaku.website">
 <img src="https://dokz.vercel.app/Notaku_banner.svg">
 </a>
+</div>
 
 🔥 Features
 
