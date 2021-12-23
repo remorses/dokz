@@ -7,7 +7,7 @@
         "start": "next start"
     },
     "dependencies": {
-        "@emotion/react": "latest",
+        "@emotion/react": "^11.1.5",
         "dokz": "*",
         "next": "^12.0.4",
         "next-transpile-modules": "^6.0.0",
