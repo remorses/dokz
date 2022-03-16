@@ -9,7 +9,7 @@
         "start": "next start"
     },
     "dependencies": {
-        "@chakra-ui/react": "^1.7.2",
+        "@chakra-ui/react": "^1.8.6",
         "@emotion/react": "^11.1.5",
         "@emotion/styled": "11",
         "dokz": "*",

@@ -140,7 +140,7 @@ importers:
 
   example:
     specifiers:
-      '@chakra-ui/react': ^1.7.2
+      '@chakra-ui/react': ^1.8.6
       '@emotion/react': ^11.1.5
       '@emotion/styled': latest
       compose-function: ^3.0.3
@@ -178,7 +178,7 @@ importers:
 
   website:
     specifiers:
-      '@chakra-ui/react': ^1.7.2
+      '@chakra-ui/react': ^1.8.6
       '@emotion/react': ^11.1.5
       '@emotion/styled': '11'
       '@next/bundle-analyzer': ^9.4.4

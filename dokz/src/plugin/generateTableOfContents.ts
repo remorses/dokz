@@ -12,7 +12,7 @@ function getItems(node: Node & any, current) {
     if (!node) {
         return {}
     } else if (node.type === `paragraph`) {
-        visit(node, (item) => {
+        visit(node, (item: any) => {
             if (item.type === `link`) {
                 current.slug = item.url
             }
