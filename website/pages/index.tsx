@@ -151,14 +151,14 @@ const CtaButton = (props) => (
 const Hero = (props) => {
     return (
         <PageContainer
-            floatingElement={
-                <GradientCurtains
-                    primary='white'
-                    secondary='#48BB79'
-                    position='absolute'
-                    top='-200px'
-                />
-            }
+            // floatingElement={
+            //     <GradientCurtains
+            //         primary='white'
+            //         secondary='#48BB79'
+            //         position='absolute'
+            //         top='-200px'
+            //     />
+            // }
             align='center'
             {...props}
         >
