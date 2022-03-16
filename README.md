@@ -8,16 +8,9 @@
     <br/>
 </div>
 <br/>
-<div>
-Sponsored by: <a target="_blank" href="https://notaku.website">Notaku</a>
-</div>
-<br/>
 
-<div>
-<a target="_blank" href="https://notaku.website">
-<img src="https://dokz.vercel.app/Notaku_banner.svg">
-</a>
-</div>
+**Warning**: this project is no longer maintained, consider using [Nextra](https://github.com/shuding/nextra) or [Notaku](https://notaku.website) (suppports docs site grneration from Notion docs).
+
 
 🔥 Features
 
