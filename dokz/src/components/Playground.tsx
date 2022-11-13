@@ -37,13 +37,14 @@ export const Playground = ({
     scope,
     iframe = false,
     previewEnabled = true,
+    codeAndPreview = false,
     ...rest
 }) => {
     let { prismTheme } = useDokzConfig()
     const [editorCode, setEditorCode] = useState(code)
     const { colorMode } = useColorMode()
     const language = className && className.replace(/language-/, '')
-    const [showCode, setShowCode] = useState(!previewEnabled)
+    const [showCode, setShowCode] = useState(!previewEnabled && !codeAndPreview)
     const { onCopy, hasCopied } = useClipboard(editorCode)
     const [width, setWidth] = React.useState('100%')
     const [_, forceRender] = useState('')
@@ -79,23 +80,29 @@ export const Playground = ({
                 bg={{ light: 'white', dark: 'gray.700' }[colorMode]}
                 p='10px'
             >
+                <Box fontWeight="bold">Editable Live Preview</Box>
                 <Box h='1' flex='1' />
-                <Button
-                    transition='background 300ms'
-                    bg={!showCode ? BUTTON_BG : 'transparent'}
-                    onClick={() => setShowCode(false)}
-                    size='sm'
-                >
-                    Preview
-                </Button>
-                <Button
-                    transition='background 300ms'
-                    bg={showCode ? BUTTON_BG : 'transparent'}
-                    onClick={() => setShowCode(true)}
-                    size='sm'
-                >
-                    Code
-                </Button>
+                {!codeAndPreview && (
+                    <>
+                        <Button
+                            transition='background 300ms'
+                            bg={!showCode ? BUTTON_BG : 'transparent'}
+                            onClick={() => setShowCode(false)}
+                            size='sm'
+                        >
+                            Preview
+                        </Button>
+                        <Button
+                            transition='background 300ms'
+                            bg={showCode ? BUTTON_BG : 'transparent'}
+                            onClick={() => setShowCode(true)}
+                            size='sm'
+                        >
+                            Code
+                        </Button>
+                    </>
+                )}
+
                 <CopyButton
                     hasCopied={hasCopied}
                     style={{ strokeWidth: '2px' }}
@@ -136,18 +143,13 @@ export const Playground = ({
                         spacing='0px'
                         isInline
                     >
-                        <Stack
-                            maxWidth='100%'
-                            height='100%'
-                            spacing='0px'
-                            flex='1'
-                        >
+                        <Stack maxWidth='100%' height='100%' spacing='0px' flex='1'>
                             {previewEnabled && editorBar}
                             <Stack
                                 flex='1'
                                 maxW='100%'
                                 minW='100%'
-                                display={!showCode ? 'block' : 'none'}
+                                display={!showCode || codeAndPreview ? 'block' : 'none'}
                             >
                                 {iframe ? (
                                     <IframeWrapper onMount={forceRender}>
@@ -157,7 +159,7 @@ export const Playground = ({
                                     livePreview
                                 )}
                             </Stack>
-                            {showCode && (
+                            {(showCode || codeAndPreview) && (
                                 <LiveEditor
                                     onChange={handleCodeChange}
                                     style={liveEditorStyle}
