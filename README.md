@@ -12,6 +12,12 @@
 **Warning**: this project is no longer maintained, consider using [Nextra](https://github.com/shuding/nextra) or [Notaku](https://notaku.website) (suppports docs site grneration from Notion docs).
 
 
+## Sponsor:
+
+[**Notaku**](https://notaku.so)
+
+[![Notaku](https://notaku.so/github_banner.jpg)](https://notaku.so)
+
 🔥 Features
 
 -   File based routing
