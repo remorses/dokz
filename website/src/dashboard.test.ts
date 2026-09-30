@@ -9,7 +9,11 @@
 // validated by TypeScript at compile time; here we exercise the runtime
 // database queries and auth checks that produce them.
 import { describe, test, expect } from 'vitest'
+import { runAction } from 'spiceflow/testing'
+import * as schema from 'db/schema'
 import { app } from './server.tsx'
+import { acceptInviteAction } from './dashboard-actions.ts'
+import { getDb } from './db.ts'
 import {
   seedUserWithSession,
   seedOrg,
@@ -346,6 +350,26 @@ describe('cross-org isolation', () => {
 
     const res = await app.handle(get(`/dashboard/projects/${projectB}/members`, userA.sessionToken))
     expectRedirect(res)
+  })
+
+  // Regression: an object id reached drizzle's relational `where`
+  // as filter operators ({ gt: '0' } -> id > '0') and matched a live invite.
+  test('invitation accept rejects filter-operator objects as the id', async () => {
+    const owner = await seedUserWithSession()
+    const orgId = await seedOrg(owner.userId)
+    const intruder = await seedUserWithSession()
+    const db = getDb()
+    await db.insert(schema.orgInvitation).values({ orgId, createdBy: owner.userId, expiresAt: Date.now() + 60_000 })
+    const request = new Request('http://localhost', { method: 'POST', headers: bearer(intruder.sessionToken) })
+    // The cast simulates a malicious client; the type says string, the wire can carry anything.
+    const attempt = (invitationId: unknown) => runAction(
+      () => acceptInviteAction({ invitationId } as { invitationId: string }),
+      { request },
+    ).then(() => 'accepted', (e) => e instanceof Error ? e.message : 'accepted (redirect)')
+
+    expect(await attempt({ gt: '0' })).toMatchInlineSnapshot(`"Invalid input: expected string, received object"`)
+    expect(await attempt({ isNotNull: true })).toMatchInlineSnapshot(`"Invalid input: expected string, received object"`)
+    expect(await db.query.orgMember.findFirst({ where: { orgId, userId: intruder.userId } })).toBeUndefined()
   })
 })
 

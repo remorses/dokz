@@ -1,3 +1,6 @@
+'use server'
+// Directive stays on line 1: spiceflow strips it in vitest only when it is the first statement.
+
 // Server actions for the Holocron dashboard.
 // Client components import these directly. Every action authenticates
 // via getActionRequest() → requireSession() and verifies org membership
@@ -6,16 +9,31 @@
 // Authorization is resolved from the projectId: look up the project first,
 // then check membership in that exact org. This avoids the pitfall where a
 // user belongs to multiple orgs and findFirst picks the wrong one.
-
-'use server'
+//
+// Every action parses its arguments with a zod schema first. Arguments come
+// from the client, and drizzle's relational `where` reads an object value as
+// filter operators ({ id: { gt: '0' } } -> id > '0'), so an unchecked id can
+// match rows the caller never knew about.
 
 import { ulid } from 'ulid'
+import { z } from 'zod'
 import * as orm from 'drizzle-orm'
 import * as schema from 'db/schema'
 import { env } from 'cloudflare:workers'
 import { getActionRequest, redirect } from 'spiceflow'
 import { getDb, requireSession, generateApiKey, hashApiKey } from './db.ts'
 import { trackProduct } from './lib/product-events.ts'
+
+const projectIdSchema = z.string().min(1, 'Project ID is required')
+const nameSchema = z.string().trim().min(1, 'Name is required')
+
+// Input is typed for callers, but the wire can carry anything. Throws the first
+// issue message so UI error states stay readable.
+function parseInput<T extends z.ZodType>(schema: T, input: z.input<T>): z.output<T> {
+  const result = schema.safeParse(input)
+  if (!result.success) throw new Error(result.error.issues[0]?.message ?? 'Invalid input')
+  return result.data
+}
 
 async function authenticateRequest() {
   const request = getActionRequest()
@@ -46,12 +64,12 @@ async function requireProjectMembership(userId: string, projectId: string, optio
 
 // ── Create API Key ──────────────────────────────────────────────────
 
-export async function createApiKeyAction({ name, projectId }: {
-  name: string
-  projectId: string
-}): Promise<{ id: string; fullKey: string; prefix: string }> {
-  if (!name.trim()) throw new Error('Name is required')
-  if (!projectId) throw new Error('Project ID is required')
+const createApiKeyInput = z.object({ name: nameSchema, projectId: projectIdSchema })
+
+export async function createApiKeyAction(
+  input: z.input<typeof createApiKeyInput>,
+): Promise<{ id: string; fullKey: string; prefix: string }> {
+  const { name, projectId } = parseInput(createApiKeyInput, input)
 
   const session = await authenticateRequest()
   const { orgId } = await requireProjectMembership(session.userId, projectId, { adminOnly: true })
@@ -66,7 +84,7 @@ export async function createApiKeyAction({ name, projectId }: {
     orgId,
     projectId,
     scope: 'project',
-    name: name.trim(),
+    name,
     prefix: generated.prefix,
     hash: keyHash,
   })
@@ -82,10 +100,10 @@ export async function createApiKeyAction({ name, projectId }: {
 
 const INVITE_EXPIRY_MS = 7 * 24 * 60 * 60 * 1000 // 7 days
 
-export async function createInviteAction({ orgId }: {
-  orgId: string
-}): Promise<{ id: string }> {
-  if (!orgId) throw new Error('No org selected')
+const createInviteInput = z.object({ orgId: z.string().min(1, 'No org selected') })
+
+export async function createInviteAction(input: z.input<typeof createInviteInput>): Promise<{ id: string }> {
+  const { orgId } = parseInput(createInviteInput, input)
 
   const session = await authenticateRequest()
   const db = getDb()
@@ -106,10 +124,11 @@ export async function createInviteAction({ orgId }: {
   return { id: invite!.id }
 }
 
-export async function acceptInviteAction({ invitationId }: {
-  invitationId: string
-}): Promise<never> {
-  if (!invitationId) throw new Error('Invitation ID is required')
+const acceptInviteInput = z.object({ invitationId: z.string().min(1, 'Invitation ID is required') })
+
+// Finding the invitation IS the authorization here, so the id must be a plain string.
+export async function acceptInviteAction(input: z.input<typeof acceptInviteInput>): Promise<never> {
+  const { invitationId } = parseInput(acceptInviteInput, input)
 
   const session = await authenticateRequest()
   const db = getDb()
@@ -129,17 +148,17 @@ export async function acceptInviteAction({ invitationId }: {
 
 // ── Create Organization ─────────────────────────────────────────────
 
-export async function createOrgAction({ name }: {
-  name: string
-}): Promise<{ orgId: string }> {
-  if (!name.trim()) throw new Error('Name is required')
+const createOrgInput = z.object({ name: nameSchema })
+
+export async function createOrgAction(input: z.input<typeof createOrgInput>): Promise<{ orgId: string }> {
+  const { name } = parseInput(createOrgInput, input)
 
   const session = await authenticateRequest()
   const db = getDb()
 
   const orgId = ulid()
   await db.batch([
-    db.insert(schema.org).values({ id: orgId, name: name.trim() }),
+    db.insert(schema.org).values({ id: orgId, name }),
     db.insert(schema.orgMember).values({ orgId, userId: session.userId, role: 'admin' }),
   ])
   trackProduct('org.created', { orgId, source: 'dashboard' })
@@ -149,19 +168,19 @@ export async function createOrgAction({ name }: {
 
 // ── Update Project Name ─────────────────────────────────────────────
 
-export async function updateProjectNameAction({ projectId, name }: {
-  projectId: string
-  name: string
-}): Promise<{ ok: true }> {
-  if (!name.trim()) throw new Error('Name is required')
-  if (!projectId) throw new Error('Project ID is required')
+const updateProjectNameInput = z.object({ projectId: projectIdSchema, name: nameSchema })
+
+export async function updateProjectNameAction(
+  input: z.input<typeof updateProjectNameInput>,
+): Promise<{ ok: true }> {
+  const { projectId, name } = parseInput(updateProjectNameInput, input)
 
   const session = await authenticateRequest()
   await requireProjectMembership(session.userId, projectId, { adminOnly: true })
 
   const db = getDb()
   await db.update(schema.project)
-    .set({ name: name.trim(), updatedAt: Date.now() })
+    .set({ name, updatedAt: Date.now() })
     .where(orm.eq(schema.project.projectId, projectId))
 
   return { ok: true }
@@ -169,10 +188,10 @@ export async function updateProjectNameAction({ projectId, name }: {
 
 // ── Delete Project ──────────────────────────────────────────────────
 
-export async function deleteProjectAction({ projectId }: {
-  projectId: string
-}): Promise<never> {
-  if (!projectId) throw new Error('Project ID is required')
+const projectOnlyInput = z.object({ projectId: projectIdSchema })
+
+export async function deleteProjectAction(input: z.input<typeof projectOnlyInput>): Promise<never> {
+  const { projectId } = parseInput(projectOnlyInput, input)
 
   const session = await authenticateRequest()
   const { orgId } = await requireProjectMembership(session.userId, projectId, { adminOnly: true })
@@ -246,10 +265,10 @@ function getProxyUrl(appId: string): string {
 
 /** Step 1: Start OAuth flow. Returns consent URL for the browser to open,
  *  plus a readKey for completing the flow server-side via completeGscOAuthAction. */
-export async function startGscOAuthAction({ projectId }: {
-  projectId: string
-}): Promise<{ url: string; readKey: string }> {
-  if (!projectId) throw new Error('Project ID is required')
+export async function startGscOAuthAction(
+  input: z.input<typeof projectOnlyInput>,
+): Promise<{ url: string; readKey: string }> {
+  const { projectId } = parseInput(projectOnlyInput, input)
 
   const session = await authenticateRequest()
   await requireProjectMembership(session.userId, projectId, { adminOnly: true })
@@ -264,12 +283,15 @@ export async function startGscOAuthAction({ projectId }: {
 
 /** Step 2: Complete OAuth flow. Server polls the proxy for tokens (no tokens
  *  ever touch the browser), stores them, and returns the list of GSC sites. */
-export async function completeGscOAuthAction({ projectId, readKey }: {
-  projectId: string
-  readKey: string
-}): Promise<{ sites: Array<{ siteUrl: string; permissionLevel: string }> }> {
-  if (!projectId) throw new Error('Project ID is required')
-  if (!readKey) throw new Error('Read key is required')
+const completeGscOAuthInput = z.object({
+  projectId: projectIdSchema,
+  readKey: z.string().min(1, 'Read key is required'),
+})
+
+export async function completeGscOAuthAction(
+  input: z.input<typeof completeGscOAuthInput>,
+): Promise<{ sites: Array<{ siteUrl: string; permissionLevel: string }> }> {
+  const { projectId, readKey } = parseInput(completeGscOAuthInput, input)
 
   const session = await authenticateRequest()
   await requireProjectMembership(session.userId, projectId, { adminOnly: true })
@@ -280,7 +302,7 @@ export async function completeGscOAuthAction({ projectId, readKey }: {
   // Poll for tokens (user may still be completing consent)
   let tokens: { access_token: string; expires_in: number; refresh_token?: string } | null = null
   for (let i = 0; i < 40; i++) {
-    const pollRes = await fetch(`${proxyUrl}/poll?readKey=${readKey}`, { method: 'POST' })
+    const pollRes = await fetch(`${proxyUrl}/poll?readKey=${encodeURIComponent(readKey)}`, { method: 'POST' })
     if (pollRes.status === 200) {
       tokens = await pollRes.json() as any
       break
@@ -326,10 +348,8 @@ export async function completeGscOAuthAction({ projectId, readKey }: {
   return { sites: data.siteEntry || [] }
 }
 
-export async function disconnectGscAction({ projectId }: {
-  projectId: string
-}): Promise<{ ok: true }> {
-  if (!projectId) throw new Error('Project ID is required')
+export async function disconnectGscAction(input: z.input<typeof projectOnlyInput>): Promise<{ ok: true }> {
+  const { projectId } = parseInput(projectOnlyInput, input)
 
   const session = await authenticateRequest()
   await requireProjectMembership(session.userId, projectId, { adminOnly: true })
@@ -342,12 +362,13 @@ export async function disconnectGscAction({ projectId }: {
   return { ok: true }
 }
 
-export async function selectGscSiteAction({ projectId, siteUrl }: {
-  projectId: string
-  siteUrl: string
-}): Promise<{ ok: true }> {
-  if (!projectId) throw new Error('Project ID is required')
-  if (!siteUrl) throw new Error('Site URL is required')
+const selectGscSiteInput = z.object({
+  projectId: projectIdSchema,
+  siteUrl: z.string().min(1, 'Site URL is required'),
+})
+
+export async function selectGscSiteAction(input: z.input<typeof selectGscSiteInput>): Promise<{ ok: true }> {
+  const { projectId, siteUrl } = parseInput(selectGscSiteInput, input)
 
   const session = await authenticateRequest()
   await requireProjectMembership(session.userId, projectId, { adminOnly: true })
@@ -410,10 +431,10 @@ async function fetchGscSites(projectId: string): Promise<{ sites: Array<{ siteUr
   return { sites: data.siteEntry || [] }
 }
 
-export async function listGscSitesAction({ projectId }: {
-  projectId: string
-}): Promise<{ sites: Array<{ siteUrl: string; permissionLevel: string }> }> {
-  if (!projectId) throw new Error('Project ID is required')
+export async function listGscSitesAction(
+  input: z.input<typeof projectOnlyInput>,
+): Promise<{ sites: Array<{ siteUrl: string; permissionLevel: string }> }> {
+  const { projectId } = parseInput(projectOnlyInput, input)
 
   const session = await authenticateRequest()
   await requireProjectMembership(session.userId, projectId, { adminOnly: true })
@@ -432,12 +453,13 @@ export type DomainInfo = {
   createdAt: number
 }
 
-export async function addDomainAction({ projectId, hostname }: {
-  projectId: string
-  hostname: string
-}): Promise<DomainInfo> {
-  if (!projectId) throw new Error('Project ID is required')
-  if (!hostname?.trim()) throw new Error('Hostname is required')
+const addDomainInput = z.object({
+  projectId: projectIdSchema,
+  hostname: z.string().trim().min(1, 'Hostname is required'),
+})
+
+export async function addDomainAction(input: z.input<typeof addDomainInput>): Promise<DomainInfo> {
+  const { projectId, hostname } = parseInput(addDomainInput, input)
 
   const session = await authenticateRequest()
   const { project } = await requireProjectMembership(session.userId, projectId, { adminOnly: true })
@@ -460,7 +482,7 @@ export async function addDomainAction({ projectId, hostname }: {
   })
   if (!decision.allowed) throw new Error(decision.reason)
 
-  const normalized = hostname.trim().toLowerCase().replace(/\.$/, '')
+  const normalized = hostname.toLowerCase().replace(/\.$/, '')
 
   // Validate hostname format
   if (normalized.includes('/') || normalized.includes(':') || normalized.includes(' ')) {
@@ -535,12 +557,13 @@ export async function addDomainAction({ projectId, hostname }: {
   }
 }
 
-export async function refreshDomainStatusAction({ projectId, domainId }: {
-  projectId: string
-  domainId: string
-}): Promise<DomainInfo> {
-  if (!projectId) throw new Error('Project ID is required')
-  if (!domainId) throw new Error('Domain ID is required')
+const domainActionInput = z.object({
+  projectId: projectIdSchema,
+  domainId: z.string().min(1, 'Domain ID is required'),
+})
+
+export async function refreshDomainStatusAction(input: z.input<typeof domainActionInput>): Promise<DomainInfo> {
+  const { projectId, domainId } = parseInput(domainActionInput, input)
 
   const session = await authenticateRequest()
   const { project } = await requireProjectMembership(session.userId, projectId)
@@ -585,12 +608,8 @@ export async function refreshDomainStatusAction({ projectId, domainId }: {
   }
 }
 
-export async function removeDomainAction({ projectId, domainId }: {
-  projectId: string
-  domainId: string
-}): Promise<{ ok: true }> {
-  if (!projectId) throw new Error('Project ID is required')
-  if (!domainId) throw new Error('Domain ID is required')
+export async function removeDomainAction(input: z.input<typeof domainActionInput>): Promise<{ ok: true }> {
+  const { projectId, domainId } = parseInput(domainActionInput, input)
 
   const session = await authenticateRequest()
   await requireProjectMembership(session.userId, projectId, { adminOnly: true })
