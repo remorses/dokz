@@ -627,6 +627,13 @@ describe('highlightCode', () => {
     `)
   })
 
+  test('bash keywords only match whole words', () => {
+    expect(highlightCode('for f in a; do echo $f; done\nfoo dot thenx elsewhere', 'bash')).toMatchInlineSnapshot(`
+      "<span class="token keyword">for</span> <span class="token for-or-select variable">f</span> <span class="token keyword">in</span> a<span class="token punctuation">;</span> <span class="token keyword">do</span> <span class="token function">echo</span> <span class="token variable">$f</span><span class="token punctuation">;</span> <span class="token keyword">done</span>
+      <span class="token function">foo</span> dot thenx elsewhere"
+    `)
+  })
+
   test('http json body uses content-type grammar', () => {
     expect(highlightCode('HTTP/1.1 200 OK\nContent-Type: application/json\n\n{ "id": 1 }\n', 'http')).toMatchInlineSnapshot(`
       "<span class="token response-status"><span class="token http-version property">HTTP/1.1</span> <span class="token status-code number">200</span> <span class="token reason-phrase string">OK</span></span>

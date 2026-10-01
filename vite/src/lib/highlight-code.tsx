@@ -236,7 +236,7 @@ function installRicherBashGrammar() {
     greedy: true,
     lookbehind: true,
     pattern:
-      /((?:^|[;|&]|[<>]\(|\b(?:then|do|else|elif))\s*)(?!(?:if|then|else|elif|fi|for|while|until|do|done|case|esac|function|select)\b)(?:(?:sudo|doas|nohup|time|exec|command|builtin|env)\s+)?[a-zA-Z_./~][^\s;|&<>()]*/m,
+      /((?:^|[;|&]|[<>]\(|\b(?:then|do|else|elif)(?=\s))\s*)(?!(?:if|then|else|elif|fi|for|while|until|do|done|case|esac|function|select)\b)(?:(?:sudo|doas|nohup|time|exec|command|builtin|env)\s+)?[a-zA-Z_./~][^\s;|&<>()]*/m,
   }
   bash.function = command
   const subst = bash.variable?.[1]?.inside
