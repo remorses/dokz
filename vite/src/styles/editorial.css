@@ -180,7 +180,7 @@ mark.search-match {
    `min(var(--bleed), …)` on the same element: that is a custom-property cycle. */
 .bleed,
 .bleed-right {
-  --bleed-inset: min(var(--bleed), max(0px, calc(var(--grid-gap, 60px) - 16px)));
+  --bleed-inset: min(var(--bleed), max(0px, calc(var(--grid-gap, 40px) - 16px)));
 }
 
 .bleed {

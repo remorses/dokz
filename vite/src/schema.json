@@ -1732,7 +1732,7 @@
           "type": "number"
         },
         "columnGap": {
-          "description": "Gap between the three grid columns (left sidebar, content,\nright sidebar) in pixels. Defaults to `60`",
+          "description": "Gap between the three grid columns (left sidebar, content,\nright sidebar) in pixels. Defaults to `40`",
           "type": "number"
         },
         "radius": {

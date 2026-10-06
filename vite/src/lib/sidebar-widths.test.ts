@@ -171,7 +171,7 @@ describe('buildGridTokenStyle', () => {
     expect(buildGridTokenStyle({ sidebarWidth: DEFAULT_SIDEBAR_WIDTH })).toMatchInlineSnapshot(`
       {
         "--grid-content-width": "minmax(0, min(720px, calc(var(--grid-max-width) - var(--grid-nav-width) - var(--grid-sidebar-width) - 2 * var(--grid-gap))))",
-        "--grid-gap": "60px",
+        "--grid-gap": "40px",
         "--grid-max-width": "min(calc(100vw - 60px), 1200px)",
         "--grid-nav-width": "230px",
         "--grid-sidebar-width": "230px",

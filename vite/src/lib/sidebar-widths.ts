@@ -3,8 +3,8 @@
  *
  * This file is the SINGLE source of truth for the page grid geometry.
  * `editorial-page.tsx` injects page-specific values as inline style on
- * `.slot-page` by calling `buildGridTokenStyle()`. `globals.css` owns the
- * default responsive `--grid-gap`; page frontmatter can override it inline.
+ * `.slot-page` by calling `buildGridTokenStyle()`. Config `layout.columnGap`
+ * and page frontmatter `gridGap` override the default gap.
  *
  * Content width is DERIVED, not configured. Compact pages remove the
  * right-sidebar track and its adjacent gap from both formulas.
@@ -34,7 +34,7 @@ import type { HolocronCSSProperties } from './css-vars.ts'
 const GRID_TOKENS = {
   '--grid-nav-width': 230,
   '--grid-sidebar-width': 230,
-  '--grid-gap': 60,
+  '--grid-gap': 40,
   '--grid-max-width': 1200,
 } as const
 

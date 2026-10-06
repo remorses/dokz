@@ -218,10 +218,8 @@
   --header-height: calc(var(--header-row-height) + var(--tab-bar-height) + 2px);
   --layout-gap: 36px;
   --sticky-top: calc(var(--header-height) + var(--layout-gap));
-  /* Grid geometry — most `--grid-*` values are injected as inline style on
-     `.slot-page` by `buildGridTokenStyle()` in `lib/sidebar-widths.ts`.
-     `--grid-gap` lives in CSS so breakpoints can compact it. Page-level
-     frontmatter can still override it inline when needed. */
+  /* Grid geometry `--grid-*` values are injected as inline style on
+     `.slot-page` by `buildGridTokenStyle()` in `lib/sidebar-widths.ts`. */
   --mobile-padding: 1.25rem;
 
   /* Decorative grid lines — offset between content edge and vertical lines */
@@ -464,18 +462,6 @@
 
   /* Layout slots — only important page entities use CSS classes.
      Inner wrappers use Tailwind utilities directly in JSX. */
-
-  .slot-page {
-    --grid-gap: 60px;
-
-    @variant md {
-      --grid-gap: 45px;
-    }
-
-    @variant xl {
-      --grid-gap: 60px;
-    }
-  }
 
   .slot-navbar {
     position: sticky;

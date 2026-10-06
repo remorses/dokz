@@ -1212,7 +1212,7 @@ export const layoutSchema = z
       .describe(
         dedent`
           Gap between the three grid columns (left sidebar, content,
-          right sidebar) in pixels. Defaults to \`60\`
+          right sidebar) in pixels. Defaults to \`40\`
         `,
       ),
     radius: z

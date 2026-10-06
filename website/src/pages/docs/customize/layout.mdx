@@ -50,10 +50,10 @@ See [AI Assistant](../ai/assistant.mdx) for the floating pill. Page frontmatter 
 
 Compact **never** opens a right rail on authored docs pages. Every page in an **MCP** or **OpenAPI** tab uses `mode: "default"`, including authored overview pages that have no example rail. That keeps the tab frame consistent. Generated request examples stay in the right aside. Authored asides and table-of-contents panels on compact docs pages still render in the **main column**. The sidebar Ask AI widget stays hidden.
 
-With the default geometry, compact mode derives a **910px frame** from the existing layout values:
+With the default geometry, compact mode derives a **930px frame** from the existing layout values:
 
 ```text
-1200px max width - 230px right aside - 60px column gap = 910px
+1200px max width - 230px right aside - 40px column gap = 930px
 ```
 
 There is no separate compact width setting. Changes to `layout.maxWidth` or `layout.columnGap` update the compact frame automatically.
@@ -152,7 +152,7 @@ Holocron's page grid is controlled by four CSS variables:
 | `--grid-max-width`     | `1200px` | Overall page cap                 |
 | `--grid-nav-width`     | `230px`  | Left sidebar (table of contents) |
 | `--grid-sidebar-width` | `230px`  | Right sidebar (aside content)    |
-| `--grid-gap`           | `60px`   | Gap between columns              |
+| `--grid-gap`           | `40px`   | Gap between columns              |
 
 The **content column width** is derived automatically:
 

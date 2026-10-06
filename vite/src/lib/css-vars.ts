@@ -31,8 +31,7 @@ export interface HolocronCSSProperties extends CSSProperties {
   /* ---------------------------------------------------------------- *
    * Grid geometry — injected on `.slot-page` by editorial-page.tsx.  *
    * Source of truth: `lib/sidebar-widths.ts` (GRID_TOKENS object +   *
-   * `buildGridTokenStyle` helper) plus responsive defaults in         *
-   * `styles/globals.css` for `--grid-gap`.                            *
+   * `buildGridTokenStyle` helper).                                    *
    * ---------------------------------------------------------------- */
   '--grid-nav-width'?: string
   '--grid-content-width'?: string
