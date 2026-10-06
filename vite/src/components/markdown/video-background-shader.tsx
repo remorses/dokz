@@ -2,14 +2,13 @@
 
 /**
  * VideoBackgroundShader — full-screen video background rendered through a
- * dot-grid shader with interactive 2D Navier-Stokes fluid simulation.
+ * dot-grid (or ASCII) shader with an interactive hover lens.
  *
  * Uses raw WebGL (zero runtime dependencies). Video luminance drives dot
  * radius: bright = big dot, dark = invisible (unless minLuminance is set).
- * Mouse movement creates fluid splats that blend with the video.
- *
- * Future: `dotStyle` prop will add alternative render modes (e.g. 'ascii')
- * using different characters to mimic video pixel shapes.
+ * The pointer carries a smoothed lens: it magnifies the video, lifts dark
+ * cells, and emits rings that travel outward. The lens stays while the
+ * pointer rests, so the effect is the same on dark and bright video parts.
  *
  * Usage in MDX:
  *   <VideoBackgroundShader src="/hero-bg.mp4" dotColor="#8da4ff" dotSize={6}>
@@ -23,8 +22,7 @@ import { cn } from '../../lib/css-vars.ts'
 // ─── WebGL typed helpers ───────────────────────────────────────────────────
 //
 // Minimal utilities for shader-only 2D effects: program compilation with
-// cached uniform locations, framebuffer objects for ping-pong rendering,
-// and a full-screen quad. All programs share fixed attribute locations
+// cached uniform locations and a full-screen quad. All programs share fixed attribute locations
 // (0 = position, 1 = uv) so the quad only needs binding once.
 
 interface GpuProgram {
@@ -32,19 +30,6 @@ interface GpuProgram {
   /** Get a cached uniform location by name. Throws if not found. */
   loc(name: string): WebGLUniformLocation
   dispose(gl: WebGLRenderingContext): void
-}
-
-interface FBO {
-  framebuffer: WebGLFramebuffer
-  texture: WebGLTexture
-  width: number
-  height: number
-}
-
-interface DoubleFBO {
-  read: FBO
-  write: FBO
-  swap(): void
 }
 
 interface QuadBuffers {
@@ -108,34 +93,6 @@ function createGpuProgram(gl: WebGLRenderingContext, vertSrc: string, fragSrc: s
   }
 }
 
-function createFBO(gl: WebGLRenderingContext, w: number, h: number, texType: number): FBO {
-  const texture = gl.createTexture()!
-  gl.bindTexture(gl.TEXTURE_2D, texture)
-  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST)
-  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST)
-  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE)
-  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE)
-  gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, w, h, 0, gl.RGBA, texType, null)
-  const framebuffer = gl.createFramebuffer()!
-  gl.bindFramebuffer(gl.FRAMEBUFFER, framebuffer)
-  gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, texture, 0)
-  gl.bindFramebuffer(gl.FRAMEBUFFER, null)
-  return { framebuffer, texture, width: w, height: h }
-}
-
-function createDoubleFBO(gl: WebGLRenderingContext, w: number, h: number, texType: number): DoubleFBO {
-  const dfbo: DoubleFBO = {
-    read: createFBO(gl, w, h, texType),
-    write: createFBO(gl, w, h, texType),
-    swap() {
-      const tmp = dfbo.read
-      dfbo.read = dfbo.write
-      dfbo.write = tmp
-    },
-  }
-  return dfbo
-}
-
 function createQuadBuffers(gl: WebGLRenderingContext): QuadBuffers {
   const positions = new Float32Array([-1, -1, 0, 1, -1, 0, -1, 1, 0, 1, 1, 0])
   const uvs = new Float32Array([0, 0, 1, 0, 0, 1, 1, 1])
@@ -165,15 +122,10 @@ function setTexture(gl: WebGLRenderingContext, prog: GpuProgram, name: string, t
   gl.uniform1i(prog.loc(name), unit)
 }
 
-/** Draw the bound quad to an FBO, or to the screen when target is null. */
-function drawPass(gl: WebGLRenderingContext, target: FBO | null) {
-  if (target) {
-    gl.bindFramebuffer(gl.FRAMEBUFFER, target.framebuffer)
-    gl.viewport(0, 0, target.width, target.height)
-  } else {
-    gl.bindFramebuffer(gl.FRAMEBUFFER, null)
-    gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight)
-  }
+/** Draw the bound quad to the screen. */
+function drawToScreen(gl: WebGLRenderingContext) {
+  gl.bindFramebuffer(gl.FRAMEBUFFER, null)
+  gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight)
   gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4)
 }
 
@@ -189,16 +141,6 @@ function createEmptyTexture(gl: WebGLRenderingContext): WebGLTexture {
   return tex
 }
 
-function disposeFBO(gl: WebGLRenderingContext, fbo: FBO) {
-  gl.deleteFramebuffer(fbo.framebuffer)
-  gl.deleteTexture(fbo.texture)
-}
-
-function disposeDoubleFBO(gl: WebGLRenderingContext, dfbo: DoubleFBO) {
-  disposeFBO(gl, dfbo.read)
-  disposeFBO(gl, dfbo.write)
-}
-
 // ─── Shader sources ────────────────────────────────────────────────────────
 
 const BASE_VERTEX = /* glsl */ `
@@ -212,174 +154,14 @@ const BASE_VERTEX = /* glsl */ `
   }
 `
 
-const FLUID_VERTEX = /* glsl */ `
-  precision highp float;
-  attribute vec2 uv;
-  attribute vec3 position;
-  varying vec2 vUv;
-  varying vec2 vL;
-  varying vec2 vR;
-  varying vec2 vT;
-  varying vec2 vB;
-  uniform vec2 texelSize;
-
-  void main() {
-    vUv = uv;
-    vL = vUv - vec2(texelSize.x, 0.0);
-    vR = vUv + vec2(texelSize.x, 0.0);
-    vT = vUv + vec2(0.0, texelSize.y);
-    vB = vUv - vec2(0.0, texelSize.y);
-    gl_Position = vec4(position, 1.0);
-  }
-`
-
-const ADVECTION_FRAG = /* glsl */ `
-  precision highp float;
-  uniform sampler2D uVelocity;
-  uniform sampler2D uSource;
-  uniform vec2 texelSize;
-  uniform float dt;
-  uniform float dissipation;
-  varying vec2 vUv;
-
-  void main() {
-    vec2 coord = vUv - dt * texture2D(uVelocity, vUv).xy * texelSize;
-    gl_FragColor = dissipation * texture2D(uSource, coord);
-  }
-`
-
-const DIVERGENCE_FRAG = /* glsl */ `
-  precision highp float;
-  uniform sampler2D uVelocity;
-  varying vec2 vUv;
-  varying vec2 vL;
-  varying vec2 vR;
-  varying vec2 vT;
-  varying vec2 vB;
-
-  void main() {
-    float L = texture2D(uVelocity, vL).x;
-    float R = texture2D(uVelocity, vR).x;
-    float T = texture2D(uVelocity, vT).y;
-    float B = texture2D(uVelocity, vB).y;
-    float div = 0.5 * (R - L + T - B);
-    gl_FragColor = vec4(div, 0.0, 0.0, 1.0);
-  }
-`
-
-const CURL_FRAG = /* glsl */ `
-  precision highp float;
-  uniform sampler2D uVelocity;
-  varying vec2 vUv;
-  varying vec2 vL;
-  varying vec2 vR;
-  varying vec2 vT;
-  varying vec2 vB;
-
-  void main() {
-    float L = texture2D(uVelocity, vL).y;
-    float R = texture2D(uVelocity, vR).y;
-    float T = texture2D(uVelocity, vT).x;
-    float B = texture2D(uVelocity, vB).x;
-    float vorticity = R - L - T + B;
-    gl_FragColor = vec4(0.5 * vorticity, 0.0, 0.0, 1.0);
-  }
-`
-
-const VORTICITY_FRAG = /* glsl */ `
-  precision highp float;
-  uniform sampler2D uVelocity;
-  uniform sampler2D uCurl;
-  uniform float curl;
-  uniform float dt;
-  varying vec2 vUv;
-  varying vec2 vL;
-  varying vec2 vR;
-  varying vec2 vT;
-  varying vec2 vB;
-
-  void main() {
-    float L = texture2D(uCurl, vL).x;
-    float R = texture2D(uCurl, vR).x;
-    float T = texture2D(uCurl, vT).x;
-    float B = texture2D(uCurl, vB).x;
-    float C = texture2D(uCurl, vUv).x;
-    vec2 force = 0.5 * vec2(abs(T) - abs(B), abs(R) - abs(L));
-    force /= length(force) + 0.0001;
-    force *= curl * C;
-    force.y *= -1.0;
-    vec2 vel = texture2D(uVelocity, vUv).xy;
-    gl_FragColor = vec4(vel + force * dt, 0.0, 1.0);
-  }
-`
-
-const PRESSURE_FRAG = /* glsl */ `
-  precision highp float;
-  uniform sampler2D uPressure;
-  uniform sampler2D uDivergence;
-  varying vec2 vUv;
-  varying vec2 vL;
-  varying vec2 vR;
-  varying vec2 vT;
-  varying vec2 vB;
-
-  void main() {
-    float L = texture2D(uPressure, vL).x;
-    float R = texture2D(uPressure, vR).x;
-    float T = texture2D(uPressure, vT).x;
-    float B = texture2D(uPressure, vB).x;
-    float divergence = texture2D(uDivergence, vUv).x;
-    float pressure = (L + R + B + T - divergence) * 0.25;
-    gl_FragColor = vec4(pressure, 0.0, 0.0, 1.0);
-  }
-`
-
-const GRADIENT_SUBTRACT_FRAG = /* glsl */ `
-  precision highp float;
-  uniform sampler2D uPressure;
-  uniform sampler2D uVelocity;
-  varying vec2 vUv;
-  varying vec2 vL;
-  varying vec2 vR;
-  varying vec2 vT;
-  varying vec2 vB;
-
-  void main() {
-    float L = texture2D(uPressure, vL).x;
-    float R = texture2D(uPressure, vR).x;
-    float T = texture2D(uPressure, vT).x;
-    float B = texture2D(uPressure, vB).x;
-    vec2 velocity = texture2D(uVelocity, vUv).xy;
-    velocity.xy -= vec2(R - L, T - B);
-    gl_FragColor = vec4(velocity, 0.0, 1.0);
-  }
-`
-
-const SPLAT_FRAG = /* glsl */ `
-  precision highp float;
-  uniform sampler2D uTarget;
-  uniform float aspectRatio;
-  uniform vec3 color;
-  uniform vec2 point;
-  uniform float radius;
-  varying vec2 vUv;
-
-  void main() {
-    vec2 p = vUv - point;
-    p.x *= aspectRatio;
-    vec3 splat = exp(-dot(p, p) / radius) * color;
-    vec3 base = texture2D(uTarget, vUv).xyz;
-    gl_FragColor = vec4(base + splat, 1.0);
-  }
-`
-
 const DISPLAY_FRAG = /* glsl */ `
   precision highp float;
-  uniform sampler2D uDye;
   uniform sampler2D uVideo;
   uniform sampler2D uMask;
   uniform bool enableMask;
-  uniform float fluidStrength;
+  uniform vec2 pointer;
+  uniform float pointerStrength;
+  uniform float hoverRadius;
   uniform float gridCellSize;
   uniform float dotRadius;
   uniform float minDotRadius;
@@ -399,6 +181,24 @@ const DISPLAY_FRAG = /* glsl */ `
 
   float random(vec2 st) {
     return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 43758.5453123);
+  }
+
+  float valueNoise(vec2 p) {
+    vec2 i = floor(p);
+    vec2 f = fract(p);
+    vec2 u = f * f * (3.0 - 2.0 * f);
+    float a = random(i);
+    float b = random(i + vec2(1.0, 0.0));
+    float c = random(i + vec2(0.0, 1.0));
+    float d = random(i + vec2(1.0, 1.0));
+    return mix(mix(a, b, u.x), mix(c, d, u.x), u.y);
+  }
+
+  // Two octaves, range ~0-1. Drifts slowly so the lens edge breathes.
+  float organicNoise(vec2 p, float t) {
+    float n = valueNoise(p + vec2(t * 0.35, -t * 0.25)) * 0.65;
+    n += valueNoise(p * 2.1 + vec2(-t * 0.5, t * 0.4)) * 0.35;
+    return n;
   }
 
   vec4 premultipliedDotColor(float alpha) {
@@ -464,14 +264,27 @@ const DISPLAY_FRAG = /* glsl */ `
       distanceFromCenter = length(gridPos - cellCenter);
     }
 
-    vec4 video = texture2D(uVideo, centerUv);
-    vec4 dye = texture2D(uDye, centerUv);
+    // Hover lens, all in pixel space. The distance is warped by drifting
+    // noise so the lens is a soft, slowly morphing blob instead of a circle,
+    // and the rings it emits wobble with it.
+    vec2 cellPx = centerUv * videoResolution;
+    vec2 fromPointer = cellPx - pointer;
+    float warp = organicNoise(cellPx / (hoverRadius * 0.6), time) - 0.5;
+    float pointerDist = max(length(fromPointer) + warp * hoverRadius * 0.9, 0.0);
+    float lens = pointerStrength * exp(-(pointerDist * pointerDist) / (hoverRadius * hoverRadius * 0.5));
+
+    // Magnify: cells near the pointer sample video closer to the pointer
+    vec2 sampleUv = (pointer + fromPointer * (1.0 - 0.3 * lens)) / videoResolution;
+    vec4 video = texture2D(uVideo, sampleUv);
     vec3 videoGammaCorrected = pow(video.rgb, vec3(gamma));
-    vec3 scaledDye = dye.rgb * fluidStrength;
-    scaledDye = pow(scaledDye + 0.001, vec3(0.7));
-    float videoLuminance = dot(videoGammaCorrected + scaledDye, vec3(0.299, 0.587, 0.114));
-    float dyeLuminance = dot(dye.rgb, vec3(0.299, 0.587, 0.114));
-    float luminance = max(max(videoLuminance, dyeLuminance), minLuminance);
+    float luminance = max(dot(videoGammaCorrected, vec3(0.299, 0.587, 0.114)), minLuminance);
+
+    // Lift dark cells so the lens reads as a soft glow on dark video
+    luminance = max(luminance, lens * 0.7);
+    // Rings travel outward from the pointer. Bright cells show them as
+    // darker bands, dark cells as brighter bands, so every area reacts.
+    float ripple = sin(pointerDist * 0.12 - time * 4.0);
+    luminance *= 1.0 + 0.35 * lens * ripple;
 
     if (enableMask) {
       vec4 mask = texture2D(uMask, vUv);
@@ -542,12 +355,8 @@ export interface VideoShaderConfig {
   animSpeed?: number
   gamma?: number
   loopAt?: number
-  fluidCurl?: number
-  fluidVelocityDissipation?: number
-  fluidDyeDissipation?: number
-  fluidSplatRadius?: number
-  fluidPressureIterations?: number
-  fluidStrength?: number
+  /** Hover lens radius in CSS pixels. Set 0 to disable the hover effect. Default 160. */
+  hoverRadius?: number
   /** Minimum luminance floor (0-1). Dots appear even in dark video areas
    *  when this is above 0. Higher = more dots everywhere. Default 0. */
   minLuminance?: number
@@ -572,12 +381,7 @@ const DEFAULT_CONFIG: Required<Omit<VideoShaderConfig, 'src'>> = {
   animSpeed: 4,
   gamma: 0.9,
   loopAt: 4,
-  fluidCurl: 100,
-  fluidVelocityDissipation: 0.93,
-  fluidDyeDissipation: 0.95,
-  fluidSplatRadius: 0.006,
-  fluidPressureIterations: 1,
-  fluidStrength: 0.15,
+  hoverRadius: 160,
   minLuminance: 0.2,
   dotStyle: 'dots',
   chars: ' .:-~=+x?$%#@A',
@@ -675,46 +479,6 @@ function createVideoShaderEngine(container: HTMLElement, config: Required<Omit<V
   }
   const gl = glContext
 
-  // Enable float texture extensions for fluid sim FBOs
-  const halfFloatExt = gl.getExtension('OES_texture_half_float')
-  gl.getExtension('OES_texture_float')
-  gl.getExtension('EXT_color_buffer_half_float')
-  gl.getExtension('WEBGL_color_buffer_float')
-
-  // Pick the best texture type the device can actually RENDER to. Having the
-  // texture extension does not guarantee framebuffer completeness (older iOS
-  // exposes OES_texture_float but cannot render to float textures). Probe each
-  // candidate with a 4x4 FBO and fall back to UNSIGNED_BYTE as a last resort —
-  // the fluid sim degrades slightly but nothing crashes.
-  function pickRenderableTexType(): number {
-    const candidates = [
-      ...(halfFloatExt ? [halfFloatExt.HALF_FLOAT_OES] : []),
-      gl.FLOAT,
-      gl.UNSIGNED_BYTE,
-    ]
-    for (const candidate of candidates) {
-      const probe = createFBO(gl, 4, 4, candidate)
-      gl.bindFramebuffer(gl.FRAMEBUFFER, probe.framebuffer)
-      const complete = gl.checkFramebufferStatus(gl.FRAMEBUFFER) === gl.FRAMEBUFFER_COMPLETE
-      gl.bindFramebuffer(gl.FRAMEBUFFER, null)
-      disposeFBO(gl, probe)
-      if (complete) return candidate
-    }
-    return gl.UNSIGNED_BYTE
-  }
-  const texType = pickRenderableTexType()
-
-  // Sim resolution (half size for performance)
-  const simW = Math.floor(width / 2)
-  const simH = Math.floor(height / 2)
-
-  // Fluid simulation FBOs (ping-pong pairs)
-  const velocity = createDoubleFBO(gl, simW, simH, texType)
-  const dye = createDoubleFBO(gl, simW, simH, texType)
-  const divergenceFBO = createFBO(gl, simW, simH, texType)
-  const curlFBO = createFBO(gl, simW, simH, texType)
-  const pressure = createDoubleFBO(gl, simW, simH, texType)
-
   // Video element
   const video = document.createElement('video')
   video.src = config.src
@@ -765,39 +529,15 @@ function createVideoShaderEngine(container: HTMLElement, config: Required<Omit<V
 
   // ── GPU programs ──
 
-  const advectionP = createGpuProgram(gl, FLUID_VERTEX, ADVECTION_FRAG)
-  const divergenceP = createGpuProgram(gl, FLUID_VERTEX, DIVERGENCE_FRAG)
-  const curlP = createGpuProgram(gl, FLUID_VERTEX, CURL_FRAG)
-  const vorticityP = createGpuProgram(gl, FLUID_VERTEX, VORTICITY_FRAG)
-  const pressureP = createGpuProgram(gl, FLUID_VERTEX, PRESSURE_FRAG)
-  const gradientSubtractP = createGpuProgram(gl, FLUID_VERTEX, GRADIENT_SUBTRACT_FRAG)
-  const splatP = createGpuProgram(gl, FLUID_VERTEX, SPLAT_FRAG)
   const displayP = createGpuProgram(gl, BASE_VERTEX, DISPLAY_FRAG)
 
   // ── Static uniforms (set once, persist across frames) ──
-
-  const texelX = 1 / simW
-  const texelY = 1 / simH
-  // NB: splatP is excluded — SPLAT_FRAG only reads vUv, so the GLSL linker
-  // strips texelSize as an inactive uniform on some drivers, which would make
-  // loc('texelSize') throw ("Unknown uniform: texelSize").
-  for (const p of [advectionP, divergenceP, curlP, vorticityP, pressureP, gradientSubtractP]) {
-    gl.useProgram(p.program)
-    gl.uniform2f(p.loc('texelSize'), texelX, texelY)
-  }
-
-  gl.useProgram(vorticityP.program)
-  gl.uniform1f(vorticityP.loc('curl'), config.fluidCurl)
-
-  gl.useProgram(splatP.program)
-  gl.uniform1f(splatP.loc('aspectRatio'), width / height)
-  gl.uniform1f(splatP.loc('radius'), config.fluidSplatRadius)
 
   const gridLayoutIndex = { straight: 0, radial: 1, 'alternating-grid': 2 }[config.gridLayout] || 0
   const dotRgba = parseColorNormalized(config.dotColor)
 
   gl.useProgram(displayP.program)
-  gl.uniform1f(displayP.loc('fluidStrength'), config.fluidStrength)
+  gl.uniform1f(displayP.loc('hoverRadius'), Math.max(config.hoverRadius, 1))
   gl.uniform1f(displayP.loc('gridCellSize'), config.dotSize + config.dotMargin)
   gl.uniform1f(displayP.loc('dotRadius'), config.dotSize / 2)
   gl.uniform1f(displayP.loc('minDotRadius'), config.minDotSize / 2)
@@ -814,92 +554,55 @@ function createVideoShaderEngine(container: HTMLElement, config: Required<Omit<V
   gl.uniform1i(displayP.loc('dotStyle'), config.dotStyle === 'ascii' ? 1 : 0)
   gl.uniform1f(displayP.loc('charCount'), charAtlas.count)
 
-  // ── Fluid simulation step ──
+  // ── Pointer lens ──
+  //
+  // Store the last client position and resolve it against the container rect
+  // every frame, so scrolling under a resting pointer keeps the lens correct.
+  // Listen on window: foreground content (headings, buttons) sits above the
+  // canvas container and would swallow container-level events.
 
-  function stepFluid(dt: number) {
-    gl.useProgram(advectionP.program)
-    gl.uniform1f(advectionP.loc('dt'), dt)
-    setTexture(gl, advectionP, 'uVelocity', velocity.read.texture, 0)
-    setTexture(gl, advectionP, 'uSource', velocity.read.texture, 1)
-    gl.uniform1f(advectionP.loc('dissipation'), config.fluidVelocityDissipation)
-    drawPass(gl, velocity.write)
-    velocity.swap()
+  let clientX = 0
+  let clientY = 0
+  let hasPointer = false
+  const lens = { x: 0, y: 0, strength: 0 }
 
-    gl.useProgram(advectionP.program)
-    setTexture(gl, advectionP, 'uVelocity', velocity.read.texture, 0)
-    setTexture(gl, advectionP, 'uSource', dye.read.texture, 1)
-    gl.uniform1f(advectionP.loc('dissipation'), config.fluidDyeDissipation)
-    drawPass(gl, dye.write)
-    dye.swap()
-
-    gl.useProgram(curlP.program)
-    setTexture(gl, curlP, 'uVelocity', velocity.read.texture, 0)
-    drawPass(gl, curlFBO)
-
-    gl.useProgram(vorticityP.program)
-    setTexture(gl, vorticityP, 'uVelocity', velocity.read.texture, 0)
-    setTexture(gl, vorticityP, 'uCurl', curlFBO.texture, 1)
-    gl.uniform1f(vorticityP.loc('dt'), dt)
-    drawPass(gl, velocity.write)
-    velocity.swap()
-
-    gl.useProgram(divergenceP.program)
-    setTexture(gl, divergenceP, 'uVelocity', velocity.read.texture, 0)
-    drawPass(gl, divergenceFBO)
-
-    gl.useProgram(pressureP.program)
-    setTexture(gl, pressureP, 'uDivergence', divergenceFBO.texture, 1)
-    for (let i = 0; i < config.fluidPressureIterations; i++) {
-      setTexture(gl, pressureP, 'uPressure', pressure.read.texture, 0)
-      drawPass(gl, pressure.write)
-      pressure.swap()
-    }
-
-    gl.useProgram(gradientSubtractP.program)
-    setTexture(gl, gradientSubtractP, 'uPressure', pressure.read.texture, 0)
-    setTexture(gl, gradientSubtractP, 'uVelocity', velocity.read.texture, 1)
-    drawPass(gl, velocity.write)
-    velocity.swap()
+  function onPointerMove(e: PointerEvent) {
+    clientX = e.clientX
+    clientY = e.clientY
+    hasPointer = true
+  }
+  function onPointerGone(e: PointerEvent) {
+    // Touch pointers vanish on lift. Mouse leaving the page fires pointerout
+    // with no relatedTarget.
+    if (e.pointerType === 'touch' || !e.relatedTarget) hasPointer = false
+  }
+  const hoverEnabled = config.hoverRadius > 0
+  if (hoverEnabled) {
+    window.addEventListener('pointermove', onPointerMove, { passive: true })
+    window.addEventListener('pointerup', onPointerGone, { passive: true })
+    window.addEventListener('pointerout', onPointerGone, { passive: true })
   }
 
-  // ── Splat (mouse interaction) ──
-
-  function splat(x: number, y: number, dx: number, dy: number) {
-    gl.useProgram(splatP.program)
-    gl.uniform1f(splatP.loc('aspectRatio'), width / height)
-
-    setTexture(gl, splatP, 'uTarget', velocity.read.texture, 0)
-    gl.uniform2f(splatP.loc('point'), x / width, 1.0 - y / height)
-    gl.uniform3f(splatP.loc('color'), dx * 5000, -dy * 5000, 0)
-    gl.uniform1f(splatP.loc('radius'), config.fluidSplatRadius)
-    drawPass(gl, velocity.write)
-    velocity.swap()
-
-    setTexture(gl, splatP, 'uTarget', dye.read.texture, 0)
-    gl.uniform3f(splatP.loc('color'), dotRgba.r * 0.8, dotRgba.g * 0.8, dotRgba.b * 0.8)
-    drawPass(gl, dye.write)
-    dye.swap()
-  }
-
-  // ── Mouse tracking ──
-
-  let lastMouseX = 0
-  let lastMouseY = 0
-
-  function onMouseMove(e: MouseEvent) {
+  function updateLens(dt: number) {
     const rect = container.getBoundingClientRect()
-    const x = e.clientX - rect.left
-    const y = e.clientY - rect.top
-    const dx = x - lastMouseX
-    const dy = y - lastMouseY
-    lastMouseX = x
-    lastMouseY = y
-    if (Math.abs(dx) > 0.1 || Math.abs(dy) > 0.1) {
-      splat(x, y, dx * 0.01, dy * 0.01)
+    const x = clientX - rect.left
+    const y = clientY - rect.top
+    const inside = hasPointer && x >= 0 && y >= 0 && x <= rect.width && y <= rect.height
+    // Shader pixel space has y pointing up
+    const targetY = rect.height - y
+    if (inside && lens.strength < 0.01) {
+      // Appear where the pointer is instead of sliding in from the old spot
+      lens.x = x
+      lens.y = targetY
     }
+    if (inside) {
+      const follow = 1 - Math.exp(-dt * 14)
+      lens.x += (x - lens.x) * follow
+      lens.y += (targetY - lens.y) * follow
+    }
+    const fade = 1 - Math.exp(-dt * 6)
+    lens.strength += ((inside ? 1 : 0) - lens.strength) * fade
   }
-
-  container.addEventListener('mousemove', onMouseMove)
 
   // ── Animation loop ──
 
@@ -934,15 +637,16 @@ function createVideoShaderEngine(container: HTMLElement, config: Required<Omit<V
         gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, video)
       }
 
-      stepFluid(dt)
+      if (hoverEnabled) updateLens(dt)
 
       gl.useProgram(displayP.program)
       gl.uniform1f(displayP.loc('time'), (now - startTime) / 1000)
-      setTexture(gl, displayP, 'uDye', dye.read.texture, 0)
+      gl.uniform2f(displayP.loc('pointer'), lens.x, lens.y)
+      gl.uniform1f(displayP.loc('pointerStrength'), lens.strength)
       setTexture(gl, displayP, 'uVideo', videoTex, 1)
       setTexture(gl, displayP, 'uMask', maskTex, 2)
       setTexture(gl, displayP, 'uCharAtlas', charAtlas.texture, 3)
-      drawPass(gl, null)
+      drawToScreen(gl)
     } catch (error) {
       // Never let a runtime WebGL failure become an uncaught error storm —
       // stop the loop and leave the page content intact.
@@ -970,8 +674,6 @@ function createVideoShaderEngine(container: HTMLElement, config: Required<Omit<V
     canvas.style.height = height + 'px'
     gl.useProgram(displayP.program)
     gl.uniform2f(displayP.loc('videoResolution'), width, height)
-    gl.useProgram(splatP.program)
-    gl.uniform1f(splatP.loc('aspectRatio'), width / height)
   }
 
   const resizeObserver = new ResizeObserver(onResize)
@@ -983,24 +685,14 @@ function createVideoShaderEngine(container: HTMLElement, config: Required<Omit<V
     disposed = true
     cancelAnimationFrame(animId)
     canvas.removeEventListener('webglcontextlost', onContextLost)
-    container.removeEventListener('mousemove', onMouseMove)
+    window.removeEventListener('pointermove', onPointerMove)
+    window.removeEventListener('pointerup', onPointerGone)
+    window.removeEventListener('pointerout', onPointerGone)
     if (tryPlay) document.removeEventListener('click', tryPlay)
     resizeObserver.disconnect()
     video.pause()
     video.src = ''
-    advectionP.dispose(gl)
-    divergenceP.dispose(gl)
-    curlP.dispose(gl)
-    vorticityP.dispose(gl)
-    pressureP.dispose(gl)
-    gradientSubtractP.dispose(gl)
-    splatP.dispose(gl)
     displayP.dispose(gl)
-    disposeDoubleFBO(gl, velocity)
-    disposeDoubleFBO(gl, dye)
-    disposeFBO(gl, divergenceFBO)
-    disposeFBO(gl, curlFBO)
-    disposeDoubleFBO(gl, pressure)
     gl.deleteTexture(videoTex)
     gl.deleteTexture(maskTex)
     gl.deleteTexture(charAtlas.texture)

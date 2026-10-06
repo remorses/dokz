@@ -43,8 +43,7 @@ export function HeroSection({
         // animSpeed={3}
         chars= ' .:-~=holocron'
         // gamma={0.8}
-        // fluidStrength={0.6}
-        // fluidCurl={80}
+        // hoverRadius={160}
         //         minLuminance={0.15}
       />
 
