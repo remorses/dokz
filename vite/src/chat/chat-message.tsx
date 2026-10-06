@@ -312,7 +312,7 @@ function ChatPromotion({
       className='no-bleed flex flex-col gap-3 rounded-lg bg-primary/5 px-3.5 py-3 text-foreground'
     >
       <div className='flex min-w-0 flex-col gap-4'>
-        <HolocronLogo className='h-[18px] w-auto shrink-0' />
+        <HolocronLogo className='h-[18px] w-auto shrink-0 self-start' />
         <div className='min-w-0 text-[13px] font-medium leading-snug text-pretty'>
           {part.title}
         </div>
