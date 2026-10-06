@@ -8,21 +8,37 @@
  *   - "none"            — no decorative lines
  *   - "lines"           — solid 1px lines
  *   - "dashed"          — dashed/segmented lines
- *   - "lines-with-dots" — solid lines + dot ornaments at vertices (default)
+ *   - "lines-with-dots"    — solid lines + dot ornaments at vertices (default)
+ *   - "lines-with-crosses" — solid lines + small + ornaments
+ *   - "lines-with-x"       — solid lines + small x ornaments
+ *   - "lines-with-circles" — solid lines + small hollow circle ornaments
  *
  * Line positions (desktop only):
  *   - 2 outer vertical lines offset outside the max-width edges
  *   - 1 horizontal bottom border below the content area
- *   - Dots at every line intersection when mode is "lines-with-dots"
- *   - Dots on the tab-bar border aligned with the vertical lines
+ *   - Ornaments at every line intersection when mode is "lines-with-*"
+ *   - Ornaments on the tab-bar border aligned with the vertical lines
  *
  * All elements are aria-hidden, pointer-events-none — purely visual.
  * Only rendered at lg: breakpoint (desktop); hidden on mobile.
  */
 
 import React from 'react'
+import type { HolocronConfig } from '../../config.ts'
 
-export type DecorativeMode = 'none' | 'lines' | 'dashed' | 'lines-with-dots'
+export type DecorativeMode = HolocronConfig['decorativeLines']
+
+type OrnamentShape = 'dot' | 'cross' | 'x' | 'circle'
+
+const ORNAMENT_BY_MODE: Record<DecorativeMode, OrnamentShape | null> = {
+  none: null,
+  lines: null,
+  dashed: null,
+  'lines-with-dots': 'dot',
+  'lines-with-crosses': 'cross',
+  'lines-with-x': 'x',
+  'lines-with-circles': 'circle',
+}
 
 /** Gap between content edge and decorative line — lives in CSS as
  *  `--grid-line-offset` so it can be themed. Default 20px. */
@@ -30,12 +46,13 @@ const LINE_OFFSET = 'var(--grid-line-offset, 20px)'
 
 /* ── GridDot ──────────────────────────────────────────────────────────── */
 
-/** Decorative dot placed at border intersections. Must be inside a relative container.
- *  Outer circle masks the border crossing with page bg, inner dot marks the joint. */
-function GridDot({ style }: { style?: React.CSSProperties }) {
+/** Decorative ornament placed at border intersections. Must be inside a relative container.
+ *  Outer circle masks the border crossing with page bg, `::after` draws the shape. */
+function GridDot({ shape, style }: { shape: OrnamentShape; style?: React.CSSProperties }) {
   return (
     <div
       aria-hidden
+      data-shape={shape}
       className='grid-dot hidden lg:flex'
       style={style}
     />
@@ -80,7 +97,7 @@ const dot = {
 export function GridLinesFrame({ mode }: { mode: DecorativeMode }) {
   if (mode === 'none') return null
   const cls = lineClass(mode)
-  const showDots = mode === 'lines-with-dots'
+  const shape = ORNAMENT_BY_MODE[mode]
 
   return (
     <>
@@ -89,10 +106,10 @@ export function GridLinesFrame({ mode }: { mode: DecorativeMode }) {
       <div aria-hidden className={`grid-line-v ${cls} hidden lg:block`} style={{ right: lineRight }} />
 
       {/* ── Dots at bottom end of vertical lines ── */}
-      {showDots && (
+      {shape && (
         <>
-          <GridDot style={dot.bl} />
-          <GridDot style={dot.br} />
+          <GridDot shape={shape} style={dot.bl} />
+          <GridDot shape={shape} style={dot.br} />
         </>
       )}
     </>
@@ -105,15 +122,16 @@ export function GridLinesFrame({ mode }: { mode: DecorativeMode }) {
  * container within the max-width frame wrapper.
  */
 export function AboveBottomDots({ mode }: { mode: DecorativeMode }) {
-  if (mode !== 'lines-with-dots') return null
+  const shape = ORNAMENT_BY_MODE[mode]
+  if (!shape) return null
   /* Pull dots up from the bottom edge so they sit inside the Above content
      rather than at the very bottom boundary. */
   const bl = { ...dot.bl, bottom: 'var(--layout-gap)' }
   const br = { ...dot.br, bottom: 'var(--layout-gap)' }
   return (
     <>
-      <GridDot style={bl} />
-      <GridDot style={br} />
+      <GridDot shape={shape} style={bl} />
+      <GridDot shape={shape} style={br} />
     </>
   )
 }
@@ -130,15 +148,16 @@ const fullWidthLeftX = `calc(50% - var(--grid-max-width) / 2 - ${LINE_OFFSET})`
 const fullWidthRightX = `calc(50% - var(--grid-max-width) / 2 - ${LINE_OFFSET})`
 
 export function TabBarDots({ mode }: { mode: DecorativeMode }) {
-  if (mode !== 'lines-with-dots') return null
+  const shape = ORNAMENT_BY_MODE[mode]
+  if (!shape) return null
   return (
     <>
       {/* Top border dots */}
-      <GridDot style={{ top: 0, left: fullWidthLeftX, transform: 'translate(-50%, -50%)' }} />
-      <GridDot style={{ top: 0, right: fullWidthRightX, transform: 'translate(50%, -50%)' }} />
+      <GridDot shape={shape} style={{ top: 0, left: fullWidthLeftX, transform: 'translate(-50%, -50%)' }} />
+      <GridDot shape={shape} style={{ top: 0, right: fullWidthRightX, transform: 'translate(50%, -50%)' }} />
       {/* Bottom border dots */}
-      <GridDot style={{ bottom: 0, left: fullWidthLeftX, transform: 'translate(-50%, 50%)' }} />
-      <GridDot style={{ bottom: 0, right: fullWidthRightX, transform: 'translate(50%, 50%)' }} />
+      <GridDot shape={shape} style={{ bottom: 0, left: fullWidthLeftX, transform: 'translate(-50%, 50%)' }} />
+      <GridDot shape={shape} style={{ bottom: 0, right: fullWidthRightX, transform: 'translate(50%, 50%)' }} />
     </>
   )
 }

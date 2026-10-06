@@ -32,6 +32,7 @@ import type {
   integrationsSchema,
   layoutSchema,
   pageModeSchema,
+  decorativeLinesSchema,
 } from './schema.ts'
 import { holocronConfigSchema } from './schema.ts'
 import { parseJsonc } from './lib/jsonc.ts'
@@ -185,7 +186,7 @@ export type HolocronConfig = {
   search: { prompt?: string }
   seo: { indexing?: 'navigable' | 'all'; metatags?: Record<string, string> }
   assistant: { enabled: boolean; suggestions?: string[]; display: 'sidebar' | 'floating'; supportEmail?: string }
-  decorativeLines: 'none' | 'lines' | 'dashed' | 'lines-with-dots'
+  decorativeLines: z.output<typeof decorativeLinesSchema>
   sidebar: { animate: boolean }
   layout: {
     mode: z.output<typeof pageModeSchema>

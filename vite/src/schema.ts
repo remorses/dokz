@@ -1240,7 +1240,7 @@ export const layoutSchema = z
 /* ── Decorative lines ─────────────────────────────────────────────────── */
 
 export const decorativeLinesSchema = z
-  .enum(['none', 'lines', 'dashed', 'lines-with-dots'])
+  .enum(['none', 'lines', 'dashed', 'lines-with-dots', 'lines-with-crosses', 'lines-with-x', 'lines-with-circles'])
   .describe(
     dedent`
       Decorative border lines framing the page layout at grid boundaries.
@@ -1248,6 +1248,9 @@ export const decorativeLinesSchema = z
       \`lines\` renders solid 1px lines at the page edges and content column boundaries.
       \`dashed\` renders segmented (dashed) lines.
       \`lines-with-dots\` renders solid lines with dot ornaments at vertices.
+      \`lines-with-crosses\` renders solid lines with small + ornaments at vertices.
+      \`lines-with-x\` renders solid lines with small x ornaments at vertices.
+      \`lines-with-circles\` renders solid lines with small hollow circle ornaments at vertices.
       Defaults to \`lines-with-dots\`
     `,
   )

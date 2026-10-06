@@ -5,7 +5,7 @@
  */
 
 import path from 'node:path'
-import { assistantSchema, pageModeSchema } from '../schema.ts'
+import { assistantSchema, decorativeLinesSchema, pageModeSchema } from '../schema.ts'
 import { getDefaultTypeIcon } from './collect-icons.ts'
 import { formatHolocronWarning, logger } from './logger.ts'
 
@@ -817,13 +817,9 @@ function normalizeIntegrations(raw: unknown): HolocronConfig['integrations'] {
   return raw as HolocronConfig['integrations']
 }
 
-const VALID_DECORATIVE_LINES = new Set(['none', 'lines', 'dashed', 'lines-with-dots'])
-
 function normalizeDecorativeLines(raw: unknown): HolocronConfig['decorativeLines'] {
-  if (typeof raw === 'string' && VALID_DECORATIVE_LINES.has(raw)) {
-    return raw as HolocronConfig['decorativeLines']
-  }
-  return 'lines-with-dots'
+  const parsed = decorativeLinesSchema.safeParse(raw)
+  return parsed.success ? parsed.data : 'lines-with-dots'
 }
 
 function normalizeSidebar(raw: unknown): HolocronConfig['sidebar'] {

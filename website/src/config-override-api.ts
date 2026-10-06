@@ -40,7 +40,7 @@ const configOverrideSchema = z.object({
     default: z.enum(['system', 'light', 'dark']).optional(),
     strict: z.boolean().optional(),
   }).strict().optional(),
-  decorativeLines: z.enum(['none', 'lines', 'dashed', 'lines-with-dots']).optional(),
+  decorativeLines: z.enum(['none', 'lines', 'dashed', 'lines-with-dots', 'lines-with-crosses', 'lines-with-x', 'lines-with-circles']).optional(),
   layout: z.object({
     maxWidth: z.number().min(400).max(4000).optional(),
     sidebarWidth: z.number().min(100).max(500).optional(),

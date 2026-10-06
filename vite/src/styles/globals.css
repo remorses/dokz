@@ -506,14 +506,18 @@
 
   /* ── Decorative grid lines ─────────────────────────────────────────── */
 
-  /* Dot ornament at border intersections — Sigillo-style.
-     Outer circle (size-5) masks the border crossing with page bg.
-     Inner dot (2px) marks the vertex at 40% foreground opacity. */
+  /* Ornament at border intersections — Sigillo-style.
+     Outer circle masks the border crossing with page bg. Its size is
+     ornament size + 2 * 9px, so every shape keeps the same 9px gap to
+     the lines as the default 2px dot (20px mask). */
   .grid-dot {
+    --ornament-size: 2px;
+    /* Opaque (mixed with the mask bg) so overlapping cross bars don't darken the center */
+    --ornament-color: color-mix(in srgb, var(--foreground) 40%, var(--background));
     position: absolute;
     z-index: 20;
-    width: 1.25rem;
-    height: 1.25rem;
+    width: calc(var(--ornament-size) + 18px);
+    height: calc(var(--ornament-size) + 18px);
     border-radius: 9999px;
     background: var(--background);
     pointer-events: none;
@@ -527,10 +531,33 @@
   .grid-dot::after {
     content: '';
     display: block;
-    width: 2px;
-    height: 2px;
+    flex-shrink: 0;
+    width: var(--ornament-size);
+    height: var(--ornament-size);
     border-radius: 9999px;
-    background: --alpha(var(--foreground) / 40%);
+    background: var(--ornament-color);
+  }
+  .grid-dot[data-shape='cross'],
+  .grid-dot[data-shape='x'] {
+    --ornament-size: 7px;
+  }
+  .grid-dot[data-shape='circle'] {
+    --ornament-size: 5px;
+  }
+  /* + and x: two 1.5px bars, slightly thicker than the 1px lines */
+  .grid-dot[data-shape='cross']::after,
+  .grid-dot[data-shape='x']::after {
+    border-radius: 0;
+    background:
+      linear-gradient(var(--ornament-color), var(--ornament-color)) center / 100% 1.5px no-repeat,
+      linear-gradient(var(--ornament-color), var(--ornament-color)) center / 1.5px 100% no-repeat;
+  }
+  .grid-dot[data-shape='x']::after {
+    transform: rotate(45deg);
+  }
+  .grid-dot[data-shape='circle']::after {
+    background: transparent;
+    border: 1.25px solid var(--ornament-color);
   }
 
   /* Vertical decorative line — absolute, full-height of its relative parent.

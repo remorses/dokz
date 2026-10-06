@@ -1690,9 +1690,12 @@
         "none",
         "lines",
         "dashed",
-        "lines-with-dots"
+        "lines-with-dots",
+        "lines-with-crosses",
+        "lines-with-x",
+        "lines-with-circles"
       ],
-      "description": "Decorative border lines framing the page layout at grid boundaries.\n`none` disables all decorative lines.\n`lines` renders solid 1px lines at the page edges and content column boundaries.\n`dashed` renders segmented (dashed) lines.\n`lines-with-dots` renders solid lines with dot ornaments at vertices.\nDefaults to `lines-with-dots`"
+      "description": "Decorative border lines framing the page layout at grid boundaries.\n`none` disables all decorative lines.\n`lines` renders solid 1px lines at the page edges and content column boundaries.\n`dashed` renders segmented (dashed) lines.\n`lines-with-dots` renders solid lines with dot ornaments at vertices.\n`lines-with-crosses` renders solid lines with small + ornaments at vertices.\n`lines-with-x` renders solid lines with small x ornaments at vertices.\n`lines-with-circles` renders solid lines with small hollow circle ornaments at vertices.\nDefaults to `lines-with-dots`"
     },
     "sidebarSchema": {
       "type": "object",
