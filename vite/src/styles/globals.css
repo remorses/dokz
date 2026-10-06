@@ -369,6 +369,13 @@
    - @layer base block (Tailwind's own layer system)
    ===================================================================== */
 
+/* Registered so `.scrollbar-hover` can transition the thumb color. */
+@property --scrollbar-thumb {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+
 @layer holocron {
   /* Thin scrollbars with transparent tracks.
       Firefox gets `scrollbar-width: thin` from the base `*` rule above;
@@ -400,6 +407,20 @@
      shift when overflow appears, like the left navigation tree. */
   .scrollbar-stable {
     scrollbar-gutter: stable;
+  }
+
+  /* Scrollbar thumb hidden until the container is hovered, then fades in.
+     Animates the registered --scrollbar-thumb color (see @property below). */
+  .scrollbar-hover {
+    --scrollbar-thumb: transparent;
+    scrollbar-color: var(--scrollbar-thumb) transparent;
+    transition: --scrollbar-thumb 0.2s ease-out;
+  }
+  .scrollbar-hover:hover {
+    --scrollbar-thumb: --alpha(var(--foreground) / 12%);
+  }
+  .scrollbar-hover::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
   }
 
   /* Hide scrollbars while keeping scroll functionality */

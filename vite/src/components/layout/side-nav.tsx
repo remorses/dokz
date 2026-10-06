@@ -303,7 +303,7 @@ export function SideNav() {
            pill ends flush against that gutter. */}
       <nav
         aria-label='Navigation'
-        className='slot-sidebar-nav overflow-y-auto scrollbar-stable min-h-0 -mr-(--sidebar-row-padding-x) pb-[calc(24em/14)] flex flex-col gap-[calc(8em/14)]'
+        className='slot-sidebar-nav overflow-y-auto scrollbar-stable scrollbar-hover min-h-0 -mr-(--sidebar-row-padding-x) pb-[calc(24em/14)] flex flex-col gap-[calc(8em/14)]'
         style={{ paddingInline: 'var(--sidebar-row-padding-x)' }}
       >
         {showSearchWithAi && (
