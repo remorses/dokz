@@ -526,13 +526,17 @@ one branch.
 Playwriter pattern:
 
 ```js
+// no default page: create your own tab first
+state.page = await context.newPage()
+await state.page.goto('http://localhost:XXXX/') // port from the dev server output
+
 // current system scheme
-await page.screenshot({ path: 'tmp/x-dark.png', fullPage: true })
+await state.page.screenshot({ path: 'tmp/x-dark.png', fullPage: true })
 
 // force light
-await page.emulateMedia({ colorScheme: 'light' })
-await page.waitForTimeout(500)
-await page.screenshot({ path: 'tmp/x-light.png', fullPage: true })
+await state.page.emulateMedia({ colorScheme: 'light' })
+await state.page.waitForTimeout(500)
+await state.page.screenshot({ path: 'tmp/x-light.png', fullPage: true })
 ```
 
 Then hand each screenshot to the `image-understanding` agent and ask it to
