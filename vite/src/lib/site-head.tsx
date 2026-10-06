@@ -19,11 +19,10 @@ import { Head } from 'spiceflow/react'
 import type { HolocronConfig } from '../config.ts'
 import { withBasePath } from './holocron-url.ts'
 
-/* Blocking script that runs before paint. Sets `.dark` class on <html>
-   based on cookie or config default. Must be synchronous and in <head>. */
-/* Blocking script that runs before paint. Sets `.dark` class on <html>.
-   When data-strict-theme is set, ignores the cookie and uses config default only. */
-export const THEME_SCRIPT = `(function(){var d=document.documentElement;var strict=d.hasAttribute("data-strict-theme");var m=strict?null:document.cookie.match(/color-theme=(light|dark)/);var t=m?m[1]:null;if(!t){var def=d.getAttribute("data-default-theme")||"system";t=def==="system"?(window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"):def}if(t==="dark")d.classList.add("dark");else d.classList.remove("dark")})()`
+/* Blocking script that runs before paint. Sets `.dark` class on <html> from
+   the `color-theme` cookie (light | dark | system) or the config default.
+   When data-strict-theme is set, ignores the cookie. Must be synchronous and in <head>. */
+export const THEME_SCRIPT = `(function(){var d=document.documentElement;var strict=d.hasAttribute("data-strict-theme");var m=strict?null:document.cookie.match(/color-theme=(light|dark|system)/);var t=m?m[1]:(d.getAttribute("data-default-theme")||"system");if(t==="system")t=window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";if(t==="dark")d.classList.add("dark");else d.classList.remove("dark")})()`
 
 /** Build Google Fonts URL for a family. Returns undefined if the family
  *  looks like a self-hosted font (has a source URL). */

@@ -1,14 +1,16 @@
 'use client'
 
 /**
- * TabLink — single tab rendered in the tab bar. Active tab gets a 2px
- * bottom indicator (2px) + faux bold via text-shadow. Used by EditorialPage.
+ * Navbar link components. TabLink is a single tab in the tab bar (active tab
+ * gets a 2px bottom indicator). NavbarPrimaryLink is the primary CTA pill.
  */
 
 import React from 'react'
 import { Link } from '../link.tsx'
 import type { TabItem } from '../../site-data.ts'
+import type { HolocronConfig } from '../../config.ts'
 import { Icon, resolveIconColor } from '../icon.tsx'
+import { GitHubStars } from './github-stars.tsx'
 
 export function TabLink({ tab, isActive }: { tab: TabItem; isActive: boolean }) {
   const isExternal = tab.href.startsWith('http')
@@ -63,6 +65,30 @@ export function TabLink({ tab, isActive }: { tab: TabItem; isActive: boolean }) 
       {tab.label}
       {isExternal && <span className='opacity-50'>↗</span>}
       {indicator}
+    </Link>
+  )
+}
+
+/** Primary navbar CTA: filled rounded pill (desktop navbar + mobile drawer). */
+export function NavbarPrimaryLink({
+  primary,
+  githubStars,
+}: {
+  primary: NonNullable<HolocronConfig['navbar']['primary']>
+  githubStars: Promise<Record<string, number>> | undefined
+}) {
+  const isExternal = primary.href.startsWith('http')
+  return (
+    <Link
+      href={primary.href}
+      target={isExternal ? '_blank' : undefined}
+      rel={isExternal ? 'noopener noreferrer' : undefined}
+      aria-label={primary.label}
+      className='slot-navbar-primary no-underline inline-flex h-7.5 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full bg-foreground/8 px-3.5 text-sm font-medium text-foreground transition-colors duration-150 hover:bg-foreground/12 active:translate-y-px'
+    >
+      <Icon icon={primary.icon} size={14} color={resolveIconColor(primary.iconColor)} />
+      <span>{primary.label}</span>
+      {primary.type === 'github' && githubStars && <GitHubStars starsPromise={githubStars} href={primary.href} />}
     </Link>
   )
 }

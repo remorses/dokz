@@ -20,11 +20,10 @@ import {
   getResolvedLogo,
 } from '../../site-data.ts'
 import { SideNav } from './side-nav.tsx'
-import { TabLink } from './tab-link.tsx'
+import { NavbarPrimaryLink, TabLink } from './tab-link.tsx'
 import { NavSelect, type NavSelectItem } from './nav-select.tsx'
 import { Icon, resolveIconColor } from '../icon.tsx'
 import { NavTooltip } from '../sidebar-assistant.tsx'
-import { ThemeToggle } from '../theme-toggle.tsx'
 import { ConfigOverrideListener } from '../config-override-listener.tsx'
 import { Footer, Logo } from './footer.tsx'
 import { BannerDismiss } from './banner-dismiss.tsx'
@@ -234,8 +233,9 @@ export function EditorialPage({
               </span>
             )}
           </div>
-          {/* Right side: icon links + CTA + theme toggle — hidden on mobile, shown in nav drawer instead */}
-          <div className='hidden lg:flex items-center gap-4'>
+          {/* Right side: text links + CTA pill — hidden on mobile, shown in nav drawer instead.
+              Theme select lives in the footer. */}
+          <div className='hidden lg:flex items-center gap-5 text-sm'>
             {/* Icon links. Icons are resolved by `<Icon>` — dispatches on
                 emoji / URL / lucide name / structured object. When the user
                 wrote `{ type: 'github' }` without an explicit icon, the
@@ -243,7 +243,7 @@ export function EditorialPage({
                 these links are never invisible. Label-only links (no icon
                 resolvable) fall back to rendering the label text. */}
             {headerLinks && headerLinks.length > 0 && (
-              <div className='flex items-center gap-3'>
+              <div className='flex items-center gap-5'>
                 {headerLinks.map((link) => {
                   const iconOnly = !!link.icon
                   const hasStars = link.type === 'github' && githubStars
@@ -271,26 +271,7 @@ export function EditorialPage({
                 })}
               </div>
             )}
-            {/* Primary CTA button. `type: 'github'` / `type: 'button'` drive
-                the default label + icon via TYPE_LABELS/TYPE_ICONS in
-                normalize-config.ts. Rendered as a compact pill at the right
-                of the navbar so users who configure `navbar.primary` see it
-                without extra setup. */}
-            {!!primary?.href && (
-              <Link
-                href={primary.href}
-                target={primary.href.startsWith('http') ? '_blank' : undefined}
-                rel={primary.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                aria-label={primary.label}
-                className='slot-navbar-primary no-underline inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-md border border-border-subtle text-muted-foreground transition-colors duration-150 hover:text-foreground hover:border-muted-foreground'
-              >
-                <Icon icon={primary.icon} size={14} color={resolveIconColor(primary.iconColor)} />
-                <span>{primary.label}</span>
-                {primary.type === 'github' && githubStars && <GitHubStars starsPromise={githubStars} href={primary.href} />}
-              </Link>
-            )}
-            {/* Theme toggle — hidden when appearance.strict is true */}
-            {!siteConfig.appearance.strict && <ThemeToggle />}
+            {!!primary?.href && <NavbarPrimaryLink primary={primary} githubStars={githubStars} />}
           </div>
         </div>
 

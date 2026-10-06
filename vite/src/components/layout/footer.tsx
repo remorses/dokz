@@ -18,6 +18,7 @@ import { GitHubStars } from './github-stars.tsx'
 import { getResolvedLogo, resolveActiveNavigationTabs } from '../../site-data.ts'
 import { Icon } from '../icon.tsx'
 import { NavTooltip } from '../sidebar-assistant.tsx'
+import { ThemeSelect } from '../theme-select.tsx'
 
 export type LogoProps = Omit<React.ComponentProps<'img'>, 'src' | 'alt'> & {
   alt?: string
@@ -272,7 +273,10 @@ export function PoweredBy() {
         })}
       </div>
       <div className='grow' />
-      <PagePrevNext />
+      <div className='flex items-center gap-1.5 shrink-0'>
+        {!site.config.appearance.strict && <ThemeSelect />}
+        <PagePrevNext />
+      </div>
     </div>
   )
 }

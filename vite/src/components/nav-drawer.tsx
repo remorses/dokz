@@ -3,7 +3,7 @@
 /**
  * NavDrawer — slide-from-left navigation drawer for mobile.
  * Contains: version/dropdown selects, header links, primary CTA,
- * theme toggle, and the SideNav (search + nav tree).
+ * and the SideNav (search + nav tree). Theme select lives in the footer.
  * Portals to <body> for correct stacking.
  * Closes on backdrop click, close button, or page navigation.
  */
@@ -20,7 +20,6 @@ import { CloseIcon } from '../chat/chat-icons.tsx'
 import { SideNav } from './layout/side-nav.tsx'
 import { NavSelect } from './layout/nav-select.tsx'
 import { Icon, resolveIconColor } from './icon.tsx'
-import { ThemeToggle } from './theme-toggle.tsx'
 import { useHolocronData } from '../router.ts'
 import {
   buildDropdownItems,
@@ -28,7 +27,7 @@ import {
   buildTabItems,
   buildVersionItems,
 } from '../site-data.ts'
-import { TabLink } from './layout/tab-link.tsx'
+import { NavbarPrimaryLink, TabLink } from './layout/tab-link.tsx'
 import { GitHubStars } from './layout/github-stars.tsx'
 
 // Module-level stable callbacks for useSyncExternalStore (see AGENTS.md rules)
@@ -153,26 +152,24 @@ function NavDrawerInner() {
             gap: '12px',
           }}
         >
-          {/* Selects + theme toggle on one row */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-            {versionItems.length > 0 && (
-              <NavSelect
-                items={versionItems}
-                activeHref={activeVersionHref}
-                ariaLabel='Select version'
-              />
-            )}
-            {dropdownSelectItems.length > 0 && (
-              <NavSelect
-                items={dropdownSelectItems}
-                activeHref={activeDropdownHref}
-                ariaLabel='Select section'
-              />
-            )}
-            <div style={{ marginLeft: 'auto' }}>
-              {!site.config.appearance.strict && <ThemeToggle />}
+          {(versionItems.length > 0 || dropdownSelectItems.length > 0) && (
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+              {versionItems.length > 0 && (
+                <NavSelect
+                  items={versionItems}
+                  activeHref={activeVersionHref}
+                  ariaLabel='Select version'
+                />
+              )}
+              {dropdownSelectItems.length > 0 && (
+                <NavSelect
+                  items={dropdownSelectItems}
+                  activeHref={activeDropdownHref}
+                  ariaLabel='Select section'
+                />
+              )}
             </div>
-          </div>
+          )}
 
           {/* Header links + primary CTA */}
           {((headerLinks.length > 0) || Boolean(primary?.href)) && (
@@ -194,18 +191,7 @@ function NavDrawerInner() {
                   )}
                 </Link>
               ))}
-              {!!primary?.href && (
-                <Link
-                  href={primary.href}
-                  target={primary.href.startsWith('http') ? '_blank' : undefined}
-                  rel={primary.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className='no-underline inline-flex items-center gap-1.5 text-xs px-2.5 py-1.5 rounded-md border border-border-subtle text-muted-foreground transition-colors duration-150 hover:text-foreground hover:border-muted-foreground'
-                >
-                  <Icon icon={primary.icon} size={14} color={resolveIconColor(primary.iconColor)} />
-                  <span>{primary.label}</span>
-                  {primary.type === 'github' && githubStars && <GitHubStars starsPromise={githubStars} href={primary.href} />}
-                </Link>
-              )}
+              {!!primary?.href && <NavbarPrimaryLink primary={primary} githubStars={githubStars} />}
             </div>
           )}
         </div>

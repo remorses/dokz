@@ -627,8 +627,8 @@ function normalizeNavbar(raw: unknown, defaultLibrary: IconLibrary): HolocronCon
   let primary: ConfigNavbarPrimary | undefined
   if (rawPrimary) {
     const type = typeof rawPrimary.type === 'string' ? rawPrimary.type : undefined
-    // Same auto-fill logic for primary CTA — a `type: 'github'` primary
-    // button without an explicit icon should render the github glyph.
+    // A `type: 'github'` primary without an explicit icon renders the github
+    // glyph. Plain `button`/`link` CTAs stay text-only, like Mintlify.
     const rawIcon = sanitizeIcon(
       {
         icon: rawPrimary.icon as ConfigIcon | undefined,
@@ -639,7 +639,7 @@ function normalizeNavbar(raw: unknown, defaultLibrary: IconLibrary): HolocronCon
     const icon: ConfigIcon | undefined =
       rawIcon !== undefined
         ? rawIcon
-        : type && getDefaultTypeIcon(type, defaultLibrary)
+        : type && type !== 'button' && type !== 'link'
           ? getDefaultTypeIcon(type, defaultLibrary)
           : undefined
     const primaryIconColor = typeof rawPrimary.iconColor === 'string' ? rawPrimary.iconColor : undefined

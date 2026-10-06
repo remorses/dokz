@@ -253,7 +253,7 @@ then `@variant dark` in your CSS can compile to Tailwind's default dark behavior
 
 ## Shared theme cookie
 
-Holocron persists the selected mode in the **`color-theme`** cookie and mirrors it on `<html class="dark">`. If your app has its own theme toggle outside the docs layout, use the same cookie so both your pages and Holocron pages share one persisted state:
+Holocron persists the selected mode in the **`color-theme`** cookie (`light`, `dark`, or `system`) and mirrors the resolved theme on `<html class="dark">`. If your app has its own theme toggle outside the docs layout, use the same cookie so both your pages and Holocron pages share one persisted state:
 
 ```tsx
 'use client'
