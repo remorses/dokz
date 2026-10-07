@@ -272,8 +272,9 @@ export function EditorialPage({
           </div>
         </div>
 
-        {/* Mobile bar: Ask AI + Menu — shown under logo bar on mobile */}
-        {(showLeftNav || isCustomMode) && <MobileBar enableAssistant={enableAssistant && !floatingAssistant} />}
+        {/* Mobile bar: Ask AI + Menu, under the logo bar. The only Ask AI trigger on mobile:
+            the aside is hidden and the floating pill is lg-only. */}
+        {(showLeftNav || isCustomMode) && <MobileBar enableAssistant={enableAssistant} />}
 
         {/* Tab row — hidden on mobile, shown in nav drawer instead */}
         {hasTabBar ? (

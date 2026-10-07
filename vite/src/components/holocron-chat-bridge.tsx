@@ -7,7 +7,7 @@
  * ChatPill + ChatDrawer (same chrome as the embeddable ChatWidget).
  */
 
-import { useLayoutEffect, useEffect, useCallback, useRef } from 'react'
+import { useLayoutEffect, useEffect, useRef } from 'react'
 import { LayoutGroup } from 'motion/react'
 import { router } from 'spiceflow/react'
 import { useHolocronData } from '../router.ts'
@@ -56,13 +56,13 @@ export function HolocronChatBridge({ floating }: { floating: boolean }) {
 
 function FloatingChat() {
   const portalRef = useRef<HTMLDivElement>(null)
-  const handleMountPoint = useCallback((mount: HTMLElement) => {
-    chatWidgetStore.setState({ portalTarget: mount })
-  }, [])
 
+  // Reset on unmount: client navigation to a page with a right aside swaps to
+  // the sidebar ChatDrawer, which must portal to document.body, not this detached div.
   useLayoutEffect(() => {
-    if (portalRef.current) handleMountPoint(portalRef.current)
-  }, [handleMountPoint])
+    chatWidgetStore.setState({ portalTarget: portalRef.current })
+    return () => chatWidgetStore.setState({ portalTarget: null })
+  }, [])
 
   return (
     <LayoutGroup id='holocron-chat'>

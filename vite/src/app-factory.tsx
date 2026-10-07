@@ -413,8 +413,8 @@ function renderMdxPage({
   const contentMdast: Root = { type: 'root', children: compactLayout.nodes }
   const pageMode = compactLayout.pageMode
   const mdastSections = buildSections(contentMdast, {
-    // Compact pages have no right aside; EditorialPage shows the floating pill there instead.
-    enableAssistant: site.config.assistant.enabled && pageMode !== 'compact',
+    // Compact pages have no right aside, so no chrome; EditorialPage shows the floating pill instead.
+    enableAssistant: site.config.assistant.enabled,
     includePageChrome: pageMode !== 'compact',
   })
 

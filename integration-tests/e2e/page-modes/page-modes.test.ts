@@ -52,6 +52,15 @@ test.describe("page frontmatter mode", () => {
     expect(footerBox!.y + footerBox!.height).toBeGreaterThan(pillBox!.y);
   });
 
+  test("compact pages keep Ask AI in the mobile bar", async ({ page }) => {
+    await page.setViewportSize({ width: 600, height: 900 });
+    await page.goto("/");
+    await page.waitForLoadState("networkidle");
+
+    await page.getByText("Ask AI", { exact: true }).click();
+    await expect(page.locator(".holocron-chat-drawer-panel")).toBeVisible({ timeout: 10000 });
+  });
+
   test("frontmatter-only compact pages render their generated h1", async ({ page }) => {
     await page.goto("/empty-compact", { waitUntil: "domcontentloaded" });
 
