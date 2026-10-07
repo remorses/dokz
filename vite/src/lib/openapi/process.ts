@@ -9,9 +9,6 @@
  */
 
 import type { OpenAPIV3, OpenAPIV3_1 } from 'openapi-types'
-import { bundle } from '@scalar/json-magic/bundle'
-import { upgrade } from '@scalar/openapi-upgrader'
-import { readFiles } from '@scalar/json-magic/bundle/plugins/node'
 
 /* ── Types ────────────────────────────────────────────────────────────── */
 
@@ -48,7 +45,14 @@ interface OperationPageExtension extends OperationPageOverrides {
 type OperationObject = (OpenAPIV3.OperationObject | OpenAPIV3_1.OperationObject) & {
   'x-mint'?: OperationPageExtension
   'x-holocron'?: OperationPageExtension
+  /** Mintlify: page exists but is not listed in the sidebar. */
+  'x-hidden'?: boolean
+  /** Mintlify: no page is generated. */
+  'x-excluded'?: boolean
 }
+
+/** Tag of operations that have none. */
+export const DEFAULT_TAG = 'default'
 
 /** A single API operation extracted from the spec. */
 export interface ExtractedOperation {
@@ -159,6 +163,13 @@ function dereferenceDocument(bundled: OpenAPIDocument): DereferencedDocument {
  * @param input - File path (relative to cwd or absolute), URL, or parsed object.
  */
 export async function processOpenAPISpec(input: string | object): Promise<DereferencedDocument> {
+  // Loaded here, not at module top, so the pure helpers below stay cheap to
+  // import (and free of node:fs) for endpoint-mdx.ts and the root export.
+  const [{ bundle }, { upgrade }, { readFiles }] = await Promise.all([
+    import('@scalar/json-magic/bundle'),
+    import('@scalar/openapi-upgrader'),
+    import('@scalar/json-magic/bundle/plugins/node'),
+  ])
   const bundled: OpenAPIDocument = await bundle(input as string, {
     plugins: [readFiles()],
     treeShake: true,
@@ -194,7 +205,8 @@ export function extractOperations(doc: DereferencedDocument): ExtractedOperation
 
     for (const method of HTTP_METHODS) {
       const op = pi[method]
-      if (!op) continue
+      // Mintlify `x-excluded`: no page at all.
+      if (!op || op['x-excluded'] === true) continue
 
       const opParams = (op.parameters ?? []) as OpenAPIV3.ParameterObject[]
       // Merge: operation params override path params by name+in
@@ -209,7 +221,7 @@ export function extractOperations(doc: DereferencedDocument): ExtractedOperation
         parameters: Array.from(paramMap.values()),
         security: op.security ?? globalSecurity,
         servers: op.servers ?? (pathServers.length > 0 ? pathServers : globalServers),
-        tags: op.tags ?? ['default'],
+        tags: op.tags?.length ? op.tags : [DEFAULT_TAG],
       })
     }
   }
@@ -221,7 +233,7 @@ export function extractOperations(doc: DereferencedDocument): ExtractedOperation
 export function groupOperationsByTag(operations: ExtractedOperation[]): Map<string, ExtractedOperation[]> {
   const groups = new Map<string, ExtractedOperation[]>()
   for (const op of operations) {
-    const tag = op.tags[0] ?? 'default'
+    const tag = op.tags[0] ?? DEFAULT_TAG
     const list = groups.get(tag) ?? []
     list.push(op)
     groups.set(tag, list)
@@ -241,33 +253,30 @@ export function operationSlug(op: ExtractedOperation): string {
 
 /** Get a display title for an operation. */
 export function operationTitle(op: ExtractedOperation): string {
-  const overrides = getOperationPageOverrides(op)
-  if (overrides.title) return overrides.title
-  if (op.operation.summary) return op.operation.summary
-  if (op.operation.operationId) {
-    return op.operation.operationId
-      .replace(/([a-z])([A-Z])/g, '$1 $2')
-      .replace(/[_-]/g, ' ')
-      .replace(/\b\w/g, (c) => c.toUpperCase())
-  }
-  return `${op.method.toUpperCase()} ${op.path}`
+  return getOperationPageOverrides(op).title
+    || op.operation.summary
+    || operationIdTitle(op)
+    || `${op.method.toUpperCase()} ${op.path}`
 }
 
-/** Sidebar-specific title for an operation.
- *  The method is already shown as a colored badge in the sidebar, so it should
- *  not be repeated in the text label. */
+/** Sidebar label for an operation. Same order as Mintlify: an explicit
+ *  `sidebarTitle`, then the page title (`metadata.title`, else `summary`).
+ *  The method is already a colored badge in the sidebar, so it is not
+ *  repeated in the label. */
 export function operationSidebarTitle(op: ExtractedOperation): string {
   const overrides = getOperationPageOverrides(op)
-  if (overrides.sidebarTitle) return overrides.sidebarTitle
-  if (overrides.title) return overrides.title
-  if (op.operation.summary) return op.operation.summary
-  if (op.operation.operationId) {
-    return op.operation.operationId
-      .replace(/([a-z])([A-Z])/g, '$1 $2')
-      .replace(/[_-]/g, ' ')
-      .replace(/\b\w/g, (c) => c.toUpperCase())
-  }
-  return op.path
+  return overrides.sidebarTitle
+    || overrides.title
+    || op.operation.summary
+    || operationIdTitle(op)
+    || op.path
+}
+
+function operationIdTitle(op: ExtractedOperation): string | undefined {
+  return op.operation.operationId
+    ?.replace(/([a-z])([A-Z])/g, '$1 $2')
+    .replace(/[_-]/g, ' ')
+    .replace(/\b\w/g, (c) => c.toUpperCase())
 }
 
 /** Read operation-level page overrides. `x-holocron` is canonical and
@@ -325,14 +334,77 @@ function isValidOperationHref(href: string): boolean {
     !value.split('/').some((segment) => segment === '.' || segment === '..')
 }
 
-/** Pretty-print a tag name (converts kebab/snake to Title Case). */
+/** Sidebar group label for a tag, Mintlify-compatible: `x-group`, then the
+ *  OpenAPI 3.2 tag `summary`, then Redocly's `x-displayName`, else the tag
+ *  name as written. Operations without tags go to a "Default" group. */
 export function tagDisplayName(
   tag: string,
   doc: DereferencedDocument,
 ): string {
   const tagObj = (doc.dereferenced.tags ?? []).find((t) => t.name === tag)
-  if (tagObj?.description) return tagObj.name
-  return tag
-    .replace(/[-_]/g, ' ')
-    .replace(/\b\w/g, (c) => c.toUpperCase())
+  const label = (key: string): string | undefined => {
+    const value: unknown = tagObj ? Reflect.get(tagObj, key) : undefined
+    return typeof value === 'string' && value.trim() ? value.trim() : undefined
+  }
+  return label('x-group') ?? label('summary') ?? label('x-displayName') ?? (tagObj || tag !== DEFAULT_TAG ? tag : 'Default')
+}
+
+/** Server URL with `{variable}` placeholders replaced by their defaults. */
+export function resolveServerUrl(server: OpenAPIV3.ServerObject): string {
+  return server.url.replace(/\{([^}]+)\}/g, (placeholder, name: string) => {
+    const value = server.variables?.[name]?.default
+    return value === undefined ? placeholder : String(value)
+  })
+}
+
+/** One security scheme an operation accepts. */
+export interface SecuritySchemeInfo {
+  name: string
+  type: string
+  /** HTTP auth scheme for `type: http` (`bearer`, `basic`, ...). */
+  scheme?: string
+  /** Where an `apiKey` goes. */
+  in?: 'header' | 'query' | 'cookie'
+  /** Header, query or cookie name of an `apiKey`. */
+  paramName?: string
+  description?: string
+  /** True when every security alternative includes this scheme. */
+  required: boolean
+}
+
+export interface OperationSecurity {
+  /** True when one alternative is the empty requirement `{}`: auth may be omitted. */
+  optional: boolean
+  /** Every scheme of every alternative, deduped, in spec order. */
+  schemes: SecuritySchemeInfo[]
+  /** The first non-empty alternative: the schemes a request example should send. */
+  example: SecuritySchemeInfo[]
+}
+
+/** Resolve the operation's security requirements against `components.securitySchemes`.
+ *  `security` is a list of alternatives (OR); each one lists schemes sent together (AND). */
+export function resolveSecurity(op: ExtractedOperation, doc: DereferencedDocument): OperationSecurity {
+  const defined = doc.dereferenced.components?.securitySchemes ?? {}
+  const info = (name: string): SecuritySchemeInfo | undefined => {
+    const s = defined[name]
+    // Dereferenced documents have no $ref left; a stray one is skipped.
+    if (!s || '$ref' in s) return undefined
+    return {
+      name,
+      type: s.type,
+      scheme: s.type === 'http' ? s.scheme.toLowerCase() : undefined,
+      in: s.type === 'apiKey' && (s.in === 'header' || s.in === 'query' || s.in === 'cookie') ? s.in : undefined,
+      paramName: s.type === 'apiKey' ? s.name : undefined,
+      description: s.description,
+      required: op.security.every((req) => Object.hasOwn(req, name)),
+    }
+  }
+  const alternatives = op.security.map((req) => Object.keys(req).map(info).filter((s): s is SecuritySchemeInfo => !!s))
+  const schemes = new Map<string, SecuritySchemeInfo>()
+  for (const s of alternatives.flat()) if (!schemes.has(s.name)) schemes.set(s.name, s)
+  return {
+    optional: op.security.some((req) => Object.keys(req).length === 0),
+    schemes: [...schemes.values()],
+    example: alternatives.find((a) => a.length > 0) ?? [],
+  }
 }

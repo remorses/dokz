@@ -92,6 +92,15 @@ test.describe('OpenAPI tab', () => {
     await expect(body.getByText('Refund every line item')).toBeVisible()
     await body.getByText('Partial refund').click()
     await expect(body.getByText('Line items to refund')).toBeVisible()
+    // Union response bodies render too.
+    await expect(body.getByText('Identifier of the settled refund')).toBeVisible()
+  })
+
+  test('dedicated tab opens with an overview page from info.description', async ({ page }) => {
+    await page.setViewportSize({ width: 1400, height: 900 })
+    await page.goto('/api/overview')
+    await expect(page.locator('.slot-main').first()).toContainText('A comprehensive test API covering many OpenAPI features')
+    await expect(page.locator('nav').getByRole('link', { name: 'Overview' }).first()).toBeVisible()
   })
 
   test('endpoint page renders response status codes', async ({ request }) => {
@@ -126,13 +135,20 @@ test.describe('OpenAPI tab', () => {
     await page.setViewportSize({ width: 1400, height: 900 })
     // Compact docs page: no right aside, so the floating pill.
     await page.goto('/')
+    // Cold dev servers reload the page while optimizing deps, which would turn the tab click into a full load.
+    await page.waitForLoadState('networkidle')
     await expect(page.locator('.holocron-chat-pill')).toBeVisible()
     await expect(page.locator('[data-chat-shell="sidebar"]')).toHaveCount(0)
     // Client navigation to an endpoint page with a right aside swaps to the sidebar widget.
     await page.locator('.slot-tabbar').getByRole('link', { name: 'API Reference' }).click()
     await expect(page.locator('.slot-aside [data-chat-shell="sidebar"]')).toBeVisible()
     await expect(page.locator('.holocron-chat-pill')).toHaveCount(0)
+    // The drawer must not portal into the unmounted pill's container.
+    await page.setViewportSize({ width: 600, height: 900 })
+    await page.getByText('Ask AI', { exact: true }).click()
+    await expect(page.locator('.holocron-chat-drawer-panel')).toBeVisible({ timeout: 10000 })
   })
+
   test('left nav stays sticky on generated pages in compact site mode', async ({ page }) => {
     await page.setViewportSize({ width: 1600, height: 900 })
     await page.goto('/api/post-users')

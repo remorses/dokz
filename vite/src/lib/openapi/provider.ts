@@ -9,15 +9,12 @@
 
 import fs from 'node:fs'
 import path from 'node:path'
-import type { OpenAPIV3 } from 'openapi-types'
 import type { ConfigNavGroup, ConfigNavPageEntry } from '../../config.ts'
 import type { VirtualTabProvider, VirtualTabResult } from '../virtual-tab-provider.ts'
-import type { ExtractedOperation, DereferencedDocument, OperationPageOverrides } from './process.ts'
-import { buildVirtualPageMdx } from '../virtual-page-mdx.ts'
+import type { DereferencedDocument } from './process.ts'
+import { extractOperations, processOpenAPISpec } from './process.ts'
 import { parseEndpointRef, endpointKey } from './endpoint-ref.ts'
-import { codeSampleFenceBlocks, extractCodeSamples, fenceTitle } from './code-samples.ts'
-
-type OpWithDoc = { op: ExtractedOperation; doc: DereferencedDocument }
+import { createPageEmitter, type OpWithDoc } from './endpoint-mdx.ts'
 
 /** Internal marker spliced in place of the author's `"..."` entry during the
  *  first pass, then replaced with auto-generated tag groups in the second pass.
@@ -38,10 +35,10 @@ export const openapiProvider: VirtualTabProvider = {
     const watchPaths: string[] = []
 
     const allOps: OpWithDoc[] = []
+    const docs: DereferencedDocument[] = []
     // Per-spec lookup so the `specfile METHOD /path` form can target a spec.
     const opsBySpecFile = new Map<string, Map<string, OpWithDoc>>()
 
-    const { processOpenAPISpec, extractOperations } = await import('./process.ts')
 
     for (const specPath of specPaths) {
       // Probe pagesDir first (handles pagesDir: './src' with spec inside src/),
@@ -60,6 +57,7 @@ export const openapiProvider: VirtualTabProvider = {
       watchPaths.push(resolvedPath)
 
       const processed = await processOpenAPISpec(resolvedPath)
+      docs.push(processed)
       const specMap = new Map<string, OpWithDoc>()
       for (const op of extractOperations(processed)) {
         const item = { op, doc: processed }
@@ -74,46 +72,14 @@ export const openapiProvider: VirtualTabProvider = {
     // nothing to generate.
     if (allOps.length === 0) return { groups: tab.groups, mdxContent, watchPaths }
 
-    const { operationPageSlug, operationTitle, operationSidebarTitle, tagDisplayName, getOperationPageOverrides } = await import('./process.ts')
-    const { generateCurl } = await import('./curl-generator.ts')
 
-    /** Compute the virtual slug for an operation (shared by both modes). */
-    const slugFor = (op: ExtractedOperation): string =>
-      operationPageSlug(op, slugPrefix)
-
-    // Track which operation owns each emitted slug, so referencing the SAME
-    // endpoint twice dedups, but two DISTINCT operations colliding on one slug
-    // (e.g. same METHOD+path across two specs under one base prefix) errors.
-    const emittedBySlug = new Map<string, OpWithDoc>()
-
-    /** Build + register the virtual MDX for one operation; returns its slug. */
-    const emitEndpoint = (item: OpWithDoc): string => {
-      const { op, doc } = item
-      const slug = slugFor(op)
-      const existing = emittedBySlug.get(slug)
-      if (existing) {
-        if (existing === item) return slug // same endpoint referenced again
-        throw new Error(
-          `[holocron] two different OpenAPI operations map to the same page slug "${slug}" ` +
-          `in tab "${tab.tab}" (${existing.op.method.toUpperCase()} ${existing.op.path} and ` +
-          `${op.method.toUpperCase()} ${op.path}). Use distinct base prefixes or rename a path.`,
-        )
-      }
-      emittedBySlug.set(slug, item)
-
-      // Note: disk-shadow detection (warn if this slug shadows a real MDX file)
-      // is centralized in processVirtualTabs() so every provider gets it.
-
-      mdxContent[slug] = buildEndpointMdx({
-        op,
-        doc,
-        title: operationTitle(op),
-        sidebarTitle: operationSidebarTitle(op),
-        overrides: getOperationPageOverrides(op),
-        curl: generateCurl(op),
-      })
-      return slug
-    }
+    const { emitEndpoint, tagGroups, withOverview } = createPageEmitter({
+      slugPrefix,
+      pages: mdxContent,
+      where: `tab "${tab.tab}"`,
+    })
+    // Disk-shadow detection (a slug shadowing a real MDX file) is centralized
+    // in processVirtualTabs() so every provider gets it.
 
     /** Look up an operation by an endpoint ref string, honoring an optional
      *  spec-file selector. Throws a helpful error if it cannot be resolved. */
@@ -161,26 +127,6 @@ export const openapiProvider: VirtualTabProvider = {
       return item
     }
 
-    /** Build tag-grouped nav groups for a set of operations (shared by
-     *  dedicated mode and the "..." rest-expansion in selective mode). */
-    const buildTagGroups = (items: OpWithDoc[]): ConfigNavGroup[] => {
-      const tagGroups = new Map<string, OpWithDoc[]>()
-      for (const item of items) {
-        const tag = item.op.tags[0] ?? 'default'
-        const list = tagGroups.get(tag) ?? []
-        list.push(item)
-        tagGroups.set(tag, list)
-      }
-      const out: ConfigNavGroup[] = []
-      for (const [tag, ops] of tagGroups) {
-        out.push({
-          group: tagDisplayName(tag, ops[0]!.doc),
-          pages: ops.map((item) => emitEndpoint(item)),
-        })
-      }
-      return out
-    }
-
     // ── Selective mode: user authored groups/pages with endpoint refs ─────
     if (tab.groups.length > 0) {
       // Track which operations the author referenced explicitly, so the "..."
@@ -221,7 +167,7 @@ export const openapiProvider: VirtualTabProvider = {
       // for all operations the author did not list explicitly.
       if (sawRest) {
         const rest = allOps.filter((item) => !referenced.has(item))
-        const restGroups = buildTagGroups(rest)
+        const restGroups = tagGroups(rest)
 
         // The expanded tag groups must become TOP-LEVEL tab groups so they
         // render as always-visible sidebar sections (like dedicated mode),
@@ -273,267 +219,8 @@ export const openapiProvider: VirtualTabProvider = {
     }
 
     // ── Dedicated mode: auto-group every endpoint by its first tag ────────
-    const groups = buildTagGroups(allOps)
-
-    return { groups, mdxContent, watchPaths }
+    // The first spec's info.description becomes an Overview page on top.
+    // Selective mode skips it: the author writes their own intro pages.
+    return { groups: withOverview(tagGroups(allOps), docs), mdxContent, watchPaths }
   },
-}
-
-/** Build the virtual MDX string for a single OpenAPI operation. */
-function buildEndpointMdx({
-  op,
-  doc,
-  title,
-  sidebarTitle,
-  overrides,
-  curl,
-}: {
-  op: ExtractedOperation
-  doc: DereferencedDocument
-  title: string
-  sidebarTitle: string
-  overrides: OperationPageOverrides
-  curl: string
-}): string {
-  const params = op.parameters.map((p) => ({
-    name: p.name,
-    in: p.in,
-    required: p.required,
-    deprecated: p.deprecated,
-    description: p.description,
-    schema: p.schema ? simplifySchema(p.schema as Record<string, unknown>) : undefined,
-  }))
-
-  const requestBody = (() => {
-    const body = op.operation.requestBody as OpenAPIV3.RequestBodyObject | undefined
-    if (!body?.content) return undefined
-    // Prefer application/json, fall back to any JSON-like type, then first available
-    const jsonKey = Object.keys(body.content).find((k) => k === 'application/json')
-      ?? Object.keys(body.content).find((k) => k.includes('json'))
-      ?? Object.keys(body.content)[0]
-    if (!jsonKey) return undefined
-    const media = body.content[jsonKey]!
-    return {
-      required: body.required,
-      description: body.description,
-      contentType: jsonKey,
-      schema: media.schema ? simplifySchema(media.schema as Record<string, unknown>) : undefined,
-      examples: collectExamples(media),
-    }
-  })()
-
-  const responses = Object.entries(op.operation.responses ?? {}).map(([status, resp]) => {
-    const r = resp as OpenAPIV3.ResponseObject
-    // Prefer application/json, fall back to any JSON-like type
-    const jsonKey = r.content
-      ? (Object.keys(r.content).find((k) => k === 'application/json')
-        ?? Object.keys(r.content).find((k) => k.includes('json')))
-      : undefined
-    const jsonContent = jsonKey && r.content ? r.content[jsonKey] : undefined
-    const examples = collectExamples(jsonContent)
-    return {
-      status,
-      description: r.description,
-      schema: jsonContent?.schema ? simplifySchema(jsonContent.schema as Record<string, unknown>) : undefined,
-      // Keep `example` for backwards compatibility / single-example callers.
-      example: examples[0]?.value,
-      examples,
-    }
-  })
-
-  // Use the operation's own doc for security lookups (correct for multi-spec)
-  const security = extractSecurityInfo(op, doc)
-
-  const servers = op.servers.map((s) => ({
-    url: s.url,
-    description: s.description,
-  }))
-
-  const propsJson = JSON.stringify({
-    method: op.method,
-    path: op.path,
-    summary: op.operation.summary,
-    description: overrides.description ?? op.operation.description,
-    parameters: params,
-    requestBody,
-    responses,
-    security,
-    servers,
-    deprecated: op.operation.deprecated,
-  })
-
-  // Request example tabs: cURL first, then x-codeSamples (SDK snippets from
-  // Stainless / Speakeasy / hey-api / hand-written), then named request-body
-  // JSON examples. RequestExample renders each titled fence as a switchable
-  // tab — no <CodeGroup> wrapper. `lines=false` hides line numbers.
-  const requestExampleBlocks: string[] = [
-    '```bash title="cURL" lines=false',
-    curl,
-    '```',
-    ...codeSampleFenceBlocks(extractCodeSamples(op.operation)),
-  ]
-  if (requestBody?.examples && requestBody.examples.length > 0) {
-    requestExampleBlocks.push(...exampleCodeBlocks(requestBody.examples))
-  }
-
-  // Response examples: collect ALL statuses that define examples, not just one.
-  // When multiple statuses have examples, prefix tab titles with the status code
-  // so the user can distinguish e.g. "201 — Success" from "401 — Unauthorized".
-  const responsesWithExamples = responses.filter((r) => r.examples.length > 0)
-  const prefixStatus = responsesWithExamples.length > 1
-  const responseExampleBlocks = responsesWithExamples.flatMap((r) =>
-    prefixStatus
-      ? exampleCodeBlocks(r.examples.map((ex) => ({ ...ex, name: `${r.status} — ${ex.name}` })))
-      : exampleCodeBlocks(r.examples),
-  )
-
-  const wrap = (tag: string, blocks: string[]): string[] => {
-    return [`<${tag}>`, '', ...blocks, '', `</${tag}>`]
-  }
-
-  const aside = [
-    ...wrap('RequestExample', requestExampleBlocks),
-    ...(responseExampleBlocks.length > 0
-      ? ['', ...wrap('ResponseExample', responseExampleBlocks)]
-      : []),
-  ].join('\n')
-
-  return buildVirtualPageMdx({
-    frontmatter: {
-      title,
-      // Sidebar already shows a method badge, so strip the method from the label.
-      ...(sidebarTitle !== title ? { sidebarTitle } : {}),
-      // Flatten markdown to plain text for the page <meta> description.
-      description: plainText(overrides.description ?? op.operation.description ?? op.operation.summary ?? '').slice(0, 200),
-      api: `${op.method.toUpperCase()} ${op.path}`,
-      gridGap: 30,
-      mode: 'default',
-      ...(op.operation.deprecated ? { deprecated: true } : {}),
-    },
-    aside,
-    body: overrides.content?.trim()
-      ? `<OpenAPIEndpoint {...${propsJson}}>\n${overrides.content.trim()}\n</OpenAPIEndpoint>`
-      : `<OpenAPIEndpoint {...${propsJson}} />`,
-  })
-}
-
-/* ── Helpers ─────────────────────────────────────────────────────────── */
-
-/** Strip common Markdown syntax to plain text for use in <meta> descriptions.
- *  Keeps link/emphasis text, drops the markup around it. Not a full parser —
- *  just enough to avoid leaking `[x](y)`, `##`, or backticks into meta tags. */
-function plainText(md: string): string {
-  return md
-    .replace(/```[\s\S]*?```/g, ' ')        // fenced code blocks
-    .replace(/`([^`]+)`/g, '$1')            // inline code
-    .replace(/!\[([^\]]*)\]\([^)]*\)/g, '$1') // images → alt text
-    .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1') // links → link text
-    .replace(/^#{1,6}\s+/gm, '')            // ATX headings
-    .replace(/(\*\*|__|\*|_)/g, '')          // bold/italic markers
-    .replace(/^\s*[-*+]\s+/gm, '')           // list bullets
-    .replace(/\s+/g, ' ')                    // collapse whitespace
-    .trim()
-}
-
-/** Simplify a schema object for serialization (strip non-essential fields). */
-function simplifySchema(schema: Record<string, unknown>): Record<string, unknown> {
-  if (!schema || typeof schema !== 'object') return schema
-  const result: Record<string, unknown> = {}
-  const keepKeys = ['type', 'format', 'description', 'required', 'properties', 'items',
-    'enum', 'default', 'example', 'oneOf', 'anyOf', 'allOf', 'additionalProperties',
-    'nullable', 'deprecated', 'minimum', 'maximum', 'minLength', 'maxLength', 'pattern', 'title']
-  for (const key of keepKeys) {
-    if (key in schema) {
-      const value = schema[key]
-      if (key === 'properties' && value && typeof value === 'object') {
-        const props: Record<string, unknown> = {}
-        for (const [k, v] of Object.entries(value)) {
-          props[k] = simplifySchema(v as Record<string, unknown>)
-        }
-        result[key] = props
-      } else if (key === 'items' && value && typeof value === 'object') {
-        result[key] = simplifySchema(value as Record<string, unknown>)
-      } else if ((key === 'oneOf' || key === 'anyOf' || key === 'allOf') && Array.isArray(value)) {
-        result[key] = value.map((v: unknown) => simplifySchema(v as Record<string, unknown>))
-      } else {
-        result[key] = value
-      }
-    }
-  }
-  return result
-}
-
-/** A named OpenAPI example: the map key becomes the tab label. */
-interface NamedExample {
-  name: string
-  value: unknown
-}
-
-/**
- * Collect every example from a media-type object, preserving names/order.
- *
- * OpenAPI media types may carry a singular `example` and/or a plural
- * `examples` map of `{ [name]: { value } }`. We merge both into an ordered
- * list of named examples so the renderer can show all of them (issue #96).
- * The singular `example` (when present and not duplicated by the map) is
- * labeled "Example".
- */
-function collectExamples(
-  media: { example?: unknown; examples?: Record<string, unknown> } | undefined,
-): NamedExample[] {
-  if (!media) return []
-  const out: NamedExample[] = []
-  if (media.examples && typeof media.examples === 'object') {
-    for (const [name, raw] of Object.entries(media.examples)) {
-      if (raw && typeof raw === 'object') {
-        const obj = raw as Record<string, unknown>
-        // OpenAPI Example Object: use the inline `value`. Skip entries that
-        // only carry `externalValue` (a URL) — there is no inline payload to
-        // show and rendering the metadata object as JSON would be misleading.
-        if ('value' in obj) out.push({ name, value: obj.value })
-        else if (!('externalValue' in obj)) out.push({ name, value: raw })
-        continue
-      }
-      out.push({ name, value: raw })
-    }
-  }
-  if (media.example !== undefined && out.length === 0) {
-    out.push({ name: 'Example', value: media.example })
-  }
-  return out
-}
-
-/** Render named examples as titled ```json fences for an <CodeGroup>. */
-function exampleCodeBlocks(examples: NamedExample[]): string[] {
-  return examples.flatMap((ex) => {
-    const json = typeof ex.value === 'string'
-      ? ex.value
-      : JSON.stringify(ex.value, null, 2)
-    // `title` meta becomes the tab label after remarkCodeGroup rewrites it.
-    return [`\`\`\`json title="${fenceTitle(ex.name)}" lines=false`, json, '```']
-  })
-}
-
-function extractSecurityInfo(
-  op: ExtractedOperation,
-  doc: DereferencedDocument,
-): { name: string; type: string; scheme?: string; in?: string; description?: string }[] {
-  const schemes = (doc.dereferenced.components as Record<string, unknown> | undefined)?.securitySchemes as Record<string, Record<string, unknown>> | undefined
-  if (!schemes || op.security.length === 0) return []
-
-  const result: { name: string; type: string; scheme?: string; in?: string; description?: string }[] = []
-  for (const req of op.security) {
-    for (const schemeName of Object.keys(req)) {
-      const scheme = schemes[schemeName]
-      if (!scheme) continue
-      result.push({
-        name: schemeName,
-        type: scheme.type as string,
-        scheme: scheme.scheme as string | undefined,
-        in: scheme.type === 'apiKey' ? (scheme.in as string) : scheme.type === 'http' ? 'header' : undefined,
-        description: scheme.description as string | undefined,
-      })
-    }
-  }
-  return result
 }

@@ -675,6 +675,22 @@ paths:
       responses:
         "200":
           description: Refund created
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - title: Instant refund
+                    type: object
+                    properties:
+                      refundId:
+                        type: string
+                        description: Identifier of the settled refund
+                  - title: Queued refund
+                    type: object
+                    properties:
+                      queueId:
+                        type: string
+                        description: Identifier of the queued refund
   /products:
     get:
       tags: [products]

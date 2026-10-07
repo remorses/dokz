@@ -59,6 +59,33 @@ This produces:
 - **Users** group: `get-users`, `post-users`
 - **Teams** group: `get-teams`
 
+The group label follows Mintlify: the tag's **`x-group`**, then the OpenAPI 3.2 tag `summary`, else the tag `name` as written. Redocly's `x-displayName` also works.
+
+```yaml
+tags:
+  - name: api-keys
+    x-group: API keys
+```
+
+## Sidebar labels
+
+Same order as Mintlify. The page title is `metadata.title`, then `summary`, then `operationId`. The **sidebar label** is `metadata.sidebarTitle`, else the page title. Set `sidebarTitle` when the title is long:
+
+```yaml
+x-holocron:
+  metadata:
+    title: Take exclusive use of one iPhone
+    sidebarTitle: Acquire lease
+```
+
+## Hiding endpoints
+
+Mintlify's visibility extensions work on any operation. **`x-hidden: true`** keeps the page but leaves it out of the sidebar, for endpoints you link to but do not promote. **`x-excluded: true`** generates no page at all.
+
+## Overview page
+
+In a tab without `pages` or `groups`, the spec's **`info.description`** becomes an **Overview** page at `<base>/overview`, above the tag groups. It renders as Markdown. Tabs that list their own pages skip it: write your intro page there instead.
+
 ## Page layout
 
 Generated API pages use a two-column layout:

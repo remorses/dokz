@@ -13,7 +13,26 @@ Generated OpenAPI pages render request and response information based on your sp
 
 ## Request parameters
 
-Query parameters, path parameters, and headers are listed with their type, description, and required/optional status.
+**Query parameters** are listed with their type, description, and required/optional status. Path parameters show in the endpoint path, and header parameters only in the cURL example.
+
+Each field shows its constraints as small tags: `default`, `example` (or the first of `examples`), `pattern`, `minimum`/`maximum` (`exclusiveMinimum` shows as `> 0`), lengths and item counts. `readOnly` and `writeOnly` get a badge. Mintlify **parameter pills** work too: `x-mint: { pre: [PII], post: [indexed] }` on a schema shows those labels before and after the field name. Add **`x-enumDescriptions`** (a value → text map, or `x-enum-descriptions` as a list) to describe each enum value on its own line:
+
+```yaml
+step:
+  type: string
+  enum: [pair, ready]
+  x-enumDescriptions:
+    pair: Pair the Mac from iPhone Settings > Bluetooth
+    ready: Agents can use it
+```
+
+## Authorization
+
+The **Authorization** section lists the security schemes the operation accepts. When `security` includes an empty requirement (`- {}`), auth is optional and the section shows an **optional** badge. The cURL example sends the first non-empty requirement: a bearer header, `-u` for basic auth, or the `apiKey` header, query param or cookie by its name.
+
+## Servers
+
+The cURL example uses the first server. **Server variables** like `{scheme}://{host}:{port}` are filled with their `default` values.
 
 ## Request body
 

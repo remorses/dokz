@@ -20,6 +20,7 @@ import {
   canExpandSchema,
   type SchemaInfo,
 } from '../render-schema.tsx'
+import type { SecuritySchemeInfo } from './process.ts'
 
 // Re-export for consumers that imported from this file before the extraction
 export { Desc, type SchemaInfo }
@@ -42,14 +43,6 @@ export interface ResponseInfo {
   example?: unknown
 }
 
-export interface SecurityInfo {
-  name: string
-  type: string
-  scheme?: string
-  in?: string
-  description?: string
-}
-
 export interface OpenAPIEndpointProps {
   children?: React.ReactNode
   method: string
@@ -64,31 +57,41 @@ export interface OpenAPIEndpointProps {
     schema?: SchemaInfo
   }
   responses: ResponseInfo[]
-  security: SecurityInfo[]
+  security: SecuritySchemeInfo[]
+  /** True when the operation also accepts requests without any auth. */
+  authOptional?: boolean
   servers: { url: string; description?: string }[]
   deprecated?: boolean
 }
 
 /* ── OpenAPI-specific sections ────────────────────────────────────────── */
 
-function AuthSection({ security }: { security: SecurityInfo[] }) {
+/** Type label of a scheme: what the client sends, e.g. `Bearer <token>` or `header X-API-Key`. */
+function securityTypeLabel(s: SecuritySchemeInfo): string {
+  if (s.type === 'apiKey') return s.paramName ? `${s.in ?? 'header'} ${s.paramName}` : '<token>'
+  if (s.type === 'http' && s.scheme === 'basic') return 'Basic <credentials>'
+  if (s.type === 'http' && s.scheme && s.scheme !== 'bearer') return `${s.scheme} <credentials>`
+  if (s.type === 'http' || s.type === 'oauth2' || s.type === 'openIdConnect') return 'Bearer <token>'
+  return s.type
+}
+
+function AuthSection({ security, optional }: { security: SecuritySchemeInfo[]; optional?: boolean }) {
   if (security.length === 0) return null
   return (
-    <Section title='Authorization'>
-      {security.map((s) => {
-        const schema: SchemaInfo = {
-            type: s.type === 'http' && s.scheme === 'bearer' ? 'Bearer <token>' : s.type === 'apiKey' ? '<token>' : s.type,
-            description: [s.description, s.in ? `Token in: ${s.in}` : ''].filter(Boolean).join('. ') || undefined,
-        }
-        return (
-          <Property
-            key={s.name}
-            name={s.name}
-            schema={schema}
-            required
-          />
-        )
-      })}
+    <Section title={
+      <div className='flex items-center gap-2'>
+        <span>Authorization</span>
+        {optional && <NavBadge label='optional' color='blue' />}
+      </div>
+    }>
+      {security.map((s) => (
+        <Property
+          key={s.name}
+          name={s.name}
+          schema={{ type: securityTypeLabel(s), description: s.description }}
+          required={s.required}
+        />
+      ))}
     </Section>
   )
 }
@@ -127,10 +130,7 @@ function RequestBodySection({ body }: { body: NonNullable<OpenAPIEndpointProps['
 }
 
 function responseHasBody(r: ResponseInfo) {
-  return !!(r.schema && (
-    (r.schema.properties && Object.keys(r.schema.properties).length > 0) ||
-    r.schema.type === 'array' || r.schema.type
-  ))
+  return !!r.schema && Object.keys(r.schema).some((k) => k !== 'description')
 }
 
 function ResponseSection({ responses }: { responses: ResponseInfo[] }) {
@@ -183,10 +183,11 @@ export function OpenAPIEndpoint(props: OpenAPIEndpointProps) {
         </div>
         {props.description && <Desc>{props.description}</Desc>}
       </div>
-      <AuthSection security={props.security} />
+      <AuthSection security={props.security} optional={props.authOptional} />
       <ParameterGroup title='Query Parameters' params={query} />
       {props.requestBody && <RequestBodySection body={props.requestBody} />}
       <ResponseSection responses={props.responses} />
     </div>
   )
 }
+

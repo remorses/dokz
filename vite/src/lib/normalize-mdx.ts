@@ -403,3 +403,28 @@ function skipJsxTag(chars: string[], i: number, len: number): number | null {
 
   return null // unclosed tag, don't skip
 }
+
+/**
+ * Parse plain Markdown (CommonMark + GFM, no MDX). OpenAPI and MCP
+ * descriptions are Markdown by spec, so `{lease}` or `<token>` in prose must
+ * stay literal text instead of becoming MDX expressions or JSX. Raw HTML is
+ * kept as text for the same reason: descriptions are rendered without HTML.
+ */
+export function parseCommonMark(markdown: string): Root {
+  // remark-gfm only adds parser extensions, so parse() alone gives the full tree.
+  const mdast = remark().use(remarkGfm).parse(markdown)
+  const htmlToText = (node: Root | RootContent): void => {
+    if (!('children' in node)) return
+    node.children = node.children.map((child) =>
+      child.type === 'html' ? { type: 'text', value: child.value } : child,
+    ) as typeof node.children
+    node.children.forEach(htmlToText)
+  }
+  htmlToText(mdast)
+  return mdast
+}
+
+/** Plain Markdown → MDX source with `{`, `<` and friends escaped, for virtual pages. */
+export function commonMarkToMdx(markdown: string): string {
+  return toMarkdown(parseCommonMark(markdown), { extensions: [gfmToMarkdown(), mdxToMarkdown()] })
+}

@@ -87,7 +87,7 @@ describe('openapi provider — selective mode', () => {
     // The "..." tag groups are hoisted to TOP-LEVEL siblings (always-visible
     // sidebar sections), not nested inside the synthetic wrapper group.
     expect(fingerprint(config.navigation.tabs[0]!)).toMatchInlineSnapshot(
-      `"[{"group":"","pages":["intro","api/post-auth-login"]},{"group":"Users","pages":["api/get-users","api/post-users"]}]"`,
+      `"[{"group":"","pages":["intro","api/post-auth-login"]},{"group":"users","pages":["api/get-users","api/post-users"]}]"`,
     )
     // Virtual MDX emitted for every referenced/expanded endpoint, not for intro.
     expect(Object.keys(mdxContent).sort()).toMatchInlineSnapshot(`
@@ -168,7 +168,7 @@ paths:
       "title: \"Friendly endpoint\"
       sidebarTitle: \"Users\"
       description: \"Short page description.\"
-      <OpenAPIEndpoint {...{\"method\":\"get\",\"path\":\"/users\",\"summary\":\"Raw summary\",\"description\":\"Short page description.\",\"parameters\":[],\"responses\":[{\"status\":\"200\",\"description\":\"ok\",\"examples\":[]}],\"security\":[],\"servers\":[]}}>
+      <OpenAPIEndpoint {...{\"method\":\"get\",\"path\":\"/users\",\"summary\":\"Raw summary\",\"description\":\"Short page description.\",\"parameters\":[],\"responses\":[{\"status\":\"200\",\"description\":\"ok\",\"examples\":[]}],\"security\":[],\"authOptional\":false,\"servers\":[]}}>
       <Badge color=\"blue\">1 Credit</Badge>
       </OpenAPIEndpoint>"
     `)
@@ -236,7 +236,7 @@ paths:
         "mdx": "title: \"Holocron title\"
       sidebarTitle: \"Mint users\"
       description: \"Mint description.\"
-      <OpenAPIEndpoint {...{\"method\":\"get\",\"path\":\"/users\",\"summary\":\"Raw summary\",\"description\":\"Mint description.\",\"parameters\":[],\"responses\":[{\"status\":\"200\",\"description\":\"ok\",\"examples\":[]}],\"security\":[],\"servers\":[]}}>
+      <OpenAPIEndpoint {...{\"method\":\"get\",\"path\":\"/users\",\"summary\":\"Raw summary\",\"description\":\"Mint description.\",\"parameters\":[],\"responses\":[{\"status\":\"200\",\"description\":\"ok\",\"examples\":[]}],\"security\":[],\"authOptional\":false,\"servers\":[]}}>
       <Badge color=\"green\">Holocron content</Badge>
       </OpenAPIEndpoint>",
         "pages": [
@@ -278,7 +278,7 @@ paths:
       {
         "mdx": "title: \"Generated users\"
       sidebarTitle: \"Users\"
-      <OpenAPIEndpoint {...{\"method\":\"get\",\"path\":\"/users\",\"summary\":\"Raw summary\",\"parameters\":[],\"responses\":[{\"status\":\"200\",\"description\":\"ok\",\"examples\":[]}],\"security\":[],\"servers\":[]}}>
+      <OpenAPIEndpoint {...{\"method\":\"get\",\"path\":\"/users\",\"summary\":\"Raw summary\",\"parameters\":[],\"responses\":[{\"status\":\"200\",\"description\":\"ok\",\"examples\":[]}],\"security\":[],\"authOptional\":false,\"servers\":[]}}>
       <Note>Generated content</Note>
       </OpenAPIEndpoint>",
         "navigation": [
@@ -292,6 +292,161 @@ paths:
         "pages": [
           "reference/generated-users",
         ],
+      }
+    `)
+  })
+
+  test('reads servers, optional auth, tags, sidebar titles, enums and info.description from the spec', async () => {
+    const result = await generateOpenAPIPages({
+      spec: {
+        openapi: '3.1.0',
+        info: { title: 'Phone API', version: '1.0.0', description: '## Leases\n\nControl phones over {lease} routes with a <token>.' },
+        servers: [{ url: '{scheme}://{host}:{port}', variables: { scheme: { default: 'http' }, host: { default: '127.0.0.1' }, port: { default: '7420' } } }],
+        security: [{}, { bearerAuth: [] }],
+        components: {
+          securitySchemes: {
+            bearerAuth: { type: 'http', scheme: 'bearer', description: 'TCP only.' },
+            apiKeyAuth: { type: 'apiKey', in: 'query', name: 'key' },
+          },
+        },
+        tags: [{ name: 'leases', 'x-group': 'Leases & locks', 'x-displayName': 'ignored' }, { name: 'api-keys', description: 'Keys' }],
+        paths: {
+          '/leases/{lease}': {
+            get: {
+              tags: ['leases'],
+              summary: 'Get lease',
+              'x-holocron': { metadata: { title: 'Read one lease and its holder' } },
+              parameters: [{ name: 'lease', in: 'path', required: true, schema: { type: 'string', examples: ['42'] } }],
+              responses: {
+                200: {
+                  description: 'ok',
+                  content: {
+                    'application/json': {
+                      schema: {
+                        type: 'object',
+                        properties: {
+                          scale: { type: 'number', exclusiveMinimum: 0, maximum: 1, 'x-mint': { pre: ['PII'], post: ['indexed'] } },
+                          step: { type: 'string', enum: ['pair', 'ready'], 'x-enumDescriptions': { pair: 'Pair from Settings', ready: 'Agents can use it' } },
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+          '/keys': {
+            get: { tags: ['api-keys'], summary: 'List keys', security: [{ apiKeyAuth: [] }], responses: { 200: { description: 'ok' } } },
+            // Mintlify visibility: hidden keeps the page, excluded drops it.
+            put: { tags: ['api-keys'], summary: 'Rotate keys', 'x-hidden': true, responses: { 200: { description: 'ok' } } },
+            delete: { tags: ['api-keys'], summary: 'Purge keys', 'x-excluded': true, responses: { 200: { description: 'ok' } } },
+            // Both schemes together (AND): each one is required.
+            post: { tags: ['api-keys'], summary: 'Create key', security: [{ apiKeyAuth: [], bearerAuth: [] }], responses: { 200: { description: 'ok' } } },
+          },
+        },
+      },
+    })
+    const mdx = result.pages['api/get-leases-lease']!
+    const props = JSON.parse(mdx.match(/<OpenAPIEndpoint \{\.\.\.(.*)\} \/>/)![1]!)
+    expect({
+      navigation: result.navigation,
+      pageSlugs: Object.keys(result.pages).sort(),
+      sidebarTitle: mdx.match(/^sidebarTitle: .*$/m)?.[0],
+      curl: mdx.match(/```bash title="cURL"[^\n]*\n([\s\S]*?)\n```/)![1],
+      keysCurl: result.pages['api/get-keys']!.match(/```bash title="cURL"[^\n]*\n([\s\S]*?)\n```/)![1],
+      security: props.security,
+      andSecurity: JSON.parse(result.pages['api/post-keys']!.match(/<OpenAPIEndpoint \{\.\.\.(.*)\} \/>/)![1]!).security
+        .map((s: { name: string; required: boolean }) => `${s.name} required=${s.required}`),
+      authOptional: props.authOptional,
+      servers: props.servers,
+      fields: props.responses[0].schema.properties,
+      overview: result.pages['api/overview']?.split('\n').filter((l: string) => /^(title|sidebarTitle):|Leases|Control/.test(l)),
+    }).toMatchInlineSnapshot(`
+      {
+        "andSecurity": [
+          "apiKeyAuth required=true",
+          "bearerAuth required=true",
+        ],
+        "authOptional": true,
+        "curl": "curl -X GET "http://127.0.0.1:7420/leases/42" \\
+        -H "Authorization: Bearer <token>"",
+        "fields": {
+          "scale": {
+            "exclusiveMinimum": 0,
+            "maximum": 1,
+            "pills": {
+              "post": [
+                "indexed",
+              ],
+              "pre": [
+                "PII",
+              ],
+            },
+            "type": "number",
+          },
+          "step": {
+            "enum": [
+              "pair",
+              "ready",
+            ],
+            "enumDescriptions": {
+              "pair": "Pair from Settings",
+              "ready": "Agents can use it",
+            },
+            "type": "string",
+          },
+        },
+        "keysCurl": "curl -X GET "http://127.0.0.1:7420/keys?key=<token>"",
+        "navigation": [
+          {
+            "group": "",
+            "pages": [
+              "api/overview",
+            ],
+          },
+          {
+            "group": "Leases & locks",
+            "pages": [
+              "api/get-leases-lease",
+            ],
+          },
+          {
+            "group": "api-keys",
+            "pages": [
+              "api/get-keys",
+              "api/post-keys",
+            ],
+          },
+        ],
+        "overview": [
+          "title: "Phone API"",
+          "sidebarTitle: "Overview"",
+          "description: "Leases Control phones over {lease} routes with a <token>."",
+          "## Leases",
+          "Control phones over \\{lease} routes with a \\<token>.",
+        ],
+        "pageSlugs": [
+          "api/get-keys",
+          "api/get-leases-lease",
+          "api/overview",
+          "api/post-keys",
+          "api/put-keys",
+        ],
+        "security": [
+          {
+            "description": "TCP only.",
+            "name": "bearerAuth",
+            "required": false,
+            "scheme": "bearer",
+            "type": "http",
+          },
+        ],
+        "servers": [
+          {
+            "url": "http://127.0.0.1:7420",
+          },
+        ],
+        "sidebarTitle": undefined,
       }
     `)
   })
@@ -365,8 +520,8 @@ paths:
     expect(groups.map((g) => g.group)).toMatchInlineSnapshot(`
       [
         "",
-        "Auth",
-        "Users",
+        "auth",
+        "users",
       ]
     `)
     // None of the tag groups should be nested inside the intro wrapper.
