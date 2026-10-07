@@ -185,7 +185,7 @@ export type HolocronConfig = {
   }
   search: { prompt?: string }
   seo: { indexing?: 'navigable' | 'all'; metatags?: Record<string, string> }
-  assistant: { enabled: boolean; suggestions?: string[]; display: 'sidebar' | 'floating'; supportEmail?: string }
+  assistant: { enabled: boolean; suggestions?: string[]; supportEmail?: string }
   decorativeLines: z.output<typeof decorativeLinesSchema>
   sidebar: { animate: boolean }
   layout: {

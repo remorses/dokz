@@ -963,8 +963,10 @@ export const assistantSchema = z
       .optional()
       .describe(
         dedent`
-          Whether to show the AI chat assistant. When \`false\`, the sidebar
-          widget, chat drawer, mobile "Ask AI" button, and the chat API
+          Whether to show the AI chat assistant. Pages with a right aside show
+          it as a widget at the top of the aside. Pages without one (\`compact\`
+          mode) show a floating bottom pill instead. When \`false\`, the
+          widget, pill, chat drawer, mobile "Ask AI" button, and the chat API
           endpoint are all disabled. Defaults to \`true\`
         `,
       ),
@@ -978,18 +980,6 @@ export const assistantSchema = z
           ending with "..." fill the input instead of submitting, letting
           the user complete the query. When omitted, three defaults based
           on the site name are shown
-        `,
-      ),
-    display: z
-      .enum(['sidebar', 'floating'])
-      .optional()
-      .describe(
-        dedent`
-          Where the AI chat trigger appears. \`sidebar\` shows the Ask AI
-          widget in the right aside. \`floating\` uses the same bottom pill
-          as the embeddable ChatWidget instead, and hides the sidebar
-          widget. Defaults to \`sidebar\`, or to \`floating\` when
-          \`layout.mode\` is \`compact\`
         `,
       ),
     supportEmail: z
@@ -1180,11 +1170,11 @@ export const layoutSchema = z
         dedent`
           Default page layout mode. Individual pages can override this with
           the \`mode\` frontmatter field. \`compact\` keeps the left navigation
-          and removes the right aside, which also hides the default sidebar
-          assistant. Compact defaults \`assistant.display\` to \`floating\`
-          unless you set it. Compact never opens a right rail. Authored
-          asides and API examples render in the main column. Defaults to
-          \`default\`
+          and removes the right aside, so the AI assistant shows as a floating
+          bottom pill instead of the sidebar widget. Compact never opens a
+          right rail. Authored asides and API examples render in the main
+          column. Pages in OpenAPI and MCP tabs keep the right aside, with
+          the assistant in it. Defaults to \`default\`
         `,
       ),
     maxWidth: z

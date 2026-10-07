@@ -86,7 +86,7 @@ All three follow the same schema, which is compatible with Mintlify's `docs.json
   "seo": {
     "metatags": { "author": "My Company" }
   },
-  "assistant": { "enabled": true, "display": "floating", "supportEmail": "support@example.com" },
+  "assistant": { "enabled": true, "supportEmail": "support@example.com" },
   "layout": {
     "mode": "compact",
     "maxWidth": 1200,
@@ -121,7 +121,7 @@ Set **`layout.mode`** to choose the default layout for every page:
 }
 ```
 
-`compact` keeps the left navigation and removes the right aside. Holocron then defaults **`assistant.display`** to **`floating`** so Ask AI stays available as a bottom pill. Set `display` to `sidebar` to opt out. A page can override the layout with its frontmatter `mode` field. Compact never opens a right rail on authored docs pages. Every page in an MCP or OpenAPI tab uses `mode: "default"`, including authored pages in that tab.
+`compact` keeps the left navigation and removes the right aside, so **Ask AI** becomes a floating bottom pill. A page can override the layout with its frontmatter `mode` field. Compact never opens a right rail on authored docs pages. Every page in an MCP or OpenAPI tab uses `mode: "default"`, including authored pages in that tab.
 
 ## Passthrough behavior
 

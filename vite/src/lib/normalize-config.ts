@@ -138,7 +138,7 @@ export function normalize(raw: Record<string, unknown>): HolocronConfig {
     footer: normalizeFooter(raw.footer),
     search: normalizeSearch(raw.search),
     seo: normalizeSeo(raw.seo),
-    assistant: normalizeAssistant(raw.assistant, layout.mode),
+    assistant: normalizeAssistant(raw.assistant),
     decorativeLines: normalizeDecorativeLines(raw.decorativeLines),
     sidebar: normalizeSidebar(raw.sidebar),
     layout,
@@ -787,25 +787,18 @@ function normalizeSeo(raw: unknown): HolocronConfig['seo'] {
   return { indexing, metatags }
 }
 
-function normalizeAssistant(
-  raw: unknown,
-  layoutMode: HolocronConfig['layout']['mode'],
-): HolocronConfig['assistant'] {
-  const defaultDisplay = layoutMode === 'compact' ? 'floating' : 'sidebar'
-  if (!raw || typeof raw !== 'object') return { enabled: true, display: defaultDisplay }
+function normalizeAssistant(raw: unknown): HolocronConfig['assistant'] {
+  if (!raw || typeof raw !== 'object') return { enabled: true }
   const obj = raw as Record<string, unknown>
   const suggestions = Array.isArray(obj.suggestions)
     ? obj.suggestions.filter((s): s is string => typeof s === 'string' && s.trim().length > 0)
     : undefined
-  const display =
-    obj.display === 'floating' || obj.display === 'sidebar' ? obj.display : defaultDisplay
   const rawEmail = typeof obj.supportEmail === 'string' ? obj.supportEmail.trim() : ''
   const supportEmail = assistantSchema.shape.supportEmail.safeParse(rawEmail).success
     ? rawEmail
     : undefined
   const assistant: HolocronConfig['assistant'] = {
     enabled: obj.enabled !== false,
-    display,
   }
   if (suggestions && suggestions.length > 0) assistant.suggestions = suggestions
   if (supportEmail) assistant.supportEmail = supportEmail

@@ -82,6 +82,18 @@ test.describe('OpenAPI tab', () => {
     expect(html).toContain('Request Body')
   })
 
+  test('oneOf request body renders every variant with its fields', async ({ page }) => {
+    await page.goto('/api/post-orders-orderid-refund')
+    const body = page.locator('.slot-main').first()
+    await expect(body.getByText('Either the whole order or some line items.')).toBeVisible()
+    await expect(body.getByText('Full refund')).toBeVisible()
+    await expect(body.getByText('Partial refund')).toBeVisible()
+    // First variant is open by default, the others expand on click.
+    await expect(body.getByText('Refund every line item')).toBeVisible()
+    await body.getByText('Partial refund').click()
+    await expect(body.getByText('Line items to refund')).toBeVisible()
+  })
+
   test('endpoint page renders response status codes', async ({ request }) => {
     const res = await request.get('/api/post-users')
     expect(res.ok()).toBe(true)
@@ -110,6 +122,17 @@ test.describe('OpenAPI tab', () => {
     await expect(page.locator('.slot-aside')).toHaveCount(1)
   })
 
+  test('assistant sits in the right aside when there is one, else floats', async ({ page }) => {
+    await page.setViewportSize({ width: 1400, height: 900 })
+    // Compact docs page: no right aside, so the floating pill.
+    await page.goto('/')
+    await expect(page.locator('.holocron-chat-pill')).toBeVisible()
+    await expect(page.locator('[data-chat-shell="sidebar"]')).toHaveCount(0)
+    // Client navigation to an endpoint page with a right aside swaps to the sidebar widget.
+    await page.locator('.slot-tabbar').getByRole('link', { name: 'API Reference' }).click()
+    await expect(page.locator('.slot-aside [data-chat-shell="sidebar"]')).toBeVisible()
+    await expect(page.locator('.holocron-chat-pill')).toHaveCount(0)
+  })
   test('left nav stays sticky on generated pages in compact site mode', async ({ page }) => {
     await page.setViewportSize({ width: 1600, height: 900 })
     await page.goto('/api/post-users')

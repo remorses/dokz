@@ -90,7 +90,6 @@ export function EditorialPage({
   gridGap,
   mode,
   maxWidth,
-  hideSidebarAssistant = false,
 }: {
   sidebar?: React.ReactNode
   children?: React.ReactNode
@@ -110,14 +109,10 @@ export function EditorialPage({
   maxWidth?: number | string
   /** Mintlify-compatible page mode from MDX frontmatter. */
   mode?: PageMode
-  /** Compact mode hides the sidebar Ask AI widget. */
-  hideSidebarAssistant?: boolean
 }) {
   const { site, currentPageHref, activeTabHref, activeVersionHref, activeDropdownHref, githubStars } = useHolocronData()
   const siteConfig = site.config
   const enableAssistant = siteConfig.assistant.enabled
-  const floatingAssistant = enableAssistant && siteConfig.assistant.display === 'floating'
-  const sidebarAssistantHidden = hideSidebarAssistant || floatingAssistant
   const siteLogo = getResolvedLogo(site)
   const siteTabs = buildTabItems(site, currentPageHref)
   const siteHeaderLinks = buildHeaderLinks(site)
@@ -137,6 +132,8 @@ export function EditorialPage({
   const isCustomMode = pageMode === 'custom'
   const showLeftNav = pageMode === 'default' || pageMode === 'compact'
   const showRightAside = pageMode !== 'compact'
+  // The assistant lives at the top of the right aside. Compact pages have none, so they get the floating pill.
+  const floatingAssistant = enableAssistant && !showRightAside
   // In center mode the content + right rail occupy the page width without the
   // left navigation column, so cap the grid width to drop that column's width.
   const centerMaxWidthClass = 'lg:max-w-[calc(var(--grid-max-width)_-_var(--grid-nav-width)_-_var(--grid-gap))]'
@@ -276,7 +273,7 @@ export function EditorialPage({
         </div>
 
         {/* Mobile bar: Ask AI + Menu — shown under logo bar on mobile */}
-        {(showLeftNav || isCustomMode) && <MobileBar enableAssistant={enableAssistant && !sidebarAssistantHidden} />}
+        {(showLeftNav || isCustomMode) && <MobileBar enableAssistant={enableAssistant && !floatingAssistant} />}
 
         {/* Tab row — hidden on mobile, shown in nav drawer instead */}
         {hasTabBar ? (
@@ -495,7 +492,7 @@ export function EditorialPage({
       )}
 
       {/* AI assistant drawer — slides in from right when activated */}
-      {enableAssistant && <HolocronChatBridge />}
+      {enableAssistant && <HolocronChatBridge floating={floatingAssistant} />}
 
       {/* Mobile navigation drawer (lg:hidden) */}
       {(showLeftNav || isCustomMode) && <NavDrawer />}

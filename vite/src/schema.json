@@ -1656,7 +1656,7 @@
       "type": "object",
       "properties": {
         "enabled": {
-          "description": "Whether to show the AI chat assistant. When `false`, the sidebar\nwidget, chat drawer, mobile \"Ask AI\" button, and the chat API\nendpoint are all disabled. Defaults to `true`",
+          "description": "Whether to show the AI chat assistant. Pages with a right aside show\nit as a widget at the top of the aside. Pages without one (`compact`\nmode) show a floating bottom pill instead. When `false`, the\nwidget, pill, chat drawer, mobile \"Ask AI\" button, and the chat API\nendpoint are all disabled. Defaults to `true`",
           "type": "boolean"
         },
         "suggestions": {
@@ -1665,14 +1665,6 @@
           "items": {
             "type": "string"
           }
-        },
-        "display": {
-          "description": "Where the AI chat trigger appears. `sidebar` shows the Ask AI\nwidget in the right aside. `floating` uses the same bottom pill\nas the embeddable ChatWidget instead, and hides the sidebar\nwidget. Defaults to `sidebar`, or to `floating` when\n`layout.mode` is `compact`",
-          "type": "string",
-          "enum": [
-            "sidebar",
-            "floating"
-          ]
         },
         "supportEmail": {
           "description": "Support email the assistant should share when a user wants to\ntalk to a human. When set, the chat system prompt tells the\nmodel to point people to this address for human support",
@@ -1712,7 +1704,7 @@
       "type": "object",
       "properties": {
         "mode": {
-          "description": "Default page layout mode. Individual pages can override this with\nthe `mode` frontmatter field. `compact` keeps the left navigation\nand removes the right aside, which also hides the default sidebar\nassistant. Compact defaults `assistant.display` to `floating`\nunless you set it. Compact never opens a right rail. Authored\nasides and API examples render in the main column. Defaults to\n`default`",
+          "description": "Default page layout mode. Individual pages can override this with\nthe `mode` frontmatter field. `compact` keeps the left navigation\nand removes the right aside, so the AI assistant shows as a floating\nbottom pill instead of the sidebar widget. Compact never opens a\nright rail. Authored asides and API examples render in the main\ncolumn. Pages in OpenAPI and MCP tabs keep the right aside, with\nthe assistant in it. Defaults to `default`",
           "type": "string",
           "enum": [
             "default",

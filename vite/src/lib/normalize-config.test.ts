@@ -42,35 +42,7 @@ describe('normalize() — layout mode', () => {
   })
 })
 
-describe('normalize() — assistant display', () => {
-  test('defaults to sidebar and accepts floating', () => {
-    expect(normalize({ name: 'Docs' }).assistant).toEqual({ enabled: true, display: 'sidebar' })
-    expect(normalize({ name: 'Docs', assistant: { display: 'floating' } }).assistant).toEqual({
-      enabled: true,
-      display: 'floating',
-    })
-  })
-
-  test('compact layout defaults assistant to floating', () => {
-    expect(normalize({ name: 'Docs', layout: { mode: 'compact' } }).assistant).toEqual({
-      enabled: true,
-      display: 'floating',
-    })
-  })
-
-  test('compact layout keeps an explicit sidebar display', () => {
-    expect(
-      normalize({
-        name: 'Docs',
-        layout: { mode: 'compact' },
-        assistant: { display: 'sidebar' },
-      }).assistant,
-    ).toEqual({
-      enabled: true,
-      display: 'sidebar',
-    })
-  })
-
+describe('normalize() — assistant', () => {
   test('preserves assistant.supportEmail', () => {
     expect(
       normalize({
@@ -79,7 +51,6 @@ describe('normalize() — assistant display', () => {
       }).assistant,
     ).toEqual({
       enabled: true,
-      display: 'sidebar',
       supportEmail: 'tommy@holocron.so',
     })
   })
@@ -90,7 +61,7 @@ describe('normalize() — assistant display', () => {
         name: 'Docs',
         assistant: { supportEmail: 'not-an-email' },
       }).assistant,
-    ).toEqual({ enabled: true, display: 'sidebar' })
+    ).toEqual({ enabled: true })
   })
 })
 

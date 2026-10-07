@@ -69,22 +69,6 @@ describe('holocronConfigSchema validation', () => {
     expect(result.success).toBe(true)
   })
 
-  test('accepts assistant.display floating', () => {
-    const result = holocronConfigSchema.safeParse({
-      name: 'X',
-      assistant: { display: 'floating' },
-    })
-    expect(result.success).toBe(true)
-  })
-
-  test('rejects invalid assistant.display', () => {
-    const result = holocronConfigSchema.safeParse({
-      name: 'X',
-      assistant: { display: 'modal' },
-    })
-    expect(result.success).toBe(false)
-  })
-
   test('accepts assistant.supportEmail', () => {
     const result = holocronConfigSchema.safeParse({
       name: 'X',

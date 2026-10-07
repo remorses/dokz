@@ -100,7 +100,6 @@ Personal use only.
       nodes: root.children,
     })
     expect(layout.pageMode).toBe('compact')
-    expect(layout.hideSidebarAssistant).toBe(true)
     expect(layout.nodes.some(isAsideNode)).toBe(false)
   })
 
@@ -120,7 +119,6 @@ curl
       nodes: root.children,
     })
     expect(layout.pageMode).toBe('compact')
-    expect(layout.hideSidebarAssistant).toBe(true)
     expect(layout.nodes.some(isAsideNode)).toBe(false)
   })
 })

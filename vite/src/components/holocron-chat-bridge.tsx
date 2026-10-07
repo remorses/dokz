@@ -16,7 +16,8 @@ import { ChatDrawer } from '../chat/chat-drawer.tsx'
 import { ChatPill } from '../chat/chat-pill.tsx'
 import { ensureSessionRestored, hasExistingSession } from '../chat/chat-submit.ts'
 
-export function HolocronChatBridge() {
+/** `floating` renders the bottom pill; pages with a right aside use the sidebar widget instead. */
+export function HolocronChatBridge({ floating }: { floating: boolean }) {
   const { currentPageHref, site } = useHolocronData()
   const basePath = site.base === '/' ? '' : `/${site.base.replace(/^\/+|\/+$/g, '')}`
 
@@ -46,7 +47,7 @@ export function HolocronChatBridge() {
     }
   }, [])
 
-  if (site.config.assistant.display === 'floating') {
+  if (floating) {
     return <FloatingChat />
   }
 

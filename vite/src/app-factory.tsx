@@ -413,9 +413,8 @@ function renderMdxPage({
   const contentMdast: Root = { type: 'root', children: compactLayout.nodes }
   const pageMode = compactLayout.pageMode
   const mdastSections = buildSections(contentMdast, {
-    enableAssistant: site.config.assistant.enabled
-      && site.config.assistant.display !== 'floating'
-      && !compactLayout.hideSidebarAssistant,
+    // Compact pages have no right aside; EditorialPage shows the floating pill there instead.
+    enableAssistant: site.config.assistant.enabled && pageMode !== 'compact',
     includePageChrome: pageMode !== 'compact',
   })
 
@@ -557,7 +556,7 @@ function renderMdxPage({
               : <Head.Meta key={name} name={name} content={content} />
           ))}
       </Head>
-      <EditorialPage mode={pageMode} hideSidebarAssistant={compactLayout.hideSidebarAssistant} sections={sections} above={above} bannerContent={bannerJsx} sidebarWidth={sidebarWidth} gridGap={gridGap} />
+      <EditorialPage mode={pageMode} sections={sections} above={above} bannerContent={bannerJsx} sidebarWidth={sidebarWidth} gridGap={gridGap} />
     </>
   )
 }

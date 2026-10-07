@@ -60,13 +60,11 @@ export function resolveCompactLayout({
     return {
       nodes,
       pageMode: configuredPageMode,
-      hideSidebarAssistant: false,
     }
   }
   return {
     nodes: unwrapAsides(nodes),
     pageMode: 'compact' as const,
-    hideSidebarAssistant: true,
   }
 }
 

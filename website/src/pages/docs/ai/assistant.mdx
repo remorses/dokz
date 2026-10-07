@@ -9,7 +9,7 @@ icon: message-circle
 
 # AI Assistant
 
-Holocron includes a built-in AI chat assistant. Users can ask questions about your documentation and get answers based on the docs content. By default it appears as a **sidebar widget**. Set `assistant.display` to `floating` to show a bottom pill instead.
+Holocron includes a built-in AI chat assistant. Users can ask questions about your documentation and get answers based on the docs content. It appears as a **widget in the right aside**, or as a **floating bottom pill** on pages without one.
 
 To embed the chat on an **external website** (outside your docs site), see the [Chat Widget](./chat-widget.mdx) page.
 
@@ -29,24 +29,16 @@ When disabled, the sidebar widget, chat drawer, and mobile "Ask AI" button are h
 
 ## Display location
 
-By default the assistant sits in the **right sidebar**. Set `assistant.display` to `floating` to use the same bottom pill as the [embeddable ChatWidget](./chat-widget.mdx) instead:
+Holocron picks the place from the page layout. There is nothing to configure.
 
-```json
-{
-  "assistant": {
-    "display": "floating"
-  }
-}
-```
+| Page                                                      | Trigger                                                      |
+| --------------------------------------------------------- | ------------------------------------------------------------ |
+| Has a right aside (default, center, OpenAPI and MCP tabs) | Ask AI widget at the top of the right aside                  |
+| No right aside ([compact](../customize/layout.mdx))       | Bottom-center textarea pill that morphs into the chat drawer |
 
-| Value      | Trigger                                                      |
-| ---------- | ------------------------------------------------------------ |
-| `sidebar`  | Ask AI widget in the right aside (default)                   |
-| `floating` | Bottom-center textarea pill that morphs into the chat drawer |
+On a **compact site**, generated OpenAPI and MCP pages keep their right aside, so they show the widget there. Plain docs pages show the pill. Moving between them swaps the trigger; the conversation stays.
 
-Floating mode hides the sidebar widget and the mobile "Ask AI" button. The pill is the trigger on every screen size.
-
-[Compact layout](../customize/layout.mdx) in `docs.json` defaults to **floating** unless you set `assistant.display` yourself. Compact removes the right aside, so the sidebar widget cannot show.
+The pill is hidden on phones.
 
 ## Suggested prompts
 
@@ -110,7 +102,7 @@ With `display: "sidebar"` (the default), the AI assistant widget occupies the ri
 </Aside>
 ```
 
-This renders a sticky "On this page" panel with heading links and active-state highlighting as the user scrolls. When the sidebar AI widget is enabled, it appears above the TOC panel automatically. With `display: "floating"` or `enabled: false`, the TOC panel takes the full sidebar.
+This renders a sticky "On this page" panel with heading links and active-state highlighting as the user scrolls. When the sidebar AI widget is enabled, it appears above the TOC panel automatically. With `enabled: false`, the TOC panel takes the full sidebar.
 
 See the [Table of Contents component page](/docs/components/table-of-contents) for all props and usage patterns.
 

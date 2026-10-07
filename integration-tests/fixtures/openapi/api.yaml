@@ -638,6 +638,43 @@ paths:
           description: Order cancelled
         "409":
           description: Order cannot be cancelled (already shipped)
+  /orders/{orderId}/refund:
+    post:
+      tags: [orders]
+      summary: Refund order
+      description: Refund the whole order or a list of line items.
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              description: Either the whole order or some line items.
+              oneOf:
+                - title: Full refund
+                  type: object
+                  required: [full]
+                  properties:
+                    full:
+                      type: boolean
+                      description: Refund every line item
+                - title: Partial refund
+                  type: object
+                  required: [lineItemIds]
+                  properties:
+                    lineItemIds:
+                      type: array
+                      items:
+                        type: string
+                      description: Line items to refund
+      responses:
+        "200":
+          description: Refund created
   /products:
     get:
       tags: [products]

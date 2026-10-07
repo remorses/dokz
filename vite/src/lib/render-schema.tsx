@@ -88,13 +88,23 @@ export function Desc({ children }: { children: string | undefined }) {
 export function typeString(s: SchemaInfo | undefined): string {
   if (!s) return 'unknown'
   if (s.enum) return s.enum.map((v) => JSON.stringify(v)).join(' | ')
-  if (s.oneOf) return s.oneOf.map(typeString).join(' | ')
-  if (s.anyOf) return s.anyOf.map(typeString).join(' | ')
+  const variants = unionVariants(s)
+  if (variants) return variants.map((v) => v.title ?? typeString(v)).join(' | ')
   if (s.type === 'array' && s.items) return `${typeString(s.items)}[]`
   let t = s.type ?? 'object'
   if (s.format) t += ` (${s.format})`
   if (s.nullable) t += ' | null'
   return t
+}
+
+/** Variants of a `oneOf` or `anyOf` union, or undefined when the schema is not a union. */
+function unionVariants(s: SchemaInfo): SchemaInfo[] | undefined {
+  const variants = s.oneOf ?? s.anyOf
+  return variants && variants.length > 0 ? variants : undefined
+}
+
+function hasFields(s: SchemaInfo): boolean {
+  return !!s.properties && Object.keys(s.properties).length > 0
 }
 
 export function collectTags(s: SchemaInfo): { k: string; v: string }[] {
@@ -111,9 +121,10 @@ export function collectTags(s: SchemaInfo): { k: string; v: string }[] {
 /* ── Property ─────────────────────────────────────────────────────────── */
 
 export function canExpandSchema(schema: SchemaInfo, depth: number): boolean {
-  const objNested = schema.type === 'object' && !!schema.properties && Object.keys(schema.properties).length > 0
+  const objNested = schema.type === 'object' && hasFields(schema)
   const arrNested = schema.type === 'array' && schema.items?.type === 'object' && !!schema.items.properties
-  return (objNested || arrNested) && depth <= 3
+  const unionNested = !hasFields(schema) && !!unionVariants(schema)?.some(hasFields)
+  return (objNested || arrNested || unionNested) && depth <= 3
 }
 
 export function Property({ name, schema, required, depth = 0, defaultOpen = false }: {
@@ -148,7 +159,7 @@ export function Property({ name, schema, required, depth = 0, defaultOpen = fals
         </div>
       )}
       {canExpand && (
-        <Expandable title={`Show ${arrNested ? 'item ' : ''}properties`} defaultOpen={defaultOpen}>
+        <Expandable title={unionVariants(childSchema) && !hasFields(childSchema) ? 'Show options' : `Show ${arrNested ? 'item ' : ''}properties`} defaultOpen={defaultOpen}>
           <FieldList schema={childSchema} depth={depth + 1} />
         </Expandable>
       )}
@@ -175,6 +186,24 @@ export function FieldList({ schema, depth = 0 }: { schema: SchemaInfo; depth?: n
             depth={depth}
             defaultOpen={i === firstExpandable}
           />
+        ))}
+      </div>
+    )
+  }
+  const variants = unionVariants(schema)
+  if (variants?.some(hasFields)) {
+    // Property already renders its own description; only the top level (request/response body) needs it here.
+    return (
+      <div className='flex flex-col gap-3'>
+        {depth === 0 && schema.description && <Desc>{schema.description}</Desc>}
+        <div className='text-muted-foreground'>{schema.oneOf ? 'One of:' : 'Any of:'}</div>
+        {variants.map((v, i) => (
+          <Expandable key={i} title={v.title ?? `Option ${i + 1}`} defaultOpen={i === 0}>
+            <div className='flex flex-col gap-3'>
+              {v.description && <Desc>{v.description}</Desc>}
+              <FieldList schema={v} depth={depth + 1} />
+            </div>
+          </Expandable>
         ))}
       </div>
     )

@@ -22,7 +22,7 @@ function makeBaseConfig(overrides: Partial<HolocronConfig> = {}): HolocronConfig
     footer: { socials: {}, links: [] },
     search: {},
     seo: {},
-    assistant: { enabled: true, display: 'sidebar' },
+    assistant: { enabled: true },
     decorativeLines: 'lines-with-dots',
     layout: { mode: 'default', maxWidth: 1200, sidebarWidth: 230, columnGap: 40, radius: 10 },
     integrations: {},
