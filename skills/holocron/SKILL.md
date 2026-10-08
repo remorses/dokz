@@ -119,6 +119,18 @@ Simple `docs.jsonc`:
 Page slugs in `navigation.pages` map to MDX files. `docs/quickstart` loads
 `docs/quickstart.mdx`, and `docs/install` loads `docs/install.mdx`.
 
+### Navbar links and CTA
+
+App routes (login, dashboard, signup) go in `navbar`, and in `knownPaths` so the link check passes:
+
+```jsonc
+"navbar": {
+  "links": [{ "label": "Log in", "href": "/login" }, { "label": "Dashboard", "href": "/dashboard" }],
+  "primary": { "type": "button", "label": "Start free trial", "href": "/signup" }
+},
+"knownPaths": ["/login", "/signup", "/dashboard"]
+```
+
 ## Keep slugs short. Put docs under `/docs`
 
 **Prefer short slugs.** Do not nest pages to match every sidebar group.
