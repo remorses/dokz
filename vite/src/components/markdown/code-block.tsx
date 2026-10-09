@@ -46,11 +46,14 @@ function parseHighlightLines(value: string, lineCount: number): Set<number> | un
   return result.size > 0 ? result : undefined
 }
 
+/** Blocks longer than this hide line numbers unless `lines=true` is set. */
+const AUTO_LINE_NUMBERS_MAX_LINES = 15
+
 export function CodeBlock({
   children,
   lang = 'jsx',
   lineHeight: lineHeightProp,
-  showLineNumbers = true,
+  showLineNumbers: showLineNumbersProp,
   bleed = false,
   title,
   highlight,
@@ -60,7 +63,10 @@ export function CodeBlock({
   children: string
   lang?: string
   lineHeight?: string
-  /** Show line numbers on the left. On by default, disable with `lines=false`. */
+  /**
+   * Show line numbers on the left. Defaults to on for blocks up to
+   * `AUTO_LINE_NUMBERS_MAX_LINES` lines, off for longer ones.
+   */
   showLineNumbers?: boolean
   /**
    * How far the block extends past its content column:
@@ -82,11 +88,9 @@ export function CodeBlock({
   // Wrapped code has no stable line grid: one logical line can span several
   // visual rows, while the number gutter and highlight overlay both allocate
   // exactly 1lh per logical line. Disable both whenever wrap is on.
-  if (wrap) {
-    showLineNumbers = false
-    highlight = undefined
-  }
+  if (wrap) highlight = undefined
   const lines = children.split('\n')
+  const showLineNumbers = !wrap && (showLineNumbersProp ?? lines.length <= AUTO_LINE_NUMBERS_MAX_LINES)
   const [copied, setCopied] = useState(false)
   const handleCopy = useCallback(() => {
     void navigator.clipboard.writeText(children).then(
