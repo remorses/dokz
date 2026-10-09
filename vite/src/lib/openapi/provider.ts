@@ -29,10 +29,13 @@ export const openapiProvider: VirtualTabProvider = {
   claims: (tab) => !!tab.openapi,
 
   async generate({ tab, projectRoot, pagesDir }): Promise<VirtualTabResult> {
-    const specPaths = Array.isArray(tab.openapi) ? tab.openapi! : [tab.openapi!]
+    const specPathsInput = Array.isArray(tab.openapi) ? tab.openapi! : [tab.openapi!]
     const slugPrefix = tab.base ?? 'api'
     const mdxContent: Record<string, string> = {}
     const watchPaths: string[] = []
+    const files: Record<string, string> = {}
+    // Root-relative URL path each spec is served at, keyed by processed doc.
+    const specPaths = new Map<DereferencedDocument, string>()
 
     const allOps: OpWithDoc[] = []
     const docs: DereferencedDocument[] = []
@@ -40,7 +43,7 @@ export const openapiProvider: VirtualTabProvider = {
     const opsBySpecFile = new Map<string, Map<string, OpWithDoc>>()
 
 
-    for (const specPath of specPaths) {
+    for (const specPath of specPathsInput) {
       // Probe pagesDir first (handles pagesDir: './src' with spec inside src/),
       // fall back to projectRoot. Same resolution strategy as MDX imports.
       const inPagesDir = path.resolve(pagesDir, specPath)
@@ -58,6 +61,14 @@ export const openapiProvider: VirtualTabProvider = {
 
       const processed = await processOpenAPISpec(resolvedPath)
       docs.push(processed)
+      const stem = specPathsInput.length === 1
+        ? 'openapi'
+        : `openapi-${path.basename(specPath, path.extname(specPath))}`
+      const prefix = slugPrefix ? `${slugPrefix}/` : ''
+      let filePath = `${prefix}${stem}.json`
+      for (let n = 2; filePath in files; n++) filePath = `${prefix}${stem}-${n}.json`
+      files[filePath] = JSON.stringify(processed.bundled, null, 2)
+      specPaths.set(processed, '/' + filePath)
       const specMap = new Map<string, OpWithDoc>()
       for (const op of extractOperations(processed)) {
         const item = { op, doc: processed }
@@ -70,13 +81,14 @@ export const openapiProvider: VirtualTabProvider = {
     // Spec has no operations. In selective mode the tab may still carry
     // hand-written MDX groups, so preserve them; in dedicated mode there is
     // nothing to generate.
-    if (allOps.length === 0) return { groups: tab.groups, mdxContent, watchPaths }
+    if (allOps.length === 0) return { groups: tab.groups, mdxContent, files, watchPaths }
 
 
     const { emitEndpoint, tagGroups, withOverview } = createPageEmitter({
       slugPrefix,
       pages: mdxContent,
       where: `tab "${tab.tab}"`,
+      specPaths,
     })
     // Disk-shadow detection (a slug shadowing a real MDX file) is centralized
     // in processVirtualTabs() so every provider gets it.
@@ -212,15 +224,15 @@ export const openapiProvider: VirtualTabProvider = {
           return p
         }
 
-        return { groups: hoisted, mdxContent, watchPaths }
+        return { groups: hoisted, mdxContent, files, watchPaths }
       }
 
-      return { groups, mdxContent, watchPaths }
+      return { groups, mdxContent, files, watchPaths }
     }
 
     // ── Dedicated mode: auto-group every endpoint by its first tag ────────
     // The first spec's info.description becomes an Overview page on top.
     // Selective mode skips it: the author writes their own intro pages.
-    return { groups: withOverview(tagGroups(allOps), docs), mdxContent, watchPaths }
+    return { groups: withOverview(tagGroups(allOps), docs), mdxContent, files, watchPaths }
   },
 }

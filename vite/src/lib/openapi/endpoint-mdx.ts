@@ -31,10 +31,12 @@ export type OpWithDoc = { op: ExtractedOperation; doc: DereferencedDocument }
  * and the standalone generator so both produce the same pages and navigation.
  * `where` names the source in error messages, e.g. `tab "API"`.
  */
-export function createPageEmitter({ slugPrefix, pages, where }: {
+export function createPageEmitter({ slugPrefix, pages, where, specPaths }: {
   slugPrefix: string
   pages: Record<string, string>
   where: string
+  /** Root-relative path each spec is served at; endpoint pages link to it. */
+  specPaths?: Map<DereferencedDocument, string>
 }) {
   // Referencing the SAME endpoint twice dedups; two DISTINCT operations on one
   // slug (e.g. same METHOD+path in two specs under one base) is an error.
@@ -54,7 +56,7 @@ export function createPageEmitter({ slugPrefix, pages, where }: {
       )
     }
     emitted.set(slug, item)
-    pages[slug] = buildEndpointMdx(item)
+    pages[slug] = buildEndpointMdx({ ...item, specPath: specPaths?.get(item.doc) })
     return slug
   }
 
@@ -92,7 +94,7 @@ export function createPageEmitter({ slugPrefix, pages, where }: {
 }
 
 /** Build the virtual MDX string for a single OpenAPI operation. */
-export function buildEndpointMdx({ op, doc }: { op: ExtractedOperation; doc: DereferencedDocument }): string {
+export function buildEndpointMdx({ op, doc, specPath }: { op: ExtractedOperation; doc: DereferencedDocument; specPath?: string }): string {
   const overrides = getOperationPageOverrides(op)
   const title = operationTitle(op)
   const sidebarTitle = operationSidebarTitle(op)
@@ -209,6 +211,7 @@ export function buildEndpointMdx({ op, doc }: { op: ExtractedOperation; doc: Der
       // Flatten markdown to plain text for the page <meta> description.
       description: plainText(overrides.description ?? op.operation.description ?? op.operation.summary ?? '').slice(0, 200),
       api: `${op.method.toUpperCase()} ${op.path}`,
+      ...(specPath ? { openapiSpec: specPath } : {}),
       gridGap: 30,
       mode: 'default',
       ...(op.operation.deprecated ? { deprecated: true } : {}),

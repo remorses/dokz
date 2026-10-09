@@ -66,6 +66,10 @@
         "static"
       ]
     },
+    "openapiSpec": {
+      "description": "Root-relative path of the OpenAPI spec this page was generated from (e.g. \"/api/openapi.json\"). Replaces \"Copy page as Markdown\" with \"Copy OpenAPI schema URL\".",
+      "type": "string"
+    },
     "gridGap": {
       "description": "Override the grid gap (in pixels) between content and sidebar columns",
       "type": "number"

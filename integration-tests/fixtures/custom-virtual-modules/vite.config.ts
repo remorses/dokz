@@ -27,6 +27,10 @@ export async function getMdxSlugs() {
   return Object.keys(pages)
 }
 
+export function getStaticFiles() {
+  return {}
+}
+
 export async function getMdxSource(slug) {
   return pages[slug]
 }

@@ -206,6 +206,8 @@ type HolocronProviders = {
   getConfig(): Promise<HolocronConfig>
   getNavigationData(): HolocronNavigationData | Promise<HolocronNavigationData>
   getMdxSlugs(): Promise<string[]>
+  /** Provider-generated static files (root-relative path → body). */
+  getStaticFiles(): Record<string, string> | Promise<Record<string, string>>
   getMdxSource(slug: string): Promise<string | undefined>
   getPageIconRefs(slug: string): Promise<IconRef[]>
   /** Used-icon SVG atlas from sync. Sliced per request for the current page. */
@@ -700,6 +702,7 @@ export async function createHolocronApp(providers: HolocronProviders): Promise<A
     providers.getNavigationData(),
     providers.getMdxSlugs(),
   ])
+  const staticFiles = await providers.getStaticFiles()
   const site: HolocronSiteData = {
     config,
     navigation,
@@ -842,6 +845,10 @@ export async function createHolocronApp(providers: HolocronProviders): Promise<A
     const linksSection = siteLinks.length > 0
       ? `\n\n## Links\n\n${siteLinks.map((l) => `- [${escapeMarkdownText(l.label)}](${l.href})`).join('\n')}`
       : ''
+    const specFiles = Object.keys(staticFiles)
+    const specLinks = specFiles.length > 0
+      ? `\n\n## OpenAPI specs\n\n${specFiles.map((f) => `- [${f}](${baseUrl}/${f})`).join('\n')}`
+      : ''
 
     return dedent`
       # ${escapeMarkdownText(site.config.name)}
@@ -865,7 +872,7 @@ export async function createHolocronApp(providers: HolocronProviders): Promise<A
       You can also fetch individual markdown pages directly:
 
       ${pageLinks}
-    ` + linksSection
+    ` + specLinks + linksSection
   }
 
   async function buildLlmsFullTxt(origin: string): Promise<string> {
@@ -1476,6 +1483,20 @@ export async function createHolocronApp(providers: HolocronProviders): Promise<A
     }
   }
 
+  // Provider-generated files (e.g. /api/openapi.json) served as formatted JSON.
+  for (const [filePath, body] of Object.entries(staticFiles)) {
+    for (const route of routeVariants('/' + filePath)) {
+      app = app.get(route, () => new Response(body, {
+        headers: {
+          'content-type': 'application/json; charset=utf-8',
+          'access-control-allow-origin': '*',
+          'cache-control': 's-maxage=300, stale-while-revalidate=86400',
+          'x-content-type-options': 'nosniff',
+        },
+      }))
+    }
+  }
+
   // /docs.zip — whole site in one download for agents
   for (const docsZipRoute of new Set(['/docs.zip', withBaseRoute(site.base, '/docs.zip')])) {
     app = app.get(docsZipRoute, async () => {
@@ -1488,6 +1509,9 @@ export async function createHolocronApp(providers: HolocronProviders): Promise<A
         if (!page) continue
         const [slug, mdx] = page
         files[slug + '.md'] = strToU8(buildMarkdownSource(mdx))
+      }
+      for (const [filePath, body] of Object.entries(staticFiles)) {
+        files[filePath] = strToU8(body)
       }
 
       const zipped = zipSync(files)

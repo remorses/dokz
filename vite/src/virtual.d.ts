@@ -22,6 +22,8 @@ declare module 'virtual:holocron-mdx' {
   /** Pre-processed MDX content exposed through async getters so custom
    *  virtual-module implementations can load content at request time. */
   export function getMdxSlugs(): Promise<string[]>
+  /** Provider-generated static files: root-relative path → body. */
+  export function getStaticFiles(): Record<string, string>
   export function getMdxSource(slug: string): Promise<string | undefined>
   export function getPageIconRefs(slug: string): Promise<IconRef[]>
   export function getIconAtlas(): IconAtlas

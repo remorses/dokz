@@ -50,6 +50,7 @@ describe('mcp provider', () => {
       pagesDir: dir,
       publicDir: path.join(dir, 'public'),
       mdxContent,
+      files: {},
       providers: [mcpProvider],
     })
 

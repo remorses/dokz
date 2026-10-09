@@ -52,6 +52,7 @@ export const pageFrontmatterSchema = z.object({
     .describe(
       'Rendering strategy for this page. "ssr" (default) renders the page on every request, so it can react to per-request data like cookies. "static" prerenders the page to static HTML at build time for faster delivery and cheaper hosting — use it for pages whose content never depends on the incoming request.',
     ),
+  openapiSpec: z.string().optional().describe('Root-relative path of the OpenAPI spec this page was generated from (e.g. "/api/openapi.json"). Replaces "Copy page as Markdown" with "Copy OpenAPI schema URL".'),
   gridGap: z.number().optional().describe('Override the grid gap (in pixels) between content and sidebar columns'),
   maxWidth: z.union([z.number(), z.string()]).optional().describe('Override the maximum content width. Accepts a number (treated as pixels, e.g. 700) or a CSS string (e.g. "700px", "80%", "60ch"). Useful with mode: "custom" to constrain the landing page container.'),
   hidden: z.boolean().optional().describe('Hide the page from sidebar navigation and search results'),

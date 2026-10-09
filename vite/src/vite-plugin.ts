@@ -779,10 +779,12 @@ export function holocron(options: HolocronPluginOptions = {}): PluginOption {
         })
         return [
           `const slugs = ${JSON.stringify(slugs)}`,
+          `const files = ${JSON.stringify(syncResult.files)}`,
           `const pageIconRefs = ${JSON.stringify(syncResult.pageIconRefs)}`,
           `const iconAtlas = ${JSON.stringify(syncResult.icons)}`,
           `const loaders = { ${loaderEntries.join(', ')} }`,
           `export function getMdxSlugs() { return slugs }`,
+          `export function getStaticFiles() { return files }`,
           `export async function getMdxSource(slug) {`,
           `  const load = loaders[slug]`,
           `  return load ? await load() : undefined`,

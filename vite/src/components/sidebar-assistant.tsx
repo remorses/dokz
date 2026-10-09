@@ -17,6 +17,7 @@ function useChatStore<T>(selector: (s: ChatState) => T): T {
 }
 import { useHolocronData } from '../router.ts'
 import { cn } from '../lib/css-vars.ts'
+import { withBasePath } from '../lib/holocron-url.ts'
 import {
   InfoCircleIcon,
   MessageCircleIcon,
@@ -150,44 +151,52 @@ export function SidebarAssistant() {
 // ── Copy-page row (injected into the right aside under the AI widget)
 
 export function PageNavRow() {
+  const { currentPageFrontmatter } = useHolocronData()
+  const openapiSpec = currentPageFrontmatter?.openapiSpec
   const [copied, setCopied] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
-  const handleCopyMd = useCallback(async () => {
+  const handleCopy = useCallback(async () => {
     if (copied || isLoading) return
     setIsLoading(true)
     try {
-      // For `/` or paths ending with `/`, append `index.md` instead of `.md`
-      // so the request hits the correct server route (e.g. `/index.md`).
-      const pathname = window.location.pathname
-      const url = pathname === '/' || pathname.endsWith('/')
-        ? pathname + 'index.md'
-        : pathname + '.md'
-      const res = await fetch(url)
-      if (!res.ok) throw new Error(`Failed to fetch ${url}`)
-      const text = await res.text()
-      await navigator.clipboard.writeText(text)
+      if (openapiSpec) {
+        const url = new URL(withBasePath(openapiSpec), window.location.origin).toString()
+        await navigator.clipboard.writeText(url)
+      } else {
+        // For `/` or paths ending with `/`, append `index.md` instead of `.md`
+        // so the request hits the correct server route (e.g. `/index.md`).
+        const pathname = window.location.pathname
+        const url = pathname === '/' || pathname.endsWith('/')
+          ? pathname + 'index.md'
+          : pathname + '.md'
+        const res = await fetch(url)
+        if (!res.ok) throw new Error(`Failed to fetch ${url}`)
+        await navigator.clipboard.writeText(await res.text())
+      }
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
     } catch (err) {
-      console.error('Failed to copy markdown:', err)
+      console.error('Failed to copy:', err)
     } finally {
       setIsLoading(false)
     }
-  }, [copied, isLoading])
+  }, [copied, isLoading, openapiSpec])
+
+  const label = openapiSpec ? 'Copy OpenAPI schema URL' : 'Copy page as Markdown'
 
   return (
     <div className='hidden lg:flex items-center gap-1.5 w-full'>
       <button
         type='button'
-        onClick={handleCopyMd}
+        onClick={handleCopy}
         className={cn(
           'inline-flex items-center gap-1.5 rounded-md -ml-2 px-2 py-1 text-[11px] font-medium text-muted-foreground transition-colors hover:text-foreground hover:bg-accent cursor-pointer',
           isLoading && 'opacity-50 animate-pulse',
         )}
-        title='Copy page as Markdown'
+        title={label}
       >
-        <span>{copied ? 'Copied' : 'Copy page as Markdown'}</span>
+        <span>{copied ? 'Copied' : label}</span>
         {copied ? <CheckIcon size={13} /> : <CopyIcon size={13} />}
       </button>
     </div>

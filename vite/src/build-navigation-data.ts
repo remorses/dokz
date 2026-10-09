@@ -240,6 +240,7 @@ export async function generateHolocronData({
     loaderEntries.join(',\n'),
     `};`,
     `export function getMdxSlugs() { return slugs; }`,
+    `export function getStaticFiles() { return {}; }`,
     `export async function getMdxSource(slug) {`,
     `  var load = loaders[slug];`,
     `  return load ? await load() : undefined;`,

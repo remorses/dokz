@@ -44,6 +44,9 @@ export type VirtualTabResult = {
   groups: ConfigNavGroup[]
   /** slug → virtual MDX string */
   mdxContent: Record<string, string>
+  /** Root-relative path (no leading slash) → file body, served as static
+   *  files and included in docs.zip (e.g. `api/openapi.json`). */
+  files?: Record<string, string>
   /** Absolute paths of local files the provider read (e.g. OpenAPI spec files).
    *  The dev server watches these so edits trigger re-sync + HMR. */
   watchPaths?: string[]
@@ -90,6 +93,7 @@ export async function processVirtualTabs({
   pagesDir,
   publicDir,
   mdxContent,
+  files,
   providers,
 }: {
   config: { navigation: { tabs: ConfigNavTab[] } }
@@ -97,6 +101,8 @@ export async function processVirtualTabs({
   pagesDir: string
   publicDir: string
   mdxContent: Record<string, string>
+  /** Receives provider-generated static files. */
+  files: Record<string, string>
   providers: VirtualTabProvider[]
 }): Promise<{ watchPaths: string[] }> {
   const watchPaths: string[] = []
@@ -185,6 +191,7 @@ export async function processVirtualTabs({
     }
 
     Object.assign(mdxContent, result.mdxContent)
+    Object.assign(files, result.files)
     tab.groups = result.groups
   }
   return { watchPaths }

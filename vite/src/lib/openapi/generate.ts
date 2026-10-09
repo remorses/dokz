@@ -34,6 +34,9 @@ export interface GenerateOpenAPIPagesResult {
   pages: Record<string, string>
   /** Navigation groups organized by tag, ready to merge into docs.json tabs. */
   navigation: ConfigNavGroup[]
+  /** Static files to serve at their root-relative path, e.g. `api/openapi.json`
+   *  (the formatted spec the generated pages link to). */
+  files: Record<string, string>
 }
 
 /**
@@ -62,15 +65,21 @@ export async function generateOpenAPIPages({
   const operations = extractOperations(processed)
 
   if (operations.length === 0) {
-    return { pages: {}, navigation: [] }
+    return { pages: {}, navigation: [], files: {} }
   }
 
   const pages: Record<string, string> = {}
-  const emitter = createPageEmitter({ slugPrefix, pages, where: 'generateOpenAPIPages' })
+  const specFile = slugPrefix ? `${slugPrefix}/openapi.json` : 'openapi.json'
+  const emitter = createPageEmitter({
+    slugPrefix,
+    pages,
+    where: 'generateOpenAPIPages',
+    specPaths: new Map([[processed, '/' + specFile]]),
+  })
   const navigation = emitter.withOverview(
     emitter.tagGroups(operations.map((op) => ({ op, doc: processed }))),
     [processed],
   )
 
-  return { pages, navigation }
+  return { pages, navigation, files: { [specFile]: JSON.stringify(processed.bundled, null, 2) } }
 }

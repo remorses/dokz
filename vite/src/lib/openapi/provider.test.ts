@@ -74,12 +74,14 @@ describe('openapi provider — selective mode', () => {
       },
     }
     const mdxContent: Record<string, string> = {}
+    const files: Record<string, string> = {}
     await processVirtualTabs({
       config,
       projectRoot: dir,
       pagesDir: dir,
       publicDir: path.join(dir, 'public'),
       mdxContent,
+      files,
       providers: [openapiProvider],
     })
 
@@ -112,16 +114,22 @@ describe('openapi provider — selective mode', () => {
       },
     }
     const mdxContent: Record<string, string> = {}
+    const files: Record<string, string> = {}
     await processVirtualTabs({
       config,
       projectRoot: dir,
       pagesDir: dir,
       publicDir: path.join(dir, 'public'),
       mdxContent,
+      files,
       providers: [openapiProvider],
     })
 
     expect(mdxContent['api/get-users']).toContain('mode: "default"')
+    expect(mdxContent['api/get-users']).toContain('openapiSpec: "/api/openapi.json"')
+    expect(Object.keys(files)).toEqual(['api/openapi.json'])
+    expect(JSON.parse(files['api/openapi.json']!).openapi).toBeTruthy()
+    expect(files['api/openapi.json']).toContain('\n  "')
   })
 
   test('uses x-mint page metadata and content', async () => {
@@ -150,12 +158,14 @@ paths:
       },
     }
     const mdxContent: Record<string, string> = {}
+    const files: Record<string, string> = {}
     await processVirtualTabs({
       config,
       projectRoot: dir,
       pagesDir: dir,
       publicDir: path.join(dir, 'public'),
       mdxContent,
+      files,
       providers: [openapiProvider],
     })
 
@@ -207,12 +217,14 @@ paths:
       },
     }
     const mdxContent: Record<string, string> = {}
+    const files: Record<string, string> = {}
     await processVirtualTabs({
       config,
       projectRoot: dir,
       pagesDir: dir,
       publicDir: path.join(dir, 'public'),
       mdxContent,
+      files,
       providers: [openapiProvider],
     })
     const standalone = await generateOpenAPIPages({ spec: fs.readFileSync(specPath, 'utf8') })
@@ -507,12 +519,14 @@ paths:
       },
     }
     const mdxContent: Record<string, string> = {}
+    const files: Record<string, string> = {}
     await processVirtualTabs({
       config,
       projectRoot: dir,
       pagesDir: dir,
       publicDir: path.join(dir, 'public'),
       mdxContent,
+      files,
       providers: [openapiProvider],
     })
     const groups = config.navigation.tabs[0]!.groups
@@ -563,12 +577,14 @@ paths:
         },
       }
       const mdxContent: Record<string, string> = {}
+      const files: Record<string, string> = {}
       await processVirtualTabs({
         config,
         projectRoot: exDir,
         pagesDir: exDir,
         publicDir: path.join(exDir, 'public'),
         mdxContent,
+        files: {},
         providers: [openapiProvider],
       })
       const mdx = mdxContent['api/post-orders']
@@ -629,12 +645,14 @@ paths:
         },
       }
       const mdxContent: Record<string, string> = {}
+      const files: Record<string, string> = {}
       await processVirtualTabs({
         config,
         projectRoot: exDir,
         pagesDir: exDir,
         publicDir: path.join(exDir, 'public'),
         mdxContent,
+        files: {},
         providers: [openapiProvider],
       })
       const mdx = mdxContent['api/get-users']
@@ -689,12 +707,14 @@ paths:
         },
       }
       const mdxContent: Record<string, string> = {}
+      const files: Record<string, string> = {}
       await processVirtualTabs({
         config,
         projectRoot: exDir,
         pagesDir: exDir,
         publicDir: path.join(exDir, 'public'),
         mdxContent,
+        files: {},
         providers: [openapiProvider],
       })
       const mdx = mdxContent['api/post-orders']
@@ -749,12 +769,14 @@ paths:
         },
       }
       const mdxContent: Record<string, string> = {}
+      const files: Record<string, string> = {}
       await processVirtualTabs({
         config,
         projectRoot: exDir,
         pagesDir: exDir,
         publicDir: path.join(exDir, 'public'),
         mdxContent,
+        files: {},
         providers: [openapiProvider],
       })
       const mdx = mdxContent['api/post-items']
@@ -806,12 +828,14 @@ paths:
         },
       }
       const mdxContent: Record<string, string> = {}
+      const files: Record<string, string> = {}
       await processVirtualTabs({
         config,
         projectRoot: exDir,
         pagesDir: exDir,
         publicDir: path.join(exDir, 'public'),
         mdxContent,
+        files: {},
         providers: [openapiProvider],
       })
       const mdx = mdxContent['api/get-orders']
@@ -846,12 +870,14 @@ paths:
 
     const run = async () => {
       const mdxContent: Record<string, string> = {}
+      const files: Record<string, string> = {}
       await processVirtualTabs({
         config,
         projectRoot: dir,
         pagesDir: dir,
         publicDir: path.join(dir, 'public'),
         mdxContent,
+        files: {},
         providers: [openapiProvider],
       })
       return { groups: fingerprint(config.navigation.tabs[0]!), mdx: Object.keys(mdxContent).sort() }

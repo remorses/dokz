@@ -10,6 +10,23 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { test, expect } from '../helpers/test.ts'
 
+test.describe('OpenAPI schema file', () => {
+  test('serves formatted JSON under the tab base path and in docs.zip', async ({ request }) => {
+    const res = await request.get('/api/openapi.json')
+    expect(res.ok()).toBe(true)
+    expect(res.headers()['content-type']).toContain('application/json')
+    const body = await res.text()
+    expect(JSON.parse(body).openapi).toBeTruthy()
+    expect(body).toContain('\n  "')
+    expect((await request.get('/guide/openapi.json')).ok()).toBe(true)
+    const llms = await (await request.get('/llms.txt')).text()
+    expect(llms).toContain('/api/openapi.json')
+    const page = await (await request.get('/api/get-users')).text()
+    expect(page).toContain('Copy OpenAPI schema URL')
+    expect(page).not.toContain('Copy page as Markdown')
+  })
+})
+
 test.describe('docs + API tabs coexist', () => {
   test('root page serves the documentation tab content', async ({ request }) => {
     const res = await request.get('/')
