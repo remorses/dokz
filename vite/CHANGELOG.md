@@ -1,5 +1,53 @@
 # @holocron.so/vite
 
+## 0.37.0
+
+1. **OpenAPI pages read much more of the spec.** Big fidelity pass, with Mintlify conventions:
+
+   - **`oneOf` / `anyOf` schemas render.** A union request or response body shows one expandable panel per option (named by its `title`, else `Option N`). A property or array item that is a union of objects gets a "Show options" panel, and its type shows the option titles (`Point | Text`, `(Point | Text)[]`). Before, a union request body rendered an empty section. This also applies to MCP field lists.
+   - **Server variables** are filled with their defaults, so `{scheme}://{host}:{port}` gives a working cURL URL.
+   - **Optional auth**: `security: [{}, ...]` shows an "optional" badge. cURL sends the first non-empty requirement, with `apiKey` in its real header, query param or cookie, and `-u` for basic auth. Schemes sent together are each marked required.
+   - **More schema keys**: `examples`, `const`, `exclusiveMinimum` / `exclusiveMaximum` (shown as `> 0`), `readOnly` / `writeOnly`, `minItems` / `maxItems`.
+   - **Enum descriptions**: `x-enumDescriptions` (map) and `x-enum-descriptions` (list) show one line per enum value.
+   - **Overview page**: in a tab without authored pages, `info.description` becomes an Overview page at `<base>/overview`.
+   - **Tag labels follow Mintlify**: `x-group`, then the OpenAPI 3.2 tag `summary`, then `x-displayName`, else the tag name exactly as written. Before, tags were title-cased (`users` showed as "Users"); set `x-group` to keep a custom label.
+   - **Visibility**: `x-hidden: true` keeps the page out of the sidebar, `x-excluded: true` skips the page.
+   - **Parameter pills**: `x-mint.pre` / `x-mint.post` show labels around the field name.
+   - **Descriptions are plain Markdown**: `{lease}` and `<token>` in OpenAPI and MCP descriptions stay as text instead of vanishing or failing the build.
+   - **Primitive response bodies** (`const`, `enum`, plain `type`) render instead of being hidden.
+
+2. **OpenAPI spec served as JSON.** Each OpenAPI tab serves its spec as formatted JSON under the tab base path (`/api/openapi.json`; `openapi-<name>.json` when a tab has several specs). Endpoint pages show **Copy OpenAPI schema URL** instead of "Copy page as Markdown". The spec is also in `docs.zip` and `llms.txt`, so the AI assistant can read it. Custom `virtual:holocron-mdx` modules must now export `getStaticFiles()`.
+
+3. **Ask AI goes where the page has room.** Pages with a right aside show the Ask AI widget at the top of it. Pages without one (`compact` mode) show the floating bottom pill. On phones the mobile bar "Ask AI" button now shows on compact pages too.
+
+   **Breaking:** `assistant.display` is removed from `docs.json`. Delete the field if you set it.
+
+4. **Minimal navbar, theme select in the footer.** Header links use regular `text-sm` text with more spacing, and `navbar.primary` renders as a filled rounded pill. A primary CTA no longer gets an automatic external-link icon; set `icon` if you want one. The light/dark toggle moved to the footer as a native select with **System**, **Light** and **Dark**. System follows the OS preference live. The `d` shortcut still flips light and dark.
+
+5. **New `decorativeLines` ornaments**: `lines-with-crosses`, `lines-with-x` and `lines-with-circles`, next to `lines-with-dots`:
+
+   ```json
+   { "decorativeLines": "lines-with-crosses" }
+   ```
+
+6. **`VideoBackgroundShader` hover lens.** The fluid simulation is replaced by a lens that follows the pointer, magnifies the video, and sends rings outward. It works on bright and dark parts of the video and under content on top of the shader. The `fluid*` props are removed; use `hoverRadius` (CSS pixels, default 160, `0` disables it):
+
+   ```mdx
+   <VideoBackgroundShader src="/hero-bg.mp4" hoverRadius={200} />
+   ```
+
+7. **Long code blocks hide line numbers.** Blocks longer than 15 lines hide line numbers by default. Add `lines=true` to force them on; `lines=false` still turns them off for short blocks.
+
+8. **Smaller default column gap**: `40px` instead of `60px`. The content column grows by the same amount. Set `layout.columnGap: 60` in `docs.json` to keep the old spacing.
+
+9. **Callout colors follow your brand `colors.primary`.** `Note` uses the primary color, `Info` is neutral gray (like Mintlify), and `Tip`, `Check` and `Warning` shift their hue slightly toward the primary so they never clash with it. `Danger` stays red. Callout backgrounds are also more visible.
+
+10. **Sidebar scrollbar shows only on hover**, fading in when the pointer is over the sidebar.
+
+11. **Headings use `text-wrap: pretty`**, so a long heading no longer ends with a single orphan word.
+
+12. **Fixed bash highlighting splitting words that start with a keyword.** `done` was colored as `do` + `ne`; keywords now only match whole words.
+
 ## 0.36.0
 
 1. **New `FAQ` and `FAQ.Item` MDX components.** `FAQ` renders a divider-separated question list where each row expands inline. When the site assistant is enabled, a trailing ask row lets readers type their own question; the answer is generated from the docs and shown under the input. Editing the question re-arms the arrow to ask again. Ask requests are ephemeral and never touch the chat drawer session.
