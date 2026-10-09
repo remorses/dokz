@@ -14,7 +14,7 @@ Designed as a **Mintlify-compatible replacement**: same config shape, same MDX c
 ## Install skill for AI agents
 
 ```bash
-npx -y skills add remorses/holocron
+npx -y skills add remorses/holocron -g -y
 ```
 
 This installs [skills](https://skills.sh) for AI coding agents like
