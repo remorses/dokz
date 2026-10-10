@@ -88,6 +88,8 @@ The navigation tree is the central data structure. It mirrors the docs.json shap
 
 This enriched tree is written to `dist/holocron-cache.json` after each sync. On the next build, the cache is read back and pages with matching `gitSha` are reused without re-parsing. This makes builds as fast as possible — only changed MDX files get processed. On CI, caching `dist/` between runs gives near-instant rebuilds.
 
+The cache folder is `build.outDir` only for `vite build`. In serve mode (dev, preview, vitest) it is `<vite cacheDir>/holocron`, usually `node_modules/.vite/holocron`. Never derive it from `build.outDir` in serve mode: vitest sets that to `dummy-non-existing-folder`.
+
 Types are intentionally kept close to docs.json to minimize transformations. Utility functions (`getTabs`, `getActiveGroups`, `findPage`, `buildSidebarTree`) take the tree directly as input.
 
 ### Sidebar nav items must never cause horizontal scroll

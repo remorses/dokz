@@ -76,7 +76,8 @@ export type HolocronPluginOptions = {
    */
   tailwindSources?: string[]
   /**
-   * Reuse processed navigation and MDX from dist/. Default true.
+   * Reuse processed navigation and MDX from the cache (dist/ for builds,
+   * node_modules/.vite/holocron for dev and tests). Default true.
    * Image metadata still caches. Set false while developing Holocron itself
    * so processor changes are not hidden by a stale page cache.
    */
@@ -302,6 +303,8 @@ export function holocron(options: HolocronPluginOptions = {}): PluginOption {
   let pagesDir: string
   let publicDirPath: string
   let distDirPath: string
+  /** Where holocron-*.json caches live: outDir for builds, Vite cacheDir otherwise */
+  let cacheDirPath: string
   let clientOutDirPath: string
   let viteBase = '/'
   let hasUserReactPlugin = false
@@ -347,7 +350,7 @@ export function holocron(options: HolocronPluginOptions = {}): PluginOption {
       projectRoot: root,
       pagesDir,
       publicDir: publicDirPath,
-      distDir: distDirPath,
+      distDir: cacheDirPath,
       syncResult,
       signal: abort.signal,
     }).then(({ watchPaths }) => {
@@ -504,9 +507,13 @@ export function holocron(options: HolocronPluginOptions = {}): PluginOption {
         ? path.resolve(root, resolved.build.outDir)
         : path.resolve(root, 'dist')
 
+      isBuild = resolved.command === 'build'
+      // build.outDir is only a real folder for builds. Serve mode (dev, preview,
+      // vitest, which sets outDir to 'dummy-non-existing-folder') uses Vite's cache dir.
+      cacheDirPath = isBuild ? distDirPath : path.join(resolved.cacheDir, 'holocron')
+
       // Clean stale build env folders so old artifacts never leak into
       // a fresh build. Preserve holocron-*.json caches for incremental builds.
-      isBuild = resolved.command === 'build'
       if (isBuild) {
         for (const sub of ['client', 'rsc', 'ssr', 'package.json']) {
           try {
@@ -564,7 +571,7 @@ export function holocron(options: HolocronPluginOptions = {}): PluginOption {
         pagesDir,
         publicDir: publicDirPath,
         projectRoot: root,
-        distDir: distDirPath,
+        distDir: cacheDirPath,
         logParseErrors: true,
         deferProviders: false,
         customProviders,
@@ -1061,7 +1068,7 @@ export function holocron(options: HolocronPluginOptions = {}): PluginOption {
             pagesDir,
             publicDir: publicDirPath,
             projectRoot: root,
-            distDir: distDirPath,
+            distDir: cacheDirPath,
             deferProviders: true,
             customProviders: freshCustomProviders,
             pageCache: options.pageCache,
