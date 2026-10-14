@@ -380,9 +380,9 @@ function NavPageLink({
         </span>
       </Link>
       <ExpandableContainer open={showToc} animate={animate} sidebarRows>
-        {/* Skip mounting heading links entirely on suppressed pages (unless
-            search needs them) — keeps the DOM slim for TOC-panel pages. */}
-        {visibleHeadings.length > 0 && (isSearchActive || !tocSuppressed) && (
+        {/* Collapsed TOCs stay out of the DOM: every page's headings in SSR HTML
+            were ~37% of the page. */}
+        {showToc && (
           <TocInline
             headings={visibleHeadings}
             pageHref={page.href}
