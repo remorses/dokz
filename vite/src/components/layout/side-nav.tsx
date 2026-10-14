@@ -12,7 +12,7 @@ import { router, useRouterState } from 'spiceflow/react'
 import { Link } from '../link.tsx'
 import { useActiveTocState } from '../../hooks/use-active-toc.ts'
 import { getActiveGroups } from '../../navigation.ts'
-import { createSearchDb, searchSidebar, buildFocusableHrefs, type SearchState } from '../../lib/search.ts'
+import { getSearchDb, searchSidebar, buildFocusableHrefs, type SearchState } from '../../lib/search.ts'
 import { useHolocronData } from '../../router.ts'
 import { buildSearchEntries, buildSidebarAnchors, collectAncestorGroupKeys, collectDefaultExpandedKeys, resolveActiveNavigationTabs, type SidebarAnchor } from '../../site-data.ts'
 import { SearchIcon } from '../markdown/icons.tsx'
@@ -102,11 +102,6 @@ export function SideNav() {
   }, [effectiveCurrentPageHref, effectiveExpandedGroups])
 
   // --- Search ---
-  const db = useMemo(
-    () => createSearchDb({ entries: searchEntries }),
-    [searchEntries],
-  )
-
   const [query, setQuery] = useState('')
   // null = no active search (show everything). Non-null = active filter.
   const [searchState, setSearchState] = useState<SearchState | null>(null)
@@ -129,10 +124,10 @@ export function SideNav() {
   const handleQueryChange = useCallback(
     (value: string) => {
       setQuery(value)
-      setSearchState(searchSidebar({ db, query: value, entries: searchEntries }))
+      setSearchState(searchSidebar({ db: getSearchDb(searchEntries), query: value, entries: searchEntries }))
       setHighlightedIndex(0)
     },
-    [db, searchEntries],
+    [searchEntries],
   )
 
   // Global "/" hotkey to focus search input

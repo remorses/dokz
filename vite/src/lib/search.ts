@@ -60,6 +60,18 @@ export function createSearchDb({ entries }: { entries: SearchEntry[] }): AnyOram
   return db
 }
 
+const searchDbs = new WeakMap<SearchEntry[], AnyOrama>()
+
+/** Index lazily on the first query. Building it during render cost ~30% of SSR CPU per request. */
+export function getSearchDb(entries: SearchEntry[]): AnyOrama {
+  let db = searchDbs.get(entries)
+  if (!db) {
+    db = createSearchDb({ entries })
+    searchDbs.set(entries, db)
+  }
+  return db
+}
+
 /* ── Search ──────────────────────────────────────────────────────────── */
 
 /**
