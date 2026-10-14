@@ -10,23 +10,26 @@ icon: file-text
 
 # Markdown Routes
 
-Every docs page in Holocron is also available as agent-readable Markdown by appending `.md` to the URL.
+Every docs page in Holocron is also available as agent-readable Markdown by appending `.md` or `.mdx` to the URL.
 
 ## How it works
 
-| URL              | Returns                            |
-| ---------------- | ---------------------------------- |
-| `/quickstart`    | HTML page                          |
-| `/quickstart.md` | Transformed MDX source as Markdown |
+| URL               | Returns                             |
+| ----------------- | ----------------------------------- |
+| `/quickstart`     | HTML page                           |
+| `/quickstart.md`  | Raw Markdown source                 |
+| `/quickstart.mdx` | Raw Markdown source (same as `.md`) |
 
-This makes your docs machine-readable out of the box. AI agents, documentation scrapers, and CLI tools can fetch page source without parsing HTML. Holocron strips human-only `<Visibility>` blocks and prepends an agent directive to the response.
+Both suffixes serve the **same raw Markdown**. This makes your docs machine-readable out of the box. AI agents, documentation scrapers, and CLI tools can fetch page source without parsing HTML. The response is served as `text/markdown`, **strips human-only `<Visibility>` blocks**, **prepends an `> Agent-readable docs index:` directive**, and sets `x-robots-tag: noindex, nofollow` so the Markdown copies stay out of search results.
 
 ## AI agent redirect
 
-Holocron detects AI agents by their User-Agent string and automatically redirects them from the HTML page to the `.md` version with a 302. This means agents requesting `/quickstart` get the Markdown content directly.
+A client that requests a page's HTML URL (e.g. `/quickstart`) with an **`Accept` header starting with `text/markdown`** gets a **302 redirect** to the equivalent `.md` URL. There is **no User-Agent sniffing** — the redirect only fires when the client **explicitly asks for markdown**, so normal browsers always get the HTML page.
 
-The redirect only applies to recognized agent User-Agent strings. Normal browsers always get the HTML page.
+## Index redirect
+
+When your site has **no `index` page**, both `/index.md` and `/index.mdx` **redirect to the first page** in the navigation, so agents requesting the site root in Markdown still land somewhere useful.
 
 ## Sitemap comments
 
-The generated sitemap includes comments explaining that agents can append `.md` to page URLs and download `/docs.zip` for the full corpus.
+The generated `/sitemap.xml` includes **XML comments** explaining that agents can append `.md` to page URLs (with a concrete example like `/getting-started.md`) and download `/docs.zip` for the full corpus. It also emits **`<!-- Link: … -->` comments** for every navbar, anchor, and footer link, so crawlers and agents discover the same links humans see in the UI.

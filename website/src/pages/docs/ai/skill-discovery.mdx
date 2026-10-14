@@ -10,7 +10,7 @@ icon: radar
 
 # Skill Discovery
 
-Holocron implements the **agent-skills 0.2.0 discovery spec** (RFC 8615 extension) and a legacy format for backward compatibility. This lets AI agents discover your docs as a "skill" they can load.
+Holocron implements the **agent-skills 0.2.0 discovery spec** (RFC 8615 extension by Cloudflare) and a legacy format for backward compatibility. This lets AI agents discover your docs as a "skill" they can load.
 
 ## Discovery endpoints
 
@@ -21,15 +21,23 @@ Holocron implements the **agent-skills 0.2.0 discovery spec** (RFC 8615 extensio
 | `/.well-known/skills/index.json`            | Legacy JSON index   |
 | `/.well-known/skills/<name>/SKILL.md`       | Legacy skill file   |
 
-The `<name>` is derived from your site's `name` field in `docs.json` (lowercased, kebab-cased).
+The `<name>` is derived from your site's `name` field in `docs.json`: **lowercased, kebab-cased, and limited to 1-64 characters**. If the result is empty (e.g. a non-Latin name), Holocron **falls back to `docs`**.
+
+## Index JSON
+
+Both index endpoints advertise a single skill for your site.
+
+The **v0.2.0 index** at `/.well-known/agent-skills/index.json` declares its `$schema` (https://schemas.agentskills.io/discovery/0.2.0/schema.json) and lists the skill with `type: 'skill-md'`, a description, a relative `SKILL.md` URL, and a **`digest`** field containing the **SHA-256** of the generated SKILL.md (prefixed `sha256:`).
+
+The **legacy index** at `/.well-known/skills/index.json` is simpler, listing the skill `name`, `description`, and a `files` array containing `SKILL.md`.
 
 ## SKILL.md content
 
 The generated `SKILL.md` includes:
-- Frontmatter with `name` and `description` (from your config)
-- Instructions for fetching the sitemap
-- An example page `.md` route
-- Instructions for downloading `/docs.zip` and grepping it locally
+- **Frontmatter** with `name` and `description` (from your config)
+- Instructions for fetching **`/sitemap.xml`** to discover all available pages
+- An example `.md` route showing how to **append `.md`** to any page URL for raw Markdown
+- Instructions for downloading **`/docs.zip`** and **grepping it locally**
 
 ## How agents use this
 
@@ -49,4 +57,4 @@ The skill description comes from the `description` field in your `docs.json`:
 }
 ```
 
-If no description is set, Holocron generates a default from the site name.
+If no description is set, Holocron generates a default from the site name: `Documentation and usage guide for {name}. Use when working with {name} APIs, SDKs, or integrations.` Descriptions are truncated to 1024 characters.

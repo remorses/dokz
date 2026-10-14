@@ -19,7 +19,7 @@ Both follow the [llms.txt spec](https://llmstxt.org/).
 
 ## /llms.txt
 
-The index file lists the site name, description, a link to `/docs.zip` for bulk download, and every page with its title and `.md` URL. Agents read this to discover the site structure and then fetch individual pages.
+The index file lists the site name, description, a link to `/docs.zip` for bulk download, every page with its title and `.md` URL, plus **deduplicated navbar, anchor, and footer links** and **any OpenAPI spec files** the site exposes. Agents read this to discover the site structure and then fetch individual pages.
 
 ```bash
 curl https://your-docs-site.com/llms.txt
@@ -51,6 +51,19 @@ You can also fetch individual markdown pages directly:
 - [Getting Started](https://example.com/getting-started.md)
 - [Authentication](https://example.com/guides/auth.md)
 - [Deployment](https://example.com/deploy.md)
+
+## OpenAPI specs
+
+When the site exposes static spec files, they are listed here:
+
+- [api/openapi.json](https://example.com/api/openapi.json)
+
+## Links
+
+Navbar, anchor, and footer links, deduplicated by href:
+
+- [GitHub](https://github.com/example/docs)
+- [Changelog](https://github.com/example/docs/releases)
 ````
 
 ## /llms-full.txt
@@ -70,7 +83,7 @@ This is useful for agents that want to ingest the entire documentation set in on
 
 > Documentation and usage guide for My Docs.
 
-This file contains the full content of all documentation pages. For a compact index, see llms.txt. To download all pages as a zip, use docs.zip.
+This file contains the full content of all documentation pages. For a compact index, see [llms.txt](https://example.com/llms.txt). To download all pages as a zip, use [docs.zip](https://example.com/docs.zip).
 
 ---
 title: Getting Started

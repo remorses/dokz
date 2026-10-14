@@ -25,7 +25,7 @@ The assistant is enabled by default. To disable it:
 }
 ```
 
-When disabled, the sidebar widget, chat drawer, and mobile "Ask AI" button are hidden. The chat route still exists and returns `404 Assistant is disabled`.
+When disabled, the sidebar widget, floating bottom pill, chat drawer, and mobile "Ask AI" button are hidden. The chat route still exists and returns `404 Assistant is disabled`.
 
 ## Display location
 
@@ -42,7 +42,7 @@ The pill is hidden on phones.
 
 ## Suggested prompts
 
-The empty chat screen shows a short pitch and up to three **suggestion links**. Clicking a suggestion submits it as a prompt. Customize them with `assistant.suggestions`:
+The empty chat screen shows a short pitch and up to four **suggestion links**. Clicking a suggestion submits it as a prompt. Customize them with `assistant.suggestions`:
 
 ```json
 {
@@ -78,7 +78,7 @@ Set **`assistant.supportEmail`** so the assistant can send people to a human whe
 
 When this is set, the chat system prompt tells the model to share that address if the user wants to **talk to a human**, or if the question cannot be answered from the docs. The assistant answers from the docs first and does not invent other support channels.
 
-This address is also present in the page HTML, so use an inbox with spam filtering.
+The address is only used inside the chat system prompt, so it is not exposed in the page HTML.
 
 <Aside>
 <Tip>
@@ -90,7 +90,7 @@ Use a real inbox that your team reads. The assistant will quote this address in 
 
 The assistant uses the hosted Holocron AI gateway to process questions. When deployed, the docs app sends the current page plus either inline docs in local development or a `docs.zip` URL in production, then streams the answer back into the chat UI.
 
-Hosted chat uses Cloudflare Workers AI. Authenticated sites send `HOLOCRON_KEY`; unauthenticated requests use a temporary fallback with stricter IP rate limits. The default model is GLM 4.7 Flash.
+Hosted chat uses Cloudflare Workers AI. Authenticated sites send `HOLOCRON_KEY`; unauthenticated requests use a temporary fallback with stricter IP rate limits. The specific model is picked by the hosted gateway.
 
 ## Table of contents in the sidebar
 

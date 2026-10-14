@@ -52,7 +52,7 @@ Add social links to the footer with recognized platform names:
 }
 ```
 
-Supported platforms: `x`, `twitter`, `github`, `discord`, `slack`, `linkedin`, `youtube`, `instagram`, `facebook`, `medium`, `telegram`, `bluesky`, `threads`, `reddit`, `hacker-news`, `podcast`, `website`.
+Supported platforms: `x`, `twitter`, `x-twitter`, `github`, `discord`, `slack`, `linkedin`, `youtube`, `instagram`, `facebook`, `medium`, `telegram`, `bluesky`, `threads`, `reddit`, `hacker-news`, `podcast`, `website`, `earth-americas`.
 
 ### Footer link columns
 
@@ -81,6 +81,10 @@ Add organized link columns (up to 4):
 }
 ```
 
+### API reference tabs
+
+On OpenAPI and MCP reference tabs — tabs configured with `openapi` or `mcp` — the footer logo, social links, and link columns are hidden. Only the bottom row with the theme select and prev/next links stays.
+
 ## Banner
 
 Display a site-wide banner at the top of every page:
@@ -94,4 +98,4 @@ Display a site-wide banner at the top of every page:
 }
 ```
 
-The `content` field supports basic Markdown links (`[text](url)`). Set `dismissible: true` to show a close button.
+The `content` field is rendered inline and supports basic Markdown links (`[text](url)`); absolute URLs open in a new tab. Set `dismissible: true` (defaults to `false`) to show a close button.

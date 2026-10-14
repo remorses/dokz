@@ -63,8 +63,9 @@ Clicking a tab switches the sidebar content. The tab bar appears below the navba
 | -------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------ |
 | `tab`    | string               | Tab label in the tab bar                                                                                                 |
 | `groups` | array                | Sidebar groups inside the tab                                                                                            |
-| `pages`  | array                | Flat page list (no groups wrapper)                                                                                       |
+| `pages`  | array                | Flat page list (no groups wrapper)                                                                                    |
 | `icon`   | string               | Icon displayed next to the tab label                                                                                     |
+| `iconColor` | string            | Color for the tab icon (named colors or any CSS color string)                                                            |
 | `hidden` | boolean              | Hide from tab bar and sidebar but keep pages indexed for SEO. See [hidden tabs](/docs/organize/hidden-pages#hidden-tabs) |
 | `align`  | `"start"` \| `"end"` | Tab alignment in the tab bar                                                                                             |
 
@@ -103,6 +104,7 @@ Groups can contain other groups for deeper hierarchy:
 | `group`    | string  | Section title in the sidebar                     |
 | `pages`    | array   | Page slugs or nested groups                      |
 | `icon`     | string  | Icon displayed next to the group title           |
+| `iconColor`| string  | Color for the group icon (named colors or any CSS color string) |
 | `hidden`   | boolean | Hide the entire group from navigation            |
 | `expanded` | boolean | Whether the group starts expanded                |
 | `root`     | string  | Page slug to use as the group's clickable header |
@@ -110,7 +112,7 @@ Groups can contain other groups for deeper hierarchy:
 
 ## Anchors
 
-Anchors are persistent links rendered in the tab bar. They can be internal or external and appear alongside tabs regardless of which tab is active:
+Anchors are persistent links that stay visible regardless of which tab is active, and can be internal or external. By default they render in the left sidebar; set `placement: "tabs"` to render them in the header tab bar instead:
 
 ```json
 {
@@ -120,12 +122,14 @@ Anchors are persistent links rendered in the tab bar. They can be internal or ex
     ],
     "global": {
       "anchors": [
-        { "anchor": "GitHub", "href": "https://github.com/example", "icon": "github" },
+        { "anchor": "GitHub", "href": "https://github.com/example", "icon": "github", "placement": "tabs" },
         { "anchor": "Discord", "href": "https://discord.gg/example", "icon": "message-circle" }
       ]
     }
   }
 }
 ```
+
+The GitHub anchor renders in the tab bar (alongside the tabs) because it sets `placement: "tabs"`. The Discord anchor omits `placement`, so it defaults to `"sidebar"` and appears at the bottom of the left sidebar.
 
 You can also place `anchors` at the top level of the navigation object (equivalent to `global.anchors`).

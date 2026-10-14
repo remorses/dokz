@@ -29,4 +29,17 @@ This gives agents and developers a local copy of all documentation for offline s
 
 ## How it works
 
-The zip is generated on-the-fly from the same transformed MDX source used by `.md` routes. Each file in the archive corresponds to a page slug (e.g. `quickstart.md`, `guides/auth.md`).
+The zip is **generated on-the-fly** from the same transformed MDX source used by `.md` routes. Each file in the archive corresponds to a page slug (e.g. `quickstart.md`, `guides/auth.md`).
+
+### What's inside
+
+Every page becomes a `{slug}.md` file built with `buildMarkdownSource`:
+
+- A leading **`> Agent-readable docs index:` blockquote** that points agents at `/llms.txt`, `/llms-full.txt`, and `/docs.zip` itself
+- The page's MDX with **`<Visibility for="humans">` blocks stripped** — the same agent-facing Markdown served by the `.md` routes
+
+Any **static files** the site exposes (e.g. OpenAPI specs) are added to the archive alongside the pages.
+
+### Response headers
+
+The endpoint responds with `content-type: application/zip` and a `content-disposition: attachment; filename="docs.zip"` header, so browsers and tools save the archive as `docs.zip`.
