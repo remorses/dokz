@@ -76,13 +76,9 @@
     },
     "maxWidth": {
       "description": "Override the maximum content width. Accepts a number (treated as pixels, e.g. 700) or a CSS string (e.g. \"700px\", \"80%\", \"60ch\"). Useful with mode: \"custom\" to constrain the landing page container.",
-      "anyOf": [
-        {
-          "type": "number"
-        },
-        {
-          "type": "string"
-        }
+      "type": [
+        "number",
+        "string"
       ]
     },
     "hidden": {
@@ -126,24 +122,16 @@
     },
     "og:image:width": {
       "description": "Open Graph image width in pixels",
-      "anyOf": [
-        {
-          "type": "string"
-        },
-        {
-          "type": "number"
-        }
+      "type": [
+        "string",
+        "number"
       ]
     },
     "og:image:height": {
       "description": "Open Graph image height in pixels",
-      "anyOf": [
-        {
-          "type": "string"
-        },
-        {
-          "type": "number"
-        }
+      "type": [
+        "string",
+        "number"
       ]
     },
     "twitter:title": {
@@ -168,24 +156,16 @@
     },
     "twitter:image:width": {
       "description": "Twitter card image width in pixels",
-      "anyOf": [
-        {
-          "type": "string"
-        },
-        {
-          "type": "number"
-        }
+      "type": [
+        "string",
+        "number"
       ]
     },
     "twitter:image:height": {
       "description": "Twitter card image height in pixels",
-      "anyOf": [
-        {
-          "type": "string"
-        },
-        {
-          "type": "number"
-        }
+      "type": [
+        "string",
+        "number"
       ]
     },
     "cache-control": {

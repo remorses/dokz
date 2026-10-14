@@ -50,7 +50,7 @@
     "radix-ui": "latest",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
-    "spiceflow": "1.26.0-rsc.21",
+    "spiceflow": "1.26.0-rsc.22",
     "string-dedent": "^3.0.2",
     "stripe": "^22.2.0",
     "superjson": "^2.2.5",
@@ -58,7 +58,7 @@
     "tailwindcss": "^4.2.2",
     "ulid": "latest",
     "vite": "^8.3.4",
-    "zod": "latest"
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "^1.32.2",
