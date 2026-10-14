@@ -1,5 +1,19 @@
 # @holocron.so/vite
 
+## 0.37.1
+
+1. **React 19.3 and Vite 8.3.** Holocron now runs on spiceflow `1.26.0-rsc.21`, which needs React 19.3 and Vite 8.2 or newer. Update your docs project:
+
+   ```bash
+   pnpm add react@^19.3.0 react-dom@^19.3.0 vite@^8.3.4
+   ```
+
+   Error pages no longer leak secrets like API keys or tokens in stack traces. An open tab that navigates after a new deploy reloads to the new assets instead of crashing with `client reference not found`.
+
+2. **Faster page renders.** The cached MDX tree is no longer deep-copied with `structuredClone` on every request; all requests share one tree. On a long page (a 63k character README) the copy was about 14% of server CPU per request.
+
+3. **No more `dummy-non-existing-folder/` when running vitest.** Dev and test servers keep the Holocron cache in Vite's cache folder (`node_modules/.vite/holocron`). Builds still cache in `dist/`.
+
 ## 0.37.0
 
 1. **OpenAPI pages read much more of the spec.** Big fidelity pass, with Mintlify conventions:

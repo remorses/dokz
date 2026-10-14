@@ -1,3 +1,7 @@
+## 0.22.6
+
+1. **`holocron create` scaffolds React 19.3 and Vite 8.3**, the versions required by the latest `@holocron.so/vite`.
+
 ## 0.22.5
 
 1. **`holocron maintain` streams what OpenCode does.** Before, the log showed only `Starting OpenCode...` until the run ended. Now it prints task sessions, assistant messages, and every finished tool call with its duration. Failed tool calls show the error inline, and OpenCode server warnings and errors (for example provider rate limits) are printed too:
