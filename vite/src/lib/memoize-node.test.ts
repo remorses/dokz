@@ -1,6 +1,6 @@
 /**
  * Node LRU memoize tests. Covers hit/miss, error skip, eviction,
- * and clone-on-read so cached mdast is not mutated by render.
+ * and dev freezing so render cannot mutate the shared cached mdast.
  */
 
 import { describe, expect, test } from 'vitest'
@@ -23,8 +23,7 @@ describe('memoize node LRU', () => {
     const second = await parse('# Hello')
 
     expect(calls).toBe(1)
-    expect(first).toEqual(second)
-    expect(first).not.toBe(second)
+    expect(second).toBe(first)
   })
 
   test('different markdown is a miss', async () => {
@@ -120,7 +119,7 @@ describe('memoize node LRU', () => {
     expect(calls).toBe(4)
   })
 
-  test('clone-on-read keeps the cached tree clean', async () => {
+  test('hits share one deep-frozen value, so mutation throws in tests', async () => {
     let calls = 0
     const parse = memoize({
       namespace: 'mdx-parse',
@@ -132,10 +131,11 @@ describe('memoize node LRU', () => {
     })
 
     const first = await parse('hi')
-    first.children.push({ type: 'text', value: 'mutated' })
     const second = await parse('hi')
 
     expect(calls).toBe(1)
-    expect(second.children).toEqual([{ type: 'text', value: 'hi' }])
+    expect(second).toBe(first)
+    expect(() => first.children.push({ type: 'text', value: 'mutated' })).toThrow(TypeError)
+    expect(() => { first.children[0]!.value = 'mutated' }).toThrow(TypeError)
   })
 })

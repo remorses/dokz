@@ -2,10 +2,13 @@
  * In-memory LRU memoize. Vitest aliases `#memoize` here.
  * Workerd reuses the helpers for its isolate-local L1 cache.
  *
+ * Cached values are shared by every caller, never copied: callers must not
+ * mutate them. Dev and tests deep-freeze values so a mutation throws.
+ *
  * Bump CACHE_VERSION when the stored value shape or parser output changes.
  */
 
-const CACHE_VERSION = 'v2'
+const CACHE_VERSION = 'v3'
 const DEFAULT_MAX = 64
 
 export interface MemoizeOptions<Args extends unknown[], T> {
@@ -55,12 +58,17 @@ export class LruCache<T> {
   }
 }
 
-export function cloneCached<T>(value: T): T {
-  if (typeof value !== 'object' || value === null) return value
-  try {
-    return structuredClone(value)
-  } catch {
-    return value
+/** Deep-freezes in dev and tests, so mutating a shared cached value throws. Returns the value. */
+export function freezeInDev<T>(value: T): T {
+  if (import.meta.env?.DEV && typeof value === 'object' && value !== null) deepFreeze(value)
+  return value
+}
+
+function deepFreeze(value: object): void {
+  if (Object.isFrozen(value)) return
+  Object.freeze(value)
+  for (const child of Object.values(value)) {
+    if (typeof child === 'object' && child !== null) deepFreeze(child)
   }
 }
 
@@ -76,13 +84,10 @@ export function memoize<Args extends unknown[], T>(
     const material = key ? key(...args) : JSON.stringify(args)
     const cacheKey = await hashKey(namespace, material)
     const hit = lru.get(cacheKey)
-    if (hit !== undefined) return cloneCached(hit)
+    if (hit !== undefined) return hit
 
     const value = await fn(...args)
-    if (shouldCache(value)) {
-      lru.set(cacheKey, value)
-      return cloneCached(value)
-    }
+    if (shouldCache(value)) lru.set(cacheKey, freezeInDev(value))
     return value
   }
 }

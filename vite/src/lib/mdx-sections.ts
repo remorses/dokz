@@ -131,7 +131,13 @@ function laterSectionsHaveAsides(children: RootContent[]): boolean {
   return false
 }
 
-/** Page chrome uses `<Aside full>` when later sections have no asides. */
+/** Copy of an aside with nodes prepended. The parsed tree is cached and shared, so never mutate it. */
+function prependAsideChildren(aside: FlowJsxNode, nodes: FlowJsxNode[]): FlowJsxNode {
+  return { ...aside, children: [...nodes, ...aside.children] }
+}
+
+/** Page chrome uses `<Aside full>` when later sections have no asides.
+ *  Only splices `children`, a fresh array from buildSections. */
 function injectPageChrome(children: RootContent[], enableAssistant: boolean) {
   const injectedNodes = pageChromeNodes(enableAssistant)
   const authoredAsides = children.filter(isAsideNode)
@@ -148,12 +154,9 @@ function injectPageChrome(children: RootContent[], enableAssistant: boolean) {
   }
 
   if (onlyFullAside) {
-    onlyFullAside.children.unshift(...injectedNodes)
     const idx = children.indexOf(onlyFullAside)
-    if (idx !== insertAt) {
-      children.splice(idx, 1)
-      children.splice(insertAt, 0, onlyFullAside)
-    }
+    children.splice(idx, 1)
+    children.splice(insertAt, 0, prependAsideChildren(onlyFullAside, injectedNodes))
     return
   }
 
@@ -168,7 +171,7 @@ function injectPageChrome(children: RootContent[], enableAssistant: boolean) {
   if (firstFullAsideIdx !== -1) {
     const asideNode = children[firstFullAsideIdx]
     if (asideNode && isAsideNode(asideNode)) {
-      asideNode.children.unshift(...injectedNodes)
+      children[firstFullAsideIdx] = prependAsideChildren(asideNode, injectedNodes)
     }
     return
   }

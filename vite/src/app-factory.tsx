@@ -344,8 +344,6 @@ function renderMdxPage({
   const pageOgUrl = pageSeoMeta['og:url'] ?? new URL(pageHref, requestUrl.origin).toString()
 
   const mdast = preParsedMdast
-  demoteBodyH1s(mdast.children)
-  assignUniqueHeadingIds(mdast.children)
 
   const activeTab = findActiveTab(site, loaderData.currentPageHref)
   const configuredPageMode = resolvePageMode({
@@ -597,10 +595,17 @@ function renderMdxParseErrorPage({
   )
 }
 
+// The cached tree is shared by all requests: render must not mutate it.
+// Heading fixes depend only on the markdown, so they run once here.
 const parseMarkdownCached = memoize({
   namespace: 'mdx-parse',
   key: (markdown: string) => markdown,
-  fn: (markdown: string) => mdxParse(markdown),
+  fn: (markdown: string) => {
+    const mdast = mdxParse(markdown)
+    demoteBodyH1s(mdast.children)
+    assignUniqueHeadingIds(mdast.children)
+    return mdast
+  },
 })
 
 /** Runtime parse boundary for MDX loaded during request render. */

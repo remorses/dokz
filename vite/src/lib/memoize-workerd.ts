@@ -12,7 +12,7 @@
  */
 
 import {
-  cloneCached,
+  freezeInDev,
   hashKey,
   LruCache,
   shouldCache,
@@ -82,7 +82,7 @@ export function memoize<Args extends unknown[], T>(
     const cacheKey = await hashKey(namespace, material)
 
     const memoryHit = lru.get(cacheKey)
-    if (memoryHit !== undefined) return cloneCached(memoryHit)
+    if (memoryHit !== undefined) return memoryHit
 
     const cache = await openMemoizeCache()
     const req = cacheRequest(cacheKey)
@@ -92,8 +92,8 @@ export function memoize<Args extends unknown[], T>(
         if (hit) {
           const cached = (JSON.parse(await hit.text(), reviver) as { value: T }).value
           if (shouldCache(cached)) {
-            lru.set(cacheKey, cached)
-            return cloneCached(cached)
+            lru.set(cacheKey, freezeInDev(cached))
+            return cached
           }
         }
       } catch {}
@@ -101,7 +101,7 @@ export function memoize<Args extends unknown[], T>(
 
     const value = await fn(...args)
     if (shouldCache(value)) {
-      lru.set(cacheKey, value)
+      lru.set(cacheKey, freezeInDev(value))
       if (cache && req) {
         try {
           await cache.put(req, new Response(JSON.stringify({ value }, replacer), {
@@ -112,7 +112,6 @@ export function memoize<Args extends unknown[], T>(
           }))
         } catch {}
       }
-      return cloneCached(value)
     }
     return value
   }
