@@ -70,14 +70,14 @@ export function Logo({ className, alt, style, text, ...props }: LogoProps) {
   return <img {...props} src={logo.light} alt={label} className={cn('h-6 w-auto', className, 'dark:invert')} style={baseStyle} />
 }
 
-export function Footer() {
+export function Footer({ hideLinks = false }: { hideLinks?: boolean }) {
   const { site, githubStars } = useHolocronData()
   const siteConfig = site.config
   const siteLogo = getResolvedLogo(site)
   const { socials, links } = siteConfig.footer
   const hasSocials = Object.keys(socials).length > 0
   const hasLinks = links.length > 0
-  if (!hasSocials && !hasLinks) {
+  if (hideLinks || (!hasSocials && !hasLinks)) {
     return (
       <footer className='bg-background'>
         <PoweredBy />

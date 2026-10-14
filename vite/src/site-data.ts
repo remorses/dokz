@@ -416,7 +416,8 @@ export function findActiveTab(site: HolocronSiteData, pageHref: string | undefin
   return resolveActiveNavigationTabs(site, pageHref).find((tab) => collectTabPageHrefs(tab).includes(pageHref))
 }
 
-export function tabDisablesCompact(tab: { openapi?: unknown; mcp?: unknown } | undefined): boolean {
+/** OpenAPI and MCP tabs: no compact mode, no footer links. */
+export function isApiReferenceTab(tab: { openapi?: unknown; mcp?: unknown } | undefined): boolean {
   return Boolean(tab?.openapi || tab?.mcp)
 }
 

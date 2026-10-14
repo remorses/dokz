@@ -16,7 +16,7 @@ import {
   type Navigation,
 } from './navigation.ts'
 import { parsePageFrontmatter } from './lib/page-frontmatter.ts'
-import { buildTabItems, buildVisibleSiteData, collectAncestorGroupKeys, collectDefaultExpandedKeys, findActiveTab, findActiveVersion, resolveActiveNavigationTabs, resolveActiveVersionHref, tabDisablesCompact, type HolocronSiteData } from './site-data.ts'
+import { buildTabItems, buildVisibleSiteData, collectAncestorGroupKeys, collectDefaultExpandedKeys, findActiveTab, findActiveVersion, resolveActiveNavigationTabs, resolveActiveVersionHref, isApiReferenceTab, type HolocronSiteData } from './site-data.ts'
 
 /* ── Test fixtures ───────────────────────────────────────────────────── */
 
@@ -192,7 +192,7 @@ describe('folder-index group.root', () => {
   })
 })
 
-describe('API and MCP tabs disable compact', () => {
+describe('API and MCP tabs are API reference tabs', () => {
   test('finds the tab that owns a page and disables compact for openapi and mcp tabs', () => {
     const apiTab: NavTab = {
       tab: 'API',
@@ -209,9 +209,9 @@ describe('API and MCP tabs disable compact', () => {
       switchers: { versions: [], dropdowns: [] },
     } as HolocronSiteData
 
-    expect(tabDisablesCompact(findActiveTab(site, '/guide/overview'))).toBe(true)
-    expect(tabDisablesCompact(findActiveTab(site, '/docs/mcp/index'))).toBe(true)
-    expect(tabDisablesCompact(findActiveTab(site, '/introduction'))).toBe(false)
+    expect(isApiReferenceTab(findActiveTab(site, '/guide/overview'))).toBe(true)
+    expect(isApiReferenceTab(findActiveTab(site, '/docs/mcp/index'))).toBe(true)
+    expect(isApiReferenceTab(findActiveTab(site, '/introduction'))).toBe(false)
   })
 })
 

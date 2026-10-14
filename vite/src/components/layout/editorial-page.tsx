@@ -90,6 +90,7 @@ export function EditorialPage({
   gridGap,
   mode,
   maxWidth,
+  hideFooterLinks,
 }: {
   sidebar?: React.ReactNode
   children?: React.ReactNode
@@ -109,6 +110,8 @@ export function EditorialPage({
   maxWidth?: number | string
   /** Mintlify-compatible page mode from MDX frontmatter. */
   mode?: PageMode
+  /** Drop footer logo, socials and link columns. Used on API and MCP reference pages. */
+  hideFooterLinks?: boolean
 }) {
   const { site, currentPageHref, activeTabHref, activeVersionHref, activeDropdownHref, githubStars } = useHolocronData()
   const siteConfig = site.config
@@ -311,7 +314,7 @@ export function EditorialPage({
           <div className='flex flex-col gap-(--prose-gap) grow'>
             {children}
           </div>
-          <Footer />
+          <Footer hideLinks={hideFooterLinks} />
         </div>
       ) : (
       /* Outer decorative frame wrapper — relative so GridLinesFrame lines
@@ -460,7 +463,7 @@ export function EditorialPage({
                 className='slot-main flex flex-col justify-end lg:col-[1]'
                 style={{ gridRow: sections.length + 1 }}
               >
-                <Footer />
+                <Footer hideLinks={hideFooterLinks} />
               </div>
             </Fragment>
           ) : (
@@ -471,7 +474,7 @@ export function EditorialPage({
                   {children}
                 </article>
                 <div className='grow' />
-                <Footer />
+                <Footer hideLinks={hideFooterLinks} />
               </div>
 
               {showRightAside && <div className='slot-sidebar-right lg:!col-[2] lg:self-stretch'>

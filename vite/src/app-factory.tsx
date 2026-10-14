@@ -77,7 +77,7 @@ import {
   resolveActiveDropdownHref,
   resolveActiveTabHref,
   resolveActiveVersionHref,
-  tabDisablesCompact,
+  isApiReferenceTab,
 } from './site-data.ts'
 import type { HolocronConfig, ConfigNavTab, ConfigNavGroup } from './config.ts'
 import { collectIconRefs, dedupeIconRefs, type IconRef } from './lib/collect-icons.ts'
@@ -345,11 +345,11 @@ function renderMdxPage({
 
   const mdast = preParsedMdast
 
-  const activeTab = findActiveTab(site, loaderData.currentPageHref)
+  const isApiReference = isApiReferenceTab(findActiveTab(site, loaderData.currentPageHref))
   const configuredPageMode = resolvePageMode({
     frontmatterMode: loaderData.currentPageFrontmatter?.mode,
     siteMode: site.config.layout.mode,
-    disableCompact: tabDisablesCompact(activeTab),
+    disableCompact: isApiReference,
   })
 
   // Compute the baseUrl for resolving relative imports in MDX.
@@ -384,7 +384,7 @@ function renderMdxPage({
           <Head.Meta name='twitter:image' content={pageTwitterImage} />
           <Head.Meta name='twitter:card' content={pageTwitterCard} />
         </Head>
-        <EditorialPage mode={configuredPageMode} bannerContent={bannerJsx} maxWidth={maxWidth}>
+        <EditorialPage mode={configuredPageMode} bannerContent={bannerJsx} maxWidth={maxWidth} hideFooterLinks={isApiReference}>
           <RenderNodes markdown={pageMdx} nodes={mdast.children} modules={modules} baseUrl={mdxBaseUrl} source={mdxSourcePath} />
         </EditorialPage>
       </>
@@ -556,7 +556,7 @@ function renderMdxPage({
               : <Head.Meta key={name} name={name} content={content} />
           ))}
       </Head>
-      <EditorialPage mode={pageMode} sections={sections} above={above} bannerContent={bannerJsx} sidebarWidth={sidebarWidth} gridGap={gridGap} />
+      <EditorialPage mode={pageMode} sections={sections} above={above} bannerContent={bannerJsx} sidebarWidth={sidebarWidth} gridGap={gridGap} hideFooterLinks={isApiReference} />
     </>
   )
 }
