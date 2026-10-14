@@ -236,13 +236,13 @@ async function scaffold(options: ScaffoldOptions) {
     },
     dependencies: {
       '@holocron.so/vite': 'latest',
-      react: '^19.2.5',
-      'react-dom': '^19.2.5',
-      vite: '^8.0.10',
+      react: '^19.3.0',
+      'react-dom': '^19.3.0',
+      vite: '^8.3.4',
     },
     devDependencies: {
-      '@types/react': '^19.2.7',
-      '@types/react-dom': '^19.2.3',
+      '@types/react': '^19.3.0',
+      '@types/react-dom': '^19.3.0',
       typescript: '^5.9.3',
     },
   }
