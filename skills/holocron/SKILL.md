@@ -540,6 +540,36 @@ curl -sL -A 'Mozilla/5.0 (compatible; Googlebot/2.1)' 'https://example.com/' -o 
 
 Confirm **exactly one `<h1>`**, that H1 text matches `title`, and `<title>` is `{title} — {site name}` with the site name only at the end. Rank will not move until Google recrawls.
 
+## Readable text over hero backgrounds
+
+Text over a `VideoBackgroundShader` hero is hard to see: the animated glyphs
+fight with the letters. Always add contrast layers.
+
+**Heading and CTAs:** add a radial scrim that fades the background in the
+center, behind the content (`z-[1]`, below the text at `z-[2]`):
+
+```tsx
+<div
+  aria-hidden
+  className='absolute inset-0 z-[1] pointer-events-none'
+  style={{
+    background:
+      'radial-gradient(ellipse 45% 40% at 50% 42%, color-mix(in srgb, var(--background) 85%, transparent) 0%, color-mix(in srgb, var(--background) 60%, transparent) 50%, transparent 100%)',
+  }}
+/>
+```
+
+**Subheading and small text:** give it a blurred, semi-transparent pill. Small
+muted text is unreadable over glyphs without it:
+
+```tsx
+<p className='rounded-xl bg-background/50 px-3 py-1.5 text-sm text-muted-foreground backdrop-blur-md'>
+  Paste the prompt into your agent
+</p>
+```
+
+Also keep `dotColor` close to the page background so the title keeps contrast.
+
 ## Page modes — hiding sidebars
 
 Set **`mode`** in frontmatter to hide sidebars. Use for landing pages, tool pages, or pages that should not show left nav or AI chat. See https://holocron.so/docs/customize/layout.md for details.
@@ -699,6 +729,44 @@ and return 404.
 
 Read the existing navigation structure first, then place the page in the best
 tab, group, and reading order.
+
+### Legal and support pages: hidden group plus footer
+
+Privacy policy, terms of service, support and similar pages are **not interesting
+for readers**. Never show them in the sidebar. Put them in a group with
+`"hidden": true` (still served and indexed) and link them from `footer.links`:
+
+```jsonc
+{
+  "navigation": {
+    "groups": [
+      // ...real docs groups
+      {
+        "group": "Legal",
+        "hidden": true,
+        "pages": ["docs/privacy", "docs/terms", "docs/support"]
+      }
+    ]
+  },
+  "footer": {
+    "links": [
+      {
+        "header": "Legal",
+        "items": [
+          { "label": "Privacy", "href": "/docs/privacy" },
+          { "label": "Terms", "href": "/docs/terms" },
+          { "label": "Support", "href": "/docs/support" }
+        ]
+      }
+    ]
+  }
+}
+```
+
+Use the group `hidden` flag, not `hidden: true` in page frontmatter: frontmatter
+`hidden` also adds `noindex`. Add `"redirects"` from the standard short paths
+(`/privacy`, `/terms`, `/support`) with `"permanent": true`, because app stores
+and OAuth consent screens often expect them.
 
 ### Where to put new content
 
