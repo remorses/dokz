@@ -596,7 +596,8 @@ function createVideoShaderEngine(container: HTMLElement, config: Required<Omit<V
       lens.y = targetY
     }
     if (inside) {
-      const follow = 1 - Math.exp(-dt * 14)
+      // Rate 5 trails the pointer by ~200ms
+      const follow = 1 - Math.exp(-dt * 5)
       lens.x += (x - lens.x) * follow
       lens.y += (targetY - lens.y) * follow
     }
