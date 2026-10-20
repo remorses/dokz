@@ -86,6 +86,32 @@ Cloudflare's Asset Worker looks paths up in the uploaded directory tree and neve
 </Note>
 </Aside>
 
+## Prerendered pages
+
+Set **`rendering: static`** in a page's frontmatter to render it once at build time. Use it for pages that never read cookies or headers, like a landing page:
+
+```mdx
+---
+title: "Native apps with React"
+rendering: static
+---
+```
+
+The Worker serves the stored HTML through the **`ASSETS` binding**, so add one:
+
+```jsonc
+// wrangler.jsonc
+{
+  "assets": { "binding": "ASSETS" }
+}
+```
+
+Absolute URLs in a prerendered page (`og:url`, the OG image label) use the single host in your Worker `routes`. When routes list several hosts, for example the apex and `www`, pass **`prerenderOrigin`**:
+
+```ts
+holocron({ prerenderOrigin: 'https://example.com' })
+```
+
 ## Custom entry with Workers
 
 If you use a [custom entry](/docs/custom-entry), your Spiceflow app runs as the Worker entry point. You can add Cloudflare-specific bindings (KV, D1, AI) alongside your docs.

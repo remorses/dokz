@@ -73,6 +73,7 @@ prompt: |
 | `api`                 | string    | Mintlify API page label like `GET /users`                                                                                                                                           |
 | `hidden`              | boolean   | Hides the page from navigation and adds `noindex`                                                                                                                                   |
 | `noindex`             | boolean   | Keeps the page visible but adds robots `noindex`                                                                                                                                    |
+| `rendering`           | string    | `"ssr"` (default) renders on every request. `"static"` prerenders the page at build time. See [Prerendered pages](../deploy/cloudflare.mdx#prerendered-pages)                       |
 | `cache-control`       | string    | Custom response cache header                                                                                                                                                        |
 | `keywords`            | string\[] | Additional keywords for search                                                                                                                                                      |
 | `robots`              | string    | Custom robots meta value                                                                                                                                                            |

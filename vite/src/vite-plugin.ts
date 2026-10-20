@@ -82,6 +82,13 @@ export type HolocronPluginOptions = {
    * so processor changes are not hidden by a stale page cache.
    */
   pageCache?: boolean
+  /**
+   * Public origin (e.g. `https://example.com`) that `rendering: static` pages
+   * see as the request URL while prerendering, so og:url and other absolute
+   * URLs are correct. On Cloudflare it defaults to the single host in the
+   * Worker `routes`; set it when routes list several hosts (apex and www).
+   */
+  prerenderOrigin?: string
 }
 
 const VIRTUAL_CONFIG = 'virtual:holocron-config'
@@ -1459,6 +1466,7 @@ export function holocron(options: HolocronPluginOptions = {}): PluginOption {
       entry: options.entry ?? VIRTUAL_APP,
       serveStaticImport: '@holocron.so/vite/src/serve-static',
       externalizeShared: options.externalizeShared ?? false,
+      prerenderOrigin: options.prerenderOrigin,
     })
     pluginsToReturn.push(
       ...(Array.isArray(spiceflowPlugins)
