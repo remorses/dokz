@@ -1,3 +1,7 @@
+## 0.22.7
+
+1. **Same spiceflow as `@holocron.so/vite`.** The CLI now uses spiceflow `1.26.0-rsc.22`, so installing both packages no longer pulls two spiceflow versions. `zod` is pinned to `^4.6.7` instead of `latest`.
+
 ## 0.22.6
 
 1. **`holocron create` scaffolds React 19.3 and Vite 8.3**, the versions required by the latest `@holocron.so/vite`.

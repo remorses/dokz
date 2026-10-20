@@ -1,5 +1,24 @@
 # @holocron.so/vite
 
+## 0.37.2
+
+1. **Smaller pages, faster renders.** The sidebar no longer renders the hidden heading lists of every other page; only the current page and pages matching a search show their headings. On holocron.so this removes about 225 KB of HTML per page (about 37%). The sidebar search index is now built on the first search query, not on every server render, hydration and client navigation. Before, that was about 30% of server CPU per page on a large docs site.
+
+2. **Ask AI no longer sits above the API playground.** Pages whose right aside holds `RequestExample` or `ResponseExample` (OpenAPI endpoint pages, MCP tool pages, or authored pages using them) show the floating Ask AI pill instead, so the request and response examples keep the full aside. Overview pages in OpenAPI and MCP tabs still show the Ask AI widget at the top of the right aside.
+
+3. **Cleaner footer on API reference pages.** OpenAPI and MCP tabs no longer show the footer logo, socials and link columns. The bottom row with the theme select and prev/next links stays.
+
+4. **Generated OpenAPI, MCP and changelog pages are valid MDX for any spec text.** Text like `{"lease":"studio:42"}`, `<id>` or a stray ``` in a description or example can no longer break a page.
+
+   - Endpoint, MCP tool and MCP resource descriptions are now escaped Markdown inside the page, not a JSON prop. They show up in the page's `.md` export.
+   - Code fences in request and response examples are longer than any backtick run inside them.
+   - Raw HTML blocks in spec Markdown stay separate paragraphs instead of joining the text around them.
+   - OpenAPI `x-holocron.content` (and `x-mint.content`) is now page content placed before the endpoint, not a child of it.
+
+5. **`<Markdown>` never returns a 500.** When its text is not valid MDX (for example `{"lease":"studio:42"}`), it logs a warning and shows the raw text.
+
+6. **`vite build` no longer hangs after prerender** when `wrangler.jsonc` has remote bindings (for example `ai`). Holocron now uses spiceflow `1.26.0-rsc.22`.
+
 ## 0.37.1
 
 1. **React 19.3 and Vite 8.3.** Holocron now runs on spiceflow `1.26.0-rsc.21`, which needs React 19.3 and Vite 8.2 or newer. Update your docs project:

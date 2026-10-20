@@ -1,6 +1,6 @@
 {
   "name": "@holocron.so/cli",
-  "version": "0.22.6",
+  "version": "0.22.7",
   "description": "CLI for Holocron: manage API keys and authenticate with holocron.so",
   "keywords": [
     "cli",
