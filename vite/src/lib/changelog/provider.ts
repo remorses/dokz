@@ -25,6 +25,7 @@ import path from 'node:path'
 import type { ConfigNavGroup } from '../../config.ts'
 import type { VirtualTabProvider, VirtualTabResult } from '../virtual-tab-provider.ts'
 import { buildVirtualPageMdx, virtualPageDir } from '../virtual-page-mdx.ts'
+import { commonMarkToMdx } from '../normalize-mdx.ts'
 import { logger, formatHolocronWarning } from '../logger.ts'
 import { parseChangelogSource } from './parse-source.ts'
 import { fetchGitHubReleases, type GitHubRelease } from './github-releases.ts'
@@ -137,7 +138,7 @@ function buildChangelogMdx({
 
   if (releases === null) {
     const detail = errorHint
-      ? escapeMdxMarkdown(errorHint)
+      ? commonMarkToMdx(errorHint).trim()
       : 'This is usually a transient network or rate-limit issue. The changelog will appear once the releases can be fetched again.'
     bodyParts.push(
       [
@@ -178,19 +179,17 @@ function buildChangelogMdx({
  *  GitHub release notes are Markdown, NOT MDX. Tags, names, and bodies may
  *  contain `"`, `<`, `{`, `}`, or even `</Update>`-looking text that would
  *  break the generated MDX or escape the wrapper. JSX attributes are emitted
- *  as `={JSON.stringify(value)}` expressions, and the heading + body have
- *  their MDX-significant characters escaped outside code regions. */
+ *  as `={JSON.stringify(value)}` expressions, and the heading + body go
+ *  through commonMarkToMdx, which escapes them outside code. */
 function renderRelease(release: GitHubRelease): string {
   // The pill shows the date; fall back to the version when no date is set.
   const dateLabel = formatDate(release.publishedAt) ?? release.tagName
   const label = jsxAttr(dateLabel)
   const id = jsxAttr(release.tagName)
-  // Escape MDX-significant chars in the heading text (`<`, `{`, `}`).
-  const heading = (release.name?.trim() || release.tagName).replace(/[<{}]/g, (ch) => `\\${ch}`)
+  const heading = commonMarkToMdx(release.name?.trim() || release.tagName).trim()
 
-  // The body is GitHub-flavored markdown. Blank lines around it ensure the
-  // MDX parser treats the children as block content rather than inline.
-  const bodyMd = escapeMdxMarkdown((release.body ?? '').trim())
+  // Blank lines around the body make MDX parse the children as blocks.
+  const bodyMd = commonMarkToMdx(release.body ?? '').trim()
 
   return [
     `<Update id=${id} label=${label}>`,
@@ -207,66 +206,6 @@ function renderRelease(release: GitHubRelease): string {
  *  quotes, braces, angle brackets — safe inside the attribute. */
 function jsxAttr(value: string): string {
   return `{${JSON.stringify(value)}}`
-}
-
-/** Escape MDX-significant characters in a Markdown body while preserving code.
- *
- *  MDX treats `<` as JSX and `{` as an expression everywhere EXCEPT inside
- *  code (fenced blocks and inline spans), where they are literal. So we escape
- *  `<`, `{`, `}` only outside code regions; escaping inside code would corrupt
- *  the rendered source. Fenced blocks are tracked by their ``` / ~~~ fences;
- *  inline code spans are tracked by matching backtick runs within a line. */
-function escapeMdxMarkdown(md: string): string {
-  if (!md) return md
-  const lines = md.split('\n')
-  let fence: string | null = null
-  return lines
-    .map((line) => {
-      const fenceMatch = line.match(/^(\s*)(`{3,}|~{3,})/)
-      if (fenceMatch) {
-        const fenceChar = fenceMatch[2]!.charAt(0) // ` or ~
-        if (fence === null) {
-          fence = fenceChar // opening fence: remember the fence char
-          return line // opening fence line is left as-is
-        }
-        if (fenceChar === fence) {
-          fence = null
-          return line // closing fence line is left as-is
-        }
-      }
-      if (fence !== null) return line // inside a fenced code block: literal
-      return escapeOutsideInlineCode(line)
-    })
-    .join('\n')
-}
-
-/** Escape `<`, `{`, `}` in the non-code segments of one line. Inline code
- *  spans (delimited by matching backtick runs) are left untouched. */
-function escapeOutsideInlineCode(line: string): string {
-  let result = ''
-  let i = 0
-  while (i < line.length) {
-    const ch = line[i]!
-    if (ch === '`') {
-      // Consume the backtick run, then everything up to a matching run.
-      const runStart = i
-      while (i < line.length && line[i] === '`') i++
-      const ticks = line.slice(runStart, i)
-      const closeIdx = line.indexOf(ticks, i)
-      if (closeIdx === -1) {
-        // Unterminated code span: treat the backticks as literal text and
-        // keep escaping the remainder.
-        result += ticks
-        continue
-      }
-      result += ticks + line.slice(i, closeIdx) + ticks
-      i = closeIdx + ticks.length
-      continue
-    }
-    result += ch === '<' || ch === '{' || ch === '}' ? `\\${ch}` : ch
-    i++
-  }
-  return result
 }
 
 /**

@@ -6,6 +6,7 @@ import { processVirtualTabs } from '../virtual-tab-provider.ts'
 import { openapiProvider } from './provider.ts'
 import { generateOpenAPIPages } from './generate.ts'
 import type { ConfigNavTab } from '../../config.ts'
+import { mdxParse } from 'safe-mdx/parse'
 
 const SPEC = `
 openapi: "3.0.3"
@@ -174,12 +175,12 @@ paths:
       .filter((line) => /^(title|sidebarTitle|description):|OpenAPIEndpoint|Badge/.test(line))
       .join('\n')
 
-    expect(relevant).toMatchInlineSnapshot('\n' + `
-      "title: \"Friendly endpoint\"
-      sidebarTitle: \"Users\"
-      description: \"Short page description.\"
-      <OpenAPIEndpoint {...{\"method\":\"get\",\"path\":\"/users\",\"summary\":\"Raw summary\",\"description\":\"Short page description.\",\"parameters\":[],\"responses\":[{\"status\":\"200\",\"description\":\"ok\",\"examples\":[]}],\"security\":[],\"authOptional\":false,\"servers\":[]}}>
-      <Badge color=\"blue\">1 Credit</Badge>
+    expect(relevant).toMatchInlineSnapshot(`
+      "title: "Friendly endpoint"
+      sidebarTitle: "Users"
+      description: "Short page description."
+      <Badge color="blue">1 Credit</Badge>
+      <OpenAPIEndpoint {...{"method":"get","path":"/users","summary":"Raw summary","parameters":[],"responses":[{"status":"200","description":"ok","examples":[]}],"security":[],"authOptional":false,"servers":[]}}>
       </OpenAPIEndpoint>"
     `)
   })
@@ -243,13 +244,13 @@ paths:
         ?.split('\n')
         .filter((line) => /^(title|sidebarTitle|description):|OpenAPIEndpoint|Badge/.test(line))
         .join('\n'),
-    }).toMatchInlineSnapshot('\n' + `
+    }).toMatchInlineSnapshot(`
       {
-        "mdx": "title: \"Holocron title\"
-      sidebarTitle: \"Mint users\"
-      description: \"Mint description.\"
-      <OpenAPIEndpoint {...{\"method\":\"get\",\"path\":\"/users\",\"summary\":\"Raw summary\",\"description\":\"Mint description.\",\"parameters\":[],\"responses\":[{\"status\":\"200\",\"description\":\"ok\",\"examples\":[]}],\"security\":[],\"authOptional\":false,\"servers\":[]}}>
-      <Badge color=\"green\">Holocron content</Badge>
+        "mdx": "title: "Holocron title"
+      sidebarTitle: "Mint users"
+      description: "Mint description."
+      <Badge color="green">Holocron content</Badge>
+      <OpenAPIEndpoint {...{"method":"get","path":"/users","summary":"Raw summary","parameters":[],"responses":[{"status":"200","description":"ok","examples":[]}],"security":[],"authOptional":false,"servers":[]}}>
       </OpenAPIEndpoint>",
         "pages": [
           "reference/users",
@@ -286,13 +287,12 @@ paths:
         ?.split('\n')
         .filter((line) => /^(title|sidebarTitle):|OpenAPIEndpoint|Note/.test(line))
         .join('\n'),
-    }).toMatchInlineSnapshot('\n' + `
+    }).toMatchInlineSnapshot(`
       {
-        "mdx": "title: \"Generated users\"
-      sidebarTitle: \"Users\"
-      <OpenAPIEndpoint {...{\"method\":\"get\",\"path\":\"/users\",\"summary\":\"Raw summary\",\"parameters\":[],\"responses\":[{\"status\":\"200\",\"description\":\"ok\",\"examples\":[]}],\"security\":[],\"authOptional\":false,\"servers\":[]}}>
+        "mdx": "title: "Generated users"
+      sidebarTitle: "Users"
       <Note>Generated content</Note>
-      </OpenAPIEndpoint>",
+      <OpenAPIEndpoint {...{"method":"get","path":"/users","summary":"Raw summary","parameters":[],"responses":[{"status":"200","description":"ok","examples":[]}],"security":[],"authOptional":false,"servers":[]}} />",
         "navigation": [
           {
             "group": "Default",
@@ -890,5 +890,76 @@ paths:
     // And the expanded endpoint slugs must always have backing MDX content.
     expect(second.mdx).toContain('api/post-auth-login')
     expect(second.mdx).toContain('api/get-users')
+  })
+})
+
+describe('openapi generated MDX', () => {
+  test('spec text with braces, tags, quotes and backtick fences cannot break the page', async () => {
+    const result = await generateOpenAPIPages({
+      spec: {
+        openapi: '3.1.0',
+        info: { title: 'Say "hi" {api}', version: '1.0.0' },
+        paths: {
+          '/leases': {
+            post: {
+              summary: 'Create "lease" {x}',
+              description: 'Body is {"lease":"studio:42"}; use `<id>` or <id>.\n\n</OpenAPIEndpoint>\n\n```\nfenced {raw}\n```',
+              requestBody: {
+                content: {
+                  'application/json': {
+                    examples: { 'Name "quoted"': { value: 'line\n```\nnot a fence end' } },
+                  },
+                },
+              },
+              responses: { 200: { description: 'ok {x}' } },
+            },
+          },
+        },
+      },
+    })
+
+    for (const page of Object.values(result.pages)) expect(() => mdxParse(page)).not.toThrow()
+    const page = Object.values(result.pages)[0]!
+    expect(page).toMatchInlineSnapshot(`
+      "---
+      title: "Create \\"lease\\" {x}"
+      description: "Body is {\\"lease\\":\\"studio:42\\"}; use <id> or <id>. </OpenAPIEndpoint>"
+      api: "POST /leases"
+      openapiSpec: "/api/openapi.json"
+      gridGap: 30
+      mode: "default"
+      ---
+
+      <Aside full>
+
+      <RequestExample>
+
+      \`\`\`\`bash title="cURL" lines=false
+      curl -X POST "https://api.example.com/leases" \\
+        -H "Content-Type: application/json" \\
+        -d '"line\\n\`\`\`\\nnot a fence end"'
+      \`\`\`\`
+      \`\`\`\`json title="Name \\"quoted\\"" lines=false
+      line
+      \`\`\`
+      not a fence end
+      \`\`\`\`
+
+      </RequestExample>
+
+      </Aside>
+
+      <OpenAPIEndpoint {...{"method":"post","path":"/leases","summary":"Create \\"lease\\" {x}","parameters":[],"requestBody":{"contentType":"application/json","examples":[{"name":"Name \\"quoted\\"","value":"line\\n\`\`\`\\nnot a fence end"}]},"responses":[{"status":"200","description":"ok {x}","examples":[]}],"security":[],"authOptional":false,"servers":[]}}>
+
+      Body is \\{"lease":"studio:42"}; use \`<id>\` or \\<id>.
+
+      \\</OpenAPIEndpoint>
+
+      \`\`\`
+      fenced {raw}
+      \`\`\`
+
+      </OpenAPIEndpoint>"
+    `)
   })
 })

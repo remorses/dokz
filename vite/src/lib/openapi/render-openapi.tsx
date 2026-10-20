@@ -44,11 +44,11 @@ export interface ResponseInfo {
 }
 
 export interface OpenAPIEndpointProps {
+  /** The operation description, as escaped Markdown children in the page MDX. */
   children?: React.ReactNode
   method: string
   path: string
   summary?: string
-  description?: string
   parameters: ParameterInfo[]
   requestBody?: {
     required?: boolean
@@ -170,18 +170,15 @@ export function OpenAPIEndpoint(props: OpenAPIEndpointProps) {
 
   return (
     <div className='flex flex-col gap-(--prose-gap) text-sm'>
-      {props.children ? (
-        <div className='no-bleed flex flex-col gap-(--prose-gap)'>
-          {props.children}
-        </div>
-      ) : null}
       <div className='flex flex-col gap-2'>
         <div className='flex min-w-0 items-center gap-3'>
           <code className='code-font-size text-muted-foreground font-mono min-w-0 truncate' title={props.path}>{props.path}</code>
           <MethodBadge method={props.method} />
           {props.deprecated && <NavBadge label='deprecated' color='orange' />}
         </div>
-        {props.description && <Desc>{props.description}</Desc>}
+        {props.children ? (
+          <div className='no-bleed flex flex-col gap-(--prose-gap) text-foreground'>{props.children}</div>
+        ) : null}
       </div>
       <AuthSection security={props.security} optional={props.authOptional} />
       <ParameterGroup title='Query Parameters' params={query} />

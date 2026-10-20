@@ -20,9 +20,9 @@ import {
   DEFAULT_TAG,
 } from './process.ts'
 import { generateCurl } from './curl-generator.ts'
-import { buildVirtualPageMdx } from '../virtual-page-mdx.ts'
+import { buildVirtualPageMdx, codeFence, componentWithMarkdown, fenceTitle } from '../virtual-page-mdx.ts'
 import { commonMarkToMdx } from '../normalize-mdx.ts'
-import { codeSampleFenceBlocks, extractCodeSamples, fenceTitle } from './code-samples.ts'
+import { codeSampleFenceBlocks, extractCodeSamples } from './code-samples.ts'
 
 export type OpWithDoc = { op: ExtractedOperation; doc: DereferencedDocument }
 
@@ -153,11 +153,10 @@ export function buildEndpointMdx({ op, doc, specPath }: { op: ExtractedOperation
     description: s.description,
   }))
 
-  const propsJson = JSON.stringify({
+  const props = {
     method: op.method,
     path: op.path,
     summary: op.operation.summary,
-    description: overrides.description ?? op.operation.description,
     parameters: params,
     requestBody,
     responses,
@@ -165,16 +164,14 @@ export function buildEndpointMdx({ op, doc, specPath }: { op: ExtractedOperation
     authOptional,
     servers,
     deprecated: op.operation.deprecated,
-  })
+  }
 
   // Request example tabs: cURL first, then x-codeSamples (SDK snippets from
   // Stainless / Speakeasy / hey-api / hand-written), then named request-body
   // JSON examples. RequestExample renders each titled fence as a switchable
   // tab — no <CodeGroup> wrapper. `lines=false` hides line numbers.
   const requestExampleBlocks: string[] = [
-    '```bash title="cURL" lines=false',
-    curl,
-    '```',
+    ...codeFence({ info: 'bash title="cURL" lines=false', code: curl }),
     ...codeSampleFenceBlocks(extractCodeSamples(op.operation)),
   ]
   if (requestBody?.examples && requestBody.examples.length > 0) {
@@ -217,9 +214,16 @@ export function buildEndpointMdx({ op, doc, specPath }: { op: ExtractedOperation
       ...(op.operation.deprecated ? { deprecated: true } : {}),
     },
     aside,
-    body: overrides.content?.trim()
-      ? `<OpenAPIEndpoint {...${propsJson}}>\n${overrides.content.trim()}\n</OpenAPIEndpoint>`
-      : `<OpenAPIEndpoint {...${propsJson}} />`,
+    // x-holocron content is authored MDX, so it goes in as is. The spec
+    // description is Markdown, escaped as the endpoint's children.
+    body: [
+      overrides.content?.trim(),
+      componentWithMarkdown({
+        name: 'OpenAPIEndpoint',
+        props,
+        markdown: overrides.description ?? op.operation.description,
+      }),
+    ].filter(Boolean).join('\n\n'),
   })
 }
 
@@ -356,7 +360,7 @@ function exampleCodeBlocks(examples: NamedExample[]): string[] {
       ? ex.value
       : JSON.stringify(ex.value, null, 2)
     // `title` meta becomes the tab label after remarkCodeGroup rewrites it.
-    return [`\`\`\`json title="${fenceTitle(ex.name)}" lines=false`, json, '```']
+    return codeFence({ info: `json title="${fenceTitle(ex.name)}" lines=false`, code: json })
   })
 }
 

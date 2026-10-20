@@ -12,13 +12,14 @@
 
 import React from 'react'
 import { NavBadge } from '../../components/layout/nav-badge.tsx'
-import { Desc, FieldList, Section, type SchemaInfo } from '../render-schema.tsx'
+import { FieldList, Section, type SchemaInfo } from '../render-schema.tsx'
 
 /* ── MCPTool ──────────────────────────────────────────────────────────── */
 
 export interface MCPToolProps {
+  /** The tool description, as escaped Markdown children in the page MDX. */
+  children?: React.ReactNode
   name: string
-  description?: string
   inputSchema?: SchemaInfo
   outputSchema?: SchemaInfo
   annotations?: {
@@ -75,7 +76,9 @@ export function MCPTool(props: MCPToolProps) {
           <code className='code-font-size text-foreground font-mono font-semibold'>{props.name}</code>
           <NavBadge label='TOOL' color='purple' />
         </div>
-        {props.description && <Desc>{props.description}</Desc>}
+        {props.children ? (
+          <div className='no-bleed flex flex-col gap-(--prose-gap) text-foreground'>{props.children}</div>
+        ) : null}
       </div>
 
       {/* Annotation + execution badges */}
@@ -109,9 +112,10 @@ export function MCPTool(props: MCPToolProps) {
 /* ── MCPResource ──────────────────────────────────────────────────────── */
 
 export interface MCPResourceProps {
+  /** The resource description, as escaped Markdown children in the page MDX. */
+  children?: React.ReactNode
   name: string
   uri: string
-  description?: string
   mimeType?: string
 }
 
@@ -131,7 +135,9 @@ export function MCPResource(props: MCPResourceProps) {
             </span>
           )}
         </div>
-        {props.description && <Desc>{props.description}</Desc>}
+        {props.children ? (
+          <div className='no-bleed flex flex-col gap-(--prose-gap) text-foreground'>{props.children}</div>
+        ) : null}
       </div>
     </div>
   )

@@ -2,10 +2,9 @@ import { describe, expect, test } from 'vitest'
 import {
   codeSampleFenceBlocks,
   extractCodeSamples,
-  fenceMarker,
-  fenceTitle,
   toFenceLang,
 } from './code-samples.ts'
+import { fenceMarker, fenceTitle } from '../virtual-page-mdx.ts'
 
 describe('toFenceLang', () => {
   test('lowercases and aliases common SDK langs', () => {

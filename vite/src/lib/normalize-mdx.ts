@@ -404,6 +404,9 @@ function skipJsxTag(chars: string[], i: number, len: number): number | null {
   return null // unclosed tag, don't skip
 }
 
+/** mdast nodes whose children are blocks, not inline text. */
+const FLOW_PARENTS = new Set(['root', 'blockquote', 'listItem', 'footnoteDefinition'])
+
 /**
  * Parse plain Markdown (CommonMark + GFM, no MDX). OpenAPI and MCP
  * descriptions are Markdown by spec, so `{lease}` or `<token>` in prose must
@@ -415,9 +418,13 @@ export function parseCommonMark(markdown: string): Root {
   const mdast = remark().use(remarkGfm).parse(markdown)
   const htmlToText = (node: Root | RootContent): void => {
     if (!('children' in node)) return
-    node.children = node.children.map((child) =>
-      child.type === 'html' ? { type: 'text', value: child.value } : child,
-    ) as typeof node.children
+    // Block HTML needs a paragraph, or it is serialized unescaped and glued to its neighbors.
+    const isFlow = FLOW_PARENTS.has(node.type)
+    node.children = node.children.map((child) => {
+      if (child.type !== 'html') return child
+      const text = { type: 'text', value: child.value } as const
+      return isFlow ? { type: 'paragraph', children: [text] } : text
+    }) as typeof node.children
     node.children.forEach(htmlToText)
   }
   htmlToText(mdast)

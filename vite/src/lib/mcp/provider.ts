@@ -22,7 +22,7 @@ import path from 'node:path'
 import type { Tool, Resource, Prompt } from '@modelcontextprotocol/sdk/types.js'
 import type { ConfigNavGroup, ConfigNavTab } from '../../config.ts'
 import type { VirtualTabProvider, VirtualTabResult } from '../virtual-tab-provider.ts'
-import { buildVirtualPageMdx } from '../virtual-page-mdx.ts'
+import { buildVirtualPageMdx, codeFence, componentWithMarkdown } from '../virtual-page-mdx.ts'
 import { sample } from '../sample.ts'
 import { logger, formatHolocronWarning } from '../logger.ts'
 
@@ -131,9 +131,7 @@ function buildToolMdx(tool: Tool): string {
   const asideBlocks = [
     '<RequestExample>',
     '',
-    '```json lines=false',
-    requestJson,
-    '```',
+    ...codeFence({ info: 'json lines=false', code: requestJson }),
     '',
     '</RequestExample>',
   ]
@@ -144,9 +142,7 @@ function buildToolMdx(tool: Tool): string {
       '',
       '<ResponseExample>',
       '',
-      '```json lines=false',
-      JSON.stringify(exampleOutput, null, 2),
-      '```',
+      ...codeFence({ info: 'json lines=false', code: JSON.stringify(exampleOutput, null, 2) }),
       '',
       '</ResponseExample>',
     )
@@ -154,15 +150,14 @@ function buildToolMdx(tool: Tool): string {
 
   const aside = asideBlocks.join('\n')
 
-  const propsJson = JSON.stringify({
+  const props = {
     name: tool.name,
-    description: tool.description,
     inputSchema: tool.inputSchema,
     ...(outputSchema && { outputSchema }),
     annotations: (tool as any).annotations,
     ...(execution && { execution }),
     title: (tool as any).annotations?.title,
-  })
+  }
 
   return buildVirtualPageMdx({
     frontmatter: {
@@ -175,17 +170,16 @@ function buildToolMdx(tool: Tool): string {
       mode: 'default',
     },
     aside,
-    body: `<MCPTool ${propsToJsx(propsJson)} />`,
+    body: componentWithMarkdown({ name: 'MCPTool', props, markdown: tool.description }),
   })
 }
 
 function buildResourceMdx(resource: Resource): string {
-  const propsJson = JSON.stringify({
+  const props = {
     name: resource.name,
     uri: resource.uri,
-    description: resource.description,
     mimeType: resource.mimeType,
-  })
+  }
 
   return buildVirtualPageMdx({
     frontmatter: {
@@ -195,13 +189,8 @@ function buildResourceMdx(resource: Resource): string {
       tagColor: 'blue',
       mode: 'default',
     },
-    body: `<MCPResource ${propsToJsx(propsJson)} />`,
+    body: componentWithMarkdown({ name: 'MCPResource', props, markdown: resource.description }),
   })
-}
-
-/** Render a JSON string as JSX spread props. */
-function propsToJsx(json: string): string {
-  return `{...${json}}`
 }
 
 /** Strip markdown formatting to produce plain text for meta descriptions. */

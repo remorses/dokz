@@ -6,6 +6,8 @@
  * renders each sample as a titled code fence inside `<RequestExample>`.
  */
 
+import { codeFence, fenceTitle } from '../virtual-page-mdx.ts'
+
 export interface OpenApiCodeSample {
   /** Prism / fence language id (normalized). */
   lang: string
@@ -47,24 +49,6 @@ export function toFenceLang(lang: string): string {
   return SAFE_LANG.test(normalized) ? normalized : 'text'
 }
 
-/** Pick a backtick fence longer than any run inside `source` so nested ``` cannot close early. */
-export function fenceMarker(source: string): string {
-  let longest = 0
-  for (const match of source.matchAll(/`+/g)) {
-    if (match[0].length > longest) longest = match[0].length
-  }
-  return '`'.repeat(Math.max(3, longest + 1))
-}
-
-/** Escape a string for use inside a code-fence `title="..."` meta. */
-export function fenceTitle(name: string): string {
-  return name
-    .replace(/\\/g, '\\\\')
-    .replace(/"/g, '\\"')
-    .replace(/`/g, "'")
-    .replace(/[\r\n]+/g, ' ')
-}
-
 /**
  * Read `x-codeSamples` from an OpenAPI operation object.
  * Skips entries missing `lang` or a string `source` (including unresolved $refs).
@@ -95,12 +79,5 @@ export function extractCodeSamples(operation: object | undefined): OpenApiCodeSa
 
 /** Render code samples as titled fences for `<RequestExample>`. */
 export function codeSampleFenceBlocks(samples: OpenApiCodeSample[]): string[] {
-  return samples.flatMap((s) => {
-    const fence = fenceMarker(s.source)
-    return [
-      `${fence}${s.lang} title="${fenceTitle(s.label)}" lines=false`,
-      s.source,
-      fence,
-    ]
-  })
+  return samples.flatMap((s) => codeFence({ info: `${s.lang} title="${fenceTitle(s.label)}" lines=false`, code: s.source }))
 }

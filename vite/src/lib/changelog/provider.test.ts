@@ -108,7 +108,7 @@ describe('changelogProvider', () => {
 
       ## Features
 
-      - New thing
+      * New thing
 
       </Update>
 
