@@ -1,5 +1,15 @@
 # @holocron.so/vite
 
+## 0.38.0
+
+1. **New `prerenderOrigin` option for `rendering: static` pages.** Absolute URLs in a prerendered page (`og:url`, the OG image label) come from the single host in the Worker `routes`. When routes list several hosts, like the apex and `www`, the build used the local preview origin and shipped `og:url` as `http://localhost:…`. Pass the public origin instead:
+
+   ```ts
+   holocron({ prerenderOrigin: 'https://example.com' })
+   ```
+
+   `rendering: static` is now documented in the [page frontmatter reference](https://holocron.so/docs/create/pages) and the [Cloudflare guide](https://holocron.so/docs/deploy/cloudflare#prerendered-pages).
+
 ## 0.37.2
 
 1. **Smaller pages, faster renders.** The sidebar no longer renders the hidden heading lists of every other page; only the current page and pages matching a search show their headings. On holocron.so this removes about 225 KB of HTML per page (about 37%). The sidebar search index is now built on the first search query, not on every server render, hydration and client navigation. Before, that was about 30% of server CPU per page on a large docs site.
