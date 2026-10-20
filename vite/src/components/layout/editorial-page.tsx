@@ -91,6 +91,7 @@ export function EditorialPage({
   mode,
   maxWidth,
   hideFooterLinks,
+  floatAssistant,
 }: {
   sidebar?: React.ReactNode
   children?: React.ReactNode
@@ -112,6 +113,8 @@ export function EditorialPage({
   mode?: PageMode
   /** Drop footer logo, socials and link columns. Used on API and MCP reference pages. */
   hideFooterLinks?: boolean
+  /** Show the floating pill even with a right aside. Used when the aside holds the API playground. */
+  floatAssistant?: boolean
 }) {
   const { site, currentPageHref, activeTabHref, activeVersionHref, activeDropdownHref, githubStars } = useHolocronData()
   const siteConfig = site.config
@@ -136,7 +139,7 @@ export function EditorialPage({
   const showLeftNav = pageMode === 'default' || pageMode === 'compact'
   const showRightAside = pageMode !== 'compact'
   // The assistant lives at the top of the right aside. Compact pages have none, so they get the floating pill.
-  const floatingAssistant = enableAssistant && !showRightAside
+  const floatingAssistant = enableAssistant && (!showRightAside || !!floatAssistant)
   // In center mode the content + right rail occupy the page width without the
   // left navigation column, so cap the grid width to drop that column's width.
   const centerMaxWidthClass = 'lg:max-w-[calc(var(--grid-max-width)_-_var(--grid-nav-width)_-_var(--grid-gap))]'

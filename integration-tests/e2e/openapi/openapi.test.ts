@@ -148,7 +148,7 @@ test.describe('OpenAPI tab', () => {
     await expect(page.locator('.slot-aside')).toHaveCount(1)
   })
 
-  test('assistant sits in the right aside when there is one, else floats', async ({ page }) => {
+  test('assistant sits in the right aside unless it holds the API playground', async ({ page }) => {
     await page.setViewportSize({ width: 1400, height: 900 })
     // Compact docs page: no right aside, so the floating pill.
     await page.goto('/')
@@ -156,8 +156,17 @@ test.describe('OpenAPI tab', () => {
     await page.waitForLoadState('networkidle')
     await expect(page.locator('.holocron-chat-pill')).toBeVisible()
     await expect(page.locator('[data-chat-shell="sidebar"]')).toHaveCount(0)
-    // Client navigation to an endpoint page with a right aside swaps to the sidebar widget.
+    // Overview page in an OpenAPI tab: right aside without playground gets the sidebar widget.
     await page.locator('.slot-tabbar').getByRole('link', { name: 'API Reference' }).click()
+    await expect(page.locator('.slot-aside [data-chat-shell="sidebar"]')).toBeVisible()
+    await expect(page.locator('.holocron-chat-pill')).toHaveCount(0)
+    // Endpoint page: the aside holds request/response examples, so the pill comes back.
+    await page.locator('nav').getByRole('link', { name: 'Create user POST' }).click()
+    await expect(page.getByRole('tablist', { name: 'Request example' })).toBeVisible()
+    await expect(page.locator('.holocron-chat-pill')).toBeVisible()
+    await expect(page.locator('[data-chat-shell="sidebar"]')).toHaveCount(0)
+    // Back to an overview page: the pill unmounts and the drawer portals to body again.
+    await page.locator('.slot-tabbar').getByRole('link', { name: 'Guides' }).click()
     await expect(page.locator('.slot-aside [data-chat-shell="sidebar"]')).toBeVisible()
     await expect(page.locator('.holocron-chat-pill')).toHaveCount(0)
     // The drawer must not portal into the unmounted pill's container.

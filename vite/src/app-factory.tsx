@@ -53,7 +53,7 @@ import {
 import { deduplicateRedirects, interpolateDestination, redirectSourceMatches } from './lib/redirects.ts'
 import { isAgentRequest, stripVisibilityForAgents } from './lib/raw-markdown.ts'
 import { zipSync, strToU8 } from 'fflate'
-import { buildSections, demoteBodyH1s, isAboveNode, resolveCompactLayout, shouldInjectPageTitle } from './lib/mdx-sections.ts'
+import { buildSections, demoteBodyH1s, hasApiPlayground, isAboveNode, resolveCompactLayout, shouldInjectPageTitle } from './lib/mdx-sections.ts'
 import { assignUniqueHeadingIds } from './lib/toc-tree.ts'
 import { computeSidebarWidthFromAsideNodes } from './lib/sidebar-widths.ts'
 import { visit } from 'unist-util-visit'
@@ -412,9 +412,11 @@ function renderMdxPage({
   })
   const contentMdast: Root = { type: 'root', children: compactLayout.nodes }
   const pageMode = compactLayout.pageMode
+  // The API playground fills the right aside, so the assistant floats there instead.
+  const floatAssistant = hasApiPlayground(compactLayout.nodes)
   const mdastSections = buildSections(contentMdast, {
     // Compact pages have no right aside, so no chrome; EditorialPage shows the floating pill instead.
-    enableAssistant: site.config.assistant.enabled,
+    enableAssistant: site.config.assistant.enabled && !floatAssistant,
     includePageChrome: pageMode !== 'compact',
   })
 
@@ -556,7 +558,7 @@ function renderMdxPage({
               : <Head.Meta key={name} name={name} content={content} />
           ))}
       </Head>
-      <EditorialPage mode={pageMode} sections={sections} above={above} bannerContent={bannerJsx} sidebarWidth={sidebarWidth} gridGap={gridGap} hideFooterLinks={isApiReference} />
+      <EditorialPage mode={pageMode} sections={sections} above={above} bannerContent={bannerJsx} sidebarWidth={sidebarWidth} gridGap={gridGap} hideFooterLinks={isApiReference} floatAssistant={floatAssistant} />
     </>
   )
 }

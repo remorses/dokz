@@ -37,6 +37,17 @@ export function isAsideNode(node: RootContent): node is FlowJsxNode {
   return node.type === 'mdxJsxFlowElement' && node.name === 'Aside'
 }
 
+const API_PLAYGROUND_NAMES = new Set(['RequestExample', 'ResponseExample'])
+
+/** True when an aside holds the API playground (RequestExample / ResponseExample). */
+export function hasApiPlayground(nodes: RootContent[]): boolean {
+  return nodes.some((node) => {
+    return isAsideNode(node) && node.children.some((child) => {
+      return child.type === 'mdxJsxFlowElement' && API_PLAYGROUND_NAMES.has(child.name ?? '')
+    })
+  })
+}
+
 export function unwrapAsides(nodes: RootContent[]): RootContent[] {
   const result: RootContent[] = []
   for (const node of nodes) {
