@@ -42,6 +42,13 @@ function renderMdx(raw: string) {
 }
 
 describe('mdxComponents', () => {
+  it('Markdown shows unparseable MDX as raw text instead of throwing', () => {
+    const html = renderToStaticMarkup(
+      createElement(mdxComponents.Markdown, { inline: true, children: 'Args {"lease":"studio:42"}' }),
+    )
+    expect(html).toMatchInlineSnapshot(`"Args {&quot;lease&quot;:&quot;studio:42&quot;}"`)
+  })
+
   it('overrides native heading tags with P-unwrapping wrappers', () => {
     const overriddenHeadingTags = Object.keys(mdxComponents).filter((key) => {
       return /^h[1-6]$/.test(key)

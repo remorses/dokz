@@ -5,6 +5,22 @@ import path from 'node:path'
 import { processVirtualTabs } from '../virtual-tab-provider.ts'
 import { mcpProvider } from './provider.ts'
 import type { ConfigNavTab } from '../../config.ts'
+import { mdxComponents, renderNode } from '../mdx-components-map.tsx'
+import { SafeMdxRenderer } from 'safe-mdx'
+import { mdxParse } from 'safe-mdx/parse'
+import { createElement } from 'react'
+import { renderToStaticMarkup } from 'react-dom/server'
+import dedent from 'string-dedent'
+
+// From ghosthand's screenshot tool. Holocron 0.36 parsed descriptions as MDX:
+// `{"lease":"studio:42"}` is not a JS expression, so acorn threw and the page was a 500.
+const MDX_LIKE_DESCRIPTION = dedent`
+  Save the screen. Use \`wake -l <id>\` if the display is off.
+
+  Examples (arguments):
+    {"lease":"studio:42"}
+    {"lease":"studio:42","native":true}
+`
 
 const DEFS = JSON.stringify({
   tools: [
@@ -12,6 +28,14 @@ const DEFS = JSON.stringify({
       name: 'analytics_languages',
       description: 'Top languages by visitors',
       inputSchema: { type: 'object', properties: {} },
+    },
+    {
+      name: 'screenshot',
+      description: MDX_LIKE_DESCRIPTION,
+      inputSchema: {
+        type: 'object',
+        properties: { lease: { type: 'string', description: 'Lease id, e.g. {"lease":"studio:42"} or <id>' } },
+      },
     },
   ],
   resources: [
@@ -56,5 +80,38 @@ describe('mcp provider', () => {
 
     expect(mdxContent['mcp/analytics-languages']).toContain('mode: "default"')
     expect(mdxContent['mcp/resources/issues']).toContain('mode: "default"')
+  })
+
+  test('tool descriptions with JSON braces and <id> render as literal Markdown text', async () => {
+    const mdxContent: Record<string, string> = {}
+    await processVirtualTabs({
+      config: { navigation: { tabs: [{ tab: 'MCP', mcp: 'mcp-tools.json' } as ConfigNavTab] } },
+      projectRoot: dir,
+      pagesDir: dir,
+      publicDir: path.join(dir, 'public'),
+      mdxContent,
+      files: {},
+      providers: [mcpProvider],
+    })
+
+    // Same steps as renderMdxPage: parse the page MDX, then render its nodes.
+    const page = mdxContent['mcp/screenshot']!
+    const mdast = mdxParse(page)
+    const tool = mdast.children.filter((node) => node.type === 'mdxJsxFlowElement' && node.name === 'MCPTool')
+    const errors: string[] = []
+    const html = renderToStaticMarkup(
+      createElement(SafeMdxRenderer, {
+        markdown: page,
+        mdast: { type: 'root', children: tool },
+        components: mdxComponents,
+        renderNode,
+        onError: (error) => errors.push(error.message),
+      }),
+    )
+
+    expect(errors).toEqual([])
+    expect(html).toContain('wake -l &lt;id&gt;')
+    expect(html).toContain('{&quot;lease&quot;:&quot;studio:42&quot;,&quot;native&quot;:true}')
+    expect(html).toContain('e.g. {&quot;lease&quot;:&quot;studio:42&quot;} or &lt;id&gt;')
   })
 })

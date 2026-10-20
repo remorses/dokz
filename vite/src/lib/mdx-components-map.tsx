@@ -67,7 +67,7 @@ import {
 } from '../components/markdown/index.tsx'
 import { slug } from 'github-slugger'
 import { extractText, getAssignedHeadingId } from './toc-tree.ts'
-import { logMdxError } from './logger.ts'
+import { extractParseErrorInfo, logMdxError } from './logger.ts'
 import { parseCodeMeta, metaBool, type BleedMode } from './code-meta.ts'
 import type { SafeMdxComponentName } from './mdx-component-names.ts'
 import { HighlightedCodeBlock } from './highlight-code.tsx'
@@ -101,11 +101,20 @@ const FAQ = withSubComponents(FAQClient, { Item: FAQItem })
 
 const Markdown = ({ children, inline = false }: { children: ReactNode, inline?: boolean }) => {
   const markdown = Children.toArray(children).join('')
+  // Runs during render, where a throw would 500 the whole page: show the raw text instead.
+  let mdast: Root
+  try {
+    mdast = mdxParse(markdown)
+  } catch (err) {
+    const { line, reason } = extractParseErrorInfo(err)
+    logMdxError({ type: 'expression', message: `<Markdown> could not parse: ${reason}`, line })
+    return <>{markdown}</>
+  }
 
   return (
     <SafeMdxRenderer
       markdown={markdown}
-      mdast={mdxParse(markdown)}
+      mdast={mdast}
       components={inline ? { ...mdxComponents, p: Fragment } : mdxComponents}
       renderNode={renderNode}
       onError={logMdxError}
